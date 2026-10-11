@@ -43,7 +43,7 @@ header h1 { font-size: 18px; margin: 0; flex: 1; }
   gap: 12px; padding: 20px; text-align: center; }
 #pvError.show { display: flex; }
 /* Preview corner buttons (minimize, fullscreen) */
-.pv-corner { position: absolute; z-index: 6; background: rgba(0,0,0,0.6);
+.pv-corner { position: absolute; z-index: 12; background: rgba(0,0,0,0.6);
   border: none; color: #fff; border-radius: 8px; width: 40px; height: 40px;
   font-size: 18px; display: flex; align-items: center; justify-content: center;
   cursor: pointer; }
@@ -94,12 +94,15 @@ header h1 { font-size: 18px; margin: 0; flex: 1; }
 #urlRow { display: flex; gap: 6px; padding: 4px; }
 #urlRow input { flex: 1; background: var(--panel); border: 1px solid #33334a;
   color: var(--text); border-radius: 8px; padding: 10px; font-size: 12px; }
-/* Timeline */
+/* Timeline — virtualized: #tl is a full-width scroll spacer, the canvas is
+   sticky-pinned to the viewport and only renders the visible window.
+   (Same architecture as open-source web NLEs: Clypra/OpenReel.) */
 #tlScroll { overflow-x: auto; overflow-y: hidden; background: var(--panel);
-  border-radius: 8px; touch-action: pan-x pan-y; position: relative;
-  -webkit-overflow-scrolling: touch; }
-#tl { position: relative; height: 340px; }
-canvas#tlCanvas { position: absolute; top: 0; left: 0; touch-action: none; }
+  border-radius: 8px; position: relative;
+  -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+#tl { position: relative; }
+canvas#tlCanvas { position: sticky; left: 0; top: 0; display: block;
+  touch-action: none; /* gestures handled via Pointer Events: 1-finger pan, 2-finger pinch */ }
 /* Toolbar */
 #toolbar { display: flex; gap: 8px; padding: 10px 4px; flex-wrap: wrap; }
 #toolbar .btn { font-size: 14px; }
@@ -228,6 +231,38 @@ ol.fx-steps li { margin: 5px 0; }
 .viewer-controls .btn { flex: 1; min-width: 100px; text-align: center; }
 #tabbar button { font-size: 9px; }
 #tabbar button .ico { font-size: 18px; }
+/* ===== TOOLS HEADER / CATEGORY INDEX ===== */
+#toolCount { padding: 2px 4px 6px; font-size: 14px; }
+#toolCount b { color: var(--accent); }
+#toolChips { display: flex; gap: 6px; overflow-x: auto; padding: 4px; -webkit-overflow-scrolling: touch; }
+.tool-chip { flex: 0 0 auto; background: var(--panel2); border: 1px solid #2a2a3a; color: var(--text);
+  border-radius: 16px; padding: 9px 13px; font-size: 12px; cursor: pointer; font-family: inherit; min-height: 40px; }
+.tool-chip span { color: var(--dim); }
+/* ===== FUSION GUIDE (Cover Art & Bling) ===== */
+#fusion-guide { margin-top: 20px; }
+#fusion-guide h3.guide-title { font-size: 17px; margin: 8px 4px; color: var(--text); }
+.guide-sub { font-size: 13px; color: var(--dim); padding: 0 4px 6px; }
+.guide-card { background: var(--panel2); border: 1px solid #2a2a3a; border-radius: 10px; padding: 14px; margin: 10px 4px; font-size: 13px; }
+.guide-card h4 { margin: 0 0 8px; font-size: 15px; }
+.guide-card p { margin: 6px 0; color: var(--text); }
+.guide-card .dim { color: var(--dim); }
+.guide-card ul, .guide-card ol { margin: 6px 0; padding-left: 20px; }
+.guide-card li { margin: 5px 0; }
+.guide-card a { color: var(--accent); }
+details.recipe { background: var(--panel2); border: 1px solid #2a2a3a; border-radius: 10px; margin: 8px 4px; overflow: hidden; }
+details.recipe summary { padding: 14px; min-height: 48px; cursor: pointer; font-size: 14px; font-weight: 600; list-style: none; display: flex; align-items: center; gap: 8px; }
+details.recipe summary::-webkit-details-marker { display: none; }
+details.recipe summary::after { content: "▸"; margin-left: auto; color: var(--dim); transition: transform .15s; }
+details.recipe[open ] summary::after { transform: rotate(90deg); }
+details.recipe .recipe-body { padding: 0 14px 14px; font-size: 13px; }
+details.recipe .recipe-body ol, details.recipe .recipe-body ul { margin: 6px 0; padding-left: 20px; }
+details.recipe .recipe-body li { margin: 5px 0; }
+details.recipe .recipe-body p { margin: 6px 0; }
+.palette-row { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+.palette-row .pname { flex: 0 0 108px; font-size: 12px; }
+.swatches { display: flex; flex: 1; height: 26px; border-radius: 6px; overflow: hidden; border: 1px solid #2a2a3a; }
+.swatches i { flex: 1; display: block; }
+.concept-tag { display: inline-block; font-size: 10px; background: #2a2a3a; border-radius: 8px; padding: 2px 8px; margin: 2px 4px 2px 0; color: var(--dim); }
 </style>
 </head>
 <body>
@@ -249,9 +284,9 @@ ol.fx-steps li { margin: 5px 0; }
         <div id="pvLoading"><div class="pv-spinner"></div><div style="font-size:13px;color:#888">Loading video…</div></div>
         <div id="pvError">
           <div style="font-size:40px">⚠️</div>
-          <div style="font-size:14px">Video failed to load.<br>The review link may have expired.</div>
+          <div style="font-size:14px">Video failed to load.</div>
           <button class="btn primary" id="pvRetry">↻ Retry</button>
-          <div style="font-size:12px;color:#888">Or paste a fresh URL below ↓</div>
+          <label class="btn" style="cursor:pointer;margin-top:8px">📥 Import Video<input type="file" id="importFileErr" accept="video/*" style="display:none"></label>
         </div>
         <button class="pv-corner" id="pvFsBtn" title="Fullscreen">⛶</button>
         <button class="pv-corner" id="pvMinBtn" title="Minimize">−</button>
@@ -268,8 +303,12 @@ ol.fx-steps li { margin: 5px 0; }
     <button id="miniRestore">📺 Restore preview</button>
 
     <div id="urlRow">
-      <input id="videoUrl" type="text" placeholder="Paste review video URL…">
-      <button class="btn small" id="loadUrl" title="Load">↻</button>
+      <label class="btn primary" id="importBtn" style="flex:1;text-align:center;cursor:pointer">📥 Import Video<input type="file" id="importFile" accept="video/*" style="display:none"></label>
+      <button class="btn small" id="urlToggle" title="Enable URL import (YouTube/Drive/direct links)">🔗</button>
+    </div>
+    <div id="urlInputRow" style="display:none;gap:6px;padding:4px;">
+      <input id="urlInput" type="url" placeholder="Paste YouTube, Drive, or direct video URL…" style="flex:1;background:var(--panel);border:1px solid #33334a;border-radius:8px;padding:8px;color:var(--fg);font-size:13px;">
+      <button class="btn primary small" id="urlLoadBtn">Load</button>
     </div>
 
     <div id="transport">
@@ -290,7 +329,9 @@ ol.fx-steps li { margin: 5px 0; }
       <button class="btn" id="noteBtn">📝 Note</button>
       <button class="btn" id="recBtn">⏺ Record</button>
       <button class="btn" id="zoomOut">−</button>
+      <button class="btn" id="zoomFit" title="Fit whole timeline">⤢</button>
       <button class="btn" id="zoomIn">+</button>
+      <button class="btn" id="followBtn" title="Follow playhead during playback">🎯</button>
       <button class="btn" id="snapBtn" title="Snap to 0.5s">🧲</button>
       <button class="btn primary" id="saveBtn">💾 Save</button>
     </div>
@@ -334,10 +375,201 @@ ol.fx-steps li { margin: 5px 0; }
 
   <!-- ============ TAB: TOOLS ============ -->
   <div class="tab-page" id="tab-tools">
-    <div style="padding:8px 4px;font-size:13px;color:var(--dim)">
-      Free creative tools, wired up. Tap to open.
-    </div>
+    <div id="toolCount">Free creative tools, wired up. Tap to open.</div>
+    <div id="toolChips"></div>
     <div id="toolCats"></div>
+
+    <!-- ===== COVER ART & BLING: FUSION GUIDE + LAYERS ===== -->
+    <div id="fusion-guide">
+      <h3 class="guide-title">💿 Pen &amp; Pixel × Wizard Gang — Style Fusion Guide</h3>
+      <div class="guide-sub">What if Pen &amp; Pixel — Shawn Brauch's diamond-encrusted, more-is-more cover factory (19,180+ covers for No Limit, Cash Money, Suave House) — designed a Wizard Gang cover? Bling and chrome meet wizards and psychedelic waves. Every recipe below runs in free tools: Photopea (browser), GIMP, Affinity (free forever), Krita.</div>
+
+      <div class="guide-card">
+        <h4>Why the fusion works</h4>
+        <ul>
+          <li><b>Ashes is already a Pen &amp; Pixel character.</b> His canon diamond-grill grin shows in every style, robed or unrobed — and Pen &amp; Pixel built an empire on diamond-encrusted everything. Put him front and center: the grin does the bling work, the robe does the wizard work.</li>
+          <li><b>Same energy, both sides.</b> Wizard Gang is loud, cartoony, meme-forward, zero shame. Pen &amp; Pixel's philosophy was "more is more" — and compositing at one-tenth the price of a $15–20k photoshoot. Maximalism on a budget.</li>
+          <li><b>The split:</b> Pen &amp; Pixel supplies the <i>foreground</i> grammar (diamond/chrome text, jewels, wealth iconography, vignette). Psychedelic supplies the <i>background</i> grammar (liquid tie-dye, kaleidoscope, wavy lines, neon palettes). The cast supplies the subjects.</li>
+        </ul>
+      </div>
+
+      <div class="guide-card">
+        <h4>📺 LAYERS — the cover-designer interview series</h4>
+        <p><b>Ep 1 — Shawn Brauch (Pen &amp; Pixel)</b> · <a href="https://youtu.be/tVz2IAAxttE" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <p class="dim">Co-founder of Pen &amp; Pixel Graphics (Houston). 19,180+ covers, 1992–2003 — house firm for No Limit, Cash Money, Suave House. Covers broken down in the episode: Master P (2:27), Snoop Dogg (6:06), Lil Wayne (10:13), plus origin story, tools &amp; tech, and his full design workflow.</p>
+        <p><b>His method:</b> client concept → hand sketch → scan → photograph real objects (cars, chains, watches, money) from every angle into a reusable asset library → Photoshop composite. If an artist wouldn't buy clothes, they photographed just the face and used a body model — "you would never know the difference." Legacy: invented the bling-era look, came out of retirement in 2020 for 21 Savage &amp; Metro Boomin's <i>Savage Mode II</i>.</p>
+        <p style="margin-top:12px"><b>Ep 2 — LONEWOLF (LUCKI's designer)</b> · <a href="https://www.youtube.com/watch?v=BikxAyWIXx4" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <p class="dim">Chaotic paper-cut mixed-media collages — physical cut-and-paste, texture overlays, digital manipulation. The low-budget parallel to Pen &amp; Pixel's gloss. Covers discussed: LUCKI's <i>Days B4 III</i>, <i>Dr*gs R Bad</i>, <i>Freewave 3</i>.</p>
+        <p class="dim">Series: MONTREALITY "LAYERS" — ongoing. New episodes land on their YouTube channel.</p>
+      </div>
+
+      <h3 class="guide-title" style="font-size:15px">💎 Bling recipes (Pen &amp; Pixel side)</h3>
+
+      <details class="recipe"><summary>Recipe 1 — Diamond-encrusted text ("iced out" type)</summary><div class="recipe-body">
+        <p><b>Photopea:</b></p>
+        <ol>
+          <li>Type your title large and bold — run a Font Wizard font (Block Burner, Trippy Drippy Wizard) through this. Right-click layer → Rasterize.</li>
+          <li>Ctrl+click the text layer thumbnail to select the letter shapes. Fill the selection with 50% gray on a new layer.</li>
+          <li>Filter → Render → Clouds.</li>
+          <li>Filter → Distort → Glass: "Tiny Lens" texture, small scale, distortion ~7, smoothness ~3.</li>
+          <li>Image → Adjustments → Curves: drag the white point left until the facets go bright silver-white.</li>
+          <li>Optional: Layer Style → Bevel &amp; Emboss (small, chisel hard) + Drop Shadow for depth.</li>
+        </ol>
+        <p><b>GIMP:</b> rasterize text → select the letters → fill 50% gray → Filters → Render → Clouds → Solid Noise (high detail) → Filters → Distort → Glass Tile (tiny tiles) → Colors → Curves, crush whites up for sparkle.</p>
+      </div></details>
+
+      <details class="recipe"><summary>Recipe 2 — Gold text</summary><div class="recipe-body">
+        <ol>
+          <li>Rasterized text, fill with a gold gradient: #8a5a00 → #ffdf80 → #b8860b.</li>
+          <li>Bevel &amp; Emboss: chisel hard, depth ~200%, size ~5.</li>
+          <li>Inner Glow: warm yellow, low opacity.</li>
+          <li>Satin: dark brown, multiply — gives the metallic banding.</li>
+        </ol>
+      </div></details>
+
+      <details class="recipe"><summary>Recipe 3 — Chrome / metallic text</summary><div class="recipe-body">
+        <p><b>Photopea:</b></p>
+        <ol>
+          <li>Type the title in a heavy condensed font, rasterize.</li>
+          <li>Fill with a vertical metallic gradient: black → dark gray → white (thin hot band, high up) → mid gray → black. The thin white band is the chrome reflection — keep it sharp.</li>
+          <li>Layer Style → Bevel &amp; Emboss: inner bevel, chisel hard, depth ~150%, size ~8.</li>
+          <li>Layer Style → Stroke: 2–3px black, outside. Drop Shadow: black, ~40% opacity, distance ~6.</li>
+          <li>Optional: duplicate, set the top copy to Overlay at 50% for extra punch.</li>
+        </ol>
+        <p><b>Affinity:</b> text → convert to curves → linear gradient, 5 stops (#0a0a0a → #555 → #ffffff thin at ~15% → #777 → #0a0a0a) → FX 3D/Bevel inner radius ~8 → Outer Shadow.</p>
+      </div></details>
+
+      <details class="recipe"><summary>Recipe 4 — Diamond texture on any object (chains, pendants, robe trim, the grill)</summary><div class="recipe-body">
+        <ol>
+          <li>Isolate the object on its own layer.</li>
+          <li>New layer above, filled 50% gray, clipped to the object (Alt+click between layers).</li>
+          <li>Filter → Render → Clouds, then Filter → Noise → Add Noise (gaussian, ~25%) — the grain becomes stone facets.</li>
+          <li>Filter → Sharpen → Unsharp Mask (amount 150, radius 2) to facet the grain.</li>
+          <li>Curves: crush shadows down, push highlights up — diamonds are contrast.</li>
+          <li>Set the layer to Hard Light or Overlay at 80%.</li>
+          <li>Sparkle glints (Recipe 5) on the brightest points only.</li>
+        </ol>
+        <p class="dim">Ashes grill shortcut: run this over a gold-tooth/grill mouthpiece — or draw the grin with hard white faceted shapes on black. It's the cover's built-in diamond moment.</p>
+      </div></details>
+
+      <details class="recipe"><summary>Recipe 5 — Sparkle glints</summary><div class="recipe-body">
+        <ul>
+          <li>Build a small 4-point star brush (white cross with soft glow). In Photopea: spacing ~200%, scatter jitter on, paint on a Color Dodge layer at low opacity.</li>
+          <li>Scatter manually ONLY on the brightest reflection points — chains, teeth, watch faces. Jewelry-retoucher rule: flares only where light already hits. Restraint on placement, excess on everything else.</li>
+        </ul>
+      </div></details>
+
+      <details class="recipe"><summary>Recipe 6 — The full Pen &amp; Pixel composite (no-budget version)</summary><div class="recipe-body">
+        <ol>
+          <li><b>Sketch first.</b> Pen &amp; Pixel sketched every cover on paper before touching a computer. The excess was planned, not random.</li>
+          <li><b>Subject:</b> phone photo of the artist, plain background. Cut out with Remove.bg or Photopea Select → Subject.</li>
+          <li><b>Background:</b> dark gradient + lens flare + fire/cloud stock (Pexels, Pixabay — free). Pen &amp; Pixel loved hellfire, luxury interiors, city skylines. For the fusion, swap in a psychedelic background (Recipes 7–8).</li>
+          <li><b>Props:</b> photograph your own chains/watches/money once, from every angle — shoot once, bling forever — or use free stock. Drop shadows on everything so it sits in the scene.</li>
+          <li><b>Text:</b> diamond or gold recipe, slight arc (Warp Text) for the classic curve.</li>
+          <li><b>Sticker:</b> Parental Advisory PNG completes the 90s signal.</li>
+          <li><b>Final:</b> vignette + texture grain over everything to glue it together. Export 3000×3000.</li>
+        </ol>
+      </div></details>
+
+      <details class="recipe"><summary>Recipe 7 — LONEWOLF mixed-media collage (the cheap path)</summary><div class="recipe-body">
+        <ol>
+          <li>Print or hand-draw elements. Tear, don't cut clean.</li>
+          <li>Photograph with your phone in good light.</li>
+          <li>Composite in Photopea with Multiply/Overlay blend modes — let the paper grain show.</li>
+          <li>Add scanned textures (coffee stains, notebook paper) at low opacity.</li>
+          <li>Hand-letter the title with your own Font Wizard fonts.</li>
+        </ol>
+      </div></details>
+
+      <h3 class="guide-title" style="font-size:15px">🌀 Psychedelic recipes (Wizard Gang side)</h3>
+
+      <details class="recipe"><summary>Recipe 8 — Tie-dye / liquid background</summary><div class="recipe-body">
+        <p><b>Photopea:</b></p>
+        <ol>
+          <li>New 3000×3000 canvas. Filter → Render → Clouds, then Difference Clouds 2–3 times (Ctrl+F repeats) — the liquid base.</li>
+          <li>Filter → Distort → Twirl (angle ~200) for the spiral tie-dye pull.</li>
+          <li>Hue/Saturation: saturation +60, then Gradient Map (black → magenta → orange → yellow → white) for the neon melt.</li>
+          <li>Optional: Filter → Distort → Wave (small wavelength, high amplitude) for the wavy TRIPPEDD feel.</li>
+        </ol>
+        <p><b>Krita (best for hand-painted psych):</b> paint blobs of 4–5 neon colors → large-radius Blur to melt → swirl by hand with the Deform brush.</p>
+      </div></details>
+
+      <details class="recipe"><summary>Recipe 9 — Kaleidoscope mandala</summary><div class="recipe-body">
+        <p><b>Photopea:</b> take any busy image (a Wizard Gang still, a tie-dye) → duplicate 3×, flip copies horizontal/vertical, blend Screen or Lighten, rotate 90° → merge → Filter → Distort → Polar Coordinates (rectangular to polar) = instant mandala.</p>
+        <p><b>GIMP:</b> Filters → Map → Tile Seamless on the source, then Filters → Distorts → Whirl, then Filters → Map → Kaleidoscope (built in).</p>
+      </div></details>
+
+      <details class="recipe"><summary>Recipe 10 — Wavy chrome border</summary><div class="recipe-body">
+        <ul>
+          <li><b>Photopea:</b> draw a thick line → Filter → Distort → Wave (wavelength ~40, amplitude ~15).</li>
+          <li><b>Inkscape:</b> draw a path → Extensions → Modify Path → Jitter, or Envelope Deformation.</li>
+          <li>Stroke it with the chrome gradient (Recipe 3) — a wavy chrome border is the whole fusion in one element.</li>
+        </ul>
+      </div></details>
+
+      <div class="guide-card">
+        <h4>🎨 Locked palettes — pick one per cover, don't mix</h4>
+        <div class="palette-row"><span class="pname">Bling Hell</span><span class="swatches"><i style="background:#0a0a0a"></i><i style="background:#8b0000"></i><i style="background:#d4af37"></i><i style="background:#ffffff"></i></span></div>
+        <p class="dim" style="margin:2px 0 10px">Black → blood red → gold → white. Pen &amp; Pixel fire + gold.</p>
+        <div class="palette-row"><span class="pname">Acid Wizard</span><span class="swatches"><i style="background:#3b0764"></i><i style="background:#d600c8"></i><i style="background:#a6ff00"></i><i style="background:#00e5ff"></i></span></div>
+        <p class="dim" style="margin:2px 0 10px">Deep purple → magenta → lime → cyan. TRIPPEDD wavy standard.</p>
+        <div class="palette-row"><span class="pname">Chrome Void</span><span class="swatches"><i style="background:#0a0a0a"></i><i style="background:#c0c0c0"></i><i style="background:#2962ff"></i><i style="background:#ffffff"></i></span></div>
+        <p class="dim" style="margin:2px 0 10px">Black → silver → electric blue → white. Chrome text pops on this.</p>
+        <div class="palette-row"><span class="pname">No Limit Sunset</span><span class="swatches"><i style="background:#ff7a00"></i><i style="background:#e0218a"></i><i style="background:#6a0dad"></i><i style="background:#0a0a0a"></i></span></div>
+        <p class="dim" style="margin:2px 0 0">Orange → magenta → purple → black. The Master P sky.</p>
+      </div>
+
+      <div class="guide-card">
+        <h4>⚖️ Fusion rules</h4>
+        <ol>
+          <li><b>Backgrounds are always psychedelic.</b> No plain dark gradients — every hellfire sky becomes liquid tie-dye in a locked palette.</li>
+          <li><b>Text is always jewelry.</b> Diamond or chrome recipe, arched, on top of the psych background. The text is the bling anchor.</li>
+          <li><b>Characters stay on-model.</b> Robe colors locked (Ashes scarlet, Onyx green, Theory purple, Cipher yellow, Echo pink, Static deep blue, Hollow orange, Sombra black/purple, Kiko white fur), black void faces, white eye glints, name pendants legible. Likeness law applies to covers too.</li>
+          <li><b>Ashes is the bridge.</b> His diamond-grill grin IS the fusion — front and center.</li>
+          <li><b>Wealth iconography gets wizarded.</b> Chains carry the canon name pendants (ASHES, ONYX, THEORY…), jewels are robe-colored, the fire is psychedelic.</li>
+          <li><b>More is more, but wavy.</b> Fill every pixel — with waves, sparkles, liquid. Vignette last.</li>
+          <li><b>Fonts:</b> title in a Font Wizard custom (Block Burner for heavy bling, Trippy Drippy Wizard for psych melt) run through the diamond/chrome recipe. Tracklist and back cover in the neutral house font — custom is spice, generic is backbone.</li>
+        </ol>
+      </div>
+
+      <h3 class="guide-title" style="font-size:15px">🖼️ Cover concepts</h3>
+
+      <div class="guide-card">
+        <h4>Concept 1 — "WIZARD GANG: Council of Bling" (the flagship)</h4>
+        <p>Nine robed figures in a pyramid lineup, Ashes center-front with the diamond-grill grin huge in frame, scarlet robe. Behind them, liquid tie-dye in the Bling Hell palette, twirled hard. Each wizard's canon robe color pops against the red-gold melt; name pendants rendered as actual iced-out jewelry (Recipe 4).</p>
+        <p><b>Title:</b> "WIZARD GANG" arched across the top in diamond-encrusted Block Burner, dripping slightly. Subtitle in chrome: "THE COUNCIL IS IN SESSION."</p>
+        <p><span class="concept-tag">money stacks at the base</span><span class="concept-tag">lens-flare halo behind Ashes</span><span class="concept-tag">Parental Advisory, bottom-right</span><span class="concept-tag">wavy chrome border</span></p>
+        <p class="dim">A No Limit posse cover — nine deep, jewels out — but the posse is wizards and the sky is melting.</p>
+      </div>
+
+      <div class="guide-card">
+        <h4>Concept 2 — "ASHES: Diamond in the Void" (the solo)</h4>
+        <p>Extreme close-up of Ashes' hooded face — black void, two white eye glints, the diamond-grill grin taking up the bottom third, each tooth individually faceted (Recipe 4). Scarlet robe edges visible. Background: kaleidoscope mandala in the Acid Wizard palette, radiating from behind his head like a halo.</p>
+        <p><b>Title:</b> "ASHES" in chrome across the grin, "$" pendant hanging from the A.</p>
+        <p class="dim">Pen &amp; Pixel covers were often one face + jewels + fire. Here the fire is a melting mandala and the jewels are the character's actual canon design — the grill does all the bling work.</p>
+      </div>
+
+      <div class="guide-card">
+        <h4>Concept 3 — "TRIPPEDD: Stay Iced" (the network tape)</h4>
+        <p>Wide cinematic: the full Wizard Gang lineup walking toward camera, composited over a city skyline at sunset in the No Limit Sunset palette — but the sky is liquid tie-dye melting downward. This is the <i>Savage Mode II</i> homage slot: Pen &amp; Pixel came out of retirement for that cover; this is the 2026 equivalent.</p>
+        <p><b>Title:</b> "TRIPPEDD" in chrome Block Burner, huge. "STAY TRIPPEDD" in diamond text as the tagline (three D's). "HOSTED BY THE COUNCIL" in the neutral house font; tracklist on the back.</p>
+        <p class="dim">A label compilation cover — the network showing its whole roster, the way Pen &amp; Pixel did it for No Limit and Cash Money. The melting sky is the one element that says this isn't 1998, this is the trip.</p>
+      </div>
+
+      <div class="guide-card">
+        <h4>✅ Quick-start — one cover, start to finish</h4>
+        <ol>
+          <li>Pick a concept above (or sketch your own — Pen &amp; Pixel sketched first).</li>
+          <li>Build the background: Recipe 8 or 9 in a locked palette. 3000×3000.</li>
+          <li>Place the characters: cut out from show stills or draw fresh — likeness law applies, robe colors and pendants canon.</li>
+          <li>Jewel the text: Recipe 1 (diamond) or Recipe 3 (chrome) on a Font Wizard font, arched.</li>
+          <li>Add wealth iconography: money, chains, pendants (canon names), fire — drop shadows on everything.</li>
+          <li>Sparkle glints: 4-point stars, Color Dodge, brightest points only.</li>
+          <li>Wavy chrome border (Recipe 10). Vignette. Parental Advisory sticker if it earns it.</li>
+          <li>Export 3000×3000 for streaming. Print vinyl: 12.375″ × 12.375″ @ 300 DPI = 3713×3713 px, CMYK.</li>
+        </ol>
+      </div>
+    </div>
   </div>
 
   <!-- ============ TAB: MIX (BandLab pattern) ============ -->
@@ -514,6 +746,142 @@ ol.fx-steps li { margin: 5px 0; }
   </div>
 </div>
 
+<div class="tab-page" id="tab-gamedev">
+<style>
+#tab-gamedev .gd-chips { display:flex; gap:8px; overflow-x:auto; padding:10px 4px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+#tab-gamedev .gd-chips::-webkit-scrollbar { display:none; }
+#tab-gamedev .gd-chip { flex:0 0 auto; min-height:48px; padding:8px 18px; border-radius:24px;
+  background:var(--panel2); border:1px solid #33334a; color:var(--text); font-size:15px; cursor:pointer; }
+#tab-gamedev .gd-chip.active { background:var(--accent); border-color:var(--accent); font-weight:bold; }
+#tab-gamedev .gd-card { background:var(--panel); border:1px solid #2a2a3a; border-radius:12px; padding:12px; margin:10px 4px; }
+#tab-gamedev .gd-card h3 { margin:0 0 6px; font-size:15px; }
+#tab-gamedev .gd-row { display:flex; gap:8px; margin:8px 0; flex-wrap:wrap; align-items:center; }
+#tab-gamedev .gd-row .btn { flex:1 1 auto; }
+#tab-gamedev .gd-dim { color:var(--dim); font-size:12px; }
+#tab-gamedev .gd-model, #tab-gamedev .gd-pack, #tab-gamedev .gd-toolrow {
+  display:flex; align-items:center; gap:10px; background:var(--panel2);
+  border:1px solid #2a2a3a; border-radius:10px; padding:10px; margin:8px 0; }
+#tab-gamedev .gd-model > div:first-child, #tab-gamedev .gd-pack > div:first-child, #tab-gamedev .gd-toolrow > div:first-child { flex:1; min-width:0; }
+#tab-gamedev .gd-model .btn, #tab-gamedev .gd-pack .btn, #tab-gamedev .gd-toolrow .btn { flex:0 0 auto; }
+#tab-gamedev .gd-model-name { font-size:14px; font-weight:bold; }
+#tab-gamedev select.gd-select { flex:1 1 160px; min-height:48px; background:var(--panel2); color:var(--text);
+  border:1px solid #33334a; border-radius:10px; padding:8px 10px; font-size:14px; }
+#tab-gamedev input[type=range].gd-scrub { flex:1; min-height:48px; accent-color:var(--accent); }
+#tab-gamedev .gd-time { font-size:13px; color:var(--dim); min-width:110px; text-align:center; font-variant-numeric:tabular-nums; }
+#tab-gamedev .gd-repo { font-family:monospace; font-size:12px; background:var(--panel2); border:1px solid #2a2a3a;
+  border-radius:8px; padding:10px; word-break:break-all; flex:1; }
+#tab-gamedev a.gd-linkcard { display:block; text-decoration:none; color:var(--text); background:var(--panel2);
+  border:1px solid #2a2a3a; border-radius:10px; padding:12px; margin:8px 0; }
+#tab-gamedev a.gd-linkcard .gd-model-name { margin-bottom:4px; }
+#tab-gamedev .gd-badge { display:inline-block; font-size:11px; background:var(--accent); color:#fff;
+  border-radius:6px; padding:2px 8px; margin-left:6px; vertical-align:middle; }
+#tab-gamedev ol.gd-steps { margin:6px 0 6px 20px; padding:0; font-size:13px; color:var(--text); }
+#tab-gamedev ol.gd-steps li { margin:8px 0; }
+#tab-gamedev ol.gd-steps code { background:var(--panel2); border-radius:6px; padding:2px 6px; font-size:12px; }
+</style>
+
+<div style="padding:8px 4px;font-size:13px;color:var(--dim)">
+  🎮 3D + game dev workstation. Pick a game, load a hero model, play animations, paint weights, rig.
+</div>
+
+<div class="gd-chips" id="gd-chips"></div>
+<div id="gd-workspace"></div>
+
+<div class="gd-card">
+  <h3>🧊 3D Viewport</h3>
+  <div class="gd-dim">Drives the same Three.js scene as the 3D tab. Load a model, then scrub its animations.</div>
+  <div class="gd-row">
+    <label class="btn">📂 Load GLB<input type="file" id="gdGlbFile" accept=".glb,.gltf" style="display:none"></label>
+    <button class="btn" id="gdUrlBtn">🔗 URL</button>
+    <button class="btn" id="gdPwaBtn2">🎨 Weight Painter</button>
+  </div>
+  <div class="gd-row">
+    <select class="gd-select" id="gdClipSelect"><option value="">No animations loaded</option></select>
+    <button class="btn" id="gdPlayBtn">▶ Play</button>
+    <button class="btn toggled" id="gdLoopBtn">🔁 Loop</button>
+  </div>
+  <div class="gd-row">
+    <input type="range" class="gd-scrub" id="gdScrub" min="0" max="1000" value="0">
+    <span class="gd-time" id="gdTime">0:00.0</span>
+  </div>
+  <div class="gd-row">
+    <button class="btn" id="gdSkelBtn">🦴 Skeleton</button>
+    <button class="btn" id="gdWireBtn">▦ Wireframe</button>
+    <button class="btn" id="gdGo3dBtn">🧊 Open 3D tab</button>
+  </div>
+  <div class="gd-dim" id="gdVpInfo"></div>
+</div>
+
+<div class="gd-card">
+  <h3>🎨 Weight Paint PWA</h3>
+  <div class="gd-dim">Your repo tool, embedded. Paint skin weights on your phone, export, load back here.</div>
+  <div class="gd-row">
+    <button class="btn primary" id="gdPwaBtn">🎨 Open Weight Painter</button>
+  </div>
+</div>
+
+<div class="gd-card">
+  <h3>🦾 Rigging</h3>
+  <a class="gd-linkcard" href="https://www.actorcore.com/accurig" target="_blank" rel="noopener">
+    <div class="gd-model-name">AccuRIG</div>
+    <div class="gd-dim">Free auto-rig — upload a character, get it rigged in minutes.</div>
+  </a>
+  <a class="gd-linkcard" href="https://www.mixamo.com/" target="_blank" rel="noopener">
+    <div class="gd-model-name">Mixamo</div>
+    <div class="gd-dim">Free auto-rig + 2500+ mocap animations. Rig here, animate, export FBX/GLB.</div>
+  </a>
+  <div class="gd-toolrow">
+    <div><div class="gd-model-name">Weight Paint PWA</div>
+    <div class="gd-dim">Your repo tool, embedded above. Fix weights after auto-rigging.</div></div>
+    <button class="btn" id="gdPwaBtn3">🎨 Open</button>
+  </div>
+  <a class="gd-linkcard" href="https://docs.blender.org/manual/en/4.0/animation/armatures/introduction.html" target="_blank" rel="noopener">
+    <div class="gd-model-name">Blender Armatures Manual (4.0)</div>
+    <div class="gd-dim">Official rigging guide — bones, skinning, weight painting in Blender 4.0.2.</div>
+  </a>
+</div>
+
+<div class="gd-card">
+  <h3>🎞️ Animation</h3>
+  <a class="gd-linkcard" href="https://play.google.com/store/apps/details?id=com.prisma3D.prisma3D" target="_blank" rel="noopener">
+    <div class="gd-model-name">Prisma 3D<span class="gd-badge">⭐ owner-relevant</span></div>
+    <div class="gd-dim">Android 3D modeling + keyframe animation + rigging/skinning. v3.3.6, 4.7★. Import .glb/.fbx, animate on phone, export video.</div>
+  </a>
+  <a class="gd-linkcard" href="https://cascadeur.com/" target="_blank" rel="noopener">
+    <div class="gd-model-name">Cascadeur</div>
+    <div class="gd-dim">Free tier physics-based character animation — AI-assisted posing, great for fight moves.</div>
+  </a>
+  <a class="gd-linkcard" href="https://www.rokoko.com/products/rokoko-video" target="_blank" rel="noopener">
+    <div class="gd-model-name">Rokoko Video</div>
+    <div class="gd-dim">Free AI mocap from video — record yourself, get 3D animation.</div>
+  </a>
+  <a class="gd-linkcard" href="https://www.deepmotion.com/" target="_blank" rel="noopener">
+    <div class="gd-model-name">DeepMotion</div>
+    <div class="gd-dim">Free tier text/video to 3D animation — type a move, get a rigged clip.</div>
+  </a>
+</div>
+
+<div class="gd-card">
+  <h3>🌀 Blender Workflow</h3>
+  <ol class="gd-steps">
+    <li>Export GLB from Pocket Studio — use <b>📂 Load GLB</b> above with your file, or grab it from the game repo.</li>
+    <li>Open it in Blender 4.0.2 at <code>~/workspace/tools/blender/</code>.</li>
+    <li>Rig it (AccuRIG / Mixamo / by hand) and animate.</li>
+    <li>Export as GLB from Blender.</li>
+    <li>Load it back in Pocket Studio — <b>📂 Load GLB</b> — and play the animations.</li>
+  </ol>
+</div>
+
+<div id="gdPwaModal" style="position:fixed;inset:0;z-index:9999;background:#000;display:none;flex-direction:column;">
+  <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--panel);">
+    <span style="flex:1;font-size:14px;font-weight:bold;">🎨 Weight Paint PWA</span>
+    <button class="btn" id="gdPwaClose" style="min-height:44px;">✕ Close</button>
+  </div>
+  <iframe id="gdPwaFrame" src="assets/pwa/weight-paint/index.html" style="flex:1;border:0;width:100%;background:#111;"></iframe>
+</div>
+
+</div>
+
 <!-- Bottom tab bar -->
 <nav id="tabbar">
   <button data-tab="edit" class="active"><span class="ico">🎬</span>Edit</button>
@@ -522,6 +890,7 @@ ol.fx-steps li { margin: 5px 0; }
   <button data-tab="projects"><span class="ico">📁</span>Proj</button>
   <button data-tab="assets"><span class="ico">🗂️</span>Assets</button>
   <button data-tab="viewer3d"><span class="ico">🧊</span>3D</button>
+  <button data-tab="gamedev"><span class="ico">🎮</span>Games</button>
   <button data-tab="tools"><span class="ico">🧰</span>Tools</button>
   <button data-tab="mix"><span class="ico">🎚️</span>Mix</button>
   <button data-tab="record"><span class="ico">📹</span>Rec</button>
@@ -553,7 +922,7 @@ const PROJECT = {"name":"EP02 v8b","duration":344.81,"clips":[{"id":"n1","track"
 {"id":"sfx-bball","track":"sfx","at":190.0,"duration":6.0,"volume":1.0,"label":"🏀 Dribbles/squeaks","character":"sfx","text":"baked in — stops at 3:16","baked":true,"original_at":190.0},
 {"id":"bgm-kiko","track":"bgm","at":299.0,"duration":8.0,"volume":0.8,"label":"🎵 Kiko instrumental","character":"bgm","text":"baked in — emotional cue 4:59–5:07","baked":true,"original_at":299.0},
 {"id":"bgm-fireworks","track":"bgm","at":305.0,"duration":39.81,"volume":0.7,"label":"🎆 Fireworks","character":"bgm","text":"baked in — 5:05 to end","baked":true,"original_at":305.0}],"ducks":[{"at":84.0,"duration":3.0,"to":0.5,"label":"Duck Static under Onyx H1"}],"notes":[{"at":93.0,"text":"volume spike smoothed in v8b"},{"at":50.0,"text":"locked intro ends — do not touch 0:00-0:50"}]};
-const DEFAULT_VIDEO_URL = 'https://muse.ai/files/1299464149925011/2923847461309916/2z1fnrzhfcpls4ucsext5boe/ep02-v8b-preview.mp4';
+const DEFAULT_VIDEO_URL = 'assets/videos/ep02-preview.mp4';
 const FPS = 30;
 
 /* ============ BLAIR SHEETS ============ */
@@ -602,7 +971,7 @@ const TOOLKIT = [
     { name: "IWLTBAP LUTs", url: "https://iwltbap.com/", desc: "10+ free pro LUTs + online previewer. Test looks before downloading." },
     { name: "SmallHD Looks", url: "https://www.smallhd.com/", desc: "Free cinematic film-grade looks, graded in Resolve. Email signup." },
   ]},
-  { cat: "🎚️ Audio", tools: [
+  { cat: "🎚️ Audio & Music Production", tools: [
     { name: "Suno", url: "https://suno.com/", desc: "AI music (~10 songs/day free)." },
     { name: "Udio", url: "https://www.udio.com/", desc: "AI music generation, free daily credits." },
     { name: "Riffusion", url: "https://www.riffusion.com/", desc: "Unlimited free music AI." },
@@ -819,7 +1188,7 @@ const TOOLKIT = [
     { name: "Aggie.io", url: "https://aggie.io/", desc: "Free browser collaborative drawing (Magma reborn). Paint together in real time, no install. Good for co-authoring art." },
     { name: "Pixia", url: "https://www.pixia.co.jp/", desc: "Free bitmap editor built for anime/manga community. Windows only but beloved for cel-style art." },
   ]},
-  { cat: "Design Deep", tools: [
+  { cat: "🎨 Design", tools: [
     { name: "Affinity by Canva (FREE)", url: "https://affinity.studio/", desc: "VERIFIED FREE FOREVER (Oct 2025 relaunch). Photo + vector + layout in one app. Opens PSD/AI files. v3.3 as of Sept 2026. Needs free Canva account." },
     { name: "Figma (Free Tier)", url: "https://www.figma.com/", desc: "Free tier: 3 design files, unlimited personal drafts, collaboration. The industry UI/design tool." },
     { name: "Penpot", url: "https://penpot.app/", desc: "Free open-source Figma alternative. Self-host or use cloud free. Vector design + prototyping, no paywall." },
@@ -839,6 +1208,23 @@ const TOOLKIT = [
     { name: "Remove.bg", url: "https://www.remove.bg/", desc: "Free background removal for cover subjects. First step of any composite." },
     { name: "Pexels / Pixabay", url: "https://www.pexels.com/", desc: "Free fire, smoke, luxury, skyline stock for Pen & Pixel backgrounds." },
     { name: "Mockup World", url: "https://mockupworld.co/", desc: "Free vinyl/CD/poster mockups to present finished covers." },
+    { name: "MockupLabs vinyl mockup", url: "https://www.mockuplabs.ai/create/vinyl-mockup", desc: "Free vinyl record + cover mockups. See your art on wax." },
+    { name: "Unblast vinyl PSD mockup", url: "https://unblast.com/free-vinyl-record-cover-mockup-psd-2/", desc: "Free 3600×2400 PSD vinyl mockup with holographic stickers." },
+    { name: "PosterMyWall vinyl templates", url: "https://www.postermywall.com/index.php/posters/search?s=vinyl%20album%20cover", desc: "95+ free vinyl/album cover templates to start from." },
+    { name: "Google Fonts", url: "https://fonts.google.com", desc: "Free display fonts. Pair with the Font Wizard catalog." },
+    { name: "DaFont", url: "https://www.dafont.com", desc: "Free display/graffiti/chrome fonts — the 90s rap aesthetic lives here." },
+    { name: "FontForge", url: "https://fontforge.org", desc: "Free font editor — the Font Wizard's workshop." },
+    { name: "Canva (free tier)", url: "https://www.canva.com", desc: "Quick cover layouts. Free tier is enough for basic covers." },
+    { name: "📚 Learn: Pen & Pixel — Wikipedia", url: "http://en.wikipedia.org/wiki/Pen_%26_Pixel", desc: "Full history: 1992–2003, 19,180 covers, No Limit / Cash Money house firm." },
+    { name: "📚 Learn: Shawn Brauch on 10 Cash Money covers", url: "https://www.udiscovermusic.com/stories/pen-pixel-cash-money-album-covers-interview/", desc: "Cover-by-cover breakdown with stories behind each." },
+  ]},
+  { cat: "🚀 Publish Kit", tools: [
+    { name: "YouTube Studio", url: "https://studio.youtube.com", desc: "Upload, schedule, analytics. Agent publishes via browser task — send the video + metadata." },
+    { name: "TikTok Upload", url: "https://www.tiktok.com/upload", desc: "Web upload. Agent can prep the file + caption; owner posts from phone for best reach." },
+    { name: "Meta Business Suite", url: "https://business.facebook.com", desc: "Facebook Page + Instagram scheduling. Agent has facebook_cli for Page posts." },
+    { name: "Viral Upload Law", url: "#", desc: "Every post: keyword-front-loaded title <60ch, human first 150ch of description, 8-12 hashtags, 10-15 tags, correct category, custom mobile thumbnail. No bare uploads." },
+    { name: "Thumbnail check", url: "#", desc: "1280×720, high-contrast, readable on phone. Use the thumbnail generator in ~/workspace/tools/distro/." },
+    { name: "🤖 Ask agent to publish", url: "#", desc: "Send the finished video + title/desc/tags to the agent — it handles YouTube/Facebook via connected accounts." },
   ]},
 ];
 
@@ -895,6 +1281,7 @@ document.querySelectorAll("#tabbar button").forEach(b => {
     if (b.dataset.tab === "projects") initProjects();
     if (b.dataset.tab === "assets") initAssets();
     if (b.dataset.tab === "viewer3d") initViewer3D();
+    if (b.dataset.tab === "gamedev") initGameDev();
     if (b.dataset.tab === "tools") initTools();
     if (b.dataset.tab === "mix") initMix();
     if (b.dataset.tab === "record") initRecord();
@@ -902,9 +1289,12 @@ document.querySelectorAll("#tabbar button").forEach(b => {
   };
 });
 
-/* ============ CANVAS SETUP ============ */
+/* ============ CANVAS SETUP (virtualized) ============ */
 const canvas = $("tlCanvas"), ctx = canvas.getContext("2d");
 const tlDiv = $("tl"), tlScroll = $("tlScroll");
+// Visible viewport helpers: canvas is sticky, so drawn x = absolute x - scrollLeft
+function viewX(absX) { return absX - tlScroll.scrollLeft; }
+function viewW() { return tlScroll.clientWidth || 320; }
 function trackY(i) {
   let y = 26;
   for (let k = 0; k < i; k++) y += S.trackH[S.tracks[k]] + 4;
@@ -912,61 +1302,85 @@ function trackY(i) {
 }
 function totalH() { return trackY(S.tracks.length) + 8; }
 function resize() {
-  const w = Math.max(tlScroll.clientWidth, t2x(S.duration) + 40);
-  const dpr = window.devicePixelRatio || 1;
-  tlDiv.style.width = w + "px";
-  tlDiv.style.height = totalH() + "px";
-  canvas.width = w * dpr; canvas.height = totalH() * dpr;
-  canvas.style.width = w + "px"; canvas.style.height = totalH() + "px";
+  const vw = viewW();
+  const fullW = Math.max(vw, t2x(S.duration) + 40); // scroll spacer width
+  const H = totalH();
+  const dpr = Math.min(window.devicePixelRatio || 1, 2); // cap: saves memory, still crisp
+  tlDiv.style.width = fullW + "px";
+  tlDiv.style.height = H + "px";
+  canvas.style.width = vw + "px";
+  canvas.style.height = H + "px";
+  canvas.width = Math.round(vw * dpr); canvas.height = Math.round(H * dpr);
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  // keep scroll in bounds after layout change
+  tlScroll.scrollLeft = Math.max(0, Math.min(tlScroll.scrollLeft, fullW - vw));
   draw();
 }
+// Redraw on scroll, rAF-throttled (60fps, no jank)
+let scrollRaf = 0;
+tlScroll.addEventListener("scroll", () => {
+  if (scrollRaf) return;
+  scrollRaf = requestAnimationFrame(() => { scrollRaf = 0; draw(); });
+}, { passive: true });
+// Desktop wheel: vertical wheel scrolls timeline horizontally (Figma pattern)
+tlScroll.addEventListener("wheel", e => {
+  if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+    e.preventDefault();
+    tlScroll.scrollLeft += e.deltaY;
+  }
+}, { passive: false });
 
-/* ============ DRAW ============ */
+/* ============ DRAW (viewport-culled: only visible window is rendered) ============ */
 function draw() {
-  const W = tlDiv.clientWidth, H = totalH();
-  ctx.clearRect(0, 0, W, H);
-  ctx.fillStyle = "#0d0d12"; ctx.fillRect(0, 0, W, 26);
+  const sl = tlScroll.scrollLeft, vw = viewW(), H = totalH();
+  const X = absX => absX - sl; // absolute timeline x -> viewport x
+  ctx.clearRect(0, 0, vw, H);
+  ctx.fillStyle = "#0d0d12"; ctx.fillRect(0, 0, vw, 26);
   ctx.fillStyle = "#8888a0"; ctx.font = "10px sans-serif"; ctx.textAlign = "left";
   const step = S.pxPerSec > 24 ? 5 : S.pxPerSec > 12 ? 10 : 30;
-  for (let t = 0; t <= S.duration; t += step) {
-    const x = t2x(t);
+  const t0 = Math.max(0, Math.floor(x2t(sl) / step) * step);
+  for (let t = t0; t <= x2t(sl + vw) + step; t += step) {
+    const x = X(t2x(t));
     ctx.fillRect(x, 14, 1, 12);
     ctx.fillText(fmt(t), x + 3, 12);
   }
   ctx.fillStyle = "rgba(255,60,60,0.08)";
-  ctx.fillRect(t2x(0), 26, t2x(50) - t2x(0), H - 26);
+  ctx.fillRect(X(t2x(0)), 26, t2x(50) - t2x(0), H - 26);
   ctx.fillStyle = "#ff6b6b"; ctx.font = "9px sans-serif";
-  ctx.fillText("🔒 LOCKED 0:00–0:50", t2x(2), 24);
+  if (X(t2x(2)) < vw - 120) ctx.fillText("🔒 LOCKED 0:00–0:50", X(t2x(2)), 24);
   S.tracks.forEach((tid, i) => {
     const y = trackY(i), h = S.trackH[tid];
     ctx.fillStyle = i % 2 ? "#14141c" : "#16161e";
-    ctx.fillRect(0, y, W, h);
+    ctx.fillRect(0, y, vw, h);
     ctx.fillStyle = "#1e1e2a"; ctx.fillRect(0, y, S.labelW, h);
     ctx.fillStyle = "#aaaac0"; ctx.font = "11px sans-serif";
     ctx.fillText(TRACK_NAMES[tid], 8, y + h / 2 + 4);
   });
-  drawVideoTrack();
-  for (const c of S.clips) drawClip(c);
+  drawVideoTrack(X, sl, vw);
+  for (const c of S.clips) drawClip(c, X, sl, vw);
   ctx.fillStyle = "rgba(124,92,255,0.15)";
   for (const d of S.ducks) {
     const i = S.tracks.indexOf("dialogue");
-    ctx.fillRect(t2x(d.at), trackY(i), d.duration * S.pxPerSec, S.trackH.dialogue);
+    const x = X(t2x(d.at)), w = d.duration * S.pxPerSec;
+    if (x + w > 0 && x < vw) ctx.fillRect(x, trackY(i), w, S.trackH.dialogue);
   }
   const ni = S.tracks.indexOf("notes"), ny = trackY(ni);
   for (const n of S.notes) {
-    const x = t2x(n.at);
+    const x = X(t2x(n.at));
+    if (x < -10 || x > vw + 10) continue;
     ctx.fillStyle = "#ffd75c";
     ctx.beginPath(); ctx.moveTo(x, ny + 4);
     ctx.lineTo(x + 8, ny + 12); ctx.lineTo(x, ny + 20); ctx.closePath(); ctx.fill();
   }
-  const px = t2x(S.playhead);
-  ctx.strokeStyle = "#ff3b5c"; ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.moveTo(px, 0); ctx.lineTo(px, H); ctx.stroke();
-  ctx.fillStyle = "#ff3b5c";
-  ctx.beginPath(); ctx.moveTo(px - 6, 0); ctx.lineTo(px + 6, 0); ctx.lineTo(px, 10); ctx.closePath(); ctx.fill();
+  const px = X(t2x(S.playhead));
+  if (px >= 0 && px <= vw) {
+    ctx.strokeStyle = "#ff3b5c"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(px, 0); ctx.lineTo(px, H); ctx.stroke();
+    ctx.fillStyle = "#ff3b5c";
+    ctx.beginPath(); ctx.moveTo(px - 6, 0); ctx.lineTo(px + 6, 0); ctx.lineTo(px, 10); ctx.closePath(); ctx.fill();
+  }
 }
-function drawVideoTrack() {
+function drawVideoTrack(X, sl, vw) {
   const i = S.tracks.indexOf("video"), y = trackY(i), h = S.trackH.video;
   const scenes = [
     [0, 50, "#3a2a4a", "Intro (locked)"], [50, 90, "#2a4a3a", "Summit"],
@@ -976,17 +1390,20 @@ function drawVideoTrack() {
   ];
   ctx.font = "9px sans-serif";
   for (const [a, b, col, label] of scenes) {
+    const x = X(t2x(a)), w = (b - a) * S.pxPerSec;
+    if (x + w < 0 || x > vw) continue; // culled
     ctx.fillStyle = col;
-    const x = t2x(a), w = (b - a) * S.pxPerSec;
     ctx.fillRect(x, y + 4, w, h - 8);
     if (w > 50) { ctx.fillStyle = "#ffffffaa"; ctx.fillText(label, x + 4, y + h / 2 + 3); }
   }
 }
-function drawClip(c) {
+function drawClip(c, X, sl, vw) {
   const ti = S.tracks.indexOf(c.track);
   if (ti < 0) return;
   const y = trackY(ti), h = S.trackH[c.track] || 50;
-  const x = t2x(c.at), w = Math.max(8, c.duration * S.pxPerSec);
+  const absX = t2x(c.at), w = Math.max(8, c.duration * S.pxPerSec);
+  if (absX + w < sl || absX > sl + vw) return; // culled: offscreen clip, skip
+  const x = X(absX);
   const isSel = S.selected === c.id;
   const isBaked = !!c.baked;
   ctx.fillStyle = clipColor(c);
@@ -1021,22 +1438,31 @@ function drawClip(c) {
   }
 }
 function roundRect(x, y, w, h, r) {
+  // Native ctx.roundRect() — all modern browsers (2023+). Falls back to manual path if missing.
+  if (ctx.roundRect) { ctx.beginPath(); ctx.roundRect(x, y, w, h, r); return; }
   ctx.beginPath();
   ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r);
   ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r);
   ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
 }
 
-/* ============ INTERACTION (CapCut/BandLab patterns) ============ */
-let drag = null, longPressTimer = null;
-function clipAt(x, y) {
+/* ============ INTERACTION (CapCut/BandLab patterns) ============
+   Gesture disambiguation on the timeline canvas:
+   - 1 finger, starts on a draggable clip: tap = select, drag past 8px = move clip
+   - 1 finger, starts on empty track: tap = seek playhead, drag = pan timeline (with momentum)
+   - 2 fingers: pinch = zoom timeline around pinch midpoint
+   touch-action:none on the canvas means the browser never hijacks these. */
+let longPressTimer = null;
+let gesture = null; // {mode, pointers:Map, ...}
+let panMomentum = 0, panRaf = 0, lastPanT = 0;
+function clipAt(absX, y) {
   for (let i = S.clips.length - 1; i >= 0; i--) {
     const c = S.clips[i];
     const ti = S.tracks.indexOf(c.track);
     if (ti < 0) continue;
     const cy = trackY(ti), ch = S.trackH[c.track];
     const cx = t2x(c.at), cw = Math.max(8, c.duration * S.pxPerSec);
-    if (x >= cx && x <= cx + cw && y >= cy && y <= cy + ch) return c;
+    if (absX >= cx && absX <= cx + cw && y >= cy && y <= cy + ch) return c;
   }
   return null;
 }
@@ -1044,65 +1470,129 @@ function canvasPos(e) {
   const r = canvas.getBoundingClientRect();
   return { x: e.clientX - r.left, y: e.clientY - r.top };
 }
+function absX(clientX) {
+  const r = canvas.getBoundingClientRect();
+  return (clientX - r.left) + tlScroll.scrollLeft; // viewport x -> absolute timeline x
+}
+function stopMomentum() { if (panRaf) { cancelAnimationFrame(panRaf); panRaf = 0; } panMomentum = 0; }
+function pinchDist(m) {
+  const p = [...m.values()];
+  return Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+}
 canvas.addEventListener("pointerdown", e => {
   e.preventDefault();
+  stopMomentum();
+  try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
   const p = canvasPos(e);
-  const c = clipAt(p.x, p.y);
-  if (c) {
-    // Baked clips are reference-only: selectable for info, not draggable
-    if (c.baked && !S.viewOnly) {
-      drag = { clip: c, baked: true, startX: p.x, moved: false, pid: e.pointerId };
-      canvas.setPointerCapture(e.pointerId);
-    } else if (!c.baked) {
-    drag = { clip: c, startX: p.x, origAt: c.at, moved: false, pid: e.pointerId };
-    canvas.setPointerCapture(e.pointerId);
-    // Long-press → action menu (BandLab pattern) — disabled in view-only
-    longPressTimer = S.viewOnly ? null : setTimeout(() => {
-      if (drag && !drag.moved) { showClipMenu(c); drag = null; }
+  if (!gesture) gesture = { mode: null, pointers: new Map(), startX: p.x, startY: p.y,
+    startScroll: tlScroll.scrollLeft, startAbsX: absX(e.clientX), moved: false,
+    clip: null, origAt: 0, longFired: false, lastX: p.x, lastT: performance.now(), vel: 0 };
+  gesture.pointers.set(e.pointerId, p);
+  clearTimeout(longPressTimer);
+  if (gesture.pointers.size === 2) {
+    // -> pinch zoom
+    gesture.mode = "pinch";
+    gesture.pinchStart = pinchDist(gesture.pointers);
+    gesture.pinchPx = S.pxPerSec;
+    const pts = [...gesture.pointers.values()];
+    const midX = (pts[0].x + pts[1].x) / 2;
+    gesture.pinchMidAbsX = absX(e.clientX) - (p.x - midX); // absolute x under midpoint
+    gesture.pinchMidViewX = midX;
+    return;
+  }
+  const c = clipAt(gesture.startAbsX, p.y);
+  if (c && !S.viewOnly && !c.baked) {
+    gesture.mode = "maybe-clip"; gesture.clip = c; gesture.origAt = c.at;
+    longPressTimer = setTimeout(() => {
+      if (gesture && gesture.mode === "maybe-clip" && !gesture.moved) {
+        gesture.longFired = true; showClipMenu(c); gesture = null;
+      }
     }, 500);
-    } else {
-      drag = { seek: true, startX: p.x, moved: false, pid: e.pointerId };
-      canvas.setPointerCapture(e.pointerId);
-    }
+  } else if (c && c.baked) {
+    gesture.mode = "maybe-tap"; gesture.clip = c; gesture.bakedTap = true;
   } else {
-    drag = { seek: true, startX: p.x, moved: false, pid: e.pointerId };
-    canvas.setPointerCapture(e.pointerId);
+    gesture.mode = "maybe-pan";
   }
 });
 canvas.addEventListener("pointermove", e => {
-  if (!drag || e.pointerId !== drag.pid) return;
+  if (!gesture || !gesture.pointers.has(e.pointerId)) return;
   const p = canvasPos(e);
-  const dx = p.x - drag.startX;
-  if (Math.abs(dx) > 6) { drag.moved = true; clearTimeout(longPressTimer); }
-  if (drag.seek) {
-    S.playhead = snapT(Math.max(0, Math.min(S.duration, x2t(p.x))));
-    if (drag.moved) syncVideo();
-    draw(); updateTime();
-  } else if (drag.clip && drag.moved && !S.viewOnly && !drag.baked) {
-    const dt = dx / S.pxPerSec;
-    let nt = Math.max(0, drag.origAt + dt);
-    nt = Math.min(nt, S.duration - drag.clip.duration);
-    drag.clip.at = snapT(nt);
+  gesture.pointers.set(e.pointerId, p);
+  if (gesture.mode === "pinch" && gesture.pointers.size === 2) {
+    const d = pinchDist(gesture.pointers);
+    if (gesture.pinchStart > 0 && d > 0) {
+      const pts = [...gesture.pointers.values()];
+      const midX = (pts[0].x + pts[1].x) / 2;
+      zoomAtViewX(midX, gesture.pinchPx * d / gesture.pinchStart);
+    }
+    return;
+  }
+  if (gesture.mode !== "maybe-clip" && gesture.mode !== "maybe-pan" &&
+      gesture.mode !== "maybe-tap" && gesture.mode !== "clip" && gesture.mode !== "pan") return;
+  const dx = p.x - gesture.startX, dy = p.y - gesture.startY;
+  if (!gesture.moved && Math.hypot(dx, dy) > 8) {
+    gesture.moved = true;
+    clearTimeout(longPressTimer);
+    if (gesture.mode === "maybe-clip") gesture.mode = "clip";
+    else if (gesture.mode === "maybe-pan" || gesture.mode === "maybe-tap") gesture.mode = "pan";
+  }
+  if (gesture.mode === "pan") {
+    const now = performance.now();
+    const dt = Math.max(1, now - gesture.lastT);
+    const newScroll = Math.max(0, gesture.startScroll - dx);
+    const oldScroll = tlScroll.scrollLeft;
+    tlScroll.scrollLeft = newScroll;
+    gesture.vel = 0.8 * gesture.vel + 0.2 * ((newScroll - oldScroll) / dt); // signed px/ms
+    gesture.lastT = now;
+  } else if (gesture.mode === "clip" && gesture.clip) {
+    const adx = absX(e.clientX) - gesture.startAbsX;
+    const dt = adx / S.pxPerSec;
+    let nt = Math.max(0, gesture.origAt + dt);
+    nt = Math.min(nt, S.duration - gesture.clip.duration);
+    gesture.clip.at = snapT(nt);
     draw(); updateChanges();
+  } else if ((gesture.mode === "maybe-pan" || gesture.mode === "maybe-tap") && !gesture.moved) {
+    // finger down, not yet moved: live scrub preview like CapCut
+    S.playhead = snapT(Math.max(0, Math.min(S.duration, x2t(absX(e.clientX)))));
+    draw(); updateTime();
   }
 });
-canvas.addEventListener("pointerup", e => {
+function endGesture(e, cancelled) {
   clearTimeout(longPressTimer);
-  if (!drag || e.pointerId !== drag.pid) return;
-  const p = canvasPos(e);
-  if (drag.seek && !drag.moved) {
-    S.playhead = snapT(x2t(p.x));
-    syncVideo(); draw(); updateTime();
-  } else if (drag.clip && !drag.moved) {
-    selectClip(drag.clip.id);
-    if (drag.baked) toast("🔒 Baked into the render — reference only");
-  } else if (drag.clip && drag.moved && !S.viewOnly && !drag.baked) {
-    selectClip(drag.clip.id);
-    toast(drag.clip.label + " → " + fmt(drag.clip.at));
+  if (!gesture) return;
+  const g = gesture; gesture = null;
+  if (cancelled) return;
+  if (g.mode === "pinch") return; // other finger may still be down; fresh gesture starts on next down
+  if (!g.moved) {
+    if (g.longFired) return;
+    const ax = g.startAbsX;
+    if (g.mode === "maybe-clip" && g.clip) {
+      selectClip(g.clip.id);
+    } else if (g.mode === "maybe-tap" && g.clip) {
+      selectClip(g.clip.id);
+      if (g.bakedTap) toast("🔒 Baked into the render — reference only");
+    } else {
+      // tap on empty track = seek (CapCut pattern)
+      S.playhead = snapT(Math.max(0, Math.min(S.duration, x2t(ax))));
+      syncVideo(); draw(); updateTime();
+    }
+  } else if (g.mode === "clip" && g.clip) {
+    selectClip(g.clip.id);
+    toast(g.clip.label + " → " + fmt(g.clip.at));
+  } else if (g.mode === "pan" && Math.abs(g.vel) > 0.15) {
+    // momentum glide (native-scroll feel)
+    panMomentum = g.vel;
+    const step = () => {
+      panMomentum *= 0.94;
+      if (Math.abs(panMomentum) < 0.05 || !tlScroll) { panRaf = 0; return; }
+      tlScroll.scrollLeft = Math.max(0, tlScroll.scrollLeft + panMomentum * 16);
+      panRaf = requestAnimationFrame(step);
+    };
+    panRaf = requestAnimationFrame(step);
   }
-  drag = null;
-});
-canvas.addEventListener("pointercancel", () => { clearTimeout(longPressTimer); drag = null; });
+}
+canvas.addEventListener("pointerup", e => endGesture(e, false));
+canvas.addEventListener("pointercancel", e => endGesture(e, true));
 
 /* Long-press clip menu (BandLab pattern) */
 function showClipMenu(c) {
@@ -1187,7 +1677,16 @@ function syncVideo() {
   if (Math.abs(video.currentTime - S.playhead) > 0.3) video.currentTime = S.playhead;
 }
 video.addEventListener("timeupdate", () => {
-  if (!video.paused && !drag) { S.playhead = video.currentTime; draw(); updateTime(); updateScrub(); }
+  if (!video.paused && !drag) {
+    S.playhead = video.currentTime;
+    draw(); updateTime(); updateScrub();
+    // CapCut pattern: keep playhead visible — auto-scroll timeline during playback
+    const px = t2x(S.playhead);
+    const viewL = tlScroll.scrollLeft, viewR = viewL + tlScroll.clientWidth;
+    if (px < viewL + 40 || px > viewR - 40) {
+      tlScroll.scrollLeft = Math.max(0, px - tlScroll.clientWidth * 0.3);
+    }
+  }
 });
 $("playBtn").onclick = () => { video.paused ? video.play() : video.pause(); };
 video.addEventListener("play", () => { $("playBtn").textContent = "⏸"; $("aPlayBtn").textContent = "⏸"; });
@@ -1215,9 +1714,43 @@ function updateTime() {
   $("frameDisplay").textContent = "F " + Math.round(S.playhead * FPS);
 }
 
-/* ============ ZOOM / SNAP ============ */
-$("zoomIn").onclick = () => { S.pxPerSec = Math.min(60, S.pxPerSec * 1.5); resize(); };
-$("zoomOut").onclick = () => { S.pxPerSec = Math.max(3, S.pxPerSec / 1.5); resize(); };
+/* ============ ZOOM / SNAP / FOLLOW ============ */
+// Zoom anchored at a viewport x: the time under that point stays under it (CapCut pattern)
+function zoomAtViewX(viewX, newPxs) {
+  newPxs = Math.max(3, Math.min(160, newPxs));
+  if (newPxs === S.pxPerSec) return;
+  const tMid = x2t(tlScroll.scrollLeft + viewX);
+  S.pxPerSec = newPxs;
+  resize();
+  tlScroll.scrollLeft = Math.max(0, t2x(tMid) - viewX);
+  draw();
+}
+function zoomCenter(f) { zoomAtViewX(viewW() / 2, S.pxPerSec * f); }
+$("zoomIn").onclick = () => zoomCenter(1.5);
+$("zoomOut").onclick = () => zoomCenter(1 / 1.5);
+// Follow-playhead toggle (CapCut auto-follows during playback)
+if (S.follow === undefined) S.follow = true;
+$("followBtn").onclick = () => {
+  S.follow = !S.follow;
+  $("followBtn").style.opacity = S.follow ? 1 : 0.4;
+  toast("Follow playhead " + (S.follow ? "on" : "off"));
+  if (S.follow) followPlayhead(true);
+};
+$("followBtn").style.opacity = 1;
+function followPlayhead(force) {
+  if (!S.follow && !force) return;
+  const px = t2x(S.playhead), sl = tlScroll.scrollLeft, vw = viewW();
+  if (px > sl + vw - 80 || px < sl + 40) {
+    tlScroll.scrollLeft = Math.max(0, px - vw * 0.3); // playhead lands 30% from left
+  }
+}
+$("zoomFit").onclick = () => {
+  // Fit entire timeline in view (CapCut pattern)
+  const availW = tlScroll.clientWidth - S.labelW - 40;
+  S.pxPerSec = Math.max(3, Math.min(60, availW / S.duration));
+  resize();
+  tlScroll.scrollLeft = 0;
+};
 $("snapBtn").onclick = () => {
   S.snap = !S.snap;
   $("snapBtn").style.opacity = S.snap ? 1 : 0.4;
@@ -1225,13 +1758,51 @@ $("snapBtn").onclick = () => {
 };
 $("snapBtn").style.opacity = 1;
 
-/* ============ VIDEO URL ============ */
+/* ============ VIDEO SOURCE (bundled + import + opt-in URL) ============ */
+let currentObjectUrl = null;
+let urlImportEnabled = false;
 function setVideoUrl(u) {
   $("pvLoading").classList.remove("hide");
   $("pvError").classList.remove("show");
-  video.src = u; $("videoUrl").value = u;
+  if (currentObjectUrl && u !== currentObjectUrl) { URL.revokeObjectURL(currentObjectUrl); currentObjectUrl = null; }
+  if (u && u.startsWith("blob:")) currentObjectUrl = u;
+  video.src = u;
 }
-$("loadUrl").onclick = () => { const u = $("videoUrl").value.trim(); if (u) setVideoUrl(u); };
+function importVideoFile(file) {
+  if (!file) return;
+  const url = URL.createObjectURL(file);
+  setVideoUrl(url);
+  toast("Loaded: " + file.name);
+}
+// Opt-in URL import: YouTube / Google Drive / direct video links
+function resolveVideoUrl(raw) {
+  const u = (raw || "").trim();
+  if (!u) return null;
+  // YouTube — cannot play raw in <video>; be honest, don't fake it
+  if (/youtu\.?be/.test(u)) {
+    toast("YouTube can't stream directly — download it first (yt-dlp / savefrom), then use Import.");
+    return null;
+  }
+  // Google Drive share links → direct download URL
+  let m = u.match(/drive\.google\.com\/file\/d\/([A-Za-z0-9_-]+)/) || u.match(/[?&]id=([A-Za-z0-9_-]+)/);
+  if (/drive\.google\.com/.test(u) && m) return "https://drive.google.com/uc?export=download&id=" + m[1];
+  // Direct video file
+  return u;
+}
+function loadUrlVideo() {
+  const resolved = resolveVideoUrl($("urlInput").value);
+  if (resolved) { setVideoUrl(resolved); toast("Loading from URL…"); }
+}
+$("urlToggle").onclick = () => {
+  urlImportEnabled = !urlImportEnabled;
+  $("urlToggle").classList.toggle("toggled", urlImportEnabled);
+  $("urlInputRow").style.display = urlImportEnabled ? "flex" : "none";
+  if (urlImportEnabled) toast("URL import ON — paste a link below");
+};
+$("urlLoadBtn").onclick = loadUrlVideo;
+$("urlInput").addEventListener("keydown", e => { if (e.key === "Enter") loadUrlVideo(); });
+$("importFile").addEventListener("change", e => importVideoFile(e.target.files[0]));
+$("importFileErr").addEventListener("change", e => importVideoFile(e.target.files[0]));
 $("pvRetry").onclick = () => { if (video.src) setVideoUrl(video.src); };
 video.addEventListener("loadstart", () => {
   $("pvLoading").classList.remove("hide");
@@ -1257,7 +1828,8 @@ const PV = {
   pinchDist: 0,
 };
 function applyZoom() {
-  video.style.transform = `scale(${PV.zoom}) translate(${PV.panX}px, ${PV.panY}px)`;
+  // translate() then scale(): pan values are in unscaled screen pixels (intuitive)
+  video.style.transform = `translate(${PV.panX}px, ${PV.panY}px) scale(${PV.zoom})`;
   const ind = $("pvZoomInd");
   if (PV.zoom > 1.01) { ind.textContent = PV.zoom.toFixed(1) + "×"; ind.classList.add("show"); }
   else ind.classList.remove("show");
@@ -1281,9 +1853,9 @@ $("videoWrap").addEventListener("pointermove", e => {
     wrap.style.right = "auto"; wrap.style.bottom = "auto";
     pvTouch.x = e.clientX; pvTouch.y = e.clientY;
   }
-  // Pan when zoomed
+  // Pan when zoomed (translate-then-scale: pan in screen pixels, no zoom division needed)
   if (PV.zoom > 1.01 && PV.mode === "normal" && pvTouch.moved) {
-    PV.panX += dx / PV.zoom; PV.panY += dy / PV.zoom;
+    PV.panX += dx; PV.panY += dy;
     applyZoom();
     pvTouch.x = e.clientX; pvTouch.y = e.clientY;
   }
@@ -1681,21 +2253,42 @@ let toolsInit = false;
 function initTools() {
   if (toolsInit) return;
   const wrap = $("toolCats");
-  TOOLKIT.forEach(cat => {
+  const chips = $("toolChips");
+  let total = 0;
+  TOOLKIT.forEach((cat, ci) => {
+    total += cat.tools.length;
+    const cid = "toolcat-" + ci;
     const div = document.createElement("div");
     div.className = "tool-cat";
-    div.innerHTML = "<h3>" + cat.cat + "</h3>";
+    div.id = cid;
+    div.innerHTML = "<h3>" + cat.cat + ' <span style="color:var(--dim);font-size:12px">(' + cat.tools.length + ")</span></h3>";
     const grid = document.createElement("div");
     grid.className = "tool-grid";
     cat.tools.forEach(t => {
-      const a = document.createElement("a");
-      a.className = "tool-card"; a.href = t.url; a.target = "_blank"; a.rel = "noopener";
-      a.innerHTML = "<b>" + t.name + '<span class="free-badge">FREE</span></b><span>' + t.desc + "</span>";
-      grid.appendChild(a);
+      const inner = "<b>" + t.name + '<span class="free-badge">FREE</span></b><span>' + t.desc + "</span>";
+      const hasUrl = t.url && t.url !== "#";
+      const el = document.createElement(hasUrl ? "a" : "div");
+      el.className = "tool-card";
+      el.innerHTML = inner;
+      if (hasUrl) { el.href = t.url; el.target = "_blank"; el.rel = "noopener"; }
+      else if (/FUSION|Bling Recipes/i.test(t.name)) {
+        el.style.cursor = "pointer";
+        el.onclick = () => { const g = $("fusion-guide"); if (g) g.scrollIntoView(); };
+      }
+      grid.appendChild(el);
     });
     div.appendChild(grid);
     wrap.appendChild(div);
+    if (chips) {
+      const chip = document.createElement("button");
+      chip.className = "tool-chip";
+      chip.innerHTML = cat.cat + " <span>" + cat.tools.length + "</span>";
+      chip.onclick = () => { const t = document.getElementById(cid); if (t) t.scrollIntoView(); };
+      chips.appendChild(chip);
+    }
   });
+  const tc = $("toolCount");
+  if (tc) tc.innerHTML = "<b>" + total + " free tools</b> · " + TOOLKIT.length + " categories — video, audio &amp; music production, 2D/3D, AI, AR warp, fonts, drawing, design &amp; cover art. Tap a category to jump, tap a tool to open.";
   toolsInit = true;
 }
 
@@ -1853,28 +2446,35 @@ function renderRecList() {
 }
 
 /* ============ PROJECT TREE (folder hierarchy) ============ */
-const EP02_PREVIEW_URL = "https://muse.ai/files/1299464149925011/2923847461309916/2z1fnrzhfcpls4ucsext5boe/ep02-v8b-preview.mp4";
+const EP02_PREVIEW_URL = "assets/videos/ep02-preview.mp4";
 const STATUS_BADGE = { posted: "🟢 Posted", inprogress: "🟡 In Progress", draft: "⚪ Draft" };
 const PROJECT_TREE = [
   { id:"wg", name:"Wizard Gang", kind:"show", icon:"📁", open:true, children:[
     { id:"wg-eps", name:"Episodes", icon:"🎬", open:true, children:[
-      { id:"wg-pilot", leaf:true, icon:"🎞️", name:"Pilot", note:"50s pilot", status:"draft", file:"~/workspace/trippedd-studio/production/WIZARD_GANG_EP01/pilot-50s.mp4" },
+      { id:"wg-pilot", leaf:true, icon:"🎞️", name:"Pilot", note:"50s pilot", status:"draft", video_url:"assets/videos/wg-pilot-50s.mp4",
+        file:"~/workspace/trippedd-studio/production/WIZARD_GANG_EP01/pilot-50s.mp4" },
       { id:"wg-ep01", leaf:true, icon:"🎞️", name:"EP01", status:"draft", file:"~/workspace/trippedd-studio/production/WIZARD_GANG_EP01/wizard-gang-ep01-16x9.mp4" },
       { id:"wg-ep02", leaf:true, icon:"🎞️", name:"EP02 — v8b review cut (current)", note:"16 dialogue clips loaded", status:"inprogress", video_url:EP02_PREVIEW_URL, isDefault:true },
     ]},
     { id:"wg-shorts", name:"Shorts", icon:"📱", children:[
       { id:"wg-short-cipher", leaf:true, icon:"📱", name:'Cipher "Paper" promo', status:"posted",
         yt:"https://youtu.be/NrxNT9bNOvM", fb:"https://facebook.com/reel/2707381089680953/",
+        video_url:"assets/videos/wg-cipher-paper-promo.mp4",
         file:"~/workspace/cipher-paper-clip.mp4" },
       { id:"wg-short-ashes", leaf:true, icon:"📱", name:'Ashes "All 9" rig test', status:"posted",
-        yt:"https://youtu.be/_91oLjh8YTM", file:"~/workspace/ashes-mouth-pack/ashes-rig-test-v4.mp4" },
+        yt:"https://youtu.be/_91oLjh8YTM", video_url:"assets/videos/wg-ashes-rig-test.mp4",
+        file:"~/workspace/ashes-mouth-pack/ashes-rig-test-v4.mp4" },
     ]},
     { id:"wg-comms", name:"Commercials", icon:"📺", children:[] },
     { id:"wg-bumps", name:"Bumps", icon:"🎞️", children:[] },
     { id:"wg-cards", name:"Title Cards", icon:"🃏", children:[
       { id:"wg-card-ep02", leaf:true, icon:"🃏", name:"EP02 Title Card w/ sound", status:"posted",
         yt:"https://youtu.be/jSfUA-KV-qw", fb:"https://facebook.com/reel/1637696227948391/",
+        video_url:"assets/videos/wg-title-card-sound.mp4",
         file:"~/workspace/trippedd-studio/production/WIZARD_GANG_EP01/ep02-title-card-10s-sound.mp4" },
+      { id:"wg-card-ep02-silent", leaf:true, icon:"🃏", name:"EP02 Title Card (silent)", status:"draft",
+        video_url:"assets/videos/wg-title-card-silent.mp4",
+        file:"~/workspace/trippedd-studio/production/WIZARD_GANG_EP01/ep02-title-card-10s.mp4" },
     ]},
     { id:"wg-segs", name:"Segments", icon:"🧩", children:[] },
   ]},
@@ -1892,26 +2492,42 @@ const PROJECT_TREE = [
   { id:"bannon", name:"Bannon", kind:"game", icon:"📁", children:[
     { id:"bannon-bf1", name:"Brutal Fist 1", icon:"🎮", children:[] },
     { id:"bannon-cuts", name:"Cutscenes", icon:"🎬", children:[] },
-    { id:"bannon-trail", name:"Trailers/Commercials", icon:"📺", children:[] },
+    { id:"bannon-trail", name:"Trailers/Commercials", icon:"📺", children:[
+      { id:"bannon-stickup", leaf:true, icon:"📺", name:"STICK_UP trailer (16x9)", status:"draft",
+        video_url:"assets/videos/game-bannon-stickup.mp4",
+        file:"~/workspace/bannon-video-pipe/deliveries/STICK_UP/v1/STICK_UP_16x9.mp4" },
+    ]},
   ]},
   { id:"cd", name:"Concrete Dragon", kind:"game", icon:"📁", children:[
     { id:"cd-game", name:"Game", icon:"🎮", children:[] },
+    { id:"cd-media", name:"Trailers & Showcases", icon:"📺", children:[
+      { id:"cd-trailer", leaf:true, icon:"📺", name:"Cinematic trailer", status:"draft",
+        video_url:"assets/videos/game-cd-trailer.mp4",
+        file:"~/workspace/ConcreteDragon/assets/youtube/cd-cinematic-trailer.mp4" },
+      { id:"cd-gameplay", leaf:true, icon:"🎮", name:"Gameplay angles", status:"draft",
+        video_url:"assets/videos/game-cd-gameplay.mp4",
+        file:"~/workspace/ConcreteDragon/assets/youtube/cd-gameplay-angles.mp4" },
+      { id:"cd-chars", leaf:true, icon:"👥", name:"Character showcase", status:"draft",
+        video_url:"assets/videos/game-cd-characters.mp4",
+        file:"~/workspace/ConcreteDragon/assets/youtube/cd-character-showcase.mp4" },
+    ]},
   ]},
   { id:"trippedd", name:"TRIPPEDD", kind:"network", icon:"📁", open:true, children:[
     { id:"tp-ep01", name:'EP01 "The Walk"', kind:"episode", icon:"📁", open:true, children:[
       { id:"tp-ep01-timeline", leaf:true, icon:"🎬", name:"Episode Timeline — 11-segment assembly", note:"LOTI commercial locked at segment 5", status:"inprogress" },
       { id:"tp-ep01-loti", leaf:true, icon:"📺", name:"Luck of the Irish — commercial (FINAL)", note:"53.4s — finished, locked at segment 5",
-        status:"inprogress", video_url:"https://muse.ai/files/1299464149925011/1403360548444288/41skpvlukugc1nva60a8736x/loti-commercial-preview.mp4",
+        status:"inprogress", video_url:"assets/videos/loti-preview.mp4",
         file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/segments/luck-of-the-irish/luck-of-the-irish-commercial-final.mp4" },
       { id:"tp-ep01-basecut", leaf:true, icon:"🎞️", name:"Base Cut — review (reference)", note:"943.9s review encode, 15:44 — reference only",
-        status:"draft", video_url:"https://muse.ai/files/1299464149925011/4755652294713700/yh2cmu37h7u15q1p8repws7c/ep01-basecut-preview.mp4",
+        status:"draft", video_url:"assets/videos/ep01-basecut-preview.mp4",
         file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/base-cut/EP01-THE-WALK-basecut-review.mp4" },
       { id:"tp-ep01-cards", name:"Cards", icon:"🃏", children:[
-        { id:"tp-card-stay", leaf:true, icon:"🃏", name:"card-stay-trippedd", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-stay-trippedd.mp4" },
+        { id:"tp-card-stay", leaf:true, icon:"🃏", name:"card-stay-trippedd", status:"draft", video_url:"assets/videos/tp-card-stay-trippedd.mp4", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-stay-trippedd.mp4" },
         { id:"tp-card-trippedd", leaf:true, icon:"🃏", name:"card-trippedd", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-trippedd.mp4" },
-        { id:"tp-card-network", leaf:true, icon:"🃏", name:"card-trippedd-network", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-trippedd-network.mp4" },
-        { id:"tp-card-wbrb", leaf:true, icon:"🃏", name:"card-black-wbrb", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-black-wbrb.mp4" },
-        { id:"tp-card-dsw", leaf:true, icon:"🃏", name:"card-black-damn-shits-wild", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-black-damn-shits-wild.mp4" },
+        { id:"tp-card-network", leaf:true, icon:"🃏", name:"card-trippedd-network", status:"draft", video_url:"assets/videos/tp-card-network.mp4", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-trippedd-network.mp4" },
+        { id:"tp-card-wbrb", leaf:true, icon:"🃏", name:"card-well-be-right-back", status:"draft", video_url:"assets/videos/tp-card-wbrb.mp4", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-well-be-right-back.mp4" },
+        { id:"tp-card-dsw", leaf:true, icon:"🃏", name:"card-black-damn-shits-wild", status:"draft", video_url:"assets/videos/tp-card-black-dsw.mp4", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-black-damn-shits-wild.mp4" },
+        { id:"tp-card-blackstay", leaf:true, icon:"🃏", name:"card-black-stay-trippedd", status:"draft", video_url:"assets/videos/tp-card-black-stay.mp4", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-black-stay-trippedd.mp4" },
         { id:"tp-card-blank-a", leaf:true, icon:"🃏", name:"card-blank-a", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-blank-a.mp4" },
         { id:"tp-card-blank-b", leaf:true, icon:"🃏", name:"card-blank-b", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-blank-b.mp4" },
       ]},
@@ -1923,20 +2539,35 @@ const PROJECT_TREE = [
       ]},
     ]},
     { id:"tp-shorts", name:"Shorts", icon:"📱", children:[] },
-    { id:"tp-bumps", leaf:true, icon:"🎞️", name:"Bumps", note:"Awaiting owner review", status:"draft", file:"~/workspace/trippedd-bumps/" },
+    { id:"tp-bumps", name:"Bumps", icon:"🎞️", children:[
+      { id:"tp-bump-01", leaf:true, icon:"🎞️", name:"Bump 01 — Stay TRIPPEDD (5s)", status:"draft", video_url:"assets/videos/tp-bump-01.mp4" },
+      { id:"tp-bump-02", leaf:true, icon:"🎞️", name:"Bump 02 — Couch (5s)", status:"draft", video_url:"assets/videos/tp-bump-02.mp4" },
+      { id:"tp-bump-03", leaf:true, icon:"🎞️", name:"Bump 03 — Trippy ID (10s)", status:"draft", video_url:"assets/videos/tp-bump-03.mp4" },
+      { id:"tp-bump-04", leaf:true, icon:"🎞️", name:"Bump 04 — Tonight (10s)", status:"draft", video_url:"assets/videos/tp-bump-04.mp4" },
+      { id:"tp-bump-05", leaf:true, icon:"🎞️", name:"Bump 05 — Dear TRIPPEDD (10s)", status:"draft", video_url:"assets/videos/tp-bump-05.mp4" },
+      { id:"tp-bump-06", leaf:true, icon:"🎞️", name:"Bump 06 — Typewriter (15s)", status:"draft", video_url:"assets/videos/tp-bump-06.mp4" },
+      { id:"tp-bump-07", leaf:true, icon:"🎞️", name:"Bump 07 — WG Promo (15s)", status:"draft", video_url:"assets/videos/tp-bump-07.mp4" },
+      { id:"tp-bump-08", leaf:true, icon:"🎞️", name:"Bump 08 — CD Promo (15s)", status:"draft", video_url:"assets/videos/tp-bump-08.mp4" },
+      { id:"tp-bump-09", leaf:true, icon:"🎞️", name:"Bump 09 — Ambient Drift (30s)", status:"draft", video_url:"assets/videos/tp-bump-09.mp4" },
+      { id:"tp-bump-10", leaf:true, icon:"🎞️", name:"Bump 10 — The Meeting (30s)", status:"draft", video_url:"assets/videos/tp-bump-10.mp4" },
+    ]},
     { id:"tp-cards", name:"Title Cards", icon:"🃏", children:[] },
   ]},
   { id:"fw", name:"Font Wizard", kind:"commercials", icon:"📁", children:[
     { id:"fw-bush", leaf:true, icon:"📺", name:"Bush font commercial", status:"posted",
-      yt:"https://youtu.be/YKy35a1VpEM", file:"~/workspace/font-wizard/fonts/bush/bush-commercial-mural.mp4" },
+      yt:"https://youtu.be/YKy35a1VpEM", video_url:"assets/videos/font-bush-commercial.mp4",
+      file:"~/workspace/font-wizard/fonts/bush/bush-commercial-mural.mp4" },
     { id:"fw-tdw", leaf:true, icon:"📺", name:"Trippy Drippy Wizard commercial", status:"draft",
+      video_url:"assets/videos/font-trippydrippy-commercial.mp4",
       file:"~/workspace/font-wizard/assets/youtube-commercials/trippy-drippy-wizard-font-commercial.mp4" },
     { id:"fw-bb", leaf:true, icon:"📺", name:"Block Burner commercial", status:"draft",
+      video_url:"assets/videos/font-blockburner-commercial.mp4",
       file:"~/workspace/font-wizard/fonts/block-burner/block-burner-commercial.mp4" },
   ]},
   { id:"goodville", name:"Goodville", kind:"TRIPPEDD EP01 gag family", icon:"📁", children:[
     { id:"gv-promo", leaf:true, icon:"📱", name:"Goodville promo 15s (SMART rebuild)", note:"Owner verdict pending", status:"inprogress",
-      file:"~/workspace/goodville-promo-15s_SMART.mp4" },
+      video_url:"assets/videos/gv-promo-smart.mp4",
+      file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/goodville/promo-15s/goodville-promo-15s_SMART.mp4" },
   ]},
 ];
 
@@ -2408,5 +3039,452 @@ initHeaderSelect();
 setEditorMode("edit"); /* EP02 v8b (default leaf) opens in edit mode */
 setInterval(() => { if (!video.paused && !drag) { S.playhead = video.currentTime; draw(); updateTime(); updateScrub(); if ($("tab-animate").classList.contains("active")) drawAnimFrame(); } }, 120);
 </script>
+<script>
+"use strict";
+/* ================= POCKET STUDIO v2 — GAME DEV TAB =================
+   Self-contained. Uses app.html globals: $, toast, copyText, showModal,
+   escapeHtml, fmt, initViewer3D, V3. Do NOT redeclare any of them. */
+
+/* ---- fallback game data (used only if tools-data/game-assets.json can't be fetched) ---- */
+const GD_FALLBACK = { source: "fallback", games: [
+  { id: "Bannon", name: "Bannon", emoji: "\uD83E\uDD4A", repo: "mhvnsnt/Bannon",
+    models: [ { name: "Stick-Up", verts: null, bones: null, anims: null, glb: "" } ],
+    animPacks: [ { name: "Core set", anims: ["idle", "jab", "cross", "uppercut", "block"] } ],
+    tools: [ { name: "Weight Paint PWA", kind: "pwa", desc: "Paint skin weights on your phone" } ] },
+  { id: "concretedragon", name: "Concrete Dragon", emoji: "\uD83D\uDC09", repo: "~/workspace/ConcreteDragon",
+    models: [ { name: "Hero", verts: null, bones: null, anims: null, glb: "" } ],
+    animPacks: [ { name: "Core set", anims: ["idle", "punch", "kick", "block"] } ],
+    tools: [ { name: "Weight Paint PWA", kind: "pwa", desc: "Paint skin weights on your phone" } ] },
+  { id: "streetbrawl", name: "StreetBrawl", emoji: "\uD83D\uDC4A", repo: "~/workspace/StreetBrawl",
+    models: [ { name: "Fighter", verts: null, bones: null, anims: null, glb: "" } ],
+    animPacks: [ { name: "Core set", anims: ["idle", "punch", "kick"] } ],
+    tools: [ { name: "Weight Paint PWA", kind: "pwa", desc: "Paint skin weights on your phone" } ] },
+  { id: "brutalfist", name: "Brutal Fist", emoji: "\uD83D\uDD25", repo: "~/workspace/brutal-fist-v10",
+    models: [ { name: "Fighter", verts: null, bones: null, anims: null, glb: "" } ],
+    animPacks: [ { name: "Core set", anims: ["idle", "punch", "kick"] } ],
+    tools: [ { name: "Weight Paint PWA", kind: "pwa", desc: "Paint skin weights on your phone" } ] },
+  { id: "ashlane", name: "AshLane", emoji: "\uD83C\uDFAD", repo: "~/workspace/ashlane-play",
+    models: [ { name: "Cipher", verts: null, bones: null, anims: null, glb: "" } ],
+    animPacks: [ { name: "Core set", anims: ["idle", "strike", "taunt"] } ],
+    tools: [ { name: "Weight Paint PWA", kind: "pwa", desc: "Paint skin weights on your phone" } ] },
+  { id: "smoke", name: "SMOKE & MIRRORS", emoji: "\uD83E\uDE9E", repo: "~/workspace/SMOKE-MIRROR-S-",
+    models: [ { name: "Explorer", verts: null, bones: null, anims: null, glb: "" } ],
+    animPacks: [ { name: "Core set", anims: ["idle", "walk", "look"] } ],
+    tools: [ { name: "Weight Paint PWA", kind: "pwa", desc: "Paint skin weights on your phone" } ] }
+] };
+
+let gdInit = false, gdData = null, gdGameId = null, gdPickName = "model.glb";
+
+async function gdFetchData() {
+  const urls = ["tools-data/game-assets.json", "../tools-data/game-assets.json"];
+  for (const u of urls) {
+    try {
+      const r = await fetch(u, { cache: "no-store" });
+      if (r.ok) {
+        const j = await r.json();
+        if (j && j.games && j.games.length) { j.source = "json"; return j; }
+      }
+    } catch (e) { /* try next */ }
+  }
+  return GD_FALLBACK;
+}
+
+function initGameDev() {
+  if (gdInit) return;
+  gdInit = true;
+  gdFetchData().then(d => {
+    gdData = d;
+    gdRenderChips();
+    gdSelectGame(d.games[0].id);
+    gdWireViewport();
+    gdStartTick();
+  });
+}
+/* also self-register on the tab bar, in case the integrator doesn't add an init call */
+document.querySelector("#tabbar").addEventListener("click", e => {
+  const b = e.target.closest('button[data-tab="gamedev"]');
+  if (b) initGameDev();
+});
+
+/* ---- game selector ---- */
+function gdRenderChips() {
+  const c = $("gd-chips");
+  c.innerHTML = gdData.games.map(g =>
+    '<button class="gd-chip" data-game="' + escapeHtml(g.id) + '">' +
+    escapeHtml(g.emoji || "") + " " + escapeHtml(g.name) + "</button>").join("");
+  c.onclick = e => {
+    const b = e.target.closest("[data-game]");
+    if (b) gdSelectGame(b.dataset.game);
+  };
+}
+
+function gdSelectGame(id) {
+  gdGameId = id;
+  document.querySelectorAll("#gd-chips .gd-chip").forEach(x =>
+    x.classList.toggle("active", x.dataset.game === id));
+  gdRenderWorkspace(gdData.games.find(g => g.id === id));
+}
+
+function gdStats(m) {
+  const f = n => (typeof n === "number" ? n.toLocaleString() : "—");
+  let s = f(m.verts) + " verts · " + f(m.bones) + " bones · " + f(m.anims) + " anims";
+  if (m.glb) s += " · GLB linked";
+  return s;
+}
+
+function gdRenderWorkspace(g) {
+  const w = $("gd-workspace");
+  const allModels = g.models || [];
+  // Group: bundled heroes first, then characters, wardrobe, animation
+  const heroes = allModels.filter(m => m.bundled);
+  const chars = allModels.filter(m => !m.bundled && m.category === 'character');
+  const wardrobe = allModels.filter(m => !m.bundled && m.category === 'wardrobe');
+  const anims = allModels.filter(m => !m.bundled && m.category === 'animation');
+  const counts = g.model_counts || {};
+  const total = g.total_models_found || allModels.length;
+
+  const mRow = (m) => {
+    const idx = allModels.indexOf(m);
+    const isB = !!m.bundled;
+    const btn = isB
+      ? '<button class="btn" data-act="load-hero" data-mi="' + idx + '">📥 Load</button>'
+      : '<button class="btn" data-act="model-path" data-mi="' + idx + '">📋 Path</button>';
+    const sub = (m.category ? m.category + ' · ' : '') +
+      (m.size_mb ? m.size_mb + 'MB' : '') +
+      (m.versions > 1 ? ' · ' + m.versions + ' versions' : '') +
+      (isB ? '' : ' · not bundled');
+    return '<div class="gd-model"><div><div class="gd-model-name">' +
+      (isB ? '⭐ ' : '') + escapeHtml(m.name) + "</div>" +
+      '<div class="gd-dim">' + escapeHtml(sub) + "</div></div>" + btn + "</div>";
+  };
+  const sec = (title, list) => list.length
+    ? "<h3 style='margin-top:10px'>" + title + " (" + list.length + ")</h3>" + list.map(mRow).join("")
+    : "";
+  const cntLine = total > allModels.length
+    ? '<div class="gd-dim" style="margin:6px 0">📦 ' + total + ' models on disk · ' +
+      allModels.length + ' listed · ' +
+      (counts.prop ? counts.prop + ' props · ' : '') +
+      (counts.environment ? counts.environment + ' env · ' : '') +
+      'tap 📋 for source path</div>'
+    : "";
+  const packs = (g.animPacks || []).map((p, i) =>
+    '<div class="gd-pack"><div><div class="gd-model-name">' + escapeHtml(p.name) + "</div>" +
+    '<div class="gd-dim">' + escapeHtml((p.anims || []).join(" · ")) + "</div></div>" +
+    '<button class="btn" data-act="play-pack" data-pi="' + i + '">▶ Play on model</button></div>').join("");
+  const tools = (g.tools || []).map((t, i) => {
+    let btn;
+    if (t.kind === "pwa") btn = '<button class="btn" data-act="tool-pwa">🎨 Open</button>';
+    else if (t.url) btn = '<a class="btn" href="' + escapeHtml(t.url) + '" target="_blank" rel="noopener">↗ Open</a>';
+    else if (t.path) btn = '<button class="btn" data-act="tool-copy" data-ti="' + i + '">📋 Copy path</button>';
+    else btn = "";
+    return '<div class="gd-toolrow"><div><div class="gd-model-name">' + escapeHtml(t.name) + "</div>" +
+      '<div class="gd-dim">' + escapeHtml(t.desc || t.path || "") + "</div></div>" + btn + "</div>";
+  }).join("");
+  w.innerHTML =
+    '<div class="gd-card"><h3>' + escapeHtml(g.emoji || "") + " " + escapeHtml(g.name) + "</h3>" +
+    '<div class="gd-dim" style="margin-bottom:4px">Data: ' +
+    (gdData.source === "json" ? "tools-data/game-assets.json" : "built-in fallback") + "</div>" +
+    cntLine +
+    sec("⭐ Bundled — tap to load", heroes) +
+    sec("🦸 Characters", chars) +
+    sec("👕 Wardrobe", wardrobe) +
+    sec("🎞️ Animation packs", anims) +
+    "<h3 style='margin-top:10px'>🎞️ Clip packs</h3>" + (packs || '<div class="gd-dim">No packs listed.</div>') +
+    "<h3 style='margin-top:10px'>📁 Repo</h3>" +
+    '<div class="gd-row"><div class="gd-repo">' + escapeHtml(g.repo || "—") + "</div>" +
+    '<button class="btn" data-act="copy-repo">📋 Copy path</button></div>' +
+    "<h3 style='margin-top:10px'>🧰 Game tools</h3>" + (tools || '<div class="gd-dim">No tools listed.</div>') +
+    "</div>";
+  w.onclick = e => {
+    const b = e.target.closest("[data-act]");
+    if (!b) return;
+    const act = b.dataset.act, game = gdData.games.find(x => x.id === gdGameId);
+    if (act === "load-hero") gdLoadHero(game, game.models[+b.dataset.mi]);
+    else if (act === "model-path") { const m = game.models[+b.dataset.mi]; copyText(m.source_path || m.name); toast("Path copied — ask agent to bundle"); }
+    else if (act === "play-pack") gdPlayPack(game, game.animPacks[+b.dataset.pi]);
+    else if (act === "copy-repo") { copyText(game.repo || ""); toast("Repo path copied"); }
+    else if (act === "tool-pwa") gdOpenPwa();
+    else if (act === "tool-copy") { const t = game.tools[+b.dataset.ti]; copyText(t.path || ""); toast("Path copied"); }
+  };
+}
+
+/* ---- 3D engine: ensure V3, load, animate ---- */
+function gdEnsureV3(cb) {
+  if (typeof V3 !== "undefined" && V3 && V3.scene && V3.loader) { gdHookLoader(); cb(); return; }
+  toast("Starting 3D engine…");
+  try { initViewer3D(); } catch (e) { toast("3D engine failed: " + e.message); return; }
+  let n = 0;
+  const iv = setInterval(() => {
+    if (typeof V3 !== "undefined" && V3 && V3.scene && V3.loader) {
+      clearInterval(iv); gdHookLoader(); cb();
+    } else if (++n > 60) { clearInterval(iv); toast("3D engine timed out"); }
+  }, 150);
+}
+
+/* hook the shared loader so ANY GLB load (either tab) populates the animation UI */
+function gdHookLoader() {
+  if (!V3.loader || V3.loader._gdHooked) return;
+  V3.loader._gdHooked = true;
+  const orig = V3.loader.parse.bind(V3.loader);
+  V3.loader.parse = function (buf, path, onDone, onErr) {
+    orig(buf, path, gltf => { gdSetupAnims(gltf); onDone(gltf); }, onErr);
+  };
+}
+
+function gdSetupAnims(gltf) {
+  const THREE = V3.THREE;
+  const g = V3.gd || (V3.gd = { playing: false, loop: true, skelOn: false, wireOn: false });
+  if (g.helper) { V3.scene.remove(g.helper); g.helper = null; }
+  g.playing = false; g.skelOn = false; g.wireOn = false;
+  g.clips = gltf.animations || [];
+  g.dur = 0;
+  try { g.mixer = new THREE.AnimationMixer(gltf.scene); } catch (e) { g.mixer = null; }
+  g.action = null;
+  const sel = $("gdClipSelect");
+  sel.innerHTML = "";
+  if (!g.clips.length) {
+    const o = document.createElement("option");
+    o.value = ""; o.textContent = "No animations in this GLB";
+    sel.appendChild(o);
+  } else {
+    g.clips.forEach((c, i) => {
+      const o = document.createElement("option");
+      o.value = String(i); o.textContent = c.name || ("clip " + i);
+      sel.appendChild(o);
+    });
+    gdSelectClip("0");
+  }
+  gdSyncPlayBtn(); gdSyncScrub();
+  ["gdSkelBtn", "gdWireBtn"].forEach(id => $(id).classList.remove("toggled"));
+}
+
+function gdSelectClip(idx) {
+  const g = V3.gd;
+  if (!g || !g.mixer || !g.clips || !g.clips.length) return;
+  const THREE = V3.THREE;
+  if (g.action) { g.action.stop(); }
+  const clip = g.clips[+idx];
+  g.action = g.mixer.clipAction(clip);
+  g.action.setLoop(g.loop ? THREE.LoopRepeat : THREE.LoopOnce, Infinity);
+  g.action.clampWhenFinished = !g.loop;
+  g.dur = clip.duration || 0;
+  g.mixer.setTime(0);
+  if (g.playing) g.action.play();
+  $("gdClipSelect").value = String(idx);
+  gdSyncScrub();
+}
+
+function gdTogglePlay() {
+  const g = V3.gd;
+  if (!g || !g.action) { toast("Load a GLB with animations first"); return; }
+  g.playing = !g.playing;
+  if (g.playing) { g.action.paused = false; g.action.play(); }
+  else { g.action.paused = true; }
+  gdSyncPlayBtn();
+}
+
+function gdSyncPlayBtn() {
+  const g = V3.gd, b = $("gdPlayBtn");
+  const on = !!(g && g.playing);
+  b.textContent = on ? "⏸ Pause" : "▶ Play";
+  b.classList.toggle("toggled", on);
+}
+
+function gdSyncScrub() {
+  const g = V3.gd, s = $("gdScrub");
+  const t = (g && g.action) ? g.action.time : 0;
+  const d = (g && g.dur) || 0;
+  s.value = d > 0 ? String(Math.round(t / d * 1000)) : "0";
+  $("gdTime").textContent = fmt(t) + (d > 0 ? " / " + fmt(d) : "");
+}
+
+let gdTickOn = false;
+function gdStartTick() {
+  if (gdTickOn) return;
+  gdTickOn = true;
+  let last = performance.now();
+  const step = now => {
+    requestAnimationFrame(step);
+    const dt = Math.min(0.1, (now - last) / 1000);
+    last = now;
+    const g = (typeof V3 !== "undefined" && V3) ? V3.gd : null;
+    if (g && g.mixer && g.playing) { g.mixer.update(dt); gdSyncScrub(); }
+  };
+  requestAnimationFrame(step);
+}
+
+/* load a GLB buffer into the shared V3 scene (frames camera, updates bone list + info) */
+function gdLoadBuffer(buf, name, done) {
+  gdEnsureV3(() => {
+    const THREE = V3.THREE;
+    V3.loader.parse(buf, "", gltf => {
+      if (V3.model) V3.scene.remove(V3.model);
+      V3.model = gltf.scene;
+      V3.scene.add(V3.model);
+      const box = new THREE.Box3().setFromObject(V3.model);
+      const c = box.getCenter(new THREE.Vector3());
+      V3.ctl.target.copy(c); V3.ctl.update();
+      const bones = [];
+      V3.model.traverse(o => { if (o.isBone) bones.push(o.name); });
+      V3.bones = bones;
+      const sel = $("boneSelect");
+      if (sel) {
+        sel.innerHTML = "";
+        bones.forEach(b => {
+          const o = document.createElement("option");
+          o.value = b; o.textContent = b; sel.appendChild(o);
+        });
+        sel.style.display = bones.length ? "" : "none";
+      }
+      let vcount = 0;
+      V3.model.traverse(o => { if (o.isMesh && o.geometry) vcount += o.geometry.attributes.position.count; });
+      const info = name + " — " + vcount.toLocaleString() + " verts, " + bones.length + " bones";
+      if ($("glbInfo")) $("glbInfo").textContent = info;
+      $("gdVpInfo").textContent = info;
+      toast("Loaded " + name);
+      if (done) done();
+    }, err => toast("GLB parse failed: " + err.message));
+  });
+}
+
+function gdLoadHero(game, model) {
+  if (!model) return;
+  if (model.glb) {
+    toast("Fetching " + model.name + "…");
+    fetch(model.glb)
+      .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.arrayBuffer(); })
+      .then(buf => { gdLoadBuffer(buf, model.name, gdGoto3D); })
+      .catch(err => { toast("Fetch failed: " + err.message + " — pick the file manually"); gdPickFile(model.name); });
+  } else {
+    gdPickFile(model.name);
+  }
+}
+
+function gdPickFile(name) {
+  gdPickName = name || "model.glb";
+  $("gdGlbFile").click();
+}
+
+function gdPlayPack(game, pack) {
+  if (!pack) return;
+  gdEnsureV3(() => {
+    const tryPlay = () => {
+      const g = V3.gd, clips = (g && g.clips) || [];
+      const want = (pack.anims || []).map(a => String(a).toLowerCase());
+      const hit = clips.findIndex(c => want.some(w => String(c.name || "").toLowerCase().indexOf(w) >= 0));
+      if (hit >= 0) {
+        gdSelectClip(String(hit));
+        if (!V3.gd.playing) gdTogglePlay();
+        gdGoto3D();
+      } else {
+        toast(clips.length
+          ? "No match in this model. Clips: " + clips.map(c => c.name).slice(0, 6).join(", ")
+          : "Loaded model has no animations");
+      }
+    };
+    if (V3.model) { tryPlay(); return; }
+    const m = (game.models || []).find(x => x.glb);
+    if (m) {
+      toast("Loading " + m.name + " first…");
+      fetch(m.glb)
+        .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.arrayBuffer(); })
+        .then(buf => gdLoadBuffer(buf, m.name, tryPlay))
+        .catch(err => toast("Fetch failed: " + err.message));
+    } else {
+      toast("Load a GLB first (📂 Load GLB above)");
+    }
+  });
+}
+
+function gdGoto3D() {
+  const b = document.querySelector('#tabbar button[data-tab="viewer3d"]');
+  if (b) b.click();
+}
+
+/* ---- viewport UI wiring (static controls) ---- */
+function gdWireViewport() {
+  $("gdGlbFile").onchange = e => {
+    const f = e.target.files[0];
+    if (!f) return;
+    f.arrayBuffer().then(b => gdLoadBuffer(b, f.name, gdGoto3D));
+    e.target.value = "";
+  };
+  $("gdUrlBtn").onclick = () => {
+    showModal("Load GLB from URL",
+      '<input id="mGdUrl" placeholder="https://.../model.glb" style="width:100%;background:var(--panel2);color:var(--text);border:1px solid #2a2a3a;border-radius:8px;padding:10px;">',
+      () => {
+        const u = $("mGdUrl").value.trim();
+        if (!u) return;
+        fetch(u)
+          .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.arrayBuffer(); })
+          .then(b => gdLoadBuffer(b, u.split("/").pop() || "model.glb", gdGoto3D))
+          .catch(err => toast("Fetch failed: " + err.message));
+      });
+  };
+  $("gdPlayBtn").onclick = () => gdEnsureV3(gdTogglePlay);
+  $("gdClipSelect").onchange = e => { if (e.target.value !== "") gdSelectClip(e.target.value); };
+  $("gdLoopBtn").onclick = () => {
+    const g = V3.gd;
+    if (!g) { toast("Load a GLB first"); return; }
+    g.loop = !g.loop;
+    $("gdLoopBtn").classList.toggle("toggled", g.loop);
+    if (g.action) {
+      g.action.setLoop(g.loop ? V3.THREE.LoopRepeat : V3.THREE.LoopOnce, Infinity);
+      g.action.clampWhenFinished = !g.loop;
+    }
+    toast(g.loop ? "Loop on" : "Loop off (plays once)");
+  };
+  $("gdScrub").oninput = e => {
+    const g = V3.gd;
+    if (!g || !g.mixer || !g.dur) return;
+    g.mixer.setTime((+e.target.value / 1000) * g.dur);
+    gdSyncScrub();
+  };
+  $("gdSkelBtn").onclick = () => {
+    gdEnsureV3(() => {
+      const g = V3.gd;
+      if (!g || !V3.model) { toast("Load a GLB first"); return; }
+      g.skelOn = !g.skelOn;
+      if (g.skelOn) {
+        g.helper = new V3.THREE.SkeletonHelper(V3.model);
+        V3.scene.add(g.helper);
+      } else if (g.helper) {
+        V3.scene.remove(g.helper);
+        if (g.helper.dispose) g.helper.dispose();
+        g.helper = null;
+      }
+      $("gdSkelBtn").classList.toggle("toggled", g.skelOn);
+    });
+  };
+  $("gdWireBtn").onclick = () => {
+    gdEnsureV3(() => {
+      const g = V3.gd;
+      if (!g || !V3.model) { toast("Load a GLB first"); return; }
+      g.wireOn = !g.wireOn;
+      V3.model.traverse(o => {
+        if (!o.isMesh) return;
+        (Array.isArray(o.material) ? o.material : [o.material]).forEach(m => {
+          m.wireframe = g.wireOn; m.needsUpdate = true;
+        });
+      });
+      $("gdWireBtn").classList.toggle("toggled", g.wireOn);
+    });
+  };
+  $("gdGo3dBtn").onclick = gdGoto3D;
+  const open = e => { e.preventDefault(); gdOpenPwa(); };
+  $("gdPwaBtn").onclick = open;
+  $("gdPwaBtn2").onclick = open;
+  $("gdPwaBtn3").onclick = open;
+  $("gdPwaClose").onclick = () => { $("gdPwaModal").style.display = "none"; };
+}
+
+/* ---- weight paint PWA modal ---- */
+function gdOpenPwa() {
+  const m = $("gdPwaModal");
+  if (m.parentElement !== document.body) document.body.appendChild(m); /* escape the display:none tab */
+  m.style.display = "flex";
+}
+</script>
+
 </body>
 </html>

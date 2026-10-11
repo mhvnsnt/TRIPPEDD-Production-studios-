@@ -1,0 +1,18 @@
+{
+ "id": "bannon",
+ "name": "Bannon",
+ "type": "game",
+ "video_url": null,
+ "timeline": null,
+ "characters": [
+  "Bannon",
+  "Stick-Up",
+  "Wreck Patterson",
+  "Cain Elias",
+  "Triple XXX",
+  "Master Sensei"
+ ],
+ "models_dir": "bannon-video-pipe/repo/out",
+ "rigs_dir": null,
+ "notes": "Fighter roster GLBs (56 *_repaired.glb) in models_dir. Art: Nintendo key-art playbook + classic-fighter feel; Concrete Dragon logo is brand mark."
+}

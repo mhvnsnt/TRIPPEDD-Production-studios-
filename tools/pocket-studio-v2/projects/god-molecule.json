@@ -1,0 +1,14 @@
+{
+ "id": "god-molecule",
+ "name": "God Molecule",
+ "type": "show",
+ "video_url": null,
+ "timeline": null,
+ "characters": [
+  "Kevin",
+  "Mars"
+ ],
+ "models_dir": null,
+ "rigs_dir": null,
+ "notes": "Network show repo God-Molecule-Show-Studio. Bible A=God-molecule-production-stage ShowBible.tsx (canon #1), B=Show-Studio sub-bible, C=trippedd-studio GOD_MOLECULE_CANON.md. Production waits on Mars model issues."
+}

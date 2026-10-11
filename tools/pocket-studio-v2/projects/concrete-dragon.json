@@ -1,0 +1,11 @@
+{
+ "id": "concrete-dragon",
+ "name": "Concrete Dragon",
+ "type": "game",
+ "video_url": null,
+ "timeline": null,
+ "characters": null,
+ "models_dir": "ConcreteDragon/game-3d/build/assets",
+ "rigs_dir": null,
+ "notes": "fighter.glb shared build asset. Human-perspective UX law applies to all game UI."
+}

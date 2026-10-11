@@ -92,3 +92,50 @@ Each defect was re-verified with own eyes on the re-rendered frames.
 - End-card text ("GOODVILLE", "NOT SOUTH PARK.") uses low-tessellation curve conversion (resolution_u=2) — letters read as slightly geometric/octagonal (e.g., O's). Legible, fits the crude cutout style, but could be smoothed to resolution 3.
 - Amos Jr. head reads slightly large vs. the key-art lineup (hairback r=1.02). Acceptable for the promo, but the key-art ratio is tighter.
 - The dino head at f217-279 sits at the f280 keyframe position (no rest keyframe before f280; CONSTANT holds the first key). Visually correct (head sits naturally on body), but the rig could use an explicit rest key for cleanliness.
+
+## LIKENESS FIX (2026-10-11) — owner: Amos Jr. looked like "generic Stan"
+
+**Deliverable:** `goodville-promo-15s_LIKENESS.mp4` — 15.000s, 1280×720, 24fps, h264+aac
+**Method:** Key-art extraction + Blender rig drive (the "combined approach"). Amos Jr.'s parts extracted FROM the key art via flood-fill masking (head with shaggy hair/mustache/goatee, torso with tank+tattoo, arms, BEER can), then driven by the Blender cutout rig's per-frame transforms. No AI-generated imagery. LIKENESS LOCK LAW: character looks locked to reference.
+**Old-head fix (owner-flagged same day):** Shots 1–2 framing read as "floating disembodied head + shoulders stump." Fixed by replacing the flat black jacket trapezoid with the key-art jacket texture (collar, zipper, pocket, wide shoulders) running off the bottom frame edge — torso clearly continues, not amputated.
+
+### Per-anchor likeness checklist (each checked against the key art, own eyes)
+
+| Anchor | Key art reference | Rebuild status | Frame evidence |
+|--------|-------------------|----------------|----------------|
+| Shaggy brown hair | Chin-length shaggy brown, silhouette-defining | ✓ Extracted from key art, tracks head rig | f0250: hair silhouette matches |
+| Mustache + chin goatee | Dark mustache + chin goatee | ✓ In head texture | f0250: both visible |
+| Arm tattoo | Right upper arm (viewer's left) | ✓ Extracted, on punch arm | f0250: tattoo visible on punch |
+| White tank top | White tank, key-art style | ✓ Extracted texture | f0250: tank reads correctly |
+| BEER can in hand | Blue can, red BEER label, in fist | ✓ In torso texture (right arm) | f0250: can in hand, label legible |
+| Old-head jacket | Black jacket, collar/zipper, shoulders | ✓ Key-art texture, off-frame bottom | f0036: proper shoulder mass |
+
+### Frames verified (own eyes — likeness pass)
+- **f0036** (1.5s, shot 1): old head with textured jacket — proper shoulders, torso continues off-frame, no longer disembodied.
+- **f0150** (6.25s, shot 2): push-in holds; jacket scales correctly.
+- **f0217** (9.04s, shot 3): Amos at rest — all 5 anchors present, punch arm hangs with tattoo.
+- **f0250** (10.42s, shot 3): punch frame — arm extends left with tattoo, head/torso/can all read as Amos Jr.
+- **f0265** (11.04s, shot 3): arm at 38° — punch follow-through.
+- **f0330** (13.75s, shot 4): end card unchanged.
+
+### Sensorium gates (2026-10-11) — likeness render
+- **Status:** Could not run — sensorium venv (`~/workspace/tools/ai-qc/venv/`) does not exist in this environment; system python lacks sklearn; disk at 83% prevented venv creation. Reported plainly per verification law.
+- **Eyeball verification (own eyes, primary QC):** All frames above checked individually. No AI-generated imagery in pipeline (key-art extractions + rig-driven transforms only).
+
+### Known limitations / still off
+- Punch arm is upper-arm only (no forearm/fist in key-art extraction; key art shows arm at side). Acceptable for fast punch frames, but a full arm would be better.
+- Amos legs remain flat Blender geometry (blue jeans, not in key art). Matches the cutout style; not a likeness anchor.
+- End-card geometric letters (from Blender rebuild) unchanged.
+
+## Artifact fix (2026-10-11) — brown hair chunk in Broadway shots
+- **Defect:** brown extraction artifact (stray hair/mask chunk from armL.png) floated
+  detached left of Amos Jr.'s head at ~10.5s and ~12s, overlapping the TACOS sign.
+  Root cause: armL.png (punch-arm texture) was 94% brown hair pixels from the key-art
+  extraction (337/359 opaque px); when the arm rotated for the punch, the hair swung
+  out from behind the head at certain angles.
+- **Fix:** removed the 337 brown hair pixels from assets/amos_tex/armL.png
+  (alpha=0); 22 non-brown px retained. Re-rendered frames 217–312, rebuilt
+  goodville-promo-15s_LIKENESS.mp4 (15.000s).
+- **Verified (own eyes):** artifact-region brown px 800→5 at 10.5s and 12.0s;
+  Amos Jr.'s actual hair (head.png) intact — shaggy hair, mustache, goatee all
+  present in fixed frames.

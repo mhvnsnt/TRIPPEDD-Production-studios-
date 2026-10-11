@@ -42,10 +42,13 @@ Status: idea banked, not yet written.
 
 ## "The German Guy at Taco Bell" (owner 2026-10-10)
 
-Sitting in the car in front of Taco Bell. A Black dude with a backpack and a
-poncho walks past speaking what sounds like German — or gibberish. Gets
+Sitting in the car in front of Taco Bell. A Black dude in a plastic poncho
+with a backpack, holding a drink cup, walks past speaking what sounds like
+German — or gibberish trying to sound German, or maybe he's practicing. Gets
 ignored. Then he stops in front of the Taco Bell, stares at the car, and keeps
 speaking German AT the car. Probably cussing him out in German trying to get a
-reaction. Gets nothing.
+reaction. Gets nothing. Then he walks INTO Taco Bell and goes completely
+silent — staff later confirm he didn't say a word inside. The German was
+exclusively for the parking lot.
 
 Status: idea banked, not yet written.

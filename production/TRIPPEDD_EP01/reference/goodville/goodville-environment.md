@@ -201,14 +201,16 @@ owner to come up with them later. Do NOT invent.)
 Boys" in the show. The imposter group's name is the nod — that's the only place
 the reference lives.
 
-**Names TBD (owner 2026-10-11 — do NOT invent):**
-- Parody names for the real trio — "kind of like parody names of Ricky, Julian,
-  and Bubbles or something like that." Owner to come up with them.
-- A name for the old head (Lahey-based): "kind of a play on Jim Lahey being an
-  officer and something maybe like a Reno 911 character or some shit. Or like a
-  Brooklyn Nine-Nine character. Like those names mixed in for inspiration for his
-  name. But not really for his character because he's already based on Jim Lahey."
-  Owner to come up with it.
+**Names (owner 2026-10-11):**
+- The real trio — LOCKED: **Dickie** (Ricky-based), **Julio** (Julian-based),
+  **Bubba** (Bubbles-based). Parody names, owner's pick from proposals.
+- The old head (Lahey-based): STILL DECIDING. Frontrunner: **Lieutenant Dangly**
+  (Reno 911's Dangle energy). Also in the running: Jim Scully, Terry Lahey.
+  Direction: a play on Lahey being an officer, mixed with Reno 911 /
+  Brooklyn Nine-Nine name flavor — but the character stays Lahey-based.
+  (Correction 2026-10-11: the owner gives direction BECAUSE he wants proposals
+  back, not filing. When he hands the recipe, cook.)
+- The imposter trio: names TBD for later.
 
 **The beef — mobile home guys vs. white trash trailer men (owner 2026-10-11):**
 The real trio — "the mobile home guys" — show up AFTER the old head, like:

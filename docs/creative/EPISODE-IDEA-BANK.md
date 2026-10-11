@@ -29,3 +29,23 @@ Status: idea banked, not yet written.
 
 ### Not TRIPPEDD — tracked separately
 - **Damn, Shit's Wild** premise bank: 14 Curb-style premises (The Return, The Break Room, The Wi-Fi, The Dentist, The Jury Duty, The Plus-One, The Subscription, The Dog, The Potluck, The Compliment, The Oil Change, The Mailbox, The Book, The Watch Party) + EP01 "The Group Chat" in production. Source: `production/DAMN_SHITS_WILD/research/wave1/EPISODE-PREMISE-BANK.md`. Belongs to DSW, not mixed into this bank.
+
+## "The Five-Dollar Nail" (owner 2026-10-10)
+
+Nail in the tire, they hear it, panic, rush to a tire shop thinking they need
+a replacement. The nail is TINY — didn't even puncture. Tanisha tries to get
+the guy to fix it anyway, pays him $5. He pulls the nail out, refuses to patch
+it ("I'd patch it if I needed to"), and they drive off having paid five bucks
+for literally nothing.
+
+Status: idea banked, not yet written.
+
+## "The German Guy at Taco Bell" (owner 2026-10-10)
+
+Sitting in the car in front of Taco Bell. A Black dude with a backpack and a
+poncho walks past speaking what sounds like German — or gibberish. Gets
+ignored. Then he stops in front of the Taco Bell, stares at the car, and keeps
+speaking German AT the car. Probably cussing him out in German trying to get a
+reaction. Gets nothing.
+
+Status: idea banked, not yet written.

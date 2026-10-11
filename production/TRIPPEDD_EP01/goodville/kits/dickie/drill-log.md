@@ -14,3 +14,6 @@ Rebuilt EXTRACTION-FIRST per USE THE IMAGE LAW.
 - Assembly side-by-side vs source: pixel-identical reconstruction.
 - Face variants composited and eye-checked (bubba happy+grin verified).
 - No square cuts (pieces are full-frame aligned, joins seamless).
+
+## Outfit variants — car trio image (2026-10-11)
+- **outfit_palm_shirt_torso.png**: Dickie's black palm-tree tiki shirt torso, extracted (u2net) from the owner's car trio image. Clean edges, print intact.

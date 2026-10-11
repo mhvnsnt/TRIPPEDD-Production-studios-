@@ -126,3 +126,16 @@ Each defect was re-verified with own eyes on the re-rendered frames.
 - Punch arm is upper-arm only (no forearm/fist in key-art extraction; key art shows arm at side). Acceptable for fast punch frames, but a full arm would be better.
 - Amos legs remain flat Blender geometry (blue jeans, not in key art). Matches the cutout style; not a likeness anchor.
 - End-card geometric letters (from Blender rebuild) unchanged.
+
+## Artifact fix (2026-10-11) — brown hair chunk in Broadway shots
+- **Defect:** brown extraction artifact (stray hair/mask chunk from armL.png) floated
+  detached left of Amos Jr.'s head at ~10.5s and ~12s, overlapping the TACOS sign.
+  Root cause: armL.png (punch-arm texture) was 94% brown hair pixels from the key-art
+  extraction (337/359 opaque px); when the arm rotated for the punch, the hair swung
+  out from behind the head at certain angles.
+- **Fix:** removed the 337 brown hair pixels from assets/amos_tex/armL.png
+  (alpha=0); 22 non-brown px retained. Re-rendered frames 217–312, rebuilt
+  goodville-promo-15s_LIKENESS.mp4 (15.000s).
+- **Verified (own eyes):** artifact-region brown px 800→5 at 10.5s and 12.0s;
+  Amos Jr.'s actual hair (head.png) intact — shaggy hair, mustache, goatee all
+  present in fixed frames.

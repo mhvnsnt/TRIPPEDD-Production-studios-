@@ -188,6 +188,19 @@ Mischievous — they get into trouble and make a bad name for the trio. The old 
 is mad at them. They stick around as characters: always pretending to be the real
 trio, always getting into MORE trouble than the real trio ever does.
 
+**The imposter bit (owner 2026-10-11):** the middle one — the darker-skinned one —
+acts like their leader, and he PROUDLY declares their group name: "the white
+trailer trash men." The joke is the picture: the other two are whiter than he is,
+and they just look at him sideways when he says it — they never say anything,
+they go along with it, because he's acting like the leader and they can't really
+do anything about it. It's the play on the Trailer Park Boys name: the imposters
+naming themselves is the nod, the reference. (Names for the three imposters TBD —
+owner to come up with them later. Do NOT invent.)
+
+**Naming rule (owner 2026-10-11):** the REAL trio is NEVER called "Trailer Park
+Boys" in the show. The imposter group's name is the nod — that's the only place
+the reference lives.
+
 **The Real Trio** (AI base: `goodville/kits/tpb-real-trio-promo.png`): arrive AFTER
 the imposters have poisoned the well. They look MORE like the actual Bubbles, Ricky,
 and Julian from Trailer Park Boys — in South Park style — and they ACT like them.

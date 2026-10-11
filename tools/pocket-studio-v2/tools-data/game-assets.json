@@ -1,0 +1,2595 @@
+{
+ "games": [
+  {
+   "id": "bannon",
+   "name": "Bannon",
+   "emoji": "\ud83e\udd4a",
+   "repo": "bannon-video-pipe",
+   "engine": "Three.js single-file wrestling engine (BANNON_v150.html, legacy/retro mode); UE5 C++ build under repo/unreal/ is the primary target (Android/iOS); repo root also hosts the wrestling video/entrance pipeline (Python/Blender)",
+   "models": [
+    {
+     "name": "Bannon",
+     "glb": "assets/models/bannon-bannon.glb",
+     "size_mb": 1.54,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Cipher",
+     "glb": "assets/models/bannon-cipher.glb",
+     "size_mb": 0.47,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Echo",
+     "glb": "assets/models/bannon-echo.glb",
+     "size_mb": 0.63,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Hollow",
+     "glb": "assets/models/bannon-hollow.glb",
+     "size_mb": 0.51,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Aaron Ruben",
+     "glb": "assets/models/bannon-aaron-ruben.glb",
+     "size_mb": 0.46,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Cody Gear",
+     "glb": "assets/models/bannon-cody-gear.glb",
+     "size_mb": 0.36,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Brutus",
+     "glb": "assets/models/bannon-brutus.glb",
+     "size_mb": 0.6,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Cain Elias Snakeskin",
+     "glb": "assets/models/bannon-cain-elias-snakeskin.glb",
+     "size_mb": 0.65,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Edwin Kennedy",
+     "glb": "assets/models/bannon-edwin-kennedy.glb",
+     "size_mb": 0.45,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "El Toro De Oro",
+     "glb": "assets/models/bannon-el-toro-de-oro.glb",
+     "size_mb": 0.63,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Hall Nighter",
+     "glb": "assets/models/bannon-hall-nighter.glb",
+     "size_mb": 0.62,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Stick Up",
+     "glb": "assets/models/bannon-stick-up.glb",
+     "size_mb": 0.47,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Bannon Muscular",
+     "glb": "",
+     "source_path": "~/bannon-texture/BANNON_muscular_skinned_FIXED.glb",
+     "size_mb": 0.55,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Boxing L",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/gloves/boxing_L.glb",
+     "size_mb": 0.01,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Boxing R",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/gloves/boxing_R.glb",
+     "size_mb": 0.01,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Gear",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CAIN_ELIAS_gear.glb",
+     "size_mb": 0.53,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Godwithin",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CAIN_ELIAS_godwithin.glb",
+     "size_mb": 0.57,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Ring",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CAIN_ELIAS_ring.glb",
+     "size_mb": 0.55,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Chain Bannon Piece",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/chains/chain_bannon_piece_rigged.glb",
+     "size_mb": 0.73,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Chain Diamond Ice",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/chains/chain_diamond_ice_rigged.glb",
+     "size_mb": 0.41,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Chain Gold Ashlane",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/chains/chain_gold_ashlane_rigged.glb",
+     "size_mb": 0.27,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Chain Wizard Gang",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/chains/chain_wizard_gang_rigged.glb",
+     "size_mb": 0.41,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Cipher Feral",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CIPHER_feral.glb",
+     "size_mb": 0.48,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cipher Minion",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CIPHER_minion.glb",
+     "size_mb": 0.55,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cody Sober",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CODY_sober.glb",
+     "size_mb": 0.54,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cody Stressed",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CODY_stressed.glb",
+     "size_mb": 0.52,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Edwin Kennedy Unchained",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/EDWIN_KENNEDY_unchained.glb",
+     "size_mb": 0.56,
+     "versions": 4,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Hair Echo Long Green",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/hair/hair_echo_long_green.glb",
+     "size_mb": 0.17,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Hollow Long Black",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/hair/hair_hollow_long_black.glb",
+     "size_mb": 0.17,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Static Blond Beard",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/hair/hair_static_blond_beard.glb",
+     "size_mb": 0.21,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Theory Locs Beads",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/hair/hair_theory_locs_beads.glb",
+     "size_mb": 1.25,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Theory Locs Pinned",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/hair/hair_theory_locs_pinned.glb",
+     "size_mb": 0.06,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hood Purple Robe",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/hoods/hood_purple_robe.glb",
+     "size_mb": 0.39,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hood Purple Robe Dark",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/hoods/hood_purple_robe_dark.glb",
+     "size_mb": 0.39,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Maime Skinned Severed Orig",
+     "glb": "",
+     "source_path": "~/brutal-fist-v10/public/models/MAIME_skinned_severed_orig.glb",
+     "size_mb": 0.69,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Maime Tattered Skinned Severed Orig",
+     "glb": "",
+     "source_path": "~/brutal-fist-v10/public/models/MAIME_tattered_skinned_severed_orig.glb",
+     "size_mb": 0.3,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Mask Bandana Black",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/masks/mask_bandana_black.glb",
+     "size_mb": 0.11,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Bandana Camo",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/masks/mask_bandana_camo.glb",
+     "size_mb": 0.14,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Bandana Red",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/masks/mask_bandana_red.glb",
+     "size_mb": 0.11,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Hollow Superdragon",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/masks/mask_hollow_superdragon.glb",
+     "size_mb": 0.66,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Luchador Azul",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/masks/mask_luchador_azul.glb",
+     "size_mb": 0.54,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Luchador Crimson",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/masks/mask_luchador_crimson.glb",
+     "size_mb": 0.54,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Luchador Sombra",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/masks/mask_luchador_sombra.glb",
+     "size_mb": 0.54,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mma L",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/gloves/mma_L.glb",
+     "size_mb": 0.02,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mma R",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/gloves/mma_R.glb",
+     "size_mb": 0.02,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Opera Theory L",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/gloves/opera_theory_L.glb",
+     "size_mb": 0.04,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Opera Theory R",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/gloves/opera_theory_R.glb",
+     "size_mb": 0.04,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Pad L",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/wristbands/pad_L.glb",
+     "size_mb": 0.01,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Pad R",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/wristbands/pad_R.glb",
+     "size_mb": 0.01,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Sneaker High L",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/footwear/sneaker_high_L.glb",
+     "size_mb": 0.05,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Sneaker High R",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/footwear/sneaker_high_R.glb",
+     "size_mb": 0.05,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Sneaker Low L",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/footwear/sneaker_low_L.glb",
+     "size_mb": 0.05,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Sneaker Low R",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/footwear/sneaker_low_R.glb",
+     "size_mb": 0.05,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Stickup",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/STICKUP.glb",
+     "size_mb": 0.47,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Street L",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/gloves/street_L.glb",
+     "size_mb": 0.02,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Street R",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/gloves/street_R.glb",
+     "size_mb": 0.02,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Theory Boot L",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/footwear/theory_boot_L.glb",
+     "size_mb": 0.03,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Theory Boot R",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/footwear/theory_boot_R.glb",
+     "size_mb": 0.03,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Wrap L",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/wristbands/wrap_L.glb",
+     "size_mb": 0.02,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Wrap R",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/wristbands/wrap_R.glb",
+     "size_mb": 0.02,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Wrestling Boot L",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/footwear/wrestling_boot_L.glb",
+     "size_mb": 0.04,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Wrestling Boot R",
+     "glb": "",
+     "source_path": "~/bannon-repair/assets/customizer/footwear/wrestling_boot_R.glb",
+     "size_mb": 0.04,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    }
+   ],
+   "animPacks": [
+    {
+     "name": "taunt: crucifix_hardy",
+     "anims": [
+      {
+       "name": "ArmatureAction",
+       "duration_s": 5.667
+      }
+     ]
+    },
+    {
+     "name": "taunt: finger_guns_hardy",
+     "anims": [
+      {
+       "name": "ArmatureAction",
+       "duration_s": 5.667
+      }
+     ]
+    },
+    {
+     "name": "taunt: hair_whip_hardy",
+     "anims": [
+      {
+       "name": "ArmatureAction",
+       "duration_s": 5.667
+      }
+     ]
+    },
+    {
+     "name": "taunt: cmu_143_01",
+     "anims": [
+      {
+       "name": "143_01",
+       "duration_s": 3.367
+      },
+      {
+       "name": "ArmatureAction",
+       "duration_s": 3.367
+      }
+     ]
+    },
+    {
+     "name": "mixamo: idle",
+     "anims": [
+      {
+       "name": "mixamo.com",
+       "duration_s": 3.833
+      }
+     ]
+    },
+    {
+     "name": "mixamo: walking",
+     "anims": [
+      {
+       "name": "mixamo.com",
+       "duration_s": 1.0
+      }
+     ]
+    },
+    {
+     "name": "mixamo: running",
+     "anims": [
+      {
+       "name": "mixamo.com",
+       "duration_s": 0.667
+      }
+     ]
+    }
+   ],
+   "mocap_count": 202,
+   "tools": [
+    {
+     "name": "Weight Paint PWA",
+     "kind": "pwa",
+     "desc": "Paint skin weights on your phone"
+    }
+   ],
+   "docs": [
+    "bannon-video-pipe/docs/AI_RIGGING_RESEARCH.md",
+    "bannon-video-pipe/repo/tools/rig-repair/REPORT.md",
+    "bannon-video-pipe/entrance-kits/README.md",
+    "bannon-video-pipe/repo/assets/mocap/open/README.md",
+    "bannon-video-pipe/repo/README.md (game overview, three.js + UE5 status)"
+   ],
+   "model_counts": {
+    "character": 24,
+    "wardrobe": 38,
+    "prop": 184
+   },
+   "total_models_found": 204
+  },
+  {
+   "id": "brutal-fist",
+   "name": "Brutal Fist",
+   "emoji": "\ud83d\udd25",
+   "repo": "brutal-fist-v10",
+   "engine": "Next.js + React Three Fiber (three.js, three-mesh-bvh). Game engine contracts in src/engine/ (GameEngine.ts, GrappleSystem.ts, MoveSetSystem.ts). Run: npm run dev (vite :8080) or npm run next:dev (:3000)",
+   "models": [
+    {
+     "name": "Bannon",
+     "glb": "assets/models/brutal-fist-bannon.glb",
+     "size_mb": 1.54,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Aaron Ruben",
+     "glb": "assets/models/brutal-fist-aaron-ruben.glb",
+     "size_mb": 0.46,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Wrestler Base",
+     "glb": "assets/models/brutal-fist-wrestler-base.glb",
+     "size_mb": 0.04,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Cipher",
+     "glb": "assets/models/brutal-fist-cipher.glb",
+     "size_mb": 0.47,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Brutus",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/BRUTUS.glb",
+     "size_mb": 0.6,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Gear",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CAIN_ELIAS_gear.glb",
+     "size_mb": 0.53,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Godwithin",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CAIN_ELIAS_godwithin.glb",
+     "size_mb": 0.57,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Ring",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CAIN_ELIAS_ring.glb",
+     "size_mb": 0.55,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Snakeskin",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CAIN_ELIAS_snakeskin.glb",
+     "size_mb": 0.65,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cipher Feral",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CIPHER_feral.glb",
+     "size_mb": 0.48,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cipher Minion",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CIPHER_minion.glb",
+     "size_mb": 0.55,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cody Gear",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CODY_gear_skinned.glb",
+     "size_mb": 0.36,
+     "versions": 8,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cody Sober",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CODY_sober.glb",
+     "size_mb": 0.54,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cody Stressed",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/CODY_stressed.glb",
+     "size_mb": 0.52,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Echo",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/ECHO.glb",
+     "size_mb": 0.63,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Edwin Kennedy",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/EDWIN_KENNEDY.glb",
+     "size_mb": 0.45,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Edwin Kennedy Unchained",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/EDWIN_KENNEDY_unchained.glb",
+     "size_mb": 0.56,
+     "versions": 4,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "El Toro De Oro",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/EL_TORO_DE_ORO.glb",
+     "size_mb": 0.63,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Hall Nighter",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/HALL_NIGHTER.glb",
+     "size_mb": 0.62,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Hollow",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/HOLLOW.glb",
+     "size_mb": 0.51,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Maime Skinned Severed Orig",
+     "glb": "",
+     "source_path": "~/brutal-fist-v10/public/models/MAIME_skinned_severed_orig.glb",
+     "size_mb": 0.69,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Maime Tattered Skinned Severed Orig",
+     "glb": "",
+     "source_path": "~/brutal-fist-v10/public/models/MAIME_tattered_skinned_severed_orig.glb",
+     "size_mb": 0.3,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Stickup",
+     "glb": "",
+     "source_path": "~/brutalfist-fix/public/models/STICKUP.glb",
+     "size_mb": 0.47,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    }
+   ],
+   "animPacks": [],
+   "mocap_count": 0,
+   "tools": [
+    {
+     "name": "Weight Paint PWA",
+     "kind": "pwa",
+     "desc": "Paint skin weights on your phone"
+    }
+   ],
+   "docs": [
+    "brutal-fist-v10/AGENTS.md",
+    "brutal-fist-v10/AGENTS.project.md",
+    "brutal-fist-v10/DEV_CONVERSATION.md",
+    "brutal-fist-v10/src/data/bannonGlbRoster.ts - full playable roster with measured joint counts + rig/playable gates"
+   ],
+   "model_counts": {
+    "character": 23,
+    "prop": 180
+   },
+   "total_models_found": 156
+  },
+  {
+   "id": "concrete-dragon",
+   "name": "Concrete Dragon",
+   "emoji": "\ud83d\udc09",
+   "repo": "ConcreteDragon",
+   "engine": "Godot 4 (game/ - mobile build, CI exports web/APK/AAB); three.js web build (game-3d/, npm 'kit' - three + gltf-transform + meshoptimizer + esbuild)",
+   "models": [
+    {
+     "name": "Fighter",
+     "glb": "assets/models/concrete-dragon-fighter.glb",
+     "size_mb": 0.14,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Demon",
+     "glb": "assets/models/concrete-dragon-demon.glb",
+     "size_mb": 0.46,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Zombie",
+     "glb": "assets/models/concrete-dragon-zombie.glb",
+     "size_mb": 0.94,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Carmilla",
+     "glb": "assets/models/concrete-dragon-carmilla.glb",
+     "size_mb": 0.06,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Witch",
+     "glb": "assets/models/concrete-dragon-witch.glb",
+     "size_mb": 1.52,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Vampire-Bat",
+     "glb": "assets/models/concrete-dragon-vampire-bat.glb",
+     "size_mb": 1.13,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Spider",
+     "glb": "assets/models/concrete-dragon-spider.glb",
+     "size_mb": 0.43,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Skull",
+     "glb": "assets/models/concrete-dragon-skull.glb",
+     "size_mb": 0.03,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Pumpkin-Head",
+     "glb": "assets/models/concrete-dragon-pumpkin-head.glb",
+     "size_mb": 0.03,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Baseball-Skeleton",
+     "glb": "assets/models/concrete-dragon-baseball-skeleton.glb",
+     "size_mb": 0.77,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Ghost-Happy",
+     "glb": "assets/models/concrete-dragon-ghost-happy.glb",
+     "size_mb": 0.02,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Ghost-Sad",
+     "glb": "assets/models/concrete-dragon-ghost-sad.glb",
+     "size_mb": 0.01,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Dragon-Evolved",
+     "glb": "assets/models/concrete-dragon-dragon-evolved.glb",
+     "size_mb": 0.42,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Anim General",
+     "glb": "",
+     "source_path": "~/StreetBrawl/game-3d/build/assets/anim_general.glb",
+     "size_mb": 0.09,
+     "versions": 5,
+     "hero": false,
+     "category": "animation",
+     "bundled": false
+    },
+    {
+     "name": "Anim Grapple",
+     "glb": "",
+     "source_path": "~/ConcreteDragon/game-3d/build/assets/anim_grapple.glb",
+     "size_mb": 0.62,
+     "versions": 4,
+     "hero": false,
+     "category": "animation",
+     "bundled": false
+    },
+    {
+     "name": "Anim Melee",
+     "glb": "",
+     "source_path": "~/StreetBrawl/game-3d/build/assets/anim_melee.glb",
+     "size_mb": 0.08,
+     "versions": 5,
+     "hero": false,
+     "category": "animation",
+     "bundled": false
+    },
+    {
+     "name": "Anim Move",
+     "glb": "",
+     "source_path": "~/StreetBrawl/game-3d/build/assets/anim_move.glb",
+     "size_mb": 0.03,
+     "versions": 5,
+     "hero": false,
+     "category": "animation",
+     "bundled": false
+    },
+    {
+     "name": "Anim Moves",
+     "glb": "",
+     "source_path": "~/ConcreteDragon/game-3d/build/assets/anim_moves.glb",
+     "size_mb": 0.1,
+     "versions": 4,
+     "hero": false,
+     "category": "animation",
+     "bundled": false
+    },
+    {
+     "name": "Anim Taunt",
+     "glb": "",
+     "source_path": "~/ConcreteDragon/game-3d/build/assets/anim_taunt.glb",
+     "size_mb": 0.19,
+     "versions": 4,
+     "hero": false,
+     "category": "animation",
+     "bundled": false
+    },
+    {
+     "name": "K Chair",
+     "glb": "",
+     "source_path": "~/StreetBrawl/game-3d/build/assets/props/k_chair.glb",
+     "size_mb": 0.01,
+     "versions": 5,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    }
+   ],
+   "animPacks": [
+    {
+     "name": "move",
+     "anims": [
+      {
+       "name": "Running_A",
+       "duration_s": 0.8
+      }
+     ]
+    },
+    {
+     "name": "melee",
+     "anims": [
+      {
+       "name": "Melee_Block_Hit",
+       "duration_s": 1.067
+      },
+      {
+       "name": "Melee_Unarmed_Attack_Kick",
+       "duration_s": 0.933
+      },
+      {
+       "name": "Melee_Unarmed_Attack_Punch_A",
+       "duration_s": 1.167
+      },
+      {
+       "name": "Melee_Unarmed_Idle",
+       "duration_s": 1.067
+      }
+     ]
+    },
+    {
+     "name": "general",
+     "anims": [
+      {
+       "name": "Death_A",
+       "duration_s": 0.8
+      },
+      {
+       "name": "Hit_A",
+       "duration_s": 0.667
+      },
+      {
+       "name": "Hit_B",
+       "duration_s": 0.867
+      },
+      {
+       "name": "Spawn_Ground",
+       "duration_s": 1.3
+      }
+     ]
+    },
+    {
+     "name": "moves (specials)",
+     "anims": [
+      {
+       "name": "Melee_Unarmed_Attack_Punch_B",
+       "duration_s": 0.55
+      },
+      {
+       "name": "Melee_Unarmed_Attack_Kick_A",
+       "duration_s": 0.6
+      },
+      {
+       "name": "KiBlast",
+       "duration_s": 0.35
+      },
+      {
+       "name": "WaveCharge",
+       "duration_s": 0.85
+      },
+      {
+       "name": "WaveRelease",
+       "duration_s": 0.4
+      },
+      {
+       "name": "SpinAttack",
+       "duration_s": 0.62
+      },
+      {
+       "name": "Idle_B",
+       "duration_s": 1.1
+      }
+     ]
+    },
+    {
+     "name": "taunt",
+     "anims": [
+      {
+       "name": "Taunt_Yakuza",
+       "duration_s": 6.533
+      }
+     ]
+    },
+    {
+     "name": "grapple",
+     "anims": [
+      {
+       "name": "grab_basic_d",
+       "duration_s": 1.633
+      },
+      {
+       "name": "grab_basic_r",
+       "duration_s": 4.133
+      },
+      {
+       "name": "chain_brick_d1",
+       "duration_s": 1.633
+      },
+      {
+       "name": "chain_brick_r1",
+       "duration_s": 4.133
+      },
+      {
+       "name": "chain_brick_d2",
+       "duration_s": 2.3
+      },
+      {
+       "name": "chain_brick_r2",
+       "duration_s": 4.133
+      },
+      {
+       "name": "chain_brick_d3",
+       "duration_s": 2.633
+      },
+      {
+       "name": "chain_brick_r3",
+       "duration_s": 4.133
+      },
+      {
+       "name": "chain_sledge_d1",
+       "duration_s": 1.967
+      },
+      {
+       "name": "chain_sledge_r1",
+       "duration_s": 4.133
+      },
+      {
+       "name": "chain_sledge_d2",
+       "duration_s": 1.633
+      },
+      {
+       "name": "chain_sledge_r2",
+       "duration_s": 4.133
+      },
+      {
+       "name": "chain_sledge_d3",
+       "duration_s": 2.3
+      },
+      {
+       "name": "chain_sledge_r3",
+       "duration_s": 4.133
+      },
+      {
+       "name": "chain_sledge_d4",
+       "duration_s": 2.633
+      },
+      {
+       "name": "chain_sledge_r4",
+       "duration_s": 4.133
+      },
+      {
+       "name": "chain_kingpin_d1",
+       "duration_s": 1.633
+      },
+      {
+       "name": "chain_kingpin_r1",
+       "duration_s": 4.133
+      },
+      {
+       "name": "chain_kingpin_d2",
+       "duration_s": 2.633
+      },
+      {
+       "name": "chain_kingpin_r2",
+       "duration_s": 4.133
+      },
+      {
+       "name": "chain_kingpin_d3",
+       "duration_s": 2.633
+      },
+      {
+       "name": "chain_kingpin_r3",
+       "duration_s": 4.133
+      },
+      {
+       "name": "juggle_d",
+       "duration_s": 2.467
+      },
+      {
+       "name": "juggle_r",
+       "duration_s": 4.133
+      }
+     ]
+    }
+   ],
+   "mocap_count": 0,
+   "tools": [
+    {
+     "name": "Weight Paint PWA",
+     "kind": "pwa",
+     "desc": "Paint skin weights on your phone"
+    }
+   ],
+   "docs": [
+    "ConcreteDragon/README.md",
+    "ConcreteDragon/docs/GAME_DESIGN.md",
+    "ConcreteDragon/ART_DIRECTION.md",
+    "ConcreteDragon/game-3d/ASSETS_CREDITS.md",
+    "ConcreteDragon/game-3d/docs/"
+   ],
+   "model_counts": {
+    "character": 13,
+    "animation": 6,
+    "prop": 120,
+    "environment": 410,
+    "wardrobe": 1
+   },
+   "total_models_found": 362
+  },
+  {
+   "id": "streetbrawl",
+   "name": "StreetBrawl",
+   "emoji": "\ud83d\udc4a",
+   "repo": "StreetBrawl",
+   "engine": "Same stack as Concrete Dragon (three.js game-3d build)",
+   "models": [
+    {
+     "name": "Zombie",
+     "verts": null,
+     "bones": 100,
+     "anims": [
+      "Crawl",
+      "Death",
+      "HitReact",
+      "Idle",
+      "Idle_Attack",
+      "Jump",
+      "Jump_Idle",
+      "Jump_Land",
+      "No",
+      "Punch",
+      "Run",
+      "Run_Arms",
+      "Walk",
+      "Wave",
+      "Yes",
+      "Run_Attack",
+      "Crawl",
+      "Death",
+      "HitReact",
+      "Idle",
+      "Idle_Attack",
+      "Jump",
+      "Jump_Idle",
+      "Jump_Land",
+      "No",
+      "Punch",
+      "Run",
+      "Run_Arms",
+      "Run_Attack",
+      "Walk",
+      "Wave",
+      "Yes"
+     ],
+     "glb": "assets/models/streetbrawl-zombie.glb",
+     "size_mb": 0.98,
+     "hero": true
+    },
+    {
+     "name": "Demon",
+     "verts": null,
+     "bones": 86,
+     "anims": [
+      "Death",
+      "Duck",
+      "HitReact",
+      "Idle",
+      "Jump",
+      "Jump_Idle",
+      "Jump_Land",
+      "No",
+      "Punch",
+      "Run",
+      "Walk",
+      "Wave",
+      "Weapon",
+      "Yes"
+     ],
+     "glb": "",
+     "size_mb": 0.49,
+     "hero": false
+    },
+    {
+     "name": "Dragon (Evolved)",
+     "verts": null,
+     "bones": 46,
+     "anims": [
+      "Death",
+      "Fast_Flying",
+      "Flying_Idle",
+      "Headbutt",
+      "HitReact",
+      "No",
+      "Punch",
+      "Yes"
+     ],
+     "glb": "",
+     "size_mb": 0.44,
+     "hero": false
+    },
+    {
+     "name": "Fighter (player)",
+     "verts": null,
+     "bones": 126,
+     "anims": [],
+     "glb": "",
+     "size_mb": 0.15,
+     "hero": false
+    },
+    {
+     "name": "Spider",
+     "verts": null,
+     "bones": 39,
+     "anims": [
+      "Spider_Attack",
+      "Spider_Death",
+      "Spider_Idle",
+      "Spider_Jump",
+      "Spider_Walk"
+     ],
+     "glb": "",
+     "size_mb": 0.45,
+     "hero": false
+    },
+    {
+     "name": "Vampire Bat",
+     "verts": null,
+     "bones": 64,
+     "anims": [
+      "Bat_Attack",
+      "Bat_Die",
+      "Bat_Flying",
+      "Bat_Die",
+      "Bat_Flying",
+      "Bat_preview_position"
+     ],
+     "glb": "",
+     "size_mb": 1.19,
+     "hero": false
+    },
+    {
+     "name": "Witch",
+     "verts": null,
+     "bones": 248,
+     "anims": [
+      "Death",
+      "Gun_Shoot",
+      "HitRecieve",
+      "HitRecieve_2",
+      "Idle",
+      "Idle_Gun",
+      "Idle_Gun_Pointing",
+      "Idle_Gun_Shoot",
+      "Idle_Neutral",
+      "Idle_Sword",
+      "Interact",
+      "Kick_Left",
+      "Kick_Right",
+      "Punch_Left",
+      "Punch_Right",
+      "Roll",
+      "Run",
+      "Run_Back",
+      "Run_Left",
+      "Run_Right",
+      "Run_Shoot",
+      "Sword_Slash",
+      "Walk",
+      "Wave"
+     ],
+     "glb": "",
+     "size_mb": 1.59,
+     "hero": false
+    }
+   ],
+   "animPacks": [
+    {
+     "name": "move",
+     "anims": [
+      {
+       "name": "Running_A",
+       "duration_s": 0.8
+      }
+     ]
+    },
+    {
+     "name": "melee",
+     "anims": [
+      {
+       "name": "Melee_Block_Hit",
+       "duration_s": 1.067
+      },
+      {
+       "name": "Melee_Unarmed_Attack_Kick",
+       "duration_s": 0.933
+      },
+      {
+       "name": "Melee_Unarmed_Attack_Punch_A",
+       "duration_s": 1.167
+      },
+      {
+       "name": "Melee_Unarmed_Idle",
+       "duration_s": 1.067
+      }
+     ]
+    },
+    {
+     "name": "general",
+     "anims": [
+      {
+       "name": "Death_A",
+       "duration_s": 0.8
+      },
+      {
+       "name": "Hit_A",
+       "duration_s": 0.667
+      },
+      {
+       "name": "Hit_B",
+       "duration_s": 0.867
+      },
+      {
+       "name": "Spawn_Ground",
+       "duration_s": 1.3
+      }
+     ]
+    }
+   ],
+   "mocap_count": 0,
+   "tools": [
+    {
+     "name": "Weight Paint PWA",
+     "kind": "pwa",
+     "desc": "Paint skin weights on your phone"
+    }
+   ],
+   "docs": [
+    "StreetBrawl/REDUNDANT_PROTOTYPE.md",
+    "StreetBrawl/README.md"
+   ]
+  },
+  {
+   "id": "ashlane",
+   "name": "AshLane",
+   "emoji": "\ud83c\udfad",
+   "repo": "",
+   "engine": "No game engine / no 3D assets in these repos - animation pipeline + 2D art repos",
+   "models": [
+    {
+     "name": "Cipher",
+     "glb": "assets/models/ashlane-cipher.glb",
+     "size_mb": 0.49,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Echo",
+     "glb": "assets/models/ashlane-echo.glb",
+     "size_mb": 0.63,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Hollow",
+     "glb": "assets/models/ashlane-hollow.glb",
+     "size_mb": 0.51,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Brutus",
+     "glb": "assets/models/ashlane-brutus.glb",
+     "size_mb": 0.6,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Aaron Ruben",
+     "glb": "assets/models/ashlane-aaron-ruben.glb",
+     "size_mb": 0.46,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Cain Elias Snakeskin",
+     "glb": "assets/models/ashlane-cain-elias-snakeskin.glb",
+     "size_mb": 0.65,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Barbarian",
+     "glb": "assets/models/ashlane-barbarian.glb",
+     "size_mb": 3.45,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Cody Gear",
+     "glb": "assets/models/ashlane-cody-gear.glb",
+     "size_mb": 0.36,
+     "hero": true,
+     "category": "character",
+     "bundled": true
+    },
+    {
+     "name": "Bannon",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/.vercel/output/static/models/cast/BANNON_muscular_skinned.glb",
+     "size_mb": 0.5,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Barbwire Baseball Bat",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/props/Barbwire_baseball_bat.glb",
+     "size_mb": 13.23,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Baseball-Bat",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/weapons/street/baseball-bat.glb",
+     "size_mb": 0.26,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Baseball Bat",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/props/baseball_bat.glb",
+     "size_mb": 2.9,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Bat-Ornament",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/bat-ornament.glb",
+     "size_mb": 0.02,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Boxing L",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/gloves/boxing_L.glb",
+     "size_mb": 0.01,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Boxing R",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/gloves/boxing_R.glb",
+     "size_mb": 0.01,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Attire2",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/cast/CAIN_ELIAS_attire2.glb",
+     "size_mb": 8.12,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Attire2 Local",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/cast/local-variants/CAIN_ELIAS_attire2_local.glb",
+     "size_mb": 8.12,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Attire3",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/cast/CAIN_ELIAS_attire3.glb",
+     "size_mb": 8.84,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Attire3 Local",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/cast/local-variants/CAIN_ELIAS_attire3_local.glb",
+     "size_mb": 8.84,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Attire4",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/cast/CAIN_ELIAS_attire4.glb",
+     "size_mb": 8.37,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Attire4 Local",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/cast/local-variants/CAIN_ELIAS_attire4_local.glb",
+     "size_mb": 8.37,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cain Elias Gear",
+     "glb": "",
+     "source_path": "~/ashlane-port/public/models/cast/CAIN_ELIAS_gear.glb",
+     "size_mb": 0.53,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cellar-Spider",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/cellar-spider.glb",
+     "size_mb": 0.14,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Chainsaw",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/weapons/street/chainsaw.glb",
+     "size_mb": 0.03,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Chain Bannon Piece",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/accessories/chain_bannon_piece_rigged.glb",
+     "size_mb": 0.73,
+     "versions": 2,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Chair",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/props/Chair.glb",
+     "size_mb": 0.04,
+     "versions": 10,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Cody Sober",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/.vercel/output/static/models/cast/CODY_sober.glb",
+     "size_mb": 0.54,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Cody Stressed",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/.vercel/output/static/models/cast/CODY_stressed.glb",
+     "size_mb": 0.52,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Combat-Knife",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/weapons/street/combat-knife.glb",
+     "size_mb": 0.31,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Dragonscrew",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/motion/wrestling/DragonScrew.glb",
+     "size_mb": 4.28,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Dragonscrew.Retarget",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/motion/retargeted/retargeted/DragonScrew.retarget.glb",
+     "size_mb": 0.33,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Eclipse-Pumpkin",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/eclipse-pumpkin.glb",
+     "size_mb": 0.62,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Edwin Kennedy",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/.vercel/output/static/models/cast/EDWIN_KENNEDY.glb",
+     "size_mb": 0.45,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Edwin Kennedy Attire3",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/cast/EDWIN_KENNEDY_attire3.glb",
+     "size_mb": 13.36,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Edwin Kennedy Ring1",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/cast/EDWIN_KENNEDY_ring1.glb",
+     "size_mb": 7.57,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "El Toro De Oro",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/.vercel/output/static/models/cast/EL_TORO_DE_ORO.glb",
+     "size_mb": 0.63,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Grinning-Lantern-Pumpkin",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/grinning-lantern-pumpkin.glb",
+     "size_mb": 0.41,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Hair Beard",
+     "glb": "",
+     "source_path": "~/ashlane-port/assets/characters/quaternius/Hair_Beard.glb",
+     "size_mb": 0.05,
+     "versions": 13,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Buns",
+     "glb": "",
+     "source_path": "~/ashlane-port/assets/characters/quaternius/Hair_Buns.glb",
+     "size_mb": 0.21,
+     "versions": 13,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Buzzed",
+     "glb": "",
+     "source_path": "~/ashlane-port/assets/characters/quaternius/Hair_Buzzed.glb",
+     "size_mb": 0.05,
+     "versions": 13,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Buzzedfemale",
+     "glb": "",
+     "source_path": "~/ashlane-port/assets/characters/quaternius/Hair_BuzzedFemale.glb",
+     "size_mb": 0.05,
+     "versions": 13,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Echo Long Green",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/hair/hair_echo_long_green.glb",
+     "size_mb": 0.17,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Hollow Long Black",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/hair/hair_hollow_long_black.glb",
+     "size_mb": 0.17,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Long",
+     "glb": "",
+     "source_path": "~/ashlane-port/assets/characters/quaternius/Hair_Long.glb",
+     "size_mb": 0.19,
+     "versions": 13,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Simpleparted",
+     "glb": "",
+     "source_path": "~/ashlane-port/assets/characters/quaternius/Hair_SimpleParted.glb",
+     "size_mb": 0.06,
+     "versions": 13,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Static Blond Beard",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/hair/hair_static_blond_beard.glb",
+     "size_mb": 0.21,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Theory Locs Beads",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/hair/hair_theory_locs_beads.glb",
+     "size_mb": 1.25,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hair Theory Locs Pinned",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/hair/hair_theory_locs_pinned.glb",
+     "size_mb": 0.06,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hall Nighter",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/.vercel/output/static/models/cast/HALL_NIGHTER.glb",
+     "size_mb": 0.62,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Harvest-Pumpkin",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/harvest-pumpkin.glb",
+     "size_mb": 0.06,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Hood Purple Robe",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/hoods/hood_purple_robe.glb",
+     "size_mb": 0.39,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Hood Purple Robe Dark",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/hoods/hood_purple_robe_dark.glb",
+     "size_mb": 0.39,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Human-Skull",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/human-skull.glb",
+     "size_mb": 0.24,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Mask Bandana Black",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/masks/mask_bandana_black.glb",
+     "size_mb": 0.11,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Bandana Camo",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/masks/mask_bandana_camo.glb",
+     "size_mb": 0.14,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Bandana Red",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/masks/mask_bandana_red.glb",
+     "size_mb": 0.11,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Hollow Superdragon",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/masks/mask_hollow_superdragon.glb",
+     "size_mb": 0.66,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Luchador Azul",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/masks/mask_luchador_azul.glb",
+     "size_mb": 0.54,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Luchador Crimson",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/masks/mask_luchador_crimson.glb",
+     "size_mb": 0.54,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mask Luchador Sombra",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/masks/mask_luchador_sombra.glb",
+     "size_mb": 0.54,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mma L",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/gloves/mma_L.glb",
+     "size_mb": 0.02,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Mma R",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/gloves/mma_R.glb",
+     "size_mb": 0.02,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Nailed-Bat",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/weapons/street/nailed-bat.glb",
+     "size_mb": 0.28,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Officechair",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/props/OfficeChair.glb",
+     "size_mb": 0.11,
+     "versions": 10,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Opera Theory L",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/gloves/opera_theory_L.glb",
+     "size_mb": 0.04,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Opera Theory R",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/gloves/opera_theory_R.glb",
+     "size_mb": 0.04,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Pad L",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/wristbands/pad_L.glb",
+     "size_mb": 0.01,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Pad R",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/wristbands/pad_R.glb",
+     "size_mb": 0.01,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Pumpkin-Totem",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/pumpkin-totem.glb",
+     "size_mb": 0.26,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Rusty Folding Chairs",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/props/rusty_folding_chairs.glb",
+     "size_mb": 24.55,
+     "versions": 1,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Sample-Bannon-Concrete",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/tools/generative/textures/sample-bannon-concrete.glb",
+     "size_mb": 2.71,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Sheet-Ghost",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/sheet-ghost.glb",
+     "size_mb": 0.03,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Skeleton-Yard-Prop",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/skeleton-yard-prop.glb",
+     "size_mb": 0.1,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Skeleton Mage",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/kaykit/Skeleton_Mage.glb",
+     "size_mb": 4.54,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Skeleton Minion",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/kaykit/Skeleton_Minion.glb",
+     "size_mb": 4.59,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Skeleton Rogue",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/kaykit/Skeleton_Rogue.glb",
+     "size_mb": 4.6,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Skeleton Warrior",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/kaykit/Skeleton_Warrior.glb",
+     "size_mb": 4.64,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Sneaker High L",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/footwear/sneaker_high_L.glb",
+     "size_mb": 0.05,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Sneaker High R",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/footwear/sneaker_high_R.glb",
+     "size_mb": 0.05,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Sneaker Low L",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/footwear/sneaker_low_L.glb",
+     "size_mb": 0.05,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Sneaker Low R",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/footwear/sneaker_low_R.glb",
+     "size_mb": 0.05,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Stickup",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/.vercel/output/static/models/cast/STICKUP.glb",
+     "size_mb": 0.47,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Street L",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/gloves/street_L.glb",
+     "size_mb": 0.02,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Street R",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/gloves/street_R.glb",
+     "size_mb": 0.02,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Telescopic-Baton",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/weapons/street/telescopic-baton.glb",
+     "size_mb": 0.25,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Theory Boot L",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/footwear/theory_boot_L.glb",
+     "size_mb": 0.03,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Theory Boot R",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/footwear/theory_boot_R.glb",
+     "size_mb": 0.03,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Wandering-Sheet-Ghost",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/wandering-sheet-ghost.glb",
+     "size_mb": 0.24,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Witch-Broom",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/witch-broom.glb",
+     "size_mb": 0.02,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Witch-Cauldron",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/witch-cauldron.glb",
+     "size_mb": 0.06,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Witch-Hat",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/seasonal/halloween/witch-hat.glb",
+     "size_mb": 0.02,
+     "versions": 1,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Wrap L",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/wristbands/wrap_L.glb",
+     "size_mb": 0.02,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Wrap R",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/wristbands/wrap_R.glb",
+     "size_mb": 0.02,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Wrestling Boot L",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/footwear/wrestling_boot_L.glb",
+     "size_mb": 0.04,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Wrestling Boot R",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/footwear/wrestling_boot_R.glb",
+     "size_mb": 0.04,
+     "versions": 2,
+     "hero": false,
+     "category": "wardrobe",
+     "bundled": false
+    },
+    {
+     "name": "Zombie Female",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/humanoid/Zombie_Female.glb",
+     "size_mb": 1.89,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    },
+    {
+     "name": "Zombie Male",
+     "glb": "",
+     "source_path": "~/game-sweep/AshLanev2/public/models/humanoid/Zombie_Male.glb",
+     "size_mb": 1.61,
+     "versions": 9,
+     "hero": false,
+     "category": "character",
+     "bundled": false
+    }
+   ],
+   "animPacks": [],
+   "mocap_count": 0,
+   "tools": [
+    {
+     "name": "Weight Paint PWA",
+     "kind": "pwa",
+     "desc": "Paint skin weights on your phone"
+    },
+    {
+     "name": "Quaternius Pack",
+     "kind": "link",
+     "desc": "Free CC0 character kit in ashlane-port"
+    }
+   ],
+   "docs": [
+    "ashlane-anim-pipe/ANIMATION_PIPELINE.md",
+    "ashlane-anim-pipe/NAMING.md",
+    "ashlane-art/FACTION_CATALOG.md"
+   ],
+   "model_counts": {
+    "character": 53,
+    "prop": 2906,
+    "environment": 306,
+    "wardrobe": 44
+   },
+   "total_models_found": 2004
+  },
+  {
+   "id": "smoke-mirror",
+   "name": "SMOKE & MIRRORS",
+   "emoji": "\ud83e\ude9e",
+   "repo": "SMOKE-MIRROR-S-",
+   "engine": "Unreal Engine 5 (Lyra.uproject - Lyra sample game fork); also a Vite web preview (app/, src/)",
+   "models": [],
+   "animPacks": [],
+   "mocap_count": 0,
+   "tools": [
+    {
+     "name": "Weight Paint PWA",
+     "kind": "pwa",
+     "desc": "Paint skin weights on your phone"
+    }
+   ],
+   "docs": [
+    "SMOKE-MIRROR-S-/README.md",
+    "SMOKE-MIRROR-S-/LICENSE-LYRA-README.md",
+    "SMOKE-MIRROR-S-/docs/reference/dev-log/README.md"
+   ]
+  }
+ ]
+}

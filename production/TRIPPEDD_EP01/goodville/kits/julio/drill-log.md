@@ -51,3 +51,29 @@ v2 fixes (all cuts from /home/hatch/workspace/user/files/1000173536_14_nhu1.png)
 - Method: u2net wide extraction (isnet left intrusions / blacked faces). Slab separation with 30px feathered overlaps; pieces composite seamlessly (verified by reassembly).
 - Neck lines: below chin/goatee/beard. No face parts in torso pieces.
 - NOTE: folded-arms pose — torso is visible shirt fragments (shirt hidden behind arms/beard); arm_L is small (left arm mostly hidden). Honest to the pose.
+
+## 2026-10-11 — Attempt 3: complete sheet (subagent)
+
+Prior attempts' work was found committed on main (88 files: brows/eyes/mouths/heads/legs/walk/poses).
+10 untracked files from a dead attempt were DELETED (not committed): body_34L/R/back, head_34L/R/profile on/off —
+all failed visual QC (crude affine squash, angry brows baked into heads, white bg remnants, frankenstein back
+with floating beanie + visible tumbler + bg junk). Documented, not shipped.
+
+New work (all verified zoomed vs source, likeness holds):
+- head.png ALPHA REPAIRED: file had full body in RGB but alpha=0 below row 334 (broken). rembg u2net
+  regenerated clean alpha; RGB unchanged. Also cleaned a bg remnant on the donor's right edge.
+- head_34L/R_on/off: smooth-displacement 3/4 turns (40px max shift, gaussian falloff) from the intact
+  front head donor. Beanie-off versions from head_no_beanie_v2 donor.
+- head_profile_on/off: 62% horizontal squeeze, left eye filled with sampled skin (251,190,135),
+  SP nose bump added. Beanie-off needed left-brow removal (tight ellipse fill, verified 0 dark px remain).
+  Honestly labeled as derivations, not true 90-degree profiles.
+- hand_open/relaxed/fist/point/tumbler_grip: extracted from body donor (left mitten, right tumbler hand).
+  Fist = slightly compressed mitten; point = mitten + SP-style finger (connected, verified).
+- body_34L/R: subtle displacement (28px) on full body; bg smear on right edge painted out.
+- body_back: mirror-reconstruction — symmetric tee/jeans from mirrored halves, beanie + hair mass for
+  back of head. No face, no tumbler, no artifacts.
+- preview_sheet.png: full contact sheet (heads/brows/eyes/mouths/hands/bodies).
+
+Method notes: gen.py NOT used (Amos attempt showed AI Horde backend returns glitch garbage for head angles).
+All angles via pixel transforms of the actual cuts (USE THE IMAGE LAW). /tmp wipe mid-task lost uncommitted
+work — rebuilt from pushed commits; lesson: commit+push every 15 min, use persistent workdir.

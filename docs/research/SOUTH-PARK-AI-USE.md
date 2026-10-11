@@ -171,12 +171,16 @@ Anything not on it is not South Park-verified:
    prompt"); training on or replicating anyone's likeness or IP without their explicit
    authorization (the show itself satirizes exactly this in "Sora Not Sorry").
 
-**Owner override (2026-10-11):** AI voice cloning IS used in TRIPPEDD/Goodville
-production — the owner's standing practice (voice pipeline, Chatterbox tests). The South
-Park rule bends here: cloning is **consent-gated only** (the Deep Voodoo philosophy —
-explicit authorization, never without it). No cloning of any real performer without
-their consent; characters based on real people get style-alike parody voices (house
-style, not impersonation), not clones.
+**Owner overrides (2026-10-11):**
+- AI voice cloning IS used in TRIPPEDD/Goodville production — the owner's standing
+  practice (voice pipeline, Chatterbox tests). The South Park "no cloning" rule bends
+  here.
+- The likeness consent-gate does NOT apply to parody. Owner's philosophy: he gets
+  consent for likeness where he can, but parody/pop-culture shows can't always get
+  permission — requiring it would kill the form, and parody is protected expression.
+  (South Park itself parodies real people without permission; the Deep Voodoo consent
+  talk is their commercial posture, not the show's parody practice.) The "no
+  unauthorized likeness replication" rule stands only for non-parody uses.
 
 *Study written 2026-10-11 for TRIPPEDD Production Studios — Goodville Cartoon (SEG05)
 AI-use policy. Branch: `docs/south-park-ai-use`. Companion: `SOUTH-PARK-STUDY.md`.*

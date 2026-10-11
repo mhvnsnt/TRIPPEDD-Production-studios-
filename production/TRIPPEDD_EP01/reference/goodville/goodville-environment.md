@@ -289,3 +289,28 @@ transformed character, PR #109) worked and the owner approved the approach.
 The full process must be documented as a reusable recipe for future
 transformation edits/animation. (Follow-up task, parked while the show is
 the focus.)
+
+## Trio outfit variations (owner 2026-10-11 — DOCUMENTED, not locked canon per C08)
+
+**Julio needs a beanie-off cut.** The owner has reference images where Julio has
+no hat — those give us the clean HAIR cut, since he doesn't always wear the
+beanie. Kit needs both: beanie-on and hair-only versions. (Owner to send the
+hatless references.)
+
+**Outfit variations, generated onto the cuts.** Method = the USE THE IMAGE LAW
+exception: generate ONLY the outfit onto the existing cut, everything else
+(face, hair, body, hands) stays pixel-unchanged. Character sheet cuts of each
+outfit, South Park art style, via the combined free generation stack (best of
+all backends as one system — ChatGPT quality or better).
+
+Outfit research (TPB canon, for variation ideas):
+- **Dickie** (Ricky): the houndstooth button shirt + black track pants is the
+  iconic look (running gag: one shirt per season). Variations: knock-off DBZ
+  graphic tee, checkerboard star pattern shirt.
+- **Julio** (Julian): LIMITED WARDROBE is canon — always a tight black tee,
+  blue or black jeans, boots, drink in hand, occasional silver chain. Variations
+  stay black-on-black: black muscle shirt, black button shirt.
+- **Bubba** (Bubbles): plaid/flannel shirts in different colorways, work shirts.
+
+Queued behind: the extraction rebuild (feat/trio-sheets) finishing + the free
+gen stack's first proven end-to-end run.

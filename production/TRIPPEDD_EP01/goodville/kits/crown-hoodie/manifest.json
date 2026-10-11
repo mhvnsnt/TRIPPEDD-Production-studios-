@@ -709,5 +709,90 @@
    "grid_check": "grid.py --no-crop overlay; all anchor boxes hug features; pupils land exactly",
    "eyes": "white ovals confirmed vs key art (old kit had them BLACK)"
   }
+ },
+ "deep2": {
+  "date": "2026-10-11",
+  "branch": "feat/sheet-deep2",
+  "new_pieces": 31,
+  "pieces": [
+   "brows_angry",
+   "brows_sad",
+   "brows_suspicious",
+   "brows_raised",
+   "eyes_angry",
+   "eyes_happy",
+   "eyes_worried",
+   "eyes_look_L",
+   "eyes_look_R",
+   "eyes_look_up",
+   "eyes_look_down",
+   "mouth_smile",
+   "mouth_grin",
+   "mouth_frown",
+   "mouth_open",
+   "mouth_ooh",
+   "mouth_yell",
+   "mouth_zipper",
+   "hand_open_L",
+   "hand_open_R",
+   "hand_relaxed_L",
+   "hand_relaxed_R",
+   "hand_grip_L",
+   "hand_grip_R",
+   "torso_34L",
+   "torso_34R",
+   "torso_back",
+   "torso_sitting",
+   "prop_beanie",
+   "prop_hair",
+   "prop_crown_logo"
+  ],
+  "method": "measured-anchor architecture; furniture hand-built in his style from v1 donors + programmatic variants, all on v2 anchors; verified zoomed vs key art",
+  "note": "owner's stand-in \u2014 extra care; every piece verified to look like HIM"
+ },
+ "anchor_map": {
+  "head_blank": "v2/head_blank.png",
+  "head_blank_size": [
+   280,
+   348
+  ],
+  "points": {
+   "eye_L": [
+    104,
+    199
+   ],
+   "eye_R": [
+    189,
+    199
+   ],
+   "brow_L": [
+    69,
+    146
+   ],
+   "brow_R": [
+    224,
+    146
+   ],
+   "pupil_rest": [
+    121,
+    199
+   ],
+   "mouth_center": [
+    147,
+    287
+   ],
+   "mouth_width": 43,
+   "chin": [
+    147,
+    338
+   ],
+   "head_cx": 147,
+   "neck": [
+    147,
+    338
+   ]
+  },
+  "measured_from": "v2/anchors.json (key art bbox 598,512,878,860)",
+  "measured_date": "2026-10-11"
  }
 }

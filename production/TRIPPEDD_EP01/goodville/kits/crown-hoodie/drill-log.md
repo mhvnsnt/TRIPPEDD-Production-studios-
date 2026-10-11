@@ -70,3 +70,29 @@ PROVEN METHOD (Sten's v2): donor from key art -> measured anchors -> head_blank 
 **Angles:** single-pass PIL AFFINE, BICUBIC — 34L/34R squeeze 0.85 anchored far edge; profile_R squeeze 0.72 (steep 3/4; true profile needs a side-view donor, none in key art).
 **Verify:** head_blank+furniture reconstructs donor (mean abs diff 3.05, 2.4% px >30 — AA fringe only). Every piece viewed zoomed. preview_sheet.png rebuilt with tight composites.
 **Still off:** expression variants (eyes_angry etc.) are old-canvas full overlays — need re-anchoring to v2 (follow-up).
+
+## deep2 — full sheet expansion (2026-10-11, branch feat/sheet-deep2)
+
+Owner: "you got pretty good character cards, you got to build more pieces for him."
+This is the owner's stand-in — extra care on every piece.
+
+**New pieces (31):** 4 brows (angry/sad/suspicious/raised), 7 eyes
+(angry/happy/worried/look L/R/up/down), 7 mouths
+(smile/grin/frown/open/ooh/yell/zipper), 6 hands (open/relaxed/grip × L/R),
+4 bodies (torso_34L/34R/back/sitting), 3 layers (prop_beanie/prop_hair/prop_crown_logo).
+
+**Method:** MEASURED-ANCHOR LAW + MEASURED-ANCHORS-GUIDE.md. All furniture
+hand-built in his style (thick black brow bars, white oval eyes, brown
+mouth linework, skin 242,187,124) composited onto v2 measured anchors.
+USE THE IMAGE LAW exception for furniture (hand-built variants matched to
+his v1 donors and key art).
+
+**Fixes during build:** brows_raised v1-v3 placed behind beanie brim
+(brim at y~145 covers forehead) — v4 sits at highest visible position.
+eyes_worried v1 had bar (read angry), v2 too thick (read angry), v3 thin
+lids + up pupils (reads worried). torso_back logo ghost removed (0 bright
+px remaining in logo zone).
+
+**Verification:** every piece composited on head_blank and eye-checked
+zoomed vs key art. Reconstruction check: blank+eyes+brows+mouth vs donor =
+mean diff 3.0 (1.5% px differ, all at furniture edges — expected).

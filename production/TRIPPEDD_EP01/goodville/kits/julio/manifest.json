@@ -61,6 +61,31 @@
       "file": "pose_lean_over_v2.png",
       "desc": "v2: isnet re-cut; car window/door/mirror + Bubba chunk removed; lean surface = clean car-roof band with shaped edge (v1 was a lumpy black blob with rim halo). v1 kept.",
       "source": "owner-image-extract-v2"
+    },
+    {
+      "file": "upper_with_face.png",
+      "desc": "Full-piece set from car trio image (owner 2026-10-11): upper with face. Wide extraction, complete arms, u2net.",
+      "source": "owner-chatgpt-car-trio"
+    },
+    {
+      "file": "head_sep.png",
+      "desc": "Full-piece set from car trio image (owner 2026-10-11): head sep. Wide extraction, complete arms, u2net.",
+      "source": "owner-chatgpt-car-trio"
+    },
+    {
+      "file": "torso_sep.png",
+      "desc": "Full-piece set from car trio image (owner 2026-10-11): torso sep. Wide extraction, complete arms, u2net.",
+      "source": "owner-chatgpt-car-trio"
+    },
+    {
+      "file": "arm_L_sep.png",
+      "desc": "Full-piece set from car trio image (owner 2026-10-11): arm L sep. Wide extraction, complete arms, u2net.",
+      "source": "owner-chatgpt-car-trio"
+    },
+    {
+      "file": "arm_R_sep.png",
+      "desc": "Full-piece set from car trio image (owner 2026-10-11): arm R sep. Wide extraction, complete arms, u2net.",
+      "source": "owner-chatgpt-car-trio"
     }
   ],
   "provenance": {

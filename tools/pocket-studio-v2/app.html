@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Pocket Studio v2 — EP02 Timeline</title>
+<style>
+:root {
+  --bg: #0d0d12; --panel: #16161e; --panel2: #1e1e2a;
+  --text: #e8e8f0; --dim: #8888a0; --accent: #7c5cff;
+  --playhead: #ff3b5c; --track-h: 56px;
+  --tabbar-h: 64px;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overscroll-behavior: none; }
+#app { max-width: 900px; margin: 0 auto; padding: 8px; padding-bottom: calc(var(--tabbar-h) + 12px); }
+header { display: flex; align-items: center; gap: 8px; padding: 8px 4px; }
+header h1 { font-size: 18px; margin: 0; flex: 1; }
+.badge { font-size: 11px; background: var(--accent); padding: 3px 8px; border-radius: 10px; }
+/* Video - CapCut pattern: 16:9 preview, top ~38% viewport */
+#previewSection { position: relative; margin-bottom: 4px; }
+#videoWrap { position: relative; background: #000; border-radius: 8px; overflow: hidden;
+  aspect-ratio: 16 / 9; max-height: 38vh; width: 100%;
+  touch-action: none; user-select: none; -webkit-user-select: none; }
+#video { width: 100%; height: 100%; object-fit: contain; display: block; background: #000; }
+/* Preview overlay controls (CapCut: tap video for play/pause) */
+#pvOverlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  pointer-events: none; z-index: 5; }
+#pvPlayIcon { font-size: 64px; color: rgba(255,255,255,0.9); opacity: 0; transition: opacity 0.2s;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+#pvPlayIcon.show { opacity: 1; }
+/* Loading / error states */
+#pvLoading { position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; background: #000; z-index: 10; gap: 12px; }
+#pvLoading.hide { display: none; }
+.pv-spinner { width: 40px; height: 40px; border: 3px solid #333; border-top-color: var(--accent);
+  border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+#pvError { position: absolute; inset: 0; display: none; flex-direction: column;
+  align-items: center; justify-content: center; background: #1a1a22; z-index: 10;
+  gap: 12px; padding: 20px; text-align: center; }
+#pvError.show { display: flex; }
+/* Preview corner buttons (minimize, fullscreen) */
+.pv-corner { position: absolute; z-index: 6; background: rgba(0,0,0,0.6);
+  border: none; color: #fff; border-radius: 8px; width: 40px; height: 40px;
+  font-size: 18px; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; }
+#pvMinBtn { top: 8px; right: 8px; }
+#pvFsBtn { top: 8px; right: 56px; }
+/* Scrub bar below video (CapCut pattern) */
+#scrubWrap { padding: 8px 4px 4px 4px; }
+#scrubBar { position: relative; height: 28px; touch-action: none; cursor: pointer; }
+#scrubTrack { position: absolute; top: 12px; left: 0; right: 0; height: 4px;
+  background: #33334a; border-radius: 2px; }
+#scrubFill { position: absolute; top: 12px; left: 0; height: 4px;
+  background: var(--accent); border-radius: 2px; width: 0%; pointer-events: none; }
+#scrubHead { position: absolute; top: 6px; width: 16px; height: 16px; border-radius: 50%;
+  background: #fff; border: 3px solid var(--accent); transform: translateX(-50%);
+  pointer-events: none; box-shadow: 0 1px 6px rgba(0,0,0,0.5); }
+/* Minimized floating player (draggable) */
+#videoWrap.mini { position: fixed; z-index: 60; width: 200px; aspect-ratio: 16/9;
+  max-height: none; border-radius: 10px; border: 2px solid var(--accent);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6); cursor: move; }
+#videoWrap.mini .pv-corner { width: 32px; height: 32px; font-size: 14px; }
+#videoWrap.mini #pvFsBtn { right: 44px; }
+#miniRestore { display: none; position: fixed; bottom: calc(var(--tabbar-h) + 16px); right: 16px;
+  z-index: 61; background: var(--accent); color: #fff; border: none;
+  border-radius: 24px; padding: 12px 20px; font-size: 14px; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
+#miniRestore.show { display: block; }
+/* Fullscreen mode */
+#videoWrap.fs { position: fixed; inset: 0; z-index: 70; border-radius: 0;
+  max-height: none; aspect-ratio: auto; }
+#videoWrap.fs #video { object-fit: contain; }
+/* Zoom indicator */
+#pvZoomInd { position: absolute; bottom: 8px; left: 8px; z-index: 6;
+  background: rgba(0,0,0,0.6); color: #fff; font-size: 11px; padding: 4px 8px;
+  border-radius: 8px; display: none; }
+#pvZoomInd.show { display: block; }
+#transport { display: flex; align-items: center; gap: 6px; padding: 10px 4px; }
+.btn { background: var(--panel2); border: 1px solid #33334a; color: var(--text);
+  border-radius: 10px; min-height: 48px; min-width: 48px; font-size: 20px;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  padding: 0 14px; }
+.btn:active { background: var(--accent); }
+.btn.small { min-height: 40px; min-width: 40px; font-size: 16px; }
+.btn.primary { background: var(--accent); border-color: var(--accent); }
+.btn.danger { background: #5c1f2e; border-color: #7c2a3d; }
+.btn.toggled { background: var(--accent); border-color: var(--accent); }
+#timeDisplay { font-variant-numeric: tabular-nums; font-size: 14px; flex: 1; text-align: center; }
+#frameDisplay { font-variant-numeric: tabular-nums; font-size: 12px; color: var(--dim); text-align: center; }
+#urlRow { display: flex; gap: 6px; padding: 4px; }
+#urlRow input { flex: 1; background: var(--panel); border: 1px solid #33334a;
+  color: var(--text); border-radius: 8px; padding: 10px; font-size: 12px; }
+/* Timeline */
+#tlScroll { overflow-x: auto; overflow-y: hidden; background: var(--panel);
+  border-radius: 8px; touch-action: pan-x pan-y; position: relative;
+  -webkit-overflow-scrolling: touch; }
+#tl { position: relative; height: 340px; }
+canvas#tlCanvas { position: absolute; top: 0; left: 0; touch-action: none; }
+/* Toolbar */
+#toolbar { display: flex; gap: 8px; padding: 10px 4px; flex-wrap: wrap; }
+#toolbar .btn { font-size: 14px; }
+/* Selected clip bar (CapCut-style floating action bar) */
+#clipBar { display: none; background: var(--panel2); border-radius: 8px;
+  padding: 10px; margin: 4px; gap: 8px; align-items: center; flex-wrap: wrap; }
+#clipBar.show { display: flex; }
+#clipBar .info { flex: 1; min-width: 140px; font-size: 13px; }
+/* Modal */
+#modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+  z-index: 50; align-items: center; justify-content: center; padding: 20px; }
+#modal.show { display: flex; }
+#modalBox { background: var(--panel2); border-radius: 12px; padding: 18px;
+  width: 100%; max-width: 420px; max-height: 80vh; overflow-y: auto; }
+#modalBox h3 { margin: 0 0 10px 0; font-size: 16px; }
+#modalBox textarea, #modalBox input[type=text] { width: 100%; background: var(--panel);
+  border: 1px solid #33334a; color: var(--text); border-radius: 8px;
+  padding: 12px; font-size: 15px; margin-bottom: 10px; }
+#modalBox textarea { min-height: 90px; resize: vertical; }
+#modalRow { display: flex; gap: 8px; justify-content: flex-end; }
+/* Toast */
+#toast { position: fixed; bottom: calc(var(--tabbar-h) + 24px); left: 50%; transform: translateX(-50%);
+  background: var(--accent); color: #fff; padding: 12px 20px; border-radius: 24px;
+  font-size: 14px; display: none; z-index: 100; max-width: 90vw; text-align: center; }
+#changes { font-size: 12px; color: var(--dim); padding: 6px 4px; }
+.rec-dot { width: 12px; height: 12px; border-radius: 50%; background: #ff3b5c;
+  display: inline-block; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0.3; } }
+/* ===== BOTTOM TAB BAR (FL Studio pattern) ===== */
+#tabbar { position: fixed; bottom: 0; left: 0; right: 0; height: var(--tabbar-h);
+  background: var(--panel); border-top: 1px solid #33334a; display: flex;
+  z-index: 40; max-width: 900px; margin: 0 auto; }
+#tabbar button { flex: 1; background: none; border: none; color: var(--dim);
+  font-size: 11px; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 2px; cursor: pointer; min-height: var(--tabbar-h); }
+#tabbar button .ico { font-size: 22px; }
+#tabbar button.active { color: var(--text); }
+#tabbar button.active .ico { filter: drop-shadow(0 0 6px var(--accent)); }
+.tab-page { display: none; }
+.tab-page.active { display: block; }
+/* ===== ANIMATE TAB (FlipaClip pattern) ===== */
+#animCanvasWrap { position: relative; background: #000; border-radius: 8px; overflow: hidden; }
+#animCanvas { width: 100%; max-height: 40vh; display: block; }
+#filmstrip { display: flex; gap: 6px; overflow-x: auto; padding: 10px 4px;
+  -webkit-overflow-scrolling: touch; }
+.fthumb { flex: 0 0 72px; width: 72px; height: 48px; border-radius: 6px;
+  border: 2px solid transparent; background: #000; object-fit: cover; cursor: pointer; }
+.fthumb.cur { border-color: var(--accent); }
+.fthumb .frnum { font-size: 9px; color: #fff; background: rgba(0,0,0,0.6);
+  position: absolute; bottom: 2px; left: 2px; padding: 1px 4px; border-radius: 3px; }
+/* ===== BLAIR TAB ===== */
+#blairChars { display: flex; gap: 8px; overflow-x: auto; padding: 8px 4px; }
+.blair-char { flex: 0 0 auto; padding: 10px 16px; background: var(--panel2);
+  border: 2px solid transparent; border-radius: 10px; font-size: 14px; cursor: pointer; }
+.blair-char.active { border-color: var(--accent); }
+#blairSheet { width: 100%; border-radius: 8px; margin-top: 8px; background: var(--panel); }
+#blairInfo { font-size: 13px; color: var(--dim); padding: 8px 4px; }
+/* ===== TOOLS TAB ===== */
+.tool-cat { margin: 12px 0; }
+.tool-cat h3 { font-size: 15px; margin: 8px 4px; color: var(--accent); }
+.tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 4px; }
+.tool-card { background: var(--panel2); border-radius: 10px; padding: 12px;
+  text-decoration: none; color: var(--text); display: block; }
+.tool-card b { font-size: 14px; display: block; }
+.tool-card span { font-size: 11px; color: var(--dim); }
+.tool-card .free-badge { font-size: 10px; background: #1f5c2e; padding: 2px 6px;
+  border-radius: 8px; margin-left: 6px; }
+/* ===== MIX TAB (BandLab pattern) ===== */
+.mix-strip { background: var(--panel2); border-radius: 10px; padding: 12px; margin: 8px 4px; }
+.mix-strip .mhead { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.mix-strip .mhead b { flex: 1; font-size: 14px; }
+.mix-strip input[type=range] { width: 100%; height: 44px; accent-color: var(--accent); }
+.mix-val { font-size: 12px; color: var(--dim); text-align: right; }
+/* ===== PROJECTS / ASSETS / 3D TABS (universal hub) ===== */
+.proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 4px; }
+.proj-card { background: var(--panel2); border: 1px solid #2a2a3a; border-radius: 10px; padding: 12px 10px; cursor: pointer; }
+.proj-card.active { border-color: var(--accent); }
+.proj-card b { display: block; font-size: 14px; margin-bottom: 4px; }
+.proj-card span { font-size: 11px; color: var(--dim); }
+.proj-card .ptype { display: inline-block; font-size: 10px; background: #2a2a3a; border-radius: 4px; padding: 2px 6px; margin-top: 6px; }
+.asset-search { display: flex; gap: 8px; padding: 8px 4px; }
+.asset-search input { flex: 1; background: var(--panel2); color: var(--text); border: 1px solid #2a2a3a; border-radius: 8px; padding: 10px; font-size: 14px; }
+.asset-search select { background: var(--panel2); color: var(--text); border: 1px solid #2a2a3a; border-radius: 8px; padding: 10px; }
+.asset-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 4px; }
+.asset-card { background: var(--panel2); border: 1px solid #2a2a3a; border-radius: 8px; padding: 10px; font-size: 12px; }
+.asset-card b { display: block; font-size: 12px; margin-bottom: 2px; word-break: break-word; }
+.asset-card span { color: var(--dim); font-size: 10px; }
+.asset-card .apath { color: #55556a; font-size: 9px; word-break: break-all; margin-top: 4px; }
+#viewer3d-wrap { position: relative; width: 100%; aspect-ratio: 1/1; max-height: 52vh; background: #0a0a0f; border-radius: 10px; overflow: hidden; }
+#viewer3d-wrap canvas { width: 100%; height: 100%; display: block; touch-action: none; }
+.viewer-controls { display: flex; gap: 8px; padding: 8px 4px; flex-wrap: wrap; }
+.viewer-controls .btn { flex: 1; min-width: 100px; text-align: center; }
+#tabbar button { font-size: 9px; }
+#tabbar button .ico { font-size: 18px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>🎬 Pocket Studio v2</h1>
+    <select id="projSelect" aria-label="Project">
+      <option value="wizard-gang-ep02">Wizard Gang EP02</option>
+    </select>
+  </header>
+
+  <!-- ============ TAB: EDIT (CapCut pattern) ============ -->
+  <div class="tab-page active" id="tab-edit">
+    <div id="previewSection">
+      <div id="videoWrap">
+        <video id="video" playsinline preload="metadata"></video>
+        <div id="pvOverlay"><div id="pvPlayIcon">▶</div></div>
+        <div id="pvLoading"><div class="pv-spinner"></div><div style="font-size:13px;color:#888">Loading video…</div></div>
+        <div id="pvError">
+          <div style="font-size:40px">⚠️</div>
+          <div style="font-size:14px">Video failed to load.<br>The review link may have expired.</div>
+          <button class="btn primary" id="pvRetry">↻ Retry</button>
+          <div style="font-size:12px;color:#888">Or paste a fresh URL below ↓</div>
+        </div>
+        <button class="pv-corner" id="pvFsBtn" title="Fullscreen">⛶</button>
+        <button class="pv-corner" id="pvMinBtn" title="Minimize">−</button>
+        <div id="pvZoomInd">1.0×</div>
+      </div>
+      <div id="scrubWrap">
+        <div id="scrubBar">
+          <div id="scrubTrack"></div>
+          <div id="scrubFill"></div>
+          <div id="scrubHead"></div>
+        </div>
+      </div>
+    </div>
+    <button id="miniRestore">📺 Restore preview</button>
+
+    <div id="urlRow">
+      <input id="videoUrl" type="text" placeholder="Paste review video URL…">
+      <button class="btn small" id="loadUrl" title="Load">↻</button>
+    </div>
+
+    <div id="transport">
+      <button class="btn small" id="playBtn">▶</button>
+      <button class="btn small" id="frameBack" title="−1 frame">⏮</button>
+      <button class="btn small" id="backBtn" title="−5s">−5s</button>
+      <button class="btn small" id="fwdBtn" title="+5s">+5s</button>
+      <button class="btn small" id="frameFwd" title="+1 frame">⏭</button>
+      <div>
+        <div id="timeDisplay">0:00.0 / 5:44.8</div>
+        <div id="frameDisplay">F 0</div>
+      </div>
+    </div>
+
+    <div id="tlScroll"><div id="tl"><canvas id="tlCanvas"></canvas></div></div>
+
+    <div id="toolbar">
+      <button class="btn" id="noteBtn">📝 Note</button>
+      <button class="btn" id="recBtn">⏺ Record</button>
+      <button class="btn" id="zoomOut">−</button>
+      <button class="btn" id="zoomIn">+</button>
+      <button class="btn" id="snapBtn" title="Snap to 0.5s">🧲</button>
+      <button class="btn primary" id="saveBtn">💾 Save</button>
+    </div>
+
+    <div id="clipBar">
+      <div class="info" id="clipInfo"></div>
+      <button class="btn small" id="volDown">🔉</button>
+      <button class="btn small" id="volUp">🔊</button>
+      <button class="btn small danger" id="delClip">🗑</button>
+      <button class="btn small" id="closeBar">✕</button>
+    </div>
+
+    <div id="changes"></div>
+  </div>
+
+  <!-- ============ TAB: ANIMATE (FlipaClip pattern) ============ -->
+  <div class="tab-page" id="tab-animate">
+    <div id="animCanvasWrap"><canvas id="animCanvas"></canvas></div>
+    <div id="transport">
+      <button class="btn small" id="aPlayBtn">▶</button>
+      <button class="btn small" id="aBack10" title="−10 frames">⏪</button>
+      <button class="btn small" id="aBack1" title="−1 frame">◀</button>
+      <button class="btn small" id="aFwd1" title="+1 frame">▶</button>
+      <button class="btn small" id="aFwd10" title="+10 frames">⏩</button>
+      <button class="btn small" id="onionBtn" title="Onion skin">🧅</button>
+      <div id="aTimeDisplay" style="flex:1;text-align:center;font-size:14px;">F 0</div>
+    </div>
+    <div style="padding:4px;font-size:12px;color:var(--dim)">Tap a frame to jump there. 🧅 toggles onion-skin ghost of prev/next frame.</div>
+    <div id="filmstrip"></div>
+  </div>
+
+  <!-- ============ TAB: BLAIR (Preston Blair sheets) ============ -->
+  <div class="tab-page" id="tab-blair">
+    <div style="padding:8px 4px;font-size:13px;color:var(--dim)">
+      Preston Blair viseme + model sheets. Pick a character, study the mouth shapes while animating.
+    </div>
+    <div id="blairChars"></div>
+    <img id="blairSheet" alt="Viseme sheet">
+    <div id="blairInfo"></div>
+  </div>
+
+  <!-- ============ TAB: TOOLS ============ -->
+  <div class="tab-page" id="tab-tools">
+    <div style="padding:8px 4px;font-size:13px;color:var(--dim)">
+      Free creative tools, wired up. Tap to open.
+    </div>
+    <div id="toolCats"></div>
+  </div>
+
+  <!-- ============ TAB: MIX (BandLab pattern) ============ -->
+  <div class="tab-page" id="tab-mix">
+    <div style="padding:8px 4px;font-size:13px;color:var(--dim)">
+      Per-track mix. Faders multiply clip volumes on that track.
+    </div>
+    <div id="mixStrips"></div>
+  </div>
+  <!-- ============ TAB: PROJECTS (universal hub) ============ -->
+  <div class="tab-page" id="tab-projects">
+    <div style="padding:8px 4px;font-size:13px;color:var(--dim)">
+      All shows, games, and projects. Tap to switch — timeline and assets follow.
+    </div>
+    <div class="proj-grid" id="projGrid"></div>
+  </div>
+  <!-- ============ TAB: ASSETS (universal hub) ============ -->
+  <div class="tab-page" id="tab-assets">
+    <div class="asset-search">
+      <input id="assetSearch" type="search" placeholder="Search assets..." />
+      <select id="assetFilter">
+        <option value="">All</option>
+        <option value="model3d">3D Models</option>
+        <option value="rig2d">2D Rigs</option>
+        <option value="voice">Voices</option>
+        <option value="video">Video</option>
+        <option value="tool">Tools</option>
+      </select>
+    </div>
+    <div style="padding:0 4px;font-size:11px;color:var(--dim)" id="assetCount"></div>
+    <div class="asset-grid" id="assetGrid"></div>
+  </div>
+  <!-- ============ TAB: 3D VIEWER (universal hub) ============ -->
+  <div class="tab-page" id="tab-viewer3d">
+    <div style="padding:8px 4px;font-size:13px;color:var(--dim)">
+      3D model viewer + weight paint. Load a GLB from file or URL. Drag to rotate, pinch to zoom.
+    </div>
+    <div id="viewer3d-wrap"><div style="padding:40px 20px;text-align:center;color:var(--dim)">Tap &quot;Load GLB&quot; below</div></div>
+    <div class="viewer-controls">
+      <label class="btn">&#x1F4C2; Load GLB<input type="file" id="glbFile" accept=".glb,.gltf" style="display:none"></label>
+      <button class="btn" id="glbUrlBtn">&#x1F517; URL</button>
+      <button class="btn" id="wpHeatBtn">&#x1F308; Heat View</button>
+    </div>
+    <div style="padding:4px;display:flex;gap:8px;align-items:center">
+      <select id="boneSelect" style="flex:1;background:var(--panel2);color:var(--text);border:1px solid #2a2a3a;border-radius:8px;padding:10px;display:none"></select>
+    </div>
+    <div id="glbInfo" style="padding:4px;font-size:11px;color:var(--dim)"></div>
+    <div style="padding:8px 4px;font-size:12px;color:var(--dim)">
+      <b>Weight Paint PWA</b> (owner's tool) lives in the repos:<br>
+      <span style="font-size:10px;color:#55556a">StreetBrawl/tools/weight-paint-pwa/</span><br>
+      <button class="btn" id="wpPathBtn" style="margin-top:6px">&#x1F4CB; Copy PWA path</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom tab bar -->
+<nav id="tabbar">
+  <button data-tab="edit" class="active"><span class="ico">🎬</span>Edit</button>
+  <button data-tab="animate"><span class="ico">🎞️</span>Anim</button>
+  <button data-tab="blair"><span class="ico">📐</span>Blair</button>
+  <button data-tab="projects"><span class="ico">📁</span>Proj</button>
+  <button data-tab="assets"><span class="ico">🗂️</span>Assets</button>
+  <button data-tab="viewer3d"><span class="ico">🧊</span>3D</button>
+  <button data-tab="tools"><span class="ico">🧰</span>Tools</button>
+  <button data-tab="mix"><span class="ico">🎚️</span>Mix</button>
+</nav>
+
+<div id="modal"><div id="modalBox">
+  <h3 id="modalTitle">Note</h3>
+  <div id="modalBody"></div>
+  <div id="modalRow">
+    <button class="btn" id="modalCancel">Cancel</button>
+    <button class="btn primary" id="modalOk">Save</button>
+  </div>
+</div></div>
+
+<div id="toast"></div>
+
+<script type="importmap">
+{"imports": {"three": "https://unpkg.com/three@0.160.0/build/three.module.js", "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+<script>
+"use strict";
+/* ============ PROJECT DATA (EP02 v8b) ============ */
+const PROJECT = {"name":"EP02 v8b","duration":344.81,"clips":[{"id":"n1","track":"dialogue","at":52.0,"duration":1.76,"volume":1.0,"label":"N1 Narrator","character":"narrator","text":"They got the call. All nine.","peaks":[0.545,0.551,0.674,0.593,0.475,0.238,0.53,0.717,0.525,0.341,0.532,0.15,0.14,0.255,0.719,0.596,0.464,0.518,0.724,0.472,0.46,0.42,0.509,0.229],"file":"voice-delivery/voice-narrator-n1.mp3","original_at":52.0},{"id":"l1","track":"dialogue","at":56.0,"duration":6.56,"volume":1.0,"label":"L1 Static","character":"static","text":"Ayo! You see that fire?","peaks":[0.125,0.102,0.065,0.166,0.185,0.171,0.08,0.243,0.271,0.06,0.109,0.105,0.125,0.071,0.197,0.04,0.103,0.148,0.097,0.108,0.104,0.094,0.101,0.071],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l1.mp3","original_at":56.0},{"id":"l2","track":"dialogue","at":66.0,"duration":8.08,"volume":1.0,"label":"L2 Static","character":"static","text":"Can we get some order?","peaks":[0.01,0.081,0.144,0.144,0.107,0.004,0.161,0.136,0.005,0.005,0.073,0.087,0.062,0.053,0.026,0.065,0.006,0.005,0.113,0.132,0.101,0.096,0.117,0.031],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l2.mp3","original_at":66.0},{"id":"whisper","track":"dialogue","at":75.0,"duration":6.0,"volume":0.4,"label":"Ritual whisper","character":"ashes","text":"(unintelligible whisper)","peaks":[0.012,0.032,0.022,0.019,0.013,0.023,0.02,0.025,0.02,0.025,0.02,0.017,0.008,0.013,0.016,0.01,0.007,0.001,0.0,0.0,0.0,0.0,0.0,0.0],"file":"voice-delivery/voice-ashes-ritual-whisper.mp3","original_at":75.0},{"id":"l3","track":"dialogue","at":82.0,"duration":7.56,"volume":1.0,"label":"L3 Static","character":"static","text":"Why's everybody lookin' at me?","peaks":[0.006,0.005,0.083,0.094,0.084,0.08,0.081,0.029,0.117,0.121,0.167,0.166,0.082,0.098,0.158,0.034,0.172,0.112,0.176,0.121,0.171,0.106,0.262,0.012],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l3.mp3","original_at":82.0},{"id":"h1","track":"dialogue","at":84.0,"duration":2.64,"volume":1.0,"label":"H1 Onyx","character":"onyx","text":"We are adjourning nothing.","peaks":[0.012,0.057,0.214,0.154,0.101,0.101,0.122,0.088,0.066,0.042,0.112,0.138,0.048,0.04,0.02,0.038,0.045,0.137,0.064,0.023,0.107,0.106,0.048,0.012],"file":"voice-delivery/voice-onyx-h1.mp3","original_at":84.0},{"id":"l6","track":"dialogue","at":96.0,"duration":9.04,"volume":1.0,"label":"L6 Static","character":"static","text":"He said we move tonight!","peaks":[0.005,0.004,0.005,0.004,0.119,0.165,0.29,0.304,0.006,0.038,0.235,0.304,0.043,0.134,0.383,0.102,0.007,0.16,0.119,0.099,0.008,0.114,0.11,0.008],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l6.mp3","original_at":96.0},{"id":"l7-ashes","track":"dialogue","at":113.0,"duration":7.56,"volume":1.0,"label":"L7 Ashes","character":"ashes","text":"War fund! Everybody throw in!","peaks":[0.506,0.942,0.758,0.488,0.356,0.389,0.282,0.17,0.453,0.406,0.435,0.351,0.326,0.208,0.358,0.316,0.324,0.315,0.321,0.33,0.508,0.277,0.313,0.3],"file":"voice-delivery/voice-ashes-l7.mp3","original_at":113.0},{"id":"c4","track":"dialogue","at":121.0,"duration":12.88,"volume":1.0,"label":"C4 Cipher","character":"cipher","text":"Paper? Who needs paper?","peaks":[0.996,0.979,0.862,1.0,0.341,0.983,1.0,1.0,0.723,1.0,0.099,1.0,1.0,1.0,1.0,1.0,1.0,0.552,1.0,0.474,1.0,1.0,0.944,1.0],"file":"voice-delivery/voice-cipher-c4-money.mp3","original_at":121.0},{"id":"l10","track":"dialogue","at":151.0,"duration":10.36,"volume":1.0,"label":"L10 Static","character":"static","text":"Hollow's out here recruitin'!","peaks":[0.183,0.175,0.111,0.133,0.149,0.124,0.105,0.029,0.119,0.204,0.206,0.155,0.003,0.16,0.001,0.0,0.0,0.0,0.027,0.146,0.257,0.155,0.262,0.078],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l10.mp3","original_at":151.0},{"id":"l18","track":"dialogue","at":222.0,"duration":7.32,"volume":1.0,"label":"L18 Static","character":"static","text":"Sombra. My man.","peaks":[0.067,0.022,0.003,0.003,0.005,0.005,0.004,0.021,0.12,0.051,0.004,0.019,0.109,0.18,0.155,0.06,0.167,0.15,0.122,0.094,0.036,0.086,0.155,0.202],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l18.mp3","original_at":222.0},{"id":"c1","track":"dialogue","at":256.0,"duration":6.25,"volume":1.0,"label":"C1 Cipher","character":"cipher","text":"I bet I can.","peaks":[0.426,0.423,0.417,0.182,0.461,0.437,0.424,0.437,0.421,0.444,0.185,0.375,0.26,0.345,0.125,0.34,0.411,0.204,0.247,0.273,0.22,0.321,0.461,0.266],"file":"voice-delivery/voice-cipher-c1.mp3","original_at":256.0},{"id":"l17","track":"dialogue","at":261.0,"duration":10.64,"volume":1.0,"label":"L17 Static","character":"static","text":"Welcome to the COUNCIL CAST","peaks":[0.081,0.026,0.125,0.245,0.004,0.005,0.004,0.003,0.003,0.003,0.168,0.183,0.1,0.175,0.08,0.125,0.135,0.144,0.1,0.133,0.174,0.131,0.095,0.139],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l17.mp3","original_at":261.0},{"id":"c2","track":"dialogue","at":263.0,"duration":4.69,"volume":1.0,"label":"C2 Cipher","character":"cipher","text":"Aaaw man, he knowsss.","peaks":[0.447,0.329,0.36,0.257,0.427,0.418,0.322,0.364,0.424,0.17,0.282,0.401,0.267,0.101,0.393,0.325,0.396,0.397,0.324,0.021,0.429,0.407,0.13,0.015],"file":"voice-delivery/voice-cipher-c2-v2.mp3","original_at":263.0},{"id":"h3","track":"dialogue","at":281.0,"duration":2.32,"volume":1.0,"label":"H3 Sombra","character":"sombra","text":"My rate is hourly.","peaks":[0.097,0.643,0.595,0.725,0.377,0.48,0.664,0.575,0.525,0.282,0.208,0.049,0.037,0.249,0.212,0.57,0.733,0.579,0.181,0.229,0.655,0.363,0.071,0.002],"file":"voice-delivery/voice-sombra-h3.mp3","original_at":281.0},{"id":"c3","track":"dialogue","at":282.0,"duration":7.73,"volume":1.0,"label":"C3 Cipher","character":"cipher","text":"Everything's fine!","peaks":[0.119,0.197,0.495,0.277,0.007,0.467,0.445,0.457,0.26,0.419,0.411,0.415,0.109,0.023,0.363,0.439,0.188,0.007,0.003,0.003,0.484,0.432,0.379,0.154],"file":"voice-delivery/voice-cipher-c3.mp3","original_at":282.0}],"ducks":[{"at":84.0,"duration":3.0,"to":0.5,"label":"Duck Static under Onyx H1"}],"notes":[{"at":93.0,"text":"volume spike smoothed in v8b"},{"at":50.0,"text":"locked intro ends — do not touch 0:00-0:50"}]};
+const DEFAULT_VIDEO_URL = 'https://muse.ai/files/1299464149925011/2826732984386812/mwu7usmdqpla45bb6ow7jsl4/ep02-v8b-small.mp4';
+const FPS = 30;
+
+/* ============ BLAIR SHEETS ============ */
+const BLAIR_SHEETS = {
+  static:  { name: "Static",  url: "https://muse.ai/files/1299464149925011/2302842650557791/8fc5ysiqtkk25wruykjfrf62/static-visemes-sheet.jpg" },
+  cipher:  { name: "Cipher",  url: "https://muse.ai/files/1299464149925011/1433524478188753/cpmcvn9v6fstfhahd8aed7az/cipher-visemes-sheet.jpg" },
+  echo:    { name: "Echo",    url: "https://muse.ai/files/1299464149925011/2016656392383254/4onmdcg68a946vna9tnopj2w/echo-visemes-sheet.jpg" },
+  onyx:    { name: "Onyx",    url: "https://muse.ai/files/1299464149925011/4458783287717448/e9124c1419nnj2ospmkcpc1q/onyx-visemes-sheet.jpg" },
+  sombra:  { name: "Sombra",  url: "https://muse.ai/files/1299464149925011/1794285711849861/y9rui5ptolwz6h547jt7qntm/sombra-negra-visemes-sheet.jpg" },
+  theory:  { name: "Theory",  url: "https://muse.ai/files/1299464149925011/1101539555579662/q396d6rwudm5vmyzpprmkrg6/theory-visemes-sheet.jpg" },
+  kiko:    { name: "Kiko",    url: "https://muse.ai/files/1299464149925011/2660373404381688/g9k8usk8jxu5h2xueeiiesht/kiko-visemes-sheet.jpg" },
+  hollow:  { name: "Hollow",  url: "https://muse.ai/files/1299464149925011/1659927882394746/u7yi8aa63pe5hbhlwha152h2/hollow-visemes-sheet.jpg" },
+};
+
+/* ============ TOOLKIT ============ */
+const TOOLKIT = [
+  { cat: "🎬 Video", tools: [
+    { name: "Shotcut", url: "https://www.shotcut.org/", desc: "Free video editor (desktop)" },
+    { name: "Kdenlive", url: "https://kdenlive.org/", desc: "Pro free video editor" },
+    { name: "DaVinci Resolve", url: "https://www.blackmagicdesign.com/products/davinciresolve", desc: "Free tier, pro grade" },
+    { name: "Unscreen", url: "https://www.unscreen.com/", desc: "Video bg removal (browser)" },
+  ]},
+  { cat: "🎚️ Audio", tools: [
+    { name: "Suno", url: "https://suno.com/", desc: "AI music (~10 songs/day free)" },
+    { name: "Udio", url: "https://www.udio.com/", desc: "AI music generation" },
+    { name: "Riffusion", url: "https://www.riffusion.com/", desc: "Unlimited free music AI" },
+    { name: "BandLab", url: "https://www.bandlab.com/", desc: "Free mobile DAW" },
+  ]},
+  { cat: "🎞️ 2D Animation", tools: [
+    { name: "Tahoma2D", url: "https://tahoma2d.org/", desc: "Free 2D animation (OpenToonz fork)" },
+    { name: "OpenToonz", url: "https://opentoonz.github.io/", desc: "Studio Ghibli's tool, open source" },
+    { name: "Pencil2D", url: "https://www.pencil2d.org/", desc: "Simple frame-by-frame" },
+    { name: "EbSynth", url: "https://ebsynth.com/", desc: "Paint 1 frame → animate video" },
+  ]},
+  { cat: "🧊 3D", tools: [
+    { name: "Blender", url: "https://www.blender.org/", desc: "Free 3D everything" },
+    { name: "Viggle AI", url: "https://viggle.ai/", desc: "Dancer→character swap (5/day free)" },
+  ]},
+  { cat: "🖼️ Image", tools: [
+    { name: "Photopea", url: "https://www.photopea.com/", desc: "Photoshop in browser, free" },
+    { name: "Affinity", url: "https://affinity.serif.com/", desc: "Pro design suite, now FREE" },
+    { name: "Krita", url: "https://krita.org/", desc: "Free painting/animation" },
+    { name: "GIMP", url: "https://www.gimp.org/", desc: "Free Photoshop alternative" },
+    { name: "Canva", url: "https://www.canva.com/", desc: "Quick graphics (connected)" },
+  ]},
+  { cat: "✨ AI Generative", tools: [
+    { name: "Pollinations.ai", url: "https://pollinations.ai/", desc: "Free text+image AI" },
+    { name: "ZSky AI", url: "https://zsky.ai/", desc: "Unlimited image→video, no signup" },
+    { name: "Magic Hour", url: "https://magichour.ai/", desc: "Face swap (free tier)" },
+  ]},
+];
+
+/* ============ STATE ============ */
+const S = {
+  clips: JSON.parse(JSON.stringify(PROJECT.clips)),
+  notes: JSON.parse(JSON.stringify(PROJECT.notes || [])),
+  ducks: JSON.parse(JSON.stringify(PROJECT.ducks || [])),
+  duration: PROJECT.duration,
+  playhead: 0,
+  pxPerSec: 10,
+  selected: null,
+  snap: true,
+  recording: null,
+  labelW: 76,
+  trackH: { video: 44, dialogue: 62, sfx: 46, bgm: 46, notes: 34 },
+  tracks: ["video", "dialogue", "sfx", "bgm", "notes"],
+  trackGain: { dialogue: 1, sfx: 1, bgm: 1 },
+  onion: false,
+  filmFrames: [],
+};
+const CHAR_COLORS = {
+  static: "#ff9f43", cipher: "#a55cff", onyx: "#4d7cff", ashes: "#ff5c5c",
+  sombra: "#a0a0b8", narrator: "#ffd75c", default: "#7c5cff",
+};
+const TRACK_NAMES = { video: "Video", dialogue: "Dialogue", sfx: "SFX", bgm: "BGM", notes: "Notes" };
+
+/* ============ HELPERS ============ */
+const $ = id => document.getElementById(id);
+function fmt(t) {
+  const m = Math.floor(t / 60), s = t - m * 60;
+  return m + ":" + s.toFixed(1).padStart(4, "0");
+}
+function toast(msg) {
+  const el = $("toast"); el.textContent = msg; el.style.display = "block";
+  clearTimeout(el._t); el._t = setTimeout(() => el.style.display = "none", 2200);
+}
+function x2t(x) { return Math.max(0, (x - S.labelW) / S.pxPerSec); }
+function t2x(t) { return S.labelW + t * S.pxPerSec; }
+function snapT(t) { return S.snap ? Math.round(t * 2) / 2 : Math.round(t * 10) / 10; }
+function clipColor(c) { return CHAR_COLORS[c.character] || CHAR_COLORS.default; }
+
+/* ============ TAB SWITCHING (FL Studio pattern) ============ */
+document.querySelectorAll("#tabbar button").forEach(b => {
+  b.onclick = () => {
+    document.querySelectorAll("#tabbar button").forEach(x => x.classList.remove("active"));
+    document.querySelectorAll(".tab-page").forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+    $("tab-" + b.dataset.tab).classList.add("active");
+    if (b.dataset.tab === "animate") initAnimate();
+    if (b.dataset.tab === "blair") initBlair();
+    if (b.dataset.tab === "projects") initProjects();
+    if (b.dataset.tab === "assets") initAssets();
+    if (b.dataset.tab === "viewer3d") initViewer3D();
+    if (b.dataset.tab === "tools") initTools();
+    if (b.dataset.tab === "mix") initMix();
+    if (b.dataset.tab === "edit") resize();
+  };
+});
+
+/* ============ CANVAS SETUP ============ */
+const canvas = $("tlCanvas"), ctx = canvas.getContext("2d");
+const tlDiv = $("tl"), tlScroll = $("tlScroll");
+function trackY(i) {
+  let y = 26;
+  for (let k = 0; k < i; k++) y += S.trackH[S.tracks[k]] + 4;
+  return y;
+}
+function totalH() { return trackY(S.tracks.length) + 8; }
+function resize() {
+  const w = Math.max(tlScroll.clientWidth, t2x(S.duration) + 40);
+  const dpr = window.devicePixelRatio || 1;
+  tlDiv.style.width = w + "px";
+  tlDiv.style.height = totalH() + "px";
+  canvas.width = w * dpr; canvas.height = totalH() * dpr;
+  canvas.style.width = w + "px"; canvas.style.height = totalH() + "px";
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  draw();
+}
+
+/* ============ DRAW ============ */
+function draw() {
+  const W = tlDiv.clientWidth, H = totalH();
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = "#0d0d12"; ctx.fillRect(0, 0, W, 26);
+  ctx.fillStyle = "#8888a0"; ctx.font = "10px sans-serif"; ctx.textAlign = "left";
+  const step = S.pxPerSec > 24 ? 5 : S.pxPerSec > 12 ? 10 : 30;
+  for (let t = 0; t <= S.duration; t += step) {
+    const x = t2x(t);
+    ctx.fillRect(x, 14, 1, 12);
+    ctx.fillText(fmt(t), x + 3, 12);
+  }
+  ctx.fillStyle = "rgba(255,60,60,0.08)";
+  ctx.fillRect(t2x(0), 26, t2x(50) - t2x(0), H - 26);
+  ctx.fillStyle = "#ff6b6b"; ctx.font = "9px sans-serif";
+  ctx.fillText("🔒 LOCKED 0:00–0:50", t2x(2), 24);
+  S.tracks.forEach((tid, i) => {
+    const y = trackY(i), h = S.trackH[tid];
+    ctx.fillStyle = i % 2 ? "#14141c" : "#16161e";
+    ctx.fillRect(0, y, W, h);
+    ctx.fillStyle = "#1e1e2a"; ctx.fillRect(0, y, S.labelW, h);
+    ctx.fillStyle = "#aaaac0"; ctx.font = "11px sans-serif";
+    ctx.fillText(TRACK_NAMES[tid], 8, y + h / 2 + 4);
+  });
+  drawVideoTrack();
+  for (const c of S.clips) drawClip(c);
+  ctx.fillStyle = "rgba(124,92,255,0.15)";
+  for (const d of S.ducks) {
+    const i = S.tracks.indexOf("dialogue");
+    ctx.fillRect(t2x(d.at), trackY(i), d.duration * S.pxPerSec, S.trackH.dialogue);
+  }
+  const ni = S.tracks.indexOf("notes"), ny = trackY(ni);
+  for (const n of S.notes) {
+    const x = t2x(n.at);
+    ctx.fillStyle = "#ffd75c";
+    ctx.beginPath(); ctx.moveTo(x, ny + 4);
+    ctx.lineTo(x + 8, ny + 12); ctx.lineTo(x, ny + 20); ctx.closePath(); ctx.fill();
+  }
+  const px = t2x(S.playhead);
+  ctx.strokeStyle = "#ff3b5c"; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(px, 0); ctx.lineTo(px, H); ctx.stroke();
+  ctx.fillStyle = "#ff3b5c";
+  ctx.beginPath(); ctx.moveTo(px - 6, 0); ctx.lineTo(px + 6, 0); ctx.lineTo(px, 10); ctx.closePath(); ctx.fill();
+}
+function drawVideoTrack() {
+  const i = S.tracks.indexOf("video"), y = trackY(i), h = S.trackH.video;
+  const scenes = [
+    [0, 50, "#3a2a4a", "Intro (locked)"], [50, 90, "#2a4a3a", "Summit"],
+    [90, 130, "#4a3a2a", "War fund"], [130, 200, "#2a3a4a", "Montage"],
+    [200, 260, "#4a2a3a", "Skate/Cipher"], [260, 300, "#3a4a2a", "Podcast"],
+    [300, 344.8, "#2a2a4a", "Finale"],
+  ];
+  ctx.font = "9px sans-serif";
+  for (const [a, b, col, label] of scenes) {
+    ctx.fillStyle = col;
+    const x = t2x(a), w = (b - a) * S.pxPerSec;
+    ctx.fillRect(x, y + 4, w, h - 8);
+    if (w > 50) { ctx.fillStyle = "#ffffffaa"; ctx.fillText(label, x + 4, y + h / 2 + 3); }
+  }
+}
+function drawClip(c) {
+  const ti = S.tracks.indexOf(c.track);
+  if (ti < 0) return;
+  const y = trackY(ti), h = S.trackH[c.track] || 50;
+  const x = t2x(c.at), w = Math.max(8, c.duration * S.pxPerSec);
+  const isSel = S.selected === c.id;
+  ctx.fillStyle = clipColor(c);
+  ctx.globalAlpha = isSel ? 1 : 0.82;
+  roundRect(x, y + 3, w, h - 6, 5); ctx.fill();
+  ctx.globalAlpha = 1;
+  if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 2.5; roundRect(x, y + 3, w, h - 6, 5); ctx.stroke(); }
+  if (c.peaks && w > 20) {
+    ctx.fillStyle = "rgba(0,0,0,0.35)";
+    const n = c.peaks.length, bw = w / n;
+    for (let i = 0; i < n; i++) {
+      const ph = c.peaks[i] * (h - 14);
+      const bx = x + i * bw;
+      ctx.fillRect(bx, y + h / 2 - ph / 2, Math.max(1, bw - 0.5), ph);
+    }
+  }
+  if (w > 30) {
+    ctx.fillStyle = "#0d0d12"; ctx.font = "bold 10px sans-serif";
+    ctx.fillText(c.label, x + 4, y + 14, w - 8);
+    if (w > 60) { ctx.font = "9px sans-serif"; ctx.fillText(fmt(c.at), x + 4, y + h - 6); }
+  }
+  if (c.volume !== 1) {
+    ctx.fillStyle = "#0d0d12"; ctx.font = "9px sans-serif";
+    ctx.fillText(Math.round(c.volume * 100) + "%", x + w - 32, y + 14);
+  }
+}
+function roundRect(x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+}
+
+/* ============ INTERACTION (CapCut/BandLab patterns) ============ */
+let drag = null, longPressTimer = null;
+function clipAt(x, y) {
+  for (let i = S.clips.length - 1; i >= 0; i--) {
+    const c = S.clips[i];
+    const ti = S.tracks.indexOf(c.track);
+    if (ti < 0) continue;
+    const cy = trackY(ti), ch = S.trackH[c.track];
+    const cx = t2x(c.at), cw = Math.max(8, c.duration * S.pxPerSec);
+    if (x >= cx && x <= cx + cw && y >= cy && y <= cy + ch) return c;
+  }
+  return null;
+}
+function canvasPos(e) {
+  const r = canvas.getBoundingClientRect();
+  return { x: e.clientX - r.left, y: e.clientY - r.top };
+}
+canvas.addEventListener("pointerdown", e => {
+  e.preventDefault();
+  const p = canvasPos(e);
+  const c = clipAt(p.x, p.y);
+  if (c) {
+    drag = { clip: c, startX: p.x, origAt: c.at, moved: false, pid: e.pointerId };
+    canvas.setPointerCapture(e.pointerId);
+    // Long-press → action menu (BandLab pattern)
+    longPressTimer = setTimeout(() => {
+      if (drag && !drag.moved) { showClipMenu(c); drag = null; }
+    }, 500);
+  } else {
+    drag = { seek: true, startX: p.x, moved: false, pid: e.pointerId };
+    canvas.setPointerCapture(e.pointerId);
+  }
+});
+canvas.addEventListener("pointermove", e => {
+  if (!drag || e.pointerId !== drag.pid) return;
+  const p = canvasPos(e);
+  const dx = p.x - drag.startX;
+  if (Math.abs(dx) > 6) { drag.moved = true; clearTimeout(longPressTimer); }
+  if (drag.seek) {
+    S.playhead = snapT(Math.max(0, Math.min(S.duration, x2t(p.x))));
+    if (drag.moved) syncVideo();
+    draw(); updateTime();
+  } else if (drag.clip && drag.moved) {
+    const dt = dx / S.pxPerSec;
+    let nt = Math.max(0, drag.origAt + dt);
+    nt = Math.min(nt, S.duration - drag.clip.duration);
+    drag.clip.at = snapT(nt);
+    draw(); updateChanges();
+  }
+});
+canvas.addEventListener("pointerup", e => {
+  clearTimeout(longPressTimer);
+  if (!drag || e.pointerId !== drag.pid) return;
+  const p = canvasPos(e);
+  if (drag.seek && !drag.moved) {
+    S.playhead = snapT(x2t(p.x));
+    syncVideo(); draw(); updateTime();
+  } else if (drag.clip && !drag.moved) {
+    selectClip(drag.clip.id);
+  } else if (drag.clip && drag.moved) {
+    selectClip(drag.clip.id);
+    toast(drag.clip.label + " → " + fmt(drag.clip.at));
+  }
+  drag = null;
+});
+canvas.addEventListener("pointercancel", () => { clearTimeout(longPressTimer); drag = null; });
+
+/* Long-press clip menu (BandLab pattern) */
+function showClipMenu(c) {
+  selectClip(c.id);
+  showModal(c.label,
+    `<div style="display:flex;flex-direction:column;gap:8px">
+      <button class="btn" data-act="dup">⧉ Duplicate</button>
+      <button class="btn" data-act="fadein">↗ Fade in</button>
+      <button class="btn" data-act="fadeout">↘ Fade out</button>
+      <button class="btn danger" data-act="del">🗑 Delete</button>
+    </div>`,
+    null);
+  document.querySelectorAll("#modalBody [data-act]").forEach(b => {
+    b.onclick = () => {
+      const act = b.dataset.act;
+      $("modal").classList.remove("show");
+      if (act === "dup") {
+        const copy = JSON.parse(JSON.stringify(c));
+        copy.id = "clip-" + Date.now();
+        copy.at = snapT(Math.min(S.duration - copy.duration, c.at + c.duration + 0.5));
+        copy.original_at = copy.at;
+        copy.label = c.label + " (copy)";
+        S.clips.push(copy); draw(); updateChanges(); toast("Duplicated");
+      } else if (act === "del") {
+        S.clips = S.clips.filter(x => x.id !== c.id);
+        deselect(); updateChanges(); toast("Deleted");
+      } else {
+        toast((act === "fadein" ? "Fade in" : "Fade out") + " — applied at render");
+        c["fade_" + (act === "fadein" ? "in" : "out")] = true;
+        updateChanges();
+      }
+    };
+  });
+  // Hide default modal buttons for menu mode
+  $("modalRow").style.display = "none";
+  const restore = () => { $("modalRow").style.display = "flex"; };
+  $("modalCancel").onclick = () => { $("modal").classList.remove("show"); restore(); };
+}
+
+/* Clip selection → floating action bar (CapCut pattern) */
+function selectClip(id) {
+  S.selected = id;
+  const c = S.clips.find(x => x.id === id);
+  if (c) {
+    $("clipInfo").innerHTML = `<b>${c.label}</b> @ ${fmt(c.at)} · ${c.duration}s · ${Math.round(c.volume*100)}%<br><span style="color:#aaa">${c.text || ""}</span>`;
+    $("clipBar").classList.add("show");
+  }
+  draw();
+}
+function deselect() { S.selected = null; $("clipBar").classList.remove("show"); draw(); }
+$("closeBar").onclick = deselect;
+$("delClip").onclick = () => {
+  if (!S.selected) return;
+  const c = S.clips.find(x => x.id === S.selected);
+  showModal("Delete clip?",
+    `<p>Remove <b>${c.label}</b> from the timeline?</p>`,
+    () => { S.clips = S.clips.filter(x => x.id !== S.selected); deselect(); updateChanges(); toast("Removed"); });
+};
+$("volUp").onclick = () => adjustVol(0.1);
+$("volDown").onclick = () => adjustVol(-0.1);
+function adjustVol(d) {
+  const c = S.clips.find(x => x.id === S.selected);
+  if (!c) return;
+  c.volume = Math.max(0.1, Math.min(2, Math.round((c.volume + d) * 10) / 10));
+  selectClip(c.id); updateChanges();
+}
+
+/* ============ VIDEO SYNC + TRANSPORT (FlipaClip frame-step) ============ */
+const video = $("video");
+function syncVideo() {
+  if (Math.abs(video.currentTime - S.playhead) > 0.3) video.currentTime = S.playhead;
+}
+video.addEventListener("timeupdate", () => {
+  if (!video.paused && !drag) { S.playhead = video.currentTime; draw(); updateTime(); updateScrub(); }
+});
+$("playBtn").onclick = () => { video.paused ? video.play() : video.pause(); };
+video.addEventListener("play", () => { $("playBtn").textContent = "⏸"; $("aPlayBtn").textContent = "⏸"; });
+video.addEventListener("pause", () => { $("playBtn").textContent = "▶"; $("aPlayBtn").textContent = "▶"; });
+$("backBtn").onclick = () => stepTime(-5);
+$("fwdBtn").onclick = () => stepTime(5);
+$("frameBack").onclick = () => stepFrame(-1);
+$("frameFwd").onclick = () => stepFrame(1);
+function stepTime(d) {
+  S.playhead = snapT(Math.max(0, Math.min(S.duration, S.playhead + d)));
+  syncVideo(); draw(); updateTime();
+}
+function stepFrame(d) {
+  S.playhead = Math.max(0, Math.min(S.duration, S.playhead + d / FPS));
+  S.playhead = Math.round(S.playhead * FPS) / FPS;
+  // Frame-accurate: pause video, seek precisely, wait for seeked
+  seekFrameAccurate(S.playhead).then(() => {
+    draw(); updateTime(); updateScrub(); drawAnimFrame();
+    if (S.onion) updateOnionGhosts();
+  });
+  draw(); updateTime(); updateScrub();
+}
+function updateTime() {
+  $("timeDisplay").textContent = fmt(S.playhead) + " / " + fmt(S.duration);
+  $("frameDisplay").textContent = "F " + Math.round(S.playhead * FPS);
+}
+
+/* ============ ZOOM / SNAP ============ */
+$("zoomIn").onclick = () => { S.pxPerSec = Math.min(60, S.pxPerSec * 1.5); resize(); };
+$("zoomOut").onclick = () => { S.pxPerSec = Math.max(3, S.pxPerSec / 1.5); resize(); };
+$("snapBtn").onclick = () => {
+  S.snap = !S.snap;
+  $("snapBtn").style.opacity = S.snap ? 1 : 0.4;
+  toast("Snap " + (S.snap ? "on (0.5s)" : "off"));
+};
+$("snapBtn").style.opacity = 1;
+
+/* ============ VIDEO URL ============ */
+function setVideoUrl(u) {
+  $("pvLoading").classList.remove("hide");
+  $("pvError").classList.remove("show");
+  video.src = u; $("videoUrl").value = u;
+}
+$("loadUrl").onclick = () => { const u = $("videoUrl").value.trim(); if (u) setVideoUrl(u); };
+$("pvRetry").onclick = () => { if (video.src) setVideoUrl(video.src); };
+video.addEventListener("loadstart", () => {
+  $("pvLoading").classList.remove("hide");
+  $("pvError").classList.remove("show");
+});
+video.addEventListener("canplay", () => {
+  $("pvLoading").classList.add("hide");
+  $("pvError").classList.remove("show");
+  updateScrub();
+});
+video.addEventListener("error", () => {
+  $("pvLoading").classList.add("hide");
+  $("pvError").classList.add("show");
+});
+setVideoUrl(DEFAULT_VIDEO_URL);
+
+/* ============ PREVIEW CONTROLLER (CapCut gestures) ============ */
+const PV = {
+  mode: "normal", // normal | mini | fs
+  zoom: 1,
+  panX: 0, panY: 0,
+  lastTap: 0,
+  pinchDist: 0,
+};
+function applyZoom() {
+  video.style.transform = `scale(${PV.zoom}) translate(${PV.panX}px, ${PV.panY}px)`;
+  const ind = $("pvZoomInd");
+  if (PV.zoom > 1.01) { ind.textContent = PV.zoom.toFixed(1) + "×"; ind.classList.add("show"); }
+  else ind.classList.remove("show");
+}
+/* Tap: play/pause. Double-tap: fullscreen. (CapCut pattern) */
+let pvTouch = null;
+$("videoWrap").addEventListener("pointerdown", e => {
+  if (e.target.closest(".pv-corner")) return; // let corner buttons handle their own clicks
+  pvTouch = { x: e.clientX, y: e.clientY, t: Date.now(), pid: e.pointerId, moved: false };
+});
+$("videoWrap").addEventListener("pointermove", e => {
+  if (!pvTouch || e.pointerId !== pvTouch.pid) return;
+  const dx = e.clientX - pvTouch.x, dy = e.clientY - pvTouch.y;
+  if (Math.abs(dx) > 10 || Math.abs(dy) > 10) pvTouch.moved = true;
+  // Drag mini-player
+  if (PV.mode === "mini" && pvTouch.moved) {
+    const wrap = $("videoWrap");
+    const r = wrap.getBoundingClientRect();
+    wrap.style.left = Math.max(0, Math.min(window.innerWidth - r.width, r.left + dx)) + "px";
+    wrap.style.top = Math.max(0, Math.min(window.innerHeight - r.height, r.top + dy)) + "px";
+    wrap.style.right = "auto"; wrap.style.bottom = "auto";
+    pvTouch.x = e.clientX; pvTouch.y = e.clientY;
+  }
+  // Pan when zoomed
+  if (PV.zoom > 1.01 && PV.mode === "normal" && pvTouch.moved) {
+    PV.panX += dx / PV.zoom; PV.panY += dy / PV.zoom;
+    applyZoom();
+    pvTouch.x = e.clientX; pvTouch.y = e.clientY;
+  }
+});
+$("videoWrap").addEventListener("pointerup", e => {
+  if (!pvTouch || e.pointerId !== pvTouch.pid) return;
+  const dt = Date.now() - pvTouch.t;
+  if (!pvTouch.moved && dt < 400) {
+    const now = Date.now();
+    if (now - PV.lastTap < 350) {
+      // Double-tap → fullscreen (CapCut pattern)
+      toggleFullscreen();
+      PV.lastTap = 0;
+    } else {
+      PV.lastTap = now;
+      setTimeout(() => {
+        if (PV.lastTap && Date.now() - PV.lastTap >= 350) {
+          // Single tap → play/pause (CapCut pattern)
+          togglePlay();
+          PV.lastTap = 0;
+        }
+      }, 360);
+    }
+  }
+  pvTouch = null;
+});
+$("videoWrap").addEventListener("pointercancel", () => { pvTouch = null; });
+/* Pinch to zoom (CapCut pattern) */
+$("videoWrap").addEventListener("touchstart", e => {
+  if (e.touches.length === 2) {
+    PV.pinchDist = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY);
+  }
+}, { passive: true });
+$("videoWrap").addEventListener("touchmove", e => {
+  if (e.touches.length === 2 && PV.pinchDist > 0) {
+    const d = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY);
+    const scale = d / PV.pinchDist;
+    PV.zoom = Math.max(1, Math.min(3, PV.zoom * scale));
+    if (PV.zoom <= 1.01) { PV.panX = 0; PV.panY = 0; }
+    applyZoom();
+    PV.pinchDist = d;
+    e.preventDefault();
+  }
+}, { passive: false });
+$("videoWrap").addEventListener("touchend", () => { PV.pinchDist = 0; });
+function togglePlay() {
+  if (video.paused) { video.play(); }
+  else { video.pause(); }
+  // Flash play/pause icon (CapCut pattern)
+  const icon = $("pvPlayIcon");
+  icon.textContent = video.paused ? "▶" : "⏸";
+  icon.classList.add("show");
+  clearTimeout(icon._t);
+  icon._t = setTimeout(() => icon.classList.remove("show"), 600);
+}
+/* Minimize to floating player */
+$("pvMinBtn").onclick = e => {
+  e.stopPropagation();
+  const wrap = $("videoWrap");
+  wrap.classList.add("mini");
+  wrap.style.right = "16px"; wrap.style.bottom = "calc(var(--tabbar-h) + 80px)";
+  wrap.style.left = "auto"; wrap.style.top = "auto";
+  PV.mode = "mini";
+  $("miniRestore").classList.add("show");
+  toast("Preview minimized — drag it anywhere");
+};
+$("miniRestore").onclick = () => restorePreview();
+function restorePreview() {
+  const wrap = $("videoWrap");
+  wrap.classList.remove("mini");
+  wrap.style.cssText = "";
+  PV.mode = "normal";
+  PV.zoom = 1; PV.panX = 0; PV.panY = 0; applyZoom();
+  $("miniRestore").classList.remove("show");
+}
+/* Fullscreen */
+$("pvFsBtn").onclick = e => { e.stopPropagation(); toggleFullscreen(); };
+function toggleFullscreen() {
+  const wrap = $("videoWrap");
+  if (PV.mode === "fs") {
+    wrap.classList.remove("fs");
+    PV.mode = document.querySelector("#tab-edit").contains(wrap) ? "normal" : PV.mode;
+    if (PV.mode !== "mini") { PV.mode = "normal"; }
+    document.exitFullscreen && document.exitFullscreen().catch(() => {});
+  } else {
+    if (PV.mode === "mini") restorePreview();
+    wrap.classList.add("fs");
+    PV.mode = "fs";
+    // Try native fullscreen for true immersion
+    if (wrap.requestFullscreen) wrap.requestFullscreen().catch(() => {});
+  }
+}
+document.addEventListener("fullscreenchange", () => {
+  if (!document.fullscreenElement && PV.mode === "fs") {
+    $("videoWrap").classList.remove("fs");
+    PV.mode = "normal";
+  }
+});
+/* Scrub bar (CapCut pattern: drag below video to seek) */
+const scrubBar = $("scrubBar");
+let scrubbing = false;
+function updateScrub() {
+  const pct = S.duration ? (S.playhead / S.duration * 100) : 0;
+  $("scrubFill").style.width = pct + "%";
+  $("scrubHead").style.left = pct + "%";
+}
+function scrubTo(clientX) {
+  const r = scrubBar.getBoundingClientRect();
+  const pct = Math.max(0, Math.min(1, (clientX - r.left) / r.width));
+  S.playhead = snapT(pct * S.duration);
+  syncVideo(); draw(); updateTime(); updateScrub();
+  if ($("tab-animate").classList.contains("active")) drawAnimFrame();
+}
+scrubBar.addEventListener("pointerdown", e => {
+  scrubbing = true;
+  scrubBar.setPointerCapture(e.pointerId);
+  scrubTo(e.clientX);
+  e.preventDefault();
+});
+scrubBar.addEventListener("pointermove", e => { if (scrubbing) scrubTo(e.clientX); });
+scrubBar.addEventListener("pointerup", () => { scrubbing = false; });
+scrubBar.addEventListener("pointercancel", () => { scrubbing = false; });
+/* Frame-accurate seeking: pause + wait for seeked before updating display */
+function seekFrameAccurate(t) {
+  return new Promise(resolve => {
+    if (!video.paused) video.pause();
+    const target = Math.round(t * FPS) / FPS;
+    if (Math.abs(video.currentTime - target) < 0.001) { resolve(); return; }
+    const onSeeked = () => { video.removeEventListener("seeked", onSeeked); resolve(); };
+    video.addEventListener("seeked", onSeeked);
+    video.currentTime = target;
+    // Fallback timeout in case seeked doesn't fire
+    setTimeout(() => { video.removeEventListener("seeked", onSeeked); resolve(); }, 500);
+  });
+}
+
+/* ============ MODAL ============ */
+let modalOk = null;
+function showModal(title, bodyHTML, onOk) {
+  $("modalTitle").textContent = title;
+  $("modalBody").innerHTML = bodyHTML;
+  $("modalRow").style.display = "flex";
+  $("modal").classList.add("show");
+  modalOk = onOk;
+}
+$("modalCancel").onclick = () => { $("modal").classList.remove("show"); modalOk = null; };
+$("modalOk").onclick = () => { if (modalOk) modalOk(); $("modal").classList.remove("show"); modalOk = null; };
+
+/* ============ NOTES ============ */
+$("noteBtn").onclick = () => {
+  const at = snapT(S.playhead);
+  showModal("Note @ " + fmt(at),
+    `<textarea id="noteText" placeholder="e.g. change this voice to Cipher here"></textarea>
+     <div style="font-size:12px;color:#888">Timestamp: ${fmt(at)} (playhead)</div>`,
+    () => {
+      const t = $("noteText").value.trim();
+      if (t) { S.notes.push({ at, text: t }); draw(); updateChanges(); toast("Note saved @ " + fmt(at)); }
+    });
+  setTimeout(() => { const el = $("noteText"); if (el) el.focus(); }, 100);
+};
+
+/* ============ VOICE RECORDING ============ */
+let recorder = null, recChunks = [], recStartAt = 0;
+$("recBtn").onclick = async () => {
+  if (recorder && recorder.state === "recording") { stopRec(); return; }
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    recChunks = [];
+    recorder = new MediaRecorder(stream);
+    recStartAt = snapT(S.playhead);
+    recorder.ondataavailable = e => { if (e.data.size) recChunks.push(e.data); };
+    recorder.onstop = () => {
+      stream.getTracks().forEach(t => t.stop());
+      const blob = new Blob(recChunks, { type: recorder.mimeType || "audio/webm" });
+      const reader = new FileReader();
+      reader.onload = () => {
+        const id = "rec-" + Date.now();
+        const audio = new Audio(reader.result);
+        audio.onloadedmetadata = () => {
+          const d = Math.round(audio.duration * 100) / 100 || 5;
+          S.clips.push({
+            id, track: "dialogue", at: recStartAt, original_at: recStartAt,
+            duration: d, volume: 1.0, label: "🎙 Recording",
+            character: "custom", text: "(voice recording)",
+            peaks: null, file: "(recording:" + id + ")",
+            _blobUrl: reader.result,
+          });
+          draw(); updateChanges();
+          toast("Recording placed @ " + fmt(recStartAt));
+        };
+      };
+      reader.readAsDataURL(blob);
+      $("recBtn").innerHTML = "⏺ Record";
+      $("recBtn").classList.remove("primary");
+    };
+    recorder.start();
+    $("recBtn").innerHTML = '<span class="rec-dot"></span> Stop';
+    $("recBtn").classList.add("primary");
+    toast("Recording… tap Stop when done");
+  } catch (err) { toast("Mic access denied"); }
+};
+function stopRec() { if (recorder && recorder.state === "recording") recorder.stop(); }
+
+/* ============ ANIMATE TAB (FlipaClip pattern) ============ */
+const animCanvas = $("animCanvas"), actx = animCanvas.getContext("2d");
+let animInit = false;
+// Hidden ghost video for true onion-skin frame capture (FlipaClip pattern)
+let ghostVideo = null, ghostCanvas = null, ghostCtx = null;
+let ghostCache = {}; // frameNum -> dataURL
+function initGhost() {
+  if (ghostVideo) return;
+  ghostVideo = document.createElement("video");
+  ghostVideo.muted = true; ghostVideo.playsInline = true; ghostVideo.preload = "auto";
+  ghostVideo.src = video.src;
+  ghostCanvas = document.createElement("canvas");
+  ghostCanvas.width = 480; ghostCanvas.height = 270;
+  ghostCtx = ghostCanvas.getContext("2d");
+}
+function captureGhostFrame(frameNum) {
+  return new Promise(resolve => {
+    if (ghostCache[frameNum]) { resolve(ghostCache[frameNum]); return; }
+    const t = frameNum / FPS;
+    const onSeeked = () => {
+      ghostVideo.removeEventListener("seeked", onSeeked);
+      try {
+        ghostCtx.drawImage(ghostVideo, 0, 0, 480, 270);
+        const url = ghostCanvas.toDataURL("image/jpeg", 0.6);
+        ghostCache[frameNum] = url;
+        // Limit cache to 20 frames
+        const keys = Object.keys(ghostCache);
+        if (keys.length > 20) delete ghostCache[keys[0]];
+        resolve(url);
+      } catch (e) { resolve(null); }
+    };
+    ghostVideo.addEventListener("seeked", onSeeked);
+    ghostVideo.currentTime = t;
+    setTimeout(() => { ghostVideo.removeEventListener("seeked", onSeeked); resolve(null); }, 800);
+  });
+}
+let onionImgs = { prev: null, next: null };
+let onionGen = 0;
+async function updateOnionGhosts() {
+  const gen = ++onionGen;
+  const cur = Math.round(S.playhead * FPS);
+  onionImgs.prev = null; onionImgs.next = null;
+  if (!S.onion || !ghostVideo) { drawAnimFrame(); return; }
+  const [prevUrl, nextUrl] = await Promise.all([
+    cur > 0 ? captureGhostFrame(cur - 1) : Promise.resolve(null),
+    captureGhostFrame(cur + 1),
+  ]);
+  if (gen !== onionGen) return; // stale
+  if (prevUrl) {
+    const img = new Image();
+    img.onload = () => { if (gen === onionGen) { onionImgs.prev = img; drawAnimFrame(); } };
+    img.src = prevUrl;
+  }
+  if (nextUrl) {
+    const img = new Image();
+    img.onload = () => { if (gen === onionGen) { onionImgs.next = img; drawAnimFrame(); } };
+    img.src = nextUrl;
+  }
+  drawAnimFrame();
+}
+function initAnimate() {
+  if (!video.src) { toast("Load a video first (Edit tab)"); return; }
+  animCanvas.width = 480; animCanvas.height = 270;
+  initGhost();
+  if (ghostVideo.src !== video.src) { ghostVideo.src = video.src; ghostCache = {}; }
+  buildFilmstrip();
+  drawAnimFrame();
+  animInit = true;
+}
+function drawAnimFrame() {
+  if (!video.videoWidth) return;
+  const v = video;
+  actx.clearRect(0, 0, animCanvas.width, animCanvas.height);
+  actx.globalAlpha = 1;
+  try {
+    // Draw current frame
+    actx.drawImage(v, 0, 0, animCanvas.width, animCanvas.height);
+    // Onion skin: real ghost frames (FlipaClip: prev=red, next=green)
+    if (S.onion) {
+      if (onionImgs.prev) {
+        actx.globalAlpha = 0.28;
+        actx.drawImage(onionImgs.prev, 0, 0, animCanvas.width, animCanvas.height);
+        // Red tint for previous frame
+        actx.globalCompositeOperation = "source-atop";
+        actx.fillStyle = "rgba(255,0,0,0.25)";
+        actx.fillRect(0, 0, animCanvas.width, animCanvas.height);
+        actx.globalCompositeOperation = "source-over";
+        actx.globalAlpha = 1;
+        // Re-draw current on top at full opacity
+        actx.drawImage(v, 0, 0, animCanvas.width, animCanvas.height);
+      }
+      if (onionImgs.next) {
+        actx.globalAlpha = 0.28;
+        actx.drawImage(onionImgs.next, 0, 0, animCanvas.width, animCanvas.height);
+        actx.globalCompositeOperation = "source-atop";
+        actx.fillStyle = "rgba(0,255,0,0.25)";
+        actx.fillRect(0, 0, animCanvas.width, animCanvas.height);
+        actx.globalCompositeOperation = "source-over";
+        actx.globalAlpha = 1;
+        actx.drawImage(v, 0, 0, animCanvas.width, animCanvas.height);
+      }
+    }
+  } catch (e) { /* video not ready */ }
+  actx.globalAlpha = 1;
+  actx.globalCompositeOperation = "source-over";
+  $("aTimeDisplay").textContent = "F " + Math.round(S.playhead * FPS) + " / " + fmt(S.playhead);
+  document.querySelectorAll(".fthumb").forEach(el => {
+    el.classList.toggle("cur", Math.abs(parseFloat(el.dataset.t) - S.playhead) < 0.5);
+  });
+}
+function buildFilmstrip() {
+  const strip = $("filmstrip");
+  strip.innerHTML = "";
+  // Real thumbnails captured from video (not placeholder text)
+  for (let t = 0; t < S.duration; t += 5) {
+    const d = document.createElement("div");
+    d.style.position = "relative"; d.style.flex = "0 0 72px";
+    const c = document.createElement("canvas");
+    c.width = 72; c.height = 48; c.className = "fthumb"; c.dataset.t = t;
+    c.onclick = () => { S.playhead = t; syncVideo(); draw(); updateTime(); updateScrub(); drawAnimFrame(); if (S.onion) updateOnionGhosts(); };
+    const cx = c.getContext("2d");
+    cx.fillStyle = "#222"; cx.fillRect(0, 0, 72, 48);
+    cx.fillStyle = "#888"; cx.font = "9px sans-serif"; cx.fillText(fmt(t), 4, 14);
+    d.appendChild(c);
+    strip.appendChild(d);
+    // Capture real thumbnail asynchronously
+    captureThumb(t, c);
+  }
+  toast("Filmstrip: tap a frame to jump");
+}
+function captureThumb(t, canvasEl) {
+  const frameNum = Math.round(t * FPS);
+  captureGhostFrame(frameNum).then(url => {
+    if (!url) return;
+    const img = new Image();
+    img.onload = () => {
+      try {
+        const cx = canvasEl.getContext("2d");
+        cx.drawImage(img, 0, 0, 72, 48);
+        // Timestamp overlay
+        cx.fillStyle = "rgba(0,0,0,0.6)";
+        cx.fillRect(2, 34, 40, 12);
+        cx.fillStyle = "#fff"; cx.font = "8px sans-serif";
+        cx.fillText(fmt(t), 4, 43);
+      } catch (e) {}
+    };
+    img.src = url;
+  });
+}
+$("aPlayBtn").onclick = () => { video.paused ? video.play() : video.pause(); };
+$("aBack1").onclick = () => stepFrame(-1);
+$("aFwd1").onclick = () => stepFrame(1);
+$("aBack10").onclick = () => stepFrame(-10);
+$("aFwd10").onclick = () => stepFrame(10);
+$("onionBtn").onclick = () => {
+  S.onion = !S.onion;
+  $("onionBtn").classList.toggle("toggled", S.onion);
+  if (S.onion) { initGhost(); updateOnionGhosts(); }
+  else { onionImgs.prev = null; onionImgs.next = null; drawAnimFrame(); }
+  toast("Onion skin " + (S.onion ? "on 🧅" : "off"));
+};
+
+/* ============ BLAIR TAB ============ */
+let blairInit = false;
+function initBlair() {
+  if (blairInit) return;
+  const wrap = $("blairChars");
+  Object.keys(BLAIR_SHEETS).forEach((key, i) => {
+    const b = document.createElement("button");
+    b.className = "blair-char" + (i === 0 ? " active" : "");
+    b.textContent = BLAIR_SHEETS[key].name;
+    b.onclick = () => {
+      document.querySelectorAll(".blair-char").forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      $("blairSheet").src = BLAIR_SHEETS[key].url;
+      $("blairInfo").textContent = BLAIR_SHEETS[key].name + " — 10 visemes (Preston Blair spec). Match mouth shapes to dialogue while animating.";
+    };
+    wrap.appendChild(b);
+  });
+  const first = Object.keys(BLAIR_SHEETS)[0];
+  $("blairSheet").src = BLAIR_SHEETS[first].url;
+  $("blairInfo").textContent = BLAIR_SHEETS[first].name + " — 10 visemes (Preston Blair spec). Match mouth shapes to dialogue while animating.";
+  blairInit = true;
+}
+
+/* ============ TOOLS TAB ============ */
+let toolsInit = false;
+function initTools() {
+  if (toolsInit) return;
+  const wrap = $("toolCats");
+  TOOLKIT.forEach(cat => {
+    const div = document.createElement("div");
+    div.className = "tool-cat";
+    div.innerHTML = "<h3>" + cat.cat + "</h3>";
+    const grid = document.createElement("div");
+    grid.className = "tool-grid";
+    cat.tools.forEach(t => {
+      const a = document.createElement("a");
+      a.className = "tool-card"; a.href = t.url; a.target = "_blank"; a.rel = "noopener";
+      a.innerHTML = "<b>" + t.name + '<span class="free-badge">FREE</span></b><span>' + t.desc + "</span>";
+      grid.appendChild(a);
+    });
+    div.appendChild(grid);
+    wrap.appendChild(div);
+  });
+  toolsInit = true;
+}
+
+/* ============ MIX TAB (BandLab pattern) ============ */
+let mixInit = false;
+function initMix() {
+  const wrap = $("mixStrips");
+  wrap.innerHTML = "";
+  ["dialogue", "sfx", "bgm"].forEach(track => {
+    const div = document.createElement("div");
+    div.className = "mix-strip";
+    const val = Math.round((S.trackGain[track] || 1) * 100);
+    div.innerHTML =
+      '<div class="mhead"><b>' + TRACK_NAMES[track] + '</b>' +
+      '<button class="btn small" data-mute="' + track + '">🔇</button></div>' +
+      '<input type="range" min="0" max="150" value="' + val + '" data-track="' + track + '">' +
+      '<div class="mix-val">' + val + '%</div>';
+    wrap.appendChild(div);
+  });
+  wrap.querySelectorAll("input[type=range]").forEach(r => {
+    r.oninput = () => {
+      const t = r.dataset.track, v = parseInt(r.value, 10);
+      S.trackGain[t] = v / 100;
+      r.parentElement.querySelector(".mix-val").textContent = v + "%";
+      updateChanges();
+    };
+  });
+  wrap.querySelectorAll("[data-mute]").forEach(b => {
+    b.onclick = () => {
+      const t = b.dataset.mute;
+      S.trackGain[t] = S.trackGain[t] === 0 ? 1 : 0;
+      b.style.opacity = S.trackGain[t] === 0 ? 0.4 : 1;
+      const r = wrap.querySelector('input[data-track="' + t + '"]');
+      r.value = S.trackGain[t] * 100;
+      r.parentElement.querySelector(".mix-val").textContent = Math.round(S.trackGain[t] * 100) + "%";
+      updateChanges(); toast(TRACK_NAMES[t] + (S.trackGain[t] === 0 ? " muted" : " unmuted"));
+    };
+  });
+  mixInit = true;
+}
+
+/* ============ UNIVERSAL HUB: PROJECTS ============ */
+const PROJECTS = [
+  {id:"wizard-gang-ep02", name:"Wizard Gang EP02", type:"show", icon:"🧙", video_url:"https://muse.ai/files/1299464149925011/1798254038054328/i2oicgwaercpda5zapkktry0/ep02-v8b-small.mp4", timeline:"project-ep02-v8b.json", characters:["Static","Cipher","Echo","Onyx","Sombra Negra","Theory","Kiko","Hollow"], notes:"Current cut: v8b. 16 dialogue clips loaded."},
+  {id:"god-molecule", name:"God Molecule", type:"show", icon:"🧬", video_url:null, timeline:null, characters:[], notes:"Show bible in God-Molecule-Show-Studio repo."},
+  {id:"damn-shits-wild", name:"Damn, Shit's Wild", type:"show", icon:"🤪", video_url:null, timeline:null, characters:["Aaron Ruben"], notes:"Aaron Ruben show."},
+  {id:"in-the-bushes", name:"In the Bushes", type:"show", icon:"🌳", video_url:null, timeline:null, characters:["Busch","Mr. Gold","Mr. Tree","Cool Dad","Deadpan Kid"], notes:"12 oz. Mouse / Home Movies style."},
+  {id:"trippedd-ep01", name:"TRIPPEDD EP01", type:"show", icon:"🌀", video_url:null, timeline:null, characters:[], notes:"The Walk."},
+  {id:"bannon", name:"Bannon", type:"game", icon:"🥊", video_url:null, timeline:null, characters:[], models_dir:"bannon-video-pipe/repo/out", notes:"7246+ GLB models in workspace."},
+  {id:"concrete-dragon", name:"Concrete Dragon", type:"game", icon:"🐉", video_url:null, timeline:null, characters:[], notes:"Fighter."},
+  {id:"streetbrawl", name:"StreetBrawl", type:"game", icon:"👊", video_url:null, timeline:null, characters:[], notes:"Weight paint PWA in tools/weight-paint-pwa."},
+  {id:"brutal-fist", name:"Brutal Fist", type:"game", icon:"🥋", video_url:null, timeline:null, characters:[], notes:""},
+  {id:"ashlane", name:"AshLane", type:"game", icon:"⚔️", video_url:null, timeline:null, characters:[], notes:""},
+  {id:"smoke-mirror", name:"SMOKE & MIRRORS", type:"game", icon:"🪞", video_url:null, timeline:null, characters:[], notes:"UE5 exploration game."}
+];
+let currentProject = PROJECTS[0], projectsInit = false;
+function initProjects() {
+  if (projectsInit) return;
+  const grid = $("projGrid"), sel = $("projSelect");
+  sel.innerHTML = "";
+  PROJECTS.forEach(p => {
+    const o = document.createElement("option");
+    o.value = p.id; o.textContent = p.icon + " " + p.name;
+    sel.appendChild(o);
+    const card = document.createElement("div");
+    card.className = "proj-card" + (p.id === currentProject.id ? " active" : "");
+    card.innerHTML = "<b>" + p.icon + " " + p.name + "</b><span>" + (p.notes || "") + "</span><br><span class='ptype'>" + p.type + "</span>";
+    card.onclick = () => switchProject(p.id);
+    card.dataset.pid = p.id;
+    grid.appendChild(card);
+  });
+  sel.value = currentProject.id;
+  sel.onchange = () => switchProject(sel.value);
+  projectsInit = true;
+}
+function switchProject(pid) {
+  const p = PROJECTS.find(x => x.id === pid);
+  if (!p) return;
+  currentProject = p;
+  $("projSelect").value = pid;
+  document.querySelectorAll(".proj-card").forEach(c => c.classList.toggle("active", c.dataset.pid === pid));
+  if (p.video_url) {
+    setVideoUrl(p.video_url);
+    toast("Switched to " + p.name);
+  } else {
+    toast(p.name + " — no video loaded yet. Paste a URL in Edit tab.");
+  }
+}
+
+/* ============ UNIVERSAL HUB: ASSETS ============ */
+let assetsInit = false, ASSET_INDEX = [];
+const ASSET_FALLBACK = [
+  {type:"voice", name:"Onyx H1 (canon)", path:"voice-delivery/canon/onyx/onyx-canon-voice-h1.mp3", project:"Wizard Gang"},
+  {type:"voice", name:"Bill $aber L7 (Ashes)", path:"voice-delivery/voice-ashes-l7.mp3", project:"Wizard Gang"},
+  {type:"voice", name:"Cipher C4 money", path:"voice-delivery/voice-cipher-c4-money.mp3", project:"Wizard Gang"},
+  {type:"rig2d", name:"Static visemes", path:"character-rigs/static-v1-concept/", project:"Wizard Gang"},
+  {type:"rig2d", name:"Cipher visemes", path:"character-rigs/cipher-v1-concept/", project:"Wizard Gang"},
+  {type:"rig2d", name:"Onyx visemes", path:"character-rigs/onyx-v1-concept/", project:"Wizard Gang"},
+  {type:"model3d", name:"CIPHER_feral (repaired)", path:"bannon-video-pipe/repo/out/CIPHER_feral_repaired.glb", project:"Bannon"},
+  {type:"model3d", name:"StreetBrawl fighter", path:"StreetBrawl/tools/weight-paint-pwa (model via PWA)", project:"StreetBrawl"},
+  {type:"tool", name:"Weight Paint PWA", path:"StreetBrawl/tools/weight-paint-pwa/index.html", project:"StreetBrawl"},
+  {type:"video", name:"EP02 v8b full", path:"trippedd-studio/production/WIZARD_GANG_EP01/wizard-gang-ep02-final-v8b.mp4", project:"Wizard Gang"}
+];
+function initAssets() {
+  if (assetsInit) return;
+  fetch("asset-index.json").then(r => r.ok ? r.json() : null).then(idx => {
+    if (idx && (idx.models || idx.voices)) {
+      ASSET_INDEX = [];
+      const push = (arr, t) => (arr || []).forEach(a => ASSET_INDEX.push({type: t, name: a.name, path: a.path, project: a.project, size_mb: a.size_mb}));
+      push(idx.models, "model3d");
+      push(idx.rigs_2d, "rig2d");
+      push(idx.voices, "voice");
+      push(idx.canon_voices, "voice");
+      push(idx.key_videos, "video");
+      push(idx.weight_paint_pwas, "tool");
+    } else {
+      ASSET_INDEX = ASSET_FALLBACK;
+    }
+    renderAssets("");
+    const s = $("assetSearch"), f = $("assetFilter");
+    s.oninput = () => renderAssets(s.value);
+    f.onchange = () => renderAssets(s.value);
+  }).catch(() => { ASSET_INDEX = ASSET_FALLBACK; renderAssets(""); });
+  assetsInit = true;
+}
+function renderAssets(q) {
+  q = (q || "").toLowerCase();
+  const f = $("assetFilter").value;
+  const grid = $("assetGrid");
+  grid.innerHTML = "";
+  const hits = ASSET_INDEX.filter(a => {
+    if (f && a.type !== f) return false;
+    if (q && !((a.name || "") + " " + (a.path || "") + " " + (a.project || "")).toLowerCase().includes(q)) return false;
+    return true;
+  });
+  $("assetCount").textContent = hits.length + " assets" + (ASSET_INDEX === ASSET_FALLBACK ? " (built-in list — full index building)" : "");
+  hits.slice(0, 100).forEach(a => {
+    const d = document.createElement("div");
+    d.className = "asset-card";
+    d.innerHTML = "<b>" + escapeHtml(a.name) + "</b><span>" + escapeHtml(a.type) + " · " + escapeHtml(a.project || "") + "</span><div class='apath'>" + escapeHtml(a.path) + "</div>";
+    grid.appendChild(d);
+  });
+}
+function escapeHtml(s) { return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+/* ============ UNIVERSAL HUB: 3D VIEWER ============ */
+let viewer3dInit = false, V3 = {};
+async function initViewer3D() {
+  if (viewer3dInit) return;
+  viewer3dInit = true;
+  const wrap = $("viewer3d-wrap");
+  try {
+    const THREE = await import("three");
+    const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
+    const { GLTFLoader } = await import("three/addons/loaders/GLTFLoader.js");
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0a0a0f);
+    const cam = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    cam.position.set(0, 1.2, 3.2);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const rsz = () => {
+      const w = wrap.clientWidth, h = wrap.clientHeight;
+      renderer.setSize(w, h, false);
+      cam.aspect = w / h; cam.updateProjectionMatrix();
+    };
+    wrap.innerHTML = "";
+    wrap.appendChild(renderer.domElement);
+    const ctl = new OrbitControls(cam, renderer.domElement);
+    ctl.target.set(0, 1, 0); ctl.update();
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x334, 1.2));
+    const dl = new THREE.DirectionalLight(0xffffff, 1.5);
+    dl.position.set(2, 4, 3); scene.add(dl);
+    const grid = new THREE.GridHelper(4, 12, 0x333344, 0x22222e);
+    scene.add(grid);
+    const loader = new GLTFLoader();
+    V3 = { THREE, scene, cam, renderer, ctl, loader, model: null, bones: [], heatOn: false };
+    const loop = () => { requestAnimationFrame(loop); ctl.update(); renderer.render(scene, cam); };
+    rsz(); loop();
+    window.addEventListener("resize", rsz);
+    const loadBuf = (buf, name) => {
+      V3.loader.parse(buf, "", gltf => {
+        if (V3.model) { V3.scene.remove(V3.model); }
+        V3.model = gltf.scene;
+        V3.scene.add(V3.model);
+        const box = new THREE.Box3().setFromObject(V3.model);
+        const c = box.getCenter(new THREE.Vector3());
+        V3.ctl.target.copy(c); V3.ctl.update();
+        const bones = [];
+        V3.model.traverse(o => { if (o.isBone) bones.push(o.name); });
+        V3.bones = bones;
+        const sel = $("boneSelect");
+        sel.innerHTML = "";
+        bones.forEach(b => { const o = document.createElement("option"); o.value = b; o.textContent = b; sel.appendChild(o); });
+        sel.style.display = bones.length ? "" : "none";
+        let vcount = 0;
+        V3.model.traverse(o => { if (o.isMesh && o.geometry) vcount += o.geometry.attributes.position.count; });
+        $("glbInfo").textContent = name + " — " + vcount.toLocaleString() + " verts, " + bones.length + " bones";
+        toast("Loaded " + name);
+      }, err => { toast("GLB parse failed: " + err.message); });
+    };
+    $("glbFile").onchange = e => {
+      const f = e.target.files[0];
+      if (!f) return;
+      f.arrayBuffer().then(b => loadBuf(b, f.name));
+    };
+    $("glbUrlBtn").onclick = () => {
+      showModal("Load GLB from URL", '<input id="mGlbUrl" class="modal-input" placeholder="https://.../model.glb" style="width:100%;background:var(--panel2);color:var(--text);border:1px solid #2a2a3a;border-radius:8px;padding:10px;">', () => {
+        const u = $("mGlbUrl").value.trim();
+        if (!u) return;
+        fetch(u).then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.arrayBuffer(); })
+          .then(b => loadBuf(b, u.split("/").pop()))
+          .catch(err => toast("Fetch failed: " + err.message));
+      });
+    };
+    $("wpHeatBtn").onclick = () => toggleHeat();
+    $("boneSelect").onchange = () => { if (V3.heatOn) applyHeat(); };
+    $("wpPathBtn").onclick = () => {
+      const p = "StreetBrawl/tools/weight-paint-pwa/index.html (+ copies in brutalfist-fix, ashlane-proof-check, anim-fix, money-machine-hq, urban-mayhem-port)";
+      copyText(p);
+      toast("PWA path copied — host the folder to use it on your phone");
+    };
+  } catch (e) {
+    wrap.innerHTML = "<div style='padding:40px 20px;text-align:center;color:var(--dim)'>3D failed to load: " + escapeHtml(e.message) + "</div>";
+  }
+}
+function toggleHeat() {
+  if (!V3.model) { toast("Load a GLB first"); return; }
+  V3.heatOn = !V3.heatOn;
+  $("wpHeatBtn").textContent = V3.heatOn ? "🌈 Heat: ON" : "🌈 Heat View";
+  if (V3.heatOn) applyHeat(); else clearHeat();
+  toast(V3.heatOn ? "Heat view on — pick a bone" : "Heat view off");
+}
+function applyHeat() {
+  const THREE = V3.THREE;
+  const boneName = $("boneSelect").value;
+  if (!boneName) { toast("No bones in this model"); return; }
+  let boneIdx = -1;
+  V3.model.traverse(o => {
+    if (o.isSkinnedMesh && o.skeleton) {
+      boneIdx = o.skeleton.bones.findIndex(b => b.name === boneName);
+    }
+  });
+  if (boneIdx < 0) { toast("Bone not found in skin"); return; }
+  V3.model.traverse(o => {
+    if (!o.isSkinnedMesh) return;
+    const g = o.geometry;
+    const si = g.attributes.skinIndex, sw = g.attributes.skinWeight;
+    if (!si || !sw) return;
+    const n = g.attributes.position.count;
+    const colors = new Float32Array(n * 3);
+    for (let i = 0; i < n; i++) {
+      let w = 0;
+      for (let k = 0; k < 4; k++) if (si.getX(i * 4 + k) === boneIdx || si.getComponent(i, k) === boneIdx) w = Math.max(w, sw.getComponent(i, k));
+      const c = heatColor(w);
+      colors[i * 3] = c[0]; colors[i * 3 + 1] = c[1]; colors[i * 3 + 2] = c[2];
+    }
+    g.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+    if (o.material) { o.material.vertexColors = true; o.material.needsUpdate = true; }
+  });
+  toast("Heat: " + boneName + " (red=full, blue=none)");
+}
+function clearHeat() {
+  V3.model.traverse(o => {
+    if (!o.isSkinnedMesh) return;
+    if (o.geometry.attributes.color) o.geometry.deleteAttribute("color");
+    if (o.material) { o.material.vertexColors = false; o.material.needsUpdate = true; }
+  });
+}
+function heatColor(w) {
+  w = Math.max(0, Math.min(1, w));
+  if (w < 0.5) { const t = w * 2; return [t, t, 1 - t * 0.5]; }
+  const t = (w - 0.5) * 2; return [1, 1 - t, 0];
+}
+function copyText(s) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(s).catch(() => fallbackCopy(s));
+  } else fallbackCopy(s);
+}
+function fallbackCopy(s) {
+  const ta = document.createElement("textarea");
+  ta.value = s; document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); } catch (e) {}
+  document.body.removeChild(ta);
+}
+
+/* ============ CHANGES TRACKER ============ */
+function updateChanges() {
+  const moved = S.clips.filter(c => Math.abs(c.at - c.original_at) > 0.01);
+  const added = S.clips.filter(c => c.id.startsWith("rec-"));
+  let msg = moved.length ? moved.map(c => `${c.label}: ${fmt(c.original_at)} → ${fmt(c.at)}`).join(" · ") : "No changes yet";
+  if (added.length) msg += ` · +${added.length} recording(s)`;
+  const gains = Object.entries(S.trackGain).filter(([k, v]) => v !== 1).map(([k, v]) => `${k} ${Math.round(v*100)}%`);
+  if (gains.length) msg += " · mix: " + gains.join(", ");
+  $("changes").textContent = msg;
+}
+
+/* ============ SAVE / EXPORT ============ */
+function exportProject() {
+  const clips = S.clips.map(c => {
+    const o = {
+      id: c.id, track: c.track, file: c.file,
+      original_at: c.original_at, at: Math.round(c.at * 10) / 10,
+      duration: c.duration, volume: Math.round(c.volume * (S.trackGain[c.track] || 1) * 100) / 100,
+      label: c.label, character: c.character, text: c.text,
+    };
+    if (c._blobUrl) o.recording_data = c._blobUrl;
+    if (c.fade_in) o.fade_in = true;
+    if (c.fade_out) o.fade_out = true;
+    return o;
+  });
+  return {
+    name: PROJECT.name + " (edited)",
+    base_video: "trippedd-studio/production/WIZARD_GANG_EP01/wizard-gang-ep02-final-v8b.mp4",
+    duration: S.duration,
+    clips, ducks: S.ducks, notes: S.notes,
+    track_gain: S.trackGain,
+    exported_at: new Date().toISOString(),
+  };
+}
+$("saveBtn").onclick = () => {
+  const proj = exportProject();
+  const js = JSON.stringify(proj, null, 1);
+  const blob = new Blob([js], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "ep02-project-" + Date.now() + ".json";
+  a.click();
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(js).then(
+      () => toast("Project saved + copied! Send it to Ashes to render."),
+      () => toast("Project downloaded — send the file to Ashes."));
+  } else {
+    toast("Project downloaded — send the file to Ashes.");
+  }
+};
+
+/* ============ INIT ============ */
+window.addEventListener("resize", resize);
+updateTime(); updateChanges(); updateScrub(); resize();
+setInterval(() => { if (!video.paused && !drag) { S.playhead = video.currentTime; draw(); updateTime(); updateScrub(); if ($("tab-animate").classList.contains("active")) drawAnimFrame(); } }, 120);
+</script>
+</body>
+</html>

@@ -1,0 +1,1915 @@
+{
+ "generated": "2026-10-11",
+ "totals": {
+  "glb_total_on_disk": 7245
+ },
+ "models": [
+  {
+   "type": "model_glb",
+   "name": "AARON_RUBEN_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/AARON_RUBEN_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.78
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_muscular_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/BANNON_muscular_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 1.14
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/BANNON_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 1.02
+  },
+  {
+   "type": "model_glb",
+   "name": "BRUTUS_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/BRUTUS_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.95
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_gear_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/CAIN_ELIAS_gear_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.85
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_godwithin_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/CAIN_ELIAS_godwithin_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.89
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_ring_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/CAIN_ELIAS_ring_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.9
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_snakeskin_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/CAIN_ELIAS_snakeskin_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.96
+  },
+  {
+   "type": "model_glb",
+   "name": "CIPHER_feral_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/CIPHER_feral_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.8
+  },
+  {
+   "type": "model_glb",
+   "name": "CIPHER_minion_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/CIPHER_minion_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.86
+  },
+  {
+   "type": "model_glb",
+   "name": "CIPHER_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/CIPHER_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.79
+  },
+  {
+   "type": "model_glb",
+   "name": "CIPHER_rigged_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/CIPHER_rigged_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.79
+  },
+  {
+   "type": "model_glb",
+   "name": "CODY_gear_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/CODY_gear_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 3.05
+  },
+  {
+   "type": "model_glb",
+   "name": "CODY_sober_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/CODY_sober_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.86
+  },
+  {
+   "type": "model_glb",
+   "name": "CODY_stressed_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/CODY_stressed_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.86
+  },
+  {
+   "type": "model_glb",
+   "name": "ECHO_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/ECHO_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.96
+  },
+  {
+   "type": "model_glb",
+   "name": "EDWIN_KENNEDY_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/EDWIN_KENNEDY_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.76
+  },
+  {
+   "type": "model_glb",
+   "name": "EDWIN_KENNEDY_unchained_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/EDWIN_KENNEDY_unchained_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.89
+  },
+  {
+   "type": "model_glb",
+   "name": "EL_TORO_DE_ORO_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/EL_TORO_DE_ORO_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.95
+  },
+  {
+   "type": "model_glb",
+   "name": "HALL_NIGHTER_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/HALL_NIGHTER_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.94
+  },
+  {
+   "type": "model_glb",
+   "name": "HOLLOW_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/HOLLOW_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.85
+  },
+  {
+   "type": "model_glb",
+   "name": "JAGER_beard_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/JAGER_beard_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 4.7
+  },
+  {
+   "type": "model_glb",
+   "name": "JAGER_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/JAGER_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 4.59
+  },
+  {
+   "type": "model_glb",
+   "name": "KOBRA_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/KOBRA_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.88
+  },
+  {
+   "type": "model_glb",
+   "name": "MAIME_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/MAIME_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 1.03
+  },
+  {
+   "type": "model_glb",
+   "name": "MAIME_tattered_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/MAIME_tattered_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.46
+  },
+  {
+   "type": "model_glb",
+   "name": "MASTER_SENSEI_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/MASTER_SENSEI_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.9
+  },
+  {
+   "type": "model_glb",
+   "name": "MASTER_SENSEI_rose_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/MASTER_SENSEI_rose_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.85
+  },
+  {
+   "type": "model_glb",
+   "name": "NPC_FINXSSE_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/NPC_FINXSSE_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.87
+  },
+  {
+   "type": "model_glb",
+   "name": "ONYX_corset_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/ONYX_corset_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 1.06
+  },
+  {
+   "type": "model_glb",
+   "name": "ONYX_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/ONYX_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 1.11
+  },
+  {
+   "type": "model_glb",
+   "name": "ONYX_straightjacket_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/ONYX_straightjacket_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.94
+  },
+  {
+   "type": "model_glb",
+   "name": "ONYX_street_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/ONYX_street_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.96
+  },
+  {
+   "type": "model_glb",
+   "name": "PABLO_blackreign_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/PABLO_blackreign_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.9
+  },
+  {
+   "type": "model_glb",
+   "name": "PABLO_goldenbull_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/PABLO_goldenbull_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.92
+  },
+  {
+   "type": "model_glb",
+   "name": "PABLO_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/PABLO_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.96
+  },
+  {
+   "type": "model_glb",
+   "name": "STAN_COMBS_gear_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/STAN_COMBS_gear_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.79
+  },
+  {
+   "type": "model_glb",
+   "name": "STATIC_alt_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/STATIC_alt_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.98
+  },
+  {
+   "type": "model_glb",
+   "name": "STATIC_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/STATIC_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.93
+  },
+  {
+   "type": "model_glb",
+   "name": "STICKUP_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/STICKUP_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.82
+  },
+  {
+   "type": "model_glb",
+   "name": "TARZANIAN_DEVIL_dec_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/TARZANIAN_DEVIL_dec_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 5.59
+  },
+  {
+   "type": "model_glb",
+   "name": "TARZANIAN_DEVIL_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/TARZANIAN_DEVIL_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 1.27
+  },
+  {
+   "type": "model_glb",
+   "name": "TITAN_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/TITAN_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.89
+  },
+  {
+   "type": "model_glb",
+   "name": "TITAN_unmasked_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/TITAN_unmasked_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.87
+  },
+  {
+   "type": "model_glb",
+   "name": "TITAN_white_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/TITAN_white_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.87
+  },
+  {
+   "type": "model_glb",
+   "name": "TRIPLE_XXX_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/TRIPLE_XXX_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.82
+  },
+  {
+   "type": "model_glb",
+   "name": "TRIPLE_XXX_suit_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/TRIPLE_XXX_suit_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.79
+  },
+  {
+   "type": "model_glb",
+   "name": "TRIPLE_XXX_tights_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/TRIPLE_XXX_tights_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.8
+  },
+  {
+   "type": "model_glb",
+   "name": "TRIPLE_XXX_trunks_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/TRIPLE_XXX_trunks_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.82
+  },
+  {
+   "type": "model_glb",
+   "name": "TYNESHIA_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/TYNESHIA_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 1.04
+  },
+  {
+   "type": "model_glb",
+   "name": "TYNESHIA_street_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/TYNESHIA_street_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.95
+  },
+  {
+   "type": "model_glb",
+   "name": "VIPER_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/VIPER_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.86
+  },
+  {
+   "type": "model_glb",
+   "name": "WRECK_PATTERSON_attire2_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/WRECK_PATTERSON_attire2_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.91
+  },
+  {
+   "type": "model_glb",
+   "name": "WRECK_PATTERSON_attire3_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/WRECK_PATTERSON_attire3_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.91
+  },
+  {
+   "type": "model_glb",
+   "name": "WRECK_PATTERSON_godwithin_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/WRECK_PATTERSON_godwithin_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.95
+  },
+  {
+   "type": "model_glb",
+   "name": "WRECK_PATTERSON_repaired.glb",
+   "path": "bannon-video-pipe/repo/out/WRECK_PATTERSON_repaired.glb",
+   "project": "bannon-video-pipe",
+   "size_mb": 0.83
+  },
+  {
+   "type": "model_glb",
+   "name": "chare.glb",
+   "path": "os-pull/souls-like-controller/assets/chare.glb",
+   "project": "os-pull",
+   "size_mb": 3.34
+  },
+  {
+   "type": "model_glb",
+   "name": "chare.glb",
+   "path": "ashlane-federation/combat/souls-like-controller/assets/chare.glb",
+   "project": "ashlane-federation",
+   "size_mb": 3.34
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_general.glb",
+   "path": "StreetBrawl/game-3d/build/assets/anim_general.glb",
+   "project": "StreetBrawl",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_melee.glb",
+   "path": "StreetBrawl/game-3d/build/assets/anim_melee.glb",
+   "project": "StreetBrawl",
+   "size_mb": 0.08
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_move.glb",
+   "path": "StreetBrawl/game-3d/build/assets/anim_move.glb",
+   "project": "StreetBrawl",
+   "size_mb": 0.03
+  },
+  {
+   "type": "model_glb",
+   "name": "fighter.glb",
+   "path": "StreetBrawl/game-3d/build/assets/fighter.glb",
+   "project": "StreetBrawl",
+   "size_mb": 0.14
+  },
+  {
+   "type": "model_glb",
+   "name": "AARON_RUBEN.glb",
+   "path": "brutalfist-fix/public/models/AARON_RUBEN.glb",
+   "project": "brutalfist-fix",
+   "size_mb": 0.46
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON.glb",
+   "path": "brutalfist-fix/public/models/BANNON.glb",
+   "project": "brutalfist-fix",
+   "size_mb": 0.45
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_muscular.glb",
+   "path": "brutalfist-fix/public/models/BANNON_muscular.glb",
+   "project": "brutalfist-fix",
+   "size_mb": 0.69
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_muscular_rig28.glb",
+   "path": "brutalfist-fix/public/models/BANNON_muscular_rig28.glb",
+   "project": "brutalfist-fix",
+   "size_mb": 0.56
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_muscular_rigready.glb",
+   "path": "brutalfist-fix/public/models/BANNON_muscular_rigready.glb",
+   "project": "brutalfist-fix",
+   "size_mb": 0.78
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_muscular_skinned.glb",
+   "path": "brutalfist-fix/public/models/BANNON_muscular_skinned.glb",
+   "project": "brutalfist-fix",
+   "size_mb": 0.5
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_rigged.glb",
+   "path": "brutalfist-fix/public/models/BANNON_rigged.glb",
+   "project": "brutalfist-fix",
+   "size_mb": 4.01
+  },
+  {
+   "type": "model_glb",
+   "name": "BRUTUS.glb",
+   "path": "brutalfist-fix/public/models/BRUTUS.glb",
+   "project": "brutalfist-fix",
+   "size_mb": 0.6
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_gear.glb",
+   "path": "brutalfist-fix/public/models/CAIN_ELIAS_gear.glb",
+   "project": "brutalfist-fix",
+   "size_mb": 0.53
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_godwithin.glb",
+   "path": "brutalfist-fix/public/models/CAIN_ELIAS_godwithin.glb",
+   "project": "brutalfist-fix",
+   "size_mb": 0.57
+  },
+  {
+   "type": "model_glb",
+   "name": "fighter.glb",
+   "path": "ConcreteDragon/game-3d/build/assets/fighter.glb",
+   "project": "ConcreteDragon",
+   "size_mb": 0.14
+  },
+  {
+   "type": "model_glb",
+   "name": "bank.glb",
+   "path": ".tmp/w7b-dl/oga-neontown/GLTF/bank.glb",
+   "project": ".tmp",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "bar.glb",
+   "path": ".tmp/w7b-dl/oga-neontown/GLTF/bar.glb",
+   "project": ".tmp",
+   "size_mb": 0.08
+  },
+  {
+   "type": "model_glb",
+   "name": "billboard.glb",
+   "path": ".tmp/w7b-dl/oga-neontown/GLTF/billboard.glb",
+   "project": ".tmp",
+   "size_mb": 0.12
+  },
+  {
+   "type": "model_glb",
+   "name": "car.glb",
+   "path": ".tmp/w7b-dl/oga-neontown/GLTF/car.glb",
+   "project": ".tmp",
+   "size_mb": 0.02
+  },
+  {
+   "type": "model_glb",
+   "name": "chair.glb",
+   "path": ".tmp/w7b-dl/oga-neontown/GLTF/chair.glb",
+   "project": ".tmp",
+   "size_mb": 0.01
+  },
+  {
+   "type": "model_glb",
+   "name": "fence.glb",
+   "path": ".tmp/w7b-dl/oga-neontown/GLTF/fence.glb",
+   "project": ".tmp",
+   "size_mb": 2.31
+  },
+  {
+   "type": "model_glb",
+   "name": "carmilla_model.glb",
+   "path": ".tools/blendconv/carmilla_model.glb",
+   "project": ".tools",
+   "size_mb": 0.06
+  },
+  {
+   "type": "model_glb",
+   "name": "ghosts2.glb",
+   "path": ".tools/blendconv/ghosts2.glb",
+   "project": ".tools",
+   "size_mb": 0.02
+  },
+  {
+   "type": "model_glb",
+   "name": "ghosts4_sad_ghost_only.glb",
+   "path": ".tools/blendconv/ghosts4_sad_ghost_only.glb",
+   "project": ".tools",
+   "size_mb": 0.01
+  },
+  {
+   "type": "model_glb",
+   "name": "cute_skull.glb",
+   "path": ".tools/blendconv/cute_skull.glb",
+   "project": ".tools",
+   "size_mb": 0.03
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_general.glb",
+   "path": ".wt-soul/game-3d/build/assets/anim_general.glb",
+   "project": ".wt-soul",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_melee.glb",
+   "path": ".wt-soul/game-3d/build/assets/anim_melee.glb",
+   "project": ".wt-soul",
+   "size_mb": 0.08
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_move.glb",
+   "path": ".wt-soul/game-3d/build/assets/anim_move.glb",
+   "project": ".wt-soul",
+   "size_mb": 0.03
+  },
+  {
+   "type": "model_glb",
+   "name": "fighter.glb",
+   "path": ".wt-soul/game-3d/build/assets/fighter.glb",
+   "project": ".wt-soul",
+   "size_mb": 0.14
+  },
+  {
+   "type": "model_glb",
+   "name": "street.glb",
+   "path": ".wt-soul/game-3d/build/assets/street.glb",
+   "project": ".wt-soul",
+   "size_mb": 0.26
+  },
+  {
+   "type": "model_glb",
+   "name": "building-a.glb",
+   "path": ".wt-soul/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-a.glb",
+   "project": ".wt-soul",
+   "size_mb": 0.1
+  },
+  {
+   "type": "model_glb",
+   "name": "moon.glb",
+   "path": "3d-toolkit/mesh-repair/manifold/bindings/wasm/examples/editor/public/models/moon.glb",
+   "project": "3d-toolkit",
+   "size_mb": 0.22
+  },
+  {
+   "type": "model_glb",
+   "name": "space.glb",
+   "path": "3d-toolkit/mesh-repair/manifold/bindings/wasm/examples/editor/public/models/space.glb",
+   "project": "3d-toolkit",
+   "size_mb": 0.11
+  },
+  {
+   "type": "model_glb",
+   "name": "moon.glb",
+   "path": "3d-toolkit/mesh-repair/manifold/bindings/wasm/examples/model-viewer/public/models/moon.glb",
+   "project": "3d-toolkit",
+   "size_mb": 0.22
+  },
+  {
+   "type": "model_glb",
+   "name": "space.glb",
+   "path": "3d-toolkit/mesh-repair/manifold/bindings/wasm/examples/model-viewer/public/models/space.glb",
+   "project": "3d-toolkit",
+   "size_mb": 0.11
+  },
+  {
+   "type": "model_glb",
+   "name": "moon.glb",
+   "path": "3d-toolkit/mesh-repair/manifold/bindings/wasm/test/examples/models/moon.glb",
+   "project": "3d-toolkit",
+   "size_mb": 0.22
+  },
+  {
+   "type": "model_glb",
+   "name": "space.glb",
+   "path": "3d-toolkit/mesh-repair/manifold/bindings/wasm/test/examples/models/space.glb",
+   "project": "3d-toolkit",
+   "size_mb": 0.11
+  },
+  {
+   "type": "model_glb",
+   "name": "aero-sail.glb",
+   "path": "BioMechania/.vercel/output/static/mecha/parts/aero-sail/aero-sail.glb",
+   "project": "BioMechania",
+   "size_mb": 0.02
+  },
+  {
+   "type": "model_glb",
+   "name": "aero-wedge.glb",
+   "path": "BioMechania/.vercel/output/static/mecha/parts/aero-wedge/aero-wedge.glb",
+   "project": "BioMechania",
+   "size_mb": 0.04
+  },
+  {
+   "type": "model_glb",
+   "name": "arms-bruiser.glb",
+   "path": "BioMechania/.vercel/output/static/mecha/parts/arms-bruiser/arms-bruiser.glb",
+   "project": "BioMechania",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "arms-scout.glb",
+   "path": "BioMechania/.vercel/output/static/mecha/parts/arms-scout/arms-scout.glb",
+   "project": "BioMechania",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "backpack-afterburner.glb",
+   "path": "BioMechania/.vercel/output/static/mecha/parts/backpack-afterburner/backpack-afterburner.glb",
+   "project": "BioMechania",
+   "size_mb": 0.02
+  },
+  {
+   "type": "model_glb",
+   "name": "backpack-bruiser.glb",
+   "path": "BioMechania/.vercel/output/static/mecha/parts/backpack-bruiser/backpack-bruiser.glb",
+   "project": "BioMechania",
+   "size_mb": 0.02
+  },
+  {
+   "type": "model_glb",
+   "name": "aero-sail.glb",
+   "path": "BioMechania-bruiser-parts/public/mecha/parts/aero-sail/aero-sail.glb",
+   "project": "BioMechania-bruiser-parts",
+   "size_mb": 0.02
+  },
+  {
+   "type": "model_glb",
+   "name": "aero-wedge.glb",
+   "path": "BioMechania-bruiser-parts/public/mecha/parts/aero-wedge/aero-wedge.glb",
+   "project": "BioMechania-bruiser-parts",
+   "size_mb": 0.04
+  },
+  {
+   "type": "model_glb",
+   "name": "arms-bruiser.glb",
+   "path": "BioMechania-bruiser-parts/public/mecha/parts/arms-bruiser/arms-bruiser.glb",
+   "project": "BioMechania-bruiser-parts",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "arms-scout.glb",
+   "path": "BioMechania-bruiser-parts/public/mecha/parts/arms-scout/arms-scout.glb",
+   "project": "BioMechania-bruiser-parts",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "backpack-afterburner.glb",
+   "path": "BioMechania-bruiser-parts/public/mecha/parts/backpack-afterburner/backpack-afterburner.glb",
+   "project": "BioMechania-bruiser-parts",
+   "size_mb": 0.02
+  },
+  {
+   "type": "model_glb",
+   "name": "backpack-bruiser.glb",
+   "path": "BioMechania-bruiser-parts/public/mecha/parts/backpack-bruiser/backpack-bruiser.glb",
+   "project": "BioMechania-bruiser-parts",
+   "size_mb": 0.02
+  },
+  {
+   "type": "model_glb",
+   "name": "building-a.glb",
+   "path": "ConcreteDragon/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-a.glb",
+   "project": "ConcreteDragon",
+   "size_mb": 0.1
+  },
+  {
+   "type": "model_glb",
+   "name": "building-b.glb",
+   "path": "ConcreteDragon/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-b.glb",
+   "project": "ConcreteDragon",
+   "size_mb": 0.1
+  },
+  {
+   "type": "model_glb",
+   "name": "building-c.glb",
+   "path": "ConcreteDragon/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-c.glb",
+   "project": "ConcreteDragon",
+   "size_mb": 0.1
+  },
+  {
+   "type": "model_glb",
+   "name": "building-d.glb",
+   "path": "ConcreteDragon/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-d.glb",
+   "project": "ConcreteDragon",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "building-e.glb",
+   "path": "ConcreteDragon/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-e.glb",
+   "project": "ConcreteDragon",
+   "size_mb": 0.12
+  },
+  {
+   "type": "model_glb",
+   "name": "building-f.glb",
+   "path": "ConcreteDragon/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-f.glb",
+   "project": "ConcreteDragon",
+   "size_mb": 0.14
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_general.glb",
+   "path": "ConcreteDragon-c5/game-3d/build/assets/anim_general.glb",
+   "project": "ConcreteDragon-c5",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_melee.glb",
+   "path": "ConcreteDragon-c5/game-3d/build/assets/anim_melee.glb",
+   "project": "ConcreteDragon-c5",
+   "size_mb": 0.08
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_move.glb",
+   "path": "ConcreteDragon-c5/game-3d/build/assets/anim_move.glb",
+   "project": "ConcreteDragon-c5",
+   "size_mb": 0.03
+  },
+  {
+   "type": "model_glb",
+   "name": "fighter.glb",
+   "path": "ConcreteDragon-c5/game-3d/build/assets/fighter.glb",
+   "project": "ConcreteDragon-c5",
+   "size_mb": 0.14
+  },
+  {
+   "type": "model_glb",
+   "name": "industrial.glb",
+   "path": "ConcreteDragon-c5/game-3d/build/assets/industrial.glb",
+   "project": "ConcreteDragon-c5",
+   "size_mb": 1.43
+  },
+  {
+   "type": "model_glb",
+   "name": "baseball-skeleton.glb",
+   "path": "ConcreteDragon-c5/game-3d/build/assets/parts/baseball-skeleton.glb",
+   "project": "ConcreteDragon-c5",
+   "size_mb": 0.78
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_general.glb",
+   "path": "ConcreteDragon-cdci4/game-3d/build/assets/anim_general.glb",
+   "project": "ConcreteDragon-cdci4",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_grapple.glb",
+   "path": "ConcreteDragon-cdci4/game-3d/build/assets/anim_grapple.glb",
+   "project": "ConcreteDragon-cdci4",
+   "size_mb": 0.62
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_melee.glb",
+   "path": "ConcreteDragon-cdci4/game-3d/build/assets/anim_melee.glb",
+   "project": "ConcreteDragon-cdci4",
+   "size_mb": 0.08
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_move.glb",
+   "path": "ConcreteDragon-cdci4/game-3d/build/assets/anim_move.glb",
+   "project": "ConcreteDragon-cdci4",
+   "size_mb": 0.03
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_moves.glb",
+   "path": "ConcreteDragon-cdci4/game-3d/build/assets/anim_moves.glb",
+   "project": "ConcreteDragon-cdci4",
+   "size_mb": 0.1
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_taunt.glb",
+   "path": "ConcreteDragon-cdci4/game-3d/build/assets/anim_taunt.glb",
+   "project": "ConcreteDragon-cdci4",
+   "size_mb": 0.19
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_general.glb",
+   "path": "ConcreteDragon-wt-y11/game-3d/build/assets/anim_general.glb",
+   "project": "ConcreteDragon-wt-y11",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_grapple.glb",
+   "path": "ConcreteDragon-wt-y11/game-3d/build/assets/anim_grapple.glb",
+   "project": "ConcreteDragon-wt-y11",
+   "size_mb": 0.62
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_melee.glb",
+   "path": "ConcreteDragon-wt-y11/game-3d/build/assets/anim_melee.glb",
+   "project": "ConcreteDragon-wt-y11",
+   "size_mb": 0.08
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_move.glb",
+   "path": "ConcreteDragon-wt-y11/game-3d/build/assets/anim_move.glb",
+   "project": "ConcreteDragon-wt-y11",
+   "size_mb": 0.03
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_moves.glb",
+   "path": "ConcreteDragon-wt-y11/game-3d/build/assets/anim_moves.glb",
+   "project": "ConcreteDragon-wt-y11",
+   "size_mb": 0.1
+  },
+  {
+   "type": "model_glb",
+   "name": "anim_taunt.glb",
+   "path": "ConcreteDragon-wt-y11/game-3d/build/assets/anim_taunt.glb",
+   "project": "ConcreteDragon-wt-y11",
+   "size_mb": 0.19
+  },
+  {
+   "type": "model_glb",
+   "name": "JAGER.glb",
+   "path": "M.-Engine-/assets/bannon/models/JAGER.glb",
+   "project": "M.-Engine-",
+   "size_mb": 2.45
+  },
+  {
+   "type": "model_glb",
+   "name": "JAGER_coat.glb",
+   "path": "M.-Engine-/assets/bannon/models/JAGER_coat.glb",
+   "project": "M.-Engine-",
+   "size_mb": 4.03
+  },
+  {
+   "type": "model_glb",
+   "name": "building-a.glb",
+   "path": "StreetBrawl/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-a.glb",
+   "project": "StreetBrawl",
+   "size_mb": 0.1
+  },
+  {
+   "type": "model_glb",
+   "name": "building-b.glb",
+   "path": "StreetBrawl/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-b.glb",
+   "project": "StreetBrawl",
+   "size_mb": 0.1
+  },
+  {
+   "type": "model_glb",
+   "name": "building-c.glb",
+   "path": "StreetBrawl/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-c.glb",
+   "project": "StreetBrawl",
+   "size_mb": 0.1
+  },
+  {
+   "type": "model_glb",
+   "name": "building-d.glb",
+   "path": "StreetBrawl/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-d.glb",
+   "project": "StreetBrawl",
+   "size_mb": 0.09
+  },
+  {
+   "type": "model_glb",
+   "name": "building-e.glb",
+   "path": "StreetBrawl/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-e.glb",
+   "project": "StreetBrawl",
+   "size_mb": 0.12
+  },
+  {
+   "type": "model_glb",
+   "name": "building-f.glb",
+   "path": "StreetBrawl/game/assets/props/kenney-city-kit-commercial/Models/GLB format/building-f.glb",
+   "project": "StreetBrawl",
+   "size_mb": 0.14
+  },
+  {
+   "type": "model_glb",
+   "name": "chain_gold_ashlane.glb",
+   "path": "accessories/work/chain_gold_ashlane.glb",
+   "project": "accessories",
+   "size_mb": 0.15
+  },
+  {
+   "type": "model_glb",
+   "name": "chain_gold_ashlane_rigged.glb",
+   "path": "accessories/work/chain_gold_ashlane_rigged.glb",
+   "project": "accessories",
+   "size_mb": 0.24
+  },
+  {
+   "type": "model_glb",
+   "name": "chain_wizard_gang.glb",
+   "path": "accessories/work/chain_wizard_gang.glb",
+   "project": "accessories",
+   "size_mb": 0.23
+  },
+  {
+   "type": "model_glb",
+   "name": "chain_wizard_gang_rigged.glb",
+   "path": "accessories/work/chain_wizard_gang_rigged.glb",
+   "project": "accessories",
+   "size_mb": 0.35
+  },
+  {
+   "type": "model_glb",
+   "name": "chain_diamond_ice.glb",
+   "path": "accessories/work/chain_diamond_ice.glb",
+   "project": "accessories",
+   "size_mb": 0.22
+  },
+  {
+   "type": "model_glb",
+   "name": "chain_diamond_ice_rigged.glb",
+   "path": "accessories/work/chain_diamond_ice_rigged.glb",
+   "project": "accessories",
+   "size_mb": 0.34
+  },
+  {
+   "type": "model_glb",
+   "name": "trellis_clean.glb",
+   "path": "agent-ops/tmp/forge3d-200c/trellis_clean.glb",
+   "project": "agent-ops",
+   "size_mb": 3.4
+  },
+  {
+   "type": "model_glb",
+   "name": "CIPHER_rigged.glb",
+   "path": "agent-ops/lane-paint-qc/patched/CIPHER_rigged.glb",
+   "project": "agent-ops",
+   "size_mb": 0.79
+  },
+  {
+   "type": "model_glb",
+   "name": "ONYX_skinned.glb",
+   "path": "agent-ops/lane-paint-qc/patched/ONYX_skinned.glb",
+   "project": "agent-ops",
+   "size_mb": 0.91
+  },
+  {
+   "type": "model_glb",
+   "name": "ECHO.glb",
+   "path": "agent-ops/lane-paint-qc/patched/ECHO.glb",
+   "project": "agent-ops",
+   "size_mb": 1.26
+  },
+  {
+   "type": "model_glb",
+   "name": "ONYX_street.glb",
+   "path": "agent-ops/lane-paint-qc/patched/ONYX_street.glb",
+   "project": "agent-ops",
+   "size_mb": 0.63
+  },
+  {
+   "type": "model_glb",
+   "name": "drifter.glb",
+   "path": "anim-fix/.vercel/output/static/models/humanoid/drifter.glb",
+   "project": "anim-fix",
+   "size_mb": 6.36
+  },
+  {
+   "type": "model_glb",
+   "name": "Soldier_Female.glb",
+   "path": "anim-fix/.vercel/output/static/models/humanoid/Soldier_Female.glb",
+   "project": "anim-fix",
+   "size_mb": 1.71
+  },
+  {
+   "type": "model_glb",
+   "name": "Soldier_Male.glb",
+   "path": "anim-fix/.vercel/output/static/models/humanoid/Soldier_Male.glb",
+   "project": "anim-fix",
+   "size_mb": 1.51
+  },
+  {
+   "type": "model_glb",
+   "name": "Zombie_Female.glb",
+   "path": "anim-fix/.vercel/output/static/models/humanoid/Zombie_Female.glb",
+   "project": "anim-fix",
+   "size_mb": 1.89
+  },
+  {
+   "type": "model_glb",
+   "name": "Zombie_Male.glb",
+   "path": "anim-fix/.vercel/output/static/models/humanoid/Zombie_Male.glb",
+   "project": "anim-fix",
+   "size_mb": 1.61
+  },
+  {
+   "type": "model_glb",
+   "name": "mannequin.glb",
+   "path": "anim-fix/.vercel/output/static/models/humanoid/mannequin.glb",
+   "project": "anim-fix",
+   "size_mb": 0.44
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_muscular_skinned.glb",
+   "path": "api-wiring/proof/qc-quarantine/BANNON_muscular_skinned.glb",
+   "project": "api-wiring",
+   "size_mb": 0.55
+  },
+  {
+   "type": "model_glb",
+   "name": "polypizza_spaceship.glb",
+   "path": "api-wiring/proof/polypizza_spaceship.glb",
+   "project": "api-wiring",
+   "size_mb": 0.02
+  },
+  {
+   "type": "model_glb",
+   "name": "cain_split_body_xfer_part0.glb",
+   "path": "api-wiring/proof/cain_split_body_xfer_part0.glb",
+   "project": "api-wiring",
+   "size_mb": 0.0
+  },
+  {
+   "type": "model_glb",
+   "name": "cain_split_body_xfer_part1.glb",
+   "path": "api-wiring/proof/cain_split_body_xfer_part1.glb",
+   "project": "api-wiring",
+   "size_mb": 0.0
+  },
+  {
+   "type": "model_glb",
+   "name": "cain_split_body_xfer_part2.glb",
+   "path": "api-wiring/proof/cain_split_body_xfer_part2.glb",
+   "project": "api-wiring",
+   "size_mb": 0.0
+  },
+  {
+   "type": "model_glb",
+   "name": "cain_split_body_xfer_part3.glb",
+   "path": "api-wiring/proof/cain_split_body_xfer_part3.glb",
+   "project": "api-wiring",
+   "size_mb": 0.01
+  },
+  {
+   "type": "model_glb",
+   "name": "Mannequin_F.glb",
+   "path": "ashlane-federation/combat/souls-like-controller/assets/Universal Animation Library 2[Standard]/Female Mannequin/Unreal-Godot/Mannequin_F.glb",
+   "project": "ashlane-federation",
+   "size_mb": 1.38
+  },
+  {
+   "type": "model_glb",
+   "name": "UAL2_Standard.glb",
+   "path": "ashlane-federation/combat/souls-like-controller/assets/Universal Animation Library 2[Standard]/Unreal-Godot/UAL2_Standard.glb",
+   "project": "ashlane-federation",
+   "size_mb": 7.69
+  },
+  {
+   "type": "model_glb",
+   "name": "Sign_NoParking.glb",
+   "path": "ashlane-federation/repo-assets/street/Sign_NoParking.glb",
+   "project": "ashlane-federation",
+   "size_mb": 0.02
+  },
+  {
+   "type": "model_glb",
+   "name": "Sign_Stop.glb",
+   "path": "ashlane-federation/repo-assets/street/Sign_Stop.glb",
+   "project": "ashlane-federation",
+   "size_mb": 0.02
+  },
+  {
+   "type": "model_glb",
+   "name": "Sign_Triangle.glb",
+   "path": "ashlane-federation/repo-assets/street/Sign_Triangle.glb",
+   "project": "ashlane-federation",
+   "size_mb": 0.01
+  },
+  {
+   "type": "model_glb",
+   "name": "Street_3Way.glb",
+   "path": "ashlane-federation/repo-assets/street/Street_3Way.glb",
+   "project": "ashlane-federation",
+   "size_mb": 0.03
+  },
+  {
+   "type": "model_glb",
+   "name": "AARON_RUBEN.glb",
+   "path": "ashlane-malakor/.vercel/output/static/models/cast/AARON_RUBEN.glb",
+   "project": "ashlane-malakor",
+   "size_mb": 0.46
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_muscular_skinned.glb",
+   "path": "ashlane-malakor/.vercel/output/static/models/cast/BANNON_muscular_skinned.glb",
+   "project": "ashlane-malakor",
+   "size_mb": 0.5
+  },
+  {
+   "type": "model_glb",
+   "name": "BRUTUS.glb",
+   "path": "ashlane-malakor/.vercel/output/static/models/cast/BRUTUS.glb",
+   "project": "ashlane-malakor",
+   "size_mb": 0.6
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_gear.glb",
+   "path": "ashlane-malakor/.vercel/output/static/models/cast/CAIN_ELIAS_gear.glb",
+   "project": "ashlane-malakor",
+   "size_mb": 0.53
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_snakeskin.glb",
+   "path": "ashlane-malakor/.vercel/output/static/models/cast/CAIN_ELIAS_snakeskin.glb",
+   "project": "ashlane-malakor",
+   "size_mb": 0.65
+  },
+  {
+   "type": "model_glb",
+   "name": "CIPHER_rigged.glb",
+   "path": "ashlane-malakor/.vercel/output/static/models/cast/CIPHER_rigged.glb",
+   "project": "ashlane-malakor",
+   "size_mb": 0.49
+  },
+  {
+   "type": "model_glb",
+   "name": "drifter.glb",
+   "path": "ashlane-port/.vercel/output/static/models/humanoid/drifter.glb",
+   "project": "ashlane-port",
+   "size_mb": 6.36
+  },
+  {
+   "type": "model_glb",
+   "name": "Barbarian.glb",
+   "path": "ashlane-port/.vercel/output/static/models/kaykit/Barbarian.glb",
+   "project": "ashlane-port",
+   "size_mb": 3.45
+  },
+  {
+   "type": "model_glb",
+   "name": "Knight.glb",
+   "path": "ashlane-port/.vercel/output/static/models/kaykit/Knight.glb",
+   "project": "ashlane-port",
+   "size_mb": 3.49
+  },
+  {
+   "type": "model_glb",
+   "name": "Mage.glb",
+   "path": "ashlane-port/.vercel/output/static/models/kaykit/Mage.glb",
+   "project": "ashlane-port",
+   "size_mb": 3.42
+  },
+  {
+   "type": "model_glb",
+   "name": "Rogue.glb",
+   "path": "ashlane-port/.vercel/output/static/models/kaykit/Rogue.glb",
+   "project": "ashlane-port",
+   "size_mb": 3.45
+  },
+  {
+   "type": "model_glb",
+   "name": "Rogue_Hooded.glb",
+   "path": "ashlane-port/.vercel/output/static/models/kaykit/Rogue_Hooded.glb",
+   "project": "ashlane-port",
+   "size_mb": 3.43
+  },
+  {
+   "type": "model_glb",
+   "name": "UAL1_Standard.glb",
+   "path": "ashlane-proof-check/.vercel/output/static/motion/ual/UAL1_Standard.glb",
+   "project": "ashlane-proof-check",
+   "size_mb": 7.27
+  },
+  {
+   "type": "model_glb",
+   "name": "UAL2_Standard.glb",
+   "path": "ashlane-proof-check/.vercel/output/static/motion/ual/UAL2_Standard.glb",
+   "project": "ashlane-proof-check",
+   "size_mb": 7.72
+  },
+  {
+   "type": "model_glb",
+   "name": "Eyebrows_Female.glb",
+   "path": "ashlane-proof-check/.vercel/output/static/models/cast/quaternius/Eyebrows_Female.glb",
+   "project": "ashlane-proof-check",
+   "size_mb": 0.11
+  },
+  {
+   "type": "model_glb",
+   "name": "Eyebrows_Regular.glb",
+   "path": "ashlane-proof-check/.vercel/output/static/models/cast/quaternius/Eyebrows_Regular.glb",
+   "project": "ashlane-proof-check",
+   "size_mb": 0.06
+  },
+  {
+   "type": "model_glb",
+   "name": "Hair_Beard.glb",
+   "path": "ashlane-proof-check/.vercel/output/static/models/cast/quaternius/Hair_Beard.glb",
+   "project": "ashlane-proof-check",
+   "size_mb": 0.06
+  },
+  {
+   "type": "model_glb",
+   "name": "Hair_Buns.glb",
+   "path": "ashlane-proof-check/.vercel/output/static/models/cast/quaternius/Hair_Buns.glb",
+   "project": "ashlane-proof-check",
+   "size_mb": 0.21
+  },
+  {
+   "type": "model_glb",
+   "name": "AARON_RUBEN.glb",
+   "path": "ashlane-test/public/models/cast/AARON_RUBEN.glb",
+   "project": "ashlane-test",
+   "size_mb": 0.46
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_muscular_skinned.glb",
+   "path": "ashlane-test/public/models/cast/BANNON_muscular_skinned.glb",
+   "project": "ashlane-test",
+   "size_mb": 0.5
+  },
+  {
+   "type": "model_glb",
+   "name": "BRUTUS.glb",
+   "path": "ashlane-test/public/models/cast/BRUTUS.glb",
+   "project": "ashlane-test",
+   "size_mb": 0.6
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_gear.glb",
+   "path": "ashlane-test/public/models/cast/CAIN_ELIAS_gear.glb",
+   "project": "ashlane-test",
+   "size_mb": 0.53
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_snakeskin.glb",
+   "path": "ashlane-test/public/models/cast/CAIN_ELIAS_snakeskin.glb",
+   "project": "ashlane-test",
+   "size_mb": 0.65
+  },
+  {
+   "type": "model_glb",
+   "name": "CIPHER_rigged.glb",
+   "path": "ashlane-test/public/models/cast/CIPHER_rigged.glb",
+   "project": "ashlane-test",
+   "size_mb": 0.49
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_attire2.glb",
+   "path": "attire-pull/cain/CAIN_ELIAS_attire2.glb",
+   "project": "attire-pull",
+   "size_mb": 57.85
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_attire3.glb",
+   "path": "attire-pull/cain/CAIN_ELIAS_attire3.glb",
+   "project": "attire-pull",
+   "size_mb": 57.59
+  },
+  {
+   "type": "model_glb",
+   "name": "CAIN_ELIAS_attire4.glb",
+   "path": "attire-pull/cain/CAIN_ELIAS_attire4.glb",
+   "project": "attire-pull",
+   "size_mb": 58.41
+  },
+  {
+   "type": "model_glb",
+   "name": "EDWIN_KENNEDY_attire3.glb",
+   "path": "attire-pull/edwin/EDWIN_KENNEDY_attire3.glb",
+   "project": "attire-pull",
+   "size_mb": 57.12
+  },
+  {
+   "type": "model_glb",
+   "name": "EDWIN_KENNEDY_ring1.glb",
+   "path": "attire-pull/edwin/EDWIN_KENNEDY_ring1.glb",
+   "project": "attire-pull",
+   "size_mb": 58.62
+  },
+  {
+   "type": "model_glb",
+   "name": "AARON_RUBEN.glb",
+   "path": "attire-pull/repo/.vercel/output/static/models/cast/AARON_RUBEN.glb",
+   "project": "attire-pull",
+   "size_mb": 0.46
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_v3_split.glb",
+   "path": "bannon-drive-originals/BANNON_v3_split.glb",
+   "project": "bannon-drive-originals",
+   "size_mb": 0.0
+  },
+  {
+   "type": "model_glb",
+   "name": "BANNON_v2_split.glb",
+   "path": "bannon-drive-originals/BANNON_v2_split.glb",
+   "project": "bannon-drive-originals",
+   "size_mb": 0.0
+  }
+ ],
+ "rigs_2d": [
+  {
+   "type": "concept_dir",
+   "name": "Cipher v1 concept dir",
+   "path": "character-rigs/cipher-v1-concept",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": null
+  },
+  {
+   "type": "viseme_sheet",
+   "name": "Cipher viseme sheet",
+   "path": "character-rigs/cipher-visemes-sheet.jpg",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": 0.15
+  },
+  {
+   "type": "concept_dir",
+   "name": "Echo v1 concept dir",
+   "path": "character-rigs/echo-v1-concept",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": null
+  },
+  {
+   "type": "viseme_sheet",
+   "name": "Echo viseme sheet",
+   "path": "character-rigs/echo-visemes-sheet.jpg",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": 0.18
+  },
+  {
+   "type": "concept_dir",
+   "name": "Hollow v1 concept dir",
+   "path": "character-rigs/hollow-v1-concept",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": null
+  },
+  {
+   "type": "viseme_sheet",
+   "name": "Hollow viseme sheet",
+   "path": "character-rigs/hollow-visemes-sheet.jpg",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": 0.19
+  },
+  {
+   "type": "concept_dir",
+   "name": "Kiko v1 concept dir",
+   "path": "character-rigs/kiko-v1-concept",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": null
+  },
+  {
+   "type": "viseme_sheet",
+   "name": "Kiko viseme sheet",
+   "path": "character-rigs/kiko-visemes-sheet.jpg",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": 0.17
+  },
+  {
+   "type": "concept_dir",
+   "name": "Onyx v1 concept dir",
+   "path": "character-rigs/onyx-v1-concept",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": null
+  },
+  {
+   "type": "viseme_sheet",
+   "name": "Onyx viseme sheet",
+   "path": "character-rigs/onyx-visemes-sheet.jpg",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": 0.12
+  },
+  {
+   "type": "concept_dir",
+   "name": "Sombra Negra v1 concept dir",
+   "path": "character-rigs/sombra-negra-v1-concept",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": null
+  },
+  {
+   "type": "viseme_sheet",
+   "name": "Sombra Negra viseme sheet",
+   "path": "character-rigs/sombra-negra-visemes-sheet.jpg",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": 0.13
+  },
+  {
+   "type": "concept_dir",
+   "name": "Static v1 concept dir",
+   "path": "character-rigs/static-v1-concept",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": null
+  },
+  {
+   "type": "viseme_sheet",
+   "name": "Static viseme sheet",
+   "path": "character-rigs/static-visemes-sheet.jpg",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": 0.16
+  },
+  {
+   "type": "concept_dir",
+   "name": "Theory v1 concept dir",
+   "path": "character-rigs/theory-v1-concept",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": null
+  },
+  {
+   "type": "viseme_sheet",
+   "name": "Theory viseme sheet",
+   "path": "character-rigs/theory-visemes-sheet.jpg",
+   "project": "character-rigs (Wizard Gang)",
+   "size_mb": 0.16
+  },
+  {
+   "type": "model_sheet",
+   "name": "Cipher model sheet doc",
+   "path": "trippedd-studio/production/WIZARD_GANG_EP01/character-rigs-v1-concept/cipher-v1-concept/CIPHER-MODEL-SHEET.md",
+   "project": "trippedd-studio/WIZARD_GANG_EP01",
+   "size_mb": null
+  },
+  {
+   "type": "model_sheet",
+   "name": "Echo model sheet doc",
+   "path": "trippedd-studio/production/WIZARD_GANG_EP01/character-rigs-v1-concept/echo-v1-concept/ECHO-MODEL-SHEET.md",
+   "project": "trippedd-studio/WIZARD_GANG_EP01",
+   "size_mb": null
+  },
+  {
+   "type": "model_sheet",
+   "name": "Hollow model sheet doc",
+   "path": "trippedd-studio/production/WIZARD_GANG_EP01/character-rigs-v1-concept/hollow-v1-concept/HOLLOW-MODEL-SHEET.md",
+   "project": "trippedd-studio/WIZARD_GANG_EP01",
+   "size_mb": null
+  },
+  {
+   "type": "model_sheet",
+   "name": "Kiko model sheet doc",
+   "path": "trippedd-studio/production/WIZARD_GANG_EP01/character-rigs-v1-concept/kiko-v1-concept/KIKO-MODEL-SHEET.md",
+   "project": "trippedd-studio/WIZARD_GANG_EP01",
+   "size_mb": null
+  },
+  {
+   "type": "model_sheet",
+   "name": "Onyx model sheet doc",
+   "path": "trippedd-studio/production/WIZARD_GANG_EP01/character-rigs-v1-concept/onyx-v1-concept/ONYX-MODEL-SHEET.md",
+   "project": "trippedd-studio/WIZARD_GANG_EP01",
+   "size_mb": null
+  },
+  {
+   "type": "model_sheet",
+   "name": "Sombra Negra model sheet doc",
+   "path": "trippedd-studio/production/WIZARD_GANG_EP01/character-rigs-v1-concept/sombra-negra-v1-concept/SOMBRA-NEGRA-MODEL-SHEET.md",
+   "project": "trippedd-studio/WIZARD_GANG_EP01",
+   "size_mb": null
+  },
+  {
+   "type": "model_sheet",
+   "name": "Static model sheet doc",
+   "path": "trippedd-studio/production/WIZARD_GANG_EP01/character-rigs-v1-concept/static-v1-concept/STATIC-MODEL-SHEET.md",
+   "project": "trippedd-studio/WIZARD_GANG_EP01",
+   "size_mb": null
+  },
+  {
+   "type": "model_sheet",
+   "name": "Theory model sheet doc",
+   "path": "trippedd-studio/production/WIZARD_GANG_EP01/character-rigs-v1-concept/theory-v1-concept/THEORY-MODEL-SHEET.md",
+   "project": "trippedd-studio/WIZARD_GANG_EP01",
+   "size_mb": null
+  }
+ ],
+ "voices": [
+  {
+   "type": "voice_mp3",
+   "name": "voice-ashes-l7.mp3",
+   "path": "voice-delivery/voice-ashes-l7.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.15
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-ashes-ritual-whisper.mp3",
+   "path": "voice-delivery/voice-ashes-ritual-whisper.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.09
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-cipher-c1-v3-chat.mp3",
+   "path": "voice-delivery/voice-cipher-c1-v3-chat.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.12
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-cipher-c1-v3-feral.mp3",
+   "path": "voice-delivery/voice-cipher-c1-v3-feral.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.13
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-cipher-c1-v3-fix.mp3",
+   "path": "voice-delivery/voice-cipher-c1-v3-fix.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.12
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-cipher-c1-v3.mp3",
+   "path": "voice-delivery/voice-cipher-c1-v3.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.12
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-cipher-c1.mp3",
+   "path": "voice-delivery/voice-cipher-c1.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.1
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-cipher-c2-v2.mp3",
+   "path": "voice-delivery/voice-cipher-c2-v2.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.07
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-cipher-c3.mp3",
+   "path": "voice-delivery/voice-cipher-c3.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.12
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-cipher-c4-money.mp3",
+   "path": "voice-delivery/voice-cipher-c4-money.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.25
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-cipher-the-rain.mp3",
+   "path": "voice-delivery/voice-cipher-the-rain.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.02
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-narrator-n1-v2.mp3",
+   "path": "voice-delivery/voice-narrator-n1-v2.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.03
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-narrator-n1.mp3",
+   "path": "voice-delivery/voice-narrator-n1.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.03
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-narrator-n2.mp3",
+   "path": "voice-delivery/voice-narrator-n2.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.02
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-onyx-h1.mp3",
+   "path": "voice-delivery/voice-onyx-h1.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.05
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-sombra-h3.mp3",
+   "path": "voice-delivery/voice-sombra-h3.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.04
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-static-ep02.mp3",
+   "path": "voice-delivery/voice-static-ep02.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.2
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-static-l7-warfund-DRAFT.mp3",
+   "path": "voice-delivery/voice-static-l7-warfund-DRAFT.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.14
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-static-v2-chat.mp3",
+   "path": "voice-delivery/voice-static-v2-chat.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.13
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-static-v2-exact.mp3",
+   "path": "voice-delivery/voice-static-v2-exact.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.34
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-static-v2-loud.mp3",
+   "path": "voice-delivery/voice-static-v2-loud.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.07
+  },
+  {
+   "type": "voice_mp3",
+   "name": "voice-static-v2.mp3",
+   "path": "voice-delivery/voice-static-v2.mp3",
+   "project": "voice-delivery",
+   "size_mb": 0.13
+  }
+ ],
+ "canon_voices": [
+  {
+   "type": "canon_voice",
+   "name": "ONYX-VOICE-CANON.md",
+   "path": "voice-delivery/canon/onyx/ONYX-VOICE-CANON.md",
+   "project": "voice-delivery/canon/onyx",
+   "size_mb": 0.0
+  },
+  {
+   "type": "canon_voice",
+   "name": "onyx-canon-voice-h1.mp3",
+   "path": "voice-delivery/canon/onyx/onyx-canon-voice-h1.mp3",
+   "project": "voice-delivery/canon/onyx",
+   "size_mb": 0.05
+  }
+ ],
+ "weight_paint_pwas": [
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "bannon-video-pipe/repo/tools/weight-paint-pwa",
+   "project": "bannon-video-pipe",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "game-sweep/AshLanev2/tools/weight-paint-pwa",
+   "project": "game-sweep",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "brutalfist-fix/tools/weight-paint-pwa",
+   "project": "brutalfist-fix",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "urban-mayhem-port/Tools/weight-paint-pwa",
+   "project": "urban-mayhem-port",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "ashlane-proof-check/tools/weight-paint-pwa",
+   "project": "ashlane-proof-check",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "anim-fix/tools/weight-paint-pwa",
+   "project": "anim-fix",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "money-machine-hq/tools/weight-paint-pwa",
+   "project": "money-machine-hq",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "StreetBrawl/tools/weight-paint-pwa",
+   "project": "StreetBrawl",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "ConcreteDragon/tools/weight-paint-pwa",
+   "project": "ConcreteDragon",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "god-molecule-studio/tools/weight-paint-pwa",
+   "project": "god-molecule-studio",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "weight-paint-pwa",
+   "project": "workspace-root",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "ConcreteDragon-c5/tools/weight-paint-pwa",
+   "project": "ConcreteDragon-c5",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "ConcreteDragon-wt-y11/tools/weight-paint-pwa",
+   "project": "ConcreteDragon-wt-y11",
+   "size_mb": null
+  },
+  {
+   "type": "weight_paint_pwa",
+   "name": "weight-paint-pwa",
+   "path": "ConcreteDragon-cdci4/tools/weight-paint-pwa",
+   "project": "ConcreteDragon-cdci4",
+   "size_mb": null
+  }
+ ],
+ "key_videos": [
+  {
+   "type": "key_video",
+   "name": "wizard-gang-ep02-final-v8b.mp4",
+   "path": "trippedd-studio/production/WIZARD_GANG_EP01/wizard-gang-ep02-final-v8b.mp4",
+   "project": "trippedd-studio",
+   "size_mb": 157.94
+  },
+  {
+   "type": "title_card",
+   "name": "title-card.mp4",
+   "path": "promo-fix/shots/title-card.mp4",
+   "project": "promo-fix",
+   "size_mb": 0.02
+  },
+  {
+   "type": "title_card",
+   "name": "title-card.mp4",
+   "path": "trippedd-studio/production/TRIPPEDD_EP01/segments/luck-of-the-irish/title-card.mp4",
+   "project": "trippedd-studio",
+   "size_mb": 0.02
+  },
+  {
+   "type": "title_card",
+   "name": "title-card.mp4",
+   "path": "trippedd-studio-loti-v2/production/TRIPPEDD_EP01/segments/luck-of-the-irish/title-card.mp4",
+   "project": "trippedd-studio-loti-v2",
+   "size_mb": 0.02
+  },
+  {
+   "type": "title_card",
+   "name": "wg-title-card.mp4",
+   "path": "trippedd-studio/assets/references/short-films/wg-title-card.mp4",
+   "project": "trippedd-studio",
+   "size_mb": 0.78
+  },
+  {
+   "type": "promo_video",
+   "name": "goodville-promo-15s_BLENDER.mp4",
+   "path": "trippedd-studio/production/TRIPPEDD_EP01/goodville/promo-15s/goodville-promo-15s_BLENDER.mp4",
+   "project": "trippedd-studio",
+   "size_mb": 0.54
+  },
+  {
+   "type": "promo_video",
+   "name": "goodville-promo-15s_LIKENESS.mp4",
+   "path": "trippedd-studio/production/TRIPPEDD_EP01/goodville/promo-15s/goodville-promo-15s_LIKENESS.mp4",
+   "project": "trippedd-studio",
+   "size_mb": 0.41
+  },
+  {
+   "type": "promo_video",
+   "name": "goodville-promo-15s_TEMP.mp4",
+   "path": "trippedd-studio/production/TRIPPEDD_EP01/goodville/promo-15s/goodville-promo-15s_TEMP.mp4",
+   "project": "trippedd-studio",
+   "size_mb": 0.72
+  },
+  {
+   "type": "promo_video",
+   "name": "goodville-promo-15s_SMART.mp4",
+   "path": "trippedd-studio/production/TRIPPEDD_EP01/goodville/promo-15s/goodville-promo-15s_SMART.mp4",
+   "project": "trippedd-studio",
+   "size_mb": 0.46
+  }
+ ]
+}

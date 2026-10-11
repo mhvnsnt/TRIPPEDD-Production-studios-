@@ -1,0 +1,11 @@
+{
+ "id": "smoke-mirror",
+ "name": "SMOKE & MIRRORS",
+ "type": "game",
+ "video_url": null,
+ "timeline": null,
+ "characters": null,
+ "models_dir": null,
+ "rigs_dir": null,
+ "notes": "Repo SMOKE-MIRROR-S-. UE5 mobile-first first-person exploration game; may carry its own show segments. Network member of TRIPPEDD."
+}

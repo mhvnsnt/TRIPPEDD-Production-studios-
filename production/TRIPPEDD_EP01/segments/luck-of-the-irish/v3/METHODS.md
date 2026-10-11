@@ -156,3 +156,38 @@ nothing about his body is ever generated in motion.
 ## Disclaimer-leak fix — 2026-10-10
 - The earlier disclaimer splice left 5 frames (44.4667–44.6333s) of the OLD 13-disclaimers card flashing before the new single disclaimer. Found by dense frame extraction + white-pixel classification + own-eyes verification.
 - Fixed by dragging the new single-disclaimer card backwards: the [44.466667, 52.5) window is now 100% the new card (241 frames from disclaimer-card-idx0.mp4 + 1-frame hold), hard-cut from the slogan card. Frame-by-frame QC confirms zero old-card frames.
+
+## Score upgrade + sign-off v2 — 2026-10-10 (owner direction, voice-transcribed)
+Owner watched with sound and asked for: (1) a suspenseful horror-movie-style score
+behind his dialogue and the buildup, (2) a Looney-Tunes/upbeat commercial bed after
+the freeze frame, (3) a new sign-off read at 53s — "a leprechaun from the hood mixed
+with the Lucky Charms leprechaun and Porky's voice." All music 100% original
+numpy synthesis (build_v3_score.py) — zero samples, zero library music, safe for YouTube.
+
+- **Suspense bed (0 → 34.5s)**: layered 55/55.7/82.4 Hz drone with slow LFO,
+  dissonant minor-2nd string-ish swells (110/116.54/164.81/233.08 Hz additive,
+  3s attack) at 4/12/20/28s, 48 BPM heartbeat pulse, and a 29.5→34.5s riser
+  (150→1200 Hz sweep + rising noise) that HARD-CUTS to near-silence at the freeze
+  frame (classic horror beat). Ducked under his dialogue: full duck (0.22 gain)
+  wherever the production bed exceeds ~0.015 RMS, full bed in the gaps — dialogue
+  stays on top, measured +10.4 dB over the bed in the 5–20s dialogue zone.
+- **Upbeat bed (34.8 → 56.5s)**: original 132 BPM C-major cartoon/commercial groove —
+  bouncy kick (1, 2&, 3, 4&), snare on 2/4, swung hats, I–V–vi–IV bass bounce,
+  plucky triangle-ish original melody (2-bar call/response), offbeat chord stabs,
+  ascending-run + big C-major tag with sparkle at the end. Fills the previously
+  dead-silent 37–53.5s cards region. Ducked to 0.35 gain under the sign-off voice.
+- **Sign-off voice**: the temp ElevenLabs read is PRESERVED as
+  `audio/leprechaun-line-v1.wav` (clean vocal, converted from endbutton-line-temp.mp3 —
+  verified byte-identical to the 53.96s placement in the pre-score cut). The new cut
+  uses **v2**: `audio/leprechaun-line-v2.wav` = Piper `en_US-ryan-medium` (local neural
+  TTS, free) reading "Th-th-th-that's the Irish, folks!" (stutter authored in text),
+  pitch-shifted +3 semitones via rubberband for the cartoon lift, placed at 53.0s to
+  land on the mascot pop-up (cross-correlation verified). v1 is never deleted —
+  it stays on the branch so he can swap it back in.
+- **Voice provenance note**: Chatterbox was the first choice but is not installed on
+  this box and disk is at 86% (torch install not viable); Piper was the best local
+  TTS available. The v2 read is a directed placeholder — still SWAPPABLE for the
+  owner's own performance or a real voice-clone pass later.
+- **Mix**: production audio untouched except the old temp-voice region (53.4→end)
+  zeroed; peak-normalized to −1 dBFS, true peak −0.3 dBFS (no clipping). Video
+  stream-copied, duration unchanged (56.53s).

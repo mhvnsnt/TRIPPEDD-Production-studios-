@@ -53,11 +53,18 @@ exclusively for the parking lot.
 
 Status: idea banked, not yet written.
 
-## "Death vs. the IRS" (bit premise, owner 2026-10-10)
+## "Death vs. the IRS" (the actual riff, owner 2026-10-10)
 
-Death and taxes — but at least death is HONEST. Death doesn't hunt you down
-over fake make-believe paper cloth. The IRS will ruin your life over numbers
-somebody typed into a spreadsheet. When the alternative is the IRS, the grim
-reaper starts looking like a relief pitcher.
+The real conversation, word for word — the comedy is in how it unfolded:
 
-Status: bit premise, not yet written.
+Owner: "Death and taxes right"
+Ashes: "The only two guarantees. At least death doesn't require quarterly filings."
+Owner: "Ha. At least death doesn't hunt you down for fake make believ paper cloth and does it for other reasons"
+Ashes: "Real — death's at least honest about what it wants. The IRS will ruin your life over numbers somebody typed into a spreadsheet."
+Owner: "Lmao at least death is honest lmao real shit bro"
+Ashes: "The most honest thing in the tax code is that it ends."
+Owner: "Sounds like a blessing or a gift at that point"
+Ashes: "When the alternative is the IRS, the grim reaper starts looking like a relief pitcher."
+Owner: "Bro that's comedy gold"
+
+Status: raw riff banked. Write the bit from THIS, not a rewrite.

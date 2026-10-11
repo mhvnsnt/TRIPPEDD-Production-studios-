@@ -111,35 +111,34 @@ def mask_oh_torso():
 
 def mirror_amos_torso():
     """Preston Blair MIRROR-RECONSTRUCTION (owner 2026-10-11 — standing technique,
-    now in KIT-SPEC.md). The key-art left torso was destroyed: the folded beer arm
-    occluded it, and the old mask_amos_arm() took a rectangular bite out of the
-    chest/shoulder (straight cut edge, half a torso, waistband disconnected).
-    Fix: take the INTACT right half, mirror it across the vertical centerline
-    (x=205, the head center), rebuild a complete symmetric torso. Head untouched
-    (hair is asymmetric). The mirrored thin arm is removed with a tight mask;
-    the SP punch arm connects at the shoulder. Waistband meets the pants."""
+    now in KIT-SPEC.md). REBUILT 2026-10-11 per owner correction: the first
+    version mirrored too high (rows 170+, cut the chin, mirrored chin into the
+    frame) and removed the mirrored arm with a straight polygon mask (squared
+    under-arm edge — violated KIT-SPEC law 8, no square cuts).
+    Corrected: mirror ONLY the lower torso (y>=215, mid-chest down) across the
+    vertical centerline (x=207). Rows 0-214 are pixel-identical to the original
+    (head, chin, neck, upper shoulders untouched). Rounded under-arm curve on
+    the punch side. The prebuilt kit piece (kits/amos-jr/torso_mirrored_punch.png)
+    is the single source of truth; this rebuilds it identically if the kit PNG
+    is missing."""
+    kit_png = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), "..", "..", "kits", "amos-jr",
+        "torso_mirrored_punch.png"))
+    if os.path.exists(kit_png):
+        return Image.open(kit_png).convert("RGBA")
+    # Fallback: rebuild with the corrected logic.
     im = Image.open(os.path.join(PROVE, "amos_full_body.png")).convert("RGBA")
     w, h = im.size
-    cx = 205
-    body_top = 170  # below the head; head stays original
-    out = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-    out.paste(im.crop((0, 0, w, body_top)), (0, 0))
-    right = im.crop((cx, body_top, w, h))  # intact half
-    flipped = right.transpose(Image.FLIP_LEFT_RIGHT)
-    out.paste(flipped, (cx - flipped.width, body_top), flipped)  # mirrored left
-    out.paste(right, (cx, body_top))  # original right
-    # Remove the mirrored thin arm (tight to the arm zone, not a big polygon).
-    # Mirrored arm lands at x ~24-84 (mirror of 330-390); tank starts at x ~89.
-    # Keep the shoulder (y < 210) — the SP punch arm's shoulder cap covers it.
-    mask = Image.new("L", (w, h), 255)
-    d = ImageDraw.Draw(mask)
-    d.polygon([(18, 210), (88, 210), (84, 335), (22, 335)], fill=0)
-    from PIL import ImageFilter
-    mask = mask.filter(ImageFilter.GaussianBlur(2))
-    a = out.split()[3]
-    na = Image.new("L", (w, h), 0)
-    na.paste(a, mask=mask)
-    out.putalpha(na)
+    cx = 207
+    y_split = 215  # mid-chest; head/chin/neck/shoulders stay original
+    out = im.copy()
+    px = out.load()
+    src = im.load()
+    for y in range(y_split, h):
+        for x in range(0, cx):
+            sx = 2 * cx - x
+            if 0 <= sx < w:
+                px[x, y] = src[sx, y]
     return out
 
 

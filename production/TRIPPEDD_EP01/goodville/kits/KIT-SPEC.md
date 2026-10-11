@@ -153,6 +153,11 @@ side (+ prop grips), legs (stand/walk 6/sit), feet, all signature props,
 7. **No rectangular/square limbs.** All arms/legs taper with rounded ends —
    SP cutout grammar. A uniform bar with 90° corners is never a limb.
    (Owner 2026-10-11: "big square cropped out of Amos Jr.")
+8. **NO SQUARE CUTS ON PIECES (owner 2026-10-11).** Every kit piece edge that
+   joins another piece is shaped to fit its neighbor — curved, rounded, never
+   a straight cut. If a piece was cropped with a straight edge (polygon mask,
+   rectangular crop), reshape the edge into a smooth contour before it ships.
+   Applies to every character, every piece, no exceptions.
 
 ## Mirror-reconstruction (standing technique, owner 2026-10-11)
 

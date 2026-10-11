@@ -1,556 +1,591 @@
 {
-  "character": "crown-hoodie",
-  "source": "assets/references/ep01/source/Goodville - Not South Park.png",
-  "tier": "B",
-  "identity_checklist": [
-    "black beanie",
-    "thick angled black brows",
-    "chin goatee",
-    "dark sideburn spikes",
-    "black hoodie",
-    "white TRIPPEDD crown chest logo",
-    "flat-line mouth"
-  ],
-  "parts": [
-    {
-      "file": "head_base.png",
-      "method": "extracted",
-      "anchor": {
-        "x": 605,
-        "y": 665,
-        "w": 282,
-        "h": 208
-      },
-      "notes": "flattened to flat skin #F2BB7B (box-fill artifacts removed) [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "beanie.png",
-      "method": "extracted",
-      "anchor": {
-        "x": 585,
-        "y": 530,
-        "w": 315,
-        "h": 167
-      },
-      "notes": "rebuilt from KEY ART dark key max(r,g,b)<85, largest component (rembg extraction was 74px empty) [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "hair.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 590,
-        "y": 690,
-        "w": 298,
-        "h": 66
-      },
-      "notes": "hand-drawn sideburn wedges at measured key-art positions; color #24211E derived from dark-hair samples [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "facial_hair_goatee.png",
-      "method": "extracted",
-      "anchor": {
-        "x": 745,
-        "y": 842,
-        "w": 46,
-        "h": 20
-      },
-      "notes": "goatee patch = top 45% of goatee extraction (white logo sliver below trimmed) [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "torso_base.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 545,
-        "y": 780,
-        "w": 396,
-        "h": 131
-      },
-      "notes": "hand-built black hoodie (rembg kept logo only); extracted white crown logo composited at key-art anchor [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "prop_crown_logo.png",
-      "method": "extracted",
-      "anchor": {
-        "x": 728,
-        "y": 825,
-        "w": 65,
-        "h": 54
-      },
-      "notes": "white crown chest logo isolated by bright key from torso extraction [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "eyes_open.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 700,
-        "w": 146,
-        "h": 70
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "pupils.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 700,
-        "w": 106,
-        "h": 18
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "pupils_left.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 700,
-        "w": 106,
-        "h": 18
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "pupils_right.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 700,
-        "w": 106,
-        "h": 18
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "pupils_up.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 700,
-        "w": 106,
-        "h": 18
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "eyes_closed.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 700,
-        "w": 146,
-        "h": 70
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "eyes_angry.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 700,
-        "w": 146,
-        "h": 42
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "eyes_sad.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 700,
-        "w": 146,
-        "h": 70
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "eyes_shocked.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 700,
-        "w": 146,
-        "h": 84
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "eyes_scheming.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 700,
-        "w": 148,
-        "h": 79
-      },
-      "notes": "lids redrawn as curved skin ellipses + lid arcs (box lids removed) [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "brows.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 690,
-        "w": 150,
-        "h": 26
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "brows_angry.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 690,
-        "w": 149,
-        "h": 19
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "brows_sad.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 650,
-        "y": 690,
-        "w": 149,
-        "h": 21
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "mouth_closed.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 710,
-        "y": 800,
-        "w": 50,
-        "h": 9
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "mouth_open_small.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 710,
-        "y": 800,
-        "w": 20,
-        "h": 16
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "mouth_open_med.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 710,
-        "y": 800,
-        "w": 30,
-        "h": 24
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "mouth_open_wide.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 710,
-        "y": 800,
-        "w": 38,
-        "h": 32
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "mouth_o.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 710,
-        "y": 800,
-        "w": 22,
-        "h": 26
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "mouth_grimace.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 710,
-        "y": 800,
-        "w": 32,
-        "h": 20
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "mouth_smile.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 710,
-        "y": 800,
-        "w": 30,
-        "h": 14
-      },
-      "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
-    },
-    {
-      "file": "arm_straight_L.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 520,
-        "y": 800,
-        "w": 480,
-        "h": 140
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "arm_straight_R.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 520,
-        "y": 800,
-        "w": 480,
-        "h": 140
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "arm_bent_L.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 520,
-        "y": 800,
-        "w": 480,
-        "h": 140
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "arm_bent_R.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 520,
-        "y": 800,
-        "w": 480,
-        "h": 140
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "arm_punch_L.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 520,
-        "y": 800,
-        "w": 480,
-        "h": 140
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "arm_punch_R.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 520,
-        "y": 800,
-        "w": 480,
-        "h": 140
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "arm_folded.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 520,
-        "y": 800,
-        "w": 480,
-        "h": 140
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "hand_mitten_L.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 0,
-        "y": 0,
-        "w": 64,
-        "h": 64
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "hand_mitten_R.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 0,
-        "y": 0,
-        "w": 64,
-        "h": 64
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "hand_fist_L.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 0,
-        "y": 0,
-        "w": 64,
-        "h": 64
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "hand_fist_R.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 0,
-        "y": 0,
-        "w": 64,
-        "h": 64
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "hand_point_L.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 0,
-        "y": 0,
-        "w": 64,
-        "h": 64
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "hand_point_R.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 0,
-        "y": 0,
-        "w": 64,
-        "h": 64
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "legs_stand.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 640,
-        "y": 890,
-        "w": 160,
-        "h": 120
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "legs_walk_01.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 640,
-        "y": 890,
-        "w": 160,
-        "h": 120
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "legs_walk_02.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 640,
-        "y": 890,
-        "w": 160,
-        "h": 120
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "legs_walk_03.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 640,
-        "y": 890,
-        "w": 160,
-        "h": 120
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "legs_walk_04.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 640,
-        "y": 890,
-        "w": 160,
-        "h": 120
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "legs_walk_05.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 640,
-        "y": 890,
-        "w": 160,
-        "h": 120
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "legs_walk_06.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 640,
-        "y": 890,
-        "w": 160,
-        "h": 120
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "legs_sit.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 640,
-        "y": 890,
-        "w": 170,
-        "h": 100
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "feet_L.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 0,
-        "y": 0,
-        "w": 70,
-        "h": 44
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    },
-    {
-      "file": "feet_R.png",
-      "method": "hand-built",
-      "anchor": {
-        "x": 0,
-        "y": 0,
-        "w": 70,
-        "h": 44
-      },
-      "notes": "SP flat cutout, colors sampled from key art"
-    }
-  ],
-  "note": "OWNER'S STAND-IN \u2014 likeness held to highest standard OWNER 2026-10-11: adult. Owner stand-in \u2014 extra likeness care."
+ "character": "crown-hoodie",
+ "source": "assets/references/ep01/source/Goodville - Not South Park.png",
+ "tier": "B",
+ "identity_checklist": [
+  "black beanie",
+  "thick angled black brows",
+  "chin goatee",
+  "dark sideburn spikes",
+  "black hoodie",
+  "white TRIPPEDD crown chest logo",
+  "flat-line mouth"
+ ],
+ "parts": [
+  {
+   "file": "head_base.png",
+   "method": "extracted",
+   "anchor": {
+    "x": 605,
+    "y": 665,
+    "w": 282,
+    "h": 208
+   },
+   "notes": "REBUILT attempt 3: color-keyed from key art (660,590)-(895,810); old had transparency holes."
+  },
+  {
+   "file": "beanie.png",
+   "method": "extracted",
+   "anchor": {
+    "x": 585,
+    "y": 530,
+    "w": 315,
+    "h": 167
+   },
+   "notes": "rebuilt from KEY ART dark key max(r,g,b)<85, largest component (rembg extraction was 74px empty) [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "hair.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 590,
+    "y": 690,
+    "w": 298,
+    "h": 66
+   },
+   "notes": "hand-drawn sideburn wedges at measured key-art positions; color #24211E derived from dark-hair samples [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "facial_hair_goatee.png",
+   "method": "extracted",
+   "anchor": {
+    "x": 745,
+    "y": 842,
+    "w": 46,
+    "h": 20
+   },
+   "notes": "goatee patch = top 45% of goatee extraction (white logo sliver below trimmed) [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "torso_base.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 545,
+    "y": 780,
+    "w": 396,
+    "h": 131
+   },
+   "notes": "hand-built black hoodie (rembg kept logo only); extracted white crown logo composited at key-art anchor [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "prop_crown_logo.png",
+   "method": "extracted",
+   "anchor": {
+    "x": 728,
+    "y": 825,
+    "w": 65,
+    "h": 54
+   },
+   "notes": "white crown chest logo isolated by bright key from torso extraction [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "eyes_open.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 700,
+    "w": 146,
+    "h": 70
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "pupils.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 700,
+    "w": 106,
+    "h": 18
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "pupils_left.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 700,
+    "w": 106,
+    "h": 18
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "pupils_right.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 700,
+    "w": 106,
+    "h": 18
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "pupils_up.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 700,
+    "w": 106,
+    "h": 18
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "eyes_closed.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 700,
+    "w": 146,
+    "h": 70
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "eyes_angry.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 700,
+    "w": 146,
+    "h": 42
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "eyes_sad.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 700,
+    "w": 146,
+    "h": 70
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "eyes_shocked.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 700,
+    "w": 146,
+    "h": 84
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "eyes_scheming.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 700,
+    "w": 148,
+    "h": 79
+   },
+   "notes": "lids redrawn as curved skin ellipses + lid arcs (box lids removed) [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "brows.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 690,
+    "w": 150,
+    "h": 26
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "brows_angry.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 690,
+    "w": 149,
+    "h": 19
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "brows_sad.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 650,
+    "y": 690,
+    "w": 149,
+    "h": 21
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "mouth_closed.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 710,
+    "y": 800,
+    "w": 50,
+    "h": 9
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "mouth_open_small.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 710,
+    "y": 800,
+    "w": 20,
+    "h": 16
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "mouth_open_med.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 710,
+    "y": 800,
+    "w": 30,
+    "h": 24
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "mouth_open_wide.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 710,
+    "y": 800,
+    "w": 38,
+    "h": 32
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "mouth_o.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 710,
+    "y": 800,
+    "w": 22,
+    "h": 26
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "mouth_grimace.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 710,
+    "y": 800,
+    "w": 32,
+    "h": 20
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "mouth_smile.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 710,
+    "y": 800,
+    "w": 30,
+    "h": 14
+   },
+   "notes": "SP flat cutout, colors sampled from key art [anchor: design top-left + actual PNG size; crop_tight offset not tracked]"
+  },
+  {
+   "file": "arm_straight_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 520,
+    "y": 800,
+    "w": 480,
+    "h": 140
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "arm_straight_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 520,
+    "y": 800,
+    "w": 480,
+    "h": 140
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "arm_bent_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 520,
+    "y": 800,
+    "w": 480,
+    "h": 140
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "arm_bent_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 520,
+    "y": 800,
+    "w": 480,
+    "h": 140
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "arm_punch_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 520,
+    "y": 800,
+    "w": 480,
+    "h": 140
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "arm_punch_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 520,
+    "y": 800,
+    "w": 480,
+    "h": 140
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "arm_folded.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 520,
+    "y": 800,
+    "w": 480,
+    "h": 140
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "hand_mitten_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 64
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "hand_mitten_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 64
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "hand_fist_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 64
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "hand_fist_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 64
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "hand_point_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 64
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "hand_point_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "h": 64
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "legs_stand.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 640,
+    "y": 890,
+    "w": 160,
+    "h": 120
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "legs_walk_01.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 640,
+    "y": 890,
+    "w": 160,
+    "h": 120
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "legs_walk_02.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 640,
+    "y": 890,
+    "w": 160,
+    "h": 120
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "legs_walk_03.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 640,
+    "y": 890,
+    "w": 160,
+    "h": 120
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "legs_walk_04.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 640,
+    "y": 890,
+    "w": 160,
+    "h": 120
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "legs_walk_05.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 640,
+    "y": 890,
+    "w": 160,
+    "h": 120
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "legs_walk_06.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 640,
+    "y": 890,
+    "w": 160,
+    "h": 120
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "legs_sit.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 640,
+    "y": 890,
+    "w": 170,
+    "h": 100
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "feet_L.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 70,
+    "h": 44
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "feet_R.png",
+   "method": "hand-built",
+   "anchor": {
+    "x": 0,
+    "y": 0,
+    "w": 70,
+    "h": 44
+   },
+   "notes": "SP flat cutout, colors sampled from key art"
+  },
+  {
+   "file": "brows_neutral.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "hair_full.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "head_34L.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "head_34R.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "head_profile_R.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "torso_34.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  },
+  {
+   "file": "torso_back.png",
+   "method": "extracted/derived",
+   "notes": "attempt 3 (2026-10-11): rebuilt from key art, verified"
+  }
+ ],
+ "note": "attempt 3 (2026-10-11): head rebuilt (owner stand-in, extra care); angles via feature-shift; torso_34/back."
 }

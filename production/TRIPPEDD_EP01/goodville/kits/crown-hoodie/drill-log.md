@@ -32,3 +32,9 @@
 - The hoodie's drawstring/hood details are simplified (key art shows a hood collar;
   kit has a basic collar shape).
 - Sideburns are an interpretation (thin in key art, partially occluded by beanie).
+
+## Attempt 3 rebuild (2026-10-11) — owner's stand-in, extra care
+- head_base.png had transparency HOLES — rebuilt via color-key from key art (660,590)-(895,810). rembg failed (black beanie dropped).
+- Layers: beanie (black), hair_full (brown sideburns), donor eyes_open/pupils/brows_neutral, drawn frown mouth_closed.
+- Variants rescaled to anchors (eyes 84,121 / mouth 117,187 / brows 117,70). Angles via feature-shift; profile from 34R + nose.
+- torso_34/back added. preview_sheet.png. All verified vs key art.

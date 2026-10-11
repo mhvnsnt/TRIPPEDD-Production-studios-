@@ -1,4 +1,4 @@
-# Likeness drill log — glasses-bong-guy
+# Likeness drill log — chet
 
 ## vs Tier A promo art
 - black rectangular glasses read instantly (frames measured from key art;

@@ -355,3 +355,35 @@ Original character, not based on a specific South Park character (owner
 
 The basement nerd (key art cast #6, glasses, bong — computer/video games/D&D/
 trading cards/anime/WoW archetype) is named **CHET**. Owner-confirmed.
+
+## DRAFT status: key-art five sheets (owner 2026-10-11)
+
+The sheets for Sten, headband-girl, crown-hoodie, red-cap-guy, and Chet
+(PR #201) are **DRAFT v1**, not finals. Owner 2026-10-11: they regress vs
+the trio/Dangly/Amos sheets — messier, sparser, more constructed.
+
+Root cause (parent-verified): the trio sheets were built extraction-first
+from clean INDIVIDUAL portraits (owner's ChatGPT outputs — big, centered,
+unoccluded). The key-art five were built from ONE crowded group shot where
+each figure is small and overlapping — less real pixels in, messier sheets
+out (e.g. Sten's torso is 90% occluded, constructed from color samples).
+
+Rebuild path: owner generates clean individual portraits for the five
+(same ChatGPT method as the trio — South Park style, likeness held), then
+sheets get rebuilt extraction-first to trio quality.
+
+## Gag #5: "The Serious Guys" (owner + Tyneshia 2026-10-11 — DOCUMENTED, not locked per C08)
+
+Setup: driving, the main characters see some guys get out (of a car).
+They're dressed serious — all black suits, one in a full suit, one in
+all-black tactical gear with chains. They look like serious Armenian guys,
+like they're about to go do some Gus Fring / Breaking Bad business.
+
+The turn: they start walking toward the store — and they're walking
+"real gay," like boyfriends walking together.
+
+The punchline: "oh, they're just gay." They had us fooled — they looked
+like they were supposed to be real serious guys, but they're just a couple.
+
+Needs: two new background characters (the "serious" pair) — visual design
+only, TBD.

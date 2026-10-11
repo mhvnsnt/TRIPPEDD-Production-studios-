@@ -28,3 +28,9 @@
   and it's not a clear anchor).
 - The headband's center mark is very subtle in key art; the kit's mark is an
   interpretation of the dark squiggle.
+
+## Attempt 3 rebuild (2026-10-11)
+- Head stack rebuilt from key-art rembg cut (445,590)-(650,810): head_base (skin 150,94,54 + hair), headband.png (purple 141,97,140), donor eyes_open/pupils/brows_neutral/mouth_closed.
+- Expression variants rescaled to donor anchors (eyes 78,140 / mouth 105,190 / brows 100,106). Pupil direction variants from donor shift.
+- Angles: head_34L/34R (feature-shift), head_profile_R (from 34R + nose).
+- Torso: torso_34 (squeeze), torso_back (purple 107,70,103 constructed). preview_sheet.png added.

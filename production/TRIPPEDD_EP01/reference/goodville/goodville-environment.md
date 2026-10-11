@@ -62,10 +62,13 @@ Key art: `assets/references/ep01/source/Goodville - Not South Park.png`. Left to
    friend of the owner and Tyneshia. The character is modeled character- and
    personality-wise on Leonard **and** his father **Amos Sr.** (recently passed) — a
    tribute to both, in memory of Amos Sr.
+   - Trait (from the backstory below): deceptively fast for a big guy — when trouble
+     comes, he vanishes. The big man who can completely disappear.
 2. **The kid** — blue/red bobble hat, cigarette in hand, chin patch. _Unidentified._
 3. **Purple headband girl** — hair in puffs, gold hoops, purple top. _Unidentified._
-4. **Crown hoodie (center)** — black beanie, TRIPPEDD crown hoodie, goatee. _Inferred as
-   the owner (Mars) from the branding; awaiting his confirm._
+4. **Crown hoodie (center)** — black beanie, TRIPPEDD crown hoodie, goatee. The owner's
+   stand-in — confirmed 2026-10-11 when he called the backstory below reference "for
+   both our characters" (him and Leonard).
 5. **Red cap guy** — backwards red cap, green bottle. _Unidentified._
 6. **Glasses + bong guy** — black rectangular glasses, green shirt, bong. _Unidentified._
 7. **The old head** — bald, sunglasses, cigarette. Based on **Jim Lahey** (Trailer Park
@@ -78,6 +81,28 @@ Key art: `assets/references/ep01/source/Goodville - Not South Park.png`. Left to
      — reveal: it was a guy in a **dinosaur costume** out in Broadway traffic, and
      **beer-can guy (#1) was doin the beating.** (Broadway = Nashville's honky-tonk
      strip; maps to Goodville's main drag.)
+
+## Backstory reference — the woods run (Dooly County High)
+
+Owner's real story (2026-10-11), kept as reference for **both** his character (#4,
+crown hoodie) and Amos Jr. (#1):
+
+- Skipping class at **Dooly County High School** — him, Leonard, and their friend
+  **Javier**, smoking weed. Probably ditching Spanish class: the Spanish teacher would
+  have breakdowns and cry in class because the students wouldn't listen, and she wasn't
+  a good teacher anyway.
+- They heard someone coming — the school campus police officer (also an actual police
+  officer). He smelled the smoke and came after them.
+- **Leonard ran.** A big guy — and he ran off so fast he left everybody behind,
+  outran them all, hid in the woods, and completely disappeared. Got away clean.
+- The owner dropped his weed; it got found. The officer — "Peewee" (owner's words:
+  "peewee or whatever"), who was like a cousin to him — kept the weed, didn't fully
+  report him: no arrest, no jail, no expulsion, but it got reported to the school. He
+  almost got in trouble.
+
+The story's point, in the owner's words: how fast Leonard ran off into the woods to
+avoid getting caught — "he just completely disappeared." This is the source of Amos
+Jr.'s trait: the big man who vanishes.
 
 ## Voice direction (owner 2026-10-10)
 

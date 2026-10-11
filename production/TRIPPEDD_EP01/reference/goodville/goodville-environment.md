@@ -201,6 +201,37 @@ owner to come up with them later. Do NOT invent.)
 Boys" in the show. The imposter group's name is the nod — that's the only place
 the reference lives.
 
+**Names TBD (owner 2026-10-11 — do NOT invent):**
+- Parody names for the real trio — "kind of like parody names of Ricky, Julian,
+  and Bubbles or something like that." Owner to come up with them.
+- A name for the old head (Lahey-based): "kind of a play on Jim Lahey being an
+  officer and something maybe like a Reno 911 character or some shit. Or like a
+  Brooklyn Nine-Nine character. Like those names mixed in for inspiration for his
+  name. But not really for his character because he's already based on Jim Lahey."
+  Owner to come up with it.
+
+**The beef — mobile home guys vs. white trash trailer men (owner 2026-10-11):**
+The real trio — "the mobile home guys" — show up AFTER the old head, like:
+"what the fuck? We've been hearing about this shit." The old head's been saying
+"those damn guys," using the real trio's names, because the imposters are
+pretending to be them. The real trio: "those damn white trash trailer men."
+The old head: "what the fuck? Like, they're always out here causing trouble.
+What the fuck? Like, God damn it." (Owner: "those would probably be his literal
+lines, like, literally be his lines.") Then he sees them: "that's them right
+there." The real trio: "we're not white trash trailer men. What the fuck? Like,
+we're the fucking mobile home guys." (Owner: "those are the literal lines that
+everyone says that I just mentioned.")
+
+It's an imposter-gang beef: the mobile home guys vs. the white trash trailer men,
+fighting over the identity — and over their residencies, their neighborhood.
+
+**Character energies (owner 2026-10-11):**
+- The white trash trailer men (imposters): "really mischievous, campy shit that's
+  like really extra and way worse than the shit that the trailer park boys guys
+  do" — they "act like some weird fucking old school cartoon villain guys."
+- The mobile home guys (real trio): "more like literal Ricky Julian Bubbles level
+  comedy shit from Trailer Park Boys" — they act like the Trailer Park Boys.
+
 **The Real Trio** (AI base: `goodville/kits/tpb-real-trio-promo.png`): arrive AFTER
 the imposters have poisoned the well. They look MORE like the actual Bubbles, Ricky,
 and Julian from Trailer Park Boys — in South Park style — and they ACT like them.

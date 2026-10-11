@@ -1,0 +1,1132 @@
+[
+ {
+  "cat": "🎬 Video",
+  "tools": [
+   {
+    "name": "Shotcut",
+    "url": "https://www.shotcut.org/",
+    "desc": "Free open-source video editor (desktop). No watermark, no account."
+   },
+   {
+    "name": "Kdenlive",
+    "url": "https://kdenlive.org/",
+    "desc": "Pro free video editor (desktop). Multi-track, keyframes."
+   },
+   {
+    "name": "DaVinci Resolve",
+    "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+    "desc": "Free tier is pro-grade: editing, color, Fairlight audio, Fusion VFX."
+   },
+   {
+    "name": "Unscreen",
+    "url": "https://www.unscreen.com/",
+    "desc": "Video background removal in browser. Free with watermark/limits."
+   },
+   {
+    "name": "VN Video Editor",
+    "url": "https://www.vlognow.me/",
+    "desc": "100% free mobile+desktop editor, multi-track, keyframes, NO watermark ever."
+   },
+   {
+    "name": "CapCut",
+    "url": "https://www.capcut.com/",
+    "desc": "Free editor: auto-captions, bg removal, effects. Standard exports no watermark."
+   },
+   {
+    "name": "YouTube Create",
+    "url": "https://play.google.com/store/search?q=YouTube%20Create&c=apps",
+    "desc": "Google's free mobile editor, ad-free, no watermark."
+   },
+   {
+    "name": "Instagram Edits",
+    "url": "https://play.google.com/store/search?q=Instagram%20Edits&c=apps",
+    "desc": "Meta's free editor, 4K export no watermark. Search 'Edits' in app stores."
+   },
+   {
+    "name": "OpenShot",
+    "url": "https://www.openshot.org/",
+    "desc": "Free open-source editor, simple timeline."
+   },
+   {
+    "name": "Olive",
+    "url": "https://www.olivevideoeditor.org/",
+    "desc": "Free open-source NLE in active rewrite (0.2)."
+   },
+   {
+    "name": "Flowblade",
+    "url": "https://jliljebl.github.io/flowblade/",
+    "desc": "Free Linux NLE, fast workflow."
+   },
+   {
+    "name": "Pitivi",
+    "url": "https://www.pitivi.org/",
+    "desc": "Free GNOME video editor."
+   },
+   {
+    "name": "LosslessCut",
+    "url": "https://github.com/mifi/lossless-cut",
+    "desc": "Free instant trim/cut of video files, no re-encode."
+   },
+   {
+    "name": "HandBrake",
+    "url": "https://handbrake.fr/",
+    "desc": "Free video transcoder. Essential for compressing previews."
+   },
+   {
+    "name": "Shutter Encoder",
+    "url": "https://www.shutterencoder.com/",
+    "desc": "Free converter/re-encoder, replaces Adobe Media Encoder basics."
+   },
+   {
+    "name": "Pexels Videos",
+    "url": "https://www.pexels.com/videos/",
+    "desc": "Free stock video incl. glitch overlays/effects clips. Free license."
+   },
+   {
+    "name": "Coverr",
+    "url": "https://coverr.co/",
+    "desc": "Free stock video, no attribution."
+   },
+   {
+    "name": "Pixabay Videos",
+    "url": "https://pixabay.com/videos/",
+    "desc": "Free stock video, royalty-free."
+   },
+   {
+    "name": "AEJuice Starter Pack",
+    "url": "https://aejuice.com/free/",
+    "desc": "100+ free transitions, liquid elements, text presets (AE/Premiere)."
+   },
+   {
+    "name": "Cinecom 20 Glitch Transitions",
+    "url": "https://www.cinecom.net/video-packs/20-glitch-transitions-premiere-pro/",
+    "desc": "20 free 4K glitch transitions for Premiere (drag-drop presets)."
+   },
+   {
+    "name": "Filmmakers Manual 230 Transitions",
+    "url": "https://nofilmschool.com/free-glitch-transitions",
+    "desc": "230 free glitch transitions, all resolutions incl. vertical. Email signup."
+   },
+   {
+    "name": "Motion Array Free",
+    "url": "https://motionarray.com/browse/?free=true",
+    "desc": "Free glitch packs, overlays, backgrounds (account)."
+   },
+   {
+    "name": "Mixkit",
+    "url": "https://mixkit.co/",
+    "desc": "Free stock video + AE templates + music/SFX. Free license."
+   },
+   {
+    "name": "Mazwai",
+    "url": "https://mazwai.com/",
+    "desc": "Free HD stock video, CC licensed."
+   }
+  ]
+ },
+ {
+  "cat": "🎚️ Audio",
+  "tools": [
+   {
+    "name": "Suno",
+    "url": "https://suno.com/",
+    "desc": "AI music (~10 songs/day free)."
+   },
+   {
+    "name": "Udio",
+    "url": "https://www.udio.com/",
+    "desc": "AI music generation, free daily credits."
+   },
+   {
+    "name": "Riffusion",
+    "url": "https://www.riffusion.com/",
+    "desc": "Unlimited free music AI."
+   },
+   {
+    "name": "BandLab",
+    "url": "https://www.bandlab.com/",
+    "desc": "Free mobile+web DAW, loops, mastering."
+   },
+   {
+    "name": "LMMS",
+    "url": "https://lmms.io/",
+    "desc": "Free open-source DAW (desktop)."
+   },
+   {
+    "name": "Ardour",
+    "url": "https://ardour.org/",
+    "desc": "Free pro-grade DAW (pay-what-you-want binary)."
+   },
+   {
+    "name": "Audacity",
+    "url": "https://www.audacityteam.org/",
+    "desc": "Free audio editor: record, cut, effects, noise reduction."
+   },
+   {
+    "name": "Ocenaudio",
+    "url": "https://www.ocenaudio.com/",
+    "desc": "Free lightweight audio editor, real-time preview."
+   },
+   {
+    "name": "Graillon 3 Free",
+    "url": "https://www.auburnsounds.com/products/Graillon.html",
+    "desc": "Free autotune/pitch-correction VST. Natural + hard-tune engines."
+   },
+   {
+    "name": "MAutoPitch",
+    "url": "https://www.meldaproduction.com/MAutoPitch",
+    "desc": "Free autotune VST + stereo widening."
+   },
+   {
+    "name": "GSnap",
+    "url": "https://www.gvst.co.uk/gsnap.htm",
+    "desc": "Free autotune VST with MIDI control of pitch targets."
+   },
+   {
+    "name": "Spoton",
+    "url": "https://bedroomproducersblog.com/free-vst-plugins/autotune/",
+    "desc": "Free beginner autotune VST, one-knob workflow."
+   },
+   {
+    "name": "PitchCure",
+    "url": "https://bedroomproducersblog.com/2026/04/29/saint-mike-dsp-pitchcure/",
+    "desc": "Free pitch correction VST with Humanize vibrato control."
+   },
+   {
+    "name": "reTuner (Kushview)",
+    "url": "https://kushview.net/article/retuner-free-pitch-correction-plugin/",
+    "desc": "Free pitch correction/autotune VST/AU/AAX."
+   },
+   {
+    "name": "VT-Mini",
+    "url": "https://www.kvraudio.com/news/never-found-releases-vt-mini-for-macos---free-vocal-tuner-plugin-vst3-and-au-68908",
+    "desc": "Free vocal tuner VST3/AU + de-esser."
+   },
+   {
+    "name": "KeroVee",
+    "url": "https://www.g200kg.com/en/software/kerovee.html",
+    "desc": "Free autotune-ish pitch correction VST (Windows)."
+   },
+   {
+    "name": "TrapTune Core",
+    "url": "https://hiphopmakers.com/free-autotune-vst-plugins-best-autotune-software",
+    "desc": "Free trap-vocal tuned presets VST."
+   },
+   {
+    "name": "Voloco",
+    "url": "https://play.google.com/store/search?q=Voloco&c=apps",
+    "desc": "Best free autotune for MOBILE (iOS/Android). Also has free VST3/AU plugin."
+   },
+   {
+    "name": "BudgetPixel SFX",
+    "url": "https://budgetpixel.com/sfx",
+    "desc": "2,694+ free SFX, no signup, royalty-free + AI sound generation."
+   },
+   {
+    "name": "712tools Viral SFX",
+    "url": "https://712tools.com/viral-sound-effects/",
+    "desc": "111 viral TikTok/Reels SFX (vine boom, bruh, airhorn...), free MP3/WAV, no signup."
+   },
+   {
+    "name": "YouTubeSFX",
+    "url": "https://youtubesfx.com/",
+    "desc": "40-sound free starter pack (whoosh, impact, glitch...), no signup, Content-ID safe."
+   },
+   {
+    "name": "Fesliyan Studios",
+    "url": "https://www.fesliyanstudios.com/",
+    "desc": "Thousands of SFX, no signup, commercial-safe, attribution optional."
+   },
+   {
+    "name": "SoundDino",
+    "url": "https://sounddino.com/",
+    "desc": "Large SFX DB, MP3 no signup, no attribution."
+   },
+   {
+    "name": "Pixabay SFX",
+    "url": "https://pixabay.com/sound-effects/",
+    "desc": "Royalty-free SFX, no attribution."
+   },
+   {
+    "name": "BGMZip",
+    "url": "https://bgmzipapp.com/",
+    "desc": "Fresh constantly-updated free SFX, no account."
+   },
+   {
+    "name": "Sonniss GDC Bundle",
+    "url": "https://gdc.sonniss.com/",
+    "desc": "Annual pro SFX bundle (GBs), free yearly release."
+   },
+   {
+    "name": "Freesound",
+    "url": "https://freesound.org/",
+    "desc": "Millions of community SFX. Check license per sound (some need attribution)."
+   },
+   {
+    "name": "ZapSplat",
+    "url": "https://www.zapsplat.com/",
+    "desc": "Large searchable SFX library, free MP3 tier."
+   },
+   {
+    "name": "Looperman",
+    "url": "https://www.looperman.com/",
+    "desc": "Huge free loops/samples community (drums, melodies). Royalty-free per terms."
+   },
+   {
+    "name": "Tapechild Boom Bap",
+    "url": "https://tapechild.com/free-sample-packs/free-boom-bap-drums",
+    "desc": "36 free boom-bap drum breaks (90-98 BPM), royalty-free WAV."
+   },
+   {
+    "name": "LANDR Free Loops",
+    "url": "https://www.landr.com/",
+    "desc": "50 free drum loops/breaks incl. dusty boom bap."
+   },
+   {
+    "name": "Stickz Hip-Hop Toolkit",
+    "url": "https://magneticmag.com/2026/07/best-free-boom-bap-sample-packs-to-make-laid-back-grooves-on-a-budget/",
+    "desc": "150+ free hip-hop samples/loops + Serum presets, royalty-free."
+   },
+   {
+    "name": "Cymatics Free Packs",
+    "url": "https://cymatics.fm/pages/free-download-vault",
+    "desc": "Free sample/loop/MIDI packs vault (email)."
+   },
+   {
+    "name": "r/Drumkits",
+    "url": "https://www.reddit.com/r/Drumkits/",
+    "desc": "Community free drum kits, updated daily."
+   },
+   {
+    "name": "YouTube Audio Library",
+    "url": "https://www.youtube.com/audiolibrary",
+    "desc": "Free music+SFX inside YouTube Studio. Zero licensing worry for YT."
+   },
+   {
+    "name": "Pixabay Music",
+    "url": "https://pixabay.com/music/",
+    "desc": "Free royalty-free music tracks."
+   },
+   {
+    "name": "Uppbeat Free",
+    "url": "https://uppbeat.io/",
+    "desc": "Free music tier for creators (attribution)."
+   },
+   {
+    "name": "Kevin MacLeod",
+    "url": "https://incompetech.com/",
+    "desc": "Famous free music library (CC-BY)."
+   }
+  ]
+ },
+ {
+  "cat": "🎞️ 2D Animation",
+  "tools": [
+   {
+    "name": "Tahoma2D",
+    "url": "https://tahoma2d.org/",
+    "desc": "Free 2D animation (OpenToonz fork), node network, great loops."
+   },
+   {
+    "name": "OpenToonz",
+    "url": "https://opentoonz.github.io/",
+    "desc": "Studio Ghibli's tool, open source."
+   },
+   {
+    "name": "Pencil2D",
+    "url": "https://www.pencil2d.org/",
+    "desc": "Simple frame-by-frame 2D."
+   },
+   {
+    "name": "EbSynth",
+    "url": "https://ebsynth.com/",
+    "desc": "Paint 1 frame -> propagate style across video."
+   },
+   {
+    "name": "Krita",
+    "url": "https://krita.org/",
+    "desc": "Free painting + frame-by-frame animation."
+   },
+   {
+    "name": "Synfig",
+    "url": "https://www.synfig.org/",
+    "desc": "Free vector 2D animation with BONE rigging for cut-out/puppet work."
+   },
+   {
+    "name": "Cascadeur Free",
+    "url": "https://cascadeur.com/",
+    "desc": "Physics-assisted keyframe animation, free tier. Great for action poses."
+   },
+   {
+    "name": "Wick Editor",
+    "url": "https://www.wickeditor.com/",
+    "desc": "Free browser-based 2D animation (Flash-like)."
+   },
+   {
+    "name": "TupiTube",
+    "url": "https://www.tupitube.com/",
+    "desc": "Free 2D animation for beginners/kids, simple."
+   },
+   {
+    "name": "Glaxnimate",
+    "url": "https://glaxnimate.mattbas.org/",
+    "desc": "Free vector 2D animation, Lottie support."
+   },
+   {
+    "name": "Enve",
+    "url": "https://maurycyg.github.io/enve/",
+    "desc": "Free flexible 2D animation (After Effects-like)."
+   },
+   {
+    "name": "Cavalry Free",
+    "url": "https://cavalry.scenegroup.co/",
+    "desc": "Free tier of pro 2D motion design tool."
+   },
+   {
+    "name": "Rive Free",
+    "url": "https://rive.app/",
+    "desc": "Free tier: interactive 2D character rigs for games/apps."
+   },
+   {
+    "name": "DragonBones",
+    "url": "http://dragonbones.com/",
+    "desc": "Free 2D skeletal animation/rigging for games."
+   },
+   {
+    "name": "Creature Free",
+    "url": "https://www.increpare.com/",
+    "desc": "Free tier of 2D mesh/puppet animation."
+   }
+  ]
+ },
+ {
+  "cat": "🧊 3D",
+  "tools": [
+   {
+    "name": "Blender",
+    "url": "https://www.blender.org/",
+    "desc": "Free 3D everything: model, rig, animate, render, video edit."
+   },
+   {
+    "name": "Viggle AI",
+    "url": "https://viggle.ai/",
+    "desc": "Dancer->character swap (5/day free)."
+   },
+   {
+    "name": "Mixamo",
+    "url": "https://www.mixamo.com/",
+    "desc": "Free auto-rig + mocap animation library (Adobe account)."
+   },
+   {
+    "name": "AccuRIG",
+    "url": "https://www.reallusion.com/auto-rig/",
+    "desc": "Fully FREE automatic character rigging -> rigged FBX."
+   },
+   {
+    "name": "Rokoko Video",
+    "url": "https://www.rokoko.com/products/rokoko-video",
+    "desc": "Free AI mocap from video -> FBX/BVH."
+   },
+   {
+    "name": "DeepMotion",
+    "url": "https://www.deepmotion.com/",
+    "desc": "Video-to-mocap, limited free minutes -> FBX/BVH."
+   },
+   {
+    "name": "QuickMagic",
+    "url": "https://www.quickmagic.ai/",
+    "desc": "AI mocap from phone video, exports FBX/BVH/Mixamo/UE."
+   },
+   {
+    "name": "Open Mocap",
+    "url": "https://github.com/Larenju-Rai/open-mocap",
+    "desc": "FREE open-source Blender addon: AI full-body+hand mocap from video."
+   },
+   {
+    "name": "CMU Mocap DB",
+    "url": "https://mocap.cs.cmu.edu/",
+    "desc": "2,500+ free mocap clips (BVH), commercial-usable."
+   },
+   {
+    "name": "cMonkeys FBX Library",
+    "url": "https://archive.org/details/Huge_FBX_Mocap_Library",
+    "desc": "2,534 free mocap FBX animations (CMU conversion), any purpose."
+   },
+   {
+    "name": "FreeMotionPack1",
+    "url": "https://github.com/J-Beardmore/FreeMotionPack1",
+    "desc": "21 free FBX mocap anims, Mixamo-skeleton compatible."
+   },
+   {
+    "name": "Truebones Free",
+    "url": "https://www.truebones.com/",
+    "desc": "Free BVH/FBH packs incl. 75+ animal anims (code: truebonesfree)."
+   },
+   {
+    "name": "Quaternius",
+    "url": "https://quaternius.com/",
+    "desc": "CC0 low-poly game assets: characters, packs, 100+ model platformer pack."
+   },
+   {
+    "name": "Poly Pizza",
+    "url": "https://poly.pizza/",
+    "desc": "Search free low-poly 3D models."
+   },
+   {
+    "name": "Poly Haven",
+    "url": "https://polyhaven.org/",
+    "desc": "CC0 hyperreal 3D models/textures/HDRI, no attribution."
+   },
+   {
+    "name": "Kenney",
+    "url": "https://kenney.nl/assets",
+    "desc": "CC0 game assets: thousands of models, sprites, audio."
+   },
+   {
+    "name": "Sketchfab Free",
+    "url": "https://sketchfab.com/",
+    "desc": "Filter by Downloadable + CC license for free models."
+   },
+   {
+    "name": "Clara.io",
+    "url": "https://clara.io/",
+    "desc": "Free browser 3D modeling/animation."
+   },
+   {
+    "name": "Tinkercad",
+    "url": "https://www.tinkercad.com/",
+    "desc": "Free browser 3D modeling (Autodesk), beginner friendly."
+   },
+   {
+    "name": "Wings 3D",
+    "url": "https://www.wings3d.com/",
+    "desc": "Free subdivision modeler."
+   },
+   {
+    "name": "MeshLab",
+    "url": "https://www.meshlab.net/",
+    "desc": "Free 3D mesh processing/cleanup."
+   },
+   {
+    "name": "MakeHuman",
+    "url": "http://www.makehumancommunity.org/",
+    "desc": "Free parametric humanoid character creator."
+   },
+   {
+    "name": "Daz Studio",
+    "url": "https://www.daz3d.com/daz_studio",
+    "desc": "Free 3D character posing/rendering (free base)."
+   },
+   {
+    "name": "Unreal Engine",
+    "url": "https://www.unrealengine.com/",
+    "desc": "Free until $1M revenue. MetaHumans free."
+   },
+   {
+    "name": "Godot",
+    "url": "https://godotengine.org/",
+    "desc": "Free open-source game engine."
+   }
+  ]
+ },
+ {
+  "cat": "🖼️ Image",
+  "tools": [
+   {
+    "name": "Photopea",
+    "url": "https://www.photopea.com/",
+    "desc": "Photoshop in browser, free."
+   },
+   {
+    "name": "Affinity",
+    "url": "https://affinity.serif.com/",
+    "desc": "Pro design suite, now FREE (2026)."
+   },
+   {
+    "name": "Krita",
+    "url": "https://krita.org/",
+    "desc": "Free painting/animation."
+   },
+   {
+    "name": "GIMP",
+    "url": "https://www.gimp.org/",
+    "desc": "Free Photoshop alternative."
+   },
+   {
+    "name": "Canva",
+    "url": "https://www.canva.com/",
+    "desc": "Quick graphics (connected)."
+   },
+   {
+    "name": "Remove.bg",
+    "url": "https://www.remove.bg/",
+    "desc": "AI background removal (free tier)."
+   },
+   {
+    "name": "Upscayl",
+    "url": "https://www.upscayl.org/",
+    "desc": "Free open-source AI image upscaler (local)."
+   },
+   {
+    "name": "Pixelup",
+    "url": "https://play.google.com/store/search?q=Pixelup%20AI%20photo%20enhancer&c=apps",
+    "desc": "Free AI photo enhancer/restorer (mobile)."
+   },
+   {
+    "name": "Picsart Free",
+    "url": "https://picsart.com/",
+    "desc": "Free tier photo editor + AI tools (mobile/web)."
+   },
+   {
+    "name": "InShot",
+    "url": "https://www.inshot.com/",
+    "desc": "Free photo+video editor (mobile)."
+   },
+   {
+    "name": "Snapseed",
+    "url": "https://play.google.com/store/search?q=Snapseed&c=apps",
+    "desc": "Google's free pro photo editor (mobile)."
+   },
+   {
+    "name": "IbisPaint",
+    "url": "https://ibispaint.com/",
+    "desc": "Free mobile painting app, huge brush library."
+   },
+   {
+    "name": "MediBang Paint",
+    "url": "https://medibangpaint.com/",
+    "desc": "Free painting/comic app (mobile+desktop)."
+   },
+   {
+    "name": "Unsplash",
+    "url": "https://unsplash.com/",
+    "desc": "Free stock photos."
+   },
+   {
+    "name": "Pexels Photos",
+    "url": "https://www.pexels.com/",
+    "desc": "Free stock photos."
+   }
+  ]
+ },
+ {
+  "cat": "✨ AI Generative",
+  "tools": [
+   {
+    "name": "Pollinations.ai [LIVE-TESTED]",
+    "url": "https://pollinations.ai/",
+    "desc": "Free text+image+audio AI API, zero signup. Powers our pipelines."
+   },
+   {
+    "name": "AI Horde",
+    "url": "https://stablehorde.net/",
+    "desc": "Crowdsourced free text/image generation API."
+   },
+   {
+    "name": "Seedance 2.0",
+    "url": "https://www.seedance.ai/",
+    "desc": "100 FREE daily credits, 1080p, NO watermark - best free video tier 2026."
+   },
+   {
+    "name": "Hailuo / MiniMax",
+    "url": "https://hailuoai.video/",
+    "desc": "Daily-refreshing free video credits, strong motion realism."
+   },
+   {
+    "name": "Kling AI",
+    "url": "https://klingai.com/",
+    "desc": "66 free credits/day, cinematic text-to-video."
+   },
+   {
+    "name": "PixVerse",
+    "url": "https://app.pixverse.ai/",
+    "desc": "Daily-refreshing free credits, fast social clips."
+   },
+   {
+    "name": "HeyMarmot",
+    "url": "https://heymarmot.com/",
+    "desc": "300 free credits, multi-model (Veo 3.1, Kling 3.0, Seedance 2.0) in one account."
+   },
+   {
+    "name": "Luma Dream Machine",
+    "url": "https://lumalabs.ai/dream-machine",
+    "desc": "30 free gens/month, great image-to-video camera moves."
+   },
+   {
+    "name": "Pika",
+    "url": "https://pika.art/",
+    "desc": "Free monthly credits, fun effects (melt, crush, inflate)."
+   },
+   {
+    "name": "Vider.ai",
+    "url": "https://vider.ai/",
+    "desc": "Free tier, one of few tackling longer AI video."
+   },
+   {
+    "name": "VEED AI",
+    "url": "https://www.veed.io/",
+    "desc": "Free tier editor + AI generation."
+   },
+   {
+    "name": "Adobe Firefly",
+    "url": "https://firefly.adobe.com/",
+    "desc": "Free daily AI generations (image/video/audio)."
+   },
+   {
+    "name": "MagicLight AI",
+    "url": "https://magiclight.ai/",
+    "desc": "Free plan: script -> finished animated video."
+   },
+   {
+    "name": "NexaAPI",
+    "url": "https://nexa-api.com/",
+    "desc": "Free tier API: Kling/Wan/Veo/Seedance/Pika via one OpenAI-compatible key."
+   },
+   {
+    "name": "Wan 2.x (open)",
+    "url": "https://github.com/Wan-Video/Wan2.2",
+    "desc": "Open-source video model, cheapest at scale via Replicate/ComfyUI."
+   },
+   {
+    "name": "ZSky AI",
+    "url": "https://zsky.ai/",
+    "desc": "Unlimited image-to-video, no signup."
+   },
+   {
+    "name": "Vidwud Face Swap",
+    "url": "https://www.vidwud.com/",
+    "desc": "FREE video face swap, NO watermark, multi-person. Strongest free pick."
+   },
+   {
+    "name": "VOZO AI",
+    "url": "https://vozo.ai/",
+    "desc": "Face swap no watermark on free tier, multi-face support."
+   },
+   {
+    "name": "FaceFusion",
+    "url": "https://github.com/facefusion/facefusion",
+    "desc": "Open-source face swap, runs local, no limits (needs GPU)."
+   },
+   {
+    "name": "Magic Hour",
+    "url": "https://magichour.ai/",
+    "desc": "Face swap + full AI production suite, free tier."
+   },
+   {
+    "name": "Reface",
+    "url": "https://reface.ai/",
+    "desc": "Mobile face swap, 3 free daily swaps."
+   },
+   {
+    "name": "Hugging Face Spaces",
+    "url": "https://huggingface.co/spaces",
+    "desc": "Thousands of free AI demos incl. video/voice/image tools."
+   },
+   {
+    "name": "Replicate Free",
+    "url": "https://replicate.com/",
+    "desc": "Free tier credits for open AI models."
+   },
+   {
+    "name": "Leonardo AI",
+    "url": "https://leonardo.ai/",
+    "desc": "Free daily image generations."
+   },
+   {
+    "name": "Ideogram",
+    "url": "https://ideogram.ai/",
+    "desc": "Free AI images, best text-in-image."
+   },
+   {
+    "name": "Microsoft Designer",
+    "url": "https://designer.microsoft.com/",
+    "desc": "Free AI image gen (DALL-E powered)."
+   }
+  ]
+ },
+ {
+  "cat": "🌀 AR & Mesh Warp",
+  "tools": [
+   {
+    "name": "TikTok Effect House",
+    "url": "https://effecthouse.tiktok.com/",
+    "desc": "FREE: built-in '3D Face Warp' (66 params) = official cheek-stretch tool."
+   },
+   {
+    "name": "MediaPipe",
+    "url": "https://ai.google.dev/edge/mediapipe/",
+    "desc": "Google free face/hand/body tracking. Browser + Python. Own the tool."
+   },
+   {
+    "name": "MediaPipe FaceMesh Demo",
+    "url": "https://ai.google.dev/edge/mediapipe/",
+    "desc": "468-point face mesh in browser - basis for custom warp filters."
+   },
+   {
+    "name": "Snap Lens Studio",
+    "url": "https://ar.snap.com/lens-studio",
+    "desc": "Free AR filter builder (publishes to Snapchat)."
+   },
+   {
+    "name": "DeepAR Free",
+    "url": "https://www.deepar.ai/",
+    "desc": "Free tier AR SDK for apps/web."
+   },
+   {
+    "name": "Banuba Free",
+    "url": "https://www.banuba.com/",
+    "desc": "Face AR SDK, free trial tier."
+   },
+   {
+    "name": "MotionMuse",
+    "url": "https://github.com/Dentarthurdent42/MotionMuse",
+    "desc": "Browser instrument: hand/pose -> audio synth via MediaPipe. Free."
+   },
+   {
+    "name": "Three.js Hand Tracking",
+    "url": "https://github.com/collidingscopes/threejs-handtracking-101",
+    "desc": "Free demo: control 3D with hand gestures (MediaPipe+Three.js)."
+   },
+   {
+    "name": "MediaPipe TouchDesigner Plugin",
+    "url": "https://github.com/torinmb/mediapipe-touchdesigner",
+    "desc": "Free GPU MediaPipe plugin for TouchDesigner: face/hand/pose/object."
+   },
+   {
+    "name": "Godot MediaPipe Plugin",
+    "url": "https://github.com/j20001970/GDMP",
+    "desc": "MediaPipe for Godot engine (GDMP)."
+   }
+  ]
+ },
+ {
+  "cat": "📱 Mobile Apps",
+  "tools": [
+   {
+    "name": "CapCut",
+    "url": "https://www.capcut.com/",
+    "desc": "Free mobile editor: captions, bg removal, effects, templates."
+   },
+   {
+    "name": "VN Video Editor",
+    "url": "https://www.vlognow.me/",
+    "desc": "Free multi-track mobile editor, no watermark."
+   },
+   {
+    "name": "YouTube Create",
+    "url": "https://play.google.com/store/search?q=YouTube%20Create&c=apps",
+    "desc": "Google free mobile editor, no watermark. youtube.com/create"
+   },
+   {
+    "name": "Instagram Edits",
+    "url": "https://play.google.com/store/search?q=Instagram%20Edits&c=apps",
+    "desc": "Meta free 4K editor for Reels."
+   },
+   {
+    "name": "Voloco",
+    "url": "https://play.google.com/store/search?q=Voloco&c=apps",
+    "desc": "Free mobile autotune (iOS/Android)."
+   },
+   {
+    "name": "BandLab",
+    "url": "https://www.bandlab.com/",
+    "desc": "Free mobile DAW + loops."
+   },
+   {
+    "name": "FL Studio Mobile",
+    "url": "https://www.image-line.com/fl-studio-mobile/",
+    "desc": "Paid app BUT free trial; full mobile DAW."
+   },
+   {
+    "name": "Open Camera",
+    "url": "https://opencamera.org.uk/",
+    "desc": "Free open-source camera app: manual controls, no ads."
+   },
+   {
+    "name": "Protake",
+    "url": "https://play.google.com/store/search?q=Protake%20video%20camera&c=apps",
+    "desc": "Free pro video camera app (mobile)."
+   },
+   {
+    "name": "Dolby On",
+    "url": "https://www.dolby.com/",
+    "desc": "Free audio recorder with auto polish (mobile)."
+   },
+   {
+    "name": "Easy Voice Recorder",
+    "url": "https://www.digipom.com/",
+    "desc": "Free pro audio recorder (Android)."
+   },
+   {
+    "name": "Remini",
+    "url": "https://www.remini.ai/",
+    "desc": "Free daily AI photo/video enhance credits."
+   },
+   {
+    "name": "Meitu",
+    "url": "https://www.meitu.com/",
+    "desc": "Free selfie/face tune app."
+   },
+   {
+    "name": "Snapchat",
+    "url": "https://www.snapchat.com/",
+    "desc": "Free AR filters to record reference performances."
+   }
+  ]
+ },
+ {
+  "cat": "2D Animation Deep",
+  "tools": [
+   {
+    "desc": "Free open-source 2D animation with full bone rigging, cutout animation, auto-tweening, 50+ layers, onion skin, sound sync. Vector + bitmap.",
+    "name": "Synfig Studio",
+    "url": "https://www.synfig.org/"
+   },
+   {
+    "desc": "Free open-source browser animation tool (Flash alternative). Vector drawing, timeline, onion skin, JS scripting. No install, works on phone browser.",
+    "name": "Wick Editor",
+    "url": "https://editor.wickeditor.com/"
+   },
+   {
+    "desc": "Free open-source 2D animation for beginners and schools. Simple tweening, vector tools, frame-by-frame. Windows/Mac/Linux.",
+    "name": "TupiTube Desk",
+    "url": "http://www.maefloresta.com/portal/tupitube"
+   },
+   {
+    "desc": "FREE open-source 2D skeletal animation (the free Spine alternative). IK, mesh deformation, exports to Unity/HTML5. Runtimes for Godot too.",
+    "name": "DragonBones Pro",
+    "url": "https://dragonbones.com/en/index.html"
+   },
+   {
+    "desc": "Free open-source 2D animation: vector + raster, sound/video support, flexible and expandable. Good After Effects-style motion graphics alternative.",
+    "name": "Enve",
+    "url": "https://www.enve.space/"
+   },
+   {
+    "desc": "Free open-source pixel art + pixel animation editor (Aseprite fork, no compile needed). Sprites, tilesets, animation export.",
+    "name": "LibreSprite",
+    "url": "https://libresprite.github.io/"
+   },
+   {
+    "desc": "Free browser pixel art animator. Draw sprites frame-by-frame, preview animation live, export GIF/spritesheet. No install.",
+    "name": "Piskel",
+    "url": "https://www.piskelapp.com/"
+   },
+   {
+    "desc": "2D skeletal animation with free version. Bone rigging for game characters, exports to most engines.",
+    "name": "Spriter (Free)",
+    "url": "https://brashmonkey.com/"
+   },
+   {
+    "desc": "Free open-source stop motion animation. Onion skin, DSLR/webcam capture, frame grabber. Linux/Windows.",
+    "name": "qStopMotion",
+    "url": "https://qstopmotion.org/"
+   },
+   {
+    "desc": "Free digital pencil-test / stop motion capture. Simple frame grabber for hand-drawn tests.",
+    "name": "MonkeyJam",
+    "url": "https://monkeyjam.org/"
+   },
+   {
+    "desc": "Free stick-figure animation. Fast posing, onion skin, great for blocking out action before full animation.",
+    "name": "Stykz",
+    "url": "https://www.stykz.net/"
+   },
+   {
+    "desc": "Free pencil-test software for hand-drawn animation. Clean line test workflow, the digital dope sheet.",
+    "name": "Plastic Animation Paper",
+    "url": "https://animationpaper.com/"
+   }
+  ]
+ },
+ {
+  "cat": "Fonts (Font Wizard)",
+  "tools": [
+   {
+    "desc": "His own pipeline: build_font.py, build_ttf.py, render_specimen.py, make_commercial.py, extract_glyphs.py, vectorize.py. Fonts so far: Trippy Drippy Wizard, Block Burner, Bush, Concrete Crown, Magnolia Square. Lives in ~/workspace/font-wizard/.",
+    "name": "Font Wizard Pipeline (ours)",
+    "url": ""
+   },
+   {
+    "desc": "The free open-source pro font editor. Draw glyphs with curves, Spiro mode, layers, SVG/EPS import, full validation. Windows/Mac/Linux.",
+    "name": "FontForge",
+    "url": "https://fontforge.org/"
+   },
+   {
+    "desc": "Free open-source font editor that runs in the browser. Design glyphs, set kerning, export OTF. No install.",
+    "name": "Glyphr Studio",
+    "url": "https://www.glyphrstudio.com/"
+   },
+   {
+    "desc": "Free/freemium cross-platform font editor. Beginner-friendly tabbed UI, draw on grid or trace hand lettering, export TTF/OTF/EOT/SVG.",
+    "name": "BirdFont",
+    "url": "https://birdfont.org/"
+   },
+   {
+    "desc": "Free browser font builder (by FontShop). Build fonts from geometric bricks, share and download. Great for display/pixel fonts.",
+    "name": "FontStruct",
+    "url": "https://fontstruct.com/"
+   },
+   {
+    "desc": "Turn your handwriting into a real font. Free tier available. Print template, write letters, scan, get TTF. Perfect for his hand-drawn style.",
+    "name": "Calligraphr",
+    "url": "https://www.calligraphr.com/"
+   },
+   {
+    "desc": "Free open-license font library. Reference, pairings, and download. All free for commercial use.",
+    "name": "Google Fonts",
+    "url": "https://fonts.google.com/"
+   },
+   {
+    "desc": "Hand-picked free fonts cleared for commercial use. Also has a webfont generator to convert his fonts for web.",
+    "name": "FontSquirrel",
+    "url": "https://www.fontsquirrel.com/"
+   },
+   {
+    "desc": "Huge free font archive. Check each license before commercial use. Great for inspiration and display fonts.",
+    "name": "DaFont",
+    "url": "https://www.dafont.com/"
+   },
+   {
+    "desc": "Free MIT-licensed tool to build fonts from existing assets. Component-based, non-destructive metrics tweaking.",
+    "name": "MkFont",
+    "url": "https://github.com/ctrlcctrlv/mkfont"
+   }
+  ]
+ },
+ {
+  "cat": "Drawing & Digital Art",
+  "tools": [
+   {
+    "desc": "Free lightweight drawing app, manga/comic focused. Hundreds of free brushes, 850+ tones/textures, cloud sync. Phone + desktop.",
+    "name": "MediBang Paint",
+    "url": "https://medibangpaint.com/"
+   },
+   {
+    "desc": "Completely free lightweight paint tool. Simple, fast, great for line art and illustration. Mac/Windows.",
+    "name": "FireAlpaca",
+    "url": "https://firealpaca.com/"
+   },
+   {
+    "desc": "FREE full version. Predictive stroke, clean UI, the most popular free drawing app on Android/iOS. Great for quick sketching.",
+    "name": "Autodesk Sketchbook",
+    "url": "https://www.sketchbook.com/"
+   },
+   {
+    "desc": "Free open-source natural-media painting. Infinite canvas, distraction-free, great brush engine for sketching.",
+    "name": "MyPaint",
+    "url": "https://mypaint.app/"
+   },
+   {
+    "desc": "Free brush/texture/pattern packs for Krita. David Revoy's packs are the gold standard. 100+ brushes built in already.",
+    "name": "Krita Brush Packs",
+    "url": "https://krita.org/en/resources/"
+   },
+   {
+    "desc": "Free browser collaborative drawing (Magma reborn). Paint together in real time, no install. Good for co-authoring art.",
+    "name": "Aggie.io",
+    "url": "https://aggie.io/"
+   },
+   {
+    "desc": "Free bitmap editor built for anime/manga community. Windows only but beloved for cel-style art.",
+    "name": "Pixia",
+    "url": "https://www.pixia.co.jp/"
+   }
+  ]
+ },
+ {
+  "cat": "Design Deep",
+  "tools": [
+   {
+    "desc": "VERIFIED FREE FOREVER (Oct 2025 relaunch). Photo + vector + layout in one app. Opens PSD/AI files. v3.3 as of Sept 2026. Needs free Canva account.",
+    "name": "Affinity by Canva (FREE)",
+    "url": "https://affinity.studio/"
+   },
+   {
+    "desc": "Free tier: 3 design files, unlimited personal drafts, collaboration. The industry UI/design tool.",
+    "name": "Figma (Free Tier)",
+    "url": "https://www.figma.com/"
+   },
+   {
+    "desc": "Free open-source Figma alternative. Self-host or use cloud free. Vector design + prototyping, no paywall.",
+    "name": "Penpot",
+    "url": "https://penpot.app/"
+   },
+   {
+    "desc": "Free design app by Icons8. Sketch file support, built-in assets, AI tools. Windows/Mac/Linux.",
+    "name": "Lunacy",
+    "url": "https://icons8.com/lunacy"
+   },
+   {
+    "desc": "FREE: templates, editor, 5GB, collaboration. PAYWALLED (Pro): Brand Kit, Magic Resize, Background Remover, Magic Studio AI, 1TB, premium stock.",
+    "name": "Canva Free vs Pro",
+    "url": "https://www.canva.com/"
+   }
+  ]
+ },
+ {
+  "cat": "💿 Cover Art & Bling",
+  "tools": [
+   {
+    "name": "STYLE FUSION GUIDE (start here)",
+    "url": "#",
+    "desc": "Pen & Pixel bling x Wizard Gang psychedelic — the full fusion guide: chrome/diamond recipes, tie-dye/kaleidoscope recipes, 3 written cover concepts. File: cover-art/style-fusion.md"
+   },
+   {
+    "name": "Pen & Pixel Bling Recipes",
+    "url": "#",
+    "desc": "Diamond-encrusted text, gold text, sparkle glints, full composite workflow — all in Photopea/GIMP. File: cover-art/pen-pixel-techniques.md"
+   },
+   {
+    "name": "LAYERS Ep 1 — Shawn Brauch (Pen & Pixel)",
+    "url": "https://youtu.be/tVz2IAAxttE",
+    "desc": "20,000 covers. Master P, Snoop Dogg, Lil Wayne. The bling-era blueprint. Owner's favorite."
+   },
+   {
+    "name": "LAYERS Ep 2 — LONEWOLF (LUCKI designer)",
+    "url": "https://www.youtube.com/watch?v=BikxAyWIXx4",
+    "desc": "Chaotic paper-cut mixed-media collages. The low-budget parallel path."
+   },
+   {
+    "name": "Photopea",
+    "url": "https://www.photopea.com/",
+    "desc": "Free Photoshop in the browser. Runs the diamond/chrome recipes. No install."
+   },
+   {
+    "name": "Affinity (FREE)",
+    "url": "https://affinity.studio/",
+    "desc": "Free forever. Best free home for the chrome/diamond text recipes."
+   },
+   {
+    "name": "GIMP",
+    "url": "https://www.gimp.org/",
+    "desc": "Free desktop editor. Glass Tile + Curves = diamond text."
+   },
+   {
+    "name": "Krita",
+    "url": "https://krita.org/",
+    "desc": "Free painter. Best for hand-painted psychedelic backgrounds."
+   },
+   {
+    "name": "Inkscape",
+    "url": "https://inkscape.org/",
+    "desc": "Free vector. Wavy chrome borders, warped text arcs."
+   },
+   {
+    "name": "Remove.bg",
+    "url": "https://www.remove.bg/",
+    "desc": "Free background removal for cover subjects. First step of any composite."
+   },
+   {
+    "name": "Pexels / Pixabay",
+    "url": "https://www.pexels.com/",
+    "desc": "Free fire, smoke, luxury, skyline stock for Pen & Pixel backgrounds."
+   },
+   {
+    "name": "Mockup World",
+    "url": "https://mockupworld.co/",
+    "desc": "Free vinyl/CD/poster mockups to present finished covers."
+   }
+  ]
+ }
+]

@@ -28,6 +28,17 @@ Tier B (hand-built / extracted production kit) vs Tier A (key art "main ad").
   cleaned in-memory (luminance<115), proving_run original untouched.
 - 2026-10-11: torso_mirrored_punch built by parent via mirror-reconstruction
   (right half intact). Seam invisible at natural size.
+- 2026-10-11: torso_mirrored_punch REDO (owner correction: first mirror went
+  too high — to shoulders/chin, cut the chin, and the polygon arm-removal mask
+  left a squared under-arm edge). Rebuilt from body_full: mirror ONLY y>=215
+  (mid-chest down); rows 0-214 pixel-identical to original (head/chin/neck/
+  shoulders untouched). Rounded under-arm curve, junk components removed
+  (1300px). No square cuts per new KIT-SPEC law 8.
+- 2026-10-11: torso_no_arm.png NEW (owner directive): torso WITHOUT the side
+  arm for punch poses. Mirrored lower + left arm skin replaced with sampled
+  tank color, dark specks cleaned, deltoid-tank junction alpha-feathered for
+  a rounded shoulder contour. Reads whole on its own; separate punch arm
+  poses over it.
 
 ## Still off
 - Mouth pieces are stylized SP shapes, not pixel traces — close at show scale.

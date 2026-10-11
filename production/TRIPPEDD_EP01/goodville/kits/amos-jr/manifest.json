@@ -145,16 +145,28 @@
   {
    "file": "torso_mirrored_punch.png",
    "method": "mirrored",
-   "mirrored_from": "right half (intact)",
+   "mirrored_from": "right half (intact), y>=215 only",
    "symmetry_verified": true,
-   "symmetry_notes": "plain white tank, no asymmetric details on source half; head not mirrored (hair asymmetric)",
+   "symmetry_notes": "plain white tank, no asymmetric details on source half; head/chin/neck/shoulders NOT mirrored (rows 0-214 pixel-identical to body_full)",
    "anchor": {
     "x": 25,
     "y": 623,
     "w": 374,
     "h": 307
    },
-   "notes": "Parent-built via mirror-reconstruction (owner 2026-10-11). Eye-verified by documenter: torso whole, no missing chunks; mirror seam invisible at natural size (faint centerline detectable only at 4x zoom)."
+   "notes": "REBUILT 2026-10-11 (owner correction): first version mirrored too high (to shoulders/chin, cut chin, squared under-arm edge from polygon mask). Redo: mirror ONLY lower torso from y=215 (mid-chest) down; head, chin, neck, upper shoulders pixel-identical to original. Rounded under-arm curve on punch side, no square cuts (KIT-SPEC law 8). Junk components removed (1300px). Eye-verified zoomed: chin intact, seam only in lower torso."
+  },
+  {
+   "file": "torso_no_arm.png",
+   "method": "mirrored+shaped",
+   "mirrored_from": "right half (intact), y>=215; left arm skin replaced with tank color, speck cleanup, alpha-feathered deltoid junction",
+   "anchor": {
+    "x": 25,
+    "y": 623,
+    "w": 374,
+    "h": 307
+   },
+   "notes": "NEW 2026-10-11 (owner directive): torso variant WITHOUT the side arm, for punch poses where the separate punch arm extends outward. Rounded deltoid cap (skin, tattoo) + clean tank below; arm-side edge is a smooth shaped contour, no square cuts (KIT-SPEC law 8). Eye-verified zoomed."
   }
  ],
  "source": "assets/references/ep01/source/Goodville - Not South Park.png",

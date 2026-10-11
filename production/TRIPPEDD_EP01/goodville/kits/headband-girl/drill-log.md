@@ -34,3 +34,10 @@
 - Expression variants rescaled to donor anchors (eyes 78,140 / mouth 105,190 / brows 100,106). Pupil direction variants from donor shift.
 - Angles: head_34L/34R (feature-shift), head_profile_R (from 34R + nose).
 - Torso: torso_34 (squeeze), torso_back (purple 107,70,103 constructed). preview_sheet.png added.
+
+## Defect repair (2026-10-11) — white rectangles on cheeks
+- Root cause: head_base/34L/34R/profile_R had rectangular transparent HOLES in the
+  lower cheek (leftover mouth-socket cut, oversized vs the actual mouth).
+- Fix: filled interior transparent regions in lower face (y>0.6h) with flat skin
+  #9A6034 (sampled). Eye sockets (upper face) preserved. Mouths composite on top
+  of the now-solid head. All 4 head angles verified clean.

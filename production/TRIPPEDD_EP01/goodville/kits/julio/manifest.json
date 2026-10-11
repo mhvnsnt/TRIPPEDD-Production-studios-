@@ -51,6 +51,16 @@
       "desc": "Julio leaning over the car roof, arms folded on it. REUSABLE POSE PATTERN: leaning-over-a-surface (desk/counter/car) \u2014 see drill log.",
       "source": "extracted",
       "from": "/home/hatch/workspace/user/files/1000173536_14_nhu1.png (owner ChatGPT car trio, 2026-10-11)"
+    },
+    {
+      "file": "head_no_beanie_v2.png",
+      "desc": "v2: u2net re-cut from source, clean face (isnet contaminated the face RGB), refined hair edges. v1 kept.",
+      "source": "owner-image-extract-v2"
+    },
+    {
+      "file": "pose_lean_over_v2.png",
+      "desc": "v2: isnet re-cut; car window/door/mirror + Bubba chunk removed; lean surface = clean car-roof band with shaped edge (v1 was a lumpy black blob with rim halo). v1 kept.",
+      "source": "owner-image-extract-v2"
     }
   ],
   "provenance": {

@@ -38,6 +38,11 @@
       "desc": "Dickie outfit variant: black palm-tree tiki shirt torso.",
       "source": "extracted",
       "from": "/home/hatch/workspace/user/files/1000173536_14_nhu1.png (owner ChatGPT car trio, 2026-10-11)"
+    },
+    {
+      "file": "outfit_palm_shirt_torso_v2.png",
+      "desc": "v2: isnet re-cut from source; curved shirt hem (NO SQUARE CUTS); side-edge fringe decontaminated. v1 kept.",
+      "source": "owner-image-extract-v2"
     }
   ],
   "provenance": {

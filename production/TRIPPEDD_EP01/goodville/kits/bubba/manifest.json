@@ -38,6 +38,11 @@
       "desc": "Bubba outfit variant: solid blue work shirt torso (chest pockets, buttons).",
       "source": "extracted",
       "from": "/home/hatch/workspace/user/files/1000173536_14_nhu1.png (owner ChatGPT car trio, 2026-10-11)"
+    },
+    {
+      "file": "outfit_blue_work_shirt_torso_v2.png",
+      "desc": "v2: u2net re-cut (cleaner than isnet for Bubba \u2014 no car wedge); curved hem; black fringe decontaminated. v1 kept.",
+      "source": "owner-image-extract-v2"
     }
   ],
   "provenance": {

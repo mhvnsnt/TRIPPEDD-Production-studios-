@@ -1,15 +1,16 @@
-# Likeness drill log — Julio
+# julio drill log — extraction rebuild (2026-10-11)
 
-## vs ChatGPT trio source (junkyard image)
-- black beanie + boxed beard + black tee + tumbler read instantly
-- peach skin (#FABC86) matches source
+Owner rejected the procedural sheets ("why aren't you using the image I just sent you?").
+Rebuilt EXTRACTION-FIRST per USE THE IMAGE LAW.
 
-## Iterations
-- pass 1: beanie extraction mispositioned (caught face) -> rebuilt geometrically, sits high above eyes with rib lines + folded brim
-- pass 1: beard extraction blurry -> rebuilt geometrically (mustache bar + chin-strap curve + chin patch)
-- pass 1: black tee + jeans eaten by rembg -> hand-built
-- pass 1: tumbler extraction failed (too small) -> hand-built rocks glass with dark drink + separate grip hand
-- arm_bent_R extracted clean from source (the tumbler arm) — kept as-is
+## Extraction
+- Full body cut from the source with rembg (u2net; bubba needed isnet-general-use — u2net ate his brown pants as background, and the wider crop fixed the left-arm edge).
+- Band-segmented into head / torso / arm_L / arm_R / legs on the crop canvas (full-frame pieces, seamless assembly).
+- Props keyed from the image: prop_beanie, prop_tumbler.
+- Face furniture: eyes_open + mouth_neutral extracted; variants (closed/happy/worried, open/grin/frown/ooh) drawn over flat skin sampled from the character's own face.
+- Walk (4f), bent/punch arms, sit_legs: transforms of the cut pieces.
 
-## Still off
-- beanie slightly shorter than source; reads correctly at show scale
+## Verification
+- Assembly side-by-side vs source: pixel-identical reconstruction.
+- Face variants composited and eye-checked (bubba happy+grin verified).
+- No square cuts (pieces are full-frame aligned, joins seamless).

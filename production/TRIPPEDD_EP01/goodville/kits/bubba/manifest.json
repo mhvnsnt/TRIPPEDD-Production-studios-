@@ -1,174 +1,70 @@
 {
- "character": "Bubba (Bubbles-based) \u2014 the mobile home guys",
- "identity_checklist": [
-  "rectangular glasses (separate layer)",
-  "light brown/blond hair",
-  "blue plaid button shirt",
-  "brown pants"
- ],
- "notes": "Preston Blair kit. Flat South Park cutout style, 600x900 registered canvas. Source: owner ChatGPT trio image (junkyard). Sweet face; \"Blower\" gag.",
- "canvas": "600x900, character registered",
- "source": "owner ChatGPT trio image /home/hatch/workspace/user/files/1000173537_10_cm4h.png",
- "extracted_from_source": [
-  "hair"
- ],
- "hand_built": [
-  "everything else \u2014 incl. plaid pattern built procedurally, glasses as separate prop"
- ],
- "parts": [
-  {
-   "file": "arm_bent_L.png"
+  "character": "bubba",
+  "description": "Bubba (Bubbles-based). Rectangular glasses, blond-brown hair, blue plaid button shirt, brown pants.",
+  "source": "/home/hatch/workspace/user/files/1000173537_10_cm4h.png (owner ChatGPT junkyard trio, 2026-10-11)",
+  "method": "EXTRACTION-FIRST per USE THE IMAGE LAW \u2014 all likeness pieces cut from the source image pixels. rembg (u2net/isnet) full-body extraction, band-segmented. Face variant backings: flat skin sampled from the character's own face. Derived pieces (walk, bent/punch arms, sit) are transforms of the cut pieces.",
+  "pieces": [
+    "arm_L.png",
+    "arm_L_bent.png",
+    "arm_L_punch.png",
+    "arm_R.png",
+    "arm_R_bent.png",
+    "arm_R_punch.png",
+    "body_full.png",
+    "eyes_closed.png",
+    "eyes_happy.png",
+    "eyes_open.png",
+    "eyes_worried.png",
+    "head.png",
+    "leg_L.png",
+    "leg_R.png",
+    "legs.png",
+    "mouth_frown.png",
+    "mouth_grin.png",
+    "mouth_neutral.png",
+    "mouth_ooh.png",
+    "mouth_open.png",
+    "preview.png",
+    "prop_glasses.png",
+    "sit_legs.png",
+    "torso.png",
+    "torso_full.png",
+    "walk_1.png",
+    "walk_2.png",
+    "walk_3.png",
+    "walk_4.png"
+  ],
+  "provenance": {
+    "arm_L.png": "extracted",
+    "arm_L_bent.png": "derived-from-extraction",
+    "arm_L_punch.png": "derived-from-extraction",
+    "arm_R.png": "extracted",
+    "arm_R_bent.png": "derived-from-extraction",
+    "arm_R_punch.png": "derived-from-extraction",
+    "body_full.png": "extracted",
+    "eyes_closed.png": "derived-from-extraction",
+    "eyes_happy.png": "derived-from-extraction",
+    "eyes_open.png": "derived-from-extraction",
+    "eyes_worried.png": "derived-from-extraction",
+    "head.png": "extracted",
+    "leg_L.png": "derived-from-extraction",
+    "leg_R.png": "derived-from-extraction",
+    "legs.png": "extracted",
+    "mouth_frown.png": "derived-from-extraction",
+    "mouth_grin.png": "derived-from-extraction",
+    "mouth_neutral.png": "extracted",
+    "mouth_ooh.png": "derived-from-extraction",
+    "mouth_open.png": "derived-from-extraction",
+    "preview.png": "extracted",
+    "prop_glasses.png": "extracted",
+    "sit_legs.png": "derived-from-extraction",
+    "torso.png": "extracted",
+    "torso_full.png": "extracted",
+    "walk_1.png": "derived-from-extraction",
+    "walk_2.png": "derived-from-extraction",
+    "walk_3.png": "derived-from-extraction",
+    "walk_4.png": "derived-from-extraction"
   },
-  {
-   "file": "arm_bent_R.png"
-  },
-  {
-   "file": "arm_folded.png"
-  },
-  {
-   "file": "arm_punch_L.png"
-  },
-  {
-   "file": "arm_punch_R.png"
-  },
-  {
-   "file": "arm_straight_L.png"
-  },
-  {
-   "file": "arm_straight_R.png"
-  },
-  {
-   "file": "brows.png"
-  },
-  {
-   "file": "brows_angry.png"
-  },
-  {
-   "file": "brows_sad.png"
-  },
-  {
-   "file": "eyes_angry.png"
-  },
-  {
-   "file": "eyes_closed.png"
-  },
-  {
-   "file": "eyes_happy.png"
-  },
-  {
-   "file": "eyes_open.png"
-  },
-  {
-   "file": "eyes_sad.png"
-  },
-  {
-   "file": "eyes_scheming.png"
-  },
-  {
-   "file": "eyes_shocked.png"
-  },
-  {
-   "file": "feet.png"
-  },
-  {
-   "file": "hair.png"
-  },
-  {
-   "file": "hand_fist_L.png"
-  },
-  {
-   "file": "hand_fist_R.png"
-  },
-  {
-   "file": "hand_mitten_L.png"
-  },
-  {
-   "file": "hand_mitten_R.png"
-  },
-  {
-   "file": "hand_open_L.png"
-  },
-  {
-   "file": "hand_open_R.png"
-  },
-  {
-   "file": "hand_point_L.png"
-  },
-  {
-   "file": "hand_point_R.png"
-  },
-  {
-   "file": "head_base.png"
-  },
-  {
-   "file": "head_full.png"
-  },
-  {
-   "file": "legs_sit.png"
-  },
-  {
-   "file": "legs_stand.png"
-  },
-  {
-   "file": "legs_walk_01.png"
-  },
-  {
-   "file": "legs_walk_02.png"
-  },
-  {
-   "file": "legs_walk_03.png"
-  },
-  {
-   "file": "legs_walk_04.png"
-  },
-  {
-   "file": "legs_walk_05.png"
-  },
-  {
-   "file": "legs_walk_06.png"
-  },
-  {
-   "file": "mouth_closed.png"
-  },
-  {
-   "file": "mouth_frown.png"
-  },
-  {
-   "file": "mouth_grimace.png"
-  },
-  {
-   "file": "mouth_o.png"
-  },
-  {
-   "file": "mouth_open_med.png"
-  },
-  {
-   "file": "mouth_open_small.png"
-  },
-  {
-   "file": "mouth_open_wide.png"
-  },
-  {
-   "file": "mouth_smile.png"
-  },
-  {
-   "file": "prop_glasses.png"
-  },
-  {
-   "file": "pupils.png"
-  },
-  {
-   "file": "pupils_left.png"
-  },
-  {
-   "file": "pupils_right.png"
-  },
-  {
-   "file": "pupils_up.png"
-  },
-  {
-   "file": "torso_base.png"
-  }
- ],
- "piece_count": 51
+  "count": 29,
+  "built": "2026-10-11T17:59:53.668760+00:00"
 }

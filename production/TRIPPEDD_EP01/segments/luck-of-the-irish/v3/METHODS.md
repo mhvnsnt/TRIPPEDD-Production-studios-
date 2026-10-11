@@ -225,3 +225,11 @@ Both exported at the final mix normalization level; reusable across the show.
   Preserved; NOT in the cut.
 - `audio/robot-porky-voice.wav` — byte copy of v2, per owner's naming
   ("save v2 voice as robot porky voice in the files"). Asset only.
+
+## 2026-10-10 ~23:45 CDT — V-dip on suspense bed under "luck of the Irish!" (owner)
+- For the exact 32-34s line duration: bed fades to -72dBFS at 33s (midpoint),
+  back up to -24dBFS at 34s, release to natural by 34.4s. Voice untouched.
+- Implemented in build_v3_score_dip.py (deterministic; absolute dB targets
+  computed against the bed's own smoothed level to handle the riser crescendo).
+- Verified on pure bed stem: drone hits -72dB @33s, -24dB @34s.
+- Final: true peak -0.99dBFS, no clipping. Video stream untouched.

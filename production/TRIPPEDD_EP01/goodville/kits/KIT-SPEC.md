@@ -144,3 +144,46 @@ side (+ prop grips), legs (stand/walk 6/sit), feet, all signature props,
    Don't guess the face.)
 5. **Position from measurement.** Part placement derives from key-art
    anchors in the manifest, never eyeballed.
+6. **BODY INTEGRITY.** Every character's body must be WHOLE in every frame.
+   Check for missing chunks and background showing through where body should
+   be — not just added artifacts. Zoom crops of the torso region on every
+   character, every beat, before anything ships. (Owner 2026-10-11: a
+   rectangular chunk of Amos's torso shipped missing because checks looked
+   for junk, not holes.)
+7. **No rectangular/square limbs.** All arms/legs taper with rounded ends —
+   SP cutout grammar. A uniform bar with 90° corners is never a limb.
+   (Owner 2026-10-11: "big square cropped out of Amos Jr.")
+
+## Mirror-reconstruction (standing technique, owner 2026-10-11)
+
+When one side of a body part is intact and the other is damaged/missing,
+**mirror the good half across the centerline** — don't hand-guess the missing
+half. (Owner's fix for Amos's half-torso: mirror the intact right half to
+rebuild the full Preston Blair torso, reconnect the waistband with no gap.)
+
+**SYMMETRY GATE (owner refinement 2026-10-11) — mirror ONLY when the part is
+actually symmetric:**
+1. **CHECK symmetry first.** Compare the halves: pose, clothing folds, facial
+   features, accessories. Torso and legs are usually safe; most of South Park's
+   stuff is pretty symmetrical — which makes most of it easy to build on and
+   repair and add to.
+2. **Mirror only if symmetric.** Hands/arms in different poses, asymmetric
+   eyes, asymmetric clothing details (a tattoo on one side, a pocket, a fold
+   pattern that doesn't repeat) → do NOT mirror; hand-build instead.
+3. **Verify the seam is invisible.** After mirroring, read the result with your
+   own eyes: the centerline seam must disappear. If it doesn't, the part
+   wasn't symmetric enough — hand-build it.
+
+Head stays original unless the face is verified symmetric (hair is usually
+asymmetric). Remove mirrored limbs that would double with rigged parts (tight
+mask, not a big polygon).
+
+**Manifest fields for every mirrored piece** (in addition to the standard fields):
+```json
+{"file": "torso_mirrored_punch.png", "method": "mirrored",
+ "mirrored_from": "right half (intact)",
+ "symmetry_verified": true,
+ "symmetry_notes": "plain white tank, no asymmetric details on source half"}
+```
+- `symmetry_verified: false` → the piece was NOT mirrored; see notes for the
+  hand-built alternative.

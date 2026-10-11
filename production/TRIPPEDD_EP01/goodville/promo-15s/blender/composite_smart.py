@@ -180,6 +180,13 @@ def load():
         "oh_jaw": oh_jaw,
         "oh_torso": mask_oh_torso(),
         "amos_body": mask_amos_arm(),
+        # REST BODY (Preston Blair kit fix, 2026-10-11): the FULL key-art
+        # body with the folded beer arm intact. The masked body above has a
+        # bite taken out of the torso (the folded arm was removed for the
+        # punch arm) — on non-punch frames that reads as a cropped-off gap.
+        # Rest frames use this; punch frames use the masked body + SP arm.
+        "amos_body_rest": Image.open(
+            os.path.join(PROVE, "amos_full_body.png")).convert("RGBA"),
         "beer_can": extract_can(),
     }
     return geo, anim, parts
@@ -298,9 +305,20 @@ def draw_amos(img, f, geo, fobjs, parts, punch_arm):
             items.append((z, pts2, col))
     for _, pts, col in items:
         dr.polygon(pts, fill=col)
-    # body texture: align key-art head-center to rig head center, same scale
+    # body texture: align key-art head-center to rig head center, same scale.
+    # PUNCH vs REST (Preston Blair kit fix, 2026-10-11): the rig's arm rests
+    # at r=10deg and punches at r=-72deg / follow-through r=38deg. On punch
+    # frames the masked body + SP punch arm play (the folded arm is hidden so
+    # nothing doubles). On rest frames the FULL key-art body plays — folded
+    # beer arm intact in front of the torso, no gap, no floating SP arm.
     hcx, hcy = rig_head_screen(fobjs, "AJ_head_geo", camx)
-    body = parts["amos_body"]
+    st_l = fobjs.get("AJ_arm_geo_L")
+    punch = False
+    r_deg = 10.0
+    if st_l and st_l["v"]:
+        r_deg = math.degrees(st_l["r"]) if isinstance(st_l["r"], float) else 10.0
+        punch = abs(r_deg - 10.0) > 25.0
+    body = parts["amos_body"] if punch else parts["amos_body_rest"]
     bw, bh = body.size
     br = body.resize((int(bw * S), int(bh * S)), Image.BICUBIC)
     img.paste(br, (int(hcx - AMOS_HEAD_CX * S), int(hcy - AMOS_HEAD_CY * S)), br)
@@ -309,12 +327,12 @@ def draw_amos(img, f, geo, fobjs, parts, punch_arm):
     # shoulder; the key-art anchor is the visual truth (no floating arm).
     # PIL rotate(+) moves 6 o'clock toward 4 o'clock (empirically verified);
     # the rig's r is CCW in y-up world. PIL_angle = r_deg matches the rig.
-    st_l = fobjs.get("AJ_arm_geo_L")
-    if st_l and st_l["v"]:
+    # Only drawn on punch frames — rest frames keep the key-art folded arm.
+    if punch and st_l and st_l["v"]:
         shx = hcx - 135 * S
         shy = hcy + 108 * S
         arm, (pcx, pcy) = punch_arm
-        ang = math.degrees(st_l["r"])
+        ang = r_deg
         # rotate about the shoulder pivot
         cs = max(arm.width, arm.height) * 2
         canvas = Image.new("RGBA", (cs, cs), (0, 0, 0, 0))

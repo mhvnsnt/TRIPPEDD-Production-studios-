@@ -223,3 +223,24 @@ characters are the REAL key-art extractions, positioned by measurement.
 ### Sensorium gate (final MP4, 2026-10-11)
 - taste 0.538 (thr 0.35) PASS · style_hold 0.991 mean / 0.935 min (thr 0.7) PASS
 - smell: 2 severe_pops PASS · sync: no flags PASS · **OVERALL PASS**
+
+## Body-gap fix 2026-10-11 (owner-verified defect: "part of his body is cropped off")
+
+**Root cause:** `mask_amos_arm()` removed Amos's folded beer arm from the body
+texture (for the punch-arm swap) on EVERY frame. On rest frames (rig r=10deg,
+f217-248 and f297-312) the SP punch arm hung at rest pointing down — not covering
+the masked torso region — leaving a visible bite/gap where the folded arm was.
+
+**Fix (blender/composite_smart.py):** punch-vs-rest detection from the rig
+(`abs(r_deg - 10) > 25` = punch). Punch frames: masked body + SP punch arm
+(unchanged). Rest frames: FULL key-art body (`amos_body_rest`, folded beer arm
+intact in front of torso), no punch arm. No doubling, no gap.
+
+**Frames verified (own eyes, final MP4):**
+- 9.5s (rest): full body, folded arm with BEER can in front of torso, tattoo —
+  gap GONE, matches key-art pose.
+- 10.5s (punch): SP arm extended to dino, can in fist — punch reads.
+- 11.5s: follow-through clean.
+
+**Sensorium gate (final MP4):** taste PASS, style_hold 0.991 mean / 0.935 min
+PASS, smell 3 severe pops PASS, sync no flags PASS → OVERALL PASS.

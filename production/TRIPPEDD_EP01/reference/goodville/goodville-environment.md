@@ -91,6 +91,10 @@ Key art: `assets/references/ep01/source/Goodville - Not South Park.png`. Left to
      — reveal: it was a guy in a **dinosaur costume** out in Broadway traffic, and
      **beer-can guy (#1) was doin the beating.** (Broadway = Nashville's honky-tonk
      strip; maps to Goodville's main drag.)
+   - Mouth (owner 2026-10-11): **South Park Canadian-style flap mouth** — the split
+     top/bottom flap that bounces when he talks. Fitting: Trailer Park Boys is
+     Canadian, Lahey is Canadian — "it's perfect." Preston Blair kit holds the
+     mouth variants (closed, open, Canadian flap).
 
 ### Family / off-art characters
 

@@ -1,0 +1,162 @@
+{
+ "character": "Amos Jr.",
+ "identity_checklist": [
+  "shaggy brown hair",
+  "stoned heavy-lidded eyes",
+  "mustache + chin goatee",
+  "white tank top",
+  "tattoo on right upper arm/shoulder",
+  "right fist gripping blue BEER can in front of torso"
+ ],
+ "notes": "Preston Blair kit part library. Flat South Park cutout style, transparent PNGs. All hand-built colors eyedropper-sampled from the key art (never guessed). Extractions via tools/smart-extract (rembg ladder + verify loop, never flood-fill). Anchors in key-art pixels (1536x1024).",
+ "parts": [
+  {
+   "anchor": {
+    "h": 307,
+    "w": 374,
+    "x": 25,
+    "y": 623
+   },
+   "file": "body_full.png",
+   "method": "donor",
+   "notes": "tools/smart-extract/proving_run/amos_full_body.png (parent-verified 2026-10-11). Full body: hair, goatee, tank, tattoo, fist+can."
+  },
+  {
+   "anchor": {
+    "h": 190,
+    "w": 208,
+    "x": 98,
+    "y": 623
+   },
+   "file": "head.png",
+   "method": "donor",
+   "notes": "tools/smart-extract/proving_run/amos_head.png (parent-verified)."
+  },
+  {
+   "anchor": {
+    "h": 110,
+    "w": 142,
+    "x": 120,
+    "y": 655
+   },
+   "file": "eyes_open.png",
+   "method": "extracted",
+   "notes": "rembg ladder (isnet-general-use won). v1 clipped lid tops; v2 widened bbox. 1 component, fringe 0.11. Eye-verified: heavy lids + pupils match key art."
+  },
+  {
+   "anchor": {
+    "h": 110,
+    "w": 142,
+    "x": 120,
+    "y": 655
+   },
+   "file": "eyes_closed.png",
+   "method": "hand-built",
+   "notes": "Drop-in for eyes_open frame. Closed lid arcs + lash ticks, SP style."
+  },
+  {
+   "anchor": {
+    "h": 30,
+    "w": 80,
+    "x": 130,
+    "y": 755
+   },
+   "file": "mouth_closed.png",
+   "method": "hand-built",
+   "notes": "Smug thin mouth + tooth strip, quadratic-bezier traced from key-art zoom (piece 240x90 = 3x)."
+  },
+  {
+   "anchor": {
+    "h": 30,
+    "w": 80,
+    "x": 130,
+    "y": 755
+   },
+   "file": "mouth_open.png",
+   "method": "hand-built",
+   "notes": "Dark oval + upper teeth strip inside + tongue hint (piece 240x90 = 3x)."
+  },
+  {
+   "anchor": {
+    "h": 150,
+    "w": 180,
+    "x": 10,
+    "y": 795
+   },
+   "file": "arm_folded_beer.png",
+   "method": "extracted",
+   "notes": "CRITICAL key-art pose: right arm bent, fist gripping BEER can in front of torso, shoulder tattoo. rembg ladder; v1 had dark backdrop smudge at top, v2 tightened bbox. 1 component, fringe 0.28. Eye-verified clean."
+  },
+  {
+   "anchor": {
+    "h": 40,
+    "w": 60,
+    "x": 40,
+    "y": 800
+   },
+   "file": "arm_punch.png",
+   "method": "hand-built",
+   "notes": "tapered SP limb per no-rectangle-limbs law; parent-verified"
+  },
+  {
+   "anchor": {
+    "h": 120,
+    "w": 70,
+    "x": 300,
+    "y": 810
+   },
+   "file": "arm_down.png",
+   "method": "hand-built",
+   "notes": "Left arm at side. Mostly occluded in key art by the kid character; built to match visible forearm (taper, arm-hair strokes) + body_full proportions."
+  },
+  {
+   "anchor": {
+    "h": 105,
+    "w": 125,
+    "x": 55,
+    "y": 825
+   },
+   "file": "hand_fist_can.png",
+   "method": "extracted",
+   "notes": "Cropped from accepted arm_folded_beer v2 extraction (cleaner than 3 standalone rembg rounds, which kept goatee blur smudges). Fist + wrist + can, 'EER' + red circle readable."
+  },
+  {
+   "anchor": {
+    "h": 0,
+    "w": 0,
+    "x": 0,
+    "y": 0
+   },
+   "file": "hand_open.png",
+   "method": "hand-built",
+   "notes": "Generic SP mitten hand in his skin tone (#F5B88C). No key-art anchor (open hand not in key art)."
+  },
+  {
+   "anchor": {
+    "h": 90,
+    "w": 80,
+    "x": 95,
+    "y": 835
+   },
+   "file": "prop_beer_can.png",
+   "method": "donor",
+   "notes": "tools/smart-extract/proving_run/amos_beer_can.png + cleanup: removed dark extraction smudge in top-left (3160 px, luminance<115) in-memory; proving_run original untouched. Blue #0D528B, red #A0212A, white label."
+  },
+  {
+   "file": "torso_mirrored_punch.png",
+   "method": "mirrored",
+   "mirrored_from": "right half (intact)",
+   "symmetry_verified": true,
+   "symmetry_notes": "plain white tank, no asymmetric details on source half; head not mirrored (hair asymmetric)",
+   "anchor": {
+    "x": 25,
+    "y": 623,
+    "w": 374,
+    "h": 307
+   },
+   "notes": "Parent-built via mirror-reconstruction (owner 2026-10-11). Eye-verified by documenter: torso whole, no missing chunks; mirror seam invisible at natural size (faint centerline detectable only at 4x zoom)."
+  }
+ ],
+ "source": "assets/references/ep01/source/Goodville - Not South Park.png",
+ "tier": "B"
+}

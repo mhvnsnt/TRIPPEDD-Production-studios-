@@ -109,6 +109,40 @@ def mask_oh_torso():
     return im
 
 
+def mirror_amos_torso():
+    """Preston Blair MIRROR-RECONSTRUCTION (owner 2026-10-11 — standing technique,
+    now in KIT-SPEC.md). The key-art left torso was destroyed: the folded beer arm
+    occluded it, and the old mask_amos_arm() took a rectangular bite out of the
+    chest/shoulder (straight cut edge, half a torso, waistband disconnected).
+    Fix: take the INTACT right half, mirror it across the vertical centerline
+    (x=205, the head center), rebuild a complete symmetric torso. Head untouched
+    (hair is asymmetric). The mirrored thin arm is removed with a tight mask;
+    the SP punch arm connects at the shoulder. Waistband meets the pants."""
+    im = Image.open(os.path.join(PROVE, "amos_full_body.png")).convert("RGBA")
+    w, h = im.size
+    cx = 205
+    body_top = 170  # below the head; head stays original
+    out = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    out.paste(im.crop((0, 0, w, body_top)), (0, 0))
+    right = im.crop((cx, body_top, w, h))  # intact half
+    flipped = right.transpose(Image.FLIP_LEFT_RIGHT)
+    out.paste(flipped, (cx - flipped.width, body_top), flipped)  # mirrored left
+    out.paste(right, (cx, body_top))  # original right
+    # Remove the mirrored thin arm (tight to the arm zone, not a big polygon).
+    # Mirrored arm lands at x ~24-84 (mirror of 330-390); tank starts at x ~89.
+    # Keep the shoulder (y < 210) — the SP punch arm's shoulder cap covers it.
+    mask = Image.new("L", (w, h), 255)
+    d = ImageDraw.Draw(mask)
+    d.polygon([(18, 210), (88, 210), (84, 335), (22, 335)], fill=0)
+    from PIL import ImageFilter
+    mask = mask.filter(ImageFilter.GaussianBlur(2))
+    a = out.split()[3]
+    na = Image.new("L", (w, h), 0)
+    na.paste(a, mask=mask)
+    out.putalpha(na)
+    return out
+
+
 def mask_amos_arm():
     """amos_full_body.png with the key-art viewer's-left arm masked out.
     The rig punches with AJ_arm_geo_L (screen-left = viewer's-left = the
@@ -140,33 +174,51 @@ def extract_can():
         PROVE, "amos_beer_can.png")).convert("RGBA")
 
 
-def build_punch_arm(length_px, width_px, can_img, arm_scale):
-    """SP-style punch arm: tan capsule + mitten fist gripping the real
-    key-art BEER can. The study's 'mitten hands' — simple, flat, no fingers.
-    Points DOWN at rest (matches rig). Amos punches WITH his beer — the can
-    is an identity anchor and it's funnier."""
-    arm = Image.new("RGBA", (width_px * 4, length_px + width_px * 3), (0, 0, 0, 0))
+def build_punch_arm(length_px, shoulder_hw_px, can_img):
+    """SP-style punch arm, PROPERLY SHAPED (fix 2026-10-11 — the old uniform
+    capsule read as a hard-edged tan rectangle with square corners: "big square
+    cropped out of Amos Jr."). Tapered shaft (wide at shoulder, narrow at
+    wrist), rounded ends, distinct mitten fist + thumb nub gripping the real
+    key-art BEER can. Points DOWN at rest (matches rig). Skin sampled from
+    the key art. No rectangular/square limbs — SP cutout grammar."""
+    wrist_hw_px = max(6, int(shoulder_hw_px * 0.64))
+    fist_r = int(shoulder_hw_px * 1.18)
+    W = shoulder_hw_px * 6
+    H = length_px + fist_r * 4
+    arm = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(arm)
-    cx = arm.width // 2
-    top = width_px  # shoulder pivot y on canvas
-    # capsule: rectangle + round ends
-    d.rectangle([cx - width_px // 2, top, cx + width_px // 2, top + length_px],
-                fill=SKIN + (255,))
-    d.ellipse([cx - width_px // 2, top - width_px // 2,
-               cx + width_px // 2, top + width_px // 2], fill=SKIN + (255,))
-    # mitten fist (circle slightly wider than arm)
-    fist_r = int(width_px * 0.75)
-    fy = top + length_px
+    cx = W // 2
+    top = shoulder_hw_px  # shoulder pivot y on canvas
+    # rounded shoulder cap
+    d.ellipse([cx - shoulder_hw_px, top - shoulder_hw_px,
+               cx + shoulder_hw_px, top + shoulder_hw_px],
+              fill=SKIN + (255,))
+    # tapered shaft
+    d.polygon([(cx - shoulder_hw_px, top),
+               (cx - wrist_hw_px, top + length_px),
+               (cx + wrist_hw_px, top + length_px),
+               (cx + shoulder_hw_px, top)],
+              fill=SKIN + (255,))
+    # rounded wrist cap
+    d.ellipse([cx - wrist_hw_px, top + length_px - wrist_hw_px,
+               cx + wrist_hw_px, top + length_px + wrist_hw_px],
+              fill=SKIN + (255,))
+    # mitten fist: distinct circle overlapping the wrist + thumb nub
+    fy = top + length_px + int(fist_r * 0.55)
     d.ellipse([cx - fist_r, fy - fist_r, cx + fist_r, fy + fist_r],
               fill=SKIN + (255,))
-    # key-art BEER can gripped in the fist (scaled to the arm)
+    thumb_r = max(4, int(fist_r * 0.45))
+    tx, ty = cx - fist_r + thumb_r // 2, fy - fist_r // 2
+    d.ellipse([tx - thumb_r, ty - thumb_r, tx + thumb_r, ty + thumb_r],
+              fill=SKIN + (255,))
+    # key-art BEER can gripped in the fist (scaled to the fist)
     cw, ch = can_img.size
-    can_w = int(width_px * 1.6)
-    can_h = int(ch * (can_w / cw))
+    can_w = int(fist_r * 1.5)
+    can_h = max(1, int(ch * (can_w / cw)))
     can_s = can_img.resize((can_w, can_h), Image.BICUBIC)
     # can sits in the fist, tilted slightly, overlapping the fist
     can_c = can_s.rotate(-15, resample=Image.BICUBIC, expand=True)
-    arm.paste(can_c, (int(cx - can_c.width / 2), int(fy - can_c.height * 0.7)),
+    arm.paste(can_c, (int(cx - can_c.width / 2), int(fy - can_c.height * 0.55)),
               can_c)
     return arm, (cx, top)
 
@@ -179,7 +231,13 @@ def load():
         "oh_upper": oh_upper,
         "oh_jaw": oh_jaw,
         "oh_torso": mask_oh_torso(),
-        "amos_body": mask_amos_arm(),
+        "amos_body": mirror_amos_torso(),
+        # REST BODY (Preston Blair kit fix, 2026-10-11): the FULL key-art
+        # body with the folded beer arm intact. The mirrored body above is
+        # for punch frames (symmetric reconstructed torso + SP punch arm).
+        # Rest frames use this; punch frames use the mirrored body + SP arm.
+        "amos_body_rest": Image.open(
+            os.path.join(PROVE, "amos_full_body.png")).convert("RGBA"),
         "beer_can": extract_can(),
     }
     return geo, anim, parts
@@ -298,9 +356,21 @@ def draw_amos(img, f, geo, fobjs, parts, punch_arm):
             items.append((z, pts2, col))
     for _, pts, col in items:
         dr.polygon(pts, fill=col)
-    # body texture: align key-art head-center to rig head center, same scale
+    # body texture: align key-art head-center to rig head center, same scale.
+    # PUNCH vs REST (Preston Blair kit fix, 2026-10-11): the rig's arm rests
+    # at r=10deg and punches at r=-72deg / follow-through r=38deg. On punch
+    # frames the MIRRORED body plays (mirror-reconstruction: complete symmetric
+    # torso, no cut edges, waistband meets pants) + SP punch arm (the folded
+    # arm is gone — nothing doubles). On rest frames the FULL key-art body
+    # plays — folded beer arm intact in front of the torso, no gap.
     hcx, hcy = rig_head_screen(fobjs, "AJ_head_geo", camx)
-    body = parts["amos_body"]
+    st_l = fobjs.get("AJ_arm_geo_L")
+    punch = False
+    r_deg = 10.0
+    if st_l and st_l["v"]:
+        r_deg = math.degrees(st_l["r"]) if isinstance(st_l["r"], float) else 10.0
+        punch = abs(r_deg - 10.0) > 25.0
+    body = parts["amos_body"] if punch else parts["amos_body_rest"]
     bw, bh = body.size
     br = body.resize((int(bw * S), int(bh * S)), Image.BICUBIC)
     img.paste(br, (int(hcx - AMOS_HEAD_CX * S), int(hcy - AMOS_HEAD_CY * S)), br)
@@ -309,12 +379,12 @@ def draw_amos(img, f, geo, fobjs, parts, punch_arm):
     # shoulder; the key-art anchor is the visual truth (no floating arm).
     # PIL rotate(+) moves 6 o'clock toward 4 o'clock (empirically verified);
     # the rig's r is CCW in y-up world. PIL_angle = r_deg matches the rig.
-    st_l = fobjs.get("AJ_arm_geo_L")
-    if st_l and st_l["v"]:
+    # Only drawn on punch frames — rest frames keep the key-art folded arm.
+    if punch and st_l and st_l["v"]:
         shx = hcx - 135 * S
         shy = hcy + 108 * S
         arm, (pcx, pcy) = punch_arm
-        ang = math.degrees(st_l["r"])
+        ang = r_deg
         # rotate about the shoulder pivot
         cs = max(arm.width, arm.height) * 2
         canvas = Image.new("RGBA", (cs, cs), (0, 0, 0, 0))
@@ -364,9 +434,10 @@ def render_frame(f, geo, fobjs, parts, punch_arm, bg_sign):
 def main(f0=1, f1=360):
     geo, anim, parts = load()
     S_amos = amos_scale()
-    # punch arm sized to Amos's build: key-art arms are thick; 0.5w x 1.0l units
-    punch_arm = build_punch_arm(int(1.0 * PXU * S_amos), int(0.5 * PXU * S_amos),
-                                parts["beer_can"], S_amos)
+    # punch arm: tapered SP limb (1.0u long, 0.5u at shoulder -> 0.32u wrist),
+    # NOT a uniform bar — no rectangular/square limbs (defect 2026-10-11).
+    punch_arm = build_punch_arm(int(1.0 * PXU * S_amos), int(0.25 * PXU * S_amos),
+                                parts["beer_can"])
     bg_sign = Image.open(os.path.join(BASE, "blender_bg_sign.png")).convert("RGB")
     outdir = os.path.join(BASE, "smart_frames")
     os.makedirs(outdir, exist_ok=True)

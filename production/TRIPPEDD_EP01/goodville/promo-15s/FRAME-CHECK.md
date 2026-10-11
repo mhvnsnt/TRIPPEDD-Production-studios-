@@ -223,3 +223,61 @@ characters are the REAL key-art extractions, positioned by measurement.
 ### Sensorium gate (final MP4, 2026-10-11)
 - taste 0.538 (thr 0.35) PASS · style_hold 0.991 mean / 0.935 min (thr 0.7) PASS
 - smell: 2 severe_pops PASS · sync: no flags PASS · **OVERALL PASS**
+
+## Body-gap fix 2026-10-11 (owner-verified defect: "part of his body is cropped off")
+
+**Root cause:** `mask_amos_arm()` removed Amos's folded beer arm from the body
+texture (for the punch-arm swap) on EVERY frame. On rest frames (rig r=10deg,
+f217-248 and f297-312) the SP punch arm hung at rest pointing down — not covering
+the masked torso region — leaving a visible bite/gap where the folded arm was.
+
+**Fix (blender/composite_smart.py):** punch-vs-rest detection from the rig
+(`abs(r_deg - 10) > 25` = punch). Punch frames: masked body + SP punch arm
+(unchanged). Rest frames: FULL key-art body (`amos_body_rest`, folded beer arm
+intact in front of torso), no punch arm. No doubling, no gap.
+
+**Frames verified (own eyes, final MP4):**
+- 9.5s (rest): full body, folded arm with BEER can in front of torso, tattoo —
+  gap GONE, matches key-art pose.
+- 10.5s (punch): SP arm extended to dino, can in fist — punch reads.
+- 11.5s: follow-through clean.
+
+**Sensorium gate (final MP4):** taste PASS, style_hold 0.991 mean / 0.935 min
+PASS, smell 3 severe pops PASS, sync no flags PASS → OVERALL PASS.
+
+## Mirror-reconstruction fix 2026-10-11 (owner's precise fix, from his screenshot)
+
+**Defect:** Amos's torso was visibly HALF on punch frames — white tank ended
+mid-body with a hard straight vertical cut edge; waistband disconnected from
+pants (clean horizontal break). The old mask_amos_arm() took a rectangular
+bite (x 8-182, y 190-332) that removed chest/shoulder, not just the folded arm.
+
+**Owner's fix:** "mirror the other side of his body perfectly from the middle."
+Implemented as mirror_amos_torso() in blender/composite_smart.py:
+- Intact right half mirrored across centerline x=205 → complete symmetric torso.
+- Head untouched (hair asymmetric — symmetry gate).
+- Mirrored thin arm removed with a tight mask (x 18-88, y 210-335); SP punch
+  arm connects at the shoulder.
+- Symmetry check: plain white tank, no asymmetric details on source half —
+  symmetry_verified: true. Seam invisible on render.
+
+**Also fixed in this pass:** punch arm reshaped — was a uniform tan bar with
+square corners ("big square cropped out of Amos Jr."). Now tapered (0.5u
+shoulder → 0.32u wrist), rounded ends, distinct mitten fist + thumb nub
+gripping the BEER can. No rectangular/square limbs — SP cutout grammar.
+
+**Frames verified (own eyes, ZOOMED torso crops — collar to waistband to pants):**
+- f0252 (punch): torso WHOLE, tank spans full width, no cut edge; waistband
+  meets blue jeans with NO gap; seam invisible; tapered arm connects at shoulder.
+- f0264, f0276, f0284: same — body integrity holds through the full swing.
+- Dense sampling across 9-13s (every 4th frame): arm reads as a limb throughout.
+
+**Sensorium gate (final MP4):** taste 0.539 PASS, style_hold 0.991/0.935 PASS,
+smell 3 pops PASS, sync clean PASS → OVERALL PASS.
+
+**Permanent checklist additions:**
+- BODY INTEGRITY: body whole in every frame; zoom torso crops, check for
+  missing chunks/background showing through — not just added artifacts.
+- No rectangular/square limbs: all arms/legs taper with rounded ends.
+- Mirror-reconstruction: symmetry-check → mirror → verify seam invisible.
+  Manifest fields: mirrored_from + symmetry_verified.

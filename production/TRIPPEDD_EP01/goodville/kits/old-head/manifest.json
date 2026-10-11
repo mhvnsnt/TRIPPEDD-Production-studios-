@@ -1,0 +1,102 @@
+{
+ "character": "The old head",
+ "identity_checklist": [
+  "bald with brown side fringe",
+  "aviator sunglasses",
+  "cigarette in mouth",
+  "black jacket with collar/zipper"
+ ],
+ "notes": "Preston Blair kit part library. Flat South Park cutout style, transparent PNGs. All hand-built colors eyedropper-sampled from the key art (never guessed). Anchors in key-art pixels (1536x1024).",
+ "parts": [
+  {
+   "anchor": {
+    "h": 249,
+    "w": 241,
+    "x": 1275,
+    "y": 681
+   },
+   "file": "body_full.png",
+   "method": "donor",
+   "notes": "tools/smart-extract/proving_run/oldhead_body.png (parent-verified 2026-10-11). Black jacket, collar/zipper."
+  },
+  {
+   "anchor": {
+    "h": 180,
+    "w": 145,
+    "x": 1332,
+    "y": 681
+   },
+   "file": "head.png",
+   "method": "donor",
+   "notes": "tools/smart-extract/proving_run/oldhead_head.png (parent-verified). Bald, fringe, aviators, cigarette."
+  },
+  {
+   "anchor": {
+    "h": 51,
+    "w": 125,
+    "x": 1345,
+    "y": 725
+   },
+   "file": "eyes_aviators.png",
+   "method": "hand-built",
+   "notes": "Extraction attempted 2x via smart-extract: tight crop returned empty, wide crop returned partial lenses with no frame (rembg cannot isolate dark glasses on skin). Hand-built from measured key-art geometry: teardrop lenses #5F432E, gold frame #D6923D, stern angled brows. Piece frame 185x115 = key-art (1315,685)-(1500,800)."
+  },
+  {
+   "anchor": {
+    "h": 22,
+    "w": 56,
+    "x": 1382,
+    "y": 810
+   },
+   "file": "mouth_closed.png",
+   "method": "hand-built",
+   "notes": "Stern mouth line + cigarette (filter #DD9A56, band #E2AF78, tip #363030) traced from key-art coordinates. Piece 200x80 at 3.57x."
+  },
+  {
+   "anchor": {
+    "h": 22,
+    "w": 56,
+    "x": 1382,
+    "y": 810
+   },
+   "file": "mouth_open.png",
+   "method": "hand-built",
+   "notes": "Dark oval + upper teeth strip (no cigarette). Piece 200x80 at 3.57x."
+  },
+  {
+   "anchor": {
+    "h": 35,
+    "w": 80,
+    "x": 1370,
+    "y": 815
+   },
+   "file": "mouth_canadian_flap.png",
+   "method": "hand-built",
+   "notes": "OWNER-APPROVED 2026-10-11 ('Lahey is Canadian, Trailer Park Boys is Canadian, it's perfect'). South Park Canadian-style split flap: bouncing lower-face segment in his skin tone with split line, stern mouth + cigarette riding the flap."
+  },
+  {
+   "anchor": {
+    "h": 0,
+    "w": 0,
+    "x": 0,
+    "y": 0
+   },
+   "file": "hand_left.png",
+   "method": "hand-built",
+   "notes": "Generic SP mitten hand in his skin tone (#F0B16C). Hands not visible in key art (arms at sides, cropped at frame edge)."
+  },
+  {
+   "anchor": {
+    "h": 0,
+    "w": 0,
+    "x": 0,
+    "y": 0
+   },
+   "file": "hand_right.png",
+   "method": "hand-built",
+   "notes": "Mirror of hand_left. Same as above."
+  }
+ ],
+ "source": "assets/references/ep01/source/Goodville - Not South Park.png",
+ "tier": "B"
+}

@@ -213,6 +213,13 @@ the reference lives.
   back, not filing. When he hands the recipe, cook.)
 - The imposter trio: names TBD for later.
 
+**Character art style rule (owner 2026-10-11 — the painterly drift):** character art
+is SOUTH PARK CHARACTER ART STYLE — flat South Park construction and rendering,
+like the actual show. The painterly trio version was TRASHED: painterly rendering
+sanded the likenesses off into random characters and drifted across three
+different art styles. The key art stays the world/promo style target, but
+CHARACTERS hold the South Park character-art lock. No drift.
+
 **The beef — mobile home guys vs. white trash trailer men (owner 2026-10-11):**
 The real trio — "the mobile home guys" — show up AFTER the old head, like:
 "what the fuck? We've been hearing about this shit." The old head's been saying

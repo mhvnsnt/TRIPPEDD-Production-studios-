@@ -52,6 +52,30 @@ confrontation → tailgate → random third-party honks — is a ready-made sket
   at out-of-state plates, locals-only lore. The town's pride and its driving are the
   same joke.
 
+## Cast (from the key art — owner identifying)
+
+Key art: `assets/references/ep01/source/Goodville - Not South Park.png`. Left to right:
+
+1. **Beer-can guy** — heavyset, shaggy brown hair, mustache + chin goatee, arm tattoo,
+   "BEER" can. _Unidentified._
+2. **The kid** — blue/red bobble hat, cigarette in hand, chin patch. _Unidentified._
+3. **Purple headband girl** — hair in puffs, gold hoops, purple top. _Unidentified._
+4. **Crown hoodie (center)** — black beanie, TRIPPEDD crown hoodie, goatee. _Inferred as
+   the owner (Mars) from the branding; awaiting his confirm._
+5. **Red cap guy** — backwards red cap, green bottle. _Unidentified._
+6. **Glasses + bong guy** — black rectangular glasses, green shirt, bong. _Unidentified._
+7. **The old head** — bald, sunglasses, cigarette. Based on **Jim Lahey** (Trailer Park
+   Boys) — owner 2026-10-10: "I loved him in that show."
+   - First line (owner 2026-10-10): **"I've seen some things..."** — delivered like a
+     crotchety old man, in the Jim Lahey voice and style, done the way South Park does
+     parody voices (house style, not impersonation).
+
+## Voice direction (owner 2026-10-10)
+
+Classic South Park pacing, delivery, and joke style — mixed with the owner's own pop
+culture references. South Park's parody-voice grammar (not direct impersonations) is the
+model for every character voice.
+
 ## Production directive (owner 2026-10-10)
 
 "Steal it all, especially how they make their show and the whole pipeline." The Goodville

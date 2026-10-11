@@ -45,3 +45,20 @@ Tier B (hand-built / extracted production kit) vs Tier A (key art "main ad").
 - arm_down: his left arm is half-occluded in the key art (kid character in
   front); proportions estimated from body_full, not directly measured.
 - hand_open is generic (no open hand in key art).
+
+## Full sheet build (2026-10-11, feat/sheet-amosjr)
+33 new pieces: 5 brows, 6 eyes, 6 mouths, 3 head angles, 4 bodies, 3 hands,
+legs + sitting + 4 walk frames, preview_sheet.png. All colors eyedropper-sampled
+from key-art donors; face furniture derived from accepted eyes_open/mouth_closed.
+- gen.py img2img ATTEMPTED for head_34L (AI Horde backend): output was glitch/
+corrupted garbage, likeness destroyed. FAILED route — documented per DONOR-FIRST
+law. Fell back to pixel-transform derivation (smooth sinusoidal displacement),
+which keeps HIS pixels = max likeness.
+- 3/4 heads/bodies: smooth-displacement (max at face center, zero at edges, no
+seams) + horizontal squeeze. Parent eye-verified vs key art.
+- Profile: no profile exists in any source; derived from right-half of head.png
+(HIS pixels) + small SP nose bump. Labeled honestly, not a redraw.
+- Legs/walk/sitting: INVENTED (key art crops at waist) — flagged in manifest,
+pending owner confirmation.
+- eyes_angry/eyes_worried v1 had boxy lid artifacts → v2 rebuilt with curved lids.
+- body_back/hand_point/legs_stand v1 were crude → v2 rebuilt.

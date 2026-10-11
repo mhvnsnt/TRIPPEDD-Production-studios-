@@ -174,12 +174,46 @@ canvas#tlCanvas { position: absolute; top: 0; left: 0; touch-action: none; }
 .mix-strip input[type=range] { width: 100%; height: 44px; accent-color: var(--accent); }
 .mix-val { font-size: 12px; color: var(--dim); text-align: right; }
 /* ===== PROJECTS / ASSETS / 3D TABS (universal hub) ===== */
-.proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 4px; }
-.proj-card { background: var(--panel2); border: 1px solid #2a2a3a; border-radius: 10px; padding: 12px 10px; cursor: pointer; }
-.proj-card.active { border-color: var(--accent); }
-.proj-card b { display: block; font-size: 14px; margin-bottom: 4px; }
-.proj-card span { font-size: 11px; color: var(--dim); }
-.proj-card .ptype { display: inline-block; font-size: 10px; background: #2a2a3a; border-radius: 4px; padding: 2px 6px; margin-top: 6px; }
+/* ===== PROJECT TREE (folder hierarchy) ===== */
+.pfolder { background: var(--panel2); border: 1px solid #2a2a3a; border-radius: 10px; margin: 8px 0; overflow: hidden; }
+.pfolder-head { display: flex; align-items: center; gap: 10px; padding: 14px 12px; min-height: 58px; cursor: pointer; }
+.pfolder-head .chev { color: var(--dim); font-size: 13px; width: 16px; text-align: center; flex-shrink: 0; transition: transform .15s; }
+.pfolder.open > .pfolder-head .chev { transform: rotate(90deg); }
+.pfolder-head .pfi { font-size: 20px; flex-shrink: 0; }
+.pfolder-head b { font-size: 15px; flex: 1; }
+.pkind { font-size: 10px; color: var(--dim); background: #2a2a3a; border-radius: 4px; padding: 2px 8px; flex-shrink: 0; }
+.pcount { font-size: 11px; color: var(--dim); flex-shrink: 0; }
+.pfolder-children { display: none; padding: 0 10px 10px 26px; }
+.pfolder.open > .pfolder-children { display: block; }
+.pleaf { display: flex; align-items: center; gap: 10px; padding: 12px; min-height: 58px; background: var(--panel); border: 1px solid #2a2a3a; border-radius: 10px; margin: 8px 0; cursor: pointer; }
+.pleaf.active { border-color: var(--accent); }
+.pleaf .pli { font-size: 20px; flex-shrink: 0; }
+.pleaf .ptitle { flex: 1; min-width: 0; }
+.pleaf .ptitle b { display: block; font-size: 14px; }
+.pleaf .ptitle span { display: block; font-size: 10px; color: var(--dim); word-break: break-all; margin-top: 2px; }
+.pbadge { font-size: 11px; white-space: nowrap; background: #2a2a3a; border-radius: 20px; padding: 5px 10px; flex-shrink: 0; }
+.plinks { display: flex; gap: 4px; flex-shrink: 0; }
+.plinks a { font-size: 12px; color: var(--accent); padding: 12px 8px; }
+.pempty { display: flex; align-items: center; gap: 8px; padding: 8px 4px; }
+.pempty-note { font-size: 13px; color: var(--dim); flex: 1; }
+.padd { width: 48px; height: 48px; border-radius: 12px; background: #2a2a3a; color: var(--text); font-size: 24px; border: 1px solid #3a3a4a; cursor: pointer; flex-shrink: 0; }
+/* ===== VIEW-ONLY MODE ===== */
+#viewBanner { display: none; background: #23232e; border: 1px solid var(--accent); border-radius: 10px; padding: 10px 12px; margin: 8px 4px; font-size: 13px; }
+/* ===== EFFECTS TAB ===== */
+.fx-intro { padding: 4px; font-size: 13px; color: var(--dim); }
+.fx-rule { background: #26220f; border: 1px solid #8a6d1f; border-radius: 10px; padding: 12px; margin: 10px 4px; font-size: 13px; }
+.fx-note { background: var(--panel2); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 12px; margin: 10px 4px; font-size: 13px; }
+.fx-credit { padding: 8px 4px; font-size: 12px; color: var(--dim); }
+ol.fx-steps { margin: 8px 0 0; padding-left: 20px; font-size: 12px; color: var(--dim); }
+ol.fx-steps li { margin: 5px 0; }
+.fx-ask { display: inline-block; font-size: 11px; color: var(--dim); border: 1px dashed #4a4a5a; border-radius: 8px; padding: 5px 9px; margin-top: 8px; }
+.fx-flow { display: flex; align-items: center; gap: 4px; padding: 10px 4px; overflow-x: auto; }
+.fx-step { flex: 1; min-width: 62px; background: var(--panel2); border: 1px solid #2a2a3a; border-radius: 10px; padding: 10px 6px; font-size: 11px; color: var(--text); cursor: pointer; text-align: center; font-family: inherit; }
+.fx-step .e { font-size: 20px; display: block; margin-bottom: 4px; }
+.fx-arrow { color: var(--dim); flex-shrink: 0; font-size: 14px; }
+.fx-chip { display: inline-block; font-size: 12px; background: #2a2a3a; border-radius: 16px; padding: 10px 14px; margin: 6px 6px 0 0; color: var(--dim); }
+.fx-flash { animation: fxflash 1.2s; }
+@keyframes fxflash { 0%, 100% { box-shadow: none; } 30% { box-shadow: 0 0 0 2px var(--accent); } }
 .asset-search { display: flex; gap: 8px; padding: 8px 4px; }
 .asset-search input { flex: 1; background: var(--panel2); color: var(--text); border: 1px solid #2a2a3a; border-radius: 8px; padding: 10px; font-size: 14px; }
 .asset-search select { background: var(--panel2); color: var(--text); border: 1px solid #2a2a3a; border-radius: 8px; padding: 10px; }
@@ -207,6 +241,7 @@ canvas#tlCanvas { position: absolute; top: 0; left: 0; touch-action: none; }
 
   <!-- ============ TAB: EDIT (CapCut pattern) ============ -->
   <div class="tab-page active" id="tab-edit">
+    <div id="viewBanner">👁️ View-only — you can watch and scrub the timeline, but editing is disabled.</div>
     <div id="previewSection">
       <div id="videoWrap">
         <video id="video" playsinline preload="metadata"></video>
@@ -312,12 +347,133 @@ canvas#tlCanvas { position: absolute; top: 0; left: 0; touch-action: none; }
     </div>
     <div id="mixStrips"></div>
   </div>
-  <!-- ============ TAB: PROJECTS (universal hub) ============ -->
+  <!-- ============ TAB: RECORD (in-app camera) ============ -->
+  <div class="tab-page" id="tab-record">
+    <div style="padding:8px 4px;font-size:13px;color:var(--dim)">
+      Record video, snap photos, or capture voice — drops onto the timeline at the playhead.
+    </div>
+    <div id="recPreviewWrap" style="position:relative;background:#000;border-radius:8px;overflow:hidden;aspect-ratio:4/3;max-height:40vh;">
+      <video id="recPreview" playsinline muted style="width:100%;height:100%;object-fit:cover;"></video>
+      <div id="recOff" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#888;font-size:14px;">Camera off — tap 🎥 to start</div>
+      <div id="recIndicator" style="display:none;position:absolute;top:8px;left:8px;background:rgba(0,0,0,0.6);color:#ff3b5c;font-size:13px;padding:6px 12px;border-radius:16px;"><span class="rec-dot"></span> <span id="recTimer">0:00</span></div>
+    </div>
+    <div style="display:flex;gap:8px;padding:12px 4px;flex-wrap:wrap;">
+      <button class="btn" id="recCamBtn">🎥 Camera</button>
+      <button class="btn primary" id="recVidBtn">⏺ Record video</button>
+      <button class="btn" id="recPhotoBtn">📸 Photo</button>
+      <button class="btn" id="recFlipBtn">🔄 Flip</button>
+    </div>
+    <div style="padding:4px;font-size:12px;color:var(--dim)" id="recStatus">Recordings land on the timeline at the playhead. Send the project JSON to Ashes to pull the actual files.</div>
+    <div id="recList" style="padding:4px;"></div>
+  </div>
+  <!-- ============ TAB: EFFECTS ============ -->
+  <div class="tab-page" id="tab-effects">
+    <div style="padding:8px 4px;font-size:13px;color:var(--dim)">
+      Viral effects, free tools, and step-by-step recipes. Tap a card to open the tool.
+    </div>
+
+    <div class="tool-cat"><h3>🔄 Character Swap</h3>
+      <div class="fx-note">Character photo + motion video → character does the moves. Start with Viggle free tier.</div>
+      <div class="tool-grid">
+        <a class="tool-card" href="https://viggle.ai" target="_blank" rel="noopener"><b>Viggle AI ⭐<span class="free-badge">FREE</span></b><span>Upload a character photo + dance/movement video → character performs the moves. Full-body, up to 7 characters per video. Free: 5 videos/day, no card.</span></a>
+        <div class="tool-card"><b>MiniMax H3 + ComfyUI</b><span>Free forever full-body swap if you have a GPU (~12GB VRAM). No credits, no watermarks.</span><span class="fx-ask">🤖 Community workflow — ask agent to set up</span></div>
+        <a class="tool-card" href="https://magichour.ai" target="_blank" rel="noopener"><b>Magic Hour<span class="free-badge">FREE</span></b><span>Face-only swap. 400 free credits (~17s video), no signup to try.</span></a>
+        <a class="tool-card" href="https://vidnoz.com" target="_blank" rel="noopener"><b>Vidnoz<span class="free-badge">FREE</span></b><span>Face-only, multiple faces per video, daily free use.</span></a>
+      </div>
+    </div>
+
+    <div class="tool-cat"><h3>🎭 Clone &amp; Composite</h3>
+      <div class="fx-intro">Genre: "VFX skits" / "clone videos" on TikTok. All compositing — overlay tracks + cutout + keyframes.</div>
+      <div class="tool-grid">
+        <div class="tool-card"><b>Mini-me on table</b><span>2 takes → overlay track → Cutout &gt; Auto removal → scale to 15-25%. All in CapCut, free.</span></div>
+        <div class="tool-card"><b>Crush + glitch</b><span>Squash keyframes (Scale Y to 10-15% over 3-5 frames) + Body Glitch effect + glitch SFX.</span></div>
+        <div class="tool-card"><b>Green screen</b><span>Overlay → Cutout &gt; Chroma Key → pick the green → Intensity/Shadow.</span></div>
+        <div class="tool-card"><b>Self as background (PiP)</b><span>Overlay track, shrink and reposition. Optional cutout for floating figure.</span></div>
+      </div>
+      <div class="fx-rule">🔒 Tripod + locked exposure/focus for all takes. Moving camera kills every composite.</div>
+      <div class="tool-grid">
+        <a class="tool-card" href="https://capcut.com" target="_blank" rel="noopener"><b>CapCut<span class="free-badge">FREE</span></b><span>Free editor for every recipe above. capcut.com</span></a>
+      </div>
+    </div>
+
+    <div class="tool-cat"><h3>🌀 Face &amp; Body Warp</h3>
+      <div class="fx-intro">Stretchy fingers, cheek-grab stretch, hand-gesture screen warp. Tech name: elastic mesh warp (vertex displacement on tracked mesh).</div>
+      <div class="tool-grid">
+        <a class="tool-card" href="https://effecthouse.tiktok.com" target="_blank" rel="noopener"><b>TikTok Effect House ⭐<span class="free-badge">FREE</span></b><span>Free (Win/Mac). Built-in "3D Face Warp" with 66 distortion parameters — the official cheek-stretch tool. Publishes straight to TikTok.</span></a>
+        <a class="tool-card" href="https://google.github.io/mediapipe" target="_blank" rel="noopener"><b>MediaPipe<span class="free-badge">FREE</span></b><span>Google's free face/hand/body tracking. Runs in browser, own the tool, no review gate.</span><span class="fx-ask">🤖 Ask agent for the warp demo</span></a>
+        <a class="tool-card" href="https://ar.snap.com/lens-studio" target="_blank" rel="noopener"><b>Snap Lens Studio<span class="free-badge">FREE</span></b><span>Free (Mac/Win). Powerful but locked to Snapchat.</span></a>
+      </div>
+    </div>
+
+    <div class="tool-cat"><h3>🧬 Clone / Mini-Me (Ctrl+Collin Style)</h3>
+      <div class="fx-intro">Giant you in the background, tiny you on the table. The giant hand grabs at the tiny you. All compositing — overlay + cutout + keyframes. Perfect for God Molecule's surreal vibe.</div>
+      <div class="tool-grid">
+        <div class="tool-card"><b>🎥 Clone / Mini-Me — step by step (CapCut, free)</b>
+          <ol class="fx-steps">
+            <li>Tripod, lock exposure/focus — nothing moves between takes</li>
+            <li>Take 1 (giant): film yourself large, perform reaching/grabbing toward where mini will be</li>
+            <li>Take 2 (mini): film separately on plain background, perform mini reactions</li>
+            <li>CapCut: Take 1 on main track → Overlay → Add Take 2</li>
+            <li>Overlay → Cutout → Auto removal (AI, no green screen needed)</li>
+            <li>Scale to ~10-15%, position on table. Line up eyelines.</li>
+            <li>Sync the grab: trim so giant's hand lands when mini flinches. Add whoosh SFX.</li>
+          </ol>
+        </div>
+        <div class="tool-card"><b>💥 Crush Glitch — step by step</b>
+          <ol class="fx-steps">
+            <li>Split mini overlay at crush frame</li>
+            <li>Keyframe Scale at 100% on crush frame</li>
+            <li>3-5 frames later: Scale Y → 10-15% (keep X near 100% = squash flat)</li>
+            <li>Effects → "Body Glitch" on the impact section</li>
+            <li>Audio → glitch/crush SFX on impact frame</li>
+          </ol>
+        </div>
+        <div class="tool-card"><b>🐸 Meme Character Composite (Dat Boi style)</b><span>Drop any meme character into real footage: overlay track → Auto removal → scale/position. Same mechanic as mini-me.</span></div>
+        <div class="tool-card"><b>😵 Slump Gag</b><span>Character passes out: rotation keyframes (tilt to ~90°) + position drop + thud SFX. Comedy is in the timing — hold, then sudden collapse.</span></div>
+        <div class="tool-card"><b>🔍 Zoom Punch</b><span>Quick scale keyframes (100% → 120% over 2-3 frames) on impact beats.</span></div>
+      </div>
+      <div class="fx-rule">🔒 Tripod + locked exposure/focus. Moving camera kills every composite.</div>
+      <div class="fx-credit">Style ref: @ctrlcollin on TikTok — "Ctrl+C" = copy, his whole thing is cloning himself.</div>
+    </div>
+
+    <div class="tool-cat"><h3>🎬 Record → Cutout → Overlay</h3>
+      <div class="fx-intro">Record yourself → AI removes the background (no green screen) → overlay on timeline → add glitch. The full Ctrl+Collin mini-me pipeline.</div>
+      <div class="fx-flow">
+        <button class="fx-step" onclick="fxGoto('fx-s1')"><span class="e">📹</span>Record</button>
+        <span class="fx-arrow">→</span>
+        <button class="fx-step" onclick="fxGoto('fx-s2')"><span class="e">✂️</span>Cutout</button>
+        <span class="fx-arrow">→</span>
+        <button class="fx-step" onclick="fxGoto('fx-s3')"><span class="e">🖼️</span>Overlay</button>
+        <span class="fx-arrow">→</span>
+        <button class="fx-step" onclick="fxGoto('fx-s4')"><span class="e">💥</span>Glitch</button>
+        <span class="fx-arrow">→</span>
+        <button class="fx-step" onclick="fxGoto('fx-s5')"><span class="e">✅</span>Done</button>
+      </div>
+      <div class="tool-grid">
+        <div class="tool-card" id="fx-s1"><b>📹 Step 1 — Record</b><span>Use the <b>📹 Rec tab</b> (in-app camera: video + photo) or your phone camera. Two takes for mini-me: Take 1 = you as the giant, reaching. Take 2 = you as the mini, on any background. Recordings drop onto the timeline at the playhead.</span></div>
+        <div class="tool-card" id="fx-s2"><b>✂️ Step 2 — Remove background (pick one)</b>
+          <ol class="fx-steps">
+            <li><b>CapCut (phone, fastest):</b> Overlay → Cutout → Auto removal. AI, no green screen needed. Free.</li>
+            <li><b>Our pipeline (best quality):</b> Send the clip to your agent → transparent WebM back. Script: tools/remove_bg_video.py</li>
+            <li><b>In-browser (real-time):</b> MediaPipe selfie segmentation — coming to the Record tab.</li>
+          </ol>
+        </div>
+        <div class="tool-card" id="fx-s3"><b>🖼️ Step 3 — Overlay on timeline</b><span>Drop the cutout on an overlay track. Scale to ~10-15%, position on the table. Line up eyelines. Sync the grab moment.</span></div>
+        <div class="tool-card" id="fx-s4"><b>💥 Step 4 — Add glitch</b><span>Long-press any timeline clip → tag <b>🎨 RGB split</b> or <b>💥 Glitch</b> — they're saved in the project export and applied at render. Or ask agent: tools/glitch_fx.py --rgb 8 --glitch</span><br>
+          <span class="fx-chip">RGB Split · long-press clip</span>
+          <span class="fx-chip">Glitch · long-press clip</span>
+        </div>
+      </div>
+      <div class="fx-note" id="fx-s5">Record + FX tagging work in-app now. Background removal: CapCut auto-cutout (phone) or send the clip to your agent → transparent WebM back (tools/remove_bg_video.py). In-app real-time cutout is the next build.</div>
+    </div>
+  </div>
+
+  <!-- ============ TAB: PROJECTS (folder tree) ============ -->
   <div class="tab-page" id="tab-projects">
     <div style="padding:8px 4px;font-size:13px;color:var(--dim)">
-      All shows, games, and projects. Tap to switch — timeline and assets follow.
+      All shows, games, and projects. Tap a folder to expand, tap an item to open it in the editor.
     </div>
-    <div class="proj-grid" id="projGrid"></div>
+    <div id="projTree"></div>
   </div>
   <!-- ============ TAB: ASSETS (universal hub) ============ -->
   <div class="tab-page" id="tab-assets">
@@ -368,6 +524,8 @@ canvas#tlCanvas { position: absolute; top: 0; left: 0; touch-action: none; }
   <button data-tab="viewer3d"><span class="ico">🧊</span>3D</button>
   <button data-tab="tools"><span class="ico">🧰</span>Tools</button>
   <button data-tab="mix"><span class="ico">🎚️</span>Mix</button>
+  <button data-tab="record"><span class="ico">📹</span>Rec</button>
+  <button data-tab="effects"><span class="ico">✨</span>FX</button>
 </nav>
 
 <div id="modal"><div id="modalBox">
@@ -387,8 +545,15 @@ canvas#tlCanvas { position: absolute; top: 0; left: 0; touch-action: none; }
 <script>
 "use strict";
 /* ============ PROJECT DATA (EP02 v8b) ============ */
-const PROJECT = {"name":"EP02 v8b","duration":344.81,"clips":[{"id":"n1","track":"dialogue","at":52.0,"duration":1.76,"volume":1.0,"label":"N1 Narrator","character":"narrator","text":"They got the call. All nine.","peaks":[0.545,0.551,0.674,0.593,0.475,0.238,0.53,0.717,0.525,0.341,0.532,0.15,0.14,0.255,0.719,0.596,0.464,0.518,0.724,0.472,0.46,0.42,0.509,0.229],"file":"voice-delivery/voice-narrator-n1.mp3","original_at":52.0},{"id":"l1","track":"dialogue","at":56.0,"duration":6.56,"volume":1.0,"label":"L1 Static","character":"static","text":"Ayo! You see that fire?","peaks":[0.125,0.102,0.065,0.166,0.185,0.171,0.08,0.243,0.271,0.06,0.109,0.105,0.125,0.071,0.197,0.04,0.103,0.148,0.097,0.108,0.104,0.094,0.101,0.071],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l1.mp3","original_at":56.0},{"id":"l2","track":"dialogue","at":66.0,"duration":8.08,"volume":1.0,"label":"L2 Static","character":"static","text":"Can we get some order?","peaks":[0.01,0.081,0.144,0.144,0.107,0.004,0.161,0.136,0.005,0.005,0.073,0.087,0.062,0.053,0.026,0.065,0.006,0.005,0.113,0.132,0.101,0.096,0.117,0.031],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l2.mp3","original_at":66.0},{"id":"whisper","track":"dialogue","at":75.0,"duration":6.0,"volume":0.4,"label":"Ritual whisper","character":"ashes","text":"(unintelligible whisper)","peaks":[0.012,0.032,0.022,0.019,0.013,0.023,0.02,0.025,0.02,0.025,0.02,0.017,0.008,0.013,0.016,0.01,0.007,0.001,0.0,0.0,0.0,0.0,0.0,0.0],"file":"voice-delivery/voice-ashes-ritual-whisper.mp3","original_at":75.0},{"id":"l3","track":"dialogue","at":82.0,"duration":7.56,"volume":1.0,"label":"L3 Static","character":"static","text":"Why's everybody lookin' at me?","peaks":[0.006,0.005,0.083,0.094,0.084,0.08,0.081,0.029,0.117,0.121,0.167,0.166,0.082,0.098,0.158,0.034,0.172,0.112,0.176,0.121,0.171,0.106,0.262,0.012],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l3.mp3","original_at":82.0},{"id":"h1","track":"dialogue","at":84.0,"duration":2.64,"volume":1.0,"label":"H1 Onyx","character":"onyx","text":"We are adjourning nothing.","peaks":[0.012,0.057,0.214,0.154,0.101,0.101,0.122,0.088,0.066,0.042,0.112,0.138,0.048,0.04,0.02,0.038,0.045,0.137,0.064,0.023,0.107,0.106,0.048,0.012],"file":"voice-delivery/voice-onyx-h1.mp3","original_at":84.0},{"id":"l6","track":"dialogue","at":96.0,"duration":9.04,"volume":1.0,"label":"L6 Static","character":"static","text":"He said we move tonight!","peaks":[0.005,0.004,0.005,0.004,0.119,0.165,0.29,0.304,0.006,0.038,0.235,0.304,0.043,0.134,0.383,0.102,0.007,0.16,0.119,0.099,0.008,0.114,0.11,0.008],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l6.mp3","original_at":96.0},{"id":"l7-ashes","track":"dialogue","at":113.0,"duration":7.56,"volume":1.0,"label":"L7 Ashes","character":"ashes","text":"War fund! Everybody throw in!","peaks":[0.506,0.942,0.758,0.488,0.356,0.389,0.282,0.17,0.453,0.406,0.435,0.351,0.326,0.208,0.358,0.316,0.324,0.315,0.321,0.33,0.508,0.277,0.313,0.3],"file":"voice-delivery/voice-ashes-l7.mp3","original_at":113.0},{"id":"c4","track":"dialogue","at":121.0,"duration":12.88,"volume":1.0,"label":"C4 Cipher","character":"cipher","text":"Paper? Who needs paper?","peaks":[0.996,0.979,0.862,1.0,0.341,0.983,1.0,1.0,0.723,1.0,0.099,1.0,1.0,1.0,1.0,1.0,1.0,0.552,1.0,0.474,1.0,1.0,0.944,1.0],"file":"voice-delivery/voice-cipher-c4-money.mp3","original_at":121.0},{"id":"l10","track":"dialogue","at":151.0,"duration":10.36,"volume":1.0,"label":"L10 Static","character":"static","text":"Hollow's out here recruitin'!","peaks":[0.183,0.175,0.111,0.133,0.149,0.124,0.105,0.029,0.119,0.204,0.206,0.155,0.003,0.16,0.001,0.0,0.0,0.0,0.027,0.146,0.257,0.155,0.262,0.078],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l10.mp3","original_at":151.0},{"id":"l18","track":"dialogue","at":222.0,"duration":7.32,"volume":1.0,"label":"L18 Static","character":"static","text":"Sombra. My man.","peaks":[0.067,0.022,0.003,0.003,0.005,0.005,0.004,0.021,0.12,0.051,0.004,0.019,0.109,0.18,0.155,0.06,0.167,0.15,0.122,0.094,0.036,0.086,0.155,0.202],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l18.mp3","original_at":222.0},{"id":"c1","track":"dialogue","at":256.0,"duration":6.25,"volume":1.0,"label":"C1 Cipher","character":"cipher","text":"I bet I can.","peaks":[0.426,0.423,0.417,0.182,0.461,0.437,0.424,0.437,0.421,0.444,0.185,0.375,0.26,0.345,0.125,0.34,0.411,0.204,0.247,0.273,0.22,0.321,0.461,0.266],"file":"voice-delivery/voice-cipher-c1.mp3","original_at":256.0},{"id":"l17","track":"dialogue","at":261.0,"duration":10.64,"volume":1.0,"label":"L17 Static","character":"static","text":"Welcome to the COUNCIL CAST","peaks":[0.081,0.026,0.125,0.245,0.004,0.005,0.004,0.003,0.003,0.003,0.168,0.183,0.1,0.175,0.08,0.125,0.135,0.144,0.1,0.133,0.174,0.131,0.095,0.139],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l17.mp3","original_at":261.0},{"id":"c2","track":"dialogue","at":263.0,"duration":4.69,"volume":1.0,"label":"C2 Cipher","character":"cipher","text":"Aaaw man, he knowsss.","peaks":[0.447,0.329,0.36,0.257,0.427,0.418,0.322,0.364,0.424,0.17,0.282,0.401,0.267,0.101,0.393,0.325,0.396,0.397,0.324,0.021,0.429,0.407,0.13,0.015],"file":"voice-delivery/voice-cipher-c2-v2.mp3","original_at":263.0},{"id":"h3","track":"dialogue","at":281.0,"duration":2.32,"volume":1.0,"label":"H3 Sombra","character":"sombra","text":"My rate is hourly.","peaks":[0.097,0.643,0.595,0.725,0.377,0.48,0.664,0.575,0.525,0.282,0.208,0.049,0.037,0.249,0.212,0.57,0.733,0.579,0.181,0.229,0.655,0.363,0.071,0.002],"file":"voice-delivery/voice-sombra-h3.mp3","original_at":281.0},{"id":"c3","track":"dialogue","at":282.0,"duration":7.73,"volume":1.0,"label":"C3 Cipher","character":"cipher","text":"Everything's fine!","peaks":[0.119,0.197,0.495,0.277,0.007,0.467,0.445,0.457,0.26,0.419,0.411,0.415,0.109,0.023,0.363,0.439,0.188,0.007,0.003,0.003,0.484,0.432,0.379,0.154],"file":"voice-delivery/voice-cipher-c3.mp3","original_at":282.0}],"ducks":[{"at":84.0,"duration":3.0,"to":0.5,"label":"Duck Static under Onyx H1"}],"notes":[{"at":93.0,"text":"volume spike smoothed in v8b"},{"at":50.0,"text":"locked intro ends — do not touch 0:00-0:50"}]};
-const DEFAULT_VIDEO_URL = 'https://muse.ai/files/1299464149925011/2826732984386812/mwu7usmdqpla45bb6ow7jsl4/ep02-v8b-small.mp4';
+const PROJECT = {"name":"EP02 v8b","duration":344.81,"clips":[{"id":"n1","track":"dialogue","at":52.0,"duration":1.76,"volume":1.0,"label":"N1 Narrator","character":"narrator","text":"They got the call. All nine.","peaks":[0.545,0.551,0.674,0.593,0.475,0.238,0.53,0.717,0.525,0.341,0.532,0.15,0.14,0.255,0.719,0.596,0.464,0.518,0.724,0.472,0.46,0.42,0.509,0.229],"file":"voice-delivery/voice-narrator-n1.mp3","original_at":52.0},{"id":"l1","track":"dialogue","at":56.0,"duration":6.56,"volume":1.0,"label":"L1 Static","character":"static","text":"Ayo! You see that fire?","peaks":[0.125,0.102,0.065,0.166,0.185,0.171,0.08,0.243,0.271,0.06,0.109,0.105,0.125,0.071,0.197,0.04,0.103,0.148,0.097,0.108,0.104,0.094,0.101,0.071],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l1.mp3","original_at":56.0},{"id":"l2","track":"dialogue","at":66.0,"duration":8.08,"volume":1.0,"label":"L2 Static","character":"static","text":"Can we get some order?","peaks":[0.01,0.081,0.144,0.144,0.107,0.004,0.161,0.136,0.005,0.005,0.073,0.087,0.062,0.053,0.026,0.065,0.006,0.005,0.113,0.132,0.101,0.096,0.117,0.031],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l2.mp3","original_at":66.0},{"id":"whisper","track":"dialogue","at":75.0,"duration":6.0,"volume":0.4,"label":"Ritual whisper","character":"ashes","text":"(unintelligible whisper)","peaks":[0.012,0.032,0.022,0.019,0.013,0.023,0.02,0.025,0.02,0.025,0.02,0.017,0.008,0.013,0.016,0.01,0.007,0.001,0.0,0.0,0.0,0.0,0.0,0.0],"file":"voice-delivery/voice-ashes-ritual-whisper.mp3","original_at":75.0},{"id":"l3","track":"dialogue","at":82.0,"duration":7.56,"volume":1.0,"label":"L3 Static","character":"static","text":"Why's everybody lookin' at me?","peaks":[0.006,0.005,0.083,0.094,0.084,0.08,0.081,0.029,0.117,0.121,0.167,0.166,0.082,0.098,0.158,0.034,0.172,0.112,0.176,0.121,0.171,0.106,0.262,0.012],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l3.mp3","original_at":82.0},{"id":"h1","track":"dialogue","at":84.0,"duration":2.64,"volume":1.0,"label":"H1 Onyx","character":"onyx","text":"We are adjourning nothing.","peaks":[0.012,0.057,0.214,0.154,0.101,0.101,0.122,0.088,0.066,0.042,0.112,0.138,0.048,0.04,0.02,0.038,0.045,0.137,0.064,0.023,0.107,0.106,0.048,0.012],"file":"voice-delivery/voice-onyx-h1.mp3","original_at":84.0},{"id":"l6","track":"dialogue","at":96.0,"duration":9.04,"volume":1.0,"label":"L6 Static","character":"static","text":"He said we move tonight!","peaks":[0.005,0.004,0.005,0.004,0.119,0.165,0.29,0.304,0.006,0.038,0.235,0.304,0.043,0.134,0.383,0.102,0.007,0.16,0.119,0.099,0.008,0.114,0.11,0.008],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l6.mp3","original_at":96.0},{"id":"l7-ashes","track":"dialogue","at":113.0,"duration":7.56,"volume":1.0,"label":"L7 Ashes","character":"ashes","text":"War fund! Everybody throw in!","peaks":[0.506,0.942,0.758,0.488,0.356,0.389,0.282,0.17,0.453,0.406,0.435,0.351,0.326,0.208,0.358,0.316,0.324,0.315,0.321,0.33,0.508,0.277,0.313,0.3],"file":"voice-delivery/voice-ashes-l7.mp3","original_at":113.0},{"id":"c4","track":"dialogue","at":121.0,"duration":12.88,"volume":1.0,"label":"C4 Cipher","character":"cipher","text":"Paper? Who needs paper?","peaks":[0.996,0.979,0.862,1.0,0.341,0.983,1.0,1.0,0.723,1.0,0.099,1.0,1.0,1.0,1.0,1.0,1.0,0.552,1.0,0.474,1.0,1.0,0.944,1.0],"file":"voice-delivery/voice-cipher-c4-money.mp3","original_at":121.0},{"id":"l10","track":"dialogue","at":151.0,"duration":10.36,"volume":1.0,"label":"L10 Static","character":"static","text":"Hollow's out here recruitin'!","peaks":[0.183,0.175,0.111,0.133,0.149,0.124,0.105,0.029,0.119,0.204,0.206,0.155,0.003,0.16,0.001,0.0,0.0,0.0,0.027,0.146,0.257,0.155,0.262,0.078],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l10.mp3","original_at":151.0},{"id":"l18","track":"dialogue","at":222.0,"duration":7.32,"volume":1.0,"label":"L18 Static","character":"static","text":"Sombra. My man.","peaks":[0.067,0.022,0.003,0.003,0.005,0.005,0.004,0.021,0.12,0.051,0.004,0.019,0.109,0.18,0.155,0.06,0.167,0.15,0.122,0.094,0.036,0.086,0.155,0.202],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l18.mp3","original_at":222.0},{"id":"c1","track":"dialogue","at":256.0,"duration":6.25,"volume":1.0,"label":"C1 Cipher","character":"cipher","text":"I bet I can.","peaks":[0.426,0.423,0.417,0.182,0.461,0.437,0.424,0.437,0.421,0.444,0.185,0.375,0.26,0.345,0.125,0.34,0.411,0.204,0.247,0.273,0.22,0.321,0.461,0.266],"file":"voice-delivery/voice-cipher-c1.mp3","original_at":256.0},{"id":"l17","track":"dialogue","at":261.0,"duration":10.64,"volume":1.0,"label":"L17 Static","character":"static","text":"Welcome to the COUNCIL CAST","peaks":[0.081,0.026,0.125,0.245,0.004,0.005,0.004,0.003,0.003,0.003,0.168,0.183,0.1,0.175,0.08,0.125,0.135,0.144,0.1,0.133,0.174,0.131,0.095,0.139],"file":"trippedd-studio/production/WIZARD_GANG_EP01/ep02-audio/static/static-l17.mp3","original_at":261.0},{"id":"c2","track":"dialogue","at":263.0,"duration":4.69,"volume":1.0,"label":"C2 Cipher","character":"cipher","text":"Aaaw man, he knowsss.","peaks":[0.447,0.329,0.36,0.257,0.427,0.418,0.322,0.364,0.424,0.17,0.282,0.401,0.267,0.101,0.393,0.325,0.396,0.397,0.324,0.021,0.429,0.407,0.13,0.015],"file":"voice-delivery/voice-cipher-c2-v2.mp3","original_at":263.0},{"id":"h3","track":"dialogue","at":281.0,"duration":2.32,"volume":1.0,"label":"H3 Sombra","character":"sombra","text":"My rate is hourly.","peaks":[0.097,0.643,0.595,0.725,0.377,0.48,0.664,0.575,0.525,0.282,0.208,0.049,0.037,0.249,0.212,0.57,0.733,0.579,0.181,0.229,0.655,0.363,0.071,0.002],"file":"voice-delivery/voice-sombra-h3.mp3","original_at":281.0},{"id":"c3","track":"dialogue","at":282.0,"duration":7.73,"volume":1.0,"label":"C3 Cipher","character":"cipher","text":"Everything's fine!","peaks":[0.119,0.197,0.495,0.277,0.007,0.467,0.445,0.457,0.26,0.419,0.411,0.415,0.109,0.023,0.363,0.439,0.188,0.007,0.003,0.003,0.484,0.432,0.379,0.154],"file":"voice-delivery/voice-cipher-c3.mp3","original_at":282.0},
+/* Baked-in sound design (v8b render) — reference only, not separable clips */
+{"id":"sfx-burger","track":"sfx","at":130.0,"duration":10.0,"volume":1.0,"label":"🍔 Burger sizzle/fire/tongs","character":"sfx","text":"baked in — flip at 2:16","baked":true,"original_at":130.0},
+{"id":"sfx-fire-pencil","track":"sfx","at":140.0,"duration":10.0,"volume":1.0,"label":"🔥 Fire/pencil write","character":"sfx","text":"baked in — writing gap 2:22–2:26","baked":true,"original_at":140.0},
+{"id":"sfx-tongs-stop","track":"sfx","at":160.0,"duration":3.0,"volume":1.0,"label":"🔇 Tongs stop","character":"sfx","text":"baked in — sizzle continues","baked":true,"original_at":160.0},
+{"id":"sfx-bball","track":"sfx","at":190.0,"duration":6.0,"volume":1.0,"label":"🏀 Dribbles/squeaks","character":"sfx","text":"baked in — stops at 3:16","baked":true,"original_at":190.0},
+{"id":"bgm-kiko","track":"bgm","at":299.0,"duration":8.0,"volume":0.8,"label":"🎵 Kiko instrumental","character":"bgm","text":"baked in — emotional cue 4:59–5:07","baked":true,"original_at":299.0},
+{"id":"bgm-fireworks","track":"bgm","at":305.0,"duration":39.81,"volume":0.7,"label":"🎆 Fireworks","character":"bgm","text":"baked in — 5:05 to end","baked":true,"original_at":305.0}],"ducks":[{"at":84.0,"duration":3.0,"to":0.5,"label":"Duck Static under Onyx H1"}],"notes":[{"at":93.0,"text":"volume spike smoothed in v8b"},{"at":50.0,"text":"locked intro ends — do not touch 0:00-0:50"}]};
+const DEFAULT_VIDEO_URL = 'https://muse.ai/files/1299464149925011/2923847461309916/2z1fnrzhfcpls4ucsext5boe/ep02-v8b-preview.mp4';
 const FPS = 30;
 
 /* ============ BLAIR SHEETS ============ */
@@ -447,6 +612,7 @@ const S = {
   notes: JSON.parse(JSON.stringify(PROJECT.notes || [])),
   ducks: JSON.parse(JSON.stringify(PROJECT.ducks || [])),
   duration: PROJECT.duration,
+  viewOnly: false,
   playhead: 0,
   pxPerSec: 10,
   selected: null,
@@ -462,6 +628,7 @@ const S = {
 const CHAR_COLORS = {
   static: "#ff9f43", cipher: "#a55cff", onyx: "#4d7cff", ashes: "#ff5c5c",
   sombra: "#a0a0b8", narrator: "#ffd75c", default: "#7c5cff",
+  sfx: "#3ddc84", bgm: "#c678dd",
 };
 const TRACK_NAMES = { video: "Video", dialogue: "Dialogue", sfx: "SFX", bgm: "BGM", notes: "Notes" };
 
@@ -494,6 +661,7 @@ document.querySelectorAll("#tabbar button").forEach(b => {
     if (b.dataset.tab === "viewer3d") initViewer3D();
     if (b.dataset.tab === "tools") initTools();
     if (b.dataset.tab === "mix") initMix();
+    if (b.dataset.tab === "record") initRecord();
     if (b.dataset.tab === "edit") resize();
   };
 });
@@ -584,10 +752,18 @@ function drawClip(c) {
   const y = trackY(ti), h = S.trackH[c.track] || 50;
   const x = t2x(c.at), w = Math.max(8, c.duration * S.pxPerSec);
   const isSel = S.selected === c.id;
+  const isBaked = !!c.baked;
   ctx.fillStyle = clipColor(c);
-  ctx.globalAlpha = isSel ? 1 : 0.82;
+  ctx.globalAlpha = isBaked ? 0.45 : (isSel ? 1 : 0.82);
   roundRect(x, y + 3, w, h - 6, 5); ctx.fill();
   ctx.globalAlpha = 1;
+  if (isBaked) {
+    // Dashed outline = baked-in reference, not a separable clip
+    ctx.strokeStyle = clipColor(c); ctx.lineWidth = 1.5;
+    ctx.setLineDash([4, 3]);
+    roundRect(x, y + 3, w, h - 6, 5); ctx.stroke();
+    ctx.setLineDash([]);
+  }
   if (isSel) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 2.5; roundRect(x, y + 3, w, h - 6, 5); ctx.stroke(); }
   if (c.peaks && w > 20) {
     ctx.fillStyle = "rgba(0,0,0,0.35)";
@@ -637,12 +813,21 @@ canvas.addEventListener("pointerdown", e => {
   const p = canvasPos(e);
   const c = clipAt(p.x, p.y);
   if (c) {
+    // Baked clips are reference-only: selectable for info, not draggable
+    if (c.baked && !S.viewOnly) {
+      drag = { clip: c, baked: true, startX: p.x, moved: false, pid: e.pointerId };
+      canvas.setPointerCapture(e.pointerId);
+    } else if (!c.baked) {
     drag = { clip: c, startX: p.x, origAt: c.at, moved: false, pid: e.pointerId };
     canvas.setPointerCapture(e.pointerId);
-    // Long-press → action menu (BandLab pattern)
-    longPressTimer = setTimeout(() => {
+    // Long-press → action menu (BandLab pattern) — disabled in view-only
+    longPressTimer = S.viewOnly ? null : setTimeout(() => {
       if (drag && !drag.moved) { showClipMenu(c); drag = null; }
     }, 500);
+    } else {
+      drag = { seek: true, startX: p.x, moved: false, pid: e.pointerId };
+      canvas.setPointerCapture(e.pointerId);
+    }
   } else {
     drag = { seek: true, startX: p.x, moved: false, pid: e.pointerId };
     canvas.setPointerCapture(e.pointerId);
@@ -657,7 +842,7 @@ canvas.addEventListener("pointermove", e => {
     S.playhead = snapT(Math.max(0, Math.min(S.duration, x2t(p.x))));
     if (drag.moved) syncVideo();
     draw(); updateTime();
-  } else if (drag.clip && drag.moved) {
+  } else if (drag.clip && drag.moved && !S.viewOnly && !drag.baked) {
     const dt = dx / S.pxPerSec;
     let nt = Math.max(0, drag.origAt + dt);
     nt = Math.min(nt, S.duration - drag.clip.duration);
@@ -674,7 +859,8 @@ canvas.addEventListener("pointerup", e => {
     syncVideo(); draw(); updateTime();
   } else if (drag.clip && !drag.moved) {
     selectClip(drag.clip.id);
-  } else if (drag.clip && drag.moved) {
+    if (drag.baked) toast("🔒 Baked into the render — reference only");
+  } else if (drag.clip && drag.moved && !S.viewOnly && !drag.baked) {
     selectClip(drag.clip.id);
     toast(drag.clip.label + " → " + fmt(drag.clip.at));
   }
@@ -684,13 +870,17 @@ canvas.addEventListener("pointercancel", () => { clearTimeout(longPressTimer); d
 
 /* Long-press clip menu (BandLab pattern) */
 function showClipMenu(c) {
+  if (S.viewOnly) return;
   selectClip(c.id);
   showModal(c.label,
     `<div style="display:flex;flex-direction:column;gap:8px">
       <button class="btn" data-act="dup">⧉ Duplicate</button>
       <button class="btn" data-act="fadein">↗ Fade in</button>
       <button class="btn" data-act="fadeout">↘ Fade out</button>
+      <button class="btn" data-act="rgb">🎨 RGB split ${c.fx && c.fx.includes("rgb_split") ? "✓" : ""}</button>
+      <button class="btn" data-act="glitch">💥 Glitch ${c.fx && c.fx.includes("glitch") ? "✓" : ""}</button>
       <button class="btn danger" data-act="del">🗑 Delete</button>
+      <div style="font-size:11px;color:#888">FX are tagged in the export — the agent applies them at render with tools/glitch_fx.py</div>
     </div>`,
     null);
   document.querySelectorAll("#modalBody [data-act]").forEach(b => {
@@ -707,6 +897,13 @@ function showClipMenu(c) {
       } else if (act === "del") {
         S.clips = S.clips.filter(x => x.id !== c.id);
         deselect(); updateChanges(); toast("Deleted");
+      } else if (act === "rgb" || act === "glitch") {
+        const fxName = act === "rgb" ? "rgb_split" : "glitch";
+        c.fx = c.fx || [];
+        const ix = c.fx.indexOf(fxName);
+        if (ix >= 0) { c.fx.splice(ix, 1); toast("FX removed: " + fxName); }
+        else { c.fx.push(fxName); toast("FX tagged: " + fxName + " — applied at render"); }
+        updateChanges();
       } else {
         toast((act === "fadein" ? "Fade in" : "Fade out") + " — applied at render");
         c["fade_" + (act === "fadein" ? "in" : "out")] = true;
@@ -1284,6 +1481,7 @@ function initMix() {
   });
   wrap.querySelectorAll("input[type=range]").forEach(r => {
     r.oninput = () => {
+      if (S.viewOnly) return;
       const t = r.dataset.track, v = parseInt(r.value, 10);
       S.trackGain[t] = v / 100;
       r.parentElement.querySelector(".mix-val").textContent = v + "%";
@@ -1292,6 +1490,7 @@ function initMix() {
   });
   wrap.querySelectorAll("[data-mute]").forEach(b => {
     b.onclick = () => {
+      if (S.viewOnly) return;
       const t = b.dataset.mute;
       S.trackGain[t] = S.trackGain[t] === 0 ? 1 : 0;
       b.style.opacity = S.trackGain[t] === 0 ? 0.4 : 1;
@@ -1304,53 +1503,417 @@ function initMix() {
   mixInit = true;
 }
 
-/* ============ UNIVERSAL HUB: PROJECTS ============ */
-const PROJECTS = [
-  {id:"wizard-gang-ep02", name:"Wizard Gang EP02", type:"show", icon:"🧙", video_url:"https://muse.ai/files/1299464149925011/1798254038054328/i2oicgwaercpda5zapkktry0/ep02-v8b-small.mp4", timeline:"project-ep02-v8b.json", characters:["Static","Cipher","Echo","Onyx","Sombra Negra","Theory","Kiko","Hollow"], notes:"Current cut: v8b. 16 dialogue clips loaded."},
-  {id:"god-molecule", name:"God Molecule", type:"show", icon:"🧬", video_url:null, timeline:null, characters:[], notes:"Show bible in God-Molecule-Show-Studio repo."},
-  {id:"damn-shits-wild", name:"Damn, Shit's Wild", type:"show", icon:"🤪", video_url:null, timeline:null, characters:["Aaron Ruben"], notes:"Aaron Ruben show."},
-  {id:"in-the-bushes", name:"In the Bushes", type:"show", icon:"🌳", video_url:null, timeline:null, characters:["Busch","Mr. Gold","Mr. Tree","Cool Dad","Deadpan Kid"], notes:"12 oz. Mouse / Home Movies style."},
-  {id:"trippedd-ep01", name:"TRIPPEDD EP01", type:"show", icon:"🌀", video_url:null, timeline:null, characters:[], notes:"The Walk."},
-  {id:"bannon", name:"Bannon", type:"game", icon:"🥊", video_url:null, timeline:null, characters:[], models_dir:"bannon-video-pipe/repo/out", notes:"7246+ GLB models in workspace."},
-  {id:"concrete-dragon", name:"Concrete Dragon", type:"game", icon:"🐉", video_url:null, timeline:null, characters:[], notes:"Fighter."},
-  {id:"streetbrawl", name:"StreetBrawl", type:"game", icon:"👊", video_url:null, timeline:null, characters:[], notes:"Weight paint PWA in tools/weight-paint-pwa."},
-  {id:"brutal-fist", name:"Brutal Fist", type:"game", icon:"🥋", video_url:null, timeline:null, characters:[], notes:""},
-  {id:"ashlane", name:"AshLane", type:"game", icon:"⚔️", video_url:null, timeline:null, characters:[], notes:""},
-  {id:"smoke-mirror", name:"SMOKE & MIRRORS", type:"game", icon:"🪞", video_url:null, timeline:null, characters:[], notes:"UE5 exploration game."}
+/* ============ RECORD TAB (in-app camera) ============ */
+let recInit = false;
+const REC = { stream: null, recorder: null, chunks: [], facing: "user", recStart: 0, timerInt: null, videos: [] };
+function initRecord() {
+  if (recInit) return;
+  recInit = true;
+  $("recCamBtn").onclick = toggleCamera;
+  $("recFlipBtn").onclick = () => {
+    REC.facing = REC.facing === "user" ? "environment" : "user";
+    if (REC.stream) { stopCamera(); startCamera(); }
+    toast("Camera: " + (REC.facing === "user" ? "front" : "back"));
+  };
+  $("recVidBtn").onclick = toggleVideoRec;
+  $("recPhotoBtn").onclick = takePhoto;
+}
+async function startCamera() {
+  try {
+    REC.stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: REC.facing, width: { ideal: 1280 }, height: { ideal: 720 } },
+      audio: true,
+    });
+    const pv = $("recPreview");
+    pv.srcObject = REC.stream;
+    await pv.play();
+    $("recOff").style.display = "none";
+    $("recCamBtn").textContent = "⏹ Stop cam";
+    $("recStatus").textContent = "Camera live. Hit ⏺ Record video or 📸 Photo.";
+  } catch (e) { toast("Camera denied — check browser permissions"); }
+}
+function stopCamera() {
+  if (REC.recorder && REC.recorder.state === "recording") stopVideoRec();
+  if (REC.stream) { REC.stream.getTracks().forEach(t => t.stop()); REC.stream = null; }
+  $("recPreview").srcObject = null;
+  $("recOff").style.display = "flex";
+  $("recCamBtn").textContent = "🎥 Camera";
+}
+function toggleCamera() { REC.stream ? stopCamera() : startCamera(); }
+function toggleVideoRec() {
+  if (REC.recorder && REC.recorder.state === "recording") { stopVideoRec(); return; }
+  if (!REC.stream) { toast("Start the camera first"); return; }
+  REC.chunks = [];
+  try {
+    REC.recorder = new MediaRecorder(REC.stream, { mimeType: "video/webm;codecs=vp9,opus" });
+  } catch (e) {
+    try { REC.recorder = new MediaRecorder(REC.stream); }
+    catch (e2) { toast("Recording not supported here"); return; }
+  }
+  REC.recStart = snapT(S.playhead);
+  REC.recorder.ondataavailable = e => { if (e.data.size) REC.chunks.push(e.data); };
+  REC.recorder.onstop = onVideoRecStop;
+  REC.recorder.start();
+  const t0 = Date.now();
+  $("recIndicator").style.display = "block";
+  REC.timerInt = setInterval(() => {
+    const s = Math.floor((Date.now() - t0) / 1000);
+    $("recTimer").textContent = Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+  }, 500);
+  $("recVidBtn").innerHTML = '<span class="rec-dot"></span> Stop';
+  $("recVidBtn").classList.add("danger");
+  toast("Recording video… tap Stop when done");
+}
+function stopVideoRec() {
+  if (REC.recorder && REC.recorder.state === "recording") REC.recorder.stop();
+}
+function onVideoRecStop() {
+  clearInterval(REC.timerInt);
+  $("recIndicator").style.display = "none";
+  $("recVidBtn").textContent = "⏺ Record video";
+  $("recVidBtn").classList.remove("danger");
+  const blob = new Blob(REC.chunks, { type: REC.recorder.mimeType || "video/webm" });
+  const url = URL.createObjectURL(blob);
+  const id = "vid-" + Date.now();
+  const v = document.createElement("video");
+  v.preload = "metadata"; v.src = url;
+  v.onloadedmetadata = () => {
+    const d = Math.round((v.duration || 5) * 100) / 100;
+    S.clips.push({
+      id, track: "video", at: REC.recStart, original_at: REC.recStart,
+      duration: d, volume: 1.0, label: "📹 Take",
+      character: "custom", text: "(in-app recording)",
+      peaks: null, file: "(videorec:" + id + ")", _blobUrl: url,
+    });
+    REC.videos.push({ id, url, duration: d, at: REC.recStart });
+    renderRecList(); draw(); updateChanges();
+    toast("📹 Take placed @ " + fmt(REC.recStart) + " — download from list below");
+  };
+}
+function takePhoto() {
+  if (!REC.stream) { toast("Start the camera first"); return; }
+  const pv = $("recPreview");
+  const c = document.createElement("canvas");
+  c.width = pv.videoWidth || 1280; c.height = pv.videoHeight || 720;
+  c.getContext("2d").drawImage(pv, 0, 0, c.width, c.height);
+  const url = c.toDataURL("image/jpeg", 0.85);
+  const a = document.createElement("a");
+  a.href = url; a.download = "pocket-studio-" + Date.now() + ".jpg"; a.click();
+  toast("📸 Photo saved to downloads");
+}
+function renderRecList() {
+  const el = $("recList");
+  el.innerHTML = "";
+  REC.videos.forEach(v => {
+    const d = document.createElement("div");
+    d.style.cssText = "display:flex;align-items:center;gap:8px;background:var(--panel2);border-radius:8px;padding:10px;margin:6px 0;";
+    d.innerHTML = '<span>📹</span><span style="flex:1;font-size:13px;">Take @ ' + fmt(v.at) + ' · ' + v.duration + 's</span>';
+    const dl = document.createElement("a");
+    dl.href = v.url; dl.download = "take-" + v.id + ".webm";
+    dl.className = "btn small"; dl.textContent = "⬇"; dl.title = "Download video file";
+    d.appendChild(dl);
+    el.appendChild(d);
+  });
+}
+
+/* ============ PROJECT TREE (folder hierarchy) ============ */
+const EP02_PREVIEW_URL = "https://muse.ai/files/1299464149925011/2923847461309916/2z1fnrzhfcpls4ucsext5boe/ep02-v8b-preview.mp4";
+const STATUS_BADGE = { posted: "🟢 Posted", inprogress: "🟡 In Progress", draft: "⚪ Draft" };
+const PROJECT_TREE = [
+  { id:"wg", name:"Wizard Gang", kind:"show", icon:"📁", open:true, children:[
+    { id:"wg-eps", name:"Episodes", icon:"🎬", open:true, children:[
+      { id:"wg-pilot", leaf:true, icon:"🎞️", name:"Pilot", note:"50s pilot", status:"draft", file:"~/workspace/trippedd-studio/production/WIZARD_GANG_EP01/pilot-50s.mp4" },
+      { id:"wg-ep01", leaf:true, icon:"🎞️", name:"EP01", status:"draft", file:"~/workspace/trippedd-studio/production/WIZARD_GANG_EP01/wizard-gang-ep01-16x9.mp4" },
+      { id:"wg-ep02", leaf:true, icon:"🎞️", name:"EP02 — v8b review cut (current)", note:"16 dialogue clips loaded", status:"inprogress", video_url:EP02_PREVIEW_URL, isDefault:true },
+    ]},
+    { id:"wg-shorts", name:"Shorts", icon:"📱", children:[
+      { id:"wg-short-cipher", leaf:true, icon:"📱", name:'Cipher "Paper" promo', status:"posted",
+        yt:"https://youtu.be/NrxNT9bNOvM", fb:"https://facebook.com/reel/2707381089680953/",
+        file:"~/workspace/cipher-paper-clip.mp4" },
+      { id:"wg-short-ashes", leaf:true, icon:"📱", name:'Ashes "All 9" rig test', status:"posted",
+        yt:"https://youtu.be/_91oLjh8YTM", file:"~/workspace/ashes-mouth-pack/ashes-rig-test-v4.mp4" },
+    ]},
+    { id:"wg-comms", name:"Commercials", icon:"📺", children:[] },
+    { id:"wg-bumps", name:"Bumps", icon:"🎞️", children:[] },
+    { id:"wg-cards", name:"Title Cards", icon:"🃏", children:[
+      { id:"wg-card-ep02", leaf:true, icon:"🃏", name:"EP02 Title Card w/ sound", status:"posted",
+        yt:"https://youtu.be/jSfUA-KV-qw", fb:"https://facebook.com/reel/1637696227948391/",
+        file:"~/workspace/trippedd-studio/production/WIZARD_GANG_EP01/ep02-title-card-10s-sound.mp4" },
+    ]},
+    { id:"wg-segs", name:"Segments", icon:"🧩", children:[] },
+  ]},
+  { id:"gm", name:"God Molecule", kind:"show", icon:"📁", children:[
+    { id:"gm-eps", name:"Episodes", icon:"🎬", children:[] },
+    { id:"gm-shorts", name:"Shorts", icon:"📱", children:[] },
+    { id:"gm-comms", name:"Commercials", icon:"📺", children:[] },
+  ]},
+  { id:"dsw", name:"Damn, Shit's Wild", kind:"show", icon:"📁", children:[
+    { id:"dsw-eps", name:"Episodes", icon:"🎬", children:[], emptyNote:'EP01 "The Group Chat" in production' },
+  ]},
+  { id:"itb", name:"In the Bushes", kind:"show", icon:"📁", children:[
+    { id:"itb-eps", name:"Episodes", icon:"🎬", children:[], emptyNote:"EP01 beats in production" },
+  ]},
+  { id:"bannon", name:"Bannon", kind:"game", icon:"📁", children:[
+    { id:"bannon-bf1", name:"Brutal Fist 1", icon:"🎮", children:[] },
+    { id:"bannon-cuts", name:"Cutscenes", icon:"🎬", children:[] },
+    { id:"bannon-trail", name:"Trailers/Commercials", icon:"📺", children:[] },
+  ]},
+  { id:"cd", name:"Concrete Dragon", kind:"game", icon:"📁", children:[
+    { id:"cd-game", name:"Game", icon:"🎮", children:[] },
+  ]},
+  { id:"trippedd", name:"TRIPPEDD", kind:"network", icon:"📁", open:true, children:[
+    { id:"tp-ep01", name:'EP01 "The Walk"', kind:"episode", icon:"📁", open:true, children:[
+      { id:"tp-ep01-timeline", leaf:true, icon:"🎬", name:"Episode Timeline — 11-segment assembly", note:"LOTI commercial locked at segment 5", status:"inprogress" },
+      { id:"tp-ep01-loti", leaf:true, icon:"📺", name:"Luck of the Irish — commercial (FINAL)", note:"53.4s — finished, locked at segment 5",
+        status:"inprogress", video_url:"https://muse.ai/files/1299464149925011/1403360548444288/41skpvlukugc1nva60a8736x/loti-commercial-preview.mp4",
+        file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/segments/luck-of-the-irish/luck-of-the-irish-commercial-final.mp4" },
+      { id:"tp-ep01-basecut", leaf:true, icon:"🎞️", name:"Base Cut — review (reference)", note:"943.9s review encode, 15:44 — reference only",
+        status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/base-cut/EP01-THE-WALK-basecut-review.mp4" },
+      { id:"tp-ep01-cards", name:"Cards", icon:"🃏", children:[
+        { id:"tp-card-stay", leaf:true, icon:"🃏", name:"card-stay-trippedd", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-stay-trippedd.mp4" },
+        { id:"tp-card-trippedd", leaf:true, icon:"🃏", name:"card-trippedd", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-trippedd.mp4" },
+        { id:"tp-card-network", leaf:true, icon:"🃏", name:"card-trippedd-network", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-trippedd-network.mp4" },
+        { id:"tp-card-wbrb", leaf:true, icon:"🃏", name:"card-black-wbrb", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-black-wbrb.mp4" },
+        { id:"tp-card-dsw", leaf:true, icon:"🃏", name:"card-black-damn-shits-wild", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-black-damn-shits-wild.mp4" },
+        { id:"tp-card-blank-a", leaf:true, icon:"🃏", name:"card-blank-a", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-blank-a.mp4" },
+        { id:"tp-card-blank-b", leaf:true, icon:"🃏", name:"card-blank-b", status:"draft", file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/cards/card-blank-b.mp4" },
+      ]},
+      { id:"tp-ep01-segs", name:"Produced Segments", icon:"🧩", children:[
+        { id:"tp-seg-loti", leaf:true, icon:"📺", name:"Luck of the Irish — commercial", note:"FINAL 53.4s + v2 66.6s in repo", status:"inprogress",
+          file:"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/segments/luck-of-the-irish/" },
+        { id:"tp-seg-joe", leaf:true, icon:"🧩", name:"Joe — 2D reconstruction", note:"TODO — 2D style TBD by owner", status:"draft" },
+        { id:"tp-seg-clothed", leaf:true, icon:"🧩", name:"Clothed and Confused — realistic parody", note:"TODO — realistic Naked-and-Afraid parody", status:"draft" },
+      ]},
+    ]},
+    { id:"tp-shorts", name:"Shorts", icon:"📱", children:[] },
+    { id:"tp-bumps", leaf:true, icon:"🎞️", name:"Bumps", note:"Awaiting owner review", status:"draft", file:"~/workspace/trippedd-bumps/" },
+    { id:"tp-cards", name:"Title Cards", icon:"🃏", children:[] },
+  ]},
+  { id:"fw", name:"Font Wizard", kind:"commercials", icon:"📁", children:[
+    { id:"fw-bush", leaf:true, icon:"📺", name:"Bush font commercial", status:"posted",
+      yt:"https://youtu.be/YKy35a1VpEM", file:"~/workspace/font-wizard/fonts/bush/bush-commercial-mural.mp4" },
+    { id:"fw-tdw", leaf:true, icon:"📺", name:"Trippy Drippy Wizard commercial", status:"draft",
+      file:"~/workspace/font-wizard/assets/youtube-commercials/trippy-drippy-wizard-font-commercial.mp4" },
+    { id:"fw-bb", leaf:true, icon:"📺", name:"Block Burner commercial", status:"draft",
+      file:"~/workspace/font-wizard/fonts/block-burner/block-burner-commercial.mp4" },
+  ]},
+  { id:"goodville", name:"Goodville", kind:"TRIPPEDD EP01 gag family", icon:"📁", children:[
+    { id:"gv-promo", leaf:true, icon:"📱", name:"Goodville promo 15s (SMART rebuild)", note:"Owner verdict pending", status:"inprogress",
+      file:"~/workspace/goodville-promo-15s_SMART.mp4" },
+  ]},
 ];
-let currentProject = PROJECTS[0], projectsInit = false;
+
+let activeLeafId = "wg-ep02";
+const treeOpen = {};
+(function seedOpen(arr) {
+  arr.forEach(n => { if (n.open) treeOpen[n.id] = true; if (n.children) seedOpen(n.children); });
+})(PROJECT_TREE);
+
+function findLeaf(id) {
+  let found = null;
+  const walk = arr => arr.forEach(n => {
+    if (n.leaf && n.id === id) found = n;
+    else if (n.children) walk(n.children);
+  });
+  walk(PROJECT_TREE);
+  return found;
+}
+function allLeaves() {
+  const out = [];
+  const walk = arr => arr.forEach(n => {
+    if (n.leaf) out.push(n);
+    else if (n.children) walk(n.children);
+  });
+  walk(PROJECT_TREE);
+  return out;
+}
+
+/* Editor mode: "edit" = full editing, "view" = view-only (can see timeline, can't change) */
+function setEditorMode(mode) {
+  S.viewOnly = (mode === "view");
+  const b = $("viewBanner");
+  if (b) b.style.display = S.viewOnly ? "block" : "none";
+  ["noteBtn","recBtn","saveBtn"].forEach(id => { const el = $(id); if (el) el.style.display = S.viewOnly ? "none" : ""; });
+  ["volDown","volUp","delClip"].forEach(id => { const el = $(id); if (el) el.style.display = S.viewOnly ? "none" : ""; });
+}
+function gotoTab(name) {
+  document.querySelectorAll("#tabbar button").forEach(x => x.classList.toggle("active", x.dataset.tab === name));
+  document.querySelectorAll(".tab-page").forEach(x => x.classList.toggle("active", x.id === "tab-" + name));
+  if (name === "edit") resize();
+}
+
+function toggleFolder(id) {
+  treeOpen[id] = !treeOpen[id];
+  const el = document.querySelector('.pfolder[data-fid="' + id + '"]');
+  if (el) el.classList.toggle("open", treeOpen[id]);
+}
+
+function renderFolder(f) {
+  const div = document.createElement("div");
+  div.className = "pfolder" + (treeOpen[f.id] ? " open" : "");
+  div.dataset.fid = f.id;
+  const kids = f.children || [];
+  const head = document.createElement("div");
+  head.className = "pfolder-head";
+  head.innerHTML =
+    '<span class="chev">▶</span>' +
+    '<span class="pfi">' + escapeHtml(f.icon || "📁") + "</span>" +
+    "<b>" + escapeHtml(f.name) + "</b>" +
+    (f.kind ? '<span class="pkind">' + escapeHtml(f.kind) + "</span>" : "") +
+    (kids.length ? '<span class="pcount">' + kids.length + "</span>" : "");
+  head.onclick = () => toggleFolder(f.id);
+  div.appendChild(head);
+  const body = document.createElement("div");
+  body.className = "pfolder-children";
+  if (kids.length) {
+    kids.forEach(k => body.appendChild(k.leaf ? renderLeaf(k) : renderFolder(k)));
+  } else {
+    const e = document.createElement("div");
+    e.className = "pempty";
+    e.innerHTML =
+      '<span class="pbadge">⬜ Empty</span>' +
+      '<span class="pempty-note">' + escapeHtml(f.emptyNote || "Empty — tap + to add") + "</span>";
+    const add = document.createElement("button");
+    add.className = "padd"; add.textContent = "+"; add.title = "Add item to " + f.name;
+    add.onclick = ev => {
+      ev.stopPropagation();
+      showModal("Add to " + f.name,
+        '<input type="text" id="newLeafName" placeholder="Name (e.g. EP03, New bump)">',
+        () => {
+          const nm = $("newLeafName").value.trim();
+          if (!nm) return;
+          const nl = { id: "custom-" + Date.now(), leaf: true, icon: "🎞️",
+                       name: nm, status: "draft", note: "Added in-app" };
+          (f.children = f.children || []).push(nl);
+          renderTree();
+          toast("Added: " + nm);
+        });
+    };
+    e.appendChild(add);
+    body.appendChild(e);
+  }
+  div.appendChild(body);
+  return div;
+}
+
+function renderLeaf(l) {
+  const div = document.createElement("div");
+  div.className = "pleaf" + (l.id === activeLeafId ? " active" : "");
+  div.dataset.lid = l.id;
+  let sub = l.note || "";
+  if (l.file) sub = (sub ? sub + " · " : "") + "file: " + l.file;
+  let html =
+    '<span class="pli">' + escapeHtml(l.icon || "🎞️") + "</span>" +
+    '<div class="ptitle"><b>' + escapeHtml(l.name) + "</b>" +
+    (sub ? "<span>" + escapeHtml(sub) + "</span>" : "") + "</div>" +
+    '<span class="pbadge">' + STATUS_BADGE[l.status] + "</span>";
+  if (l.yt || l.fb) {
+    html += '<span class="plinks">' +
+      (l.yt ? '<a href="' + l.yt + '" target="_blank" rel="noopener" data-stop>▶ YouTube</a>' : "") +
+      (l.fb ? '<a href="' + l.fb + '" target="_blank" rel="noopener" data-stop>ⓕ Facebook</a>' : "") +
+      "</span>";
+  }
+  div.innerHTML = html;
+  div.querySelectorAll("[data-stop]").forEach(a => a.addEventListener("click", ev => ev.stopPropagation()));
+  div.onclick = () => openLeaf(l.id);
+  return div;
+}
+
+function renderTree() {
+  const wrap = $("projTree");
+  if (!wrap) return;
+  wrap.innerHTML = "";
+  PROJECT_TREE.forEach(f => wrap.appendChild(renderFolder(f)));
+}
+
+/* Per-leaf timeline data: clips + duration for each project leaf.
+   EP02 (wg-ep02) uses the full PROJECT clip set. Others start empty
+   with their own duration until the owner builds their timeline. */
+const LEAF_TIMELINES = {
+  "wg-ep02": { name: "EP02 v8b", duration: 344.81, clips: "PROJECT" },
+  "tp-ep01-timeline": { name: 'EP01 "The Walk" assembly', duration: 970.2, clips: [
+    {"id":"tp1","track":"video","at":0.0,"duration":44.0,"volume":1.0,"label":"1. Cold Open — footage ready","character":"trippedd","text":"Outside room 226, laughing/talking. Strongest opening energy.","peaks":[0.5,0.5,0.5,0.5],"file":"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/base-cut/EP01-THE-WALK-basecut-review.mp4","original_at":0.0,"locked":true},
+    {"id":"tp2","track":"video","at":44.0,"duration":43.0,"volume":1.0,"label":"2. Motel — footage ready","character":"trippedd","text":"Motel 6 lobby, establishes location and day.","peaks":[0.5,0.5,0.5,0.5],"file":"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/base-cut/EP01-THE-WALK-basecut-review.mp4","original_at":44.0,"locked":true},
+    {"id":"tp3","track":"video","at":87.0,"duration":4.0,"volume":1.0,"label":"3. Shumafied — SLATE, no material found","character":"trippedd","text":"TODO: pack/device bit. No visual or audio confirmation in any of the 17 clips.","peaks":[0.1,0.1,0.1,0.1],"file":"","original_at":87.0,"locked":true,"todo":true},
+    {"id":"tp4","track":"video","at":91.0,"duration":4.0,"volume":1.0,"label":"4. Disappointment + Cigar Setup — SLATE","character":"trippedd","text":"TODO: 'This thing's not doing shit' not found in audio. Decision beat missing.","peaks":[0.1,0.1,0.1,0.1],"file":"","original_at":91.0,"locked":true,"todo":true},
+    {"id":"tp5","track":"video","at":95.0,"duration":53.4,"volume":1.0,"label":"5. Luck of the Irish — COMMERCIAL DONE, LOCKED","character":"trippedd","text":"Finished 53.4s commercial. Pays off the disappointment, immediately before they leave. Placement immutable.","peaks":[0.9,0.9,0.9,0.9],"file":"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/segments/luck-of-the-irish/luck-of-the-irish-commercial-final.mp4","original_at":95.0,"locked":true},
+    {"id":"tp6","track":"video","at":148.4,"duration":505.0,"volume":1.0,"label":"6. Cigars / The Walk — footage ready","character":"trippedd","text":"The walk backbone: parking lot, street, bank, Goodlettsville storefront, convenience store.","peaks":[0.5,0.5,0.5,0.5],"file":"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/base-cut/EP01-THE-WALK-basecut-review.mp4","original_at":148.4,"locked":true},
+    {"id":"tp7","track":"video","at":653.4,"duration":240.0,"volume":1.0,"label":"7. Bag Sequence — footage ready","character":"trippedd","text":"Person C with bags on stairs; heated exchange with Person A.","peaks":[0.5,0.5,0.5,0.5],"file":"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/base-cut/EP01-THE-WALK-basecut-review.mp4","original_at":653.4,"locked":true},
+    {"id":"tp8","track":"video","at":893.4,"duration":8.0,"volume":1.0,"label":"8. Joe — TODO, 2D reconstruction","character":"trippedd","text":"TODO: 2D reconstruction of a real event. No footage exists. Exact 2D style TBD by owner.","peaks":[0.1,0.1,0.1,0.1],"file":"","original_at":893.4,"locked":true,"todo":true},
+    {"id":"tp9","track":"video","at":901.4,"duration":20.8,"volume":1.0,"label":"9. TV — footage ready","character":"trippedd","text":"Harry Potter on wall-mounted TV, Person B reacting. Channel-change material not in clips.","peaks":[0.5,0.5,0.5,0.5],"file":"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/base-cut/EP01-THE-WALK-basecut-review.mp4","original_at":901.4,"locked":true},
+    {"id":"tp10","track":"video","at":922.2,"duration":8.0,"volume":1.0,"label":"10. Clothed and Confused — TODO, realistic parody","character":"trippedd","text":"TODO: realistic Naked-and-Afraid parody. Produced segment, not base footage.","peaks":[0.1,0.1,0.1,0.1],"file":"","original_at":922.2,"locked":true,"todo":true},
+    {"id":"tp11","track":"video","at":930.2,"duration":40.0,"volume":1.0,"label":"11. Smoking / Hanging Out — footage ready","character":"trippedd","text":"Balcony, afternoon, Person A to camera. Closes the episode.","peaks":[0.5,0.5,0.5,0.5],"file":"~/workspace/trippedd-studio/production/TRIPPEDD_EP01/base-cut/EP01-THE-WALK-basecut-review.mp4","original_at":930.2,"locked":true}
+  ], notes: [
+    {"at":95.0,"text":"LOTI commercial locked here — pays off the disappointment, immediately before they leave. Do not move."},
+    {"at":87.0,"text":"Shumafied: no material found in 17 clips. Owner call: point at material or make it VO-driven."},
+    {"at":893.4,"text":"Joe: 2D style TBD by owner before building."},
+    {"at":922.2,"text":"Clothed and Confused: realistic style, played straight."}
+  ], ducks: [] },
+};
+function getLeafTimeline(leafId) {
+  const t = LEAF_TIMELINES[leafId];
+  if (t && t.clips === "PROJECT") {
+    return { name: t.name, duration: t.duration,
+             clips: JSON.parse(JSON.stringify(PROJECT.clips)),
+             notes: JSON.parse(JSON.stringify(PROJECT.notes || [])),
+             ducks: JSON.parse(JSON.stringify(PROJECT.ducks || [])) };
+  }
+  const leaf = findLeaf(leafId);
+  return { name: leaf ? leaf.name : leafId, duration: 60,
+           clips: [], notes: [], ducks: [] };
+}
+function loadLeafTimeline(leafId) {
+  const t = getLeafTimeline(leafId);
+  S.clips = t.clips; S.notes = t.notes; S.ducks = t.ducks;
+  S.duration = t.duration; S.playhead = 0; S.selected = null;
+  deselect();
+  $("changes").textContent = t.clips.length ? "" : "Empty timeline — add clips, notes, recordings.";
+  updateChanges(); resize(); updateTime(); updateScrub();
+}
+
+function openLeaf(id) {
+  const l = findLeaf(id);
+  if (!l) return;
+  activeLeafId = id;
+  document.querySelectorAll(".pleaf").forEach(el => el.classList.toggle("active", el.dataset.lid === id));
+  const sel = $("projSelect");
+  if (sel) sel.value = id;
+  setEditorMode(l.status === "inprogress" ? "edit" : "view");
+  loadLeafTimeline(id);
+  if (l.video_url) setVideoUrl(l.video_url);
+  gotoTab("edit");
+  toast(l.name + (S.viewOnly ? " — view only" : " — edit mode") + (S.clips.length ? "" : " (empty timeline)"));
+}
+
+/* Effects tab: scroll to + highlight a step card */
+function fxGoto(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+  el.classList.remove("fx-flash");
+  void el.offsetWidth;
+  el.classList.add("fx-flash");
+}
+
+let projectsInit = false;
 function initProjects() {
   if (projectsInit) return;
-  const grid = $("projGrid"), sel = $("projSelect");
-  sel.innerHTML = "";
-  PROJECTS.forEach(p => {
-    const o = document.createElement("option");
-    o.value = p.id; o.textContent = p.icon + " " + p.name;
-    sel.appendChild(o);
-    const card = document.createElement("div");
-    card.className = "proj-card" + (p.id === currentProject.id ? " active" : "");
-    card.innerHTML = "<b>" + p.icon + " " + p.name + "</b><span>" + (p.notes || "") + "</span><br><span class='ptype'>" + p.type + "</span>";
-    card.onclick = () => switchProject(p.id);
-    card.dataset.pid = p.id;
-    grid.appendChild(card);
-  });
-  sel.value = currentProject.id;
-  sel.onchange = () => switchProject(sel.value);
+  renderTree();
   projectsInit = true;
 }
-function switchProject(pid) {
-  const p = PROJECTS.find(x => x.id === pid);
-  if (!p) return;
-  currentProject = p;
-  $("projSelect").value = pid;
-  document.querySelectorAll(".proj-card").forEach(c => c.classList.toggle("active", c.dataset.pid === pid));
-  if (p.video_url) {
-    setVideoUrl(p.video_url);
-    toast("Switched to " + p.name);
-  } else {
-    toast(p.name + " — no video loaded yet. Paste a URL in Edit tab.");
-  }
+function initHeaderSelect() {
+  const sel = $("projSelect");
+  if (!sel) return;
+  sel.innerHTML = "";
+  allLeaves().forEach(l => {
+    const o = document.createElement("option");
+    o.value = l.id; o.textContent = l.name;
+    sel.appendChild(o);
+  });
+  sel.value = activeLeafId;
+  sel.onchange = () => openLeaf(sel.value);
 }
+
 
 /* ============ UNIVERSAL HUB: ASSETS ============ */
 let assetsInit = false, ASSET_INDEX = [];
@@ -1515,7 +2078,7 @@ function applyHeat() {
     const colors = new Float32Array(n * 3);
     for (let i = 0; i < n; i++) {
       let w = 0;
-      for (let k = 0; k < 4; k++) if (si.getX(i * 4 + k) === boneIdx || si.getComponent(i, k) === boneIdx) w = Math.max(w, sw.getComponent(i, k));
+      for (let k = 0; k < 4; k++) if (si.getComponent(i, k) === boneIdx) w = Math.max(w, sw.getComponent(i, k));
       const c = heatColor(w);
       colors[i * 3] = c[0]; colors[i * 3 + 1] = c[1]; colors[i * 3 + 2] = c[2];
     }
@@ -1551,7 +2114,7 @@ function fallbackCopy(s) {
 /* ============ CHANGES TRACKER ============ */
 function updateChanges() {
   const moved = S.clips.filter(c => Math.abs(c.at - c.original_at) > 0.01);
-  const added = S.clips.filter(c => c.id.startsWith("rec-"));
+  const added = S.clips.filter(c => c.id.startsWith("rec-") || c.id.startsWith("vid-"));
   let msg = moved.length ? moved.map(c => `${c.label}: ${fmt(c.original_at)} → ${fmt(c.at)}`).join(" · ") : "No changes yet";
   if (added.length) msg += ` · +${added.length} recording(s)`;
   const gains = Object.entries(S.trackGain).filter(([k, v]) => v !== 1).map(([k, v]) => `${k} ${Math.round(v*100)}%`);
@@ -1561,7 +2124,7 @@ function updateChanges() {
 
 /* ============ SAVE / EXPORT ============ */
 function exportProject() {
-  const clips = S.clips.map(c => {
+  const clips = S.clips.filter(c => !c.baked).map(c => {
     const o = {
       id: c.id, track: c.track, file: c.file,
       original_at: c.original_at, at: Math.round(c.at * 10) / 10,
@@ -1571,11 +2134,13 @@ function exportProject() {
     if (c._blobUrl) o.recording_data = c._blobUrl;
     if (c.fade_in) o.fade_in = true;
     if (c.fade_out) o.fade_out = true;
+    if (c.fx && c.fx.length) o.fx = c.fx;
     return o;
   });
+  const activeLeaf = findLeaf(activeLeafId);
   return {
-    name: PROJECT.name + " (edited)",
-    base_video: "trippedd-studio/production/WIZARD_GANG_EP01/wizard-gang-ep02-final-v8b.mp4",
+    name: (activeLeaf ? activeLeaf.name : PROJECT.name) + " (edited)",
+    base_video: (activeLeaf && activeLeaf.file) ? activeLeaf.file.replace(/^~\//, "") : "trippedd-studio/production/WIZARD_GANG_EP01/wizard-gang-ep02-final-v8b.mp4",
     duration: S.duration,
     clips, ducks: S.ducks, notes: S.notes,
     track_gain: S.trackGain,
@@ -1602,6 +2167,8 @@ $("saveBtn").onclick = () => {
 /* ============ INIT ============ */
 window.addEventListener("resize", resize);
 updateTime(); updateChanges(); updateScrub(); resize();
+initHeaderSelect();
+setEditorMode("edit"); /* EP02 v8b (default leaf) opens in edit mode */
 setInterval(() => { if (!video.paused && !drag) { S.playhead = video.currentTime; draw(); updateTime(); updateScrub(); if ($("tab-animate").classList.contains("active")) drawAnimFrame(); } }, 120);
 </script>
 </body>

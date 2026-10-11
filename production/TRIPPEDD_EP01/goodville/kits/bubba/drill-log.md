@@ -14,3 +14,6 @@ Rebuilt EXTRACTION-FIRST per USE THE IMAGE LAW.
 - Assembly side-by-side vs source: pixel-identical reconstruction.
 - Face variants composited and eye-checked (bubba happy+grin verified).
 - No square cuts (pieces are full-frame aligned, joins seamless).
+
+## Outfit variants — car trio image (2026-10-11)
+- **outfit_blue_work_shirt_torso.png**: Bubba's solid blue work shirt torso (chest pockets, buttons), extracted from the owner's car trio image. NOTE: isnet-general-use kept a black car-interior wedge at bottom-right; u2net's cut was cleaner (no wedge, hand intact) — used the u2net version. Model choice matters per-piece; test both.

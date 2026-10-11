@@ -32,7 +32,13 @@
     "walk_1.png",
     "walk_2.png",
     "walk_3.png",
-    "walk_4.png"
+    "walk_4.png",
+    {
+      "file": "outfit_palm_shirt_torso.png",
+      "desc": "Dickie outfit variant: black palm-tree tiki shirt torso.",
+      "source": "extracted",
+      "from": "/home/hatch/workspace/user/files/1000173536_14_nhu1.png (owner ChatGPT car trio, 2026-10-11)"
+    }
   ],
   "provenance": {
     "arm_L.png": "extracted",
@@ -65,6 +71,6 @@
     "walk_3.png": "derived-from-extraction",
     "walk_4.png": "derived-from-extraction"
   },
-  "count": 29,
+  "count": 30,
   "built": "2026-10-11T17:59:53.657791+00:00"
 }

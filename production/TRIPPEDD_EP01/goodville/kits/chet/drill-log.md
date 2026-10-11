@@ -30,3 +30,10 @@
 - Classic basement-dweller: computer, video games, D&D, trading cards, anime, WoW (South Park WoW-episode archetype).
 - ORIGINAL character — NOT based on a specific South Park character. Name TBD.
 - Sheet built around the identity: bong + nerd-signifier props (controller, D20, trading card).
+
+## Attempt 3 rebuild (2026-10-11) — CHET name locked (owner)
+- head_base was generic placeholder — rebuilt from key-art rembg cut (1075,590)-(1265,810): brown hair, black glasses (separate layer), donor eyes/pupils/brows, drawn mouth.
+- Name updated: glasses-bong-guy -> CHET (basement nerd identity).
+- Nerd props built (SP-flat, new): prop_controller.png, prop_d20.png, prop_card.png. Bong prop existing.
+- Variants rescaled (eyes 97,126 / mouth 95,177 / brows 95,79). Angles via feature-shift; profile from 34R.
+- torso_34/back at content scale. preview_sheet.png. All verified vs key art.

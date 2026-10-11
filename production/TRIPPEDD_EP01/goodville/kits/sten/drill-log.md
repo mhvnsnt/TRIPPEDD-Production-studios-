@@ -34,3 +34,12 @@ OWNER CORRECTION 2026-10-11: ADULT, not a STEN. STEN (Stan hat colors + blonde h
 - The cigarette grip hand is hand-built (not extracted); the key-art hand is small
   (~20px) and partially occluded.
 - No neutral brows in key art (adult grammar correction 2026-10-11: adults have visible brows; brows_neutral added — the old "SP STEN grammar" note was wrong, he is an adult).
+
+## Attempt 3 rebuild (2026-10-11)
+- head_base.png + torso_base.png were BROKEN (opaque peach blob / crude geometric) — rebuilt from key art.
+- New: rembg u2net head cut (250,555)-(490,800) incl. pom; artifact cleaned; flat skin #F5C098 fill; jaw trimmed at y188.
+- hat_full.png (blue/red + pom), hair_full.png (yellow side tuft) extracted by color key.
+- Donor furniture: eyes_open (whites), pupils (measured dots), mouth_open_donor from cut; all expression variants rescaled/repositioned to donor anchors (eyes center 134,122 / mouth 135,145 / brows y94).
+- Angles: head_34L/34R via feature-shift on fixed silhouette; head_profile_R via 0.72x compress + nose bump; torso_34/torso_back.
+- Torso constructed from sampled colors (jacket 87,62,57 / navy 40,47,89) — key-art torso 90% occluded, documented.
+- preview_sheet.png + head_neutral_full.png added. Every piece verified zoomed vs key art.

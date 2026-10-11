@@ -34,8 +34,8 @@ Vision + audio understood TOGETHER via joint embeddings.
 ## Usage
 
 ```bash
-V=~/workspace/tools/ai-qc/venv/bin/python
-S=~/workspace/tools/brain/sensorium/sensorium.py
+V=~/workspace/tools/sensorium-venv/bin/python
+S=tools/brain/sensorium/sensorium.py
 
 $V $S sense episode.mp4 --t0 50 --t1 70    # full director's-brain pass
 $V $S taste frame.png                       # aesthetic score
@@ -43,6 +43,19 @@ $V $S sync episode.mp4 120 130              # A/V sync check
 $V $S smell episode.mp4                     # anomaly report
 $V $S rank                                  # rank EP02 segments by style drift
 ```
+
+## Goodville style lock (2026-10-11)
+
+`goodville_style.py` — flat-cutout style scorer calibrated on Goodville key art
++ promo frames. 5/6 on calibration set (known false positive: synthetic smooth
+gradients). `gate.py` — automatic QC wrapper: taste + style_hold + smell + sync,
+exit 0 = all pass. The 15s promo passes all four gates.
+
+## Smart extraction pipeline
+
+`tools/smart-extract/` — vision-guided character part extraction
+(sense → loop → trace → cut → verify). THE standard for all shows/repos per
+SMART-WAY LAW. See its README.
 
 ## Integration with ai-qc
 

@@ -1,0 +1,134 @@
+{
+ "brows_neutral.png": {
+  "x": 90,
+  "y": 84,
+  "w": 87,
+  "h": 16
+ },
+ "brows_suspicious.png": {
+  "x": 90,
+  "y": 84,
+  "w": 87,
+  "h": 16
+ },
+ "brows_raised.png": {
+  "x": 90,
+  "y": 80,
+  "w": 87,
+  "h": 16
+ },
+ "eyes_open.png": {
+  "x": 108,
+  "y": 108,
+  "w": 56,
+  "h": 26
+ },
+ "eyes_look_L.png": {
+  "x": 108,
+  "y": 108,
+  "w": 56,
+  "h": 26
+ },
+ "eyes_look_R.png": {
+  "x": 108,
+  "y": 108,
+  "w": 56,
+  "h": 26
+ },
+ "eyes_look_up.png": {
+  "x": 108,
+  "y": 108,
+  "w": 56,
+  "h": 26
+ },
+ "eyes_look_down.png": {
+  "x": 108,
+  "y": 108,
+  "w": 56,
+  "h": 26
+ },
+ "eyes_happy.png": {
+  "x": 108,
+  "y": 108,
+  "w": 56,
+  "h": 26
+ },
+ "eyes_worried.png": {
+  "x": 108,
+  "y": 108,
+  "w": 56,
+  "h": 26
+ },
+ "mouth_neutral.png": {
+  "x": 120,
+  "y": 136,
+  "w": 30,
+  "h": 18
+ },
+ "mouth_frown.png": {
+  "x": 118,
+  "y": 133,
+  "w": 34,
+  "h": 24
+ },
+ "mouth_open.png": {
+  "x": 118,
+  "y": 133,
+  "w": 34,
+  "h": 24
+ },
+ "mouth_yell.png": {
+  "x": 115,
+  "y": 129,
+  "w": 40,
+  "h": 32
+ },
+ "eyes_sad.png": {
+  "x": 108,
+  "y": 108,
+  "w": 56,
+  "h": 26
+ },
+ "eyes_scheming.png": {
+  "x": 108,
+  "y": 108,
+  "w": 56,
+  "h": 26
+ },
+ "eyes_shocked.png": {
+  "x": 108,
+  "y": 108,
+  "w": 56,
+  "h": 26
+ },
+ "mouth_smile.png": {
+  "x": 118,
+  "y": 135,
+  "w": 34,
+  "h": 24
+ },
+ "mouth_grin.png": {
+  "x": 117,
+  "y": 134,
+  "w": 36,
+  "h": 26
+ },
+ "mouth_ooh.png": {
+  "x": 120,
+  "y": 134,
+  "w": 30,
+  "h": 24
+ },
+ "brows_angry.png": {
+  "x": 92,
+  "y": 87,
+  "w": 83,
+  "h": 14
+ },
+ "brows_sad.png": {
+  "x": 92,
+  "y": 87,
+  "w": 84,
+  "h": 14
+ }
+}

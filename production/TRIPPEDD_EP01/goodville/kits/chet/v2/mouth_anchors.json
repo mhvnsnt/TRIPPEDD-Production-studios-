@@ -1,0 +1,30 @@
+{
+ "mouth_smile.png": {
+  "x": 106,
+  "y": 140
+ },
+ "mouth_grin.png": {
+  "x": 104,
+  "y": 139
+ },
+ "mouth_frown.png": {
+  "x": 106,
+  "y": 140
+ },
+ "mouth_open.png": {
+  "x": 106,
+  "y": 140
+ },
+ "mouth_ooh.png": {
+  "x": 108,
+  "y": 139
+ },
+ "mouth_yell.png": {
+  "x": 103,
+  "y": 136
+ },
+ "mouth_neutral.png": {
+  "x": 108,
+  "y": 144
+ }
+}

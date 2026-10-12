@@ -68,3 +68,9 @@ relaxed (matches arm mitten), open, fist, point, grip (C-shape for cans). Skin t
 
 ### Verification
 Every furniture piece composited on head_blank and eye-checked zoomed. Combos verified: yell, suspicious, happy, sad, zipper, jaw-flap. Angle heads and bodies checked against source likeness. sheet_preview.png contact sheet generated.
+
+## Outfit angles build (2026-10-11 — owner: "make his 2 or 3 outfit references... torso no head but legs too and arms, from all angles")
+- **Found 2 outfits** (owner was right): (1) black wolf/flame graphic tee + gold chain, (2) black palm-tree tiki shirt with tiki bar band. No third outfit found in kit — needs owner input.
+- **outfit_wolf/**: 40 pieces (8 angles × torso/arm_L/arm_R/leg_L/leg_R). Cut from body_full/body_34l/body_34r/body_back donors via color segmentation (skin vs shirt). Missing angles (profile L/R, 34back L/R) generated via likeness_gen with verbatim prompts, then cut. All verified via reconstruction — no seams.
+- **outfit_palm/**: 40 pieces (8 angles × 5). Torsos via pattern transfer (palm front torso mapped onto wolf torso shapes). Arms: palm pattern on sleeves, skin kept. Legs: same pants as wolf (cleaned of graphic bleed). Note: profile angles have minor transfer artifacts; front/34/back are clean.
+- Anchors: pieces align to body_full.png coordinate space. Torso neck_y=288, waist_y=631 (front).

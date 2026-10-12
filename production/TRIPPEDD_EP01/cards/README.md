@@ -28,6 +28,7 @@ Bumper text: **STAY TRIPPEDD**. Built with `~/workspace/trippy-cards-build/build
 |---|---|---|
 | card-black-still-trippedd.mp4 | TRIPPEDD | 5s |
 | card-black-still-stay.mp4 | STAY TRIPPEDD | 5s |
+| kiko-encore-anyway-bump.mp4 | TRIPPEDD / Kiko Encore Anyway | 4s (with audio) |
 
-All 13 visually QC'd (frame @ t=3/4s each) 2026-10-10. QC frames kept in
+All 14 visually QC'd (frame @ t=3/4s each) 2026-10-10. QC frames kept in
 `~/workspace/trippy-cards-build/qc/` (build dir, not committed).

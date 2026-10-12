@@ -32,11 +32,11 @@ CHORDS = {
     "Dm":     {"bass": 38, "triad": [62, 65, 69], "e9": 64, "e11": 67, "e13": 71},
     "Bb":     {"bass": 34, "triad": [58, 62, 65], "e9": 60, "e11": 63, "e13": 67},
     "Gm":     {"bass": 31, "triad": [55, 58, 62], "e9": 57, "e11": 60, "e13": 64},
-    "A":      {"bass": 33, "triad": [57, 61, 64], "e9": 59, "e11": 62, "e13": 66},
+    "A":      {"bass": 33, "triad": [57, 61, 64], "e9": 59, "e11": 63, "e13": 66},
     "F":      {"bass": 29, "triad": [53, 57, 60], "e9": 55, "e11": 58, "e13": 62},
     "Bbmaj7": {"bass": 34, "triad": [58, 62, 65], "e9": 60, "e11": 63, "e13": 67},
     "Gm7":    {"bass": 31, "triad": [55, 58, 62], "e9": 57, "e11": 60, "e13": 64},
-    "A7":     {"bass": 33, "triad": [57, 61, 64], "e9": 59, "e11": 62, "e13": 66},
+    "A7":     {"bass": 33, "triad": [57, 61, 64], "e9": 59, "e11": 63, "e13": 66},
 }
 
 REGIONS = [
@@ -112,12 +112,12 @@ for st, en, cn in REGIONS:
     patt = [ch["bass"] + 24, ch["triad"][0] + 12, ch["triad"][1] + 12,
             ch["triad"][2] + 12, ch["e9"] + 12, ch["triad"][2] + 12,
             ch["triad"][1] + 12, ch["triad"][0] + 12]
-    step = 1.0 if in_bridge(st) else 0.5
+    step = 2.0 if in_bridge(st) else 1.5
     vel = 45 if in_bridge(st) else 60
     t = st
     k = 0
     while t < en - 0.1:
-        harp.append((t, t + step * 0.9, patt[k % len(patt)], vel))
+        harp.append((t, t + step * 0.9, patt[k % len(patt)], min(vel, 40)))
         t += step
         k += 1
 # harp run into the hold (144-146): ascending A minor to D6
@@ -129,7 +129,7 @@ add_track(mid, 25, 2, harp)
 # 3. CELESTA (GM9 bell, ch3) — sparse D6 glints
 celesta = []
 for t in [8, 12, 16, 20, 24, 28, 118, 122, 126, 146]:
-    celesta.append((t, t + 1.5, 86, 48))
+    celesta.append((t, t + 1.5, 74, 22))
 add_track(mid, 9, 3, celesta)
 
 # 4. SOLO VIOLA (GM42, ch4) — enters 30s; bridge: static Gm(add9) hold
@@ -177,16 +177,16 @@ for st, en, cn in REGIONS:
     ch = CHORDS[cn]
     if st < 74.0:
         vel = 65
-        notes = [ch["e9"] + 12, ch["triad"][2] + 12]
+        notes = [ch["e9"], ch["triad"][2]]
     elif st < 96.0:
         vel = 40
-        notes = [ch["e9"] + 12]
+        notes = [ch["e9"]]
     elif st < 118.0:
-        vel = 70
-        notes = [ch["e9"] + 12, ch["e11"] + 12]
+        vel = 55
+        notes = [ch["e9"], ch["e11"]]
     else:
-        vel = 80
-        notes = [ch["e9"] + 12, ch["e11"] + 12, ch["e13"] + 12]
+        vel = 60
+        notes = [ch["e9"], ch["e11"], ch["e13"]]
     for p in notes:
         divvi.append((st, en, p, vel))
 add_track(mid, 41, 7, divvi)
@@ -215,9 +215,9 @@ for st, en, cn in REGIONS:
     ch = CHORDS[cn]
     mid_t = st + (en - st) / 2
     for p in ch["triad"]:
-        horns.append((st, mid_t, p, 60))
-        horns.append((mid_t, en, p, 82))
-add_track(mid, 61, 9, horns)
+        horns.append((st, mid_t, p, 32))
+        horns.append((mid_t, en, p, 45))
+add_track(mid, 48, 10, horns)
 
 # 10. TROMBONES (GM58 brass, ch11) — final chorus ONLY
 tbn = []
@@ -226,11 +226,14 @@ for st, en, cn in REGIONS:
         continue
     ch = CHORDS[cn]
     for p in [ch["bass"] + 12, ch["triad"][0], ch["triad"][2]]:
-        tbn.append((st, en, p, 88))
-add_track(mid, 58, 11, tbn)
+        tbn.append((st, en, p, 50))
+add_track(mid, 49, 11, tbn)
 
 # 11. PIPE ORGAN (GM19 organ, ch12) — enters 96s pp, grows
 organ = []
+# 11b. VIOLIN ORCHESTRA doubling organ (GM48 strings, ch13) — same chords, same swells
+# Full section playing the organ's sustained harmony: violin+organ as one voice
+vorg = []
 for st, en, cn in REGIONS:
     if st < 96.0:
         continue
@@ -249,7 +252,11 @@ for st, en, cn in REGIONS:
         notes = [ch["bass"] - 12, ch["bass"], ch["triad"][0], ch["triad"][1]]
     for p in notes:
         organ.append((st, en, p, vel))
+        # Violin orchestra doubles organ an octave up — same chords, same timing
+        # Full section voicing: root + triad, warm and wide
+        vorg.append((st, en, p + 12, max(vel - 10, 25)))
 add_track(mid, 19, 12, organ)
+add_track(mid, 48, 13, vorg)
 
 # 12. TIMPANI (ch10 drums, notes 45/47) — final chorus rolls + crescendo into hold
 timp = []
@@ -369,6 +376,12 @@ lay_seg = layers[:CUT]
 if len(lay_seg) < CUT:
     lay_seg = np.pad(lay_seg, (0, CUT - len(lay_seg)))
 
+# DARKEN new layers to match v1's warmth: low-pass at 2.5kHz
+# The layer synth is brighter than v1's — this brings them into the same room
+from scipy.signal import butter, sosfilt
+sos = butter(4, 2500, btype='low', fs=SR, output='sos')
+lay_seg = sosfilt(sos, lay_seg)
+
 # adaptive gain: new layers ~ -7dB under v1 in the chorus region (52-74s)
 c0, c1 = int(52 * SR), int(74 * SR)
 rms_v1 = np.sqrt(np.mean(v1_seg[c0:c1] ** 2)) + 1e-9
@@ -435,3 +448,17 @@ for name, a, b in [("verse1", 8, 30), ("chorus1", 52, 74), ("final", 130, 146), 
     i0, i1 = int(a * SR), min(int(b * SR), len(out))
     seg = out[i0:i1]
     print(f"  {name}: RMS {20 * math.log10(np.sqrt(np.mean(seg**2)) + 1e-9):.1f} dBFS")
+
+
+# QC GATE — automated pre-delivery check (audio). If this fails, the file
+# does NOT get uploaded. Fix the flagged issues and re-run.
+import subprocess as _sp, sys as _sys
+_qc = _sp.run([_sys.executable,
+               os.path.expanduser("~/workspace/video-fix-tools/qc/auto_qc.py"),
+               V2],
+              capture_output=True, text=True)
+print(_qc.stdout)
+if _qc.returncode != 0:
+    print("QC GATE FAILED — not delivering. Fix the issues above, then re-run.")
+    raise SystemExit(1)
+print("QC GATE PASSED — safe to deliver.")

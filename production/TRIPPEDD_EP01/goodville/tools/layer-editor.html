@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Layer Editor — Goodville (Pocket Studio)</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#1a1a1a;color:#fff;font-family:system-ui,sans-serif}
+#toolbar{background:#2a2a2a;padding:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:100}
+#toolbar button{background:#4a4a4a;color:#fff;border:none;padding:10px 14px;border-radius:6px;font-size:13px;cursor:pointer}
+#toolbar button.primary{background:#2d7d2d}
+#toolbar select{background:#3a3a3a;color:#fff;border:none;padding:10px;border-radius:6px;font-size:13px}
+#toolbar input[type=file]{display:none}
+#main{display:flex;flex-direction:column;height:calc(100vh - 60px)}
+#canvas-wrap{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;background:#000;position:relative}
+canvas{touch-action:none;max-width:100%;max-height:100%}
+#timeline{background:#2a2a2a;padding:10px;border-top:1px solid #3a3a3a}
+#timeline input[type=range]{width:100%}
+#time-display{font-size:12px;color:#aaa;text-align:center;margin-top:4px}
+#layers-panel{position:fixed;right:10px;top:70px;background:#2a2a2a;border-radius:8px;padding:10px;width:230px;z-index:99;max-height:60vh;overflow-y:auto}
+#layers-panel h3{font-size:11px;color:#aaa;margin-bottom:8px}
+.layer-item{background:#3a3a3a;padding:8px;margin-bottom:6px;border-radius:4px;font-size:12px;cursor:pointer}
+.layer-item.active{background:#4a6a4a;border:1px solid #6a8a6a}
+.layer-item .controls{display:flex;gap:4px;margin-top:6px}
+.layer-item .controls button{background:#4a4a4a;color:#fff;border:none;padding:4px 8px;border-radius:4px;font-size:11px;flex:1}
+#hint{position:fixed;bottom:70px;left:10px;background:rgba(0,0,0,.8);padding:8px 12px;border-radius:6px;font-size:11px;color:#aaa;z-index:99;max-width:300px}
+#stems-panel{background:#222;padding:8px 10px;border-top:1px solid #333;max-height:120px;overflow-y:auto}
+#stems-panel h4{font-size:11px;color:#888;margin-bottom:6px}
+.stem-item{display:inline-block;background:#3a3a3a;padding:6px 10px;margin:2px;border-radius:4px;font-size:11px;cursor:pointer}
+.stem-item.playing{background:#2d5a2d}
+</style>
+</head>
+<body>
+<div id="toolbar">
+<select id="showSelect" onchange="switchShow(this.value)">
+<option value="goodville">Goodville</option>
+<option value="wizard-gang">Wizard Gang</option>
+<option value="god-molecule">God Molecule</option>
+<option value="dsw">Damn, Shit's Wild</option>
+<option value="bushes">In the Bushes</option>
+</select>
+<button onclick="document.getElementById('videoInput').click()">Load Video</button>
+<button onclick="document.getElementById('frameInput').click()">Load Frame</button>
+<button onclick="document.getElementById('pieceInput').click()">Add Piece</button>
+<button class="primary" onclick="exportFrame()">Export Frame</button>
+<button onclick="togglePlay()" id="playBtn">Play</button>
+<input type="file" id="videoInput" accept="video/*" onchange="loadVideo(this)">
+<input type="file" id="frameInput" accept="image/*" onchange="loadFrame(this)">
+<input type="file" id="pieceInput" accept="image/*" multiple onchange="addPieces(this)">
+</div>
+<div id="main">
+<div id="canvas-wrap">
+<video id="videoEl" style="display:none" playsinline></video>
+<canvas id="c"></canvas>
+</div>
+<div id="timeline">
+<input type="range" id="scrub" min="0" max="1000" value="0" oninput="seek(this.value)">
+<div id="time-display">00:00 / 00:00</div>
+</div>
+<div id="stems-panel">
+<h4>STEMS / AUDIO</h4>
+<div id="stemList"></div>
+<button onclick="document.getElementById('stemInput').click()" style="background:#3a3a3a;color:#fff;border:none;padding:6px 12px;border-radius:4px;font-size:11px;margin-top:6px;">+ Add Stem</button>
+<input type="file" id="stemInput" accept="audio/*" multiple style="display:none" onchange="addStems(this)">
+</div>
+</div>
+<div id="layers-panel"><h3>LAYERS (top to bottom)</h3><div id="layerList"></div></div>
+<div id="hint"><b>Layer Editor</b><br>Drag to move &bull; Pinch/wheel to scale<br>Tap to select &bull; Export to save</div>
+<script>
+const canvas=document.getElementById('c'),ctx=canvas.getContext('2d'),videoEl=document.getElementById('videoEl');
+let bgImage=null,useVideo=false,pieces=[],selected=-1,stems=[],isPlaying=false;
+let pointers=new Map(),lastPinch=0;
+canvas.addEventListener('pointerdown',e=>{canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+if(pointers.size===1&&selected>=0&&pieces[selected]){const p=pieces[selected];p._drag={sx:e.clientX,sy:e.clientY,px:p.x,py:p.y};}
+if(pointers.size===2){const v=[...pointers.values()];lastPinch=Math.hypot(v[0].x-v[1].x,v[0].y-v[1].y);}});
+canvas.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+if(pointers.size===1&&selected>=0&&pieces[selected]&&pieces[selected]._drag){const p=pieces[selected];const r=canvas.getBoundingClientRect();
+p.x=p._drag.px+(e.clientX-p._drag.sx)*(canvas.width/r.width);p.y=p._drag.py+(e.clientY-p._drag.sy)*(canvas.height/r.height);draw();}
+else if(pointers.size===2&&selected>=0){const v=[...pointers.values()];const d=Math.hypot(v[0].x-v[1].x,v[0].y-v[1].y);
+if(lastPinch>0){pieces[selected].scale*=d/lastPinch;pieces[selected].scale=Math.max(.05,Math.min(10,pieces[selected].scale));draw();}lastPinch=d;}});
+['pointerup','pointercancel'].forEach(ev=>canvas.addEventListener(ev,e=>{pointers.delete(e.pointerId);if(pieces[selected])pieces[selected]._drag=null;lastPinch=0;}));
+canvas.addEventListener('wheel',e=>{e.preventDefault();if(selected>=0&&pieces[selected]){pieces[selected].scale*=e.deltaY<0?1.08:.93;
+pieces[selected].scale=Math.max(.05,Math.min(10,pieces[selected].scale));updateLayerList();draw();}},{passive:false});
+canvas.addEventListener('click',e=>{if(pointers.size>0)return;const r=canvas.getBoundingClientRect();
+const x=(e.clientX-r.left)*(canvas.width/r.width),y=(e.clientY-r.top)*(canvas.height/r.height);
+for(let i=0;i<pieces.length;i++){const p=pieces[i];if(!p.visible)continue;const w=p.img.width*p.scale,h=p.img.height*p.scale;
+if(x>=p.x&&x<=p.x+w&&y>=p.y&&y<=p.y+h){selected=i;updateLayerList();draw();return;}}});
+function loadVideo(i){const f=i.files[0];if(!f)return;videoEl.src=URL.createObjectURL(f);
+videoEl.onloadedmetadata=()=>{useVideo=true;bgImage=null;canvas.width=videoEl.videoWidth;canvas.height=videoEl.videoHeight;
+document.getElementById('scrub').max=Math.floor(videoEl.duration*30);videoEl.currentTime=0;draw();};}
+function loadFrame(i){const f=i.files[0];if(!f)return;const img=new Image();
+img.onload=()=>{useVideo=false;bgImage=img;canvas.width=img.width;canvas.height=img.height;draw();};img.src=URL.createObjectURL(f);}
+function addPieces(i){for(const f of i.files){const img=new Image();
+img.onload=()=>{pieces.push({img,name:f.name,x:canvas.width/2-img.width/2,y:canvas.height/2-img.height/2,scale:.3,visible:true});
+selected=pieces.length-1;updateLayerList();draw();};img.src=URL.createObjectURL(f);}i.value='';}
+function addStems(i){const list=document.getElementById('stemList');
+for(const f of i.files){const a=new Audio(URL.createObjectURL(f));const d=document.createElement('div');
+d.className='stem-item';d.textContent='\u25B6 '+f.name;
+d.onclick=()=>{if(a.paused){a.play();d.classList.add('playing');d.textContent='\u23F8 '+f.name;}else{a.pause();d.classList.remove('playing');d.textContent='\u25B6 '+f.name;}};
+list.appendChild(d);stems.push({audio:a,name:f.name});}i.value='';}
+function seek(v){if(!useVideo)return;videoEl.currentTime=v/30;draw();}
+videoEl.addEventListener('timeupdate',()=>{if(!useVideo)return;
+document.getElementById('scrub').value=Math.floor(videoEl.currentTime*30);
+document.getElementById('time-display').textContent=fmt(videoEl.currentTime)+' / '+fmt(videoEl.duration||1);draw();});
+function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(Math.floor(s%60)).padStart(2,'0');}
+function togglePlay(){if(!useVideo)return;const b=document.getElementById('playBtn');
+if(videoEl.paused){videoEl.play();b.textContent='Pause';isPlaying=true;}else{videoEl.pause();b.textContent='Play';isPlaying=false;}}
+function draw(){if(!canvas.width)return;ctx.clearRect(0,0,canvas.width,canvas.height);
+if(useVideo&&videoEl.readyState>=2)ctx.drawImage(videoEl,0,0,canvas.width,canvas.height);
+else if(bgImage)ctx.drawImage(bgImage,0,0);
+for(let i=pieces.length-1;i>=0;i--){const p=pieces[i];if(!p.visible)continue;
+const w=p.img.width*p.scale,h=p.img.height*p.scale;ctx.drawImage(p.img,p.x,p.y,w,h);
+if(i===selected){ctx.strokeStyle='#4f4';ctx.lineWidth=3;ctx.strokeRect(p.x,p.y,w,h);}}}
+function updateLayerList(){const l=document.getElementById('layerList');l.innerHTML='';
+pieces.forEach((p,i)=>{const d=document.createElement('div');d.className='layer-item'+(i===selected?' active':'');
+d.innerHTML='<div>'+(p.visible?'\uD83D\uDC41':'\uD83D\uDEAB')+' '+p.name+'</div><div style="color:#888;font-size:11px">'+p.scale.toFixed(3)+'x @ ('+Math.round(p.x)+','+Math.round(p.y)+')</div><div class="controls"><button onclick="event.stopPropagation();toggleVis('+i+')">'+(p.visible?'Hide':'Show')+'</button><button onclick="event.stopPropagation();moveLayer('+i+',-1)">\u25BC</button><button onclick="event.stopPropagation();moveLayer('+i+',1)">\u25B2</button><button onclick="event.stopPropagation();delLayer('+i+')" style="background:#5a2a2a">X</button></div>';
+d.onclick=()=>{selected=i;updateLayerList();draw();};l.appendChild(d);});}
+function toggleVis(i){pieces[i].visible=!pieces[i].visible;updateLayerList();draw();}
+function delLayer(i){pieces.splice(i,1);if(selected>=pieces.length)selected=pieces.length-1;updateLayerList();draw();}
+function moveLayer(i,d){const j=i+d;if(j<0||j>=pieces.length)return;const t=pieces[i];pieces[i]=pieces[j];pieces[j]=t;selected=j;updateLayerList();draw();}
+function exportFrame(){const o=document.createElement('canvas');o.width=canvas.width;o.height=canvas.height;const c=o.getContext('2d');
+if(useVideo&&videoEl.readyState>=2)c.drawImage(videoEl,0,0);else if(bgImage)c.drawImage(bgImage,0,0);
+for(let i=pieces.length-1;i>=0;i--){const p=pieces[i];if(!p.visible)continue;c.drawImage(p.img,p.x,p.y,p.img.width*p.scale,p.img.height*p.scale);}
+const a=document.createElement('a');a.download='frame-edit-'+Date.now()+'.png';a.href=o.toDataURL('image/png');a.click();}
+function switchShow(v){console.log('Show:',v);}
+(function loop(){if(useVideo&&isPlaying)draw();requestAnimationFrame(loop);})();
+</script>
+</body>
+</html>

@@ -883,8 +883,52 @@ details.recipe .recipe-body p { margin: 6px 0; }
 </div>
 
 <!-- Bottom tab bar -->
+<div class="tab-page" id="tab-entrance">
+<style>
+#tab-entrance .ent-card { background:var(--panel); border:1px solid #2a2a3a; border-radius:12px; padding:12px; margin:10px 4px; }
+#tab-entrance .ent-card h3 { margin:0 0 8px; font-size:15px; }
+#tab-entrance .ent-row { display:flex; gap:8px; margin:8px 0; align-items:center; flex-wrap:wrap; }
+#tab-entrance .ent-row label { font-size:12px; color:var(--dim); min-width:78px; }
+#tab-entrance .ent-row select, #tab-entrance .ent-row input[type=text] { flex:1; background:var(--panel2); color:var(--text); border:1px solid #2a2a3a; border-radius:8px; padding:10px; font-size:14px; min-width:0; }
+#tab-entrance .ent-shots { display:flex; gap:6px; flex-wrap:wrap; margin:8px 0; }
+#tab-entrance .ent-shot { flex:1 1 30%; min-height:48px; border-radius:10px; background:var(--panel2); border:1px solid #33334a; color:var(--text); font-size:13px; }
+#tab-entrance .ent-shot.on { background:var(--accent); border-color:var(--accent); font-weight:bold; }
+#tab-entrance .ent-gates { display:flex; flex-direction:column; gap:6px; margin:8px 0; }
+#tab-entrance .ent-gate { display:flex; align-items:center; gap:8px; background:var(--panel2); border:1px solid #2a2a3a; border-radius:10px; padding:10px; font-size:13px; }
+#tab-entrance .ent-gate .st { font-size:16px; }
+#tab-entrance .ent-gate.pass { border-color:#2a7a3a; } #tab-entrance .ent-gate.fail { border-color:#a33; }
+#tab-entrance .ent-build { width:100%; min-height:56px; font-size:17px; font-weight:bold; }
+#tab-entrance .ent-cli { background:#111; border:1px solid #333; border-radius:8px; padding:8px; font-family:monospace; font-size:11px; color:#8f8; white-space:pre-wrap; word-break:break-all; margin-top:8px; display:none; }
+#tab-entrance .ent-dim { color:var(--dim); font-size:12px; }
+#tab-entrance #entPreview { width:100%; border-radius:12px; background:#000; margin-top:8px; display:none; }
+</style>
+<div style="padding:8px 4px;font-size:13px;color:var(--dim)">
+  🥊 3D entrance video builder — runs the real gated pipeline (<span style="font-size:10px;color:#55556a">video-pipeline/entrance-kit/3d/make_entrance_3d.py</span>), not a mockup.
+</div>
+<div class="ent-card"><h3>Character</h3>
+  <div class="ent-row"><label>Character</label><select id="entChar"><option>Loading models…</option></select></div>
+  <div class="ent-row"><label>Action (FBX)</label><input type="text" id="entAction" placeholder="path to taunt.fbx (optional)"></div>
+  <div class="ent-row"><label>Theme audio</label><input type="text" id="entAudio" placeholder="path to theme.mp3 (optional)"></div>
+  <div class="ent-dim">Character list reads asset-index.json (200 GLBs). Paths are workspace-relative.</div>
+</div>
+<div class="ent-card"><h3>Shots</h3>
+  <div class="ent-shots" id="entShots"></div>
+</div>
+<div class="ent-card"><h3>Gates</h3>
+  <div class="ent-gates" id="entGates"></div>
+  <div class="ent-dim">A gate FAIL stops the pipeline — fix the asset, not the gate.</div>
+</div>
+<div class="ent-card">
+  <button class="btn primary ent-build" id="entBuild">🥊 Build Entrance Video</button>
+  <div class="ent-cli" id="entCli"></div>
+  <video id="entPreview" controls playsinline></video>
+  <div class="ent-dim" id="entStatus" style="margin-top:6px"></div>
+</div>
+</div>
+
 <nav id="tabbar">
   <button data-tab="edit" class="active"><span class="ico">🎬</span>Edit</button>
+  <button data-tab="entrance"><span class="ico">🥊</span>Entrance</button>
   <button data-tab="animate"><span class="ico">🎞️</span>Anim</button>
   <button data-tab="blair"><span class="ico">📐</span>Blair</button>
   <button data-tab="projects"><span class="ico">📁</span>Proj</button>
@@ -3105,6 +3149,87 @@ document.querySelector("#tabbar").addEventListener("click", e => {
   const b = e.target.closest('button[data-tab="gamedev"]');
   if (b) initGameDev();
 });
+
+/* ============ TAB: ENTRANCE (3D entrance-kit pipeline) ============ */
+let entranceInit = false;
+const ENT_SHOTS = ["wide_establishing","low_hero","closeup","orbit","crane"];
+const ENT_GATES = [
+  {id:"rig",  label:"1. Validate Rig",       desc:"unweighted verts, NaN weights, flipped normals, bind pose"},
+  {id:"anim", label:"2. Validate Animation", desc:"joint popping, foot sliding, root floating"},
+  {id:"render", label:"3. Render Takes",     desc:"wrestling-grammar multi-angle takes, cuts on beats"},
+  {id:"compose", label:"4. Compose + QC",    desc:"title cards composited, A/V sync + QC gates"}
+];
+function initEntrance() {
+  if (entranceInit) return; entranceInit = true;
+  const shots = $("entShots");
+  shots.innerHTML = ENT_SHOTS.map((s,i) =>
+    '<button class="ent-shot' + (i < 4 ? " on" : "") + '" data-shot="' + s + '">' + s.replace(/_/g," ") + "</button>").join("");
+  shots.onclick = e => { const b = e.target.closest(".ent-shot"); if (b) b.classList.toggle("on"); };
+  $("entGates").innerHTML = ENT_GATES.map(g =>
+    '<div class="ent-gate" id="entGate-' + g.id + '"><span class="st">⏳</span><div><b>' + g.label + '</b><br><span class="ent-dim">' + g.desc + "</span></div></div>").join("");
+  fetch("asset-index.json").then(r => r.ok ? r.json() : null).then(idx => {
+    const models = (idx && idx.models) || [];
+    const sel = $("entChar");
+    sel.innerHTML = models.map(m => {
+      const n = m.name.replace(/\.glb$/i,"").replace(/_/g," ");
+      const pre = /el[-_ ]?toro/i.test(m.name) ? " selected" : "";
+      return '<option value="' + escapeHtml(m.path) + '"' + pre + ">" + escapeHtml(n) + "</option>";
+    }).join("") || '<option value="">(no models in asset-index.json)</option>';
+  }).catch(() => { $("entChar").innerHTML = '<option value="">(asset-index.json unavailable)</option>'; });
+  $("entBuild").addEventListener("click", entBuild);
+}
+document.querySelector("#tabbar").addEventListener("click", e => {
+  const b = e.target.closest('button[data-tab="entrance"]');
+  if (b) initEntrance();
+});
+function entParams() {
+  const shots = Array.from(document.querySelectorAll("#entShots .ent-shot.on")).map(x => x.dataset.shot);
+  const charPath = $("entChar").value;
+  const charName = ($("entChar").selectedOptions[0] || {}).text || "Character";
+  return { character: charName, glb: charPath, action: $("entAction").value.trim(),
+           audio: $("entAudio").value.trim(), shots: shots.length ? shots : ["wide_establishing"],
+           beats: "0,4,12,19,28" };
+}
+function entCliCmd(p) {
+  let c = 'cd ~/workspace/video-pipeline/entrance-kit/3d && python3 make_entrance_3d.py \\\n  --character "' + p.character + '" \\\n  --glb ~/' + p.glb;
+  if (p.action) c += ' \\\n  --action ~/' + p.action;
+  if (p.audio)  c += ' \\\n  --audio ~/' + p.audio;
+  c += ' \\\n  --out ./out/' + p.character.toLowerCase().replace(/[^a-z0-9]+/g,"-") + '/ \\\n  --shots ' + p.shots.join(",") + ' \\\n  --beats "' + p.beats + '"';
+  return c;
+}
+function entBuild() {
+  const p = entParams();
+  if (!p.glb) { $("entStatus").textContent = "Pick a character model first."; return; }
+  $("entStatus").textContent = "Submitting build…";
+  fetch("/api/entrance/build", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(p)})
+    .then(r => { if (!r.ok) throw new Error("no backend"); return r.json(); })
+    .then(job => entPoll(job.id))
+    .catch(() => {
+      // No backend serving this static app: hand over the exact real-pipeline command.
+      const box = $("entCli");
+      box.textContent = "No build server — run the real pipeline with:\n\n" + entCliCmd(p);
+      box.style.display = "block";
+      $("entStatus").textContent = "Backend not present. Copy the command above and run it on the workstation.";
+      navigator.clipboard && navigator.clipboard.writeText(entCliCmd(p)).catch(()=>{});
+    });
+}
+function entPoll(id) {
+  const iv = setInterval(() => {
+    fetch("/api/entrance/status/" + id).then(r => r.json()).then(s => {
+      (s.gates || []).forEach(g => {
+        const el = $("entGate-" + g.id);
+        if (el) { el.className = "ent-gate " + (g.status === "pass" ? "pass" : g.status === "fail" ? "fail" : "");
+                  el.querySelector(".st").textContent = g.status === "pass" ? "✅" : g.status === "fail" ? "❌" : "⏳"; }
+      });
+      $("entStatus").textContent = s.message || "";
+      if (s.done) {
+        clearInterval(iv);
+        if (s.video_url) { const v = $("entPreview"); v.src = s.video_url; v.style.display = "block"; }
+        $("entStatus").textContent = s.message || "Done.";
+      }
+    }).catch(() => clearInterval(iv));
+  }, 2000);
+}
 
 /* ---- game selector ---- */
 function gdRenderChips() {

@@ -23,5 +23,5 @@
     "allowImportingTsExtensions": true,
     "noEmit": true
   },
-  "exclude": ["vendor", "node_modules", "dist", "renders"]
+  "exclude": ["vendor", "node_modules", "dist", "renders", "tools/wave18_laneC/src/dumb-src/build"]
 }

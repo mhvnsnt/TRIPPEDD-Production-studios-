@@ -21,6 +21,7 @@ Bumper text: **STAY TRIPPEDD**. Built with `~/workspace/trippy-cards-build/build
 | card-black-stay-trippedd.mp4 | STAY TRIPPEDD | 6s |
 | card-black-wbrb.mp4 | WE'LL BE RIGHT BACK | 6s |
 | card-black-damn-shits-wild.mp4 | DAMN, SHIT'S WILD | 6s |
+| card-black-loti-100pct-more-leprechaun.mp4 | Now with 100% more leprechaun. | 10s |
 
 ## Black still (black background, white text, no wave — the calm ones)
 | file | text | duration |
@@ -28,5 +29,5 @@ Bumper text: **STAY TRIPPEDD**. Built with `~/workspace/trippy-cards-build/build
 | card-black-still-trippedd.mp4 | TRIPPEDD | 5s |
 | card-black-still-stay.mp4 | STAY TRIPPEDD | 5s |
 
-All 12 visually QC'd (frame @ t=3/4s each) 2026-10-10. QC frames kept in
+All 13 visually QC'd (frame @ t=3/4s each) 2026-10-10. QC frames kept in
 `~/workspace/trippy-cards-build/qc/` (build dir, not committed).

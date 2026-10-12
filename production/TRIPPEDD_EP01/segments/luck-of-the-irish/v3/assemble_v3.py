@@ -210,3 +210,18 @@ run(FF + ["-i", f"{COMP}/v3-hits.mp4", "-i", os.path.join(D, "v3-audio-beats.wav
           "-movflags", "+faststart",
           os.path.join(D, "luck-of-the-irish-commercial-v3.mp4")], "FINAL MUX")
 print("V3 ASSEMBLY COMPLETE")
+
+
+# 12. QC GATE — automated pre-delivery check. If this fails, the file does
+# NOT get uploaded. Fix the flagged issues and re-run.
+import subprocess as _sp, sys as _sys
+_qc = _sp.run([_sys.executable,
+               os.path.expanduser("~/workspace/video-fix-tools/qc/auto_qc.py"),
+               os.path.join(D, "luck-of-the-irish-commercial-v3.mp4"),
+               "--fps", "2"],
+              capture_output=True, text=True)
+print(_qc.stdout)
+if _qc.returncode != 0:
+    print("QC GATE FAILED — not delivering. Fix the issues above, then re-run.")
+    raise SystemExit(1)
+print("QC GATE PASSED — safe to deliver.")

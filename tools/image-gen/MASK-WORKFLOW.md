@@ -1,6 +1,7 @@
 # Owner Mask Workflow (owner 2026-10-11)
 
 When the assistant's auto-cut is wrong, the owner hand-edits a mask and shares it.
+Applies to EVERYTHING: shirts, patterns, character sheet pieces, any cutout.
 
 ## How it works
 1. Assistant generates a mask PNG (white = keep/fill, black = skip)

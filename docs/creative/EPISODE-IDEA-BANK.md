@@ -35,7 +35,7 @@ Status: idea banked, not yet written.
 ## "The Five-Dollar Nail" (owner 2026-10-10)
 
 Nail in the tire, they hear it, panic, rush to a tire shop thinking they need
-a replacement. The nail is TINY — didn't even puncture. Tanisha tries to get
+a replacement. The nail is TINY — didn't even puncture. Tyneshia tries to get
 the guy to fix it anyway, pays him $5. He pulls the nail out, refuses to patch
 it ("I'd patch it if I needed to"), and they drive off having paid five bucks
 for literally nothing.

@@ -61,3 +61,9 @@ Read `docs/agent_handoff/CLAUDE_TOOL_BULLETIN.md` before visual, mesh, rig, faci
 Rocket -> EP01 -> Opening -> EP01_MARS_AWARENESS -> real run -> real Blender/worker artifact -> byte verification -> physical QC -> visual QC -> evidence manifest.
 
 If a step is unavailable, report the exact blocked state instead of simulating success.
+
+## NO-DEFERRAL LAW (owner 2026-10-13)
+When the owner says to do teardowns and chimera builds, DO NOT DEFER. Get the full game, all files, whatever decryption/decompiling/reverse engineering is needed. Don't defer extraction until the game is fully torn down. This applies to every game used in builds and teardowns.
+
+### OPTIMIZED-FOR-HIM LAW (owner 2026-10-13)
+"Just find the best way for me, bro. The optimized way for me." Find the BEST path FOR HIM — not the easiest for the agent, not five minutes of back-and-forth. Figure out the optimal route requiring the LEAST from him, present it, execute.

@@ -1,5 +1,10 @@
 # WIZARD GANG — Puppet Rig Build Plan
-## Gumball-style rigs for the 7 wizards
+## Blender Grease Pencil rigs for the 7 wizards
+
+**Software: Blender Grease Pencil** (owner approved 2026-10-13)
+Why: armature-based bone rigging (real deformation, not sliding flat layers),
+3D cameras for dramatic angles, lighting + compositing in the same file,
+already wired up in this workspace (Blender 4.0.2).
 
 ### The Cast
 1. **Ashes** (Bill $aber voice) — leader, sharp teeth, grill varies
@@ -10,65 +15,59 @@
 6. **Theory** — sighs a lot
 7. **Onyx** (soft-spoken canon voice) — quiet threat
 
-### Rig Architecture (from Gumball .fla conventions)
+### Rig Architecture (Gumball conventions, Blender implementation)
 
-Each wizard gets ONE master puppet file:
+Each wizard gets ONE master .blend:
 ```
-WG[code]_PUPPET_[CHARACTER]_VERSION_[###].fla
-Example: WG100_PUPPET_ASHES_VERSION_001.fla
+WG100_PUPPET_ASHES_V001.blend
 ```
 
-**Layer stack inside each puppet** (top to bottom):
+**Armature** (bones, top to bottom):
 ```
-WG100_ASHES (root)
+root
 ├── head
-│   ├── hair/hat
-│   ├── eyes (L/R separate for blinks)
-│   ├── brows
-│   ├── nose
-│   ├── mouth (viseme pack — see below)
-│   └── teeth (Ashes: sharp teeth layer, grill variants as swaps)
-├── torso
-│   └── robe (main body — wizards are robed, this is the big piece)
-├── arm_L
-│   ├── upper_arm_L
-│   ├── forearm_L
-│   └── hand_L
-├── arm_R
-│   ├── upper_arm_R
-│   ├── forearm_R
-│   └── hand_R
-└── legs (mostly hidden under robes — simple stubs for walk cycles)
+│   ├── jaw (for mouth open/close + talking)
+│   └── eyes.L / eyes.R (separate bones for blinks, look directions)
+├── torso (robe — single big bone, minimal deformation)
+├── arm_upper.L → arm_fore.L → hand.L
+└── arm_upper.R → arm_fore.R → hand.R
 ```
 
-**Why this works for Wizard Gang:** they're robed characters. The robe IS the torso — one big shape, no complex clothing folds to rig. Arms and head do all the acting. This is simpler than Gumball's rigs.
+**Grease Pencil layers** (inside the .blend, bound to bones):
+- robe (body — one big shape, weight-painted to torso bone)
+- head_base, hair/hat, eyes, brows, nose
+- mouth (shape-keyed viseme set — see below)
+- teeth (Ashes: separate layer, grill variants as visibility swaps)
+- hands (mitten-style, simple — wizards gesture, don't finger-act)
 
-### Mouth Pack (per character)
-Gumball uses symbol-swapped mouth shapes. For Wizard Gang:
-- Standard 8-viseme set: AI, E, O, U, M/B/P, F/V, L, rest
-- Ashes gets a second set showing sharp teeth
-- Cipher gets a feral variant (wider, more teeth)
-- Build once per character, swap symbols on the timeline
+**Why robes are easy:** one big shape, minimal deformation. Arms and head do all the acting. Simpler than Gumball's rigs.
+
+### Mouth Pack (per character, Grease Pencil shape keys)
+Standard 8-viseme set: AI, E, O, U, M/B/P, F/V, L, rest.
+- Ashes: second set showing sharp teeth
+- Cipher: feral variant (wider, more teeth)
+- Build once per character, swap on timeline
 
 ### The 50-70% Animation Pipeline
-1. **Pose keys** — you (or the board artist) pose the puppets at key story beats
-2. **Timing chart** — keys placed on the timeline at your dialogue timestamps (we already have these from EP01)
-3. **Tween fill** — Animate/After Effects interpolates between poses
-4. **AI assist** — AI fills in-betweens INSIDE the posed constraints (not generating whole shots)
-5. **12-principles QC** — squash/stretch, anticipation, follow-through checked per shot
-6. **Painterly pass** — dramatic beats get the painterly treatment (your locked style)
+1. **Pose keys** — pose the armatures at key story beats
+2. **Timing chart** — keys on timeline at dialogue timestamps (EP01's are already mapped)
+3. **Blender interpolates** — Graph Editor tweens between poses
+4. **AI assist** — AI fills in-betweens INSIDE posed constraints (not whole shots)
+5. **12-principles QC** — squash/stretch, anticipation, follow-through per shot
+6. **Painterly pass** — dramatic beats get the painterly treatment (locked style)
 
 ### File Naming (Gumball convention, adapted)
 ```
-WG[ep]REMOTE_Sc[###]_[Clean|Cleanup]_V[###]_[INITIALS].fla
-Example: WG101REMOTE_Sc014_Clean_V003_MUSE.fla
+WG[ep]_Sc[###]_[Clean|Cleanup]_V[###].blend
+Example: WG101_Sc014_Clean_V003.blend
 ```
 
-### What to Build First
-1. Ashes puppet (he has the most lines — EP01 proves it)
-2. Ashes mouth pack with teeth variants
-3. One test scene: Ashes "the wizards have arrived" (0:01-0:16)
-4. If the test works, build the other 6 puppets
+### Build Order
+1. Ashes puppet + mouth pack with teeth variants (most lines in EP01)
+2. Test scene: "the wizards have arrived" (0:01–0:16)
+3. Other 6 puppets once the test works
 
-### Software
-Adobe Animate is what Gumball used (.fla). Free alternative: **OpenToonz** (Studio Ghibli's software, open source) does the same puppet/tween workflow. Blender's Grease Pencil is another free path.
+### Reference Materials
+- `fla-rig-conventions.md` — Gumball layer/naming conventions (concepts transfer to Blender)
+- `bible-structure-analysis.md` — show bible structure
+- CN gigaleak .fla files — study the RIG LOGIC (bone placement, layer separation), rebuild in Blender, don't port files directly

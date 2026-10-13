@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>EP01 Dialogue Timeline</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { background: #111; color: #eee; font-family: -apple-system, sans-serif; margin: 0; padding: 12px; }
+  h2 { font-size: 18px; margin: 8px 0; }
+  video { width: 100%; border-radius: 8px; background: #000; }
+  #playhead-info { font-size: 16px; font-weight: bold; color: #ffeb3b; margin: 8px 0; text-align: center; }
+  #timeline-wrap { position: relative; margin-top: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  #timeline { position: relative; height: 560px; min-width: 100%; background: #1a1a1a; border-radius: 8px; cursor: crosshair; }
+  .ruler { position: absolute; top: 0; left: 0; right: 0; height: 24px; border-bottom: 1px solid #333; pointer-events: none; }
+  .tick { position: absolute; top: 0; font-size: 10px; color: #888; padding: 4px 0 0 4px; border-left: 1px solid #444; height: 24px; }
+  #playhead { position: absolute; top: 0; bottom: 0; width: 2px; background: #ffeb3b; z-index: 50; pointer-events: none; }
+  #playhead::after { content: '▶'; position: absolute; top: -2px; left: -7px; font-size: 14px; color: #ffeb3b; }
+  .clip { position: absolute; height: 44px; border-radius: 6px; padding: 4px 6px; font-size: 11px; overflow: hidden;
+          cursor: grab; user-select: none; touch-action: none; white-space: nowrap; z-index: 10; }
+  .clip:active { cursor: grabbing; z-index: 99; opacity: 0.9; }
+  .clip .t { font-weight: bold; display: block; font-size: 10px; }
+  .clip .s { color: rgba(255,255,255,0.75); font-size: 10px; }
+  .ashes { background: #7b1fa2; } .static { background: #1565c0; } .cipher { background: #2e7d32; }
+  .sombra { background: #6a1b1b; } .kiko { background: #e65100; } .theory { background: #00838f; }
+  .onyx { background: #4e342e; } .crowd { background: #37474f; } .sfx { background: #455a64; }
+  .music { background: #1b5e20; }
+  #export { position: fixed; bottom: 76px; left: 16px; right: 16px; padding: 16px; font-size: 17px;
+            background: #2e7d32; color: white; border: none; border-radius: 12px; font-weight: bold; z-index: 100; }
+  #splitbtn { position: fixed; bottom: 16px; left: 16px; right: 16px; padding: 14px; font-size: 16px;
+            background: #1565c0; color: white; border: none; border-radius: 12px; font-weight: bold; display: none; z-index: 100; }
+  #out { background: #222; border-radius: 8px; padding: 12px; margin: 16px 0 140px; font-size: 12px;
+         white-space: pre-wrap; word-break: break-all; display: none; max-height: 300px; overflow-y: auto; }
+  .hint { color: #888; font-size: 13px; margin: 8px 0; }
+</style>
+</head>
+<body>
+<h2>EP01 Dialogue Timeline</h2>
+<video id="vid" controls playsinline preload="metadata">
+  <source src="https://muse.ai/files/1299464149925011/28709356685388099/kq0eli0685xoujrzy1kub2s3/wg-ep01-dialogue-v2-small.mp4" type="video/mp4">
+</video>
+<div id="playhead-info">Playhead: 0:00.0 — tap timeline to seek</div>
+<p class="hint">Tap timeline to move playhead. Drag blocks to move. Tap block to select, then SPLIT at playhead position.</p>
+<div id="timeline-wrap"><div id="timeline"><div class="ruler" id="ruler"></div><div id="playhead"></div></div></div>
+<div id="out"></div>
+<button id="export">COPY NEW TIMELINE</button>
+<button id="splitbtn">SPLIT AT PLAYHEAD</button>
+
+<script>
+const DUR = 301;
+const PX_PER_SEC = 8;
+const clips = [
+  {id:'ashes_04a', char:'ASHES', cls:'ashes', t:4.0, d:0.5, line:"yes"},
+  {id:'ashes_04b', char:'ASHES', cls:'ashes', t:5.5, d:0.65, line:"it's time"},
+  {id:'ashes_04c', char:'ASHES', cls:'ashes', t:8.15, d:0.7, line:"the wizards"},
+  {id:'ashes_04d', char:'ASHES', cls:'ashes', t:9.85, d:0.3, line:"have"},
+  {id:'ashes_04e', char:'ASHES', cls:'ashes', t:11.15, d:0.85, line:"arrived"},
+  {id:'static_laugh', char:'STATIC', cls:'static', t:20.5, d:6.2, line:"laughing (Beavis/Butthead)"},
+  {id:'cipher_laugh', char:'CIPHER', cls:'cipher', t:20.5, d:2.0, line:"laughing (Beavis/Butthead)"},
+  {id:'chain_rattle', char:'SFX', cls:'sfx', t:27, d:5.0, line:"chain rattle"},
+  {id:'sombra_33', char:'SOMBRA', cls:'sombra', t:33, d:1.4, line:"I think I've been here before."},
+  {id:'kiko_39', char:'KIKO', cls:'kiko', t:39, d:3.12, line:"Check out my robe! (3-layer)"},
+  {id:'ashes_42', char:'ASHES', cls:'ashes', t:42, d:1.04, line:"WIZARD GANG!"},
+  {id:'crowd_laugh', char:'CROWD', cls:'crowd', t:50, d:5.76, line:"7 voices laughing"},
+  {id:'crowd_huh', char:'CROWD', cls:'crowd', t:52, d:2.04, line:'7 voices "huh?"'},
+  {id:'crowd_gasp', char:'CROWD', cls:'crowd', t:53, d:3.44, line:"7 voices gasping"},
+  {id:'static_100', char:'STATIC', cls:'static', t:60, d:4.2, line:"What, we're just a bunch of wizards..."},
+  {id:'ashes_105', char:'ASHES', cls:'ashes', t:65.8, d:1.64, line:"Council is in session..."},
+  {id:'onyx_108', char:'ONYX', cls:'onyx', t:67.0, d:0.6, line:"yes."},
+  {id:'ashes_121', char:'ASHES', cls:'ashes', t:82.3, d:2.12, line:"The City is ours! We rule the night!"},
+  {id:'cipher_135', char:'CIPHER', cls:'cipher', t:95, d:2.76, line:"manic giggling"},
+  {id:'ashes_140', char:'ASHES', cls:'ashes', t:102.6, d:2.68, line:"propane and propane accessories?"},
+  {id:'static_204', char:'STATIC', cls:'static', t:124.5, d:2.48, line:"hey man! you're burnin the burgers!"},
+  {id:'static_218', char:'STATIC', cls:'static', t:138, d:2.56, line:"That's not even us!"},
+  {id:'ovation', char:'SFX', cls:'sfx', t:147, d:5.0, line:"standing ovation"},
+  {id:'bball', char:'SFX', cls:'sfx', t:151, d:9.0, line:"basketball ambience"},
+  {id:'static_240', char:'STATIC', cls:'static', t:160, d:5.32, line:"baconeggandcheese??"},
+  {id:'cipher_257', char:'CIPHER', cls:'cipher', t:177, d:2.2, line:"he sees you... He knows..."},
+  {id:'theory_304', char:'THEORY', cls:'theory', t:184, d:4.76, line:"hey don't touch that! That's gross!"},
+  {id:'static_338', char:'STATIC', cls:'static', t:218, d:7.56, line:"Yo! Static in the building..."},
+  {id:'cipher_339', char:'CIPHER', cls:'cipher', t:207.1, d:4.32, line:"awwww, man! Ow, cuts..."},
+  {id:'sombra_350', char:'SOMBRA', cls:'sombra', t:230, d:1.8, line:"ah, this is nice..."},
+  {id:'kiko_402', char:'KIKO', cls:'kiko', t:242, d:2.2, line:"check out my robe guys... (3-layer)"},
+  {id:'kiko_408', char:'KIKO', cls:'kiko', t:248, d:1.84, line:"isn't it? Come on... (3-layer)"},
+  {id:'fireworks', char:'SFX', cls:'sfx', t:250, d:10.0, line:"fireworks"},
+  {id:'ashes_437', char:'ASHES', cls:'ashes', t:279.3, d:3.44, line:"well, guys... Girls... Witches and wizards..."},
+  {id:'uzi', char:'MUSIC', cls:'music', t:295, d:8.0, line:"Uzi Shoulder outro"},
+];
+clips.forEach(c => { c.src = c.id; c.srcOffset = 0; });
+
+const tl = document.getElementById('timeline');
+const vid = document.getElementById('vid');
+const playhead = document.getElementById('playhead');
+const playheadInfo = document.getElementById('playhead-info');
+tl.style.width = (DUR * PX_PER_SEC + 40) + 'px';
+
+for (let s = 0; s <= DUR; s += 30) {
+  const tick = document.createElement('div');
+  tick.className = 'tick'; tick.style.left = (s * PX_PER_SEC) + 'px';
+  tick.textContent = Math.floor(s/60) + ':' + String(s%60).padStart(2,'0');
+  document.getElementById('ruler').appendChild(tick);
+}
+
+function fmt(t) {
+  return Math.floor(t/60) + ':' + (t%60).toFixed(1).padStart(4,'0');
+}
+function updatePlayhead() {
+  const t = vid.currentTime || 0;
+  playhead.style.left = (t * PX_PER_SEC) + 'px';
+  playheadInfo.textContent = 'Playhead: ' + fmt(t) + ' — tap timeline to seek';
+}
+vid.addEventListener('timeupdate', updatePlayhead);
+updatePlayhead();
+
+// tap timeline to seek
+tl.addEventListener('pointerdown', e => {
+  if (e.target.closest('.clip')) return; // let clips handle their own
+  const rect = tl.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  vid.currentTime = Math.max(0, Math.min(DUR, x / PX_PER_SEC));
+  updatePlayhead();
+});
+
+function position(el, c) {
+  el.style.left = (c.t * PX_PER_SEC) + 'px';
+  el.style.width = Math.max(c.d * PX_PER_SEC, 60) + 'px';
+  el.querySelector('.t').textContent = c.char + ' @ ' + fmt(c.t);
+}
+
+let selected = null, selectedEl = null, splitCounter = 0;
+
+clips.forEach((c, i) => {
+  const el = document.createElement('div');
+  el.className = 'clip ' + c.cls;
+  el.style.top = (32 + (i % 8) * 52) + 'px';
+  el.innerHTML = '<span class="t"></span><span class="s">' + c.line + '</span>';
+  position(el, c); tl.appendChild(el);
+  let startX, startT, dragging = false;
+  el.addEventListener('pointerdown', e => {
+    e.stopPropagation();
+    dragging = true; startX = e.clientX; startT = c.t;
+    el.setPointerCapture(e.pointerId);
+  });
+  el.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    c.t = Math.max(0, Math.min(DUR - c.d, startT + (e.clientX - startX) / PX_PER_SEC));
+    position(el, c);
+  });
+  el.addEventListener('pointerup', e => {
+    const wasDrag = Math.abs(c.t - startT) > 0.5;
+    dragging = false;
+    if (!wasDrag) {
+      document.querySelectorAll('.clip').forEach(x => x.style.outline = '');
+      el.style.outline = '3px solid #ffeb3b';
+      selected = c; selectedEl = el;
+      const sb = document.getElementById('splitbtn');
+      sb.style.display = 'block';
+      sb.textContent = 'SPLIT "' + c.char + '" AT ' + fmt(vid.currentTime || 0);
+    }
+  });
+});
+
+document.getElementById('splitbtn').addEventListener('click', () => {
+  if (!selected) return;
+  const cutAt = vid.currentTime || 0;
+  const offsetInClip = cutAt - selected.t;
+  if (offsetInClip <= 0.2 || offsetInClip >= selected.d - 0.2) {
+    alert('Playhead is at ' + fmt(cutAt) + ' — move it inside the "' + selected.char + '" clip (' + fmt(selected.t) + ' to ' + fmt(selected.t + selected.d) + ') to split');
+    return;
+  }
+  splitCounter++;
+  const rightPiece = {
+    id: selected.id + '_b' + splitCounter,
+    src: selected.src, srcOffset: (selected.srcOffset || 0) + offsetInClip,
+    char: selected.char, cls: selected.cls,
+    t: cutAt, d: selected.d - offsetInClip,
+    line: selected.line + ' (pt2)'
+  };
+  selected.d = offsetInClip;
+  selected.line = selected.line + ' (pt1)';
+  clips.push(rightPiece);
+  const el = document.createElement('div');
+  el.className = 'clip ' + rightPiece.cls;
+  el.style.top = selectedEl.style.top;
+  el.innerHTML = '<span class="t"></span><span class="s">' + rightPiece.line + '</span>';
+  position(el, rightPiece); tl.appendChild(el);
+  // make new piece draggable (simplified - reuse pattern)
+  let sx, st, dg = false;
+  el.addEventListener('pointerdown', e => { e.stopPropagation(); dg = true; sx = e.clientX; st = rightPiece.t; el.setPointerCapture(e.pointerId); });
+  el.addEventListener('pointermove', e => { if (!dg) return; rightPiece.t = Math.max(0, Math.min(DUR - rightPiece.d, st + (e.clientX - sx) / PX_PER_SEC)); position(el, rightPiece); });
+  el.addEventListener('pointerup', () => { dg = false; });
+  position(selectedEl, selected);
+  selectedEl.querySelector('.s').textContent = selected.line;
+  selectedEl.style.outline = ''; selected = null;
+  document.getElementById('splitbtn').style.display = 'none';
+});
+
+document.getElementById('export').addEventListener('click', () => {
+  let txt = 'EP01 DIALOGUE TIMELINE (updated)\n';
+  clips.forEach(c => {
+    txt += c.id + '|' + c.t.toFixed(1) + '|' + c.d.toFixed(2) + '|' + c.src + '|' + c.srcOffset.toFixed(2) + '|' + c.char + '|' + c.line + '\n';
+  });
+  const out = document.getElementById('out');
+  out.style.display = 'block'; out.textContent = txt;
+  navigator.clipboard.writeText(txt);
+  document.getElementById('export').textContent = 'COPIED!';
+  setTimeout(() => document.getElementById('export').textContent = 'COPY NEW TIMELINE', 2000);
+});
+</script>
+</body>
+</html>

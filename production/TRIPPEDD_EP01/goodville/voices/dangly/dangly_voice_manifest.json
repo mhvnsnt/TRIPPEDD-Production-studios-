@@ -1,0 +1,84 @@
+{
+  "voice": "Lt. James Dangly (style-alike parody scratch; NO clone)",
+  "policy": "No cloning of John Dunsworth (d. 2017). Base voice = ElevenLabs premade stock voice 'Bill' (old male, synthetic, not a real person). Ranges steered by delivery tags + voice settings on eleven_v3.",
+  "base_voice": {
+    "id": "pqHfZKP75CvOlQylNhV4",
+    "name": "Bill - Wise, Mature, Balanced",
+    "category": "premade"
+  },
+  "model": "eleven_v3",
+  "built": "2026-10-12T07:44:56Z",
+  "ranges": {
+    "drunk": {
+      "tts_settings": {
+        "stability": 0.3,
+        "similarity_boost": 0.75,
+        "style": 0.7
+      }
+    },
+    "sober": {
+      "tts_settings": {
+        "stability": 0.55,
+        "similarity_boost": 0.8,
+        "style": 0.45
+      }
+    },
+    "calm": {
+      "tts_settings": {
+        "stability": 0.7,
+        "similarity_boost": 0.85,
+        "style": 0.3
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "dangly_drunk_line1_ive-seen-some-things.mp3",
+      "range": "drunk",
+      "line": "line1_ive-seen-some-things",
+      "canon_text": "I've seen some things...",
+      "directed_text": "[slurred, drunkenly, grandiose] I've seen some things...",
+      "bytes": 43511
+    },
+    {
+      "file": "dangly_drunk_line2_dinosaur-story.mp3",
+      "range": "drunk",
+      "line": "line2_dinosaur-story",
+      "canon_text": "One time... I saw a guy in traffic, he beat up a dinosaur, ripped its head off, did ungodly things, unspeakable..",
+      "directed_text": "[slurred, drunkenly, grandiose] One time... I saw a guy in traffic... [shouting] he beat up a dinosaur, ripped its head off... [mumbling, trailing off] did ungodly things... unspeakable..",
+      "bytes": 230339
+    },
+    {
+      "file": "dangly_sober_line1_ive-seen-some-things.mp3",
+      "range": "sober",
+      "line": "line1_ive-seen-some-things",
+      "canon_text": "I've seen some things...",
+      "directed_text": "[coldly, quietly, menacingly] I've seen some things...",
+      "bytes": 38078
+    },
+    {
+      "file": "dangly_sober_line2_dinosaur-story.mp3",
+      "range": "sober",
+      "line": "line2_dinosaur-story",
+      "canon_text": "One time... I saw a guy in traffic, he beat up a dinosaur, ripped its head off, did ungodly things, unspeakable..",
+      "directed_text": "[quietly, menacingly, deliberate] One time... I saw a guy in traffic. He beat up a dinosaur. Ripped its head off. Did ungodly things. Unspeakable.",
+      "bytes": 203172
+    },
+    {
+      "file": "dangly_calm_line1_ive-seen-some-things.mp3",
+      "range": "calm",
+      "line": "line1_ive-seen-some-things",
+      "canon_text": "I've seen some things...",
+      "directed_text": "[warmly, gently, thoughtfully] I've seen some things...",
+      "bytes": 71515
+    },
+    {
+      "file": "dangly_calm_line2_dinosaur-story.mp3",
+      "range": "calm",
+      "line": "line2_dinosaur-story",
+      "canon_text": "One time... I saw a guy in traffic, he beat up a dinosaur, ripped its head off, did ungodly things, unspeakable..",
+      "directed_text": "[calmly, warmly, gently] One time... I saw a guy in traffic. He beat up a dinosaur, ripped its head off... did ungodly things. Unspeakable.",
+      "bytes": 175168
+    }
+  ]
+}

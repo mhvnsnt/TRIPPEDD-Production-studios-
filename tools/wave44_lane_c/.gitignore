@@ -1,7 +1,0 @@
-# Build/runtime artifacts — never commit
-vendor/
-models/
-*.wav
-*.mp3
-*.bin
-__pycache__/

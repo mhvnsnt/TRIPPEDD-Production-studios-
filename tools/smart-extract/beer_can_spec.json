@@ -1,4 +1,0 @@
-{"image": "/home/hatch/workspace/trippedd-studio/assets/references/ep01/source/Goodville - Not South Park.png",
- "image_size": [1536, 1024],
- "note": "BEER can re-extraction 2026-10-11 — white-box artifact fix. Bbox from muse.visual_grounding.",
- "parts": [{"bbox": [97, 840, 177, 929], "character": "amos_jr", "name": "beer_can", "notes": "Blue/red BEER can from Amos Jr.'s fist — must have clean transparent background, no white box.", "pad": 15}]}

@@ -31,7 +31,7 @@ const checks: Record<string, Spec> = {
   openexr: { command: 'exrheader', args: ['--help'] },
   imagemagick: { command: 'magick', args: ['-version'] },
   sox: { command: 'sox', args: ['--version'] },
-  rubberband: { command: 'rubberband', args: ['--help'] },
+  rubberbandHelp: { command: 'rubberband', args: ['--help'] },
   mediainfo: { command: 'mediainfo', args: ['--Version'] },
   exiftool: { command: 'exiftool', args: ['-ver'] },
   bwfmetaedit: { command: 'bwfmetaedit', args: ['--version'] },

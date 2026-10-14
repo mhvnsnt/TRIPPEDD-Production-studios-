@@ -1,0 +1,762 @@
+[
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/arm_down.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/arm_down.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.943,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/arm_folded_beer.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/arm_folded_beer.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.932,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/arm_punch.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/arm_punch.png",
+  "border_opaque_before": 0.091,
+  "border_opaque_after": 0.052,
+  "area_kept": 0.953,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/beer_holding_arm.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/beer_holding_arm.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.937,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/body_34L.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/body_34L.png",
+  "border_opaque_before": 0.023,
+  "border_opaque_after": 0.021,
+  "area_kept": 0.973,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/body_34R.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/body_34R.png",
+  "border_opaque_before": 0.022,
+  "border_opaque_after": 0.02,
+  "area_kept": 0.973,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/body_back.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/body_back.png",
+  "border_opaque_before": 0.006,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.973,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/body_full.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/body_full.png",
+  "border_opaque_before": 0.029,
+  "border_opaque_after": 0.028,
+  "area_kept": 0.974,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/body_sitting.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/body_sitting.png",
+  "border_opaque_before": 0.024,
+  "border_opaque_after": 0.022,
+  "area_kept": 0.921,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/brow_angry.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/brow_angry.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.686,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/brow_neutral.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/brow_neutral.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.697,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/brow_raised.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/brow_raised.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.704,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/brow_sad.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/brow_sad.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.686,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/brow_suspicious.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/brow_suspicious.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.722,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_angry.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_angry.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.909,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_closed.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_closed.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.24,
+  "status": "REVIEW_kept_original"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_happy.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_happy.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.584,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_look_L.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_look_L.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.899,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_look_R.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_look_R.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.9,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_look_up.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_look_up.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.898,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_open.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_open.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.897,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_worried.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/eyes_worried.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.92,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/hand_fist_can.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/hand_fist_can.png",
+  "border_opaque_before": 0.253,
+  "border_opaque_after": 0.249,
+  "area_kept": 0.947,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/hand_grip.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/hand_grip.png",
+  "border_opaque_before": 0.253,
+  "border_opaque_after": 0.249,
+  "area_kept": 0.949,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/hand_open.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/hand_open.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.934,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/hand_point.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/hand_point.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.895,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/hand_relaxed.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/hand_relaxed.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.925,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head.png",
+  "border_opaque_before": 0.059,
+  "border_opaque_after": 0.052,
+  "area_kept": 0.988,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head_34L.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head_34L.png",
+  "border_opaque_before": 0.256,
+  "border_opaque_after": 0.025,
+  "area_kept": 0.828,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head_34R.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head_34R.png",
+  "border_opaque_before": 0.238,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.703,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head_no_eyes_mustache.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head_no_eyes_mustache.png",
+  "border_opaque_before": 0.06,
+  "border_opaque_after": 0.053,
+  "area_kept": 0.99,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head_no_mouth_brows_eyes.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head_no_mouth_brows_eyes.png",
+  "border_opaque_before": 0.06,
+  "border_opaque_after": 0.054,
+  "area_kept": 0.989,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head_profile.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/head_profile.png",
+  "border_opaque_before": 0.094,
+  "border_opaque_after": 0.091,
+  "area_kept": 0.956,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/legs_stand.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/legs_stand.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.931,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_closed.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_closed.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.089,
+  "status": "REVIEW_kept_original"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_frown.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_frown.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.662,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_grin.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_grin.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.941,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_ooh.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_ooh.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.89,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_open.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_open.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.914,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_smile.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_smile.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.662,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_smirk.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_smirk.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.66,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_yell.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/mouth_yell.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.954,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/prop_beer_can.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/prop_beer_can.png",
+  "border_opaque_before": 0.055,
+  "border_opaque_after": 0.05,
+  "area_kept": 0.807,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/torso_mirrored_both_arms.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/torso_mirrored_both_arms.png",
+  "border_opaque_before": 0.03,
+  "border_opaque_after": 0.028,
+  "area_kept": 0.981,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/torso_mirrored_punch.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/torso_mirrored_punch.png",
+  "border_opaque_before": 0.029,
+  "border_opaque_after": 0.028,
+  "area_kept": 0.975,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/torso_no_arm.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/torso_no_arm.png",
+  "border_opaque_before": 0.029,
+  "border_opaque_after": 0.028,
+  "area_kept": 0.975,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/torso_no_viewerL_arm.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/torso_no_viewerL_arm.png",
+  "border_opaque_before": 0.029,
+  "border_opaque_after": 0.028,
+  "area_kept": 0.992,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/torso_no_viewerR_arm.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/torso_no_viewerR_arm.png",
+  "border_opaque_before": 0.029,
+  "border_opaque_after": 0.029,
+  "area_kept": 0.992,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/walk_1.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/walk_1.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.95,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/walk_2.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/walk_2.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.95,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/walk_3.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/walk_3.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.958,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/walk_4.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/amos-jr/walk_4.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.95,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/body_34L.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/body_34L.png",
+  "border_opaque_before": 0.336,
+  "border_opaque_after": 0.146,
+  "area_kept": 0.599,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/body_34R.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/body_34R.png",
+  "border_opaque_before": 0.311,
+  "border_opaque_after": 0.15,
+  "area_kept": 0.592,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/body_back.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/body_back.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.967,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/body_full.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/body_full.png",
+  "border_opaque_before": 0.324,
+  "border_opaque_after": 0.129,
+  "area_kept": 0.598,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/body_sit.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/body_sit.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.956,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/brow_angry.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/brow_angry.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.676,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/brow_neutral.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/brow_neutral.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.68,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/brow_raised.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/brow_raised.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.68,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/brow_sad.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/brow_sad.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.65,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/brow_suspicious.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/brow_suspicious.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.678,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/eyes_aviators.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/eyes_aviators.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.721,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/hand_left.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/hand_left.png",
+  "border_opaque_before": 0.068,
+  "border_opaque_after": 0.056,
+  "area_kept": 0.935,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/hand_right.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/hand_right.png",
+  "border_opaque_before": 0.059,
+  "border_opaque_after": 0.05,
+  "area_kept": 0.934,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/head.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/head.png",
+  "border_opaque_before": 0.242,
+  "border_opaque_after": 0.128,
+  "area_kept": 0.966,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/head_34L.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/head_34L.png",
+  "border_opaque_before": 0.234,
+  "border_opaque_after": 0.072,
+  "area_kept": 0.962,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/head_34R.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/head_34R.png",
+  "border_opaque_before": 0.241,
+  "border_opaque_after": 0.224,
+  "area_kept": 0.968,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/head_profile_L.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/head_profile_L.png",
+  "border_opaque_before": 0.135,
+  "border_opaque_after": 0.127,
+  "area_kept": 0.952,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_canadian_flap.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_canadian_flap.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.961,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_closed.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_closed.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.644,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_frown.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_frown.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.452,
+  "status": "REVIEW_kept_original"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_grin.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_grin.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.52,
+  "status": "REVIEW_kept_original"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_ooh.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_ooh.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.849,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_open.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_open.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.935,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_smirk.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_smirk.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.408,
+  "status": "REVIEW_kept_original"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_yell.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/mouth_yell.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.913,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/walk_1.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/walk_1.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.967,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/walk_2.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/walk_2.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.966,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/walk_3.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/walk_3.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.959,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/old-head/walk_4.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/old-head/walk_4.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.961,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/scene-pieces/amos_legs.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/scene-pieces/amos_legs.png",
+  "border_opaque_before": 0.913,
+  "border_opaque_after": 0.886,
+  "area_kept": 0.981,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/scene-pieces/amos_punch_arm.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/scene-pieces/amos_punch_arm.png",
+  "border_opaque_before": 0.446,
+  "border_opaque_after": 0.384,
+  "area_kept": 0.926,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/kits/scene-pieces/dino_full.png",
+  "out": "production/TRIPPEDD_EP01/goodville/kits/scene-pieces/dino_full.png",
+  "border_opaque_before": 0.099,
+  "border_opaque_after": 0.086,
+  "area_kept": 0.945,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/promo-15s/assets/amosjr_body.png",
+  "out": "production/TRIPPEDD_EP01/goodville/promo-15s/assets/amosjr_body.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.563,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/promo-15s/assets/amosjr_head.png",
+  "out": "production/TRIPPEDD_EP01/goodville/promo-15s/assets/amosjr_head.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.976,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/promo-15s/assets/amosjr_torso.png",
+  "out": "production/TRIPPEDD_EP01/goodville/promo-15s/assets/amosjr_torso.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.889,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/promo-15s/assets/oldhead_body.png",
+  "out": "production/TRIPPEDD_EP01/goodville/promo-15s/assets/oldhead_body.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.955,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/scenes/dino-punch/amos_punch_expression.png",
+  "out": "production/TRIPPEDD_EP01/goodville/scenes/dino-punch/amos_punch_expression.png",
+  "border_opaque_before": 0.029,
+  "border_opaque_after": 0.028,
+  "area_kept": 0.595,
+  "status": "cleaned"
+ },
+ {
+  "src": "production/TRIPPEDD_EP01/goodville/scenes/dino-punch/dino_guy.png",
+  "out": "production/TRIPPEDD_EP01/goodville/scenes/dino-punch/dino_guy.png",
+  "border_opaque_before": 0.0,
+  "border_opaque_after": 0.0,
+  "area_kept": 0.966,
+  "status": "cleaned"
+ },
+ {
+  "src": "tools/smart-extract/proving_run/amos_beer_can.png",
+  "out": "tools/smart-extract/proving_run/amos_beer_can.png",
+  "border_opaque_before": 0.055,
+  "border_opaque_after": 0.05,
+  "area_kept": 0.885,
+  "status": "cleaned"
+ },
+ {
+  "src": "tools/smart-extract/proving_run/amos_full_body.png",
+  "out": "tools/smart-extract/proving_run/amos_full_body.png",
+  "border_opaque_before": 0.029,
+  "border_opaque_after": 0.028,
+  "area_kept": 0.974,
+  "status": "cleaned"
+ },
+ {
+  "src": "tools/smart-extract/proving_run/amos_head.png",
+  "out": "tools/smart-extract/proving_run/amos_head.png",
+  "border_opaque_before": 0.821,
+  "border_opaque_after": 0.117,
+  "area_kept": 0.71,
+  "status": "cleaned"
+ },
+ {
+  "src": "tools/smart-extract/proving_run/oldhead_body.png",
+  "out": "tools/smart-extract/proving_run/oldhead_body.png",
+  "border_opaque_before": 0.324,
+  "border_opaque_after": 0.129,
+  "area_kept": 0.598,
+  "status": "cleaned"
+ },
+ {
+  "src": "tools/smart-extract/proving_run/oldhead_head.png",
+  "out": "tools/smart-extract/proving_run/oldhead_head.png",
+  "border_opaque_before": 0.242,
+  "border_opaque_after": 0.128,
+  "area_kept": 0.966,
+  "status": "cleaned"
+ }
+]

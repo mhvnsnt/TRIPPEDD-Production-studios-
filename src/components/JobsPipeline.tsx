@@ -13,7 +13,7 @@ export function JobsPipeline() {
     const unsubscribe = JobManager.subscribe((updatedJobs) => {
       setJobs([...updatedJobs]);
     });
-    return () => unsubscribe();
+    return () => { unsubscribe(); };
   }, []);
 
   const getStatusIcon = (status: string) => {

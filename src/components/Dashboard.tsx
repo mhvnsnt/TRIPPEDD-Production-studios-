@@ -11,8 +11,8 @@ export function Dashboard({ setCurrentView }: { setCurrentView: (v: string) => v
 
   // FICTION DATABASE (Unrestricted creative generation)
   const fictionRecords = records.filter(r => r.contentType === 'FICTIONAL_CREATION');
-  const generatedFiction = fictionRecords.filter(r => r.provenance.aggregate.includes('AI') || r.provenance.aggregate === 'GENERATED_FROM_FICTION');
-  const userFiction = fictionRecords.filter(r => r.provenance.aggregate === 'USER_CREATED');
+  const generatedFiction = fictionRecords.filter(r => r.provenance.authorship.startsWith('AI') || r.provenance.aiContributions.some(c => c.startsWith('AI')));
+  const userFiction = fictionRecords.filter(r => r.provenance.authorship === 'USER_AUTHORED');
 
   // PLANNING & IDEATION
   const planningRecords = records.filter(r => r.contentType === 'PLAN' || r.contentType === 'IDEA');

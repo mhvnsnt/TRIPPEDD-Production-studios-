@@ -33,12 +33,12 @@ export function StudioOpsWorkspace() {
     // Seed some mock data if empty
     if (graph.productionUnits.size === 0) {
       graph.addProductionUnit({
-        id: 'pu1', type: 'SKETCH', name: 'Joe Reconstruction', 
+        id: 'pu1', type: 'LIVE_ACTION_SKETCH', name: 'Joe Reconstruction', 
         description: 'The physical reconstruction of the motel lot encounter.',
         status: 'PRE_PRODUCTION'
       });
       graph.addProductionUnit({
-        id: 'pu2', type: 'SKETCH', name: 'Luck of the Irish', 
+        id: 'pu2', type: 'LIVE_ACTION_SKETCH', name: 'Luck of the Irish', 
         description: 'Bar confrontation and magic trick.',
         status: 'SOURCE_REVIEW'
       });
@@ -59,10 +59,10 @@ export function StudioOpsWorkspace() {
       graph.addRequirement({ id: 'req_l3', productionUnitId: 'pu2', type: 'AUDIO_REQUIRED', description: 'Dialogue review', status: 'OPEN', requiredByStage: 'EDITORIAL', blocking: true });
 
       // Add events
-      graph.logEvent({ description: 'Source media ingested for Luck of the Irish', type: 'SUCCESS', productionUnitId: 'pu2' });
-      graph.logEvent({ description: 'Physical/storyboard discrepancy detected in CAM_A_0042', type: 'WARNING', productionUnitId: 'pu2' });
-      graph.logEvent({ description: 'Casting decision recorded: Joe Actor', type: 'INFO', productionUnitId: 'pu1' });
-      graph.logEvent({ description: 'Script revision approved', type: 'SUCCESS', productionUnitId: 'pu3' });
+      graph.logEvent({ description: 'Source media ingested for Luck of the Irish', type: 'SUCCESS', productionUnitId: 'pu2', source: 'SYSTEM' });
+      graph.logEvent({ description: 'Physical/storyboard discrepancy detected in CAM_A_0042', type: 'WARNING', productionUnitId: 'pu2', source: 'SYSTEM' });
+      graph.logEvent({ description: 'Casting decision recorded: Joe Actor', type: 'INFO', productionUnitId: 'pu1', source: 'SYSTEM' });
+      graph.logEvent({ description: 'Script revision approved', type: 'SUCCESS', productionUnitId: 'pu3', source: 'SYSTEM' });
     }
 
     const refresh = () => {

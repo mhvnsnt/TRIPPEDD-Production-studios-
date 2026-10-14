@@ -92,7 +92,7 @@ export function SessionOpsPanels() {
     try {
       const body = await issueCommand('refresh', { source: 'session-health-reconcile', field: key, outcome, runtimeState: runtimeState?.[key] ?? null, rocketState: rocketState[key] ?? null });
       const operationId = typeof body.operationId === 'string' ? body.operationId : '';
-      const receipt = body.receipt && typeof body.receipt === 'object' ? body.receipt : null;
+      const receipt = body.receipt && typeof body.receipt === 'object' ? (body.receipt as Record<string, unknown>) : null;
       const runtimeSha = typeof body.runtimeSha256 === 'string' ? body.runtimeSha256 : typeof receipt?.runtimeSha256 === 'string' ? receipt.runtimeSha256 : '';
       if (!operationId || !runtimeSha) throw new Error('Reconcile resolution returned no operationId + runtime SHA receipt. Resolution remains uncommitted.');
       setLastReceipt(`${operationId} · runtime ${runtimeSha}`);

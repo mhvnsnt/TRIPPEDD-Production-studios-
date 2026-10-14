@@ -286,7 +286,7 @@ export function StoryWorkspace() {
             <h2 className="text-xl font-bold mb-6 border-b border-neutral-800 pb-2">GREENLIT PRODUCTIONS</h2>
             {seeds.filter(s => s.status === 'GREENLIT').map(s => {
               const rels = graph.getRelationshipsFor(s.id, 'DEVELOPMENT_SEED');
-              const puRel = graph.relationships.values().toArray().find(r => r.targetId === s.id && r.relationshipType === 'PRODUCTION_CREATED_FROM_SEED');
+              const puRel = Array.from(graph.relationships.values()).find(r => r.targetId === s.id && r.relationshipType === 'PRODUCTION_CREATED_FROM_SEED');
               const pu = puRel ? graph.productionUnits.get(puRel.sourceId) : null;
               
               return (
@@ -307,9 +307,9 @@ export function StoryWorkspace() {
           <div className="space-y-6 max-w-4xl">
             <h2 className="text-xl font-bold mb-6 border-b border-neutral-800 pb-2">SOURCE LINEAGE</h2>
             {seeds.map(s => {
-              const discRel = graph.relationships.values().toArray().find(r => r.sourceId === s.id && r.relationshipType === 'DEVELOPMENT_SEED_FROM_DISCOVERY');
+              const discRel = Array.from(graph.relationships.values()).find(r => r.sourceId === s.id && r.relationshipType === 'DEVELOPMENT_SEED_FROM_DISCOVERY');
               const disc = discRel ? graph.discoveries.get(discRel.targetId) : null;
-              const puRel = graph.relationships.values().toArray().find(r => r.targetId === s.id && r.relationshipType === 'PRODUCTION_CREATED_FROM_SEED');
+              const puRel = Array.from(graph.relationships.values()).find(r => r.targetId === s.id && r.relationshipType === 'PRODUCTION_CREATED_FROM_SEED');
               
               return (
                 <div key={s.id} className="flex items-center gap-4 text-sm font-mono">

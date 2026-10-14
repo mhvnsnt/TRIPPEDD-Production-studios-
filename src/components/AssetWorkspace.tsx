@@ -22,7 +22,7 @@ export const AssetWorkspace = () => {
     return assets.filter(asset => {
       const matchesSearch = asset.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                             asset.id.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesProv = filterProvenance === 'ALL' || asset.provenance.aggregate.aggregate === filterProvenance;
+      const matchesProv = filterProvenance === 'ALL' || asset.provenance.aggregate === filterProvenance;
       return matchesSearch && matchesProv;
     });
   }, [assets, searchQuery, filterProvenance]);
@@ -135,8 +135,8 @@ export const AssetWorkspace = () => {
                 <div className="w-16 h-16 bg-neutral-950 border border-neutral-800 rounded-lg flex items-center justify-center mb-4">
                   {getIconForType(selectedAsset.type)}
                 </div>
-                <div className={`text-xs font-bold px-3 py-1 rounded border uppercase tracking-wider ${getProvenanceColor(selectedAsset.provenance)}`}>
-                  {selectedAsset.provenance.replace('_', ' ')}
+                <div className={`text-xs font-bold px-3 py-1 rounded border uppercase tracking-wider ${getProvenanceColor(selectedAsset.provenance.aggregate)}`}>
+                  {selectedAsset.provenance.aggregate.replace('_', ' ')}
                 </div>
               </div>
               

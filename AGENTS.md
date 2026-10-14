@@ -67,3 +67,6 @@ When the owner says to do teardowns and chimera builds, DO NOT DEFER. Get the fu
 
 ### OPTIMIZED-FOR-HIM LAW (owner 2026-10-13)
 "Just find the best way for me, bro. The optimized way for me." Find the BEST path FOR HIM — not the easiest for the agent, not five minutes of back-and-forth. Figure out the optimal route requiring the LEAST from him, present it, execute.
+
+## Muse training pack
+Muse/Ashes and every agent: read the [Muse training pack](https://github.com/mhvnsnt/money-machine-hq/tree/main/docs/muse-training-pack) (instructions, pre-flight checklist, real before/after examples, right-way videos) before every job.

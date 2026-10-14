@@ -44,8 +44,17 @@ VM load forced the switch; noisy phone audio throughout).
 
 ## Unresolved / owner calls
 
-1. **Segments 3–4 (Shumafied + Disappointment):** no footage or clean audio found.
-   Options: owner points at the material, or these become produced/VO-driven beats.
+1. **Segments 3–4 (Shumafied + Disappointment):** DEEP HUNT 2026-10-13/14 — NOT FOUND.
+   Owner correction states the pack/device bit IS in the raw footage; a full deep
+   pass was run: 9 clips visually inspected frame-by-frame for pack/device handling
+   (104606093, 104742101, 105007040, 105233593, 160715990, 160846602, 161115184,
+   174759294, 182609529 — incl. 2 previously-unreviewed evening clips), 11 clips
+   re-transcribed with a fresh local model. NO pack/device handling visible in any
+   inspected clip; NO "shumafied"/"this thing's not doing shit"/disappointment line
+   in any transcript. Sole lead: "What does that shit do?" at 19–20s in 104606093
+   (no device visible in surrounding frames). Full Drive folder ID map saved at
+   ~/workspace/shuma-hunt-scratch/idmap.txt. **Owner must point at the specific
+   clip + timestamp** — do not mark resolved without his call.
 2. **Joe 2D style:** not recorded — owner call before building the reconstruction.
 3. **Lost Acid ending:** candidate only; no footage tied to the acid search.
 4. **Goodville Geography:** `105329690` ~2:50 Goodlettsville storefront is the

@@ -1,0 +1,85 @@
+TEST sculpt built: verts=2562 edges=7680 faces=5120 quads=0 tris=5120 ngons=0 non_manifold_edges=0 boundary_edges=0 loose_verts=0 degenerate_faces=0
+[SculptFinisher] Z-2 start on 'BlobSculpt': verts=2562 edges=7680 faces=5120 quads=0 tris=5120 ngons=0 non_manifold_edges=0 boundary_edges=0 loose_verts=0 degenerate_faces=0
+[SculptFinisher] step 1/6: voxel_remesh ...
+[SculptFinisher] step voxel_remesh OK: verts=1482 faces=1480
+[SculptFinisher] step 2/6: quadriflow ...
+Info: QuadriFlow: Remeshing completed
+[SculptFinisher] step quadriflow OK: verts=1670 faces=1588
+[SculptFinisher] step 3/6: uv_unwrap_pack ...
+[SculptFinisher] step uv_unwrap_pack OK: verts=1670 faces=1588
+[SculptFinisher] step 4/6: multires ...
+[SculptFinisher] step multires OK: verts=1670 faces=1588
+[SculptFinisher] step 5/6: bake ...
+Blender 4.5.3 LTS (hash 67807e1800cc built 2025-09-09 01:38:15)
+Fra:1 Mem:33.86M (Peak 34.89M) | Time:498164:54:56.52 | Mem:0.00M, Peak:0.00M | Scene | Synchronizing object | BlobSculpt
+Fra:1 Mem:34.10M (Peak 34.89M) | Time:498164:54:56.52 | Mem:0.00M, Peak:0.00M | Scene | Initializing
+Fra:1 Mem:34.10M (Peak 34.89M) | Time:498164:54:56.52 | Mem:0.00M, Peak:0.00M | Scene | Updating Images | Loading BlobSculpt_FINISHED_Normal
+Info: Baking map saved to internal image, save it externally or pack it
+[SculptFinisher] bake Normal: wrote /home/hatch/workspace/build-z2/tools/sculpt-finisher/test_output_local/bakes/BlobSculpt_FINISHED_Normal.png (222525 bytes)
+Fra:1 Mem:33.86M (Peak 68.43M) | Time:498164:55:01.84 | Mem:0.00M, Peak:0.00M | Scene | Synchronizing object | BlobSculpt
+Fra:1 Mem:34.10M (Peak 68.43M) | Time:498164:55:01.85 | Mem:0.00M, Peak:0.00M | Scene | Initializing
+Fra:1 Mem:34.10M (Peak 68.43M) | Time:498164:55:01.85 | Mem:0.00M, Peak:0.00M | Scene | Updating Images | Loading BlobSculpt_FINISHED_AO
+Info: Baking map saved to internal image, save it externally or pack it
+[SculptFinisher] bake AO: wrote /home/hatch/workspace/build-z2/tools/sculpt-finisher/test_output_local/bakes/BlobSculpt_FINISHED_AO.png (131670 bytes)
+Fra:1 Mem:33.87M (Peak 68.43M) | Time:498164:55:10.41 | Mem:0.00M, Peak:0.00M | Scene | Synchronizing object | BlobSculpt
+Fra:1 Mem:34.11M (Peak 68.43M) | Time:498164:55:10.42 | Mem:0.00M, Peak:0.00M | Scene | Initializing
+Fra:1 Mem:34.10M (Peak 68.43M) | Time:498164:55:10.42 | Mem:0.00M, Peak:0.00M | Scene | Updating Images | Loading BlobSculpt_FINISHED_Color
+Info: Baking map saved to internal image, save it externally or pack it
+[SculptFinisher] bake Color: wrote /home/hatch/workspace/build-z2/tools/sculpt-finisher/test_output_local/bakes/BlobSculpt_FINISHED_Color.png (135114 bytes)
+[SculptFinisher] step bake OK: verts=1670 faces=1588
+[SculptFinisher] step 6/6: export ...
+INFO Draco mesh compression is available, use library at /home/hatch/workspace/tools/blender-4.5/blender-4.5.3-linux-x64/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.so
+20:55:22 | INFO: Starting glTF 2.0 export
+20:55:22 | INFO: Extracting primitive: Icosphere.001
+20:55:22 | WARNING: The active Vertex Color will not be exported, as it is not used in the node tree of the material
+20:55:22 | INFO: Primitives created: 1
+20:55:22 | INFO: Finished glTF 2.0 export in 0.24275636672973633 s
+
+[SculptFinisher] step export OK: verts=1670 faces=1588
+[SculptFinisher] Z-2 done: 'BlobSculpt' 2562 verts -> 'BlobSculpt_FINISHED' 1670 verts / 1588 faces; baked=3 exported=1; check: verts=1670 edges=3256 faces=1588 quads=1588 tris=0 ngons=0 non_manifold_edges=160 boundary_edges=160 loose_verts=0 degenerate_faces=0
+Info: Z-2 done: 'BlobSculpt' 2562 verts -> 'BlobSculpt_FINISHED' 1670 verts / 1588 faces; baked=3 exported=1; check: verts=1670 edges=3256 faces=1588 quads=1588 tris=0 ngons=0 non_manifold_edges=160 boundary_edges=160 loose_verts=0 degenerate_faces=0
+TEST_RESULT z2_chain_finished: PASS operator returned {'FINISHED'}
+TEST_RESULT z2_original_untouched: PASS original verts 2562 -> 2562
+TEST_RESULT z2_finished_object_exists: PASS 
+TEST z2 finished check: verts=1670 edges=3256 faces=1588 quads=1588 tris=0 ngons=0 non_manifold_edges=160 boundary_edges=160 loose_verts=0 degenerate_faces=0
+TEST_RESULT z2_glb_exported: PASS /home/hatch/workspace/build-z2/tools/sculpt-finisher/test_output_local/export/BlobSculpt_FINISHED.glb size=109168
+TEST_RESULT z2_bake_normal: PASS /home/hatch/workspace/build-z2/tools/sculpt-finisher/test_output_local/bakes/BlobSculpt_FINISHED_Normal.png size=222525
+TEST_RESULT z2_bake_ao: PASS /home/hatch/workspace/build-z2/tools/sculpt-finisher/test_output_local/bakes/BlobSculpt_FINISHED_AO.png size=131670
+TEST_RESULT z2_bake_color: PASS /home/hatch/workspace/build-z2/tools/sculpt-finisher/test_output_local/bakes/BlobSculpt_FINISHED_Color.png size=135114
+[SculptFinisher] Z-1 start on 'BlobSculpt': verts=2562 edges=7680 faces=5120 quads=0 tris=5120 ngons=0 non_manifold_edges=0 boundary_edges=0 loose_verts=0 degenerate_faces=0
+[SculptFinisher] Z-1 density from vertex colors 'Density': mean luminance 0.500 -> factor 1.00 -> target faces 1200 (base 1200)
+Info: QuadriFlow: Remeshing completed
+[SculptFinisher] Z-1 QuadriFlow OK: verts=1188 edges=2308 faces=1122 quads=1122 tris=0 ngons=0 non_manifold_edges=128 boundary_edges=128 loose_verts=0 degenerate_faces=0
+Info: File exported successfully
+[SculptFinisher] Instant Meshes run: /home/hatch/workspace/tools/instant-meshes/Instant Meshes /tmp/sf_im_r4wm3exr/im_in.obj -o /tmp/sf_im_r4wm3exr/im_out.obj -f 1200 -r 4 -p 4
+[SculptFinisher] Z-1 Instant Meshes result: verts=4758 edges=9347 faces=4591 quads=4591 tris=0 ngons=0 non_manifold_edges=330 boundary_edges=330 loose_verts=0 degenerate_faces=0
+[SculptFinisher] Z-1 Instant Meshes ran (/home/hatch/workspace/tools/instant-meshes/Instant Meshes); QuadriFlow result kept (IM non-manifold 330 > QuadriFlow 128)
+[SculptFinisher] Z-1 done via QuadriFlow: 'BlobSculpt' 2562 verts -> 'BlobSculpt_RETOPO' 1188 verts; Instant Meshes: ran (/home/hatch/workspace/tools/instant-meshes/Instant Meshes); QuadriFlow result kept (IM non-manifold 330 > QuadriFlow 128); check: verts=1188 edges=2308 faces=1122 quads=1122 tris=0 ngons=0 non_manifold_edges=128 boundary_edges=128 loose_verts=0 degenerate_faces=0
+Info: Z-1 done via QuadriFlow: 'BlobSculpt' 2562 verts -> 'BlobSculpt_RETOPO' 1188 verts; Instant Meshes: ran (/home/hatch/workspace/tools/instant-meshes/Instant Meshes); QuadriFlow result kept (IM non-manifold 330 > QuadriFlow 128); check: verts=1188 edges=2308 faces=1122 quads=1122 tris=0 ngons=0 non_manifold_edges=128 boundary_edges=128 loose_verts=0 degenerate_faces=0
+TEST_RESULT z1_chain_finished: PASS operator returned {'FINISHED'}
+TEST_RESULT z1_retopo_object_exists: PASS 
+TEST z1 retopo check: verts=1188 edges=2308 faces=1122 quads=1122 tris=0 ngons=0 non_manifold_edges=128 boundary_edges=128 loose_verts=0 degenerate_faces=0
+TEST_RESULT z1_instant_meshes_status_reported: PASS Z-1 done via QuadriFlow: 'BlobSculpt' 2562 verts -> 'BlobSculpt_RETOPO' 1188 verts; Instant Meshes: ran (/home/hatch/workspace/tools/instant-meshes/Instant Meshes); QuadriFlow result kept (IM non-mani
+TEST_RESULT z1_mesh_checked: PASS Z-1 done via QuadriFlow: 'BlobSculpt' 2562 verts -> 'BlobSculpt_RETOPO' 1188 verts; Instant Meshes: ran (/home/hatch/workspace/tools/instant-meshes/Instant Meshes); QuadriFlow result kept (IM non-mani
+[SculptFinisher] Z-2 start on 'BlobSculpt': verts=2562 edges=7680 faces=5120 quads=0 tris=5120 ngons=0 non_manifold_edges=0 boundary_edges=0 loose_verts=0 degenerate_faces=0
+[SculptFinisher] step 1/4: voxel_remesh ...
+[SculptFinisher] step voxel_remesh OK: verts=1482 faces=1480
+[SculptFinisher] step 2/4: quadriflow ...
+Info: QuadriFlow: Remeshing completed
+[SculptFinisher] step quadriflow OK: verts=1474 faces=1406
+[SculptFinisher] step 3/4: uv_unwrap_pack ...
+[SculptFinisher] step uv_unwrap_pack OK: verts=1474 faces=1406
+[SculptFinisher] step 4/4: export ...
+[SculptFinisher] step export FAILED: [Errno 17] File exists: '/home/hatch/workspace/build-z2/tools/sculpt-finisher/test_output_local/blocker_file'
+[SculptFinisher] Z-2 stopped at step 'export' (see console log). Original untouched (2562 verts). Duplicate kept as 'BlobSculpt_FAILED_export'.
+Warning: Z-2 stopped at step 'export' (see console log). Original untouched (2562 verts). Duplicate kept as 'BlobSculpt_FAILED_export'.
+TEST_RESULT failsoft_returns_cancelled: PASS operator returned {'CANCELLED'}
+TEST_RESULT failsoft_duplicate_kept_named: PASS objects: ['BlobSculpt', 'BlobSculpt_FAILED_export', 'BlobSculpt_FINISHED', 'BlobSculpt_RETOPO']
+TEST_RESULT failsoft_original_still_untouched: PASS original verts 2562
+TEST_ALL_PASS
+Writing to /tmp/sf_im_r4wm3exr/im_in.obj
+OBJ export of 'im_in.obj' took 51.48 ms
+OBJ import of 'im_out.obj' took 100.49 ms
+
+Blender quit
+BLENDER_EXIT:0

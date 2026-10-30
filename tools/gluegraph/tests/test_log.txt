@@ -1,0 +1,4 @@
+Blender 4.5.3 LTS (hash 67807e1800cc built 2025-09-09 01:38:15)
+GLUEGRAPH_RESULT {"blender": "4.5.3 LTS", "fracture_method": "voronoi_bisect", "pieces": 12, "constraints": 47, "glue_strength": 20.0, "stand_frame": 30, "stand_max_displacement_m": 0.0142, "stand_displaced_gt_0.15m": 0, "end_frame": 65, "after_max_displacement_m": 9.6291, "after_displaced_gt_0.3m": 12, "after_displaced_gt_0.15m": 12, "bonds_separated_after_impact": 15, "projectile_end_location": [0.0, 3.0, 1.0]}
+GLUEGRAPH_VERDICT stood=True broke=True
+blender_exit=0

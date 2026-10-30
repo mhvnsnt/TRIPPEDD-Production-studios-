@@ -1,0 +1,66 @@
+{
+  "character": "TestPuppet",
+  "convention": "TRIPPEDD Puppet Control Sheets v1 (SPEC T-1)",
+  "scene": "testpuppet.tnz",
+  "shot_frames": [
+    0,
+    23
+  ],
+  "pose_block_start": 24,
+  "pose_hold_frames": 4,
+  "controls": [
+    "CTRL_ROOT",
+    "CTRL_BODY",
+    "CTRL_HEAD",
+    "CTRL_MOUTH",
+    "CTRL_ARM_R"
+  ],
+  "control_pegs": {
+    "CTRL_ROOT": "Peg1",
+    "CTRL_BODY": "Peg2",
+    "CTRL_HEAD": "Peg3",
+    "CTRL_MOUTH": "Peg4",
+    "CTRL_ARM_R": "Peg5"
+  },
+  "poses": {
+    "neutral": {
+      "frame": 24,
+      "transforms": {
+        "CTRL_ARM_R": {
+          "angle": 0
+        },
+        "CTRL_HEAD": {
+          "angle": 0,
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    "wave": {
+      "frame": 28,
+      "transforms": {
+        "CTRL_ARM_R": {
+          "angle": 35,
+          "y": 0.4
+        },
+        "CTRL_HEAD": {
+          "angle": -6
+        }
+      }
+    },
+    "lean_left": {
+      "frame": 32,
+      "transforms": {
+        "CTRL_BODY": {
+          "angle": 5
+        },
+        "CTRL_HEAD": {
+          "angle": 10
+        },
+        "CTRL_ROOT": {
+          "x": -0.5
+        }
+      }
+    }
+  }
+}

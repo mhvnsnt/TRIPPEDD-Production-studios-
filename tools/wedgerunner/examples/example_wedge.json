@@ -1,0 +1,83 @@
+{
+  "name": "example-wedge-cube",
+  "scene_script": "example_scene.py",
+  "blend_file": null,
+  "output_dir": "example_out",
+  "variants": [
+    {
+      "name": "small_red",
+      "params": {
+        "cube_color": [
+          0.8,
+          0.15,
+          0.15,
+          1.0
+        ],
+        "objects.Cube.scale": [
+          0.7,
+          0.7,
+          0.7
+        ],
+        "objects.Light.data.energy": 400,
+        "render.engine": "CYCLES",
+        "render.samples": 4,
+        "render.resolution": [
+          128,
+          128
+        ],
+        "cycles.device": "CPU",
+        "cycles.use_denoising": false
+      }
+    },
+    {
+      "name": "big_green_bright",
+      "params": {
+        "cube_color": [
+          0.15,
+          0.8,
+          0.25,
+          1.0
+        ],
+        "objects.Cube.scale": [
+          1.6,
+          1.6,
+          1.6
+        ],
+        "objects.Light.data.energy": 1500,
+        "render.engine": "CYCLES",
+        "render.samples": 16,
+        "render.resolution": [
+          128,
+          128
+        ],
+        "cycles.device": "CPU",
+        "cycles.use_denoising": false
+      }
+    },
+    {
+      "name": "wide_blue_dim",
+      "params": {
+        "cube_color": [
+          0.2,
+          0.35,
+          0.9,
+          1.0
+        ],
+        "objects.Cube.scale": [
+          2.0,
+          0.8,
+          0.8
+        ],
+        "objects.Light.data.energy": 150,
+        "render.engine": "CYCLES",
+        "render.samples": 8,
+        "render.resolution": [
+          160,
+          96
+        ],
+        "cycles.device": "CPU",
+        "cycles.use_denoising": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "batch": "test-wedge-with-broken-variant",
+  "wedge_file": "/home/hatch/workspace/_h2-work/tools/wedgerunner/examples/test_wedge_with_broken.json",
+  "blender": "/home/hatch/workspace/tools/blender-4.5/blender-4.5.3-linux-x64/blender",
+  "generated_at_epoch": 1793392586,
+  "counts": {
+    "total": 4,
+    "ok": 3,
+    "failed": 1,
+    "timeout": 0
+  },
+  "contact_sheet_png": "/home/hatch/workspace/_h2-work/test_out/contact_sheet.png",
+  "preview_page_html": "/home/hatch/workspace/_h2-work/test_out/index.html",
+  "variants": [
+    {
+      "name": "ok_small",
+      "status": "ok",
+      "exit_code": 0,
+      "duration_s": 28.48,
+      "params": {
+        "cube_color": [
+          0.8,
+          0.15,
+          0.15,
+          1.0
+        ],
+        "objects.Cube.scale": [
+          0.7,
+          0.7,
+          0.7
+        ],
+        "objects.Light.data.energy": 400,
+        "render.engine": "CYCLES",
+        "render.samples": 8,
+        "render.resolution": [
+          96,
+          96
+        ],
+        "cycles.device": "CPU",
+        "cycles.use_denoising": false
+      },
+      "output": "/home/hatch/workspace/_h2-work/test_out/ok_small/render.png",
+      "output_bytes": 6824,
+      "output_sha256": "4eadebb6b7f1bd3e08749aa24eccae2e25280b552878600891e44b08f780eb05",
+      "log": "/home/hatch/workspace/_h2-work/test_out/ok_small/blender.log"
+    },
+    {
+      "name": "broken_deliberate",
+      "status": "failed",
+      "exit_code": 1,
+      "duration_s": 18.51,
+      "params": {
+        "__fail__": true
+      },
+      "output": null,
+      "output_bytes": null,
+      "output_sha256": null,
+      "log": "/home/hatch/workspace/_h2-work/test_out/broken_deliberate/blender.log",
+      "error": "blender exit code 1"
+    },
+    {
+      "name": "ok_big_after_broken",
+      "status": "ok",
+      "exit_code": 0,
+      "duration_s": 16.49,
+      "params": {
+        "cube_color": [
+          0.15,
+          0.8,
+          0.25,
+          1.0
+        ],
+        "objects.Cube.scale": [
+          1.6,
+          1.6,
+          1.6
+        ],
+        "objects.Light.data.energy": 1500,
+        "render.engine": "CYCLES",
+        "render.samples": 8,
+        "render.resolution": [
+          96,
+          96
+        ],
+        "cycles.device": "CPU",
+        "cycles.use_denoising": false
+      },
+      "output": "/home/hatch/workspace/_h2-work/test_out/ok_big_after_broken/render.png",
+      "output_bytes": 9991,
+      "output_sha256": "f0db972472280792afc33dbdc11ea7e0e88bc187dd832b9f30231d336b67b462",
+      "log": "/home/hatch/workspace/_h2-work/test_out/ok_big_after_broken/blender.log"
+    },
+    {
+      "name": "ok_wide_after_broken",
+      "status": "ok",
+      "exit_code": 0,
+      "duration_s": 28.02,
+      "params": {
+        "cube_color": [
+          0.2,
+          0.35,
+          0.9,
+          1.0
+        ],
+        "objects.Cube.scale": [
+          2.0,
+          0.8,
+          0.8
+        ],
+        "objects.Light.data.energy": 300,
+        "render.engine": "CYCLES",
+        "render.samples": 8,
+        "render.resolution": [
+          120,
+          80
+        ],
+        "cycles.device": "CPU",
+        "cycles.use_denoising": false
+      },
+      "output": "/home/hatch/workspace/_h2-work/test_out/ok_wide_after_broken/render.png",
+      "output_bytes": 9696,
+      "output_sha256": "f874180c8dcc545b5cf957e79550117006da847bffc1a8a4eca8a954db607fe9",
+      "log": "/home/hatch/workspace/_h2-work/test_out/ok_wide_after_broken/blender.log"
+    }
+  ]
+}

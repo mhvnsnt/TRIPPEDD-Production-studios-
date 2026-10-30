@@ -1,0 +1,14 @@
+EffectorKit proof run - Blender 4.5.3 LTS, headless (xvfb), 2026-10-30T21:11:53Z
+Command: blender -b --factory-startup --python test_effectorkit.py
+
+PASS groups_exist | missing=[]
+PASS plain_offset | n=16 z0=1.0 xs=[-1.5, -0.5, 0.5, 1.5]
+PASS falloff_sphere | z_center=0.4093473255634308 z_edge=2.151760781998746e-06 z_corner=0.0
+PASS random_effector | max_dev=0.648 deterministic=True
+PASS step_effector | z range 0.00..3.75
+PASS shader_effector | z by x: [1.0, 1.0, 0.0, 0.0]
+PASS sound_effector | pts=16 spread=2.00 peak_band=2 values_match=True
+PASS delay_effector | z1=0.000 z2=0.400 z3=0.720 z15=1.912
+PASS effector_stack | n=16 z range 0.50..2.00
+PASS render_still | png bytes=12246 engine=BLENDER_WORKBENCH
+EFFECTORIT_TESTS_DONE fails=0 of 10: []

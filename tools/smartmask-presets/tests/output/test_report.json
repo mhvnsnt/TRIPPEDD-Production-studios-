@@ -1,0 +1,569 @@
+{
+ "results": [
+  {
+   "test": "ucupaint_enabled",
+   "ok": true,
+   "detail": "module=bl_ext.user_default.ucupaint"
+  },
+  {
+   "test": "ucupaint_version_3_0_0",
+   "ok": true,
+   "detail": "manifest version=3.0.0 path=['/home/hatch/.config/blender/4.5/extensions/user_default/ucupaint/blender_manifest.toml']"
+  },
+  {
+   "test": "preset_index_has_4",
+   "ok": true,
+   "detail": "ids=['edge_wear', 'cavity_dirt', 'top_dust', 'paint_chips']"
+  },
+  {
+   "test": "demo_prop_built",
+   "ok": true,
+   "detail": "verts=389 uv=['UVMap']"
+  },
+  {
+   "test": "preset_edge_wear_stack",
+   "ok": true,
+   "detail": "masks=[('Edge Detect', 'EDGE_DETECT'), ('Wear Breakup', 'NOISE')]"
+  },
+  {
+   "test": "preset_edge_wear_base_layer",
+   "ok": true,
+   "detail": "layers=['Edge Wear', 'Base Coat']"
+  },
+  {
+   "test": "preset_edge_wear_modifiers",
+   "ok": true,
+   "detail": "modifiers=[]"
+  },
+  {
+   "test": "bake_edge_wear",
+   "ok": true,
+   "detail": "png=baked_edge_wear_Color.png size=[512, 512]"
+  },
+  {
+   "test": "mask_variation_edge_wear",
+   "ok": true,
+   "detail": "baked Color R surface std=0.0227 (floor 0.003), surface mean=0.5235, full-frame std=0.2619"
+  },
+  {
+   "test": "preset_cavity_dirt_stack",
+   "ok": true,
+   "detail": "masks=[('Cavity AO', 'AO'), ('Dirt Breakup', 'NOISE')]"
+  },
+  {
+   "test": "preset_cavity_dirt_base_layer",
+   "ok": true,
+   "detail": "layers=['Cavity Dirt', 'Base Coat']"
+  },
+  {
+   "test": "preset_cavity_dirt_modifiers",
+   "ok": true,
+   "detail": "modifiers=[{'mask': 'Cavity AO', 'modifier': 'INVERT', 'via': 'operator'}]"
+  },
+  {
+   "test": "bake_cavity_dirt",
+   "ok": true,
+   "detail": "png=baked_cavity_dirt_Color.png size=[512, 512]"
+  },
+  {
+   "test": "mask_variation_cavity_dirt",
+   "ok": true,
+   "detail": "baked Color R surface std=0.0121 (floor 0.003), surface mean=0.5150, full-frame std=0.2573"
+  },
+  {
+   "test": "preset_top_dust_stack",
+   "ok": true,
+   "detail": "masks=[('Up Facing', 'HEMI'), ('Dust Breakup', 'NOISE')]"
+  },
+  {
+   "test": "preset_top_dust_base_layer",
+   "ok": true,
+   "detail": "layers=['Settled Dust', 'Base Coat']"
+  },
+  {
+   "test": "preset_top_dust_modifiers",
+   "ok": true,
+   "detail": "modifiers=[]"
+  },
+  {
+   "test": "bake_top_dust",
+   "ok": true,
+   "detail": "png=baked_top_dust_Color.png size=[512, 512]"
+  },
+  {
+   "test": "mask_variation_top_dust",
+   "ok": true,
+   "detail": "baked Color R surface std=0.0783 (floor 0.003), surface mean=0.5999, full-frame std=0.3049"
+  },
+  {
+   "test": "preset_paint_chips_stack",
+   "ok": true,
+   "detail": "masks=[('Chip Pattern', 'NOISE'), ('Chip Edge Bias', 'EDGE_DETECT')]"
+  },
+  {
+   "test": "preset_paint_chips_base_layer",
+   "ok": true,
+   "detail": "layers=['Exposed Primer', 'Base Coat']"
+  },
+  {
+   "test": "preset_paint_chips_modifiers",
+   "ok": true,
+   "detail": "modifiers=[{'mask': 'Chip Pattern', 'modifier': 'RAMP', 'via': 'operator', 'ramp': {'ramp_node': 'Color Ramp A4G2', 'stops': [0.45, 0.58]}}]"
+  },
+  {
+   "test": "bake_paint_chips",
+   "ok": true,
+   "detail": "png=baked_paint_chips_Color.png size=[512, 512]"
+  },
+  {
+   "test": "mask_variation_paint_chips",
+   "ok": true,
+   "detail": "baked Color R surface std=0.0058 (floor 0.003), surface mean=0.5167, full-frame std=0.2580"
+  },
+  {
+   "test": "library_blend_saved",
+   "ok": true,
+   "detail": "/home/hatch/workspace/build-s1-scratch/final-output/smartmask_preset_library.blend 2359472 bytes"
+  }
+ ],
+ "apply_reports": {
+  "edge_wear": {
+   "preset": "edge_wear",
+   "material": "SmartMask_edge_wear",
+   "tree": "Ucupaint SmartMask_edge_wear",
+   "channel_overrides": [
+    {
+     "layer": "Base Coat",
+     "channel": "Metallic",
+     "override": true,
+     "override_value": 0.15000000596046448
+    },
+    {
+     "layer": "Base Coat",
+     "channel": "Roughness",
+     "override": true,
+     "override_value": 0.550000011920929
+    },
+    {
+     "layer": "Edge Wear",
+     "channel": "Metallic",
+     "override": true,
+     "override_value": 0.8999999761581421
+    },
+    {
+     "layer": "Edge Wear",
+     "channel": "Roughness",
+     "override": true,
+     "override_value": 0.3499999940395355
+    }
+   ],
+   "masks": [
+    {
+     "name": "Edge Detect",
+     "type": "EDGE_DETECT",
+     "params": {
+      "edge_detect_radius": 0.6000000238418579,
+      "intensity_value": 1.0
+     }
+    },
+    {
+     "name": "Wear Breakup",
+     "type": "NOISE",
+     "params": {
+      "intensity_value": 0.8500000238418579
+     },
+     "noise_node": {
+      "node": "Noise Texture NP6V",
+      "tree": ".yP Layer Edge Wear",
+      "scale": 9.0
+     }
+    }
+   ],
+   "modifiers": [],
+   "effect_layer": "Edge Wear",
+   "final_stack": [
+    {
+     "layer": "Edge Wear",
+     "type": "COLOR",
+     "masks": [
+      {
+       "name": "Edge Detect",
+       "type": "EDGE_DETECT",
+       "modifiers": []
+      },
+      {
+       "name": "Wear Breakup",
+       "type": "NOISE",
+       "modifiers": []
+      }
+     ]
+    },
+    {
+     "layer": "Base Coat",
+     "type": "COLOR",
+     "masks": []
+    }
+   ]
+  },
+  "cavity_dirt": {
+   "preset": "cavity_dirt",
+   "material": "SmartMask_cavity_dirt",
+   "tree": "Ucupaint SmartMask_cavity_dirt",
+   "channel_overrides": [
+    {
+     "layer": "Base Coat",
+     "channel": "Metallic",
+     "override": true,
+     "override_value": 0.15000000596046448
+    },
+    {
+     "layer": "Base Coat",
+     "channel": "Roughness",
+     "override": true,
+     "override_value": 0.550000011920929
+    },
+    {
+     "layer": "Cavity Dirt",
+     "channel": "Metallic",
+     "override": true,
+     "override_value": 0.0
+    },
+    {
+     "layer": "Cavity Dirt",
+     "channel": "Roughness",
+     "override": true,
+     "override_value": 0.949999988079071
+    }
+   ],
+   "masks": [
+    {
+     "name": "Cavity AO",
+     "type": "AO",
+     "params": {
+      "ao_distance": 1.5,
+      "intensity_value": 1.0
+     }
+    },
+    {
+     "name": "Dirt Breakup",
+     "type": "NOISE",
+     "params": {
+      "intensity_value": 0.800000011920929
+     },
+     "noise_node": {
+      "node": "Noise Texture TVB6",
+      "tree": ".yP Layer Cavity Dirt",
+      "scale": 5.0
+     }
+    }
+   ],
+   "modifiers": [
+    {
+     "mask": "Cavity AO",
+     "modifier": "INVERT",
+     "via": "operator"
+    }
+   ],
+   "effect_layer": "Cavity Dirt",
+   "final_stack": [
+    {
+     "layer": "Cavity Dirt",
+     "type": "COLOR",
+     "masks": [
+      {
+       "name": "Cavity AO",
+       "type": "AO",
+       "modifiers": [
+        "INVERT"
+       ]
+      },
+      {
+       "name": "Dirt Breakup",
+       "type": "NOISE",
+       "modifiers": []
+      }
+     ]
+    },
+    {
+     "layer": "Base Coat",
+     "type": "COLOR",
+     "masks": []
+    }
+   ]
+  },
+  "top_dust": {
+   "preset": "top_dust",
+   "material": "SmartMask_top_dust",
+   "tree": "Ucupaint SmartMask_top_dust",
+   "channel_overrides": [
+    {
+     "layer": "Base Coat",
+     "channel": "Metallic",
+     "override": true,
+     "override_value": 0.15000000596046448
+    },
+    {
+     "layer": "Base Coat",
+     "channel": "Roughness",
+     "override": true,
+     "override_value": 0.550000011920929
+    },
+    {
+     "layer": "Settled Dust",
+     "channel": "Metallic",
+     "override": true,
+     "override_value": 0.0
+    },
+    {
+     "layer": "Settled Dust",
+     "channel": "Roughness",
+     "override": true,
+     "override_value": 1.0
+    }
+   ],
+   "masks": [
+    {
+     "name": "Up Facing",
+     "type": "HEMI",
+     "params": {
+      "hemi_space": "WORLD",
+      "hemi_vector": "<bpy_float[3], YLayerMask.hemi_vector>",
+      "intensity_value": 1.0
+     }
+    },
+    {
+     "name": "Dust Breakup",
+     "type": "NOISE",
+     "params": {
+      "intensity_value": 0.75
+     },
+     "noise_node": {
+      "node": "Noise Texture XAQH",
+      "tree": ".yP Layer Settled Dust",
+      "scale": 6.0
+     }
+    }
+   ],
+   "modifiers": [],
+   "effect_layer": "Settled Dust",
+   "final_stack": [
+    {
+     "layer": "Settled Dust",
+     "type": "COLOR",
+     "masks": [
+      {
+       "name": "Up Facing",
+       "type": "HEMI",
+       "modifiers": []
+      },
+      {
+       "name": "Dust Breakup",
+       "type": "NOISE",
+       "modifiers": []
+      }
+     ]
+    },
+    {
+     "layer": "Base Coat",
+     "type": "COLOR",
+     "masks": []
+    }
+   ]
+  },
+  "paint_chips": {
+   "preset": "paint_chips",
+   "material": "SmartMask_paint_chips",
+   "tree": "Ucupaint SmartMask_paint_chips",
+   "channel_overrides": [
+    {
+     "layer": "Base Coat",
+     "channel": "Metallic",
+     "override": true,
+     "override_value": 0.15000000596046448
+    },
+    {
+     "layer": "Base Coat",
+     "channel": "Roughness",
+     "override": true,
+     "override_value": 0.550000011920929
+    },
+    {
+     "layer": "Exposed Primer",
+     "channel": "Metallic",
+     "override": true,
+     "override_value": 0.20000000298023224
+    },
+    {
+     "layer": "Exposed Primer",
+     "channel": "Roughness",
+     "override": true,
+     "override_value": 0.800000011920929
+    }
+   ],
+   "masks": [
+    {
+     "name": "Chip Pattern",
+     "type": "NOISE",
+     "params": {
+      "intensity_value": 1.0
+     },
+     "noise_node": {
+      "node": "Noise Texture 0JJF",
+      "tree": ".yP Layer Exposed Primer",
+      "scale": 22.0
+     }
+    },
+    {
+     "name": "Chip Edge Bias",
+     "type": "EDGE_DETECT",
+     "params": {
+      "edge_detect_radius": 0.4000000059604645,
+      "intensity_value": 0.8999999761581421
+     }
+    }
+   ],
+   "modifiers": [
+    {
+     "mask": "Chip Pattern",
+     "modifier": "RAMP",
+     "via": "operator",
+     "ramp": {
+      "ramp_node": "Color Ramp A4G2",
+      "stops": [
+       0.45,
+       0.58
+      ]
+     }
+    }
+   ],
+   "effect_layer": "Exposed Primer",
+   "final_stack": [
+    {
+     "layer": "Exposed Primer",
+     "type": "COLOR",
+     "masks": [
+      {
+       "name": "Chip Pattern",
+       "type": "NOISE",
+       "modifiers": [
+        "RAMP"
+       ]
+      },
+      {
+       "name": "Chip Edge Bias",
+       "type": "EDGE_DETECT",
+       "modifiers": []
+      }
+     ]
+    },
+    {
+     "layer": "Base Coat",
+     "type": "COLOR",
+     "masks": []
+    }
+   ]
+  }
+ },
+ "bake_stats": {
+  "edge_wear": {
+   "r": {
+    "mean": 0.2754077537201738,
+    "std": 0.2619090283333652,
+    "surface_mean": 0.5234967964442633,
+    "surface_std": 0.022683369131593356
+   },
+   "g": {
+    "mean": 0.30983816205389303,
+    "std": 0.2943733640464466,
+    "surface_mean": 0.5889423339046329,
+    "surface_std": 0.01842271020149093
+   },
+   "b": {
+    "mean": 0.39510355532274843,
+    "std": 0.3750617411398625,
+    "surface_mean": 0.7510153315630733,
+    "surface_std": 0.009680526285113927
+   },
+   "size": [
+    512,
+    512
+   ],
+   "file": "baked_edge_wear_Color.png"
+  },
+  "cavity_dirt": {
+   "r": {
+    "mean": 0.2709362705672902,
+    "std": 0.2572974122075471,
+    "surface_mean": 0.5149973730465204,
+    "surface_std": 0.012094361085365487
+   },
+   "g": {
+    "mean": 0.3053133030234676,
+    "std": 0.29006533798663386,
+    "surface_mean": 0.5803414533019888,
+    "surface_std": 0.01787779287882844
+   },
+   "b": {
+    "mean": 0.39082606504507567,
+    "std": 0.3714712693928693,
+    "surface_mean": 0.7428846510468727,
+    "surface_std": 0.027478380254036816
+   },
+   "size": [
+    512,
+    512
+   ],
+   "file": "baked_cavity_dirt_Color.png"
+  },
+  "top_dust": {
+   "r": {
+    "mean": 0.3156219009460983,
+    "std": 0.30489149180964725,
+    "surface_mean": 0.59993610129368,
+    "surface_std": 0.07827108166372984
+   },
+   "g": {
+    "mean": 0.33539489685699664,
+    "std": 0.320477447901269,
+    "surface_mean": 0.6375207367138503,
+    "surface_std": 0.05111100272215832
+   },
+   "b": {
+    "mean": 0.389350929180182,
+    "std": 0.3696062661947685,
+    "surface_mean": 0.7400807034849007,
+    "surface_std": 0.009925519028821607
+   },
+   "size": [
+    512,
+    512
+   ],
+   "file": "baked_top_dust_Color.png"
+  },
+  "paint_chips": {
+   "r": {
+    "mean": 0.27183671858347225,
+    "std": 0.2580363648581042,
+    "surface_mean": 0.5167089503186506,
+    "surface_std": 0.005767775281209791
+   },
+   "g": {
+    "mean": 0.30653627993433474,
+    "std": 0.29101426964551846,
+    "surface_mean": 0.5826660955327038,
+    "surface_std": 0.009299687483053964
+   },
+   "b": {
+    "mean": 0.3924384701649615,
+    "std": 0.3726695700471878,
+    "surface_mean": 0.7459495208750773,
+    "surface_std": 0.01695699695219606
+   },
+   "size": [
+    512,
+    512
+   ],
+   "file": "baked_paint_chips_Color.png"
+  }
+ }
+}

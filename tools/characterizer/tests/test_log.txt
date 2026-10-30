@@ -1,0 +1,26 @@
+Blender 4.5.3 LTS (hash 67807e1800cc built 2025-09-09 01:38:15)
+ucupaint addon: Verbose is enabled
+ucupaint addon: Read in JSON settings from file
+INFO: Ucupaint 3.0.0 is registered!
+INFO: Ucupaint update routine is done in 0.20 ms!
+INFO: Ucupaint 3.0.0 is unregistered!
+CHECK addon_registered: PASS 
+Info: Characterizer: 23 constraints built
+CHECK build_constraints_op: PASS {'FINISHED'}
+CHECK constraint_set_built: PASS 23 CHR_* constraints
+Info: Characterizer: baked 'TargetRig_retargeted' (source untouched)
+CHECK bake_op: PASS {'FINISHED'}
+CHECK baked_action_exists: PASS TargetRig_retargeted
+CHECK baked_action_on_target_bones: PASS 
+CHECK nla_track_present: PASS 1 tracks
+CHECK source_action_unchanged: PASS 
+CHECK hips_motion_scaled: PASS target pelvis head x=0.165 at f10 (src moved 0.30)
+CHECK arm_motion_transferred: PASS upperarm_L angle=0.900 rad
+Info: Stride scale x1.500 on 20 keys
+CHECK stride_scale_op: PASS {'FINISHED'}
+Info: Floor clamp offset -0.0600
+CHECK floor_clamp_op: PASS {'FINISHED'}
+Info: Foot-skate cleanup corrected 0 frames
+CHECK foot_skate_op: PASS {'FINISHED'}
+CHECK source_action_still_unchanged_after_polish: PASS 
+RESULT: PASS (0 failures)

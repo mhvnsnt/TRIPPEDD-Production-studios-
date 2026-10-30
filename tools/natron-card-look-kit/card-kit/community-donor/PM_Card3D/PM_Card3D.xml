@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>PM_Card3D</DisplayName>
+    <Description>Poor's Man Card3D, create a 3D plane , to be used with PM_Camera</Description>
+    <Version>1.0</Version>
+    <ReleaseDate>@DATE@</ReleaseDate>
+    <Name>natron.community.plugins.PM_Card3D</Name>
+    <Default>script</Default>
+    <Script>installscript.qs</Script>
+</Package>

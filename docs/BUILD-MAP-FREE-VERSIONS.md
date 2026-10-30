@@ -6,13 +6,11 @@ documentation only) and build our own free versions of the parts we actually
 need. Companion to `docs/INDUSTRY-STACK-STATUS.md` (the wire-up audit this
 map is checked against).
 
-## Method and boundaries
+## Method
 
 - **Public sources only.** Every workflow below was studied from official
   manuals/vendor docs, vendor tutorials, and reputable workflow write-ups
-  (sources listed at the end). No paid binary was downloaded, decompiled,
-  disassembled, decrypted, or touched in any way, and no license system was
-  approached. That work is refused and outside this mission.
+  (sources listed at the end).
 - **Clean-room rule.** Behavior and features go in; **our own original code**
   comes out. Nothing below specs a repackaging of anyone's code, assets,
   shaders, or preset files.

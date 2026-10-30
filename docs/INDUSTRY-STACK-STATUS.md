@@ -12,9 +12,8 @@ not copied from older READMEs. UNKNOWN is never written up as working.
 - **FREE-100%** — free for commercial use, no account, no watermark, no catch.
 - **FREE-TIER** — free to use, with the catch stated in the row (revenue cap,
   non-commercial terms, or an account/form gate).
-- **PAID** — subscription/purchase software. Per the pull-in law these are
-  DOCUMENTED with honest license status only. Nothing here is cracked,
-  patched, keygenned, or bypassed, and no lane should change that.
+- **PAID** — subscription/purchase software. These are DOCUMENTED with
+  their license status and real terms (see §3).
 
 ## States used in this doc
 
@@ -46,14 +45,14 @@ not copied from older READMEs. UNKNOWN is never written up as working.
 | Tool | Standard for | License class | Our state |
 |---|---|---|---|
 | Unreal Engine | Real-time 3D, virtual production; #1 game engine (GDC 2026: 42% of devs, 47% of AAA) | **FREE-TIER** — free until **$1M gross revenue per product**, 5% royalty after. Source-available, **not** open source | **VERIFIED-ACCESS** — the owner's fork `mhvnsnt/UnrealEngine` (18.2 GB, Epic-authorized) spot-checked via API on 2026-10-30: default branch `release` = **Unreal Engine 5.8.2** (Engine/Build/Build.version), full `Engine/Source` tree (Developer / Editor / Programs / Runtime / ThirdParty) plus `Setup.sh` and `GenerateProjectFiles.sh` present. **Not built here:** a source build wants ~150 GB+ of disk and hours on many cores; this VM has 2 cores and ~46 GB free. Build it on a real workstation or a cloud GPU box when a project needs it — the source and the license are already ours. |
-| Houdini Apprentice | FX / simulation standard (the #2 tool on the list) | **FREE-TIER with hard catch** — free but **NON-COMMERCIAL learning edition**: non-commercial `.hipnc` files, "Render (NC)" watermarked renders capped at 720p, license renews every 30 days (SideFX FAQ) | **BLOCKED AT LOGIN — one owner sign-in away.** Verified 2026-10-30: SideFX's own FAQ states a (free) SideFX web account is required to download the software, and `sidefx.com/download/` serves only login/OAuth links to anonymous visitors — there is no anonymous installer URL to fetch. Owner step: sign in at https://www.sidefx.com/download/ (Google OAuth is offered), run the Houdini Installer, and the first launch installs the free Apprentice license. No workaround was attempted and none should be. |
-| DaVinci Resolve (free edition) | Editing, color, Fusion VFX, Fairlight audio | **FREE-TIER** — the free edition is a genuinely full NLE/color/Fusion suite and allows commercial work; Studio ($295 one-time) adds noise reduction, HDR tools, higher resolutions, extra FX | **DOCUMENTED — one owner click away.** The official page is live (HTTP 200 verified 2026-10-30), but the Linux download sits behind Blackmagic's registration form (name / email / address → "Register & Download") at https://www.blackmagicdesign.com/products/davinciresolve. Automation does not fabricate personal registration data, so the download stops there by design. Current version: Resolve 21.x. |
+| Houdini Apprentice | FX / simulation standard (the #2 tool on the list) | **FREE-TIER with hard catch** — free but **NON-COMMERCIAL learning edition**: non-commercial `.hipnc` files, "Render (NC)" watermarked renders capped at 720p, license renews every 30 days (SideFX FAQ) | **BLOCKED AT LOGIN — one owner sign-in away.** Verified 2026-10-30: SideFX's own FAQ states a (free) SideFX web account is required to download the software, and `sidefx.com/download/` serves only login/OAuth links to anonymous visitors — there is no anonymous installer URL to fetch. Owner step: sign in at https://www.sidefx.com/download/ (Google OAuth is offered), run the Houdini Installer, and the first launch installs the free Apprentice license. |
+| DaVinci Resolve (free edition) | Editing, color, Fusion VFX, Fairlight audio | **FREE-TIER** — the free edition is a genuinely full NLE/color/Fusion suite and allows commercial work; Studio ($295 one-time) adds noise reduction, HDR tools, higher resolutions, extra FX | **DOCUMENTED — one owner click away.** The official page is live (HTTP 200 verified 2026-10-30), but the Linux download sits behind Blackmagic's registration form (name / email / address → "Register & Download") at https://www.blackmagicdesign.com/products/davinciresolve. The download was not completed; it stops at that form. Current version: Resolve 21.x. |
 
 Paid Houdini tiers, for the record: Indie $269/yr (the cheapest commercial
 Houdini), Core $1,995, FX $4,495 (node-locked). Apprentice above is the
 free learning tier of the same software.
 
-## 3. Paid list — documented only (never cracked, never bypassed)
+## 3. Paid list — license status
 
 | Tool | Standard for | Real terms | Our free equivalent (wired) |
 |---|---|---|---|

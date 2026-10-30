@@ -1,0 +1,89 @@
+{
+  "name": "test-wedge-with-broken-variant",
+  "scene_script": "example_scene.py",
+  "blend_file": null,
+  "output_dir": "test_out",
+  "variants": [
+    {
+      "name": "ok_small",
+      "params": {
+        "cube_color": [
+          0.8,
+          0.15,
+          0.15,
+          1.0
+        ],
+        "objects.Cube.scale": [
+          0.7,
+          0.7,
+          0.7
+        ],
+        "objects.Light.data.energy": 400,
+        "render.engine": "CYCLES",
+        "render.samples": 8,
+        "render.resolution": [
+          96,
+          96
+        ],
+        "cycles.device": "CPU",
+        "cycles.use_denoising": false
+      }
+    },
+    {
+      "name": "broken_deliberate",
+      "params": {
+        "__fail__": true
+      }
+    },
+    {
+      "name": "ok_big_after_broken",
+      "params": {
+        "cube_color": [
+          0.15,
+          0.8,
+          0.25,
+          1.0
+        ],
+        "objects.Cube.scale": [
+          1.6,
+          1.6,
+          1.6
+        ],
+        "objects.Light.data.energy": 1500,
+        "render.engine": "CYCLES",
+        "render.samples": 8,
+        "render.resolution": [
+          96,
+          96
+        ],
+        "cycles.device": "CPU",
+        "cycles.use_denoising": false
+      }
+    },
+    {
+      "name": "ok_wide_after_broken",
+      "params": {
+        "cube_color": [
+          0.2,
+          0.35,
+          0.9,
+          1.0
+        ],
+        "objects.Cube.scale": [
+          2.0,
+          0.8,
+          0.8
+        ],
+        "objects.Light.data.energy": 300,
+        "render.engine": "CYCLES",
+        "render.samples": 8,
+        "render.resolution": [
+          120,
+          80
+        ],
+        "cycles.device": "CPU",
+        "cycles.use_denoising": false
+      }
+    }
+  ]
+}

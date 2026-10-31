@@ -64,9 +64,16 @@ by the subject's start offset. The target starts at its own rest
 location and follows the clip's travel, scaled by the leg-length ratio
 (measured on the armatures as presented, so raw mocap-scale sources —
 and pre-scaled ones — both work). Non-root rotations transfer as each
-source bone's local basis rotation (`matrix_basis`) — armature-space
-deltas carry every ancestor's motion and explode any rig whose
-ancestors are not all keyed identically.
+source bone's local basis rotation **conjugated into the target bone's
+rest frame** (`q′ = A·q·A⁻¹`, `A = F_target_rest⁻¹ @ F_source_rest`
+from the armature-space rest orientations): conjugation preserves the
+rotation angle while remapping its axis, so motion lands on the target
+bone's corresponding anatomical axis even when the two rigs' bone
+frames sit rolled against each other. (Round 1 keyed the raw basis —
+on the Cape Jones rig the leg chain's frame change measures ~177°, so
+knee flexion landed sign-flipped, calves forward, and the shoulder
+swing rotated in the wrong plane. Round 2 fixes the transfer; see
+`tests/test_rolled_frames.py`.)
 
 **M-2 — Retarget polish** (v2 section of the same panel), operating on the
 baked action only:
@@ -88,6 +95,7 @@ baked action only:
 | `tripo.json` | Tripo auto-rig export naming (un-prefixed TitleCase). Exports vary slightly by version — edit the JSON; that is what the format is for. |
 | `rigify.json` | Blender Rigify human **metarig** naming (`pelvis`, `spine.001`…, `upper_arm.L`). |
 | `cape_jones_canon.json` | **Grounded, not a placeholder:** bone names taken from `cape-jones/3d-assets/cape-jones-rig/RIG-DOCS.md` (`CapeJones_Rig`, 94 bones) — deform chain `pelvis → spine_1..spine_4 → chest → neck_1 → neck_2 → head → jaw`, `clavicle_* → upperarm_* → forearm_* → hand_*`, `thigh_* → shin_* → foot_* → toe_*` with `_L`/`_R` suffixes. Canon-only extras (`jaw`, `neck_2`, `spine_3/4`, `blaster_*`, `root`) are in the file's `extra_bones`. |
+| `cmu_bvh.json` | CMU mocap BVH (cgspeed conversion) joint naming — Mixamo names without the prefix, with the cgspeed hierarchy correction: there is **no `Spine2` joint** (`Hips > LowerBack > Spine > Spine1`), so `chest` maps to `Spine1`, the joint the shoulders hang from, and there is deliberately no `spine2` role (it would double-drive `Spine1`). Round 1's mapping (`chest → Spine2`) silently dropped the chest pair. |
 
 Add your own: drop another JSON of the same shape into the profiles folder
 (or point the panel's Profiles Folder elsewhere).
@@ -124,3 +132,19 @@ driven rig pattern and the BVH-style origin root described above: the
 driver bone is keyed (the deform bone is not), the evaluated deform pose
 follows through the live constraint, and the target hips start at their
 own rest position and follow only the clip's travel.
+
+A third test, `tests/test_rolled_frames.py`, covers the round-2 defect:
+the target's leg and arm bones are rolled 180° against the source's (the
+Cape Jones vs BVH frame situation), and the evaluated calf direction and
+upper-arm direction must still match the source's world-space motion —
+the regression guard for the frame-conjugation transfer.
+
+**Round-2 real-asset verification (2026-10-31):** CMU 02_03 → Cape Jones
+rig, production profiles. Signed knee flexion (calf-back positive,
+cross-product measure, frames 2–24): source +0.98…+1.00, round-1 bake
+−0.98, round-2 bake **+0.87**; knee flexion magnitude error ≤ 4.8°.
+Upper-arm sagittal swing span: source 42.1° (L) / 55.9° (R), round-2
+bake 39.9° / 58.7° with matching from-down ranges (arms hang and swing
+from the shoulder; round 1 kept them at 66–99° from down, in the wrong
+plane). Both synthetic suites still pass with their exact-value checks
+(pelvis 0.165, deform-follows-driver 0.900 rad).

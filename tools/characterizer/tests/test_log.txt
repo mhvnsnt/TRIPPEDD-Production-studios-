@@ -1,13 +1,9 @@
 Blender 4.5.3 LTS (hash 67807e1800cc built 2025-09-09 01:38:15)
-ucupaint addon: Verbose is enabled
-ucupaint addon: Read in JSON settings from file
-INFO: Ucupaint 3.0.0 is registered!
-INFO: Ucupaint update routine is done in 0.20 ms!
-INFO: Ucupaint 3.0.0 is unregistered!
 CHECK addon_registered: PASS 
 Info: Characterizer: 23 constraints built
 CHECK build_constraints_op: PASS {'FINISHED'}
 CHECK constraint_set_built: PASS 23 CHR_* constraints
+Characterizer bake: strategy=auto drivers=0 muted-kept=0
 Info: Characterizer: baked 'TargetRig_retargeted' (source untouched)
 CHECK bake_op: PASS {'FINISHED'}
 CHECK baked_action_exists: PASS TargetRig_retargeted

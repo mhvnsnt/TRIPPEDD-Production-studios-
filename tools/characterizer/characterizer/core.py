@@ -40,15 +40,33 @@ Retarget model
      subject's start offset; first-frame-relative displacement makes
      the target start at its own rest location and follow the clip's
      travel, scaled by the leg-length ratio.
-   * **Basis-space transfer.** Non-root rotations are transferred as
-     each source bone's *local* basis rotation (``matrix_basis``), the
-     ancestor-free quantity. Armature-space deltas contain every
-     ancestor's motion — including a raw mocap root sitting tens of
-     units from the origin — and only cancel out when the target's
-     ancestors are all keyed with the identical motion; on a
-     constraint-driven rig (or with any unmapped bone in the chain)
-     they explode the pose. The root bone itself has no ancestors, so
-     its armature-space path is exact and is kept for root motion.
+   * **Frame-conjugated transfer (round 2).** Non-root rotations
+     are transferred as each source bone's local basis rotation
+     re-expressed in the bake bone's rest frame:
+     ``q_target = A @ q_source @ A^-1`` with
+     ``A = F_target_rest^-1 @ F_source_rest`` from the two bones'
+     armature-space rest orientations. Conjugation preserves the
+     rotation angle and remaps its axis, so motion lands on the
+     corresponding anatomical axis of the target bone. Round 1
+     keyed the raw basis quaternion, which silently assumes the
+     two rest frames coincide. On the Cape Jones rig they do not
+     — the frame change for the leg chain measures ~177°, the
+     BVH leg frames sitting rolled ~180° against the rig's — so
+     knee flexion landed sign-flipped (calves swung forward) and
+     the upper-arm swing rotated in the wrong plane (shoulders
+     read as a stiff T); both defects passed round 1's numeric
+     metrics and were caught in owner review of the proof render.
+     An armature-space rest-offset variant
+     (``rest_target @ rest_source^-1 @ pose_source``) was also
+     measured during round 2 and preserves the same flip: with
+     corresponding parents it reduces to the verbatim basis, so
+     it cannot repair a frame mismatch either. Measured after the
+     fix, CMU 02_03 onto the Cape Jones rig: signed knee flexion
+     (calf-back positive) goes from -0.98 (round 1) to +0.87
+     (source +1.00), and the upper-arm sagittal swing span goes
+     from a wrong-plane 51° to 41° against the source's 42°.
+     The root bone has no ancestors, so its armature-space path
+     is exact and is kept for root motion.
 3. Polish passes (M-2) operate on the baked action only.
 """
 import math
@@ -365,6 +383,21 @@ def bake_retarget(context, source_obj, target_obj, source_profile,
     tgt_rest = {p["bake"]: target_obj.data.bones[p["bake"]].matrix_local.copy()
                 for p in resolved}
 
+    # Per-pair frame change for the round-2 conjugation transfer:
+    # A maps source-bone coordinates onto bake-bone coordinates,
+    # from the two bones' armature-space rest orientations
+    # (A = F_t^-1 @ F_s). A verbatim basis copy assumes A is the
+    # identity; on the Cape Jones rig the leg chain's A measures
+    # ~177 degrees (the BVH leg frames sit rolled ~180 degrees
+    # against the rig's), which is exactly the knee-flip defect.
+    conj_q = {}
+    for p in resolved:
+        src_q = source_obj.data.bones[p["source"]] \
+            .matrix_local.to_quaternion()
+        tgt_q = target_obj.data.bones[p["bake"]] \
+            .matrix_local.to_quaternion()
+        conj_q[p["bake"]] = tgt_q.inverted() @ src_q
+
     new_action = bpy.data.actions.new(
         name=action_name or (target_obj.name + "_retargeted"))
     if target_obj.animation_data is None:
@@ -402,7 +435,8 @@ def bake_retarget(context, source_obj, target_obj, source_profile,
             # Snapshot source pose (armature space) before touching target.
             src_pose = {p["source"]: source_obj.pose.bones[p["source"]].matrix.copy()
                         for p in resolved}
-            # Local basis sample (ancestor-free) for non-root transfer.
+            # Local basis sample (the motion each non-root bone is
+            # conjugated from; see the transfer below).
             src_basis = _pose_basis(source_obj, resolved)
             for pair in resolved:
                 pb = target_obj.pose.bones[pair["bake"]]
@@ -436,12 +470,21 @@ def bake_retarget(context, source_obj, target_obj, source_profile,
                     rest_local = parent_rest.inverted() @ tgt_rest[pair["bake"]]
                     basis = rest_local.inverted() @ parent_pose.inverted() @ desired
                 else:
-                    # Basis-space transfer: the source bone's local
-                    # basis rotation IS the motion, with no ancestor
-                    # terms to cancel (or fail to cancel). Basis
+                    # Frame-conjugated basis transfer (round 2 - see
+                    # module docstring): the source bone's local
+                    # basis rotation is re-expressed in the bake
+                    # bone's rest frame,
+                    #   q_target = A @ q_source @ A^-1,
+                    # preserving the rotation angle while remapping
+                    # its axis - a flexion about the source frame's X
+                    # lands as flexion about the target frame's
+                    # corresponding anatomical axis even when the two
+                    # frames sit rolled against each other. Basis
                     # locations ride along scaled by the leg ratio
                     # (zero for channel-locked mocap bones).
-                    quat, loc = src_basis[pair["role"]]
+                    quat_s, loc = src_basis[pair["role"]]
+                    a = conj_q[pair["bake"]]
+                    quat = a @ quat_s @ a.inverted()
                     basis = Matrix.LocRotScale(loc * scale, quat,
                                                Vector((1.0, 1.0, 1.0)))
                 pb.rotation_mode = "QUATERNION"

@@ -21,6 +21,34 @@ Retarget model
    that action as a strip on a fresh NLA track. The temporary constraints
    are removed after the bake and the source object/action are only ever
    read, never written.
+
+   Two production lessons are baked in:
+
+   * **Constraint-driven rigs.** If a mapped target bone is driven by an
+     active same-armature COPY_TRANSFORMS / COPY_ROTATION constraint (an
+     FK/IK control layer, e.g. Cape Jones), the bake keys the *driver*
+     bone instead of the deform bone, so the rig's own constraint stack
+     produces the motion exactly as it does for a hand-keyed FK
+     animation. Baking the deform bones while those constraints are live
+     compounds the pose (the constraint re-applies the driver transform
+     on top of the keyed one). See ``resolve_bake_pairs`` and the
+     profile-level ``constraint_strategy`` option.
+   * **Root reference.** The hips/root displacement is measured from
+     the source pose at the first baked frame, not from the source rest
+     pose. Mocap sources (BVH) keep their root rest at the capture
+     origin, so rest-relative displacement teleports the target by the
+     subject's start offset; first-frame-relative displacement makes
+     the target start at its own rest location and follow the clip's
+     travel, scaled by the leg-length ratio.
+   * **Basis-space transfer.** Non-root rotations are transferred as
+     each source bone's *local* basis rotation (``matrix_basis``), the
+     ancestor-free quantity. Armature-space deltas contain every
+     ancestor's motion — including a raw mocap root sitting tens of
+     units from the origin — and only cancel out when the target's
+     ancestors are all keyed with the identical motion; on a
+     constraint-driven rig (or with any unmapped bone in the chain)
+     they explode the pose. The root bone itself has no ancestors, so
+     its armature-space path is exact and is kept for root motion.
 3. Polish passes (M-2) operate on the baked action only.
 """
 import math
@@ -139,6 +167,138 @@ def clear_constraints(target_obj):
     return removed
 
 
+# ------------------------------------------- constraint-driven rig support
+_DRIVER_TYPES = ("COPY_TRANSFORMS", "COPY_ROTATION")
+_OVERRIDE_TYPES = ("COPY_TRANSFORMS", "COPY_ROTATION", "COPY_LOCATION", "IK")
+
+
+def _driver_constraint(pb, target_obj):
+    """The active control-layer driver constraint on a pose bone, or None.
+
+    A driver is a COPY_TRANSFORMS / COPY_ROTATION constraint with
+    influence >= 0.5 whose target is the bone's *own* armature and whose
+    subtarget is another bone of that armature (an FK control bone).
+    The tool's own CHR_* preview constraints are ignored (they point at
+    the source armature anyway), and a subtarget that is itself solved
+    by an IK constraint is never treated as a driver (IK chain bones are
+    solver outputs, not animation inputs).
+    """
+    best = None
+    for con in pb.constraints:
+        if con.name.startswith(CONSTRAINT_PREFIX):
+            continue
+        if con.type not in _DRIVER_TYPES:
+            continue
+        if getattr(con, "target", None) is not target_obj:
+            continue
+        sub = getattr(con, "subtarget", "")
+        if not sub or sub == pb.name or sub not in target_obj.data.bones:
+            continue
+        if con.influence < 0.5:
+            continue
+        sub_pb = target_obj.pose.bones[sub]
+        if any(c.type == "IK" and c.influence > 0.0
+               for c in sub_pb.constraints):
+            continue
+        if best is None or _DRIVER_TYPES.index(con.type) < \
+                _DRIVER_TYPES.index(best.type):
+            best = con
+    return best
+
+
+def resolve_bake_pairs(target_obj, pairs, strategy="auto"):
+    """Decide which bone each mapped role is actually keyed on.
+
+    ``strategy`` comes from the target profile's ``constraint_strategy``
+    field: ``"auto"`` (default), ``"drivers"`` or ``"mute"``.
+
+    * ``drivers`` / ``auto``: a mapped bone with an active control-layer
+      driver (see ``_driver_constraint``) is keyed *through its driver
+      bone*; the rig's constraints stay live and produce the deform
+      motion, exactly as for a hand-keyed FK animation.
+    * A mapped bone without a driver is keyed directly - unless it
+      carries other live pose-overriding constraints, which would hide
+      the baked result; those are returned in ``muted_keep`` so the
+      caller can mute them and leave them muted.
+    * ``mute``: no driver resolution at all; every live pose constraint
+      on every mapped bone goes to ``muted_keep`` and the deform bones
+      are keyed directly (the manual production workaround, as a
+      supported strategy).
+
+    Returns ``(resolved, muted_keep)`` where resolved pairs are copies
+    of the input pairs with extra ``bake`` (bone actually keyed),
+    ``driver`` (driver bone name or None) and ``driver_con`` entries.
+    """
+    if strategy not in ("auto", "drivers", "mute"):
+        raise ValueError("unknown constraint_strategy %r" % (strategy,))
+    resolved = []
+    muted_keep = []
+    for pair in pairs:
+        entry = dict(pair)
+        entry["bake"] = pair["target"]
+        entry["driver"] = None
+        entry["driver_con"] = None
+        pb = target_obj.pose.bones.get(pair["target"])
+        if pb is not None and strategy != "mute":
+            con = _driver_constraint(pb, target_obj)
+            if con is not None:
+                entry["bake"] = con.subtarget
+                entry["driver"] = con.subtarget
+                entry["driver_con"] = con
+                resolved.append(entry)
+                continue
+        if pb is not None:
+            for con in pb.constraints:
+                if con.name.startswith(CONSTRAINT_PREFIX):
+                    continue
+                if con.type in _OVERRIDE_TYPES and con.influence > 0.0 \
+                        and not con.mute:
+                    muted_keep.append((pb, con))
+        resolved.append(entry)
+    return resolved, muted_keep
+
+
+def _pose_basis(src_obj, pairs):
+    """Per-role LOCAL basis sample of the source pose.
+
+    Returns ``{role: (quaternion, location)}`` from each source bone's
+    ``matrix_basis`` — its transform relative to its own rest pose, in
+    its parent's frame. This is the quantity a retarget transfers for
+    non-root bones: unlike an armature-space delta it contains no
+    ancestor motion, so it stays correct when ancestors are unmapped,
+    constraint-driven, or (raw mocap) tens of units from the origin.
+    """
+    out = {}
+    for pair in pairs:
+        basis = src_obj.pose.bones[pair["source"]].matrix_basis
+        out[pair["role"]] = (basis.to_quaternion(), basis.to_translation())
+    return out
+
+
+def _bone_depth(target_obj, name):
+    depth = 0
+    bone = target_obj.data.bones.get(name)
+    while bone is not None and bone.parent is not None:
+        depth += 1
+        bone = bone.parent
+    return depth
+
+
+def _reset_pose(obj):
+    """Return every pose bone to its rest basis (bake determinism).
+
+    A bake that samples evaluated parent matrices must not inherit
+    whatever pose the scene happened to be displaying (a sit pose, an
+    earlier take): unmapped bones would otherwise keep that pose in
+    memory and corrupt both the sampling and the saved result.
+    """
+    for pb in obj.pose.bones:
+        pb.location = (0.0, 0.0, 0.0)
+        pb.rotation_euler = (0.0, 0.0, 0.0)
+        pb.rotation_quaternion = (1.0, 0.0, 0.0, 0.0)
+        pb.scale = (1.0, 1.0, 1.0)
+
+
 # ------------------------------------------------------------- M-1 bake
 def bake_retarget(context, source_obj, target_obj, source_profile,
                   target_profile, frame_start=None, frame_end=None,
@@ -167,20 +327,43 @@ def bake_retarget(context, source_obj, target_obj, source_profile,
 
     scale = _leg_scale(source_obj, target_obj, pairs)
 
-    # Live constraint set first (the spec's panel flow), muted during the
+    # Constraint-driven rigs: decide which bone each role is keyed on
+    # (the FK/control driver when the profile bone is driven, else the
+    # profile bone itself) - see resolve_bake_pairs.
+    strategy = target_profile.get("constraint_strategy", "auto")
+    resolved, muted_keep = resolve_bake_pairs(target_obj, pairs, strategy)
+    # Parents before children *by bake bone*, so a keyed driver's
+    # evaluated matrix is ready when its children are sampled (the
+    # profile order follows the deform hierarchy, which need not match
+    # the control layer's).
+    resolved.sort(key=lambda p: _bone_depth(target_obj, p["bake"]))
+    hips_pair = next((p for p in resolved if p["role"] == "hips"), None)
+    shadow_pairs = [{"role": p["role"], "source": p["source"],
+                     "target": p["bake"]} for p in resolved]
+
+    # Live constraint set first (the spec's panel flow), built on the
+    # bake bones so the preview matches the bake, muted during the
     # sampled bake so the offset-corrected sampling is not double-applied.
-    build_constraints(source_obj, target_obj, pairs)
+    build_constraints(source_obj, target_obj, shadow_pairs)
     for pb in target_obj.pose.bones:
         for con in pb.constraints:
             if con.name.startswith(CONSTRAINT_PREFIX):
                 con.mute = True
 
-    # Rest data (armature space).
+    # Driver constraints must be live for the deform bones to follow
+    # the bake; constraints that would override a directly-keyed bone
+    # are muted and left muted (recorded on the action below).
+    for entry in resolved:
+        if entry["driver_con"] is not None:
+            entry["driver_con"].mute = False
+    for _pb, con in muted_keep:
+        con.mute = True
+
+    # Rest data (armature space), keyed by the bone actually baked.
     src_rest = {p["source"]: source_obj.data.bones[p["source"]].matrix_local.copy()
-                for p in pairs}
-    tgt_rest = {p["target"]: target_obj.data.bones[p["target"]].matrix_local.copy()
-                for p in pairs}
-    hips_pair = next((p for p in pairs if p["role"] == "hips"), None)
+                for p in resolved}
+    tgt_rest = {p["bake"]: target_obj.data.bones[p["bake"]].matrix_local.copy()
+                for p in resolved}
 
     new_action = bpy.data.actions.new(
         name=action_name or (target_obj.name + "_retargeted"))
@@ -190,49 +373,108 @@ def bake_retarget(context, source_obj, target_obj, source_profile,
 
     scene = context.scene
     original_frame = scene.frame_current
+    # Pre-existing NLA tracks on the target (an earlier take, a sit
+    # pose) would blend under the bake for bones the bake does not key;
+    # mute them for the duration of the bake and restore them after.
+    saved_track_mute = []
+    if target_obj.animation_data is not None:
+        for track in target_obj.animation_data.nla_tracks:
+            saved_track_mute.append((track, track.mute))
+            track.mute = True
     try:
+        # Determinism: neither armature may leak the pose the scene
+        # happened to be displaying into the sampling.
+        _reset_pose(source_obj)
+        _reset_pose(target_obj)
+        scene.frame_set(int(frame_start))
+        context.view_layer.update()
+        # Root-motion reference: the source hips pose at the first
+        # baked frame. Mocap roots rest at the capture origin, so a
+        # rest-relative reference would teleport the target by the
+        # subject's start offset (see module docstring).
+        src_ref = None
+        if hips_pair is not None:
+            src_ref = source_obj.pose.bones[hips_pair["source"]] \
+                .matrix.to_translation().copy()
         for frame in range(int(frame_start), int(frame_end) + 1):
             scene.frame_set(frame)
             context.view_layer.update()
             # Snapshot source pose (armature space) before touching target.
             src_pose = {p["source"]: source_obj.pose.bones[p["source"]].matrix.copy()
-                        for p in pairs}
-            for pair in pairs:  # pairs are parents-first by construction
-                pb = target_obj.pose.bones[pair["target"]]
-                delta = src_rest[pair["source"]].inverted() @ src_pose[pair["source"]]
-                desired = tgt_rest[pair["target"]] @ delta
+                        for p in resolved}
+            # Local basis sample (ancestor-free) for non-root transfer.
+            src_basis = _pose_basis(source_obj, resolved)
+            for pair in resolved:
+                pb = target_obj.pose.bones[pair["bake"]]
                 if pair is hips_pair:
+                    # The root has no ancestors: its armature-space
+                    # delta is exact. Keep that path (with the
+                    # first-frame-relative, proportion-scaled location).
+                    delta = src_rest[pair["source"]].inverted() @ src_pose[pair["source"]]
+                    desired = tgt_rest[pair["bake"]] @ delta
                     # Proportion-compensated root translation: keep the
-                    # rest offset, scale the *displacement* by leg ratio.
-                    rest_loc = tgt_rest[pair["target"]].to_translation()
-                    src_disp = (src_pose[pair["source"]].to_translation()
-                                - src_rest[pair["source"]].to_translation())
+                    # target's rest offset, follow the source's travel
+                    # relative to the first baked frame, scaled by the
+                    # leg ratio. The ratio is measured on the armatures
+                    # as presented, so it covers the location path for
+                    # raw mocap-scale sources (and stays correct if the
+                    # caller pre-scaled the source instead).
+                    rest_loc = tgt_rest[pair["bake"]].to_translation()
+                    ref = src_ref if src_ref is not None else \
+                        src_rest[pair["source"]].to_translation()
+                    src_disp = src_pose[pair["source"]].to_translation() - ref
                     desired.translation = rest_loc + src_disp * scale
-                # Convert the desired armature-space matrix into the
-                # bone's local pose basis:
-                #   pose = parent_pose @ rest_local @ basis
-                if pb.parent is not None:
-                    parent_pose = pb.parent.matrix.copy()
-                    parent_rest = target_obj.data.bones[pb.parent.name].matrix_local
+                    # Convert the desired armature-space matrix into the
+                    # bone's local pose basis:
+                    #   pose = parent_pose @ rest_local @ basis
+                    if pb.parent is not None:
+                        parent_pose = pb.parent.matrix.copy()
+                        parent_rest = target_obj.data.bones[pb.parent.name].matrix_local
+                    else:
+                        parent_pose = Matrix.Identity(4)
+                        parent_rest = Matrix.Identity(4)
+                    rest_local = parent_rest.inverted() @ tgt_rest[pair["bake"]]
+                    basis = rest_local.inverted() @ parent_pose.inverted() @ desired
                 else:
-                    parent_pose = Matrix.Identity(4)
-                    parent_rest = Matrix.Identity(4)
-                rest_local = parent_rest.inverted() @ tgt_rest[pair["target"]]
-                basis = rest_local.inverted() @ parent_pose.inverted() @ desired
+                    # Basis-space transfer: the source bone's local
+                    # basis rotation IS the motion, with no ancestor
+                    # terms to cancel (or fail to cancel). Basis
+                    # locations ride along scaled by the leg ratio
+                    # (zero for channel-locked mocap bones).
+                    quat, loc = src_basis[pair["role"]]
+                    basis = Matrix.LocRotScale(loc * scale, quat,
+                                               Vector((1.0, 1.0, 1.0)))
                 pb.rotation_mode = "QUATERNION"
                 pb.rotation_quaternion = basis.to_quaternion()
                 pb.location = basis.to_translation()
                 context.view_layer.update()
                 pb.keyframe_insert(data_path="rotation_quaternion",
-                                   frame=frame, group=pair["target"])
+                                   frame=frame, group=pair["bake"])
                 pb.keyframe_insert(data_path="location",
-                                   frame=frame, group=pair["target"])
+                                   frame=frame, group=pair["bake"])
     finally:
         scene.frame_set(original_frame)
         context.view_layer.update()
+        for track, mute in saved_track_mute:
+            track.mute = mute
 
     if not keep_constraints:
         clear_constraints(target_obj)
+
+    # Record how the bake treated the rig's own constraint stack.
+    try:
+        new_action["characterizer_strategy"] = strategy
+        new_action["characterizer_drivers"] = ", ".join(
+            sorted({p["driver"] for p in resolved if p["driver"]}))
+        new_action["characterizer_muted_kept"] = ", ".join(
+            sorted({"%s:%s" % (pb.name, con.name)
+                    for pb, con in muted_keep}))
+    except Exception:
+        pass
+    print("Characterizer bake: strategy=%s drivers=%d muted-kept=%d" % (
+        strategy,
+        len({p["bake"] for p in resolved if p["driver"]}),
+        len(muted_keep)))
 
     # Present the baked action as an NLA-ready track (its own strip; the
     # animator can stack fix strips above it - the animation-layers lesson).

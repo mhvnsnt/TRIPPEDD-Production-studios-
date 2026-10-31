@@ -32,6 +32,42 @@ the bone names a skeleton family actually uses. Panel flow
    constraints are removed after the bake. **The source action is only ever
    read, never modified** (the test proves this by signature compare).
 
+**Constraint-driven rigs** (e.g. Cape Jones, whose deform bones follow an
+FK control layer through COPY_TRANSFORMS / COPY_ROTATION constraints):
+keying the deform bones while those constraints are live compounds the
+pose, so the bake resolves each mapped bone to the bone that actually
+has to be keyed. A profile may set `"constraint_strategy"`:
+
+- `"auto"` (default) / `"drivers"` — a mapped bone with an active
+  same-armature driver constraint (influence ≥ 0.5) is keyed *through
+  its driver bone* (the FK bone); the rig's constraints stay live and
+  produce the deform motion, exactly as for a hand-keyed FK animation.
+  A mapped bone with no driver is keyed directly; if it carries other
+  live pose-overriding constraints, those are muted and left muted
+  (they would hide the bake), and the fact is recorded on the baked
+  action (`characterizer_muted_kept`).
+- `"mute"` — no driver resolution: all live pose constraints on mapped
+  bones are muted (and left muted) and the deform bones are keyed
+  directly. This is the manual production workaround, as a supported
+  strategy.
+
+Bake in the rig's FK mode (for Cape Jones: the `ik_*` switches on `root`
+at 0). The bake also resets both armatures to rest before sampling and
+mutes the target's pre-existing NLA tracks while sampling (restored
+afterwards), so a pose the scene happened to be displaying can never
+leak into the result.
+
+**Root motion** is measured relative to the source pose at the first
+baked frame, not the source rest pose: mocap roots (BVH) rest at the
+capture origin, so a rest-relative reference would teleport the target
+by the subject's start offset. The target starts at its own rest
+location and follows the clip's travel, scaled by the leg-length ratio
+(measured on the armatures as presented, so raw mocap-scale sources —
+and pre-scaled ones — both work). Non-root rotations transfer as each
+source bone's local basis rotation (`matrix_basis`) — armature-space
+deltas carry every ancestor's motion and explode any rig whose
+ancestors are not all keyed identically.
+
 **M-2 — Retarget polish** (v2 section of the same panel), operating on the
 baked action only:
 
@@ -82,3 +118,9 @@ target pelvis X at frame 10 = **0.165** for a 0.30 source move (exactly the
 source action signature identical before/after bake and after polish;
 foot-skate pass corrected 0 frames on this clip (feet plant cleanly after
 floor clamp — the operator ran, there was no skate to fix).
+
+A second test, `tests/test_constraint_driven.py`, covers the constraint-
+driven rig pattern and the BVH-style origin root described above: the
+driver bone is keyed (the deform bone is not), the evaluated deform pose
+follows through the live constraint, and the target hips start at their
+own rest position and follow only the clip's travel.

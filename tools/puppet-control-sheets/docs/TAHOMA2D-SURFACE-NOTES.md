@@ -78,3 +78,32 @@ Tahoma2D/OpenToonz documentation. Verdict first:
 - Per-show templates (Wizard Gang, 2D Cape Jones) sharing one layout.
 - A tolerant structural validator, and tcomposer render evidence
   (test-output/).
+
+## Addendum (2026-10-30, runtime fix lane) — the relative-path hang, reproduced and fixed
+
+The proof-verification lane saw tcomposer hang twice (900 s timeouts)
+on this kit's scene, stalling right after `Loading testpuppet`, while
+the generator and validator passed. Root cause, reproduced live: the
+invocation used a **relative scene path**. tcomposer's project search
+walks up from the scene's parent folder and loops forever on a
+relative path (the §2.4 note above); the log tail — plugin load
+finished, `Loading testpuppet`, then nothing — is the signature.
+With an absolute path the same scene renders in ~1–5 s.
+
+Runtime state confirmed/fixed on the VM:
+
+- `~/.config/Tahoma2D/SystemVar.ini` (`TAHOMA2DROOT` -> the
+  tahomastuff folder) is present and correct; it is the file whose
+  absence hung env init during the build (§2.4).
+- The `varName:... TAHOMA2DROOT not set...` startup lines print in
+  **successful** runs too — benign expander noise, not the failure.
+- The box's tcomposer wrapper (`~/workspace/tools/tahoma2d/
+  run-tcomposer.sh`) now rewrites any `.tnz` argument to an absolute
+  path and exports `TAHOMA2DROOT`, so relative-path callers are safe
+  through the wrapper. Full runtime notes:
+  `~/workspace/tools/tahoma2d/WIRING.md`.
+- Re-verified end to end after the fix: generator -> validator
+  (RESULT: PASS, 0 FAIL) -> tcomposer frame 28 in 0.39 s; output
+  md5 `10aad171...`, bit-identical to the wave frame recorded in
+  test-output/VALIDATION-LOG.md. FUSE is not implicated (native
+  extracted tree, unlike the OpenToonz flatpak).

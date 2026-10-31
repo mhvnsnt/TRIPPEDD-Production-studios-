@@ -44,7 +44,14 @@ class CHARACTERIZER_OT_build_constraints(Operator):
         pairs = build_mapping(
             _get_profile(context, "characterizer_source_profile"),
             _get_profile(context, "characterizer_target_profile"))
-        count = core.build_constraints(src, tgt, pairs)
+        target_profile = _get_profile(
+            context, "characterizer_target_profile")
+        resolved, _muted = core.resolve_bake_pairs(
+            tgt, pairs,
+            target_profile.get("constraint_strategy", "auto"))
+        shadow = [{"role": p["role"], "source": p["source"],
+                   "target": p["bake"]} for p in resolved]
+        count = core.build_constraints(src, tgt, shadow)
         self.report({"INFO"}, "Characterizer: %d constraints built" % count)
         return {"FINISHED"}
 

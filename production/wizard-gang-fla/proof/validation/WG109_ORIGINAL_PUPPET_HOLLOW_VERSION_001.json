@@ -1,0 +1,2203 @@
+{
+ "dom": {
+  "root_attrs": {
+   "width": "1920",
+   "height": "1080",
+   "frameRate": "24",
+   "currentTimeline": "1",
+   "xflVersion": "2.1",
+   "creatorInfo": "WG FLA lane (XFL authored)",
+   "platform": "Linux",
+   "majorVersion": "11",
+   "minorVersion": "5",
+   "buildNumber": "325",
+   "nextSceneIdentifier": "2",
+   "playOptionsPlayLoop": "false"
+  },
+  "folders": [
+   "WG109_HOLLOW_PUPPET_V001"
+  ],
+  "media": [
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG109_HOLLOW_PUPPET_V001/media/ROBE_FULL",
+    "attrs": {
+     "name": "WG109_HOLLOW_PUPPET_V001/media/ROBE_FULL",
+     "itemID": "5eed2026-0000000b",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG109_HOLLOW_PUPPET_V001/media/ROBE_FULL.png",
+     "bitmapDataHRef": "M 1 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG109_HOLLOW_PUPPET_V001/media/TORSO",
+    "attrs": {
+     "name": "WG109_HOLLOW_PUPPET_V001/media/TORSO",
+     "itemID": "5eed2026-0000000c",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG109_HOLLOW_PUPPET_V001/media/TORSO.png",
+     "bitmapDataHRef": "M 2 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG109_HOLLOW_PUPPET_V001/media/ROBE_SKIRT",
+    "attrs": {
+     "name": "WG109_HOLLOW_PUPPET_V001/media/ROBE_SKIRT",
+     "itemID": "5eed2026-0000000d",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG109_HOLLOW_PUPPET_V001/media/ROBE_SKIRT.png",
+     "bitmapDataHRef": "M 3 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG109_HOLLOW_PUPPET_V001/media/HEAD",
+    "attrs": {
+     "name": "WG109_HOLLOW_PUPPET_V001/media/HEAD",
+     "itemID": "5eed2026-0000000e",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG109_HOLLOW_PUPPET_V001/media/HEAD.png",
+     "bitmapDataHRef": "M 4 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG109_HOLLOW_PUPPET_V001/media/CHAIN",
+    "attrs": {
+     "name": "WG109_HOLLOW_PUPPET_V001/media/CHAIN",
+     "itemID": "5eed2026-0000000f",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG109_HOLLOW_PUPPET_V001/media/CHAIN.png",
+     "bitmapDataHRef": "M 5 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG109_HOLLOW_PUPPET_V001/media/EYE_L",
+    "attrs": {
+     "name": "WG109_HOLLOW_PUPPET_V001/media/EYE_L",
+     "itemID": "5eed2026-00000010",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG109_HOLLOW_PUPPET_V001/media/EYE_L.png",
+     "bitmapDataHRef": "M 6 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG109_HOLLOW_PUPPET_V001/media/EYE_R",
+    "attrs": {
+     "name": "WG109_HOLLOW_PUPPET_V001/media/EYE_R",
+     "itemID": "5eed2026-00000011",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG109_HOLLOW_PUPPET_V001/media/EYE_R.png",
+     "bitmapDataHRef": "M 7 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG109_HOLLOW_PUPPET_V001/media/LIDS",
+    "attrs": {
+     "name": "WG109_HOLLOW_PUPPET_V001/media/LIDS",
+     "itemID": "5eed2026-00000012",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG109_HOLLOW_PUPPET_V001/media/LIDS.png",
+     "bitmapDataHRef": "M 8 1335000000.dat"
+    }
+   }
+  ],
+  "includes": [
+   {
+    "href": "WG_HOLLOW_FRONT_ROBE_FULL.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000013",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_HOLLOW_FRONT_TORSO.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000014",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_HOLLOW_FRONT_ROBE_SKIRT.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000015",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_HOLLOW_FRONT_HEAD.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000016",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_HOLLOW_FRONT_CHAIN.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000017",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_HOLLOW_FRONT_EYE_L.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000018",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_HOLLOW_FRONT_EYE_R.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000019",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_HOLLOW_FRONT_LIDS.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000001a",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_HOLLOW_FRONT_HEADCOMP.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000001b",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_HOLLOW_FRONT_PUPPET.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000001c",
+    "loadPoint": null
+   }
+  ],
+  "timelines": [
+   {
+    "name": "Scene 1",
+    "layers": [
+     {
+      "name": "REF",
+      "type": "guide",
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     },
+     {
+      "name": "WG_HOLLOW",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "WG_HOLLOW",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_PUPPET",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "740.00",
+       "ty": "100.00"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "symbols": [
+  {
+   "file": "WG_HOLLOW_FRONT_CHAIN.xml",
+   "rel": "LIBRARY/WG_HOLLOW_FRONT_CHAIN.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_CHAIN",
+    "itemID": "5eed2026-00000005",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_HOLLOW_FRONT_CHAIN",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/media/CHAIN",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_HOLLOW_FRONT_EYE_L.xml",
+   "rel": "LIBRARY/WG_HOLLOW_FRONT_EYE_L.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_EYE_L",
+    "itemID": "5eed2026-00000006",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_HOLLOW_FRONT_EYE_L",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/media/EYE_L",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_HOLLOW_FRONT_EYE_R.xml",
+   "rel": "LIBRARY/WG_HOLLOW_FRONT_EYE_R.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_EYE_R",
+    "itemID": "5eed2026-00000007",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_HOLLOW_FRONT_EYE_R",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/media/EYE_R",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_HOLLOW_FRONT_HEAD.xml",
+   "rel": "LIBRARY/WG_HOLLOW_FRONT_HEAD.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEAD",
+    "itemID": "5eed2026-00000004",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_HOLLOW_FRONT_HEAD",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/media/HEAD",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_HOLLOW_FRONT_HEADCOMP.xml",
+   "rel": "LIBRARY/WG_HOLLOW_FRONT_HEADCOMP.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEADCOMP",
+    "itemID": "5eed2026-00000009",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_HOLLOW_FRONT_HEADCOMP",
+    "layers": [
+     {
+      "name": "LABELS_FACE",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ]
+      ],
+      "keyframe_count": 5,
+      "duration": 5
+     },
+     {
+      "name": "face",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ]
+      ],
+      "keyframe_count": 5,
+      "duration": 5
+     }
+    ],
+    "total_frames": 5,
+    "labels": [
+     [
+      "LABELS_FACE",
+      0,
+      "OPEN"
+     ],
+     [
+      "LABELS_FACE",
+      1,
+      "BLINK"
+     ],
+     [
+      "LABELS_FACE",
+      2,
+      "LOOK_L"
+     ],
+     [
+      "LABELS_FACE",
+      3,
+      "LOOK_R"
+     ],
+     [
+      "LABELS_FACE",
+      4,
+      "SQUINT"
+     ]
+    ],
+    "instances": [
+     {
+      "layer": "face",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_LIDS",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "-15.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "-15.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "15.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "15.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": "0.55000",
+       "tx": null,
+       "ty": "100.12"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": "0.55000",
+       "tx": null,
+       "ty": "100.12"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_HOLLOW_FRONT_LIDS.xml",
+   "rel": "LIBRARY/WG_HOLLOW_FRONT_LIDS.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_LIDS",
+    "itemID": "5eed2026-00000008",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_HOLLOW_FRONT_LIDS",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/media/LIDS",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_HOLLOW_FRONT_PUPPET.xml",
+   "rel": "LIBRARY/WG_HOLLOW_FRONT_PUPPET.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_PUPPET",
+    "itemID": "5eed2026-0000000a",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_HOLLOW_FRONT_PUPPET",
+    "layers": [
+     {
+      "name": "POSES_LABELS",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "CHAIN",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "HEADCOMP",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "TORSO",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ROBE_SKIRT",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ROBE_UNDERLAY",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     }
+    ],
+    "total_frames": 8,
+    "labels": [
+     [
+      "POSES_LABELS",
+      0,
+      "NEUTRAL"
+     ],
+     [
+      "POSES_LABELS",
+      1,
+      "BLINK"
+     ],
+     [
+      "POSES_LABELS",
+      2,
+      "LEAN_R"
+     ],
+     [
+      "POSES_LABELS",
+      3,
+      "LEAN_L"
+     ],
+     [
+      "POSES_LABELS",
+      4,
+      "BOW"
+     ],
+     [
+      "POSES_LABELS",
+      5,
+      "TURN_R"
+     ],
+     [
+      "POSES_LABELS",
+      6,
+      "ARMS_WIDE"
+     ],
+     [
+      "POSES_LABELS",
+      7,
+      "SETTLE"
+     ]
+    ],
+    "instances": [
+     {
+      "layer": "CHAIN",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "365.0",
+       "y": "330"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "365.0",
+       "y": "330"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99863",
+       "b": "0.05234",
+       "c": "-0.05234",
+       "d": "0.99863",
+       "tx": "17.77",
+       "ty": "-18.65"
+      },
+      "transPoint": {
+       "x": "365.0",
+       "y": "330"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99863",
+       "b": "-0.05234",
+       "c": "0.05234",
+       "d": "0.99863",
+       "tx": "-16.77",
+       "ty": "19.55"
+      },
+      "transPoint": {
+       "x": "365.0",
+       "y": "330"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99756",
+       "b": "0.06976",
+       "c": "-0.06976",
+       "d": "0.99756",
+       "tx": "24.91",
+       "ty": "-18.66"
+      },
+      "transPoint": {
+       "x": "365.0",
+       "y": "330"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99863",
+       "b": "0.05234",
+       "c": "-0.05234",
+       "d": "0.99863",
+       "tx": "17.77",
+       "ty": "-18.65"
+      },
+      "transPoint": {
+       "x": "365.0",
+       "y": "330"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "-0.03490",
+       "c": "0.03490",
+       "d": "0.99939",
+       "tx": "-11.29",
+       "ty": "12.94"
+      },
+      "transPoint": {
+       "x": "365.0",
+       "y": "330"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "0.01745",
+       "c": "-0.01745",
+       "d": "0.99985",
+       "tx": "5.81",
+       "ty": "-6.32"
+      },
+      "transPoint": {
+       "x": "365.0",
+       "y": "330"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "306.0",
+       "y": "386.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "1",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "306.0",
+       "y": "386.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "3",
+      "matrix": {
+       "a": "0.99619",
+       "b": "0.08716",
+       "c": "-0.08716",
+       "d": "0.99619",
+       "tx": "36.82",
+       "ty": "-25.20"
+      },
+      "transPoint": {
+       "x": "306.0",
+       "y": "386.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "2",
+      "matrix": {
+       "a": "0.99619",
+       "b": "-0.08716",
+       "c": "0.08716",
+       "d": "0.99619",
+       "tx": "-34.49",
+       "ty": "28.14"
+      },
+      "transPoint": {
+       "x": "306.0",
+       "y": "386.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99756",
+       "b": "0.06976",
+       "c": "-0.06976",
+       "d": "0.99756",
+       "tx": "30.68",
+       "ty": "-6.40"
+      },
+      "transPoint": {
+       "x": "306.0",
+       "y": "386.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "3",
+      "matrix": {
+       "a": "0.99452",
+       "b": "0.10453",
+       "c": "-0.10453",
+       "d": "0.99452",
+       "tx": "44.03",
+       "ty": "-29.87"
+      },
+      "transPoint": {
+       "x": "306.0",
+       "y": "386.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99863",
+       "b": "-0.05234",
+       "c": "0.05234",
+       "d": "0.99863",
+       "tx": "-19.79",
+       "ty": "16.54"
+      },
+      "transPoint": {
+       "x": "306.0",
+       "y": "386.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "1",
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "13.66",
+       "ty": "-9.44"
+      },
+      "transPoint": {
+       "x": "306.0",
+       "y": "386.1"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "21.68",
+       "ty": "-11.70"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "-0.03490",
+       "c": "0.03490",
+       "d": "0.99939",
+       "tx": "-21.26",
+       "ty": "12.38"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "19.68",
+       "ty": "-4.70"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "20.68",
+       "ty": "-11.70"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "-0.03490",
+       "c": "0.03490",
+       "d": "0.99939",
+       "tx": "-19.26",
+       "ty": "12.38"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "0.01745",
+       "c": "-0.01745",
+       "d": "0.99985",
+       "tx": "9.79",
+       "ty": "-4.94"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-9.69",
+       "ty": "6.11"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "0.01745",
+       "c": "-0.01745",
+       "d": "0.99985",
+       "tx": "9.79",
+       "ty": "-5.94"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-9.69",
+       "ty": "6.11"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "19.68",
+       "ty": "-11.70"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-9.69",
+       "ty": "6.11"
+      },
+      "transPoint": {
+       "x": "345.0",
+       "y": "558"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_HOLLOW_FRONT_ROBE_FULL.xml",
+   "rel": "LIBRARY/WG_HOLLOW_FRONT_ROBE_FULL.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_FULL",
+    "itemID": "5eed2026-00000001",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_HOLLOW_FRONT_ROBE_FULL",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/media/ROBE_FULL",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_HOLLOW_FRONT_ROBE_SKIRT.xml",
+   "rel": "LIBRARY/WG_HOLLOW_FRONT_ROBE_SKIRT.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_ROBE_SKIRT",
+    "itemID": "5eed2026-00000003",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_HOLLOW_FRONT_ROBE_SKIRT",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/media/ROBE_SKIRT",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_HOLLOW_FRONT_TORSO.xml",
+   "rel": "LIBRARY/WG_HOLLOW_FRONT_TORSO.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG109_HOLLOW_PUPPET_V001/WG_HOLLOW_FRONT_TORSO",
+    "itemID": "5eed2026-00000002",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_HOLLOW_FRONT_TORSO",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG109_HOLLOW_PUPPET_V001/media/TORSO",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  }
+ ]
+}

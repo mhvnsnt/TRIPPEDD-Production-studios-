@@ -1,0 +1,2763 @@
+{
+ "dom": {
+  "root_attrs": {
+   "width": "1920",
+   "height": "1080",
+   "frameRate": "24",
+   "currentTimeline": "1",
+   "xflVersion": "2.1",
+   "creatorInfo": "WG FLA lane (XFL authored)",
+   "platform": "Linux",
+   "majorVersion": "11",
+   "minorVersion": "5",
+   "buildNumber": "325",
+   "nextSceneIdentifier": "2",
+   "playOptionsPlayLoop": "false"
+  },
+  "folders": [
+   "WG106_THEORY_PUPPET_V001"
+  ],
+  "media": [
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG106_THEORY_PUPPET_V001/media/ROBE_FULL",
+    "attrs": {
+     "name": "WG106_THEORY_PUPPET_V001/media/ROBE_FULL",
+     "itemID": "5eed2026-00000090",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG106_THEORY_PUPPET_V001/media/ROBE_FULL.png",
+     "bitmapDataHRef": "M 1 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG106_THEORY_PUPPET_V001/media/TORSO",
+    "attrs": {
+     "name": "WG106_THEORY_PUPPET_V001/media/TORSO",
+     "itemID": "5eed2026-00000091",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG106_THEORY_PUPPET_V001/media/TORSO.png",
+     "bitmapDataHRef": "M 2 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG106_THEORY_PUPPET_V001/media/ROBE_SKIRT",
+    "attrs": {
+     "name": "WG106_THEORY_PUPPET_V001/media/ROBE_SKIRT",
+     "itemID": "5eed2026-00000092",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG106_THEORY_PUPPET_V001/media/ROBE_SKIRT.png",
+     "bitmapDataHRef": "M 3 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG106_THEORY_PUPPET_V001/media/HEAD",
+    "attrs": {
+     "name": "WG106_THEORY_PUPPET_V001/media/HEAD",
+     "itemID": "5eed2026-00000093",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG106_THEORY_PUPPET_V001/media/HEAD.png",
+     "bitmapDataHRef": "M 4 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG106_THEORY_PUPPET_V001/media/ARM_L",
+    "attrs": {
+     "name": "WG106_THEORY_PUPPET_V001/media/ARM_L",
+     "itemID": "5eed2026-00000094",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG106_THEORY_PUPPET_V001/media/ARM_L.png",
+     "bitmapDataHRef": "M 5 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG106_THEORY_PUPPET_V001/media/ARM_R",
+    "attrs": {
+     "name": "WG106_THEORY_PUPPET_V001/media/ARM_R",
+     "itemID": "5eed2026-00000095",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG106_THEORY_PUPPET_V001/media/ARM_R.png",
+     "bitmapDataHRef": "M 6 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG106_THEORY_PUPPET_V001/media/CHAIN",
+    "attrs": {
+     "name": "WG106_THEORY_PUPPET_V001/media/CHAIN",
+     "itemID": "5eed2026-00000096",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG106_THEORY_PUPPET_V001/media/CHAIN.png",
+     "bitmapDataHRef": "M 7 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG106_THEORY_PUPPET_V001/media/EYE_L",
+    "attrs": {
+     "name": "WG106_THEORY_PUPPET_V001/media/EYE_L",
+     "itemID": "5eed2026-00000097",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG106_THEORY_PUPPET_V001/media/EYE_L.png",
+     "bitmapDataHRef": "M 8 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG106_THEORY_PUPPET_V001/media/EYE_R",
+    "attrs": {
+     "name": "WG106_THEORY_PUPPET_V001/media/EYE_R",
+     "itemID": "5eed2026-00000098",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG106_THEORY_PUPPET_V001/media/EYE_R.png",
+     "bitmapDataHRef": "M 9 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG106_THEORY_PUPPET_V001/media/LIDS",
+    "attrs": {
+     "name": "WG106_THEORY_PUPPET_V001/media/LIDS",
+     "itemID": "5eed2026-00000099",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG106_THEORY_PUPPET_V001/media/LIDS.png",
+     "bitmapDataHRef": "M 10 1335000000.dat"
+    }
+   }
+  ],
+  "includes": [
+   {
+    "href": "WG_THEORY_FRONT_ROBE_FULL.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000009a",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_THEORY_FRONT_TORSO.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000009b",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_THEORY_FRONT_ROBE_SKIRT.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000009c",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_THEORY_FRONT_HEAD.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000009d",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_THEORY_FRONT_ARM_L.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000009e",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_THEORY_FRONT_ARM_R.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000009f",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_THEORY_FRONT_CHAIN.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-000000a0",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_THEORY_FRONT_EYE_L.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-000000a1",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_THEORY_FRONT_EYE_R.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-000000a2",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_THEORY_FRONT_LIDS.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-000000a3",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_THEORY_FRONT_HEADCOMP.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-000000a4",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_THEORY_FRONT_PUPPET.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-000000a5",
+    "loadPoint": null
+   }
+  ],
+  "timelines": [
+   {
+    "name": "Scene 1",
+    "layers": [
+     {
+      "name": "REF",
+      "type": "guide",
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     },
+     {
+      "name": "WG_THEORY",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "WG_THEORY",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_PUPPET",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "740.00",
+       "ty": "100.00"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "symbols": [
+  {
+   "file": "WG_THEORY_FRONT_ARM_L.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_ARM_L.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_L",
+    "itemID": "5eed2026-00000088",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_ARM_L",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/media/ARM_L",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_THEORY_FRONT_ARM_R.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_ARM_R.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_R",
+    "itemID": "5eed2026-00000089",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_ARM_R",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/media/ARM_R",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_THEORY_FRONT_CHAIN.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_CHAIN.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_CHAIN",
+    "itemID": "5eed2026-0000008a",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_CHAIN",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/media/CHAIN",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_THEORY_FRONT_EYE_L.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_EYE_L.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_EYE_L",
+    "itemID": "5eed2026-0000008b",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_EYE_L",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/media/EYE_L",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_THEORY_FRONT_EYE_R.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_EYE_R.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_EYE_R",
+    "itemID": "5eed2026-0000008c",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_EYE_R",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/media/EYE_R",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_THEORY_FRONT_HEAD.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_HEAD.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEAD",
+    "itemID": "5eed2026-00000087",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_HEAD",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/media/HEAD",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_THEORY_FRONT_HEADCOMP.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_HEADCOMP.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEADCOMP",
+    "itemID": "5eed2026-0000008e",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_HEADCOMP",
+    "layers": [
+     {
+      "name": "LABELS_FACE",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ]
+      ],
+      "keyframe_count": 5,
+      "duration": 5
+     },
+     {
+      "name": "face",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ]
+      ],
+      "keyframe_count": 5,
+      "duration": 5
+     }
+    ],
+    "total_frames": 5,
+    "labels": [
+     [
+      "LABELS_FACE",
+      0,
+      "OPEN"
+     ],
+     [
+      "LABELS_FACE",
+      1,
+      "BLINK"
+     ],
+     [
+      "LABELS_FACE",
+      2,
+      "LOOK_L"
+     ],
+     [
+      "LABELS_FACE",
+      3,
+      "LOOK_R"
+     ],
+     [
+      "LABELS_FACE",
+      4,
+      "SQUINT"
+     ]
+    ],
+    "instances": [
+     {
+      "layer": "face",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_LIDS",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "-4.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "-4.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "4.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "4.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": "0.55000",
+       "tx": null,
+       "ty": "45.22"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": "0.55000",
+       "tx": null,
+       "ty": "45.22"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_THEORY_FRONT_LIDS.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_LIDS.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_LIDS",
+    "itemID": "5eed2026-0000008d",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_LIDS",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/media/LIDS",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_THEORY_FRONT_PUPPET.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_PUPPET.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_PUPPET",
+    "itemID": "5eed2026-0000008f",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_PUPPET",
+    "layers": [
+     {
+      "name": "POSES_LABELS",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ARM_R",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ARM_L",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "CHAIN",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "HEADCOMP",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "TORSO",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ROBE_SKIRT",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ROBE_UNDERLAY",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     }
+    ],
+    "total_frames": 8,
+    "labels": [
+     [
+      "POSES_LABELS",
+      0,
+      "NEUTRAL"
+     ],
+     [
+      "POSES_LABELS",
+      1,
+      "BLINK"
+     ],
+     [
+      "POSES_LABELS",
+      2,
+      "LEAN_R"
+     ],
+     [
+      "POSES_LABELS",
+      3,
+      "LEAN_L"
+     ],
+     [
+      "POSES_LABELS",
+      4,
+      "BOW"
+     ],
+     [
+      "POSES_LABELS",
+      5,
+      "TURN_R"
+     ],
+     [
+      "POSES_LABELS",
+      6,
+      "ARMS_WIDE"
+     ],
+     [
+      "POSES_LABELS",
+      7,
+      "SETTLE"
+     ]
+    ],
+    "instances": [
+     {
+      "layer": "ARM_R",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "159.12",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "159.12",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "159.12",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "159.12",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99027",
+       "b": "0.13917",
+       "c": "-0.13917",
+       "d": "0.99027",
+       "tx": "37.16",
+       "ty": "-19.65"
+      },
+      "transPoint": {
+       "x": "159.12",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "159.12",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "1.05000",
+       "b": null,
+       "c": null,
+       "d": "1.05000",
+       "tx": "-7.96",
+       "ty": "-5.79"
+      },
+      "transPoint": {
+       "x": "159.12",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99756",
+       "b": "0.06976",
+       "c": "-0.06976",
+       "d": "0.99756",
+       "tx": "18.24",
+       "ty": "-10.48"
+      },
+      "transPoint": {
+       "x": "159.12",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "117.8",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "117.8",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "117.8",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "117.8",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99027",
+       "b": "-0.13917",
+       "c": "0.13917",
+       "d": "0.99027",
+       "tx": "-34.47",
+       "ty": "18.88"
+      },
+      "transPoint": {
+       "x": "117.8",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "117.8",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "1.05000",
+       "b": null,
+       "c": null,
+       "d": "1.05000",
+       "tx": "-5.89",
+       "ty": "-5.79"
+      },
+      "transPoint": {
+       "x": "117.8",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99756",
+       "b": "-0.06976",
+       "c": "0.06976",
+       "d": "0.99756",
+       "tx": "-17.56",
+       "ty": "8.84"
+      },
+      "transPoint": {
+       "x": "117.8",
+       "y": "255.9"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "180.5",
+       "y": "178"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "180.5",
+       "y": "178"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99863",
+       "b": "0.05234",
+       "c": "-0.05234",
+       "d": "0.99863",
+       "tx": "9.56",
+       "ty": "-9.20"
+      },
+      "transPoint": {
+       "x": "180.5",
+       "y": "178"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99863",
+       "b": "-0.05234",
+       "c": "0.05234",
+       "d": "0.99863",
+       "tx": "-9.07",
+       "ty": "9.69"
+      },
+      "transPoint": {
+       "x": "180.5",
+       "y": "178"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99756",
+       "b": "0.06976",
+       "c": "-0.06976",
+       "d": "0.99756",
+       "tx": "13.86",
+       "ty": "-6.16"
+      },
+      "transPoint": {
+       "x": "180.5",
+       "y": "178"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99863",
+       "b": "0.05234",
+       "c": "-0.05234",
+       "d": "0.99863",
+       "tx": "9.56",
+       "ty": "-9.20"
+      },
+      "transPoint": {
+       "x": "180.5",
+       "y": "178"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "-0.03490",
+       "c": "0.03490",
+       "d": "0.99939",
+       "tx": "-6.10",
+       "ty": "6.41"
+      },
+      "transPoint": {
+       "x": "180.5",
+       "y": "178"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "0.01745",
+       "c": "-0.01745",
+       "d": "0.99985",
+       "tx": "3.13",
+       "ty": "-3.12"
+      },
+      "transPoint": {
+       "x": "180.5",
+       "y": "178"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "174.0",
+       "y": "215.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "1",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "174.0",
+       "y": "215.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "3",
+      "matrix": {
+       "a": "0.99619",
+       "b": "0.08716",
+       "c": "-0.08716",
+       "d": "0.99619",
+       "tx": "21.41",
+       "ty": "-14.35"
+      },
+      "transPoint": {
+       "x": "174.0",
+       "y": "215.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "2",
+      "matrix": {
+       "a": "0.99619",
+       "b": "-0.08716",
+       "c": "0.08716",
+       "d": "0.99619",
+       "tx": "-20.09",
+       "ty": "15.98"
+      },
+      "transPoint": {
+       "x": "174.0",
+       "y": "215.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99756",
+       "b": "0.06976",
+       "c": "-0.06976",
+       "d": "0.99756",
+       "tx": "18.43",
+       "ty": "2.39"
+      },
+      "transPoint": {
+       "x": "174.0",
+       "y": "215.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "3",
+      "matrix": {
+       "a": "0.99452",
+       "b": "0.10453",
+       "c": "-0.10453",
+       "d": "0.99452",
+       "tx": "25.44",
+       "ty": "-17.01"
+      },
+      "transPoint": {
+       "x": "174.0",
+       "y": "215.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99863",
+       "b": "-0.05234",
+       "c": "0.05234",
+       "d": "0.99863",
+       "tx": "-11.02",
+       "ty": "9.40"
+      },
+      "transPoint": {
+       "x": "174.0",
+       "y": "215.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "1",
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "7.61",
+       "ty": "-4.94"
+      },
+      "transPoint": {
+       "x": "174.0",
+       "y": "215.1"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "18.78",
+       "ty": "-5.29"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "-0.03490",
+       "c": "0.03490",
+       "d": "0.99939",
+       "tx": "-18.58",
+       "ty": "5.88"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "16.78",
+       "ty": "1.71"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "17.78",
+       "ty": "-5.29"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "-0.03490",
+       "c": "0.03490",
+       "d": "0.99939",
+       "tx": "-16.58",
+       "ty": "5.88"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "0.01745",
+       "c": "-0.01745",
+       "d": "0.99985",
+       "tx": "8.37",
+       "ty": "-1.72"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-8.32",
+       "ty": "2.87"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "0.01745",
+       "c": "-0.01745",
+       "d": "0.99985",
+       "tx": "8.37",
+       "ty": "-2.72"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-8.32",
+       "ty": "2.87"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "16.78",
+       "ty": "-5.29"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-8.32",
+       "ty": "2.87"
+      },
+      "transPoint": {
+       "x": "160.0",
+       "y": "478"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_THEORY_FRONT_ROBE_FULL.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_ROBE_FULL.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_FULL",
+    "itemID": "5eed2026-00000084",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_ROBE_FULL",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/media/ROBE_FULL",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_THEORY_FRONT_ROBE_SKIRT.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_ROBE_SKIRT.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_ROBE_SKIRT",
+    "itemID": "5eed2026-00000086",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_ROBE_SKIRT",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/media/ROBE_SKIRT",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_THEORY_FRONT_TORSO.xml",
+   "rel": "LIBRARY/WG_THEORY_FRONT_TORSO.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG106_THEORY_PUPPET_V001/WG_THEORY_FRONT_TORSO",
+    "itemID": "5eed2026-00000085",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_THEORY_FRONT_TORSO",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG106_THEORY_PUPPET_V001/media/TORSO",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  }
+ ]
+}

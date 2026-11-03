@@ -1,0 +1,3323 @@
+{
+ "dom": {
+  "root_attrs": {
+   "width": "1920",
+   "height": "1080",
+   "frameRate": "24",
+   "currentTimeline": "1",
+   "xflVersion": "2.1",
+   "creatorInfo": "WG FLA lane (XFL authored)",
+   "platform": "Linux",
+   "majorVersion": "11",
+   "minorVersion": "5",
+   "buildNumber": "325",
+   "nextSceneIdentifier": "2",
+   "playOptionsPlayLoop": "false"
+  },
+  "folders": [
+   "WG107_ONYX_PUPPET_V001"
+  ],
+  "media": [
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/ROBE_FULL",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/ROBE_FULL",
+     "itemID": "5eed2026-0000000f",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/ROBE_FULL.png",
+     "bitmapDataHRef": "M 1 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/TORSO",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/TORSO",
+     "itemID": "5eed2026-00000010",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/TORSO.png",
+     "bitmapDataHRef": "M 2 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/ROBE_SKIRT",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/ROBE_SKIRT",
+     "itemID": "5eed2026-00000011",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/ROBE_SKIRT.png",
+     "bitmapDataHRef": "M 3 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/HEAD",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/HEAD",
+     "itemID": "5eed2026-00000012",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/HEAD.png",
+     "bitmapDataHRef": "M 4 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/ARM_L",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/ARM_L",
+     "itemID": "5eed2026-00000013",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/ARM_L.png",
+     "bitmapDataHRef": "M 5 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/ARM_R",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/ARM_R",
+     "itemID": "5eed2026-00000014",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/ARM_R.png",
+     "bitmapDataHRef": "M 6 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/EYE_L",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/EYE_L",
+     "itemID": "5eed2026-00000015",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/EYE_L.png",
+     "bitmapDataHRef": "M 7 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/EYE_R",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/EYE_R",
+     "itemID": "5eed2026-00000016",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/EYE_R.png",
+     "bitmapDataHRef": "M 8 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/BELL_L",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/BELL_L",
+     "itemID": "5eed2026-00000017",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/BELL_L.png",
+     "bitmapDataHRef": "M 9 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/BELL_R",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/BELL_R",
+     "itemID": "5eed2026-00000018",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/BELL_R.png",
+     "bitmapDataHRef": "M 10 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/STAFF",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/STAFF",
+     "itemID": "5eed2026-00000019",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/STAFF.png",
+     "bitmapDataHRef": "M 11 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG107_ONYX_PUPPET_V001/media/LIDS",
+    "attrs": {
+     "name": "WG107_ONYX_PUPPET_V001/media/LIDS",
+     "itemID": "5eed2026-0000001a",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG107_ONYX_PUPPET_V001/media/LIDS.png",
+     "bitmapDataHRef": "M 12 1335000000.dat"
+    }
+   }
+  ],
+  "includes": [
+   {
+    "href": "WG_ONYX_FRONT_ROBE_FULL.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000001b",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_TORSO.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000001c",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_ROBE_SKIRT.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000001d",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_HEAD.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000001e",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_ARM_L.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000001f",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_ARM_R.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000020",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_EYE_L.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000021",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_EYE_R.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000022",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_BELL_L.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000023",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_BELL_R.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000024",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_STAFF.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000025",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_LIDS.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000026",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_HEADCOMP.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000027",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_ONYX_FRONT_PUPPET.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000028",
+    "loadPoint": null
+   }
+  ],
+  "timelines": [
+   {
+    "name": "Scene 1",
+    "layers": [
+     {
+      "name": "REF",
+      "type": "guide",
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     },
+     {
+      "name": "WG_ONYX",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "WG_ONYX",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_PUPPET",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "740.00",
+       "ty": "100.00"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "symbols": [
+  {
+   "file": "WG_ONYX_FRONT_ARM_L.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_ARM_L.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_L",
+    "itemID": "5eed2026-00000005",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_ARM_L",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/ARM_L",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_ARM_R.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_ARM_R.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_R",
+    "itemID": "5eed2026-00000006",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_ARM_R",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/ARM_R",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_BELL_L.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_BELL_L.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_L",
+    "itemID": "5eed2026-00000009",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_BELL_L",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/BELL_L",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_BELL_R.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_BELL_R.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_R",
+    "itemID": "5eed2026-0000000a",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_BELL_R",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/BELL_R",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_EYE_L.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_EYE_L.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_EYE_L",
+    "itemID": "5eed2026-00000007",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_EYE_L",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/EYE_L",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_EYE_R.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_EYE_R.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_EYE_R",
+    "itemID": "5eed2026-00000008",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_EYE_R",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/EYE_R",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_HEAD.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_HEAD.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEAD",
+    "itemID": "5eed2026-00000004",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_HEAD",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/HEAD",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_HEADCOMP.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_HEADCOMP.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEADCOMP",
+    "itemID": "5eed2026-0000000d",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_HEADCOMP",
+    "layers": [
+     {
+      "name": "LABELS_FACE",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ]
+      ],
+      "keyframe_count": 5,
+      "duration": 5
+     },
+     {
+      "name": "face",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ]
+      ],
+      "keyframe_count": 5,
+      "duration": 5
+     }
+    ],
+    "total_frames": 5,
+    "labels": [
+     [
+      "LABELS_FACE",
+      0,
+      "OPEN"
+     ],
+     [
+      "LABELS_FACE",
+      1,
+      "BLINK"
+     ],
+     [
+      "LABELS_FACE",
+      2,
+      "LOOK_L"
+     ],
+     [
+      "LABELS_FACE",
+      3,
+      "LOOK_R"
+     ],
+     [
+      "LABELS_FACE",
+      4,
+      "SQUINT"
+     ]
+    ],
+    "instances": [
+     {
+      "layer": "face",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_LIDS",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "-6.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "-6.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "6.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "6.00",
+       "ty": null
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_EYE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": "0.55000",
+       "tx": null,
+       "ty": "75.60"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "face",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_EYE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": "0.55000",
+       "tx": null,
+       "ty": "75.60"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_LIDS.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_LIDS.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_LIDS",
+    "itemID": "5eed2026-0000000c",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_LIDS",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/LIDS",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_PUPPET.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_PUPPET.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_PUPPET",
+    "itemID": "5eed2026-0000000e",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_PUPPET",
+    "layers": [
+     {
+      "name": "POSES_LABELS",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ARM_R",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ARM_L",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "BELL_L",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "BELL_R",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "STAFF",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "HEADCOMP",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "TORSO",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ROBE_SKIRT",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ROBE_UNDERLAY",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     }
+    ],
+    "total_frames": 8,
+    "labels": [
+     [
+      "POSES_LABELS",
+      0,
+      "NEUTRAL"
+     ],
+     [
+      "POSES_LABELS",
+      1,
+      "BLINK"
+     ],
+     [
+      "POSES_LABELS",
+      2,
+      "LEAN_R"
+     ],
+     [
+      "POSES_LABELS",
+      3,
+      "LEAN_L"
+     ],
+     [
+      "POSES_LABELS",
+      4,
+      "BOW"
+     ],
+     [
+      "POSES_LABELS",
+      5,
+      "TURN_R"
+     ],
+     [
+      "POSES_LABELS",
+      6,
+      "ARMS_WIDE"
+     ],
+     [
+      "POSES_LABELS",
+      7,
+      "SETTLE"
+     ]
+    ],
+    "instances": [
+     {
+      "layer": "ARM_R",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "242.9",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "242.9",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "242.9",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "242.9",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99027",
+       "b": "0.13917",
+       "c": "-0.13917",
+       "d": "0.99027",
+       "tx": "51.76",
+       "ty": "-30.35"
+      },
+      "transPoint": {
+       "x": "242.9",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "242.9",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "1.05000",
+       "b": null,
+       "c": null,
+       "d": "1.05000",
+       "tx": "-12.15",
+       "ty": "-10.75"
+      },
+      "transPoint": {
+       "x": "242.9",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99756",
+       "b": "0.06976",
+       "c": "-0.06976",
+       "d": "0.99756",
+       "tx": "25.35",
+       "ty": "-16.08"
+      },
+      "transPoint": {
+       "x": "242.9",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "189.34",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "189.34",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "189.34",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "189.34",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99027",
+       "b": "-0.13917",
+       "c": "0.13917",
+       "d": "0.99027",
+       "tx": "-47.55",
+       "ty": "29.80"
+      },
+      "transPoint": {
+       "x": "189.34",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "189.34",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "1.05000",
+       "b": null,
+       "c": null,
+       "d": "1.05000",
+       "tx": "-9.47",
+       "ty": "-10.75"
+      },
+      "transPoint": {
+       "x": "189.34",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99756",
+       "b": "-0.06976",
+       "c": "0.06976",
+       "d": "0.99756",
+       "tx": "-24.30",
+       "ty": "14.07"
+      },
+      "transPoint": {
+       "x": "189.34",
+       "y": "354.9"
+      }
+     },
+     {
+      "layer": "BELL_L",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_L",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_L",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99813",
+       "b": "0.06105",
+       "c": "-0.06105",
+       "d": "0.99813",
+       "tx": "24.19",
+       "ty": "-11.83"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_L",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99813",
+       "b": "-0.06105",
+       "c": "0.06105",
+       "d": "0.99813",
+       "tx": "-23.43",
+       "ty": "13.20"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_L",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99881",
+       "b": "0.04885",
+       "c": "-0.04885",
+       "d": "0.99881",
+       "tx": "20.28",
+       "ty": "0.22"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_L",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99731",
+       "b": "0.07324",
+       "c": "-0.07324",
+       "d": "0.99731",
+       "tx": "28.84",
+       "ty": "-14.03"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_L",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99933",
+       "b": "-0.03664",
+       "c": "0.03664",
+       "d": "0.99933",
+       "tx": "-13.31",
+       "ty": "7.76"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_L",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99970",
+       "b": "0.02443",
+       "c": "-0.02443",
+       "d": "0.99970",
+       "tx": "9.03",
+       "ty": "-4.20"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_R",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_R",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_R",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99813",
+       "b": "0.06105",
+       "c": "-0.06105",
+       "d": "0.99813",
+       "tx": "24.19",
+       "ty": "-11.83"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_R",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99813",
+       "b": "-0.06105",
+       "c": "0.06105",
+       "d": "0.99813",
+       "tx": "-23.43",
+       "ty": "13.20"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_R",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99881",
+       "b": "0.04885",
+       "c": "-0.04885",
+       "d": "0.99881",
+       "tx": "20.28",
+       "ty": "0.22"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_R",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99731",
+       "b": "0.07324",
+       "c": "-0.07324",
+       "d": "0.99731",
+       "tx": "28.84",
+       "ty": "-14.03"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_R",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99933",
+       "b": "-0.03664",
+       "c": "0.03664",
+       "d": "0.99933",
+       "tx": "-13.31",
+       "ty": "7.76"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "BELL_R",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_BELL_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99970",
+       "b": "0.02443",
+       "c": "-0.02443",
+       "d": "0.99970",
+       "tx": "9.03",
+       "ty": "-4.20"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "STAFF",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_STAFF",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "STAFF",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_STAFF",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "STAFF",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_STAFF",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "STAFF",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_STAFF",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "STAFF",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_STAFF",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99027",
+       "b": "0.13917",
+       "c": "-0.13917",
+       "d": "0.99027",
+       "tx": "51.76",
+       "ty": "-30.35"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "STAFF",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_STAFF",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "STAFF",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_STAFF",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": null,
+       "ty": "7.00"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "STAFF",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_STAFF",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99756",
+       "b": "0.06976",
+       "c": "-0.06976",
+       "d": "0.99756",
+       "tx": "25.35",
+       "ty": "-16.08"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "1",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "3",
+      "matrix": {
+       "a": "0.99619",
+       "b": "0.08716",
+       "c": "-0.08716",
+       "d": "0.99619",
+       "tx": "34.77",
+       "ty": "-16.47"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "2",
+      "matrix": {
+       "a": "0.99619",
+       "b": "-0.08716",
+       "c": "0.08716",
+       "d": "0.99619",
+       "tx": "-33.21",
+       "ty": "19.26"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99756",
+       "b": "0.06976",
+       "c": "-0.06976",
+       "d": "0.99756",
+       "tx": "29.11",
+       "ty": "0.59"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "3",
+      "matrix": {
+       "a": "0.99452",
+       "b": "0.10453",
+       "c": "-0.10453",
+       "d": "0.99452",
+       "tx": "41.50",
+       "ty": "-19.42"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99863",
+       "b": "-0.05234",
+       "c": "0.05234",
+       "d": "0.99863",
+       "tx": "-18.93",
+       "ty": "11.23"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "1",
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "12.94",
+       "ty": "-5.93"
+      },
+      "transPoint": {
+       "x": "205.0",
+       "y": "367.1"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "19.50",
+       "ty": "-6.34"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "-0.03490",
+       "c": "0.03490",
+       "d": "0.99939",
+       "tx": "-19.26",
+       "ty": "6.95"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "17.50",
+       "ty": "0.66"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "18.50",
+       "ty": "-6.34"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "-0.03490",
+       "c": "0.03490",
+       "d": "0.99939",
+       "tx": "-17.26",
+       "ty": "6.95"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "0.01745",
+       "c": "-0.01745",
+       "d": "0.99985",
+       "tx": "8.72",
+       "ty": "-2.25"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-8.66",
+       "ty": "3.40"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "0.01745",
+       "c": "-0.01745",
+       "d": "0.99985",
+       "tx": "8.72",
+       "ty": "-3.25"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-8.66",
+       "ty": "3.40"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "17.50",
+       "ty": "-6.34"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-8.66",
+       "ty": "3.40"
+      },
+      "transPoint": {
+       "x": "190.5",
+       "y": "498"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_ROBE_FULL.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_ROBE_FULL.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_FULL",
+    "itemID": "5eed2026-00000001",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_ROBE_FULL",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/ROBE_FULL",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_ROBE_SKIRT.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_ROBE_SKIRT.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_ROBE_SKIRT",
+    "itemID": "5eed2026-00000003",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_ROBE_SKIRT",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/ROBE_SKIRT",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_STAFF.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_STAFF.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_STAFF",
+    "itemID": "5eed2026-0000000b",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_STAFF",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/STAFF",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_ONYX_FRONT_TORSO.xml",
+   "rel": "LIBRARY/WG_ONYX_FRONT_TORSO.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG107_ONYX_PUPPET_V001/WG_ONYX_FRONT_TORSO",
+    "itemID": "5eed2026-00000002",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_ONYX_FRONT_TORSO",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG107_ONYX_PUPPET_V001/media/TORSO",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  }
+ ]
+}

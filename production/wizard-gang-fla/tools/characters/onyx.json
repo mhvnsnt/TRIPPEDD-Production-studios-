@@ -1,0 +1,90 @@
+{
+ "char": "onyx",
+ "display": "Onyx",
+ "code": "WG107",
+ "folder": "/home/hatch/workspace/your_files/wizard-gang-part-libraries/onyx",
+ "canvas": [
+  390,
+  960
+ ],
+ "bboxes": {
+  "01_robe": [
+   0,
+   0,
+   381,
+   959
+  ],
+  "02_head": [
+   30,
+   80,
+   380,
+   399
+  ],
+  "03_bell_L": [
+   60,
+   179,
+   88,
+   203
+  ],
+  "04_bell_R": [
+   365,
+   179,
+   389,
+   205
+  ],
+  "05_arm_L": [
+   77,
+   340,
+   214,
+   489
+  ],
+  "06_arm_R": [
+   215,
+   340,
+   370,
+   489
+  ],
+  "07_eye_L": [
+   192,
+   158,
+   222,
+   177
+  ],
+  "07_eye_R": [
+   248,
+   160,
+   275,
+   178
+  ]
+ },
+ "robe": "01_robe.png",
+ "head": "02_head.png",
+ "arm_L": "05_arm_L.png",
+ "arm_R": "06_arm_R.png",
+ "chain": null,
+ "eye_L": "07_eye_L.png",
+ "eye_R": "07_eye_R.png",
+ "closed": [
+  "6_eye_closed_l.png",
+  "7_eye_closed_r.png"
+ ],
+ "extras": [
+  {
+   "key": "BELL_L",
+   "file": "04_bell_L.png",
+   "follow": "head"
+  },
+  {
+   "key": "BELL_R",
+   "file": "04_bell_R.png",
+   "follow": "head"
+  },
+  {
+   "key": "STAFF",
+   "file": "03_staff.png",
+   "follow": "arm_R"
+  }
+ ],
+ "source_note": "onyx_crop_source.png (390x960)",
+ "method": "ROI x HSV color segmentation + Telea inpainting (Wave-4 Ashes recipe)"
+}

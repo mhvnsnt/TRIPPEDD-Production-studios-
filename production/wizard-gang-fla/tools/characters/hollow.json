@@ -1,0 +1,50 @@
+{
+ "char": "hollow",
+ "display": "Hollow",
+ "code": "WG109",
+ "folder": "/home/hatch/workspace/your_files/wizard-gang-part-libraries/hollow",
+ "canvas": [
+  960,
+  872
+ ],
+ "bboxes": {
+  "01_robe": [
+   0,
+   220,
+   690,
+   871
+  ],
+  "02_head": [
+   60,
+   0,
+   552,
+   429
+  ],
+  "03_eye_L": [
+   147,
+   205,
+   215,
+   243
+  ],
+  "04_eye_R": [
+   275,
+   202,
+   337,
+   240
+  ]
+ },
+ "robe": "01_robe.png",
+ "head": "02_head.png",
+ "arm_L": null,
+ "arm_R": null,
+ "chain": "03_chain.png",
+ "eye_L": "03_eye_L.png",
+ "eye_R": "04_eye_R.png",
+ "closed": [
+  "2_eye_closed_l.png",
+  "3_eye_closed_r.png"
+ ],
+ "extras": [],
+ "source_note": "hollow_crop_source.png (960x872, half-body bust)",
+ "method": "ROI x HSV color segmentation (Wave-4/5/6 recipe)"
+}

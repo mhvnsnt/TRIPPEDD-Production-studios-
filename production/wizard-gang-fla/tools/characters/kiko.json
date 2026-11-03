@@ -1,0 +1,76 @@
+{
+ "char": "kiko",
+ "display": "Kiko",
+ "code": "WG105",
+ "folder": "/home/hatch/workspace/your_files/wizard-gang-part-libraries/kiko",
+ "canvas": [
+  1060,
+  1945
+ ],
+ "bboxes": {
+  "01_body": [
+   118,
+   0,
+   942,
+   1944
+  ],
+  "02_head": [
+   240,
+   0,
+   819,
+   659
+  ],
+  "03_drape_L": [
+   220,
+   550,
+   428,
+   1244
+  ],
+  "04_drape_R": [
+   630,
+   550,
+   839,
+   1294
+  ],
+  "05_chains": [
+   354,
+   540,
+   691,
+   919
+  ],
+  "06_arm_L": [
+   153,
+   600,
+   219,
+   1188
+  ],
+  "07_arm_R": [
+   840,
+   600,
+   907,
+   1184
+  ]
+ },
+ "robe": "01_body.png",
+ "head": "02_head.png",
+ "arm_L": "06_arm_L.png",
+ "arm_R": "07_arm_R.png",
+ "chain": "05_chains.png",
+ "eye_L": null,
+ "eye_R": null,
+ "closed": [],
+ "extras": [
+  {
+   "key": "DRAPE_L",
+   "file": "03_drape_L.png",
+   "follow": "head"
+  },
+  {
+   "key": "DRAPE_R",
+   "file": "04_drape_R.png",
+   "follow": "head"
+  }
+ ],
+ "source_note": "kiko_crop_source.png (1060x1945), from owner-approved kiko-tanaka-robed.webp",
+ "method": "ROI x HSV color segmentation + Telea inpainting (Wave-4 Ashes recipe, Wave-5 fixes)"
+}

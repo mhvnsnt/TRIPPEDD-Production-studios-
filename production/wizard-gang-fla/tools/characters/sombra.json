@@ -1,0 +1,56 @@
+{
+ "char": "sombra",
+ "display": "Sombra Negra",
+ "code": "WG104",
+ "folder": "/home/hatch/workspace/your_files/wizard-gang-part-libraries/sombra",
+ "canvas": [
+  600,
+  1040
+ ],
+ "bboxes": {
+  "01_robe": [
+   189,
+   59,
+   576,
+   1039
+  ],
+  "02_head": [
+   223,
+   70,
+   429,
+   459
+  ],
+  "03_chain": [
+   308,
+   252,
+   382,
+   379
+  ],
+  "04_eye_L": [
+   279,
+   123,
+   287,
+   129
+  ],
+  "05_eye_R": [
+   303,
+   107,
+   319,
+   119
+  ]
+ },
+ "robe": "01_robe.png",
+ "head": "02_head.png",
+ "arm_L": null,
+ "arm_R": null,
+ "chain": "03_chain.png",
+ "eye_L": "04_eye_L.png",
+ "eye_R": "05_eye_R.png",
+ "closed": [
+  "3_eye_closed_l.png",
+  "4_eye_closed_r.png"
+ ],
+ "extras": [],
+ "source_note": "sombra_crop_source.png (600x1040)",
+ "method": "trim-seeded black-component segmentation + Telea inpainting (Wave-4/5/6 recipe)"
+}

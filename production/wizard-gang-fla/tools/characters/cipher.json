@@ -1,0 +1,68 @@
+{
+ "char": "cipher",
+ "display": "Cipher",
+ "code": "WG103",
+ "folder": "/home/hatch/workspace/your_files/wizard-gang-part-libraries/cipher",
+ "canvas": [
+  305,
+  910
+ ],
+ "bboxes": {
+  "01_robe": [
+   0,
+   90,
+   304,
+   909
+  ],
+  "02_head": [
+   60,
+   0,
+   249,
+   234
+  ],
+  "03_arm_L": [
+   0,
+   250,
+   151,
+   399
+  ],
+  "04_arm_R": [
+   152,
+   250,
+   304,
+   399
+  ],
+  "05_chain": [
+   85,
+   150,
+   254,
+   329
+  ],
+  "06_eye_L": [
+   109,
+   92,
+   134,
+   108
+  ],
+  "07_eye_R": [
+   162,
+   87,
+   183,
+   105
+  ]
+ },
+ "robe": "01_robe.png",
+ "head": "02_head.png",
+ "arm_L": "03_arm_L.png",
+ "arm_R": "04_arm_R.png",
+ "chain": "05_chain.png",
+ "eye_L": "06_eye_L.png",
+ "eye_R": "07_eye_R.png",
+ "closed": [
+  "5_eye_closed_l.png",
+  "6_eye_closed_r.png"
+ ],
+ "extras": [],
+ "source_note": "cipher_crop_source.png (305x910)",
+ "method": "ROI x HSV color segmentation + Telea inpainting (Wave-4/5/6 recipe)"
+}

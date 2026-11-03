@@ -1,0 +1,2799 @@
+{
+ "dom": {
+  "root_attrs": {
+   "width": "1920",
+   "height": "1080",
+   "frameRate": "24",
+   "currentTimeline": "1",
+   "xflVersion": "2.1",
+   "creatorInfo": "WG FLA lane (XFL authored)",
+   "platform": "Linux",
+   "majorVersion": "11",
+   "minorVersion": "5",
+   "buildNumber": "325",
+   "nextSceneIdentifier": "2",
+   "playOptionsPlayLoop": "false"
+  },
+  "folders": [
+   "WG105_KIKO_PUPPET_V001"
+  ],
+  "media": [
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG105_KIKO_PUPPET_V001/media/ROBE_FULL",
+    "attrs": {
+     "name": "WG105_KIKO_PUPPET_V001/media/ROBE_FULL",
+     "itemID": "5eed2026-0000006f",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG105_KIKO_PUPPET_V001/media/ROBE_FULL.png",
+     "bitmapDataHRef": "M 1 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG105_KIKO_PUPPET_V001/media/TORSO",
+    "attrs": {
+     "name": "WG105_KIKO_PUPPET_V001/media/TORSO",
+     "itemID": "5eed2026-00000070",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG105_KIKO_PUPPET_V001/media/TORSO.png",
+     "bitmapDataHRef": "M 2 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG105_KIKO_PUPPET_V001/media/ROBE_SKIRT",
+    "attrs": {
+     "name": "WG105_KIKO_PUPPET_V001/media/ROBE_SKIRT",
+     "itemID": "5eed2026-00000071",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG105_KIKO_PUPPET_V001/media/ROBE_SKIRT.png",
+     "bitmapDataHRef": "M 3 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG105_KIKO_PUPPET_V001/media/HEAD",
+    "attrs": {
+     "name": "WG105_KIKO_PUPPET_V001/media/HEAD",
+     "itemID": "5eed2026-00000072",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG105_KIKO_PUPPET_V001/media/HEAD.png",
+     "bitmapDataHRef": "M 4 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG105_KIKO_PUPPET_V001/media/ARM_L",
+    "attrs": {
+     "name": "WG105_KIKO_PUPPET_V001/media/ARM_L",
+     "itemID": "5eed2026-00000073",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG105_KIKO_PUPPET_V001/media/ARM_L.png",
+     "bitmapDataHRef": "M 5 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG105_KIKO_PUPPET_V001/media/ARM_R",
+    "attrs": {
+     "name": "WG105_KIKO_PUPPET_V001/media/ARM_R",
+     "itemID": "5eed2026-00000074",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG105_KIKO_PUPPET_V001/media/ARM_R.png",
+     "bitmapDataHRef": "M 6 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG105_KIKO_PUPPET_V001/media/CHAIN",
+    "attrs": {
+     "name": "WG105_KIKO_PUPPET_V001/media/CHAIN",
+     "itemID": "5eed2026-00000075",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG105_KIKO_PUPPET_V001/media/CHAIN.png",
+     "bitmapDataHRef": "M 7 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG105_KIKO_PUPPET_V001/media/DRAPE_L",
+    "attrs": {
+     "name": "WG105_KIKO_PUPPET_V001/media/DRAPE_L",
+     "itemID": "5eed2026-00000076",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG105_KIKO_PUPPET_V001/media/DRAPE_L.png",
+     "bitmapDataHRef": "M 8 1335000000.dat"
+    }
+   },
+   {
+    "tag": "DOMBitmapItem",
+    "name": "WG105_KIKO_PUPPET_V001/media/DRAPE_R",
+    "attrs": {
+     "name": "WG105_KIKO_PUPPET_V001/media/DRAPE_R",
+     "itemID": "5eed2026-00000077",
+     "sourceExternalFilepath": "WG library",
+     "compressionType": "lossless",
+     "originalCompressionType": "lossless",
+     "quality": "100",
+     "href": "WG105_KIKO_PUPPET_V001/media/DRAPE_R.png",
+     "bitmapDataHRef": "M 9 1335000000.dat"
+    }
+   }
+  ],
+  "includes": [
+   {
+    "href": "WG_KIKO_FRONT_ROBE_FULL.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000078",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_KIKO_FRONT_TORSO.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000079",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_KIKO_FRONT_ROBE_SKIRT.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000007a",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_KIKO_FRONT_HEAD.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000007b",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_KIKO_FRONT_ARM_L.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000007c",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_KIKO_FRONT_ARM_R.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000007d",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_KIKO_FRONT_CHAIN.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000007e",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_KIKO_FRONT_DRAPE_L.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-0000007f",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_KIKO_FRONT_DRAPE_R.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000080",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_KIKO_FRONT_HEADCOMP.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000081",
+    "loadPoint": null
+   },
+   {
+    "href": "WG_KIKO_FRONT_PUPPET.xml",
+    "loadImmediate": "false",
+    "itemID": "5eed2026-00000082",
+    "loadPoint": null
+   }
+  ],
+  "timelines": [
+   {
+    "name": "Scene 1",
+    "layers": [
+     {
+      "name": "REF",
+      "type": "guide",
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     },
+     {
+      "name": "WG_KIKO",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "WG_KIKO",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_PUPPET",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "740.00",
+       "ty": "100.00"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "symbols": [
+  {
+   "file": "WG_KIKO_FRONT_ARM_L.xml",
+   "rel": "LIBRARY/WG_KIKO_FRONT_ARM_L.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_L",
+    "itemID": "5eed2026-00000068",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_KIKO_FRONT_ARM_L",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/media/ARM_L",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_KIKO_FRONT_ARM_R.xml",
+   "rel": "LIBRARY/WG_KIKO_FRONT_ARM_R.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_R",
+    "itemID": "5eed2026-00000069",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_KIKO_FRONT_ARM_R",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/media/ARM_R",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_KIKO_FRONT_CHAIN.xml",
+   "rel": "LIBRARY/WG_KIKO_FRONT_CHAIN.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_CHAIN",
+    "itemID": "5eed2026-0000006a",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_KIKO_FRONT_CHAIN",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/media/CHAIN",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_KIKO_FRONT_DRAPE_L.xml",
+   "rel": "LIBRARY/WG_KIKO_FRONT_DRAPE_L.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_L",
+    "itemID": "5eed2026-0000006b",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_KIKO_FRONT_DRAPE_L",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/media/DRAPE_L",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_KIKO_FRONT_DRAPE_R.xml",
+   "rel": "LIBRARY/WG_KIKO_FRONT_DRAPE_R.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_R",
+    "itemID": "5eed2026-0000006c",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_KIKO_FRONT_DRAPE_R",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/media/DRAPE_R",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_KIKO_FRONT_HEAD.xml",
+   "rel": "LIBRARY/WG_KIKO_FRONT_HEAD.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_HEAD",
+    "itemID": "5eed2026-00000067",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_KIKO_FRONT_HEAD",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/media/HEAD",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_KIKO_FRONT_HEADCOMP.xml",
+   "rel": "LIBRARY/WG_KIKO_FRONT_HEADCOMP.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_HEADCOMP",
+    "itemID": "5eed2026-0000006d",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_KIKO_FRONT_HEADCOMP",
+    "layers": [
+     {
+      "name": "LABELS_FACE",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     },
+     {
+      "name": "face",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [
+     [
+      "LABELS_FACE",
+      0,
+      "OPEN"
+     ]
+    ],
+    "instances": [
+     {
+      "layer": "face",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_HEAD",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_KIKO_FRONT_PUPPET.xml",
+   "rel": "LIBRARY/WG_KIKO_FRONT_PUPPET.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_PUPPET",
+    "itemID": "5eed2026-0000006e",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_KIKO_FRONT_PUPPET",
+    "layers": [
+     {
+      "name": "POSES_LABELS",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ARM_R",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ARM_L",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "DRAPE_L",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "DRAPE_R",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "CHAIN",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "HEADCOMP",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "TORSO",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ROBE_SKIRT",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     },
+     {
+      "name": "ROBE_UNDERLAY",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ],
+       [
+        2,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        4,
+        1
+       ],
+       [
+        5,
+        1
+       ],
+       [
+        6,
+        1
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "keyframe_count": 8,
+      "duration": 8
+     }
+    ],
+    "total_frames": 8,
+    "labels": [
+     [
+      "POSES_LABELS",
+      0,
+      "NEUTRAL"
+     ],
+     [
+      "POSES_LABELS",
+      1,
+      "BLINK"
+     ],
+     [
+      "POSES_LABELS",
+      2,
+      "LEAN_R"
+     ],
+     [
+      "POSES_LABELS",
+      3,
+      "LEAN_L"
+     ],
+     [
+      "POSES_LABELS",
+      4,
+      "BOW"
+     ],
+     [
+      "POSES_LABELS",
+      5,
+      "TURN_R"
+     ],
+     [
+      "POSES_LABELS",
+      6,
+      "ARMS_WIDE"
+     ],
+     [
+      "POSES_LABELS",
+      7,
+      "SETTLE"
+     ]
+    ],
+    "instances": [
+     {
+      "layer": "ARM_R",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "852.06",
+       "y": "658.4"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "852.06",
+       "y": "658.4"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "852.06",
+       "y": "658.4"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "852.06",
+       "y": "658.4"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99027",
+       "b": "0.13917",
+       "c": "-0.13917",
+       "d": "0.99027",
+       "tx": "99.92",
+       "ty": "-112.18"
+      },
+      "transPoint": {
+       "x": "852.06",
+       "y": "658.4"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "852.06",
+       "y": "658.4"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "1.05000",
+       "b": null,
+       "c": null,
+       "d": "1.05000",
+       "tx": "-42.60",
+       "ty": "-25.92"
+      },
+      "transPoint": {
+       "x": "852.06",
+       "y": "658.4"
+      }
+     },
+     {
+      "layer": "ARM_R",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99756",
+       "b": "0.06976",
+       "c": "-0.06976",
+       "d": "0.99756",
+       "tx": "48.00",
+       "ty": "-57.83"
+      },
+      "transPoint": {
+       "x": "852.06",
+       "y": "658.4"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "207.12",
+       "y": "658.8"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "207.12",
+       "y": "658.8"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "207.12",
+       "y": "658.8"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "207.12",
+       "y": "658.8"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99027",
+       "b": "-0.13917",
+       "c": "0.13917",
+       "d": "0.99027",
+       "tx": "-89.67",
+       "ty": "35.24"
+      },
+      "transPoint": {
+       "x": "207.12",
+       "y": "658.8"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "207.12",
+       "y": "658.8"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "1.05000",
+       "b": null,
+       "c": null,
+       "d": "1.05000",
+       "tx": "-10.36",
+       "ty": "-25.94"
+      },
+      "transPoint": {
+       "x": "207.12",
+       "y": "658.8"
+      }
+     },
+     {
+      "layer": "ARM_L",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ARM_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99756",
+       "b": "-0.06976",
+       "c": "0.06976",
+       "d": "0.99756",
+       "tx": "-45.45",
+       "ty": "16.05"
+      },
+      "transPoint": {
+       "x": "207.12",
+       "y": "658.8"
+      }
+     },
+     {
+      "layer": "DRAPE_L",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_L",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_L",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99813",
+       "b": "0.06105",
+       "c": "-0.06105",
+       "d": "0.99813",
+       "tx": "38.60",
+       "ty": "-31.22"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_L",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99813",
+       "b": "-0.06105",
+       "c": "0.06105",
+       "d": "0.99813",
+       "tx": "-36.62",
+       "ty": "33.43"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_L",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99881",
+       "b": "0.04885",
+       "c": "-0.04885",
+       "d": "0.99881",
+       "tx": "31.70",
+       "ty": "-15.36"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_L",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99731",
+       "b": "0.07324",
+       "c": "-0.07324",
+       "d": "0.99731",
+       "tx": "46.26",
+       "ty": "-37.19"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_L",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99933",
+       "b": "-0.03664",
+       "c": "0.03664",
+       "d": "0.99933",
+       "tx": "-21.38",
+       "ty": "19.80"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_L",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_L",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99970",
+       "b": "0.02443",
+       "c": "-0.02443",
+       "d": "0.99970",
+       "tx": "14.65",
+       "ty": "-12.06"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_R",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_R",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_R",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99813",
+       "b": "0.06105",
+       "c": "-0.06105",
+       "d": "0.99813",
+       "tx": "38.60",
+       "ty": "-31.22"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_R",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99813",
+       "b": "-0.06105",
+       "c": "0.06105",
+       "d": "0.99813",
+       "tx": "-36.62",
+       "ty": "33.43"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_R",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99881",
+       "b": "0.04885",
+       "c": "-0.04885",
+       "d": "0.99881",
+       "tx": "31.70",
+       "ty": "-15.36"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_R",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99731",
+       "b": "0.07324",
+       "c": "-0.07324",
+       "d": "0.99731",
+       "tx": "46.26",
+       "ty": "-37.19"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_R",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99933",
+       "b": "-0.03664",
+       "c": "0.03664",
+       "d": "0.99933",
+       "tx": "-21.38",
+       "ty": "19.80"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "DRAPE_R",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_DRAPE_R",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99970",
+       "b": "0.02443",
+       "c": "-0.02443",
+       "d": "0.99970",
+       "tx": "14.65",
+       "ty": "-12.06"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "522.5",
+       "y": "540"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "522.5",
+       "y": "540"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99863",
+       "b": "0.05234",
+       "c": "-0.05234",
+       "d": "0.99863",
+       "tx": "28.98",
+       "ty": "-26.61"
+      },
+      "transPoint": {
+       "x": "522.5",
+       "y": "540"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99863",
+       "b": "-0.05234",
+       "c": "0.05234",
+       "d": "0.99863",
+       "tx": "-27.55",
+       "ty": "28.09"
+      },
+      "transPoint": {
+       "x": "522.5",
+       "y": "540"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99756",
+       "b": "0.06976",
+       "c": "-0.06976",
+       "d": "0.99756",
+       "tx": "39.94",
+       "ty": "-29.13"
+      },
+      "transPoint": {
+       "x": "522.5",
+       "y": "540"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99863",
+       "b": "0.05234",
+       "c": "-0.05234",
+       "d": "0.99863",
+       "tx": "28.98",
+       "ty": "-26.61"
+      },
+      "transPoint": {
+       "x": "522.5",
+       "y": "540"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "-0.03490",
+       "c": "0.03490",
+       "d": "0.99939",
+       "tx": "-18.53",
+       "ty": "18.56"
+      },
+      "transPoint": {
+       "x": "522.5",
+       "y": "540"
+      }
+     },
+     {
+      "layer": "CHAIN",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_CHAIN",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "0.01745",
+       "c": "-0.01745",
+       "d": "0.99985",
+       "tx": "9.50",
+       "ty": "-9.04"
+      },
+      "transPoint": {
+       "x": "522.5",
+       "y": "540"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99619",
+       "b": "0.08716",
+       "c": "-0.08716",
+       "d": "0.99619",
+       "tx": "55.71",
+       "ty": "-43.89"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99619",
+       "b": "-0.08716",
+       "c": "0.08716",
+       "d": "0.99619",
+       "tx": "-51.68",
+       "ty": "48.41"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99756",
+       "b": "0.06976",
+       "c": "-0.06976",
+       "d": "0.99756",
+       "tx": "45.66",
+       "ty": "-21.49"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99452",
+       "b": "0.10453",
+       "c": "-0.10453",
+       "d": "0.99452",
+       "tx": "66.90",
+       "ty": "-52.10"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99863",
+       "b": "-0.05234",
+       "c": "0.05234",
+       "d": "0.99863",
+       "tx": "-30.31",
+       "ty": "28.52"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "HEADCOMP",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_HEADCOMP",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": "0",
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "21.02",
+       "ty": "-17.12"
+      },
+      "transPoint": {
+       "x": "529.5",
+       "y": "593.1"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "37.57",
+       "ty": "-17.88"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "-0.03490",
+       "c": "0.03490",
+       "d": "0.99939",
+       "tx": "-36.93",
+       "ty": "19.11"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "35.57",
+       "ty": "-10.88"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "36.57",
+       "ty": "-17.88"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "-0.03490",
+       "c": "0.03490",
+       "d": "0.99939",
+       "tx": "-34.93",
+       "ty": "19.11"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "TORSO",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_TORSO",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "0.01745",
+       "c": "-0.01745",
+       "d": "0.99985",
+       "tx": "17.71",
+       "ty": "-8.10"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-17.55",
+       "ty": "9.40"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "0.01745",
+       "c": "-0.01745",
+       "d": "0.99985",
+       "tx": "17.71",
+       "ty": "-9.10"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-17.55",
+       "ty": "9.40"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99939",
+       "b": "0.03490",
+       "c": "-0.03490",
+       "d": "0.99939",
+       "tx": "35.57",
+       "ty": "-17.88"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "ROBE_SKIRT",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_SKIRT",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": "0.99985",
+       "b": "-0.01745",
+       "c": "0.01745",
+       "d": "0.99985",
+       "tx": "-17.55",
+       "ty": "9.40"
+      },
+      "transPoint": {
+       "x": "530.0",
+       "y": "1010"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 1,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 2,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 3,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 4,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 5,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 6,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     },
+     {
+      "layer": "ROBE_UNDERLAY",
+      "frame": 7,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_FULL",
+      "name": null,
+      "symbolType": "graphic",
+      "loop": "single frame",
+      "firstFrame": null,
+      "matrix": {
+       "a": null,
+       "b": null,
+       "c": null,
+       "d": null,
+       "tx": "0",
+       "ty": "0"
+      },
+      "transPoint": {
+       "x": "0",
+       "y": "0"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_KIKO_FRONT_ROBE_FULL.xml",
+   "rel": "LIBRARY/WG_KIKO_FRONT_ROBE_FULL.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_FULL",
+    "itemID": "5eed2026-00000064",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_KIKO_FRONT_ROBE_FULL",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/media/ROBE_FULL",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_KIKO_FRONT_ROBE_SKIRT.xml",
+   "rel": "LIBRARY/WG_KIKO_FRONT_ROBE_SKIRT.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_ROBE_SKIRT",
+    "itemID": "5eed2026-00000066",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_KIKO_FRONT_ROBE_SKIRT",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/media/ROBE_SKIRT",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  },
+  {
+   "file": "WG_KIKO_FRONT_TORSO.xml",
+   "rel": "LIBRARY/WG_KIKO_FRONT_TORSO.xml",
+   "root_tag": "DOMSymbolItem",
+   "attrs": {
+    "name": "WG105_KIKO_PUPPET_V001/WG_KIKO_FRONT_TORSO",
+    "itemID": "5eed2026-00000065",
+    "symbolType": "graphic",
+    "lastModified": "1335000000"
+   },
+   "timeline": {
+    "name": "WG_KIKO_FRONT_TORSO",
+    "layers": [
+     {
+      "name": "bitmap",
+      "type": null,
+      "color": "#4FFF4F",
+      "parent": null,
+      "keyframes": [
+       [
+        0,
+        1
+       ]
+      ],
+      "keyframe_count": 1,
+      "duration": 1
+     }
+    ],
+    "total_frames": 1,
+    "labels": [],
+    "instances": [
+     {
+      "layer": "bitmap",
+      "frame": 0,
+      "dur": 1,
+      "lib": "WG105_KIKO_PUPPET_V001/media/TORSO",
+      "name": null,
+      "bitmap": true
+     }
+    ]
+   }
+  }
+ ]
+}

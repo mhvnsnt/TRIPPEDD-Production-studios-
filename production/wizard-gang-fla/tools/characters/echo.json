@@ -1,0 +1,68 @@
+{
+ "char": "echo",
+ "display": "Echo",
+ "code": "WG108",
+ "folder": "/home/hatch/workspace/your_files/wizard-gang-part-libraries/echo",
+ "canvas": [
+  320,
+  960
+ ],
+ "bboxes": {
+  "01_robe": [
+   49,
+   154,
+   294,
+   959
+  ],
+  "02_head": [
+   50,
+   55,
+   289,
+   329
+  ],
+  "03_chain": [
+   130,
+   322,
+   269,
+   392
+  ],
+  "04_arm_L": [
+   49,
+   360,
+   174,
+   499
+  ],
+  "05_arm_R": [
+   175,
+   360,
+   294,
+   499
+  ],
+  "06_eye_L": [
+   140,
+   125,
+   186,
+   171
+  ],
+  "06_eye_R": [
+   210,
+   125,
+   254,
+   194
+  ]
+ },
+ "robe": "01_robe.png",
+ "head": "02_head.png",
+ "arm_L": "04_arm_L.png",
+ "arm_R": "05_arm_R.png",
+ "chain": "03_chain.png",
+ "eye_L": "06_eye_L.png",
+ "eye_R": "06_eye_R.png",
+ "closed": [
+  "5_eye_closed_l.png",
+  "6_eye_closed_r.png"
+ ],
+ "extras": [],
+ "source_note": "echo_crop_source.png (320x960)",
+ "method": "ROI x HSV color segmentation + Telea inpainting (Wave-4 Ashes recipe, Wave-5 fixes)"
+}

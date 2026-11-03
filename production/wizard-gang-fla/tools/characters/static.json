@@ -1,0 +1,68 @@
+{
+ "char": "static",
+ "display": "Static",
+ "code": "WG102",
+ "folder": "/home/hatch/workspace/your_files/wizard-gang-part-libraries/static",
+ "canvas": [
+  245,
+  910
+ ],
+ "bboxes": {
+  "01_robe": [
+   0,
+   23,
+   244,
+   909
+  ],
+  "02_head": [
+   35,
+   0,
+   214,
+   239
+  ],
+  "03_arm_L": [
+   24,
+   240,
+   121,
+   399
+  ],
+  "04_arm_R": [
+   122,
+   240,
+   244,
+   399
+  ],
+  "05_chain": [
+   74,
+   173,
+   189,
+   274
+  ],
+  "06_eye_L": [
+   100,
+   82,
+   137,
+   113
+  ],
+  "07_eye_R": [
+   160,
+   80,
+   197,
+   111
+  ]
+ },
+ "robe": "01_robe.png",
+ "head": "02_head.png",
+ "arm_L": "03_arm_L.png",
+ "arm_R": "04_arm_R.png",
+ "chain": "05_chain.png",
+ "eye_L": "06_eye_L.png",
+ "eye_R": "07_eye_R.png",
+ "closed": [
+  "5_eye_closed_l.png",
+  "6_eye_closed_r.png"
+ ],
+ "extras": [],
+ "source_note": "static_crop_source.png (245x910)",
+ "method": "ROI x HSV color segmentation + Telea inpainting (Wave-4/5/6 recipe)"
+}

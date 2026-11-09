@@ -1,0 +1,325 @@
+{
+ "character": "Kiko (Wizard Gang)",
+ "canvas": [
+  1184,
+  2096
+ ],
+ "source": "Owner-accepted generative completion WG_KIKO_REFERENCE_COMPLETED_GEN_20261107.png (2026-11-07). Cut apart by cut_kiko_v3.py with OFFICIAL-FLA-QUALITY cuts: every part boundary follows a line drawn in the artwork itself (fur band/cuff drawn edges extracted per column, hood trim line, fur-trim/skin class boundary, sash wrap edge, kneepad top edge, shoe collar and sole outlines, tights silhouette). NO zone/region partition, NO square crops, NO invented pixels \u2014 joint overlaps are the neighbouring part's own source pixels tucked underneath.",
+ "cut_method": "v3 outline cuts (unchanged boundaries/pivots) + v4 cleanup pass: connected-component floater audit on every part - detached splash/drips/flecks removed, ground/side splash cut to the shoes' drawn lower outlines, tights-pattern components mis-claimed by the torso returned to the thighs, and the right shoe's clipped toe restored from the source (see README floater audit). Pivots, poses, stacking and timing are byte-for-byte the v2/v3 specs.",
+ "stack_bottom_to_top": [
+  "thigh_L",
+  "thigh_R",
+  "shin_L",
+  "shin_R",
+  "shoe_L",
+  "shoe_R",
+  "torso",
+  "coat_L",
+  "coat_R",
+  "upper_arm_L",
+  "upper_arm_R",
+  "forearm_L",
+  "forearm_R",
+  "hand_L",
+  "hand_R",
+  "head"
+ ],
+ "parts": [
+  {
+   "name": "thigh_L",
+   "file": "parts/thigh_L.png",
+   "bbox": [
+    250,
+    996,
+    562,
+    1460
+   ],
+   "pivot": [
+    430,
+    925
+   ],
+   "joint_overlap": {
+    "joint": "hip",
+    "note": "outline is the tights' drawn silhouette; bottom seam follows the leg's drawn contour pinch + flame line at the knee; tucks 50px down under the shin; top tucks under the sash"
+   }
+  },
+  {
+   "name": "thigh_R",
+   "file": "parts/thigh_R.png",
+   "bbox": [
+    622,
+    992,
+    973,
+    1441
+   ],
+   "pivot": [
+    750,
+    925
+   ],
+   "joint_overlap": {
+    "joint": "hip",
+    "note": "bottom seam is the kneepad's drawn top edge; kneepad belongs to the shin; tucks 50px down under the shin"
+   }
+  },
+  {
+   "name": "shin_L",
+   "file": "parts/shin_L.png",
+   "bbox": [
+    252,
+    1391,
+    491,
+    1809
+   ],
+   "pivot": [
+    365,
+    1370
+   ],
+   "joint_overlap": {
+    "joint": "knee",
+    "note": "top seam at the knee contour; bottom follows the shoe collar's drawn top outline; tucks 45px down under the shoe"
+   }
+  },
+  {
+   "name": "shin_R",
+   "file": "parts/shin_R.png",
+   "bbox": [
+    684,
+    1367,
+    976,
+    1841
+   ],
+   "pivot": [
+    805,
+    1410
+   ],
+   "joint_overlap": {
+    "joint": "knee",
+    "note": "includes the kneepad (its own drawn outline); bottom follows the shoe collar's drawn top outline; tucks 45px down under the shoe"
+   }
+  },
+  {
+   "name": "shoe_L",
+   "file": "parts/shoe_L.png",
+   "bbox": [
+    145,
+    1730,
+    402,
+    2032
+   ],
+   "pivot": [
+    315,
+    1805
+   ],
+   "joint_overlap": {
+    "joint": "ankle",
+    "note": "silhouette fitted to the shoe's own drawn outline incl. sole line; v4: no source pixels were missing (restore test = 0 px); ground/side splash cut to the drawn lower outline"
+   }
+  },
+  {
+   "name": "shoe_R",
+   "file": "parts/shoe_R.png",
+   "bbox": [
+    750,
+    1740,
+    1022,
+    2030
+   ],
+   "pivot": [
+    875,
+    1805
+   ],
+   "joint_overlap": {
+    "joint": "ankle",
+    "note": "silhouette fitted to the shoe's own drawn outline incl. sole line; v4: the toe clipped by the v3 polygon (11,625 px + 232 px of lace-loop segments) restored from the source, ground/side splash cut to the drawn lower outline"
+   }
+  },
+  {
+   "name": "torso",
+   "file": "parts/torso.png",
+   "bbox": [
+    314,
+    435,
+    884,
+    1171
+   ],
+   "pivot": [
+    592,
+    895
+   ],
+   "joint_overlap": {
+    "joint": "waist",
+    "note": "sides are the fur trim's drawn inner edge (fur/skin class boundary); bottom follows the sash's drawn lower wrap edge; thighs tuck 55px up under the sash"
+   }
+  },
+  {
+   "name": "coat_L",
+   "file": "parts/coat_L.png",
+   "bbox": [
+    163,
+    410,
+    591,
+    1693
+   ],
+   "pivot": [
+    300,
+    520
+   ],
+   "joint_overlap": {
+    "joint": "shoulder drape",
+    "note": "fur silhouette is the coat's own drawn outline; tucks under the hood; L/R overlap each other 80px under the hood where the mantle is one hidden mass"
+   }
+  },
+  {
+   "name": "coat_R",
+   "file": "parts/coat_R.png",
+   "bbox": [
+    591,
+    398,
+    990,
+    1563
+   ],
+   "pivot": [
+    880,
+    520
+   ],
+   "joint_overlap": {
+    "joint": "shoulder drape",
+    "note": "same as coat_L"
+   }
+  },
+  {
+   "name": "upper_arm_L",
+   "file": "parts/upper_arm_L.png",
+   "bbox": [
+    154,
+    568,
+    366,
+    867
+   ],
+   "pivot": [
+    245,
+    580
+   ],
+   "joint_overlap": {
+    "joint": "shoulder",
+    "note": "top edge is the deltoid's drawn skin/fur line under the mantle; bottom edge is the elbow fur band's drawn bottom edge (band belongs to the upper arm, its edge sits at the elbow pivot); forearm carries a 45px overlap strip of the band's own pixels at the joint"
+   }
+  },
+  {
+   "name": "upper_arm_R",
+   "file": "parts/upper_arm_R.png",
+   "bbox": [
+    806,
+    549,
+    1029,
+    866
+   ],
+   "pivot": [
+    935,
+    580
+   ],
+   "joint_overlap": {
+    "joint": "shoulder",
+    "note": "same as upper_arm_L"
+   }
+  },
+  {
+   "name": "forearm_L",
+   "file": "parts/forearm_L.png",
+   "bbox": [
+    95,
+    744,
+    364,
+    1097
+   ],
+   "pivot": [
+    205,
+    790
+   ],
+   "joint_overlap": {
+    "joint": "elbow",
+    "note": "carries the elbow overlap strip; includes the fur wrist cuff, bottom edge is the cuff's drawn bottom edge at the wrist pivot; hand carries a 55px overlap strip of the cuff's own pixels at the wrist"
+   }
+  },
+  {
+   "name": "forearm_R",
+   "file": "parts/forearm_R.png",
+   "bbox": [
+    817,
+    743,
+    1087,
+    1079
+   ],
+   "pivot": [
+    975,
+    790
+   ],
+   "joint_overlap": {
+    "joint": "elbow",
+    "note": "same as forearm_L"
+   }
+  },
+  {
+   "name": "hand_L",
+   "file": "parts/hand_L.png",
+   "bbox": [
+    95,
+    966,
+    298,
+    1242
+   ],
+   "pivot": [
+    185,
+    1005
+   ],
+   "joint_overlap": {
+    "joint": "wrist",
+    "note": "top carries a 55px overlap strip under the cuff line; outline is the hand's own drawn silhouette"
+   }
+  },
+  {
+   "name": "hand_R",
+   "file": "parts/hand_R.png",
+   "bbox": [
+    885,
+    966,
+    1087,
+    1234
+   ],
+   "pivot": [
+    990,
+    1000
+   ],
+   "joint_overlap": {
+    "joint": "wrist",
+    "note": "same as hand_L"
+   }
+  },
+  {
+   "name": "head",
+   "file": "parts/head.png",
+   "bbox": [
+    298,
+    40,
+    887,
+    554
+   ],
+   "pivot": [
+    592,
+    530
+   ],
+   "joint_overlap": {
+    "joint": "neck",
+    "note": "bottom edge follows the hood's drawn lower trim line; coat tucks 55px up underneath it"
+   }
+  }
+ ],
+ "occluded_gaps": [
+  "shoulders: the upper arm's top edge is the drawn skin/fur line where the deltoid emerges from under the mantle; the source is flat, so a full overhead raise can still open a notch at the shoulder where no art exists behind the arm \u2014 stated plainly (same physical limit as the Ashes set).",
+  "left knee has no garment edge in the art; the seam follows the leg's drawn contour pinch and the flame-pattern line at the knee, with the thigh tucked 50px under the shin so the join sits on the drawing.",
+  "coat_L/coat_R are one connected fur mass only behind the hood; they overlap each other 80px under the hood (hidden by the head part in every pose) instead of a visible split line.",
+  "ground paint splash and detached droplets around the shoes/shins are background dressing in the accepted art, not part of the character; they are excluded from the parts (counted in the build log) rather than glued onto the shoes as v2 did.",
+  "the head part is hood + void face as one piece (Kiko has no separate eye layers in any source \u2014 the starry eye glints are baked into the void face).",
+  "hands are the hands drawn in the accepted reference (open, fingers down); no alternate hand poses exist in this art."
+ ]
+}

@@ -115,3 +115,8 @@ When a PR satisfies ALL merge conditions (GitHub says MERGEABLE, CI green, no-de
 The merge must be CLEAN and NON-DESTRUCTIVE: merge commits, never rebase/squash/force-push; resolve conflicts by keeping both sides' work — nothing lost, nothing clobbered, nothing destroyed on either side. Verify the merged result still builds and passes tests before calling it done.
 A PR that is red, conflicting, or would lose work stays OPEN with a comment naming the blocker — but the default for a clean, green PR is MERGE, never "leave it for the owner."
 Carve-outs (standing owner decisions, not overridden): never merge a DRAFT PR; never merge a PR the owner explicitly excluded.
+
+## trippedd-scene-builder (scene direction skill)
+- `skills/trippedd-scene-builder/SKILL.md` + `skills/trippedd-scene-builder/project-bible.md`
+- Use this skill whenever anyone asks to make a scene, build a prompt for a scene, do the next scene, or start a new episode. Trigger phrasings: "make a scene where…", "next scene:", "build the prompt for this scene", "new episode".
+- Chain: Idea → shots → timestamps → camera → actions → dialogue → references → final prompt. Principle: whatever the prompt leaves undefined, the model invents. World: the skill's project-bible.md, backed by this repo's own canon docs (see the skill for paths).

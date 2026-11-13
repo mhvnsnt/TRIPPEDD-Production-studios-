@@ -1,0 +1,43 @@
+{
+  "format": "blairwitch.partlib/1",
+  "part": "arms",
+  "mode": "linked library file",
+  "layers": [
+    {
+      "layer": "arm_L_upper",
+      "names": {
+        "FR": "FR-armUpperL-001",
+        "TQ": "TQ-armUpperL-001",
+        "SD": "SD-armUpperL-001",
+        "BK": "BK-armUpperL-001"
+      }
+    },
+    {
+      "layer": "arm_L_forearm",
+      "names": {
+        "FR": "FR-armForearmL-001",
+        "TQ": "TQ-armForearmL-001",
+        "SD": "SD-armForearmL-001",
+        "BK": "BK-armForearmL-001"
+      }
+    },
+    {
+      "layer": "arm_R_upper",
+      "names": {
+        "FR": "FR-armUpperR-001",
+        "TQ": "TQ-armUpperR-001",
+        "SD": "SD-armUpperR-001",
+        "BK": "BK-armUpperR-001"
+      }
+    },
+    {
+      "layer": "arm_R_forearm",
+      "names": {
+        "FR": "FR-armForearmR-001",
+        "TQ": "TQ-armForearmR-001",
+        "SD": "SD-armForearmR-001",
+        "BK": "BK-armForearmR-001"
+      }
+    }
+  ]
+}

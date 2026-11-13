@@ -1,0 +1,168 @@
+{
+  "format": "blairwitch.palette-sheet/1",
+  "character": "Kiko",
+  "version": 1,
+  "base_swatches": {
+    "Dominant": {
+      "hex": "#161725",
+      "rgb": [
+        22,
+        23,
+        37
+      ],
+      "cmyk": [
+        40.5,
+        37.8,
+        0.0,
+        85.5
+      ]
+    },
+    "Support": {
+      "hex": "#eddfcc",
+      "rgb": [
+        237,
+        223,
+        204
+      ],
+      "cmyk": [
+        0.0,
+        5.9,
+        13.9,
+        7.1
+      ]
+    },
+    "Accent": {
+      "hex": "#bb7d62",
+      "rgb": [
+        187,
+        125,
+        98
+      ],
+      "cmyk": [
+        0.0,
+        33.2,
+        47.6,
+        26.7
+      ]
+    },
+    "Ink": {
+      "hex": "#080808",
+      "rgb": [
+        8,
+        8,
+        8
+      ],
+      "cmyk": [
+        0.0,
+        0.0,
+        0.0,
+        96.9
+      ]
+    },
+    "extra_1": {
+      "hex": "#844040",
+      "rgb": [
+        132,
+        64,
+        64
+      ],
+      "cmyk": [
+        0.0,
+        51.5,
+        51.5,
+        48.2
+      ]
+    },
+    "extra_2": {
+      "hex": "#70747a",
+      "rgb": [
+        112,
+        116,
+        122
+      ],
+      "cmyk": [
+        8.2,
+        4.9,
+        0.0,
+        52.2
+      ]
+    }
+  },
+  "slot_order": [
+    "Dominant",
+    "Support",
+    "Accent",
+    "Ink",
+    "extra_1",
+    "extra_2"
+  ],
+  "sanctioned_tints": {
+    "Dominant": {
+      "50": {
+        "hex": "#747692",
+        "rgb": [
+          116,
+          118,
+          146
+        ],
+        "cmyk": [
+          20.2,
+          18.9,
+          0.0,
+          42.8
+        ]
+      },
+      "75": {
+        "hex": "#40425c",
+        "rgb": [
+          64,
+          66,
+          92
+        ],
+        "cmyk": [
+          30.4,
+          28.4,
+          0.0,
+          64.1
+        ]
+      }
+    },
+    "Support": {
+      "50": {
+        "hex": "#f6efe5",
+        "rgb": [
+          246,
+          239,
+          229
+        ],
+        "cmyk": [
+          0.0,
+          3.0,
+          7.0,
+          3.5
+        ]
+      },
+      "75": {
+        "hex": "#f1e7d8",
+        "rgb": [
+          241,
+          231,
+          216
+        ],
+        "cmyk": [
+          0.0,
+          4.4,
+          10.4,
+          5.3
+        ]
+      }
+    }
+  },
+  "complete": true,
+  "rules": [
+    "Base swatches are specified as CMYK percentages (donor format).",
+    "Sanctioned tints (50% / 75% of Dominant and Support) are the only lightened versions a colourist may use without a sheet revision.",
+    "Reserved colours stay reserved: the alert red family is spent only where canon already spends it.",
+    "A variant palette is recorded as deltas against these base swatches, never as a second free-standing palette."
+  ]
+}

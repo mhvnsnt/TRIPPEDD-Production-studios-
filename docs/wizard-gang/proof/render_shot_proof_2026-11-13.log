@@ -1,0 +1,42 @@
+=== render_shot.py --help (exit 0) ===
+usage: render_shot.py [-h] [--out OUT] [--preview] [--dry-run]
+                      [--engine ENGINE] [--samples SAMPLES] [--res RES]
+                      [--frames FRAMES] [--no-post] [--threads THREADS]
+                      [--validate]
+                      spec
+
+Shot spec (YAML/JSON) -> resolved spec -> Blender frames -> finished MP4 -> proof.
+
+
+=== WG template --validate ===
+OK      set-piece    /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/stubs/wizard-gang-storage/drive-archive/detailed-shots/Painterly 7 - foggy pier.webp
+OK      character    /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/stubs/TRIPPEDD-Production-studios-/production/wizard-gang-fla/WG105_ORIGINAL_PUPPET_KIKO_VERSION_004.fla
+OK      music        /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/stubs/pocket-studio/assets/stems/bgm/kiko-8s-vocal-mix.mp3
+wg_ep02_s26_the_pier: 3 resolved, 0 missing
+rc=0
+
+=== original tv_segment.yaml --validate (control: validator really checks) ===
+MISSING hdri         library:env/hdri/polyhaven/photo_studio_loft_hall/photo_studio_loft_hall_2k.hdr -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/env/hdri/polyhaven/photo_studio_loft_hall/photo_studio_loft_hall_2k.hdr
+MISSING texture-set  library:env/texture/polyhaven/wood_floor -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/env/texture/polyhaven/wood_floor
+MISSING set-piece    library:env/model/polyhaven/Sofa_01/Sofa_01_1k.gltf -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/env/model/polyhaven/Sofa_01/Sofa_01_1k.gltf
+MISSING set-piece    library:env/model/polyhaven/ArmChair_01/ArmChair_01_1k.gltf -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/env/model/polyhaven/ArmChair_01/ArmChair_01_1k.gltf
+MISSING set-piece    library:env/model/polyhaven/coffee_table_round_01/coffee_table_round_01_1k.gltf -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/env/model/polyhaven/coffee_table_round_01/coffee_table_round_01_1k.gltf
+MISSING set-piece    library:env/model/polyhaven/Television_01/Television_01_1k.gltf -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/env/model/polyhaven/Television_01/Television_01_1k.gltf
+MISSING set-piece    library:env/model/polyhaven/potted_plant_02/potted_plant_02_1k.gltf -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/env/model/polyhaven/potted_plant_02/potted_plant_02_1k.gltf
+MISSING set-piece    library:env/model/polyhaven/potted_plant_04/potted_plant_04_1k.gltf -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/env/model/polyhaven/potted_plant_04/potted_plant_04_1k.gltf
+MISSING set-piece    library:env/model/polyhaven/tea_set_01/tea_set_01_1k.gltf -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/env/model/polyhaven/tea_set_01/tea_set_01_1k.gltf
+MISSING set-piece    library:env/model/polyhaven/Camera_01/Camera_01_1k.gltf -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/env/model/polyhaven/Camera_01/Camera_01_1k.gltf
+MISSING set-piece    library:env/model/itch/downtown-city-megakit/Exports/glTF (Godot)/Brick_Plain_3.gltf -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/env/model/itch/downtown-city-megakit/Exports/glTF (Godot)/Brick_Plain_3.gltf
+MISSING character    box:vten-main-audit/public/models/WRECK_PATTERSON.glb -> /workspace/vten-main-audit/public/models/WRECK_PATTERSON.glb
+MISSING clip         ['box:oss-anim-staging/quaternius-ual-1/extracted/Universal Animation Library[Standard]/Unreal-Godot/UAL1_Standard.glb', 'library:motion/itch/universal-animation-library/**/UAL1_Standard.glb'] -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/motion/itch/universal-animation-library/**/UAL1_Standard.glb
+MISSING character    box:vten-main-audit/public/models/TYNESHIA.glb -> /workspace/vten-main-audit/public/models/TYNESHIA.glb
+MISSING clip         ['box:oss-anim-staging/quaternius-ual-1/extracted/Universal Animation Library[Standard]/Unreal-Godot/UAL1_Standard.glb', 'library:motion/itch/universal-animation-library/**/UAL1_Standard.glb'] -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/motion/itch/universal-animation-library/**/UAL1_Standard.glb
+MISSING music        library:audio/music/oga/lofi-hip-hop/lofihiphop.ogg -> /home/hatch/workspace/_wizard-gang-wireup-20261113/phase3b-episode-plumbing/run/library/audio/music/oga/lofi-hip-hop/lofihiphop.ogg
+tv_segment_studio_desk: 0 resolved, 16 missing  (run: python3 fetch_assets.py --core, or fix the refs)
+rc=1
+
+=== environment ===
+Python 3.12.3
+pyyaml 6.0.1
+blender: NOT INSTALLED on this VM
+2026-11-13T20:47:43Z

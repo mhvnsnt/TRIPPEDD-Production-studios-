@@ -1,0 +1,76 @@
+# TEMPLATE: Wizard Gang EP02 s26 — The Pier (Kiko alone). 8 s, 16:9.
+# Adapted from TRIPPEDD-Animation-Studio shots/templates/tv_segment.yaml
+# (mhvnsnt/TRIPPEDD-Animation-Studio, PIPELINE.md + docs/playbooks/3d-animation-shot-pipeline.md).
+# WG ADAPTATION — READ FIRST:
+#   Wizard Gang is a 2D puppet show (FLA puppets, Pipeline One). This spec reuses
+#   the studio YAML schema so `render_shot.py --validate` proves every ref exists,
+#   but the 3D Blender render step does NOT apply: there is no GLB, no HDRI, no
+#   Cycles pass. The `glb` slot below carries the FLA puppet source file (the
+#   canonical Kiko puppet); `puppet_parts` / `pose_ref` carry the renderable 2D
+#   art; the `set.pieces` entry is a 2D background PLATE, composited under the
+#   puppet in the WG composite path (see docs/wizard-gang/WG-BACKGROUNDS-EP02.md),
+#   not a 3D set piece. `camera` is a LOCKED camera (playbook §4: locked cameras
+#   for background-swap sequences). Do not "fix" this spec by inventing a GLB.
+# Validate:  STUDIO_REPO_WIZARD_GANG_STORAGE=<checkout of mhvnsnt/wizard-gang-storage>
+#             STUDIO_REPO_TRIPPEDD_PRODUCTION_STUDIOS_=<checkout of mhvnsnt/TRIPPEDD-Production-studios->
+#             STUDIO_REPO_POCKET_STUDIO=<checkout of mhvnsnt/pocket-studio>
+#             python3 render_shot.py shots/wg_ep02_s26_the_pier.yaml --validate
+#   (note the trailing underscore: the repo name ends in a hyphen, and
+#   studio_assets.resolve() uppercases + swaps '-' for '_'.)
+# Scene: EP02 s26 The Pier, 3:57-4:05 (8 s). Audio bed: "Kiko alone: fog bed,
+#   fog horns, theatrical plucks." BGM: Kiko 8 s vocal mix at 237.0 s.
+# Source: EP02 outline (docs/wizard-gang/EP02-OUTLINE.md, PR #303) + Phase 1 report.
+scene: wg_ep02_s26_the_pier
+fps: 24
+duration: 8
+resolution: [1920, 1080]
+engine: cycles
+samples: 16
+look: AgX - Base Contrast
+# WG: 2D composite path — no Blender engine is actually run for this spec.
+# `engine`/`samples`/`look` are kept so the file stays schema-valid; they are
+# ignored by the WG composite path. See WG-SHOT-PIPELINE.md.
+
+set:
+  pieces:
+    - {asset: "repo:wizard-gang-storage:drive-archive/detailed-shots/Painterly 7 - foggy pier.webp", pos: [0, 0, 0]}
+      # WG 2D PLATE (not a 3D set piece): the foggy-pier background, centre-cropped
+      # 2240x1120 -> 1920x1080. Proof composite:
+      # docs/wizard-gang/proof/wg_ep02_s26_kiko_pier_composite.png (Kiko pose_0
+      # over this plate, verified by eye 2026-11-13).
+
+characters:
+  - name: Kiko
+    glb: repo:TRIPPEDD-Production-studios-:production/wizard-gang-fla/WG105_ORIGINAL_PUPPET_KIKO_VERSION_004.fla
+    # WG 2D: `glb` slot carries the FLA puppet source (92,856,280 B, canonical
+    # Kiko puppet v004). NOT a GLB — do not feed to Blender.
+    puppet_parts: repo:TRIPPEDD-Production-studios-:production/wizard-gang-fla/kiko-v4/parts.json
+    pose_ref: repo:TRIPPEDD-Production-studios-:production/wizard-gang-fla/kiko-v4/proof/poses/pose_0_NEUTRAL.png
+    # Renderable 2D art: 16 transparent PNG parts (parts.json) + pose renders.
+    # pose_0_NEUTRAL (1184x2096, dark-grey #202020 backdrop) is the proof pose:
+    # keyed by border flood-fill, composited over the pier plate (see proof file).
+    height: 1.70
+    mark: [0.9, 0, 0]
+    facing: 0
+
+camera:
+  lens: 35
+  path:
+    - {t: 0, pos: [0, -5.2, 1.3], target: [0, 0.2, 0.9]}
+    - {t: 8, pos: [0, -5.2, 1.3], target: [0, 0.2, 0.9]}
+  # LOCKED camera: same pos/target at t=0 and t=8 — no move. s26 is a still,
+  # fog-and-light scene ("Kiko alone"); motion, if any, is fog drift in post,
+  # not a camera move. Any move is an owner/board call, not a lane call.
+
+audio:
+  music: {asset: repo:pocket-studio:assets/stems/bgm/kiko-8s-vocal-mix.mp3, gain_db: -10, fade_out: 1.5}
+  # The vocal mix (not the plain 8 s instrumental) is the one the EP02 timeline
+  # actually uses at 237.0 s. One-shots: foghorns at 237.6 s / 241.4 s
+  # (assets/stems/sfx-oneshots/ in pocket-studio) — add as sfx entries when the
+  # shot is boarded; they are not in this template because no shot list exists yet.
+
+post:
+  grade: neutral
+  vignette: true
+  fade_in: 0.5
+  fade_out: 0.8

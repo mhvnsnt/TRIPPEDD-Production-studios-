@@ -1,0 +1,94 @@
+{
+ "body_plan": "humanoid",
+ "body_under_clothes": true,
+ "cast_class": "principal",
+ "construction": "harmony",
+ "construction_notes": [
+  "SOURCE OF TRUTH: WG105 Kiko puppet VERSION 004 (v3 outline cuts + v4 floater cleanup + right-shoe restoration), built 2026-11-07. Source art: owner-accepted generative completion WG_KIKO_REFERENCE_COMPLETED_GEN_20261107.png. Cut by cut_kiko_v3.py (OFFICIAL-FLA-QUALITY cuts: every part boundary follows a line drawn in the artwork itself). v4 changed NOTHING else: no re-cutting; outline boundaries, pivots, poses, stacking and timing are byte-for-byte the v2/v3 specs (POSES identical, PIV identical, STACK identical, every part matrix identical for all 8 poses).",
+  "This BlairWitch package is VERSION 005: same 16 parts, same pivots, same stack, same 8-pose choreography as v4 \u2014 re-expressed through the BlairWitch rig/sheet/puppet system (Harmony construction, standard tier). It does NOT overwrite v4.",
+  "PARTS (16, full-canvas 1184x2096 PNGs, stack bottom-to-top): thigh_L, thigh_R, shin_L, shin_R, shoe_L, shoe_R, torso, coat_L, coat_R, upper_arm_L, upper_arm_R, forearm_L, forearm_R, hand_L, hand_R, head. Pivots per part in kiko-v4 parts.json (v4 source). Joint overlaps are the neighbouring part's own source pixels tucked underneath (hip 50px, knee 50px/45px, ankle 45px, elbow 45px, wrist 55px).",
+  "POSES (8, per-part rot/dx/dy specs + hierarchical composition: forearm/hand under upper_arm, shin/shoe under thigh \u2014 same method as build_ashes.py): NEUTRAL, ARMS_RAISED, POINT_R, STEP_FORWARD, HOOD_TILT_BOW, WAVE_L, GUARD, REST_LEAN. Pose specs live in this package under poses/ as JSON.",
+  "MOUTH DISCIPLINE NOTE: the four Rule-17 declarations are the mouth-symbol system's rules. v4 art carries no separate mouth drawings (void face), so the discipline binds mouth drawings when authored for the Blair 10 + expression frames 11+, not existing art.",
+  "EYES NOTE: standard BlairWitch eye system is the rig scaffold (four-piece masked eye, pupil/lid/brow frames). v4 art has no separate eye layers \u2014 the void face's starry glints are baked into the head part.",
+  "PALETTE: sampled from the assembled v4 neutral figure's opaque pixels (dominant colours), recorded as the \u00a72 four-slot sheet (Dominant / Support / Accent / Ink) with CMYK + sanctioned tints. No invented colours.",
+  "GAPS LOGGED, NEVER INVENTED: no three-quarter / side / back views exist in v4 art (front view only); no separate eye/mouth/hand-variant drawings; no walk-cycle art beyond the 8 poses. The sheet shows the front turnaround honestly and lists the missing views as gaps.",
+  "V4 floater audit: 13,854 floater px + 18,055 pool px + 8,381 pass-2 px + 1,693 pass-3 px removed; 6,013 px reassigned torso-to-thighs; 11,857 px restored to shoe_R (whole toe + lace loops). Full per-component log in the v4 work folder (work/floater_audit.json)."
+ ],
+ "costume": [
+  {
+   "item": "hooded fur-trimmed coat / mantle",
+   "rig_name": "coat_L / coat_R"
+  },
+  {
+   "item": "torso + sash wrap",
+   "rig_name": "torso"
+  },
+  {
+   "item": "flame-pattern tights",
+   "rig_name": "thigh_L / thigh_R / shin_L / shin_R"
+  },
+  {
+   "item": "shoes with sole + lace loops",
+   "rig_name": "shoe_L / shoe_R"
+  },
+  {
+   "item": "hood (part of head)",
+   "rig_name": "head"
+  }
+ ],
+ "expression_mouths": [],
+ "fps": 24,
+ "height_head_units": 3.88,
+ "height_world_units": 1.0,
+ "line_quality_class": "clean",
+ "line_weight": "as-drawn in WG_KIKO_REFERENCE_COMPLETED_GEN_20261107.png (owner-accepted generative completion); numeric stroke width unmeasured \u2014 to be measured at sheet review",
+ "mouth_discipline": {
+  "nose_line_ends_in_point_at_lip": true,
+  "open_mouths_cut_into_silhouette": true,
+  "shapes_kept_asymmetrical": true,
+  "upper_lip_gently_curved_overhang": true
+ },
+ "name": "Kiko",
+ "palette": {
+  "Dominant": "#161725",
+  "Support": "#eddfcc",
+  "Accent": "#bb7d62",
+  "Ink": "#080808",
+  "extra_1": "#844040",
+  "extra_2": "#70747a"
+ },
+ "palette_version": 1,
+ "planned_file": "MC105ORIGINAL_PUPPET_KIKO_VERSION_005",
+ "pose_library": [
+  "idle",
+  "walk",
+  "run",
+  "attack_windup",
+  "attack_strike",
+  "hurt",
+  "faint",
+  "happy",
+  "talk"
+ ],
+ "props": [],
+ "shading_guides": false,
+ "special_features": [
+  "KIKO pendant + neck chains (drawn; chains are many separate link components in the torso art)",
+  "Fur-trimmed hooded coat / mantle (coat_L + coat_R are one connected fur mass behind the hood)",
+  "Starry void face \u2014 star glints baked into the head part; hood + void face are ONE piece, no separate eye layers",
+  "Flame-pattern tights (thigh_L / thigh_R / shin_L / shin_R)",
+  "Kneepad on shin_R (its own drawn outline)",
+  "Fur wrist cuffs on forearm_L / forearm_R; fur elbow bands on upper_arm_L / upper_arm_R"
+ ],
+ "tier": "standard",
+ "watch_fors": [
+  "HEAD IS HOOD + VOID FACE AS ONE PIECE \u2014 Kiko has no separate eye layers in any v4 source; the starry eye glints are baked into the void face. No blink/eye-swap art exists. The BlairWitch eye system (four-piece masked eye) and Blair 10 viseme mouth frames are the rig's symbol slots; they bind mouth/eye drawings WHEN authored, not existing art. Do not claim v4 ships them.",
+  "HANDS ARE OPEN, FINGERS DOWN ONLY \u2014 no alternate hand poses exist in this art. SHARED/hands links the generic hand library; Kiko's drawn hands are the v4 hand_L / hand_R parts.",
+  "SHOULDER NOTCH \u2014 the source is flat, so a full overhead raise can open a notch at the shoulder where no art exists behind the arm (same physical limit as the Ashes set). ARMS_RAISED / WAVE_L are the affected poses.",
+  "HANDS CLIP THE FRAME EDGES in ARMS_RAISED / WAVE_L / POINT_R (owner-approved choreography, carried over from v3).",
+  "DARK WEDGE BETWEEN THE THIGHS on wide leg poses (carried over from v3).",
+  "FUSED SPLASH REMAINDERS (painted onto the character in the source art itself, not removable without re-cutting inside v3-approved boundaries): orange flame burst fused along shin_R outer edge; blue/purple splash fused under coat_L outer tail tip and across the coat tails' lower ends; one coat tail-tip strand showing as a small droplet between the thighs in STEP_FORWARD (attached garment); thin paint skin under the shoe soles at the ground-contact line; ~10 px orange edge fleck at coat_L inner edge in ARMS_RAISED / WAVE_L.",
+  "LEFT KNEE has no garment edge in the art; the seam follows the leg's drawn contour pinch and the flame-pattern line at the knee, thigh tucked 50px under the shin.",
+  "coat_L / coat_R overlap each other 80px under the hood (hidden by the head part in every pose) instead of a visible split line."
+ ]
+}

@@ -1,0 +1,1054 @@
+{
+  "format": "blairwitch.harmony-network/1",
+  "character": "Kiko",
+  "prefix": "K",
+  "body_plan": "humanoid",
+  "tier": "standard",
+  "fps": 24,
+  "field_chart": 12,
+  "master_peg": "K_MASTER_PEG",
+  "art_layers": [
+    "LINE_ART",
+    "COLOR_ART",
+    "OVERLAY",
+    "UNDERLAY"
+  ],
+  "regions": {
+    "arm_L": [
+      "K_upper_arm_L",
+      "K_sleeve_inner_L",
+      "K_lower_arm_L",
+      "K_lower_sleeve_L",
+      "K_hand_L"
+    ],
+    "arm_R": [
+      "K_upper_arm_R",
+      "K_sleeve_inner_R",
+      "K_lower_arm_R",
+      "K_lower_sleeve_R",
+      "K_hand_R"
+    ],
+    "extras": [
+      "K_belt",
+      "K_buckle",
+      "K_Line_Thickness_Knob"
+    ],
+    "head": [
+      "K_head",
+      "K_hair",
+      "K_hair_back",
+      "K_ear_L",
+      "K_ear_R",
+      "K_brow_L",
+      "K_brow_R",
+      "K_eye_L",
+      "K_eye_R",
+      "K_nose",
+      "K_mouth"
+    ],
+    "leg_L": [
+      "K_upper_pants_L",
+      "K_lower_pants_L",
+      "K_pants_inner_L",
+      "K_lower_leg_L",
+      "K_shoe_L"
+    ],
+    "leg_R": [
+      "K_upper_pants_R",
+      "K_lower_pants_R",
+      "K_pants_inner_R",
+      "K_lower_leg_R",
+      "K_shoe_R"
+    ],
+    "torso": [
+      "K_neck",
+      "K_shoulder_1",
+      "K_collar_L",
+      "K_collar_R",
+      "K_collar_back",
+      "K_chest",
+      "K_hips",
+      "K_crotch"
+    ]
+  },
+  "composites": [
+    "Head",
+    "Body",
+    "Extras"
+  ],
+  "modules": [
+    {
+      "id": "K_MASTER_PEG",
+      "type": "PEG",
+      "role": "master peg \u2014 every part hangs under it"
+    },
+    {
+      "id": "Head_MPIn",
+      "type": "Multi-Port-In",
+      "group": "Head"
+    },
+    {
+      "id": "Head_MPOut",
+      "type": "Multi-Port-Out",
+      "group": "Head"
+    },
+    {
+      "id": "Head_Composite",
+      "type": "COMPOSITE",
+      "group": "Head",
+      "regions": [
+        "head"
+      ],
+      "role": "z-order is managed per region, then regions composite together (kit \u00a74)"
+    },
+    {
+      "id": "Body_MPIn",
+      "type": "Multi-Port-In",
+      "group": "Body"
+    },
+    {
+      "id": "Body_MPOut",
+      "type": "Multi-Port-Out",
+      "group": "Body"
+    },
+    {
+      "id": "Body_Composite",
+      "type": "COMPOSITE",
+      "group": "Body",
+      "regions": [
+        "torso",
+        "arm_L",
+        "arm_R",
+        "leg_L",
+        "leg_R"
+      ],
+      "role": "z-order is managed per region, then regions composite together (kit \u00a74)"
+    },
+    {
+      "id": "Extras_MPIn",
+      "type": "Multi-Port-In",
+      "group": "Extras"
+    },
+    {
+      "id": "Extras_MPOut",
+      "type": "Multi-Port-Out",
+      "group": "Extras"
+    },
+    {
+      "id": "Extras_Composite",
+      "type": "COMPOSITE",
+      "group": "Extras",
+      "regions": [
+        "extras"
+      ],
+      "role": "z-order is managed per region, then regions composite together (kit \u00a74)"
+    },
+    {
+      "id": "K_head_PEG",
+      "type": "PEG",
+      "element": "K_head",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_head",
+      "type": "READ",
+      "element": "K_head",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_head_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_hair_PEG",
+      "type": "PEG",
+      "element": "K_hair",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_hair",
+      "type": "READ",
+      "element": "K_hair",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_hair_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_hair_back_PEG",
+      "type": "PEG",
+      "element": "K_hair_back",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_hair_back",
+      "type": "READ",
+      "element": "K_hair_back",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_hair_back_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_ear_L_PEG",
+      "type": "PEG",
+      "element": "K_ear_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_ear_L",
+      "type": "READ",
+      "element": "K_ear_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_ear_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_ear_R_PEG",
+      "type": "PEG",
+      "element": "K_ear_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_ear_R",
+      "type": "READ",
+      "element": "K_ear_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_ear_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_brow_L_PEG",
+      "type": "PEG",
+      "element": "K_brow_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_brow_L",
+      "type": "READ",
+      "element": "K_brow_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_brow_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_brow_R_PEG",
+      "type": "PEG",
+      "element": "K_brow_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_brow_R",
+      "type": "READ",
+      "element": "K_brow_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_brow_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_eye_L_PEG",
+      "type": "PEG",
+      "element": "K_eye_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_eye_L",
+      "type": "READ",
+      "element": "K_eye_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_eye_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_eye_R_PEG",
+      "type": "PEG",
+      "element": "K_eye_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_eye_R",
+      "type": "READ",
+      "element": "K_eye_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_eye_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_nose_PEG",
+      "type": "PEG",
+      "element": "K_nose",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_nose",
+      "type": "READ",
+      "element": "K_nose",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_nose_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_mouth_PEG",
+      "type": "PEG",
+      "element": "K_mouth",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_mouth",
+      "type": "READ",
+      "element": "K_mouth",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_mouth_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_neck_PEG",
+      "type": "PEG",
+      "element": "K_neck",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_neck",
+      "type": "READ",
+      "element": "K_neck",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_neck_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_shoulder_1_PEG",
+      "type": "PEG",
+      "element": "K_shoulder_1",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_shoulder_1",
+      "type": "READ",
+      "element": "K_shoulder_1",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_shoulder_1_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_collar_L_PEG",
+      "type": "PEG",
+      "element": "K_collar_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_collar_L",
+      "type": "READ",
+      "element": "K_collar_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_collar_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_collar_R_PEG",
+      "type": "PEG",
+      "element": "K_collar_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_collar_R",
+      "type": "READ",
+      "element": "K_collar_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_collar_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_collar_back_PEG",
+      "type": "PEG",
+      "element": "K_collar_back",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_collar_back",
+      "type": "READ",
+      "element": "K_collar_back",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_collar_back_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_chest_PEG",
+      "type": "PEG",
+      "element": "K_chest",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_chest",
+      "type": "READ",
+      "element": "K_chest",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_chest_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_hips_PEG",
+      "type": "PEG",
+      "element": "K_hips",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_hips",
+      "type": "READ",
+      "element": "K_hips",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_hips_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_crotch_PEG",
+      "type": "PEG",
+      "element": "K_crotch",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_crotch",
+      "type": "READ",
+      "element": "K_crotch",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_crotch_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_upper_arm_L_PEG",
+      "type": "PEG",
+      "element": "K_upper_arm_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_upper_arm_L",
+      "type": "READ",
+      "element": "K_upper_arm_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_upper_arm_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_upper_arm_R_PEG",
+      "type": "PEG",
+      "element": "K_upper_arm_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_upper_arm_R",
+      "type": "READ",
+      "element": "K_upper_arm_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_upper_arm_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_sleeve_inner_L_PEG",
+      "type": "PEG",
+      "element": "K_sleeve_inner_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_sleeve_inner_L",
+      "type": "READ",
+      "element": "K_sleeve_inner_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_sleeve_inner_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_sleeve_inner_R_PEG",
+      "type": "PEG",
+      "element": "K_sleeve_inner_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_sleeve_inner_R",
+      "type": "READ",
+      "element": "K_sleeve_inner_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_sleeve_inner_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_lower_arm_L_PEG",
+      "type": "PEG",
+      "element": "K_lower_arm_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_lower_arm_L",
+      "type": "READ",
+      "element": "K_lower_arm_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_lower_arm_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_lower_arm_R_PEG",
+      "type": "PEG",
+      "element": "K_lower_arm_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_lower_arm_R",
+      "type": "READ",
+      "element": "K_lower_arm_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_lower_arm_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_lower_sleeve_L_PEG",
+      "type": "PEG",
+      "element": "K_lower_sleeve_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_lower_sleeve_L",
+      "type": "READ",
+      "element": "K_lower_sleeve_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_lower_sleeve_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_lower_sleeve_R_PEG",
+      "type": "PEG",
+      "element": "K_lower_sleeve_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_lower_sleeve_R",
+      "type": "READ",
+      "element": "K_lower_sleeve_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_lower_sleeve_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_hand_L_PEG",
+      "type": "PEG",
+      "element": "K_hand_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_hand_L",
+      "type": "READ",
+      "element": "K_hand_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_hand_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_hand_R_PEG",
+      "type": "PEG",
+      "element": "K_hand_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_hand_R",
+      "type": "READ",
+      "element": "K_hand_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_hand_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_upper_pants_L_PEG",
+      "type": "PEG",
+      "element": "K_upper_pants_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_upper_pants_L",
+      "type": "READ",
+      "element": "K_upper_pants_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_upper_pants_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_upper_pants_R_PEG",
+      "type": "PEG",
+      "element": "K_upper_pants_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_upper_pants_R",
+      "type": "READ",
+      "element": "K_upper_pants_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_upper_pants_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_lower_pants_L_PEG",
+      "type": "PEG",
+      "element": "K_lower_pants_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_lower_pants_L",
+      "type": "READ",
+      "element": "K_lower_pants_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_lower_pants_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_lower_pants_R_PEG",
+      "type": "PEG",
+      "element": "K_lower_pants_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_lower_pants_R",
+      "type": "READ",
+      "element": "K_lower_pants_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_lower_pants_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_pants_inner_L_PEG",
+      "type": "PEG",
+      "element": "K_pants_inner_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_pants_inner_L",
+      "type": "READ",
+      "element": "K_pants_inner_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_pants_inner_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_pants_inner_R_PEG",
+      "type": "PEG",
+      "element": "K_pants_inner_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_pants_inner_R",
+      "type": "READ",
+      "element": "K_pants_inner_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_pants_inner_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_lower_leg_L_PEG",
+      "type": "PEG",
+      "element": "K_lower_leg_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_lower_leg_L",
+      "type": "READ",
+      "element": "K_lower_leg_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_lower_leg_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_lower_leg_R_PEG",
+      "type": "PEG",
+      "element": "K_lower_leg_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_lower_leg_R",
+      "type": "READ",
+      "element": "K_lower_leg_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_lower_leg_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_shoe_L_PEG",
+      "type": "PEG",
+      "element": "K_shoe_L",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_shoe_L",
+      "type": "READ",
+      "element": "K_shoe_L",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_shoe_L_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_shoe_R_PEG",
+      "type": "PEG",
+      "element": "K_shoe_R",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_shoe_R",
+      "type": "READ",
+      "element": "K_shoe_R",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_shoe_R_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_belt_PEG",
+      "type": "PEG",
+      "element": "K_belt",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_belt",
+      "type": "READ",
+      "element": "K_belt",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_belt_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_buckle_PEG",
+      "type": "PEG",
+      "element": "K_buckle",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_buckle",
+      "type": "READ",
+      "element": "K_buckle",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_buckle_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "K_Line_Thickness_Knob_PEG",
+      "type": "PEG",
+      "element": "K_Line_Thickness_Knob",
+      "parent": "K_MASTER_PEG"
+    },
+    {
+      "id": "K_Line_Thickness_Knob",
+      "type": "READ",
+      "element": "K_Line_Thickness_Knob",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "peg": "K_Line_Thickness_Knob_PEG",
+      "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+    },
+    {
+      "id": "mouth_inside_head",
+      "type": "CUTTER",
+      "matte_colour": "Cutter"
+    },
+    {
+      "id": "sleeve_over_arm_L",
+      "type": "CUTTER",
+      "matte_colour": "Cutter"
+    },
+    {
+      "id": "sleeve_over_arm_R",
+      "type": "CUTTER",
+      "matte_colour": "Cutter"
+    }
+  ],
+  "cutter_pairs": [
+    {
+      "name": "mouth_inside_head",
+      "type": "CUTTER",
+      "matte_colour": "Cutter",
+      "over": "K_mouth",
+      "under": "K_head",
+      "rule": "open mouths are cut into the head silhouette by a cutter pair (kit \u00a74)"
+    },
+    {
+      "name": "sleeve_over_arm_L",
+      "type": "CUTTER",
+      "matte_colour": "Cutter",
+      "over": "K_sleeve_inner_L",
+      "under": "K_lower_arm_L",
+      "rule": "sleeve-over-arm is a cutter pair, not a drawing order trick (kit \u00a74)"
+    },
+    {
+      "name": "sleeve_over_arm_R",
+      "type": "CUTTER",
+      "matte_colour": "Cutter",
+      "over": "K_sleeve_inner_R",
+      "under": "K_lower_arm_R",
+      "rule": "sleeve-over-arm is a cutter pair, not a drawing order trick (kit \u00a74)"
+    }
+  ],
+  "transformation_switches": [
+    {
+      "name": "K_TURNAROUND",
+      "type": "TransformationSwitch",
+      "swaps": [
+        "F",
+        "3Q",
+        "P",
+        "PQB"
+      ],
+      "rule": "whole part assemblies swap per turnaround angle (kit \u00a74)"
+    },
+    {
+      "name": "K_HEAD_ANGLES",
+      "type": "TransformationSwitch",
+      "swaps": [
+        "F",
+        "3Q",
+        "FQ",
+        "Q",
+        "P",
+        "PQB",
+        "PPQB",
+        "B"
+      ],
+      "rule": "the head angle chart rides its own switch (kit \u00a74)"
+    }
+  ],
+  "colour_overrides": [],
+  "census": {
+    "PEG": 43,
+    "Multi-Port-In": 3,
+    "Multi-Port-Out": 3,
+    "COMPOSITE": 3,
+    "READ": 42,
+    "CUTTER": 3,
+    "elements": 42
+  },
+  "budget": {
+    "elements": [
+      39,
+      45
+    ],
+    "drawings": [
+      326,
+      337
+    ],
+    "pegs": [
+      65,
+      71
+    ],
+    "reads": [
+      40,
+      47
+    ],
+    "composites": [
+      2,
+      3
+    ],
+    "curve_deformers": 0
+  },
+  "budget_note": "the measured production census for this tier (kit \u00a71/\u00a74) \u2014 the budget this scaffold is grown toward in build-out; the census above is the scaffold's own seed network",
+  "rules": [
+    "One master peg per character; pegs are cheap, hierarchy is deep (kit \u00a74).",
+    "Curve deformers are the hero joint; standard builds stay peg-and-substitution (kit \u00a74).",
+    "Parts overlap under curve control instead of rotating as rigid cards \u2014 the Harmony answer to the neck-seam / thin-streak defects logged on the Dorowani rig v1.",
+    "Budget rig effort by screen time: hero builds run ~10x the standard network (kit \u00a71)."
+  ]
+}

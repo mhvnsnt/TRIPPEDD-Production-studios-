@@ -1,0 +1,36 @@
+{
+  "format": "blairwitch.partlib/1",
+  "part": "hands",
+  "shared_library": "SHARED/hands",
+  "locked": true,
+  "mode": "link, never copy",
+  "frames": [
+    "open",
+    "fist",
+    "point",
+    "grip",
+    "wave",
+    "thumbs_up"
+  ],
+  "layers": [
+    {
+      "layer": "hand_L",
+      "names": {
+        "FR": "FR-handL-001",
+        "TQ": "TQ-handL-001",
+        "SD": "SD-handL-001",
+        "BK": "BK-handL-001"
+      }
+    },
+    {
+      "layer": "hand_R",
+      "names": {
+        "FR": "FR-handR-001",
+        "TQ": "TQ-handR-001",
+        "SD": "SD-handR-001",
+        "BK": "BK-handR-001"
+      }
+    }
+  ],
+  "rule": "hand drawings live in the shared library; this file only links them (\u00a73f)"
+}

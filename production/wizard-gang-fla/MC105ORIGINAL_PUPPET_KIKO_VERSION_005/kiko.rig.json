@@ -1,0 +1,2298 @@
+{
+  "format": "blairwitch.rig/1",
+  "character": "Kiko",
+  "body_plan": "humanoid",
+  "construction": "harmony",
+  "fps": 24,
+  "root": "hips",
+  "root_stack": [
+    "head",
+    "arm_front",
+    "torso",
+    "legs",
+    "arm_back"
+  ],
+  "optional_root_layers": [
+    {
+      "name": "torso_move",
+      "job": "recurring torso motion helper symbol (\u00a73d)"
+    },
+    {
+      "name": "<part>_mask",
+      "job": "mask layer plus its clipped detail layer (\u00a73a)"
+    },
+    {
+      "name": "costume_back",
+      "job": "back-view costume pieces (\u00a73e)"
+    }
+  ],
+  "layers": [
+    {
+      "name": "hips",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "hips",
+      "side": null,
+      "part_file": "body",
+      "names": {
+        "FR": "FR-hips-001",
+        "TQ": "TQ-hips-001",
+        "SD": "SD-hips-001",
+        "BK": "BK-hips-001"
+      },
+      "overlap_skirt": true
+    },
+    {
+      "name": "torso",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "torso",
+      "side": null,
+      "part_file": "body",
+      "names": {
+        "FR": "FR-torso-001",
+        "TQ": "TQ-torso-001",
+        "SD": "SD-torso-001",
+        "BK": "BK-torso-001"
+      },
+      "overlap_skirt": true
+    },
+    {
+      "name": "neck",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "neck",
+      "side": null,
+      "part_file": "body",
+      "names": {
+        "FR": "FR-neck-001",
+        "TQ": "TQ-neck-001",
+        "SD": "SD-neck-001",
+        "BK": "BK-neck-001"
+      },
+      "overlap_skirt": false
+    },
+    {
+      "name": "head",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "head",
+      "side": null,
+      "part_file": "body",
+      "names": {
+        "FR": "FR-head-001",
+        "TQ": "TQ-head-001",
+        "SD": "SD-head-001",
+        "BK": "BK-head-001"
+      },
+      "overlap_skirt": true
+    },
+    {
+      "name": "hair_back",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "hairBack",
+      "side": null,
+      "part_file": "body",
+      "names": {
+        "FR": "FR-hairBack-001",
+        "TQ": "TQ-hairBack-001",
+        "SD": "SD-hairBack-001",
+        "BK": "BK-hairBack-001"
+      },
+      "overlap_skirt": false
+    },
+    {
+      "name": "hair_front",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "hairFront",
+      "side": null,
+      "part_file": "body",
+      "names": {
+        "FR": "FR-hairFront-001",
+        "TQ": "TQ-hairFront-001",
+        "SD": "SD-hairFront-001",
+        "BK": "BK-hairFront-001"
+      },
+      "overlap_skirt": false
+    },
+    {
+      "name": "arm_L_upper",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "armUpper",
+      "side": "L",
+      "part_file": "arms",
+      "names": {
+        "FR": "FR-armUpperL-001",
+        "TQ": "TQ-armUpperL-001",
+        "SD": "SD-armUpperL-001",
+        "BK": "BK-armUpperL-001"
+      },
+      "overlap_skirt": true
+    },
+    {
+      "name": "arm_L_forearm",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "armForearm",
+      "side": "L",
+      "part_file": "arms",
+      "names": {
+        "FR": "FR-armForearmL-001",
+        "TQ": "TQ-armForearmL-001",
+        "SD": "SD-armForearmL-001",
+        "BK": "BK-armForearmL-001"
+      },
+      "overlap_skirt": false
+    },
+    {
+      "name": "hand_L",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "hand",
+      "side": "L",
+      "part_file": "hands",
+      "names": {
+        "FR": "FR-handL-001",
+        "TQ": "TQ-handL-001",
+        "SD": "SD-handL-001",
+        "BK": "BK-handL-001"
+      },
+      "overlap_skirt": false
+    },
+    {
+      "name": "arm_R_upper",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "armUpper",
+      "side": "R",
+      "part_file": "arms",
+      "names": {
+        "FR": "FR-armUpperR-001",
+        "TQ": "TQ-armUpperR-001",
+        "SD": "SD-armUpperR-001",
+        "BK": "BK-armUpperR-001"
+      },
+      "overlap_skirt": true
+    },
+    {
+      "name": "arm_R_forearm",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "armForearm",
+      "side": "R",
+      "part_file": "arms",
+      "names": {
+        "FR": "FR-armForearmR-001",
+        "TQ": "TQ-armForearmR-001",
+        "SD": "SD-armForearmR-001",
+        "BK": "BK-armForearmR-001"
+      },
+      "overlap_skirt": false
+    },
+    {
+      "name": "hand_R",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "hand",
+      "side": "R",
+      "part_file": "hands",
+      "names": {
+        "FR": "FR-handR-001",
+        "TQ": "TQ-handR-001",
+        "SD": "SD-handR-001",
+        "BK": "BK-handR-001"
+      },
+      "overlap_skirt": false
+    },
+    {
+      "name": "leg_L_upper",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "legUpper",
+      "side": "L",
+      "part_file": "legs",
+      "names": {
+        "FR": "FR-legUpperL-001",
+        "TQ": "TQ-legUpperL-001",
+        "SD": "SD-legUpperL-001",
+        "BK": "BK-legUpperL-001"
+      },
+      "overlap_skirt": true
+    },
+    {
+      "name": "leg_L_lower",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "legLower",
+      "side": "L",
+      "part_file": "legs",
+      "names": {
+        "FR": "FR-legLowerL-001",
+        "TQ": "TQ-legLowerL-001",
+        "SD": "SD-legLowerL-001",
+        "BK": "BK-legLowerL-001"
+      },
+      "overlap_skirt": false
+    },
+    {
+      "name": "foot_L",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "foot",
+      "side": "L",
+      "part_file": "legs",
+      "names": {
+        "FR": "FR-footL-001",
+        "TQ": "TQ-footL-001",
+        "SD": "SD-footL-001",
+        "BK": "BK-footL-001"
+      },
+      "overlap_skirt": false
+    },
+    {
+      "name": "leg_R_upper",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "legUpper",
+      "side": "R",
+      "part_file": "legs",
+      "names": {
+        "FR": "FR-legUpperR-001",
+        "TQ": "TQ-legUpperR-001",
+        "SD": "SD-legUpperR-001",
+        "BK": "BK-legUpperR-001"
+      },
+      "overlap_skirt": true
+    },
+    {
+      "name": "leg_R_lower",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "legLower",
+      "side": "R",
+      "part_file": "legs",
+      "names": {
+        "FR": "FR-legLowerR-001",
+        "TQ": "TQ-legLowerR-001",
+        "SD": "SD-legLowerR-001",
+        "BK": "BK-legLowerR-001"
+      },
+      "overlap_skirt": false
+    },
+    {
+      "name": "foot_R",
+      "pivot": null,
+      "parent": null,
+      "baked_shadow": false,
+      "part": "foot",
+      "side": "R",
+      "part_file": "legs",
+      "names": {
+        "FR": "FR-footR-001",
+        "TQ": "TQ-footR-001",
+        "SD": "SD-footR-001",
+        "BK": "BK-footR-001"
+      },
+      "overlap_skirt": false
+    }
+  ],
+  "naming": {
+    "part_grammar": "<view>-<part><L/R>-<###>",
+    "view_codes": {
+      "FR": "front",
+      "TQ": "three_quarter",
+      "SD": "side",
+      "BK": "back"
+    },
+    "shot_variant_grammar": "<C###S###>--<part>-<###>",
+    "rule": "every part carries its view-coded name per view (\u00a73f)"
+  },
+  "libraries": {
+    "part_files": {
+      "arms": {
+        "mode": "linked library file",
+        "layers": [
+          "arm_L_upper",
+          "arm_L_forearm",
+          "arm_R_upper",
+          "arm_R_forearm"
+        ]
+      },
+      "body": {
+        "mode": "linked library file",
+        "layers": [
+          "hips",
+          "torso",
+          "neck",
+          "head",
+          "hair_back",
+          "hair_front"
+        ]
+      },
+      "hands": {
+        "mode": "linked library file",
+        "layers": [
+          "hand_L",
+          "hand_R"
+        ]
+      },
+      "legs": {
+        "mode": "linked library file",
+        "layers": [
+          "leg_L_upper",
+          "leg_L_lower",
+          "foot_L",
+          "leg_R_upper",
+          "leg_R_lower",
+          "foot_R"
+        ]
+      }
+    },
+    "shared": [
+      {
+        "name": "hands",
+        "path": "SHARED/hands",
+        "locked": true,
+        "rule": "shared libraries are locked; character files link them, never copy them (\u00a73f)"
+      }
+    ],
+    "source_sheet": {
+      "turnaround_file": null,
+      "dated": null,
+      "rule": "name the dated turnaround this rig was built from; the rig never silently drifts from its source sheet (\u00a73f)"
+    }
+  },
+  "face": {
+    "mouth_symbol_frames": [
+      "rest",
+      "A_I",
+      "E",
+      "O",
+      "U",
+      "M_B_P",
+      "F_V",
+      "L_T_D_N_Th",
+      "C_D_G_K_S_Z",
+      "W_Q"
+    ],
+    "mouth_chart": {
+      "symbol": "mouth",
+      "kind": "Graphic",
+      "frames": [
+        {
+          "frame": 1,
+          "id": "rest",
+          "kind": "blair"
+        },
+        {
+          "frame": 2,
+          "id": "A_I",
+          "kind": "blair"
+        },
+        {
+          "frame": 3,
+          "id": "E",
+          "kind": "blair"
+        },
+        {
+          "frame": 4,
+          "id": "O",
+          "kind": "blair"
+        },
+        {
+          "frame": 5,
+          "id": "U",
+          "kind": "blair"
+        },
+        {
+          "frame": 6,
+          "id": "M_B_P",
+          "kind": "blair"
+        },
+        {
+          "frame": 7,
+          "id": "F_V",
+          "kind": "blair"
+        },
+        {
+          "frame": 8,
+          "id": "L_T_D_N_Th",
+          "kind": "blair"
+        },
+        {
+          "frame": 9,
+          "id": "C_D_G_K_S_Z",
+          "kind": "blair"
+        },
+        {
+          "frame": 10,
+          "id": "W_Q",
+          "kind": "blair"
+        }
+      ],
+      "blair_frames": "1-10 in mochiichao-mouth-data/v1 order",
+      "expression_frames_from": 11,
+      "total_frames_min": 25,
+      "measured_donor_range": [
+        25,
+        28
+      ],
+      "rule": "the symbol timeline IS the chart: one frame per mouth drawing, frame-accurate sync (\u00a73c)"
+    },
+    "eye_system": {
+      "assembly": [
+        "eye",
+        "pupil_parent",
+        "pupil",
+        "eye_mask",
+        "lid"
+      ],
+      "clipping": "eye_mask clips the pupil inside the eye shape",
+      "pupil_frames": [
+        "look_center",
+        "look_left",
+        "look_right"
+      ],
+      "lid_frames": [
+        "open",
+        "half",
+        "closed"
+      ],
+      "brow_frames": [
+        "neutral",
+        "raised",
+        "lowered"
+      ],
+      "rule": "four-piece masked eye system per eye; pupil sits inside pupil_parent so gaze motion never disturbs the eye's registration; brows are separate symbols (\u00a73b)"
+    },
+    "eye_frames": [
+      "neutral",
+      "blink",
+      "happy_closed",
+      "wide",
+      "half_lid",
+      "angry",
+      "sad",
+      "dizzy_spiral",
+      "sleep",
+      "star"
+    ],
+    "expressions": [
+      "neutral",
+      "happy",
+      "sad",
+      "angry",
+      "surprised",
+      "scared",
+      "determined",
+      "tired",
+      "in_pain",
+      "laughing"
+    ]
+  },
+  "hand_symbol_frames": [
+    "open",
+    "fist",
+    "point",
+    "grip",
+    "wave",
+    "thumbs_up"
+  ],
+  "hands": {
+    "library": "SHARED/hands",
+    "mode": "linked, never copied",
+    "locked": true,
+    "frames": [
+      "open",
+      "fist",
+      "point",
+      "grip",
+      "wave",
+      "thumbs_up"
+    ],
+    "rule": "one generic-hands library per body plan, shared by every character on that plan (\u00a71b/\u00a73f)"
+  },
+  "limb_symbols": {
+    "arm_front": {
+      "symbol": "arm_front",
+      "pose_frames": [
+        "rest",
+        "reach",
+        "signature"
+      ],
+      "rule": "front/back arm symbols, >=3 pose frames each (\u00a73d)"
+    },
+    "arm_back": {
+      "symbol": "arm_back",
+      "pose_frames": [
+        "rest",
+        "reach",
+        "signature"
+      ],
+      "rule": "front/back arm symbols, >=3 pose frames each (\u00a73d)"
+    },
+    "torso_move": {
+      "symbol": "torso_move",
+      "holds": [
+        "breathing",
+        "sway"
+      ],
+      "rule": "recurring torso motion lives in this helper symbol, never keyframed ad hoc on the root (\u00a73d)"
+    },
+    "legs": {
+      "symbol": "legs",
+      "pose_frames": [
+        "stand",
+        "step_L",
+        "step_R",
+        "crouch_prep",
+        "sit_prep",
+        "run_1",
+        "run_2",
+        "jump_prep"
+      ],
+      "rule": "one symbol, >=8 pose frames \u2014 a step/stance set, not a jointed chain (\u00a73d)"
+    }
+  },
+  "constraints": [
+    {
+      "name": "bone_preserve_volume",
+      "role": "volume",
+      "targets": [
+        "hips",
+        "torso"
+      ],
+      "settings": {
+        "minscale": 0.01,
+        "maxscale": 100.0
+      },
+      "source": "show/production/rigs/open-movie-kit/pyconstraints/bone_preserve_volume.py",
+      "licence": "CC-BY 3.0"
+    },
+    {
+      "name": "pivot_change",
+      "role": "limb_roots",
+      "targets": [
+        "arm_L_upper",
+        "arm_R_upper",
+        "leg_L_upper",
+        "leg_R_upper"
+      ],
+      "settings": {
+        "length": 1.0
+      },
+      "source": "show/production/rigs/open-movie-kit/pyconstraints/pivot_change.py",
+      "licence": "CC-BY 3.0"
+    },
+    {
+      "name": "rotation_difference",
+      "role": "counter_rotation_pair",
+      "targets": [
+        "torso",
+        "head"
+      ],
+      "settings": {},
+      "source": "show/production/rigs/open-movie-kit/pyconstraints/rotation_difference.py",
+      "licence": "CC-BY 3.0"
+    },
+    {
+      "name": "footroll",
+      "role": "feet",
+      "targets": [
+        "foot_L",
+        "foot_R"
+      ],
+      "settings": {
+        "length": 1.0
+      },
+      "source": "show/production/rigs/open-movie-kit/pyconstraints/footroll.py",
+      "licence": "CC-BY 3.0"
+    }
+  ],
+  "controls": [
+    "root_move",
+    "hips_bend",
+    "torso_twist",
+    "head_turn",
+    "head_tilt",
+    "arm_L_ik",
+    "arm_R_ik",
+    "leg_L_ik",
+    "leg_R_ik",
+    "finger_pose_L",
+    "finger_pose_R"
+  ],
+  "pose_library": [
+    "idle",
+    "walk",
+    "run",
+    "attack_windup",
+    "attack_strike",
+    "hurt",
+    "faint",
+    "happy",
+    "talk"
+  ],
+  "rom_tests_required": [
+    "head_turn_left_right",
+    "head_tilt",
+    "jaw_open_close",
+    "blink_cycle",
+    "limb_full_swing",
+    "torso_bend_twist",
+    "walk_cycle_8f",
+    "extreme_pose_hold"
+  ],
+  "rules": {
+    "baked_shadows": "forbidden - shadows are added in compositing only",
+    "versioning": "never overwrite a version; bump the version number",
+    "root_stack": "no loose art on the root timeline; a part that moves on its own is a symbol, or it doesn't ship (\u00a73a)",
+    "overlap_skirt": "head/torso and limb roots carry an overlap skirt so rotation to the ROM extremes opens no seam; stray art riding a part is painted out or split into its own symbol (\u00a73g)",
+    "angle_mouths": "mouths are authored per view as separate sets inside the mouth symbol's frame ranges (\u00a73f)"
+  },
+  "harmony": {
+    "format": "blairwitch.harmony/1",
+    "character": "Kiko",
+    "prefix": "K",
+    "body_plan": "humanoid",
+    "tier": "standard",
+    "fps": 24,
+    "field_chart": 12,
+    "elements": [
+      {
+        "name": "K_head",
+        "part": "head",
+        "side": null,
+        "region": "head"
+      },
+      {
+        "name": "K_hair",
+        "part": "hair",
+        "side": null,
+        "region": "head"
+      },
+      {
+        "name": "K_hair_back",
+        "part": "hair_back",
+        "side": null,
+        "region": "head"
+      },
+      {
+        "name": "K_ear_L",
+        "part": "ear",
+        "side": "L",
+        "region": "head"
+      },
+      {
+        "name": "K_ear_R",
+        "part": "ear",
+        "side": "R",
+        "region": "head"
+      },
+      {
+        "name": "K_brow_L",
+        "part": "brow",
+        "side": "L",
+        "region": "head"
+      },
+      {
+        "name": "K_brow_R",
+        "part": "brow",
+        "side": "R",
+        "region": "head"
+      },
+      {
+        "name": "K_eye_L",
+        "part": "eye",
+        "side": "L",
+        "region": "head"
+      },
+      {
+        "name": "K_eye_R",
+        "part": "eye",
+        "side": "R",
+        "region": "head"
+      },
+      {
+        "name": "K_nose",
+        "part": "nose",
+        "side": null,
+        "region": "head"
+      },
+      {
+        "name": "K_mouth",
+        "part": "mouth",
+        "side": null,
+        "region": "head"
+      },
+      {
+        "name": "K_neck",
+        "part": "neck",
+        "side": null,
+        "region": "torso"
+      },
+      {
+        "name": "K_shoulder_1",
+        "part": "shoulder_1",
+        "side": null,
+        "region": "torso"
+      },
+      {
+        "name": "K_collar_L",
+        "part": "collar",
+        "side": "L",
+        "region": "torso"
+      },
+      {
+        "name": "K_collar_R",
+        "part": "collar",
+        "side": "R",
+        "region": "torso"
+      },
+      {
+        "name": "K_collar_back",
+        "part": "collar_back",
+        "side": null,
+        "region": "torso"
+      },
+      {
+        "name": "K_chest",
+        "part": "chest",
+        "side": null,
+        "region": "torso"
+      },
+      {
+        "name": "K_hips",
+        "part": "hips",
+        "side": null,
+        "region": "torso"
+      },
+      {
+        "name": "K_crotch",
+        "part": "crotch",
+        "side": null,
+        "region": "torso"
+      },
+      {
+        "name": "K_upper_arm_L",
+        "part": "upper_arm",
+        "side": "L",
+        "region": "arm_L"
+      },
+      {
+        "name": "K_upper_arm_R",
+        "part": "upper_arm",
+        "side": "R",
+        "region": "arm_R"
+      },
+      {
+        "name": "K_sleeve_inner_L",
+        "part": "sleeve_inner",
+        "side": "L",
+        "region": "arm_L"
+      },
+      {
+        "name": "K_sleeve_inner_R",
+        "part": "sleeve_inner",
+        "side": "R",
+        "region": "arm_R"
+      },
+      {
+        "name": "K_lower_arm_L",
+        "part": "lower_arm",
+        "side": "L",
+        "region": "arm_L"
+      },
+      {
+        "name": "K_lower_arm_R",
+        "part": "lower_arm",
+        "side": "R",
+        "region": "arm_R"
+      },
+      {
+        "name": "K_lower_sleeve_L",
+        "part": "lower_sleeve",
+        "side": "L",
+        "region": "arm_L"
+      },
+      {
+        "name": "K_lower_sleeve_R",
+        "part": "lower_sleeve",
+        "side": "R",
+        "region": "arm_R"
+      },
+      {
+        "name": "K_hand_L",
+        "part": "hand",
+        "side": "L",
+        "region": "arm_L"
+      },
+      {
+        "name": "K_hand_R",
+        "part": "hand",
+        "side": "R",
+        "region": "arm_R"
+      },
+      {
+        "name": "K_upper_pants_L",
+        "part": "upper_pants",
+        "side": "L",
+        "region": "leg_L"
+      },
+      {
+        "name": "K_upper_pants_R",
+        "part": "upper_pants",
+        "side": "R",
+        "region": "leg_R"
+      },
+      {
+        "name": "K_lower_pants_L",
+        "part": "lower_pants",
+        "side": "L",
+        "region": "leg_L"
+      },
+      {
+        "name": "K_lower_pants_R",
+        "part": "lower_pants",
+        "side": "R",
+        "region": "leg_R"
+      },
+      {
+        "name": "K_pants_inner_L",
+        "part": "pants_inner",
+        "side": "L",
+        "region": "leg_L"
+      },
+      {
+        "name": "K_pants_inner_R",
+        "part": "pants_inner",
+        "side": "R",
+        "region": "leg_R"
+      },
+      {
+        "name": "K_lower_leg_L",
+        "part": "lower_leg",
+        "side": "L",
+        "region": "leg_L"
+      },
+      {
+        "name": "K_lower_leg_R",
+        "part": "lower_leg",
+        "side": "R",
+        "region": "leg_R"
+      },
+      {
+        "name": "K_shoe_L",
+        "part": "shoe",
+        "side": "L",
+        "region": "leg_L"
+      },
+      {
+        "name": "K_shoe_R",
+        "part": "shoe",
+        "side": "R",
+        "region": "leg_R"
+      },
+      {
+        "name": "K_belt",
+        "part": "belt",
+        "side": null,
+        "region": "extras"
+      },
+      {
+        "name": "K_buckle",
+        "part": "buckle",
+        "side": null,
+        "region": "extras"
+      },
+      {
+        "name": "K_Line_Thickness_Knob",
+        "part": "Line_Thickness_Knob",
+        "side": null,
+        "region": "extras"
+      }
+    ],
+    "network": {
+      "format": "blairwitch.harmony-network/1",
+      "character": "Kiko",
+      "prefix": "K",
+      "body_plan": "humanoid",
+      "tier": "standard",
+      "fps": 24,
+      "field_chart": 12,
+      "master_peg": "K_MASTER_PEG",
+      "art_layers": [
+        "LINE_ART",
+        "COLOR_ART",
+        "OVERLAY",
+        "UNDERLAY"
+      ],
+      "regions": {
+        "arm_L": [
+          "K_upper_arm_L",
+          "K_sleeve_inner_L",
+          "K_lower_arm_L",
+          "K_lower_sleeve_L",
+          "K_hand_L"
+        ],
+        "arm_R": [
+          "K_upper_arm_R",
+          "K_sleeve_inner_R",
+          "K_lower_arm_R",
+          "K_lower_sleeve_R",
+          "K_hand_R"
+        ],
+        "extras": [
+          "K_belt",
+          "K_buckle",
+          "K_Line_Thickness_Knob"
+        ],
+        "head": [
+          "K_head",
+          "K_hair",
+          "K_hair_back",
+          "K_ear_L",
+          "K_ear_R",
+          "K_brow_L",
+          "K_brow_R",
+          "K_eye_L",
+          "K_eye_R",
+          "K_nose",
+          "K_mouth"
+        ],
+        "leg_L": [
+          "K_upper_pants_L",
+          "K_lower_pants_L",
+          "K_pants_inner_L",
+          "K_lower_leg_L",
+          "K_shoe_L"
+        ],
+        "leg_R": [
+          "K_upper_pants_R",
+          "K_lower_pants_R",
+          "K_pants_inner_R",
+          "K_lower_leg_R",
+          "K_shoe_R"
+        ],
+        "torso": [
+          "K_neck",
+          "K_shoulder_1",
+          "K_collar_L",
+          "K_collar_R",
+          "K_collar_back",
+          "K_chest",
+          "K_hips",
+          "K_crotch"
+        ]
+      },
+      "composites": [
+        "Head",
+        "Body",
+        "Extras"
+      ],
+      "modules": [
+        {
+          "id": "K_MASTER_PEG",
+          "type": "PEG",
+          "role": "master peg \u2014 every part hangs under it"
+        },
+        {
+          "id": "Head_MPIn",
+          "type": "Multi-Port-In",
+          "group": "Head"
+        },
+        {
+          "id": "Head_MPOut",
+          "type": "Multi-Port-Out",
+          "group": "Head"
+        },
+        {
+          "id": "Head_Composite",
+          "type": "COMPOSITE",
+          "group": "Head",
+          "regions": [
+            "head"
+          ],
+          "role": "z-order is managed per region, then regions composite together (kit \u00a74)"
+        },
+        {
+          "id": "Body_MPIn",
+          "type": "Multi-Port-In",
+          "group": "Body"
+        },
+        {
+          "id": "Body_MPOut",
+          "type": "Multi-Port-Out",
+          "group": "Body"
+        },
+        {
+          "id": "Body_Composite",
+          "type": "COMPOSITE",
+          "group": "Body",
+          "regions": [
+            "torso",
+            "arm_L",
+            "arm_R",
+            "leg_L",
+            "leg_R"
+          ],
+          "role": "z-order is managed per region, then regions composite together (kit \u00a74)"
+        },
+        {
+          "id": "Extras_MPIn",
+          "type": "Multi-Port-In",
+          "group": "Extras"
+        },
+        {
+          "id": "Extras_MPOut",
+          "type": "Multi-Port-Out",
+          "group": "Extras"
+        },
+        {
+          "id": "Extras_Composite",
+          "type": "COMPOSITE",
+          "group": "Extras",
+          "regions": [
+            "extras"
+          ],
+          "role": "z-order is managed per region, then regions composite together (kit \u00a74)"
+        },
+        {
+          "id": "K_head_PEG",
+          "type": "PEG",
+          "element": "K_head",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_head",
+          "type": "READ",
+          "element": "K_head",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_head_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_hair_PEG",
+          "type": "PEG",
+          "element": "K_hair",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_hair",
+          "type": "READ",
+          "element": "K_hair",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_hair_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_hair_back_PEG",
+          "type": "PEG",
+          "element": "K_hair_back",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_hair_back",
+          "type": "READ",
+          "element": "K_hair_back",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_hair_back_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_ear_L_PEG",
+          "type": "PEG",
+          "element": "K_ear_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_ear_L",
+          "type": "READ",
+          "element": "K_ear_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_ear_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_ear_R_PEG",
+          "type": "PEG",
+          "element": "K_ear_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_ear_R",
+          "type": "READ",
+          "element": "K_ear_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_ear_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_brow_L_PEG",
+          "type": "PEG",
+          "element": "K_brow_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_brow_L",
+          "type": "READ",
+          "element": "K_brow_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_brow_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_brow_R_PEG",
+          "type": "PEG",
+          "element": "K_brow_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_brow_R",
+          "type": "READ",
+          "element": "K_brow_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_brow_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_eye_L_PEG",
+          "type": "PEG",
+          "element": "K_eye_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_eye_L",
+          "type": "READ",
+          "element": "K_eye_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_eye_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_eye_R_PEG",
+          "type": "PEG",
+          "element": "K_eye_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_eye_R",
+          "type": "READ",
+          "element": "K_eye_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_eye_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_nose_PEG",
+          "type": "PEG",
+          "element": "K_nose",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_nose",
+          "type": "READ",
+          "element": "K_nose",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_nose_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_mouth_PEG",
+          "type": "PEG",
+          "element": "K_mouth",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_mouth",
+          "type": "READ",
+          "element": "K_mouth",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_mouth_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_neck_PEG",
+          "type": "PEG",
+          "element": "K_neck",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_neck",
+          "type": "READ",
+          "element": "K_neck",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_neck_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_shoulder_1_PEG",
+          "type": "PEG",
+          "element": "K_shoulder_1",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_shoulder_1",
+          "type": "READ",
+          "element": "K_shoulder_1",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_shoulder_1_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_collar_L_PEG",
+          "type": "PEG",
+          "element": "K_collar_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_collar_L",
+          "type": "READ",
+          "element": "K_collar_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_collar_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_collar_R_PEG",
+          "type": "PEG",
+          "element": "K_collar_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_collar_R",
+          "type": "READ",
+          "element": "K_collar_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_collar_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_collar_back_PEG",
+          "type": "PEG",
+          "element": "K_collar_back",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_collar_back",
+          "type": "READ",
+          "element": "K_collar_back",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_collar_back_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_chest_PEG",
+          "type": "PEG",
+          "element": "K_chest",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_chest",
+          "type": "READ",
+          "element": "K_chest",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_chest_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_hips_PEG",
+          "type": "PEG",
+          "element": "K_hips",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_hips",
+          "type": "READ",
+          "element": "K_hips",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_hips_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_crotch_PEG",
+          "type": "PEG",
+          "element": "K_crotch",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_crotch",
+          "type": "READ",
+          "element": "K_crotch",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_crotch_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_upper_arm_L_PEG",
+          "type": "PEG",
+          "element": "K_upper_arm_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_upper_arm_L",
+          "type": "READ",
+          "element": "K_upper_arm_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_upper_arm_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_upper_arm_R_PEG",
+          "type": "PEG",
+          "element": "K_upper_arm_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_upper_arm_R",
+          "type": "READ",
+          "element": "K_upper_arm_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_upper_arm_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_sleeve_inner_L_PEG",
+          "type": "PEG",
+          "element": "K_sleeve_inner_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_sleeve_inner_L",
+          "type": "READ",
+          "element": "K_sleeve_inner_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_sleeve_inner_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_sleeve_inner_R_PEG",
+          "type": "PEG",
+          "element": "K_sleeve_inner_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_sleeve_inner_R",
+          "type": "READ",
+          "element": "K_sleeve_inner_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_sleeve_inner_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_lower_arm_L_PEG",
+          "type": "PEG",
+          "element": "K_lower_arm_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_lower_arm_L",
+          "type": "READ",
+          "element": "K_lower_arm_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_lower_arm_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_lower_arm_R_PEG",
+          "type": "PEG",
+          "element": "K_lower_arm_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_lower_arm_R",
+          "type": "READ",
+          "element": "K_lower_arm_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_lower_arm_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_lower_sleeve_L_PEG",
+          "type": "PEG",
+          "element": "K_lower_sleeve_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_lower_sleeve_L",
+          "type": "READ",
+          "element": "K_lower_sleeve_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_lower_sleeve_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_lower_sleeve_R_PEG",
+          "type": "PEG",
+          "element": "K_lower_sleeve_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_lower_sleeve_R",
+          "type": "READ",
+          "element": "K_lower_sleeve_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_lower_sleeve_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_hand_L_PEG",
+          "type": "PEG",
+          "element": "K_hand_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_hand_L",
+          "type": "READ",
+          "element": "K_hand_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_hand_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_hand_R_PEG",
+          "type": "PEG",
+          "element": "K_hand_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_hand_R",
+          "type": "READ",
+          "element": "K_hand_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_hand_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_upper_pants_L_PEG",
+          "type": "PEG",
+          "element": "K_upper_pants_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_upper_pants_L",
+          "type": "READ",
+          "element": "K_upper_pants_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_upper_pants_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_upper_pants_R_PEG",
+          "type": "PEG",
+          "element": "K_upper_pants_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_upper_pants_R",
+          "type": "READ",
+          "element": "K_upper_pants_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_upper_pants_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_lower_pants_L_PEG",
+          "type": "PEG",
+          "element": "K_lower_pants_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_lower_pants_L",
+          "type": "READ",
+          "element": "K_lower_pants_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_lower_pants_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_lower_pants_R_PEG",
+          "type": "PEG",
+          "element": "K_lower_pants_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_lower_pants_R",
+          "type": "READ",
+          "element": "K_lower_pants_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_lower_pants_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_pants_inner_L_PEG",
+          "type": "PEG",
+          "element": "K_pants_inner_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_pants_inner_L",
+          "type": "READ",
+          "element": "K_pants_inner_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_pants_inner_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_pants_inner_R_PEG",
+          "type": "PEG",
+          "element": "K_pants_inner_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_pants_inner_R",
+          "type": "READ",
+          "element": "K_pants_inner_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_pants_inner_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_lower_leg_L_PEG",
+          "type": "PEG",
+          "element": "K_lower_leg_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_lower_leg_L",
+          "type": "READ",
+          "element": "K_lower_leg_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_lower_leg_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_lower_leg_R_PEG",
+          "type": "PEG",
+          "element": "K_lower_leg_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_lower_leg_R",
+          "type": "READ",
+          "element": "K_lower_leg_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_lower_leg_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_shoe_L_PEG",
+          "type": "PEG",
+          "element": "K_shoe_L",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_shoe_L",
+          "type": "READ",
+          "element": "K_shoe_L",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_shoe_L_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_shoe_R_PEG",
+          "type": "PEG",
+          "element": "K_shoe_R",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_shoe_R",
+          "type": "READ",
+          "element": "K_shoe_R",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_shoe_R_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_belt_PEG",
+          "type": "PEG",
+          "element": "K_belt",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_belt",
+          "type": "READ",
+          "element": "K_belt",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_belt_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_buckle_PEG",
+          "type": "PEG",
+          "element": "K_buckle",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_buckle",
+          "type": "READ",
+          "element": "K_buckle",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_buckle_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "K_Line_Thickness_Knob_PEG",
+          "type": "PEG",
+          "element": "K_Line_Thickness_Knob",
+          "parent": "K_MASTER_PEG"
+        },
+        {
+          "id": "K_Line_Thickness_Knob",
+          "type": "READ",
+          "element": "K_Line_Thickness_Knob",
+          "art_layers": [
+            "LINE_ART",
+            "COLOR_ART",
+            "OVERLAY",
+            "UNDERLAY"
+          ],
+          "peg": "K_Line_Thickness_Knob_PEG",
+          "role": "overlay carries tones/highlights, underlay carries shadow shapes (kit \u00a74)"
+        },
+        {
+          "id": "mouth_inside_head",
+          "type": "CUTTER",
+          "matte_colour": "Cutter"
+        },
+        {
+          "id": "sleeve_over_arm_L",
+          "type": "CUTTER",
+          "matte_colour": "Cutter"
+        },
+        {
+          "id": "sleeve_over_arm_R",
+          "type": "CUTTER",
+          "matte_colour": "Cutter"
+        }
+      ],
+      "cutter_pairs": [
+        {
+          "name": "mouth_inside_head",
+          "type": "CUTTER",
+          "matte_colour": "Cutter",
+          "over": "K_mouth",
+          "under": "K_head",
+          "rule": "open mouths are cut into the head silhouette by a cutter pair (kit \u00a74)"
+        },
+        {
+          "name": "sleeve_over_arm_L",
+          "type": "CUTTER",
+          "matte_colour": "Cutter",
+          "over": "K_sleeve_inner_L",
+          "under": "K_lower_arm_L",
+          "rule": "sleeve-over-arm is a cutter pair, not a drawing order trick (kit \u00a74)"
+        },
+        {
+          "name": "sleeve_over_arm_R",
+          "type": "CUTTER",
+          "matte_colour": "Cutter",
+          "over": "K_sleeve_inner_R",
+          "under": "K_lower_arm_R",
+          "rule": "sleeve-over-arm is a cutter pair, not a drawing order trick (kit \u00a74)"
+        }
+      ],
+      "transformation_switches": [
+        {
+          "name": "K_TURNAROUND",
+          "type": "TransformationSwitch",
+          "swaps": [
+            "F",
+            "3Q",
+            "P",
+            "PQB"
+          ],
+          "rule": "whole part assemblies swap per turnaround angle (kit \u00a74)"
+        },
+        {
+          "name": "K_HEAD_ANGLES",
+          "type": "TransformationSwitch",
+          "swaps": [
+            "F",
+            "3Q",
+            "FQ",
+            "Q",
+            "P",
+            "PQB",
+            "PPQB",
+            "B"
+          ],
+          "rule": "the head angle chart rides its own switch (kit \u00a74)"
+        }
+      ],
+      "colour_overrides": [],
+      "census": {
+        "PEG": 43,
+        "Multi-Port-In": 3,
+        "Multi-Port-Out": 3,
+        "COMPOSITE": 3,
+        "READ": 42,
+        "CUTTER": 3,
+        "elements": 42
+      },
+      "budget": {
+        "elements": [
+          39,
+          45
+        ],
+        "drawings": [
+          326,
+          337
+        ],
+        "pegs": [
+          65,
+          71
+        ],
+        "reads": [
+          40,
+          47
+        ],
+        "composites": [
+          2,
+          3
+        ],
+        "curve_deformers": 0
+      },
+      "budget_note": "the measured production census for this tier (kit \u00a71/\u00a74) \u2014 the budget this scaffold is grown toward in build-out; the census above is the scaffold's own seed network",
+      "rules": [
+        "One master peg per character; pegs are cheap, hierarchy is deep (kit \u00a74).",
+        "Curve deformers are the hero joint; standard builds stay peg-and-substitution (kit \u00a74).",
+        "Parts overlap under curve control instead of rotating as rigid cards \u2014 the Harmony answer to the neck-seam / thin-streak defects logged on the Dorowani rig v1.",
+        "Budget rig effort by screen time: hero builds run ~10x the standard network (kit \u00a71)."
+      ]
+    },
+    "charts": {
+      "head": {
+        "element": "K_head",
+        "kind": "angle chart",
+        "drawings": [
+          "K_head",
+          "K_head-F",
+          "K_head-3Q",
+          "K_head-FQ",
+          "K_head-Q",
+          "K_head-P",
+          "K_head-PQB",
+          "K_head-PPQB",
+          "K_head-B"
+        ],
+        "empty": "K_head-empty",
+        "rule": "a head is a small angle chart (10 drawings on the measured hero build), not one drawing (kit \u00a73)"
+      },
+      "eye_L": {
+        "element": "K_eye_L",
+        "kind": "angle chart",
+        "drawings": [
+          "K_eye_L-F_1",
+          "K_eye_L-F_2",
+          "K_eye_L-F_3",
+          "K_eye_L-F_4",
+          "K_eye_L-3Q_1",
+          "K_eye_L-3Q_2",
+          "K_eye_L-3Q_3",
+          "K_eye_L-3Q_4",
+          "K_eye_L-P_1",
+          "K_eye_L-P_2",
+          "K_eye_L-P_3",
+          "K_eye_L-P_4"
+        ],
+        "empty": "K_eye_L-empty",
+        "rule": "eyes ship per angle (F/3Q/P) with 4 numbered lid variants per angle (kit \u00a73)"
+      },
+      "brow_L": {
+        "element": "K_brow_L",
+        "kind": "expression chart",
+        "drawings": [
+          "K_brow_L-F",
+          "K_brow_L-3Q",
+          "K_brow_L-P",
+          "K_brow_L-F_Angry1",
+          "K_brow_L-F_Angry2",
+          "K_brow_L-F_Angry3",
+          "K_brow_L-F_Raised",
+          "K_brow_L-F_Sad",
+          "K_brow_L-3Q_Angry1",
+          "K_brow_L-3Q_Angry2",
+          "K_brow_L-3Q_Angry3",
+          "K_brow_L-3Q_Raised",
+          "K_brow_L-3Q_Sad"
+        ],
+        "empty": "K_brow_L-empty",
+        "rule": "expression lives in the drawing name (brow-3Q_Angry1), not in a separate file (kit \u00a73)"
+      },
+      "eye_R": {
+        "element": "K_eye_R",
+        "kind": "angle chart",
+        "drawings": [
+          "K_eye_R-F_1",
+          "K_eye_R-F_2",
+          "K_eye_R-F_3",
+          "K_eye_R-F_4",
+          "K_eye_R-3Q_1",
+          "K_eye_R-3Q_2",
+          "K_eye_R-3Q_3",
+          "K_eye_R-3Q_4",
+          "K_eye_R-P_1",
+          "K_eye_R-P_2",
+          "K_eye_R-P_3",
+          "K_eye_R-P_4"
+        ],
+        "empty": "K_eye_R-empty",
+        "rule": "eyes ship per angle (F/3Q/P) with 4 numbered lid variants per angle (kit \u00a73)"
+      },
+      "brow_R": {
+        "element": "K_brow_R",
+        "kind": "expression chart",
+        "drawings": [
+          "K_brow_R-F",
+          "K_brow_R-3Q",
+          "K_brow_R-P",
+          "K_brow_R-F_Angry1",
+          "K_brow_R-F_Angry2",
+          "K_brow_R-F_Angry3",
+          "K_brow_R-F_Raised",
+          "K_brow_R-F_Sad",
+          "K_brow_R-3Q_Angry1",
+          "K_brow_R-3Q_Angry2",
+          "K_brow_R-3Q_Angry3",
+          "K_brow_R-3Q_Raised",
+          "K_brow_R-3Q_Sad"
+        ],
+        "empty": "K_brow_R-empty",
+        "rule": "expression lives in the drawing name (brow-3Q_Angry1), not in a separate file (kit \u00a73)"
+      },
+      "mouth": {
+        "element": "K_mouth",
+        "kind": "angle chart",
+        "drawings": [
+          "K_mouth-F_rest",
+          "K_mouth-F_A_I",
+          "K_mouth-F_E",
+          "K_mouth-F_O",
+          "K_mouth-F_U",
+          "K_mouth-F_M_B_P",
+          "K_mouth-F_F_V",
+          "K_mouth-F_L_T_D_N_Th",
+          "K_mouth-F_C_D_G_K_S_Z",
+          "K_mouth-F_W_Q",
+          "K_mouth-3Q_rest",
+          "K_mouth-3Q_A_I",
+          "K_mouth-3Q_E",
+          "K_mouth-3Q_O",
+          "K_mouth-3Q_U",
+          "K_mouth-3Q_M_B_P",
+          "K_mouth-3Q_F_V",
+          "K_mouth-3Q_L_T_D_N_Th",
+          "K_mouth-3Q_C_D_G_K_S_Z",
+          "K_mouth-3Q_W_Q",
+          "K_mouth-P_rest",
+          "K_mouth-P_A_I",
+          "K_mouth-P_E",
+          "K_mouth-P_O",
+          "K_mouth-P_U",
+          "K_mouth-P_M_B_P",
+          "K_mouth-P_F_V",
+          "K_mouth-P_L_T_D_N_Th",
+          "K_mouth-P_C_D_G_K_S_Z",
+          "K_mouth-P_W_Q",
+          "K_mouth-F_1",
+          "K_mouth-3Q_2",
+          "K_mouth-P_3",
+          "K_mouth-F_4",
+          "K_mouth-3Q_5",
+          "K_mouth-P_6",
+          "K_mouth-F_7",
+          "K_mouth-3Q_8",
+          "K_mouth-P_9",
+          "K_mouth-F_10",
+          "K_mouth-3Q_11",
+          "K_mouth-P_12",
+          "K_mouth-F_13",
+          "K_mouth-3Q_14"
+        ],
+        "counts": {
+          "blair": 30,
+          "expression": 0,
+          "extra": 14,
+          "total": 44
+        },
+        "empty": "K_mouth-empty",
+        "rule": "mouths run 44-48 drawings on a standard build, angle-coded: the Blair 10 per angle (F/3Q/P), the character's expression mouths per angle, numbered extra takes to the measured floor (kit \u00a73)"
+      },
+      "hand_L": {
+        "element": "K_hand_L",
+        "side": "L",
+        "tier": "standard",
+        "count": 14,
+        "drawings": [
+          "K_hand_L-F_open",
+          "K_hand_L-3Q_open",
+          "K_hand_L-P_open",
+          "K_hand_L-BK_open",
+          "K_hand_L-F_fist",
+          "K_hand_L-3Q_fist",
+          "K_hand_L-P_fist",
+          "K_hand_L-BK_fist",
+          "K_hand_L-F_point",
+          "K_hand_L-3Q_point",
+          "K_hand_L-P_point",
+          "K_hand_L-BK_point",
+          "K_hand_L-F_grip",
+          "K_hand_L-3Q_grip"
+        ],
+        "empty": "K_hand_L-empty",
+        "rule": "the hand library lives inside the character template as a substitution chart; hero charts are measured at 105/107 drawings, standard charts stay small with hand_extra sets (kit \u00a73)"
+      },
+      "hand_R": {
+        "element": "K_hand_R",
+        "side": "R",
+        "tier": "standard",
+        "count": 14,
+        "drawings": [
+          "K_hand_R-F_open",
+          "K_hand_R-3Q_open",
+          "K_hand_R-P_open",
+          "K_hand_R-BK_open",
+          "K_hand_R-F_fist",
+          "K_hand_R-3Q_fist",
+          "K_hand_R-P_fist",
+          "K_hand_R-BK_fist",
+          "K_hand_R-F_point",
+          "K_hand_R-3Q_point",
+          "K_hand_R-P_point",
+          "K_hand_R-BK_point",
+          "K_hand_R-F_grip",
+          "K_hand_R-3Q_grip"
+        ],
+        "empty": "K_hand_R-empty",
+        "rule": "the hand library lives inside the character template as a substitution chart; hero charts are measured at 105/107 drawings, standard charts stay small with hand_extra sets (kit \u00a73)"
+      }
+    },
+    "palette": {
+      "format": "blairwitch.harmony-palette/1",
+      "character": "Kiko",
+      "mode": "LINKed single source \u2014 the palette file is linked into every scene and element, never embedded; one edit propagates everywhere (kit \u00a75)",
+      "palette_list": "palette-library/Kiko.plt",
+      "utility_palettes": [
+        "Controllers.plt",
+        "penstyle_opacity.plt",
+        "Camera_Safe_Key_1920.plt",
+        "Default_rec.plt"
+      ],
+      "colours": [
+        {
+          "name": "Dominant",
+          "rgba": [
+            22,
+            23,
+            37,
+            255
+          ],
+          "role": "character"
+        },
+        {
+          "name": "Support",
+          "rgba": [
+            237,
+            223,
+            204,
+            255
+          ],
+          "role": "character"
+        },
+        {
+          "name": "Accent",
+          "rgba": [
+            187,
+            125,
+            98,
+            255
+          ],
+          "role": "character"
+        },
+        {
+          "name": "Ink",
+          "rgba": [
+            8,
+            8,
+            8,
+            255
+          ],
+          "role": "character"
+        },
+        {
+          "name": "extra_1",
+          "rgba": [
+            132,
+            64,
+            64,
+            255
+          ],
+          "role": "character"
+        },
+        {
+          "name": "extra_2",
+          "rgba": [
+            112,
+            116,
+            122,
+            255
+          ],
+          "role": "character"
+        },
+        {
+          "name": "rig",
+          "rgba": [
+            39,
+            31,
+            178,
+            0
+          ],
+          "role": "functional"
+        },
+        {
+          "name": "Cutter",
+          "rgba": [
+            0,
+            255,
+            12,
+            255
+          ],
+          "role": "functional"
+        }
+      ],
+      "plt_text": "ToonBoomAnimationInc PaletteFile 2\nSolid    Dominant                 00000000000000000000000000000001   22  23  37 255\nSolid    Support                  00000000000000000000000000000002  237 223 204 255\nSolid    Accent                   00000000000000000000000000000003  187 125  98 255\nSolid    Ink                      00000000000000000000000000000004    8   8   8 255\nSolid    extra_1                  00000000000000000000000000000005  132  64  64 255\nSolid    extra_2                  00000000000000000000000000000006  112 116 122 255\nSolid    rig                      00000000000000000000000000000007   39  31 178   0\nSolid    Cutter                   00000000000000000000000000000008    0 255  12 255\n",
+      "rules": [
+        "Colour names are semantic and part-based (hair, skin, pants, tongue...); quoted names where a space is needed.",
+        "`rig` (alpha 0) paints rig-only marks that must never render; `Cutter` (pure green) is the matte colour the cutter nodes key on. Both ride in every palette.",
+        "Character colours come from the character's \u00a72 palette sheet \u2014 this file is their single linked source."
+      ]
+    },
+    "source_standard": "show/production/rigs/HARMONY-AND-SETTEI-ADDENDUM-2026-10-30.md"
+  }
+}

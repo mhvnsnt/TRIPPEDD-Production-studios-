@@ -1,0 +1,25 @@
+{
+  "format": "blairwitch.puppet/1",
+  "character": "Kiko",
+  "version": 5,
+  "episode": "105",
+  "package": "MC105ORIGINAL_PUPPET_KIKO_VERSION_005",
+  "body_plan": "humanoid",
+  "fps": 24,
+  "construction": "harmony",
+  "current": true,
+  "contains": [
+    "rig",
+    "sheet",
+    "parts",
+    "constraints",
+    "poses",
+    "rom_checklist",
+    "harmony"
+  ],
+  "palette_sheet": true,
+  "shared_libraries": [
+    "SHARED/hands"
+  ],
+  "baked_shadows": false
+}

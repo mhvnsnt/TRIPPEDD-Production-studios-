@@ -1,0 +1,18 @@
+[
+  {
+    "line": 0,
+    "id": "test-1",
+    "character": "static",
+    "voice_ref": "refs/static-ref.wav",
+    "emotion": "hyped",
+    "text": "Test line one, Static speaking."
+  },
+  {
+    "line": 1,
+    "id": "test-2",
+    "character": "kiko",
+    "voice_ref": "MISSING -- no voice-pipe ref for this character",
+    "emotion": "sad",
+    "text": "Test line two, Kiko speaking."
+  }
+]

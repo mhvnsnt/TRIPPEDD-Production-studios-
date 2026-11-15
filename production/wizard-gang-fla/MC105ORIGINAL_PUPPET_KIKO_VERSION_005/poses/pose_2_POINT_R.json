@@ -1,0 +1,115 @@
+{
+  "format": "blairwitch.pose/1",
+  "character": "Kiko",
+  "pose": "POINT_R",
+  "index": 2,
+  "source": "WG105 Kiko v4 (.fla) pose spec \u2014 per-part (rot_deg, dx, dy), child parts relative to parent joint",
+  "pivots_canvas_1184x2096": {
+    "thigh_L": [
+      430,
+      925
+    ],
+    "thigh_R": [
+      750,
+      925
+    ],
+    "shin_L": [
+      365,
+      1370
+    ],
+    "shin_R": [
+      805,
+      1410
+    ],
+    "shoe_L": [
+      315,
+      1805
+    ],
+    "shoe_R": [
+      875,
+      1805
+    ],
+    "torso": [
+      592,
+      895
+    ],
+    "coat_L": [
+      300,
+      520
+    ],
+    "coat_R": [
+      880,
+      520
+    ],
+    "upper_arm_L": [
+      245,
+      580
+    ],
+    "upper_arm_R": [
+      935,
+      580
+    ],
+    "forearm_L": [
+      205,
+      790
+    ],
+    "forearm_R": [
+      975,
+      790
+    ],
+    "hand_L": [
+      185,
+      1005
+    ],
+    "hand_R": [
+      990,
+      1000
+    ],
+    "head": [
+      592,
+      530
+    ]
+  },
+  "parts": {
+    "coat_R": [
+      -3,
+      0,
+      0
+    ],
+    "forearm_L": [
+      5,
+      0,
+      0
+    ],
+    "forearm_R": [
+      -115,
+      0,
+      0
+    ],
+    "hand_R": [
+      -35,
+      0,
+      0
+    ],
+    "head": [
+      6,
+      0,
+      0
+    ],
+    "torso": [
+      2,
+      0,
+      0
+    ],
+    "upper_arm_L": [
+      12,
+      0,
+      0
+    ],
+    "upper_arm_R": [
+      -35,
+      0,
+      0
+    ]
+  }
+}

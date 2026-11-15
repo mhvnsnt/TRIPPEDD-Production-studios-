@@ -1,0 +1,60 @@
+{
+  "format": "blairwitch.constraints/1",
+  "character": "Kiko",
+  "assignments": [
+    {
+      "name": "bone_preserve_volume",
+      "role": "volume",
+      "targets": [
+        "hips",
+        "torso"
+      ],
+      "settings": {
+        "minscale": 0.01,
+        "maxscale": 100.0
+      },
+      "source": "show/production/rigs/open-movie-kit/pyconstraints/bone_preserve_volume.py",
+      "licence": "CC-BY 3.0"
+    },
+    {
+      "name": "pivot_change",
+      "role": "limb_roots",
+      "targets": [
+        "arm_L_upper",
+        "arm_R_upper",
+        "leg_L_upper",
+        "leg_R_upper"
+      ],
+      "settings": {
+        "length": 1.0
+      },
+      "source": "show/production/rigs/open-movie-kit/pyconstraints/pivot_change.py",
+      "licence": "CC-BY 3.0"
+    },
+    {
+      "name": "rotation_difference",
+      "role": "counter_rotation_pair",
+      "targets": [
+        "torso",
+        "head"
+      ],
+      "settings": {},
+      "source": "show/production/rigs/open-movie-kit/pyconstraints/rotation_difference.py",
+      "licence": "CC-BY 3.0"
+    },
+    {
+      "name": "footroll",
+      "role": "feet",
+      "targets": [
+        "foot_L",
+        "foot_R"
+      ],
+      "settings": {
+        "length": 1.0
+      },
+      "source": "show/production/rigs/open-movie-kit/pyconstraints/footroll.py",
+      "licence": "CC-BY 3.0"
+    }
+  ],
+  "attribution": "Big Buck Bunny production files \u2014 (c) copyright Blender Foundation | www.bigbuckbunny.org. Licensed under the Creative Commons Attribution 3.0 (CC-BY 3.0) licence. Carried verbatim from show/production/rigs/open-movie-kit/pyconstraints/ (Mochiichao repo); provenance: DONOR-PROVENANCE-2026-10-29.md \u00a7A2/\u00a7B1."
+}

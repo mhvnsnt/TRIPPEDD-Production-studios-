@@ -1,0 +1,61 @@
+{
+  "format": "blairwitch.partlib/1",
+  "part": "legs",
+  "mode": "linked library file",
+  "layers": [
+    {
+      "layer": "leg_L_upper",
+      "names": {
+        "FR": "FR-legUpperL-001",
+        "TQ": "TQ-legUpperL-001",
+        "SD": "SD-legUpperL-001",
+        "BK": "BK-legUpperL-001"
+      }
+    },
+    {
+      "layer": "leg_L_lower",
+      "names": {
+        "FR": "FR-legLowerL-001",
+        "TQ": "TQ-legLowerL-001",
+        "SD": "SD-legLowerL-001",
+        "BK": "BK-legLowerL-001"
+      }
+    },
+    {
+      "layer": "foot_L",
+      "names": {
+        "FR": "FR-footL-001",
+        "TQ": "TQ-footL-001",
+        "SD": "SD-footL-001",
+        "BK": "BK-footL-001"
+      }
+    },
+    {
+      "layer": "leg_R_upper",
+      "names": {
+        "FR": "FR-legUpperR-001",
+        "TQ": "TQ-legUpperR-001",
+        "SD": "SD-legUpperR-001",
+        "BK": "BK-legUpperR-001"
+      }
+    },
+    {
+      "layer": "leg_R_lower",
+      "names": {
+        "FR": "FR-legLowerR-001",
+        "TQ": "TQ-legLowerR-001",
+        "SD": "SD-legLowerR-001",
+        "BK": "BK-legLowerR-001"
+      }
+    },
+    {
+      "layer": "foot_R",
+      "names": {
+        "FR": "FR-footR-001",
+        "TQ": "TQ-footR-001",
+        "SD": "SD-footR-001",
+        "BK": "BK-footR-001"
+      }
+    }
+  ]
+}

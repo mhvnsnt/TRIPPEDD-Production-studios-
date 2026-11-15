@@ -1,0 +1,100 @@
+{
+  "format": "blairwitch.harmony-palette/1",
+  "character": "Kiko",
+  "mode": "LINKed single source \u2014 the palette file is linked into every scene and element, never embedded; one edit propagates everywhere (kit \u00a75)",
+  "palette_list": "palette-library/Kiko.plt",
+  "utility_palettes": [
+    "Controllers.plt",
+    "penstyle_opacity.plt",
+    "Camera_Safe_Key_1920.plt",
+    "Default_rec.plt"
+  ],
+  "colours": [
+    {
+      "name": "Dominant",
+      "rgba": [
+        22,
+        23,
+        37,
+        255
+      ],
+      "role": "character"
+    },
+    {
+      "name": "Support",
+      "rgba": [
+        237,
+        223,
+        204,
+        255
+      ],
+      "role": "character"
+    },
+    {
+      "name": "Accent",
+      "rgba": [
+        187,
+        125,
+        98,
+        255
+      ],
+      "role": "character"
+    },
+    {
+      "name": "Ink",
+      "rgba": [
+        8,
+        8,
+        8,
+        255
+      ],
+      "role": "character"
+    },
+    {
+      "name": "extra_1",
+      "rgba": [
+        132,
+        64,
+        64,
+        255
+      ],
+      "role": "character"
+    },
+    {
+      "name": "extra_2",
+      "rgba": [
+        112,
+        116,
+        122,
+        255
+      ],
+      "role": "character"
+    },
+    {
+      "name": "rig",
+      "rgba": [
+        39,
+        31,
+        178,
+        0
+      ],
+      "role": "functional"
+    },
+    {
+      "name": "Cutter",
+      "rgba": [
+        0,
+        255,
+        12,
+        255
+      ],
+      "role": "functional"
+    }
+  ],
+  "plt_text": "ToonBoomAnimationInc PaletteFile 2\nSolid    Dominant                 00000000000000000000000000000001   22  23  37 255\nSolid    Support                  00000000000000000000000000000002  237 223 204 255\nSolid    Accent                   00000000000000000000000000000003  187 125  98 255\nSolid    Ink                      00000000000000000000000000000004    8   8   8 255\nSolid    extra_1                  00000000000000000000000000000005  132  64  64 255\nSolid    extra_2                  00000000000000000000000000000006  112 116 122 255\nSolid    rig                      00000000000000000000000000000007   39  31 178   0\nSolid    Cutter                   00000000000000000000000000000008    0 255  12 255\n",
+  "rules": [
+    "Colour names are semantic and part-based (hair, skin, pants, tongue...); quoted names where a space is needed.",
+    "`rig` (alpha 0) paints rig-only marks that must never render; `Cutter` (pure green) is the matte colour the cutter nodes key on. Both ride in every palette.",
+    "Character colours come from the character's \u00a72 palette sheet \u2014 this file is their single linked source."
+  ]
+}

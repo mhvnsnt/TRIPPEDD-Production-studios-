@@ -1,0 +1,720 @@
+{
+ "format": "kiko-v4-mapping/1",
+ "character": "Kiko",
+ "package": "MC105ORIGINAL_PUPPET_KIKO_VERSION_005",
+ "note": "BlairWitch rig.json is a GENERIC humanoid scaffold (pivots null; generic ear/nose/mouth/belt elements with no v4 art). THIS file is the real binding: it maps scaffold layers to Kiko's actual v4 part PNGs, pivots, stack and poses. BlairWitch output was not edited.",
+ "source": {
+  "fla": "WG105_ORIGINAL_PUPPET_KIKO_VERSION_004.fla",
+  "fla_size_bytes": 92856280,
+  "fla_git_blob_sha": "8be12fd936762eb404b06a8f0860e305c5aa21a9",
+  "fla_repo_path": "production/wizard-gang-fla/WG105_ORIGINAL_PUPPET_KIKO_VERSION_004.fla",
+  "parts_source": "production/wizard-gang-fla/kiko-v4/ (repo mirror of the v4 build)",
+  "canvas": [
+   1184,
+   2096
+  ],
+  "fps": 24
+ },
+ "stack_bottom_to_top": [
+  "thigh_L",
+  "thigh_R",
+  "shin_L",
+  "shin_R",
+  "shoe_L",
+  "shoe_R",
+  "torso",
+  "coat_L",
+  "coat_R",
+  "upper_arm_L",
+  "upper_arm_R",
+  "forearm_L",
+  "forearm_R",
+  "hand_L",
+  "hand_R",
+  "head"
+ ],
+ "parts": [
+  {
+   "name": "thigh_L",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/thigh_L.png",
+   "package_relative_path": "../kiko-v4/parts/thigh_L.png",
+   "sha256": "a188e52a19966b4358ac2072f54c9e8d8c41855d08333e695547ac6ed2a91110",
+   "size_bytes": 2754638,
+   "pivot": [
+    430,
+    925
+   ],
+   "bbox": [
+    250,
+    996,
+    562,
+    1460
+   ]
+  },
+  {
+   "name": "thigh_R",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/thigh_R.png",
+   "package_relative_path": "../kiko-v4/parts/thigh_R.png",
+   "sha256": "f3f4be6ffc1306d5859761beadf1a951e16a1bb24eef66a11425d281dda04e98",
+   "size_bytes": 2753823,
+   "pivot": [
+    750,
+    925
+   ],
+   "bbox": [
+    622,
+    992,
+    973,
+    1441
+   ]
+  },
+  {
+   "name": "shin_L",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/shin_L.png",
+   "package_relative_path": "../kiko-v4/parts/shin_L.png",
+   "sha256": "d7918852e1975c49ebe657a69696d48db29ecb5a05da697b321d8badccb19065",
+   "size_bytes": 2754273,
+   "pivot": [
+    365,
+    1370
+   ],
+   "bbox": [
+    252,
+    1391,
+    491,
+    1809
+   ]
+  },
+  {
+   "name": "shin_R",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/shin_R.png",
+   "package_relative_path": "../kiko-v4/parts/shin_R.png",
+   "sha256": "54f5b85c5dafa582ff578d9fa36f10865d4aa4fe0671dae05b5b92e2bf4c112d",
+   "size_bytes": 2754589,
+   "pivot": [
+    805,
+    1410
+   ],
+   "bbox": [
+    684,
+    1367,
+    976,
+    1841
+   ]
+  },
+  {
+   "name": "shoe_L",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/shoe_L.png",
+   "package_relative_path": "../kiko-v4/parts/shoe_L.png",
+   "sha256": "a99d3c4389f3f1b12db45bd9e37d28cba102f3bd54588378f5fcb524bfb8b579",
+   "size_bytes": 2753011,
+   "pivot": [
+    315,
+    1805
+   ],
+   "bbox": [
+    145,
+    1730,
+    402,
+    2032
+   ]
+  },
+  {
+   "name": "shoe_R",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/shoe_R.png",
+   "package_relative_path": "../kiko-v4/parts/shoe_R.png",
+   "sha256": "877c52bf2bf4588f26420503ea36db77b8fcef3e5f6e62ebac134fca55ffe3ec",
+   "size_bytes": 2754102,
+   "pivot": [
+    875,
+    1805
+   ],
+   "bbox": [
+    750,
+    1740,
+    1022,
+    2030
+   ]
+  },
+  {
+   "name": "torso",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/torso.png",
+   "package_relative_path": "../kiko-v4/parts/torso.png",
+   "sha256": "0caf0bc9c63f5a6731a3aeb0e76004dd89dcc0942bf7a5835d2bdf61401096e1",
+   "size_bytes": 2756764,
+   "pivot": [
+    592,
+    895
+   ],
+   "bbox": [
+    314,
+    435,
+    884,
+    1171
+   ]
+  },
+  {
+   "name": "coat_L",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/coat_L.png",
+   "package_relative_path": "../kiko-v4/parts/coat_L.png",
+   "sha256": "d0fd4320bb646f57908f4b01a77dc1bce52c511ca5f10d4167bffef8c1df53cc",
+   "size_bytes": 2754591,
+   "pivot": [
+    300,
+    520
+   ],
+   "bbox": [
+    163,
+    410,
+    591,
+    1693
+   ]
+  },
+  {
+   "name": "coat_R",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/coat_R.png",
+   "package_relative_path": "../kiko-v4/parts/coat_R.png",
+   "sha256": "c4e3be629eecc6fba25e8780cbdee6577b324c75d0c60e359bfc3819a70bf9f6",
+   "size_bytes": 2744094,
+   "pivot": [
+    880,
+    520
+   ],
+   "bbox": [
+    591,
+    398,
+    990,
+    1563
+   ]
+  },
+  {
+   "name": "upper_arm_L",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/upper_arm_L.png",
+   "package_relative_path": "../kiko-v4/parts/upper_arm_L.png",
+   "sha256": "096a8edc9a2842c05432220eec65a5aee82e292e4449e25f3348d54b07ad3e3a",
+   "size_bytes": 2754627,
+   "pivot": [
+    245,
+    580
+   ],
+   "bbox": [
+    154,
+    568,
+    366,
+    867
+   ]
+  },
+  {
+   "name": "upper_arm_R",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/upper_arm_R.png",
+   "package_relative_path": "../kiko-v4/parts/upper_arm_R.png",
+   "sha256": "2e0e8b7c270f10af8fa4c05e7a34eed6fd9651b3dac6d225848bb8a8551474a7",
+   "size_bytes": 2754688,
+   "pivot": [
+    935,
+    580
+   ],
+   "bbox": [
+    806,
+    549,
+    1029,
+    866
+   ]
+  },
+  {
+   "name": "forearm_L",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/forearm_L.png",
+   "package_relative_path": "../kiko-v4/parts/forearm_L.png",
+   "sha256": "fb5e83815dd6b669bcb134a02d90a7352d70e1e8075ad534f42d90e267aa6519",
+   "size_bytes": 2754772,
+   "pivot": [
+    205,
+    790
+   ],
+   "bbox": [
+    95,
+    744,
+    364,
+    1097
+   ]
+  },
+  {
+   "name": "forearm_R",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/forearm_R.png",
+   "package_relative_path": "../kiko-v4/parts/forearm_R.png",
+   "sha256": "837d752388ccecf2bd5a4b4bd4d86e92b80bd5103bea033f56661a6340b102db",
+   "size_bytes": 2754805,
+   "pivot": [
+    975,
+    790
+   ],
+   "bbox": [
+    817,
+    743,
+    1087,
+    1079
+   ]
+  },
+  {
+   "name": "hand_L",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/hand_L.png",
+   "package_relative_path": "../kiko-v4/parts/hand_L.png",
+   "sha256": "34c18fb1f07d99ac731f12a7ea5ca27d48070f10d5ac54838a0fc17de7a4bc8d",
+   "size_bytes": 2755179,
+   "pivot": [
+    185,
+    1005
+   ],
+   "bbox": [
+    95,
+    966,
+    298,
+    1242
+   ]
+  },
+  {
+   "name": "hand_R",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/hand_R.png",
+   "package_relative_path": "../kiko-v4/parts/hand_R.png",
+   "sha256": "a44a06d6580730db8e69b97c0736c50444e8d35b42c9c3a3ca073f829d51612d",
+   "size_bytes": 2755110,
+   "pivot": [
+    990,
+    1000
+   ],
+   "bbox": [
+    885,
+    966,
+    1087,
+    1234
+   ]
+  },
+  {
+   "name": "head",
+   "repo_path": "production/wizard-gang-fla/kiko-v4/parts/head.png",
+   "package_relative_path": "../kiko-v4/parts/head.png",
+   "sha256": "b2134acd64cc2e5c324f4ca74296b01a5bb9c24aca38ccf17b43fd6c4ab3dc29",
+   "size_bytes": 2755640,
+   "pivot": [
+    592,
+    530
+   ],
+   "bbox": [
+    298,
+    40,
+    887,
+    554
+   ]
+  }
+ ],
+ "layer_binding": {
+  "head": "head",
+  "torso": "torso",
+  "hips": null,
+  "neck": null,
+  "hair_back": null,
+  "hair_front": null,
+  "arm_L_upper": "upper_arm_L",
+  "arm_L_forearm": "forearm_L",
+  "hand_L": "hand_L",
+  "arm_R_upper": "upper_arm_R",
+  "arm_R_forearm": "forearm_R",
+  "hand_R": "hand_R",
+  "leg_L_upper": "thigh_L",
+  "leg_L_lower": "shin_L",
+  "foot_L": "shoe_L",
+  "leg_R_upper": "thigh_R",
+  "leg_R_lower": "shin_R",
+  "foot_R": "shoe_R"
+ },
+ "layers_without_v4_art": [
+  "hips",
+  "neck",
+  "hair_back",
+  "hair_front"
+ ],
+ "poses": {
+  "NEUTRAL": {},
+  "ARMS_RAISED": {
+   "upper_arm_L": [
+    138,
+    0,
+    0
+   ],
+   "forearm_L": [
+    38,
+    0,
+    0
+   ],
+   "hand_L": [
+    12,
+    0,
+    0
+   ],
+   "upper_arm_R": [
+    -138,
+    0,
+    0
+   ],
+   "forearm_R": [
+    -38,
+    0,
+    0
+   ],
+   "hand_R": [
+    -12,
+    0,
+    0
+   ],
+   "head": [
+    -4,
+    0,
+    0
+   ],
+   "torso": [
+    -1,
+    0,
+    0
+   ],
+   "coat_L": [
+    6,
+    0,
+    0
+   ],
+   "coat_R": [
+    -6,
+    0,
+    0
+   ]
+  },
+  "POINT_R": {
+   "upper_arm_R": [
+    -35,
+    0,
+    0
+   ],
+   "forearm_R": [
+    -115,
+    0,
+    0
+   ],
+   "hand_R": [
+    -35,
+    0,
+    0
+   ],
+   "upper_arm_L": [
+    12,
+    0,
+    0
+   ],
+   "forearm_L": [
+    5,
+    0,
+    0
+   ],
+   "head": [
+    6,
+    0,
+    0
+   ],
+   "torso": [
+    2,
+    0,
+    0
+   ],
+   "coat_R": [
+    -3,
+    0,
+    0
+   ]
+  },
+  "STEP_FORWARD": {
+   "thigh_L": [
+    14,
+    0,
+    -14
+   ],
+   "shin_L": [
+    -26,
+    0,
+    0
+   ],
+   "shoe_L": [
+    12,
+    0,
+    0
+   ],
+   "thigh_R": [
+    -8,
+    0,
+    4
+   ],
+   "shin_R": [
+    12,
+    0,
+    0
+   ],
+   "shoe_R": [
+    -4,
+    0,
+    0
+   ],
+   "upper_arm_L": [
+    -14,
+    0,
+    0
+   ],
+   "forearm_L": [
+    -6,
+    0,
+    0
+   ],
+   "upper_arm_R": [
+    12,
+    0,
+    0
+   ],
+   "forearm_R": [
+    6,
+    0,
+    0
+   ],
+   "torso": [
+    2,
+    0,
+    0
+   ],
+   "head": [
+    -3,
+    0,
+    0
+   ],
+   "coat_L": [
+    -4,
+    0,
+    0
+   ],
+   "coat_R": [
+    3,
+    0,
+    0
+   ]
+  },
+  "HOOD_TILT_BOW": {
+   "head": [
+    10,
+    0,
+    20
+   ],
+   "torso": [
+    6,
+    0,
+    6
+   ],
+   "upper_arm_L": [
+    10,
+    0,
+    0
+   ],
+   "upper_arm_R": [
+    -10,
+    0,
+    0
+   ],
+   "coat_L": [
+    3,
+    0,
+    0
+   ],
+   "coat_R": [
+    -3,
+    0,
+    0
+   ]
+  },
+  "WAVE_L": {
+   "upper_arm_L": [
+    138,
+    0,
+    0
+   ],
+   "forearm_L": [
+    30,
+    0,
+    0
+   ],
+   "hand_L": [
+    25,
+    0,
+    0
+   ],
+   "upper_arm_R": [
+    -8,
+    0,
+    0
+   ],
+   "head": [
+    -5,
+    0,
+    0
+   ],
+   "coat_L": [
+    5,
+    0,
+    0
+   ]
+  },
+  "GUARD": {
+   "upper_arm_L": [
+    -38,
+    0,
+    0
+   ],
+   "forearm_L": [
+    -64,
+    0,
+    0
+   ],
+   "hand_L": [
+    -10,
+    0,
+    0
+   ],
+   "upper_arm_R": [
+    38,
+    0,
+    0
+   ],
+   "forearm_R": [
+    64,
+    0,
+    0
+   ],
+   "hand_R": [
+    10,
+    0,
+    0
+   ],
+   "thigh_L": [
+    -9,
+    0,
+    2
+   ],
+   "thigh_R": [
+    9,
+    0,
+    2
+   ],
+   "shin_L": [
+    10,
+    0,
+    0
+   ],
+   "shin_R": [
+    10,
+    0,
+    0
+   ],
+   "head": [
+    3,
+    0,
+    4
+   ],
+   "torso": [
+    3,
+    0,
+    2
+   ]
+  },
+  "REST_LEAN": {
+   "head": [
+    3,
+    0,
+    0
+   ],
+   "torso": [
+    1.5,
+    0,
+    0
+   ],
+   "upper_arm_L": [
+    5,
+    0,
+    0
+   ],
+   "upper_arm_R": [
+    -6,
+    0,
+    0
+   ],
+   "coat_L": [
+    2,
+    0,
+    0
+   ],
+   "coat_R": [
+    -2,
+    0,
+    0
+   ]
+  }
+ },
+ "pose_names": [
+  "NEUTRAL",
+  "ARMS_RAISED",
+  "POINT_R",
+  "STEP_FORWARD",
+  "HOOD_TILT_BOW",
+  "WAVE_L",
+  "GUARD",
+  "REST_LEAN"
+ ],
+ "proof_keyframes": [
+  [
+   0,
+   "NEUTRAL"
+  ],
+  [
+   20,
+   "ARMS_RAISED"
+  ],
+  [
+   38,
+   "NEUTRAL"
+  ],
+  [
+   56,
+   "POINT_R"
+  ],
+  [
+   76,
+   "STEP_FORWARD"
+  ],
+  [
+   94,
+   "HOOD_TILT_BOW"
+  ],
+  [
+   112,
+   "WAVE_L"
+  ],
+  [
+   132,
+   "GUARD"
+  ],
+  [
+   152,
+   "NEUTRAL"
+  ]
+ ],
+ "proof": {
+  "frames": 153,
+  "fps": 24,
+  "size": [
+   444,
+   786
+  ],
+  "choreography": "v4 proof_kiko_v4.py KEYS, smoothstep interp"
+ }
+}

@@ -1,0 +1,61 @@
+{
+  "format": "blairwitch.partlib/1",
+  "part": "body",
+  "mode": "linked library file",
+  "layers": [
+    {
+      "layer": "hips",
+      "names": {
+        "FR": "FR-hips-001",
+        "TQ": "TQ-hips-001",
+        "SD": "SD-hips-001",
+        "BK": "BK-hips-001"
+      }
+    },
+    {
+      "layer": "torso",
+      "names": {
+        "FR": "FR-torso-001",
+        "TQ": "TQ-torso-001",
+        "SD": "SD-torso-001",
+        "BK": "BK-torso-001"
+      }
+    },
+    {
+      "layer": "neck",
+      "names": {
+        "FR": "FR-neck-001",
+        "TQ": "TQ-neck-001",
+        "SD": "SD-neck-001",
+        "BK": "BK-neck-001"
+      }
+    },
+    {
+      "layer": "head",
+      "names": {
+        "FR": "FR-head-001",
+        "TQ": "TQ-head-001",
+        "SD": "SD-head-001",
+        "BK": "BK-head-001"
+      }
+    },
+    {
+      "layer": "hair_back",
+      "names": {
+        "FR": "FR-hairBack-001",
+        "TQ": "TQ-hairBack-001",
+        "SD": "SD-hairBack-001",
+        "BK": "BK-hairBack-001"
+      }
+    },
+    {
+      "layer": "hair_front",
+      "names": {
+        "FR": "FR-hairFront-001",
+        "TQ": "TQ-hairFront-001",
+        "SD": "SD-hairFront-001",
+        "BK": "BK-hairFront-001"
+      }
+    }
+  ]
+}

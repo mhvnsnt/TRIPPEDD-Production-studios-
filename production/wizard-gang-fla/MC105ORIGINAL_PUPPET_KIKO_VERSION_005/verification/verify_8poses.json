@@ -1,0 +1,50 @@
+{
+ "NEUTRAL": {
+  "mean_abs_diff": 0.0,
+  "pct_changed_gt30": 0.0,
+  "max_diff": 0,
+  "method": "full-res BICUBIC (run1)"
+ },
+ "ARMS_RAISED": {
+  "mean_abs_diff": 0.891,
+  "pct_changed_gt30": 2.428,
+  "max_diff": 81,
+  "method": "full-res BICUBIC (run1)"
+ },
+ "POINT_R": {
+  "mean_abs_diff": 0.714,
+  "pct_changed_gt30": 1.958,
+  "max_diff": 72,
+  "method": "full-res BICUBIC (run1)"
+ },
+ "STEP_FORWARD": {
+  "mean_abs_diff": 1.376,
+  "pct_changed_gt30": 3.644,
+  "max_diff": 109,
+  "method": "full-res BICUBIC (run1)"
+ },
+ "HOOD_TILT_BOW": {
+  "mean_abs_diff": 0.853,
+  "pct_changed_gt30": 2.308,
+  "max_diff": 81,
+  "method": "full-res BICUBIC (verify_46_fullres.py)"
+ },
+ "WAVE_L": {
+  "mean_abs_diff": 0.868,
+  "pct_changed_gt30": 2.345,
+  "max_diff": 70,
+  "method": "half-res BILINEAR tiles vs LANCZOS-downscaled ref"
+ },
+ "GUARD": {
+  "mean_abs_diff": 1.109,
+  "pct_changed_gt30": 2.946,
+  "max_diff": 77,
+  "method": "full-res BICUBIC (verify_46_fullres.py)"
+ },
+ "REST_LEAN": {
+  "mean_abs_diff": 1.262,
+  "pct_changed_gt30": 3.543,
+  "max_diff": 77,
+  "method": "half-res BILINEAR tiles vs LANCZOS-downscaled ref"
+ }
+}

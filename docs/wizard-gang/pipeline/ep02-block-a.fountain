@@ -1,0 +1,58 @@
+Title: WIZARD GANG -- EP02 (Block A timing skeleton)
+Credit: Derived from EP02-OUTLINE.md §3 (PR #303) -- NOT a screenplay
+Draft date: 2026-11-13
+
+# DERIVED FILE -- READ FIRST
+# EP02 has NO script. This Fountain file is a timing skeleton built from the
+# only dialogue record that exists (the 18 text fields in the pocket-studio
+# timeline JSONs) plus the scene-bed descriptions in the outline. Action lines
+# quote the outline's bed descriptions only. No story, lore, motivation or new
+# dialogue was written; every creative question is an OWNER DECISION slot in
+# the outline (OD-01..OD-04 for these scenes). Do not present this as the
+# episode's script. Its purpose: prove fountain_to_animatic_wg.py renders a
+# watchable timing skeleton from real WG material.
+
+INT. THE SUMMONS -- S10 (0:50-1:02, 12s)
+
+Summons tension: sub-bass flare, wind, heartbeat drums, rising tom roll.
+
+NARRATOR
+They got the call. All nine.
+
+STATIC
+Ayo! You see that fire?
+
+INT. THE MEETING -- S11 (1:02-1:18, 16s)
+
+Solemn ritual taiko; drums die at 13.5s when candle gutters out.
+
+STATIC
+Can we get some order?
+
+ASHES (whisper)
+(unintelligible whisper)
+
+INT. ORDER OF BUSINESS -- S12 (1:18-1:38, 20s)
+
+Roll-call snare cadence; 8 solemn stabs; Ashes' declaration hit; dice-rattle.
+One duck in the whole episode: at 84.0s Static ducks to 0.5 for 3.0s under Onyx.
+
+STATIC
+Why's everybody lookin' at me?
+
+ONYX
+We are adjourning nothing.
+
+STATIC
+He said we move tonight!
+
+INT. THE DERAIL BEGINS -- S13 (1:38-2:10, 32s)
+
+Solemn pad to 90bpm cookout boombap; grill sizzle; comedic bass fill.
+The longest bed in the episode.
+
+ASHES
+War fund! Everybody throw in!
+
+CIPHER
+Paper? Who needs paper?

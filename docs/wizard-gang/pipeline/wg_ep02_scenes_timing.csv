@@ -1,0 +1,29 @@
+# WG EP02 scene timing -- real durations from EP02-OUTLINE.md §2 (PR #303).
+# Panel files are s10.png ... s29.png in the boards dir (one panel per scene).
+# EP02 has NO storyboard panels yet (outline §7) -- animatic_builder_wg.py
+# --check on this file correctly reports all 20 panels MISSING until boards exist.
+# Format: panel file, duration (s). Intro + gap + tail are NOT scenes with
+# panels; they are listed here as comments, not rows.
+# intro 0:00-0:50 (50s, LOCKED) -- no panel
+# gap 4:05-4:10 (5s, no scene bed) -- no panel
+# tail 5:00-5:44.81 (44.81s, no scene bed) -- no panel
+s10.png,12.0
+s11.png,16.0
+s12.png,20.0
+s13.png,32.0
+s14.png,10.0
+s15.png,10.0
+s16.png,9.0
+s17.png,9.0
+s18.png,10.0
+s19.png,9.0
+s20.png,8.0
+s21.png,8.0
+s22.png,9.0
+s23.png,9.0
+s24.png,10.0
+s25.png,6.0
+s26.png,8.0
+s27.png,25.0
+s28.png,20.0
+s29.png,5.0

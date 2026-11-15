@@ -1,0 +1,24 @@
+2026-11-13 22:00:35,826 INFO [default] Failed to open primary settings
+Detected locale "C" with character encoding "ANSI_X3.4-1968", which is not UTF-8.
+Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+If this causes problems, reconfigure your locale. See the locale(1) manual
+for more information.
+qt.qml.typeregistration: Invalid QML element name "LicenseInfo"; value type names should begin with a lowercase letter
+Fontconfig error: Cannot load default config file: No such file: (null)
+2026-11-13 22:00:35,981 Application executable path: /dev/shm/casc-2026.2.3/cascadeur-linux/cascadeur
+2026-11-13 22:00:36,175 Operating system: ubuntu 24.04
+2026-11-13 22:00:36,175 Window manager: Unknown
+2026-11-13 22:00:36,175 CPU_0 - product: Intel(R) Xeon(R) Platinum 8321HC CPU @ 1.40GHz, vendor: GenuineIntel
+2026-11-13 22:00:36,175 RAM - capacity: 7935 MB
+2026-11-13 22:00:36,227 Program version: 2026.2.3 6f839ab373704c701854a9b4ab3bb788d6f47112
+Usage: ./cascadeur [options] scene
+
+Options:
+  -h, --help                    Displays help on commandline options.
+  --help-all                    Displays help including Qt specific options.
+  -c, --run-python-code <code>  Runs a python code directly on the app <code>.
+  -s, --run-script <command>    Runs a command module directly on the app
+                                <command>.
+
+Arguments:
+  scene                         A cascadeur scene file.

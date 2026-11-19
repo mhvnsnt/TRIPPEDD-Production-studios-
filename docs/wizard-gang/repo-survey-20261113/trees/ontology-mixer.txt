@@ -1,0 +1,17 @@
+README.md
+SOURCES.md
+app
+app/index.html
+data
+data/branches.json
+data/mix-grid.json
+data/ontologies.json
+data/sources.json
+docs
+docs/BACKWARDS-LAW-AND-ARENA.md
+docs/MIXING-GUIDE.md
+docs/RESEARCH.md
+docs/THE-WORK.md
+ontology
+ontology/personal-ontology.jsonld
+ontology/personal-ontology.ttl

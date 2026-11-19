@@ -1,0 +1,12 @@
+.github
+.github/workflows
+.github/workflows/no-deletion-guard.yml
+AGENTS.md
+ANIMATION-REFERENCE.md
+BBB-PRODUCTION-CATALOG.md
+BLENDER-OPEN-MOVIES-README.md
+DISNEY-TVA-CATALOG.md
+README.md
+WORKING-METHOD.md
+docs
+docs/NO-DATA-LOSS-RULES.md

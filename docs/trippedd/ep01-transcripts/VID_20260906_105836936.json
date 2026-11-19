@@ -1,0 +1,82 @@
+{
+ "file": "VID_20260906_105836936",
+ "language": "en",
+ "model": "tiny",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 2.0,
+   "text": "Okay, thank you."
+  },
+  {
+   "start": 4.0,
+   "end": 6.0,
+   "text": "I get three of the zigzag."
+  },
+  {
+   "start": 8.0,
+   "end": 10.0,
+   "text": "The pink zigzags."
+  },
+  {
+   "start": 11.0,
+   "end": 13.0,
+   "text": "Are you gonna get three of them? Yes, please."
+  },
+  {
+   "start": 16.0,
+   "end": 17.0,
+   "text": "Oh, no, that's fine."
+  },
+  {
+   "start": 17.0,
+   "end": 19.0,
+   "text": "I just want a three of them."
+  },
+  {
+   "start": 30.0,
+   "end": 32.0,
+   "text": "I'm gonna get four of them."
+  },
+  {
+   "start": 36.0,
+   "end": 38.0,
+   "text": "I might get four of them."
+  },
+  {
+   "start": 46.0,
+   "end": 48.0,
+   "text": "Yep."
+  },
+  {
+   "start": 50.0,
+   "end": 52.0,
+   "text": "Yeah, but you can't get three of them."
+  },
+  {
+   "start": 54.0,
+   "end": 56.0,
+   "text": "You said?"
+  },
+  {
+   "start": 56.0,
+   "end": 58.0,
+   "text": "Yeah, I got two of them."
+  },
+  {
+   "start": 64.0,
+   "end": 66.0,
+   "text": "It's not like downstairs, it's downstairs."
+  },
+  {
+   "start": 66.0,
+   "end": 68.0,
+   "text": "And I'm gonna take my money."
+  },
+  {
+   "start": 70.0,
+   "end": 72.0,
+   "text": "Yeah, I'm gonna take my money."
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "file": "VID_20260906_160715990",
+ "language": "en",
+ "model": "tiny",
+ "segments": [
+  {
+   "start": 60.0,
+   "end": 76.0,
+   "text": "I guess you can tell me where the zoom is and I tell you, like, after you zoom there, like,"
+  },
+  {
+   "start": 76.0,
+   "end": 80.0,
+   "text": "it's taking so much space and it's just..."
+  }
+ ]
+}

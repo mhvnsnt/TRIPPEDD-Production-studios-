@@ -1,0 +1,21 @@
+{
+ "file": "VID_20260906_105110928",
+ "language": "en",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 7.0,
+   "text": "I'm going to shoot."
+  },
+  {
+   "start": 7.0,
+   "end": 10.0,
+   "text": "Is there more to play?"
+  },
+  {
+   "start": 10.0,
+   "end": 11.0,
+   "text": "I'm cancer."
+  }
+ ]
+}

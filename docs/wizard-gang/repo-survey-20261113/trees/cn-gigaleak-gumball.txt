@@ -1,0 +1,12 @@
+.github
+.github/workflows
+.github/workflows/no-deletion-guard.yml
+AGENTS.md
+AWG_Colour_Palettes_001.pdf
+COMPGUIDE_CHARACTERS.PDF
+GUMBALL_GUIDE_2012_HR_text.pdf
+Gumball_Bible_text.pdf
+README.md
+WORKING-METHOD.md
+docs
+docs/NO-DATA-LOSS-RULES.md

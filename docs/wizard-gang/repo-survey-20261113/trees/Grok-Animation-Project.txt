@@ -1,0 +1,7 @@
+README.md
+docs
+docs/PRODUCTION-STANDARDS.md
+docs/SOURCE-INVENTORY.md
+docs/TRIPPEDD-PIPELINE-SUMMARY.md
+pipeline
+pipeline/TIMING-RULES.md

@@ -1,0 +1,402 @@
+{
+ "file": "VID_20260906_122211926",
+ "language": "en",
+ "model": "tiny",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 7.0,
+   "text": "..."
+  },
+  {
+   "start": 7.0,
+   "end": 16.0,
+   "text": "..."
+  },
+  {
+   "start": 16.0,
+   "end": 21.0,
+   "text": "Huh?"
+  },
+  {
+   "start": 21.0,
+   "end": 39.62,
+   "text": "The bus is on the way over there."
+  },
+  {
+   "start": 39.62,
+   "end": 46.62,
+   "text": "I think I can't see it."
+  },
+  {
+   "start": 46.62,
+   "end": 50.62,
+   "text": "I think I can see it."
+  },
+  {
+   "start": 50.62,
+   "end": 52.62,
+   "text": "Oh, what's that?"
+  },
+  {
+   "start": 52.62,
+   "end": 54.62,
+   "text": "What's that?"
+  },
+  {
+   "start": 54.62,
+   "end": 55.62,
+   "text": "What's wrong with you?"
+  },
+  {
+   "start": 55.62,
+   "end": 56.62,
+   "text": "What's wrong with you?"
+  },
+  {
+   "start": 56.62,
+   "end": 58.62,
+   "text": "What's wrong with you?"
+  },
+  {
+   "start": 58.62,
+   "end": 60.62,
+   "text": "What's wrong with you?"
+  },
+  {
+   "start": 60.62,
+   "end": 62.62,
+   "text": "I don't know what to get."
+  },
+  {
+   "start": 62.62,
+   "end": 64.62,
+   "text": "Let's get out of here."
+  },
+  {
+   "start": 64.62,
+   "end": 67.62,
+   "text": "I don't know what to get."
+  },
+  {
+   "start": 67.62,
+   "end": 72.62,
+   "text": "This is not good."
+  },
+  {
+   "start": 72.62,
+   "end": 76.62,
+   "text": "I think, but you can see it."
+  },
+  {
+   "start": 76.62,
+   "end": 78.62,
+   "text": "I'm not sure."
+  },
+  {
+   "start": 78.62,
+   "end": 80.62,
+   "text": "I'm not sure."
+  },
+  {
+   "start": 80.62,
+   "end": 85.62,
+   "text": "I'm going to be still wearing it with me when I'm here."
+  },
+  {
+   "start": 85.62,
+   "end": 88.62,
+   "text": "I'm just going to talk to you."
+  },
+  {
+   "start": 88.62,
+   "end": 95.62,
+   "text": "I'm just going to talk to you."
+  },
+  {
+   "start": 95.62,
+   "end": 102.62,
+   "text": "I'm just going to talk to you."
+  },
+  {
+   "start": 102.62,
+   "end": 104.62,
+   "text": "You're trying to."
+  },
+  {
+   "start": 104.62,
+   "end": 105.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 105.62,
+   "end": 107.62,
+   "text": "We're going to get."
+  },
+  {
+   "start": 107.62,
+   "end": 110.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 110.62,
+   "end": 113.62,
+   "text": "Which one do you like?"
+  },
+  {
+   "start": 113.62,
+   "end": 116.62,
+   "text": "Um, over closer to where the ice cream is."
+  },
+  {
+   "start": 116.62,
+   "end": 120.62,
+   "text": "Okay."
+  },
+  {
+   "start": 120.62,
+   "end": 121.62,
+   "text": "All right."
+  },
+  {
+   "start": 121.62,
+   "end": 122.62,
+   "text": "I'm going to walk over here."
+  },
+  {
+   "start": 122.62,
+   "end": 124.62,
+   "text": "I'm always at the ones spot the options."
+  },
+  {
+   "start": 124.62,
+   "end": 126.62,
+   "text": "I'm going to come over here."
+  },
+  {
+   "start": 146.62,
+   "end": 156.62,
+   "text": "Okay."
+  },
+  {
+   "start": 156.62,
+   "end": 161.62,
+   "text": "Okay."
+  },
+  {
+   "start": 161.62,
+   "end": 162.62,
+   "text": "Okay."
+  },
+  {
+   "start": 162.62,
+   "end": 164.62,
+   "text": "Are you going to come back for us, right?"
+  },
+  {
+   "start": 164.62,
+   "end": 167.62,
+   "text": "We're going to come back for us, right?"
+  },
+  {
+   "start": 167.62,
+   "end": 168.62,
+   "text": "I will come back for us, right?"
+  },
+  {
+   "start": 168.62,
+   "end": 170.62,
+   "text": "I will come back for us, right?"
+  },
+  {
+   "start": 170.62,
+   "end": 173.62,
+   "text": "Okay."
+  },
+  {
+   "start": 173.62,
+   "end": 178.62,
+   "text": "That's all."
+  },
+  {
+   "start": 178.62,
+   "end": 182.62,
+   "text": "That's all, right?"
+  },
+  {
+   "start": 182.62,
+   "end": 191.62,
+   "text": "That's all."
+  },
+  {
+   "start": 191.62,
+   "end": 194.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 194.62,
+   "end": 204.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 204.62,
+   "end": 209.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 209.62,
+   "end": 214.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 214.62,
+   "end": 224.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 224.62,
+   "end": 229.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 229.62,
+   "end": 234.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 234.62,
+   "end": 244.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 244.62,
+   "end": 249.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 249.62,
+   "end": 254.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 254.62,
+   "end": 264.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 264.62,
+   "end": 269.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 269.62,
+   "end": 274.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 274.62,
+   "end": 279.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 279.62,
+   "end": 282.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 282.62,
+   "end": 292.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 292.62,
+   "end": 297.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 297.62,
+   "end": 302.62,
+   "text": "I'm going to come back for you."
+  },
+  {
+   "start": 302.62,
+   "end": 304.62,
+   "text": "I don't know."
+  },
+  {
+   "start": 304.62,
+   "end": 305.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 305.62,
+   "end": 310.62,
+   "text": "I'm going to come back for you."
+  },
+  {
+   "start": 310.62,
+   "end": 320.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 320.62,
+   "end": 325.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 325.62,
+   "end": 330.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 330.62,
+   "end": 340.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 340.62,
+   "end": 345.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 345.62,
+   "end": 350.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 350.62,
+   "end": 355.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 355.62,
+   "end": 365.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 365.62,
+   "end": 369.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 369.62,
+   "end": 373.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 373.62,
+   "end": 380.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 380.62,
+   "end": 384.62,
+   "text": "Yeah."
+  },
+  {
+   "start": 384.62,
+   "end": 394.62,
+   "text": "Yeah."
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "file": "VID_20260906_160938849",
+ "language": "en",
+ "model": "tiny",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 18.02,
+   "text": "Alright."
+  },
+  {
+   "start": 18.02,
+   "end": 33.02,
+   "text": "Look at the Irish."
+  }
+ ]
+}

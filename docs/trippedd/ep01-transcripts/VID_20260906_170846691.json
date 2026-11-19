@@ -1,0 +1,17 @@
+{
+ "file": "VID_20260906_170846691",
+ "language": "en",
+ "model": "tiny",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 2.0,
+   "text": "I'm going to be tired."
+  },
+  {
+   "start": 15.0,
+   "end": 16.0,
+   "text": "But what?"
+  }
+ ]
+}

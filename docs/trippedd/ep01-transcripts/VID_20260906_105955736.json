@@ -1,0 +1,22 @@
+{
+ "file": "VID_20260906_105955736",
+ "language": "en",
+ "model": "tiny",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 3.0,
+   "text": "I'm gonna go straight off the camera."
+  },
+  {
+   "start": 7.0,
+   "end": 8.0,
+   "text": "Hi."
+  },
+  {
+   "start": 15.0,
+   "end": 17.0,
+   "text": "Where's the camera?"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "file": "VID_20260906_104742101",
+ "language": "en",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 2.0,
+   "text": "We're in the start of the walk."
+  },
+  {
+   "start": 2.0,
+   "end": 3.0,
+   "text": "We're coming down."
+  },
+  {
+   "start": 3.0,
+   "end": 5.0,
+   "text": "There's no fear on the feet."
+  },
+  {
+   "start": 8.0,
+   "end": 10.0,
+   "text": "We're in the start of the walk."
+  },
+  {
+   "start": 10.0,
+   "end": 11.0,
+   "text": "Yeah, we have to."
+  },
+  {
+   "start": 16.0,
+   "end": 18.0,
+   "text": "We're coming down."
+  }
+ ]
+}

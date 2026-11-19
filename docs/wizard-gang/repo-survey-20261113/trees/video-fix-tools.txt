@@ -1,0 +1,9 @@
+AGENTS.md
+README.md
+WORKING-METHOD.md
+ai-body-replace
+ai-body-replace/KAGGLE-SETUP.md
+ai-body-replace/README.md
+ai-body-replace/cape_jones_viggle_kaggle.ipynb
+ai-body-replace/gen_notebook.py
+ai-body-replace/viggle_workflow_api.json

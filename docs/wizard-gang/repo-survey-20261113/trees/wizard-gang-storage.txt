@@ -1,0 +1,42 @@
+.github
+.github/workflows
+.github/workflows/no-deletion-guard.yml
+AGENTS.md
+WORKING-METHOD.md
+ai-body-replace
+ai-body-replace/KAGGLE-SETUP.md
+ai-body-replace/README.md
+ai-body-replace/cape_jones_viggle_kaggle.ipynb
+ai-body-replace/gen_notebook.py
+ai-body-replace/viggle_workflow_api.json
+docs
+docs/NO-DATA-LOSS-RULES.md
+drive-archive
+drive-archive/cartoonier-shots
+drive-archive/cartoonier-shots/Group 10 - fireworks.webp
+drive-archive/cartoonier-shots/Group 11 - basketball.webp
+drive-archive/cartoonier-shots/Group 13 - rooftop BBQ.webp
+drive-archive/cartoonier-shots/Group 14 - arcade.webp
+drive-archive/cartoonier-shots/Group 15 - carnival.webp
+drive-archive/cartoonier-shots/Group 16 - studio.webp
+drive-archive/cartoonier-shots/Group 17 - skate park.webp
+drive-archive/cartoonier-shots/Group 3 - rooftop.webp
+drive-archive/cartoonier-shots/Group 4 - night market.webp
+drive-archive/cartoonier-shots/Group 5 - dice game.webp
+drive-archive/cartoonier-shots/Group 6 - bridge.webp
+drive-archive/cartoonier-shots/Group 7 - bodega.webp
+drive-archive/cartoonier-shots/Group 8 - subway.webp
+drive-archive/cartoonier-shots/Group 9 - parking garage.webp
+drive-archive/cartoonier-shots/SWMG group - cartoon 1.webp
+drive-archive/cartoonier-shots/SWMG group - cartoon 2.webp
+drive-archive/detailed-shots
+drive-archive/detailed-shots/Cross-faction 1 - summit (1).webp
+drive-archive/detailed-shots/Painterly 4 - subway tunnel.webp
+drive-archive/detailed-shots/Painterly 5 - burning building.webp
+drive-archive/detailed-shots/Painterly 6 - cathedral.webp
+drive-archive/detailed-shots/Painterly 7 - foggy pier.webp
+drive-archive/detailed-shots/Painterly 8 - desert motel.webp
+drive-archive/detailed-shots/Painterly 9 - helipad.webp
+drive-archive/detailed-shots/Painterly group 1 - alley.webp
+drive-archive/detailed-shots/Painterly group 2 - ritual.webp
+drive-archive/detailed-shots/Painterly group 3 - storm rooftop.webp

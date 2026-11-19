@@ -1,0 +1,1262 @@
+.github
+.github/workflows
+.github/workflows/no-deletion-guard.yml
+AGENTS.md
+WORKING-METHOD.md
+ai-body-replace
+ai-body-replace/KAGGLE-SETUP.md
+ai-body-replace/README.md
+ai-body-replace/cape_jones_viggle_kaggle.ipynb
+ai-body-replace/gen_notebook.py
+ai-body-replace/viggle_workflow_api.json
+docs
+docs/BUILD-MAP-FREE-VERSIONS.md
+docs/INDUSTRY-STACK-STATUS.md
+docs/NO-DATA-LOSS-RULES.md
+docs/industry-eps-renders-2026-10-30
+docs/industry-eps-renders-2026-10-30/LOG.md
+docs/industry-eps-renders-2026-10-30/MANIFEST.md
+docs/industry-eps-renders-2026-10-30/manifest.json
+docs/wizard-gang
+docs/wizard-gang/CAPE-JONES-TRANSFER-INVENTORY-2026-11-02.md
+docs/wizard-gang/FIRST-SHOT-SPEC.md
+docs/wizard-gang/FLA-PRODUCTION-STANDARD.md
+docs/wizard-gang/ORIGINAL-PIPELINE-V1-FROZEN.md
+docs/wizard-gang/REAL-ANIMATION-V2-STACK.md
+docs/wizard-gang/RIG-DISSECTION.md
+docs/wizard-gang/TOOLS-WIRING-2026-11-02.md
+docs/wizard-gang/WG-PRODUCTION-METHOD.md
+docs/wizard-gang/WG-RIG-TEMPLATE.md
+docs/wizard-gang/audits
+docs/wizard-gang/audits/wizard-gang-real-anim-local-tools-2026-10-29.md
+docs/wizard-gang/audits/wizard-gang-real-anim-repo-audit-2026-10-29.md
+docs/wizard-gang/pipeline-one
+docs/wizard-gang/pipeline-one/PIPELINE-ONE-MOTION-METHOD.md
+docs/wizard-gang/pipeline-one/ashes_pipeline-one_motion-test_v1.mp4
+docs/wizard-gang/pipeline-one/ashes_pipeline-one_motion-test_v1_DARKFACE_SILENT.mp4
+docs/wizard-gang/pipeline-one/ashes_pipeline-one_motion-test_v1_strip.png
+docs/wizard-gang/pipeline-one/ashes_pipeline-one_motion-test_v2_strip.png
+docs/wizard-gang/pipeline-one/ashes_pipeline-one_motion-test_v2_voidface_SILENT.mp4
+docs/wizard-gang/transferred-from-cape-jones
+docs/wizard-gang/transferred-from-cape-jones/ANIMATION-PIPELINE-2026.md
+docs/wizard-gang/transferred-from-cape-jones/DANCE-CHOREO-INVENTORY.md
+docs/wizard-gang/transferred-from-cape-jones/DANCE-CHOREO-README.md
+docs/wizard-gang/transferred-from-cape-jones/FLIPACLIP-POST-PIPELINE.md
+production
+production/WIZARD_GANG_EP01
+production/WIZARD_GANG_EP01/TRIP-EFFECTS-DIRECTION.md
+production/WIZARD_GANG_EP01/animation-study
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/CN DOT COM FLASH ANIMATIONS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/CN DOT COM FLASH ANIMATIONS/Bloo
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/CN DOT COM FLASH ANIMATIONS/Bloo/Bloo Frames.doc
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/CN DOT COM FLASH ANIMATIONS/Cheese
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/CN DOT COM FLASH ANIMATIONS/Cheese/Cheese Frames.doc
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/CN DOT COM FLASH ANIMATIONS/Cheese/Cheese_v24.swf
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS 3D
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS 3D/Fosters Toy Picts
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS 3D/Fosters Toy Picts/8663_051.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS 3D/Fosters Toy Picts/8663_128.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS 3D/Fosters Toy Picts/Thumbs.db
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS 3D/Notes
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS 3D/Notes/Bloo_structure.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS 3D/Notes/FSwl trn.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS 3D/Notes/Mac_Structure.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/4C
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/4C/Blooregard
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/4C/Blooregard/BLO4C01A_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/4C/Blooregard/BLO4C01B_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/4C/Blooregard/BLO4C02_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/4C/Blooregard/BLO4C03_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/4C/Blooregard/BLO4C04_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/BW
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/BW/Blooregard
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/BW/Blooregard/BLO0BW1A_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/BW/Blooregard/BLO0BW1B_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/BW/Blooregard/BLOBW02_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/BW/Blooregard/BLOBW03_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/BW/Blooregard/BLOBW04_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/BW/Blooregard/BLOBW05_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/BW/Icon#Uf00d
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/PMS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/PMS/Blooregard
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/PMS/Blooregard/BLOPN01B_CA_FDA.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ADDITIONAL ARTWORK/PMS/Icon#Uf00d
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ASSETS CHECKLIST
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS ASSETS CHECKLIST/Foster_s Assets Checklist.xls
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/.BridgeSort
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/BG TIFFS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/BG TIFFS/Thumbs.db
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS/.BridgeSort
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS/BG01_DEBG_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS/BG02_DEBG_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS/BG03_DEBG_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS/BG04_DEBG_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS/BG05_DEBG_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS/BG06_DEBG_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS/BG07_DEBG_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS/BG08_DEBG_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS/BG09_DEBG_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS BACKGROUNDS/EPS/BG10_DEBG_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/4C
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/4C/Coco
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/4C/Coco/CO4C11_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/4C/Eduardo
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/4C/Eduardo/ED4C13_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/4C/Wilt
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/4C/Wilt/WIL4C04_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/4C/Wilt/WIL4C06_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/4C/Wilt/WIL4C08_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Blooregard
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Blooregard/BLOBW01_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Blooregard/BLOBW03_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Blooregard/BLOBW06_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Blooregard/BLOBW09_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Blooregard/BLOBW14_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Blooregard/BLOBW19_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Blooregard/BLOBW22_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Coco
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Coco/COBW04_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Coco/COBW05_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Coco/COBW10_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Goo
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Goo/GOOBW04_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Goo/GOOBW06_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Mac
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Mac/MACBW10_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Mr Herriman
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/BW/Mr Herriman/MHBW02_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/PMS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/PMS/Blooregard
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/PMS/Blooregard/BLOPN02_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/PMS/Blooregard/BLOPN20_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/PMS/Blooregard/BLOPN21_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/PMS/Eduardo
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/PMS/Eduardo/EDPN01_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/PMS/Eduardo/EDPN03_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/PMS/Eduardo/EDPN09_CA_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Character Art/PMS/Icon#Uf00d
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Logos
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CHARACTER ART PACK/Fosters Logos/FLPN04_LO_FSTCAP.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/DESIGN ELEMENTS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/DESIGN ELEMENTS/ORIGINAL COLORS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/DESIGN ELEMENTS/ORIGINAL COLORS/BACKGROUNDS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/DESIGN ELEMENTS/ORIGINAL COLORS/BACKGROUNDS/cor_bac_04.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/DESIGN ELEMENTS/ORIGINAL COLORS/BACKGROUNDS/cor_bac_07.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/DESIGN ELEMENTS/ORIGINAL COLORS/FRAMES
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/DESIGN ELEMENTS/ORIGINAL COLORS/FRAMES/cor_frm_02.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/DESIGN ELEMENTS/ORIGINAL COLORS/FRAMES/cor_frm_04.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/DESIGN ELEMENTS/ORIGINAL COLORS/FRAMES/cor_frm_11.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/DESIGN ELEMENTS/ORIGINAL COLORS/FRAMES/cor_frm_12.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/LOGOS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/LOGOS/cor_log_01_pms.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/ORIGINAL COLORS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Core Assets/Core_Assets/ORIGINAL COLORS/cor_wil_04.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Bathroom
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Bathroom/ORIGINAL COLORS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Bathroom/ORIGINAL COLORS/._bat_cha_04.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Bathroom/ORIGINAL COLORS/bat_cha_05.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Bedroom
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Bedroom/ORIGINAL COLORS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Bedroom/ORIGINAL COLORS/._bed_pat_01.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Bedroom/ORIGINAL COLORS/bed_cha_06.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Bedroom/ORIGINAL COLORS/bed_pat_02.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Bedroom/ORIGINAL COLORS/bed_pat_03.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Bedroom/ORIGINAL COLORS/bed_pat_06.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/GameRoom
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/GameRoom/ORIGINAL COLORS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/GameRoom/ORIGINAL COLORS/._gam_cha_05.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/GameRoom/ORIGINAL COLORS/._gam_cha_06.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/GameRoom/ORIGINAL COLORS/gam_pat_01.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Outdoor
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Outdoor/._out_cha_02.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Outdoor/._out_cha_04.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Outdoor/._out_pat_01.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Outdoor/._out_pat_03.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Outdoor/._out_pat_06.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Outdoor/ORIGINAL COLORS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Outdoor/ORIGINAL COLORS/._out_pat_05.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Outdoor/ORIGINAL COLORS/out_cha_07.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Outdoor/ORIGINAL COLORS/out_pat_06.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/Outdoor/out_cha_07.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/._sch_cha_01.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/._sch_cha_02.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/._sch_cha_03.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/._sch_cha_04.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/._sch_cha_05.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/._sch_pat_03.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/ORIGINAL COLORS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/ORIGINAL COLORS/._sch_cha_04.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/ORIGINAL COLORS/._sch_pat_05.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/ORIGINAL COLORS/sch_cha_03.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/ORIGINAL COLORS/sch_cha_05.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/ORIGINAL COLORS/sch_pat_04.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/School/sch_cha_02.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/TrophyRoom
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 1/Fosters_s Themed Assets/ORIGINAL COLORS/TrophyRoom/col_cha_02.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/CMYK
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/CMYK/Backgrounds
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/CMYK/Backgrounds/bac08_cmyk.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/blo02_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/blo04_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/blo05_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/blo06_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/che06_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/coc03_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/edu01_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/grp01_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/grp03_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/grp04_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/mac05_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/LINE_ART/Character_Art/wil04_line.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/MAQUETTE_PDFs
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/MAQUETTE_PDFs/DaVinci Poses
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/MAQUETTE_PDFs/DaVinci Poses/Eduardo_Div_FINAL_r2.pdf
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Color
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Color/.BridgeSort
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Frames
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Frames/BGS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Frames/BGS/bgs_fra06_pms.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Frames/BGS/bgs_fra10_pms.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Patterns
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Patterns/Adults
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Patterns/Adults/adl_pat01_pms.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Patterns/Juniors
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Patterns/Juniors/jrs_pat03_pms.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS DESIGN GUIDE 2/fosters_dsg_07_08/PMS/Patterns/Juniors/jrs_pat06_pms.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS PACKAGING GUIDELINES
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS PACKAGING GUIDELINES/Fosters_Packaging_Elements
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS PACKAGING GUIDELINES/Fosters_Packaging_Elements/Sample Mechanicals
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS PACKAGING GUIDELINES/Fosters_Packaging_Elements/Sample Mechanicals/PDFS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS PACKAGING GUIDELINES/Fosters_Packaging_Elements/Sample Mechanicals/PDFS/fosters.hangtag.pdf
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS CNE/FOSTERS PACKAGING GUIDELINES/Fosters_Packaging_Elements/Sample Mechanicals/PDFS/fosters.windowbox1.pdf
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/#Uf021OLD
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/#Uf021OLD/FSco digink BW.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/#Uf021OLD/FSfr digink PN.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/#Uf021OLD/FSwl digink PN.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/#Uf021Update 2007
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/#Uf021Update 2007/BLO_BW_DIGINK_UPDT.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/#Uf021Update 2007/CHS_BW_DIGINK_UPDT.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/#Uf021Update 2007/WIL_BW_DIGINK_UPDT.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/BLO_BW_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/BLO_PN_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/CHS_BW_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/CHS_PN_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/COC_BW_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/COC_PN_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/ED_BW_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/ED_PN_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/FRA_BW_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/FRA_PN_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/GOO_BW_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/GOO_PN_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/MAC_BW_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/MAC_PN_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/MME_BW_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/MME_PN_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/MRH_BW_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/MRH_PN_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/WIL_BW_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS DIGITAL INK NOTES/WIL_PN_DIGINK.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Exclusive for Jackie
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Exclusive for Jackie/GWH_01.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR01.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR02.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR03.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR04.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR05.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR06.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR07.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR08.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR09.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR10.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR11.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR12.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR13.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR14.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR15.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Jpeg RGB/GWH_PR16.jpg
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR01.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR02.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR03.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR04.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR05.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR06.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR07.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR08.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR09.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR10.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR11.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR12.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR13.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR14.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR15.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS GOOD WILT HUNTING/Tiff 4C/GWH_PR16.tif
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS LOGLINES
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS LOGLINES/Fosters Loglines.doc
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS LOGOS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS LOGOS/FL4C01_LO_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS LOGOS/FLBW02_LO_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS LOGOS/FLBW03_LO_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS LOGOS/FLPN04_LO_FSTCG.eps
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS LOGOS/lock-up
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS LOGOS/lock-up/AI
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS LOGOS/lock-up/AI/CN_FOST_LOGO_LOCKUP_1C_WHITE.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS LOGOS/lock-up/AI/CN_FOST_LOGO_LOCKUP_PN.ai
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS/Flash
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS/Flash/Cheese_Turnaround.fla
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS/Flash/Coco_Turnaround.fla
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS/Flash/Duchess_Turnaround.fla
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS/Flash/Ed_Turnaround.fla
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS/Flash/Frankie_Turnaround.fla
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS/Flash/Goo_Hair.fla
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS/Flash/Goo_Turnaround.fla
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS/Flash/Madam_Foster_Turnaround.fla
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS/Flash/Terrence_Turnaround.fla
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MAIN MODEL TURNS/Flash/Wilt_Turnaround.fla
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/1m01-JLV+JR 632-006
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/1m01-JLV+JR 632-008
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/1m01-JLV+JR 651-055.wav
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/1m02-JLV+JR 632-015.wav
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/1m02a-JLV 632-009
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/1m06-JLV+JR 632-020
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/1m09-JLV 632-001.wav
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/1m09-JLV+JR 651-052.wav
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/1m10-JLV 632-001
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/1m12 FIX-JLV 632-001
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/1m16-JLV 632-001
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/2m11-JLV 632-002
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/Fosters 10 Second Bumper.wav
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/Fosters End Titles.wav
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/Fosters Float Montage
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS MUSIC/Fosters Full Main Title.wav
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS OUTLINES
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS OUTLINES/BeatWithASchtick(outline).DOC
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS OUTLINES/Busted premise.doc
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS OUTLINES/Frankie My Dear....doc
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS OUTLINES/Mac and Cheese.doc
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS OUTLINES/Store Wars.doc
+production/WIZARD_GANG_EP01/animation-study/fosters-cnleaks/Cartoon Network Leaks/FOSTERS/FOSTERS OUTLINES/www.outline.doc
+production/WIZARD_GANG_EP01/animation-study/fosters-home
+production/WIZARD_GANG_EP01/animation-study/fosters-home/CATALOG.md
+production/WIZARD_GANG_EP01/animation-study/grim-adventures
+production/WIZARD_GANG_EP01/animation-study/grim-adventures/CATALOG.md
+production/WIZARD_GANG_EP01/animation-study/robot-chicken
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CATALOG.md
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/aliens
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/aliens/ALIEN01PHOTO_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/bloopers host
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/bloopers host/HOST01PHOTO_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/dancing mexican man
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/dancing mexican man/MEXICAN01PHOTO_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/humping robot
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/humping robot/ROBOT01PHOTO_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/mad scientist
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/mad scientist/MADSCIENTIST01PHOTO_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/mad scientist/MADSCIENTIST02PHOTO_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/nerd
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/nerd/NERD01PHOTO_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/nerd/NERD02PHOTO_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/robot chicken
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/robot chicken/RBC01PHOTO_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/robot chicken/RBC02PHOTO_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/seth
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/PHOTOGRAPHIC/seth/SGREEN01PHOTO_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/Mexican
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/Mexican/MEXICAN4C01VECTOR_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/alien
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/alien/ALIEN4C01VECTOR_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/bloopers host
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/bloopers host/HOST4C01VECTOR_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/humping robot
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/humping robot/ROBOT4C01VECTOR_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/nerd
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/nerd/NERD4C01VECTOR_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/nerd/NERD4C02VECTOR_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/robot chicken
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/robot chicken/RBC4C01VECTOR_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/robot chicken/RBC4C02VECTOR_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/scientist
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/scientist/MADS4C01VECTOR_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/scientist/MADS4C02VECTOR_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/seth
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/CHARACTER ART/VECTOR/seth/SGREEN4C01VECTOR_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/DESIGN ELEMENTS
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/DESIGN ELEMENTS/RBCIcons.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/DESIGN ELEMENTS/RBCPAT01.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/DESIGN ELEMENTS/RBCPAT02.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/DESIGN ELEMENTS/RBCPAT03.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/LOGO
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/LOGO/PBCLOGOPN.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/LOGO/RBCLOGOBW.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/LOGO/RBCLOGOCMYK.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/LOGO/RBCLOGOGREY.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/LOGO/RBCLOGORGB.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCActionFigureChicken.psd
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCActionFigureScientist.psd
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCAntennatopper.psd
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCBoxers.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCCoasters.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCHats.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCHoodies.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCMUGS.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCMYSTERY.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCPillow.psd
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCSkateboard.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCSocks.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCTShirt05.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCTShirt06.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCTshirt01.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCTshirt02.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCTshirt03.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCTshirt04.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCTshirt07.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCTshirt08.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCTshirt09.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PRODUCT SAMPLES/RBCTshirt10.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PROPS
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PROPS/PROP01_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PROPS/PROP02_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/PROPS/PROP03_RBCSG.eps
+production/WIZARD_GANG_EP01/animation-study/robot-chicken/RBC STYLEGUIDE.pdf
+production/WIZARD_GANG_EP01/end-credit-mw.mp4
+production/WIZARD_GANG_EP01/video
+production/WIZARD_GANG_EP01/video/.thumbnails
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-cont-1-0-9dcc2bcc-d227-43c1-a916-c4d588724979.jpg
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-cont-10-0-65a24ff7-14a3-4864-b2f8-4fff53080b43.jpg
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-cont-11-0-09c9e52c-0776-4f8c-8db0-5a2be15a253c.jpg
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-cont-2-0-b6423e94-c90d-4c44-9d3a-3df91a9b2fdd.jpg
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-cont-3-0-a896ea76-8909-4b6b-ba60-17cc4d7a92ba.jpg
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-cont-4-0-d2d4a0cb-fbc7-439d-991b-f8bf75dbbeec.jpg
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-cont-5-0-d522110a-03cc-421a-bc4c-a6fb134ed884.jpg
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-cont-6-0-885801aa-d926-4b74-a1fd-3205ec500ab2.jpg
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-cont-7-0-b957bd01-6586-432c-b6bc-ecc61e3d6215.jpg
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-cont-8-0-823217a4-4bcd-4ce6-b7d0-e4aeadd0335b.jpg
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-cont-9-0-2757f002-9cd4-4c1b-9d04-3204b08056f3.jpg
+production/WIZARD_GANG_EP01/video/.thumbnails/media-generation-kiko-pier-8s-0-ab7701ca-229d-4eef-a075-283b9403dff3.jpg
+production/WIZARD_GANG_EP01/video/faceswap-v2
+production/WIZARD_GANG_EP01/video/faceswap-v2/rejected
+production/WIZARD_GANG_EP01/video/faceswap-v2/rejected/cont-1-faceswap-v2.mp4
+production/WIZARD_GANG_EP01/video/faceswap-v2/rejected/cont-10-faceswap-v2.mp4
+production/WIZARD_GANG_EP01/video/faceswap-v2/rejected/cont-11-faceswap-v2.mp4
+production/WIZARD_GANG_EP01/video/faceswap-v2/rejected/cont-2-faceswap-v2.mp4
+production/WIZARD_GANG_EP01/video/faceswap-v2/rejected/cont-4-faceswap-v2.mp4
+production/WIZARD_GANG_EP01/video/faceswap-v2/rejected/cont-5-faceswap-v2.mp4
+production/WIZARD_GANG_EP01/video/faceswap-v2/rejected/cont-8-faceswap-v2.mp4
+production/WIZARD_GANG_EP01/video/faceswap-v2/rejected/cont-9-faceswap-v2.mp4
+production/WIZARD_GANG_EP01/video/faceswap-v2/rejected/pier-8s-faceswap-v2.mp4
+production/WIZARD_GANG_EP01/video/faceswap
+production/WIZARD_GANG_EP01/video/faceswap/cont-3-faceswap.mp4
+production/WIZARD_GANG_EP01/video/faceswap/cont-6-faceswap.mp4
+production/WIZARD_GANG_EP01/video/faceswap/cont-7-faceswap.mp4
+production/WIZARD_GANG_EP01/video/faceswap/rejected
+production/WIZARD_GANG_EP01/video/faceswap/rejected/cont-1-faceswap.mp4
+production/WIZARD_GANG_EP01/video/faceswap/rejected/cont-10-faceswap.mp4
+production/WIZARD_GANG_EP01/video/faceswap/rejected/cont-11-faceswap.mp4
+production/WIZARD_GANG_EP01/video/faceswap/rejected/cont-2-faceswap.mp4
+production/WIZARD_GANG_EP01/video/faceswap/rejected/cont-4-faceswap.mp4
+production/WIZARD_GANG_EP01/video/faceswap/rejected/cont-5-faceswap.mp4
+production/WIZARD_GANG_EP01/video/faceswap/rejected/cont-8-faceswap.mp4
+production/WIZARD_GANG_EP01/video/faceswap/rejected/cont-9-faceswap.mp4
+production/WIZARD_GANG_EP01/video/faceswap/rejected/pier-8s-faceswap.mp4
+production/WIZARD_GANG_EP01/video/headswap-v2
+production/WIZARD_GANG_EP01/video/headswap-v2/cont-1-proper.mp4
+production/WIZARD_GANG_EP01/video/headswap-v2/cont-3-proper-hq.mp4
+production/WIZARD_GANG_EP01/video/headswap-v2/cont-3-proper.mp4
+production/WIZARD_GANG_EP01/video/headswap-v2/cont-9-proper.mp4
+production/WIZARD_GANG_EP01/video/headswap
+production/WIZARD_GANG_EP01/video/headswap/cont-1-headswap-web.mp4
+production/WIZARD_GANG_EP01/video/headswap/cont-1-headswap.mp4
+production/WIZARD_GANG_EP01/video/headswap/cont-3-headswap-bald-web.mp4
+production/WIZARD_GANG_EP01/video/headswap/cont-3-headswap-bald.mp4
+production/WIZARD_GANG_EP01/video/headswap/cont-9-headswap-web.mp4
+production/WIZARD_GANG_EP01/video/headswap/cont-9-headswap.mp4
+production/WIZARD_GANG_EP01/video/headswap/rejected
+production/WIZARD_GANG_EP01/video/headswap/rejected/cont-3-headswap.mp4
+production/WIZARD_GANG_EP01/video/in-memoriam-card-10s.mp4
+production/WIZARD_GANG_EP01/video/in-memoriam-card.png
+production/WIZARD_GANG_EP01/video/kiko-encore-anyway-MIX-v1.mp4
+production/WIZARD_GANG_EP01/video/kiko-encore-anyway-MIX-v2.mp4
+production/WIZARD_GANG_EP01/video/kiko-encore-anyway-MIX-v3.mp4
+production/WIZARD_GANG_EP01/video/kiko-encore-anyway-MIX-v4.mp4
+production/WIZARD_GANG_EP01/video/kiko-encore-anyway-MIX-v5.mp4
+production/WIZARD_GANG_EP01/video/kiko-encore-anyway-v1.mp4
+production/WIZARD_GANG_EP01/video/kiko-music-video-ROUGH-v1.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-1-0-9dcc2bcc-d227-43c1-a916-c4d588724979.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-1-1791777150.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-10-0-65a24ff7-14a3-4864-b2f8-4fff53080b43.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-10-1791777439.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-11-0-09c9e52c-0776-4f8c-8db0-5a2be15a253c.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-11-1791777437.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-2-0-b6423e94-c90d-4c44-9d3a-3df91a9b2fdd.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-2-1791777132.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-3-0-a896ea76-8909-4b6b-ba60-17cc4d7a92ba.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-3-1791777144.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-4-0-d2d4a0cb-fbc7-439d-991b-f8bf75dbbeec.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-4-1791777132.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-5-0-d522110a-03cc-421a-bc4c-a6fb134ed884.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-5-1791777133.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-6-0-885801aa-d926-4b74-a1fd-3205ec500ab2.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-6-1791777439.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-7-0-b957bd01-6586-432c-b6bc-ecc61e3d6215.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-7-1791777440.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-8-0-823217a4-4bcd-4ce6-b7d0-e4aeadd0335b.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-8-1791777439.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-9-0-2757f002-9cd4-4c1b-9d04-3204b08056f3.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-cont-9-1791777454.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-pier-8s-0-ab7701ca-229d-4eef-a075-283b9403dff3.mp4
+production/WIZARD_GANG_EP01/video/media-generation-kiko-pier-8s-1791777074.json
+production/WIZARD_GANG_EP01/video/media-generation-kiko-pier-scene-0-d29ba6e1-3fbd-45a9-a0b7-d45b2efc0d0f.webp
+production/WIZARD_GANG_EP01/video/media-generation-kiko-pier-scene-1791777016.json
+production/WIZARD_GANG_EP01/video/media-generation-last-upload-handles.json
+production/WIZARD_GANG_EP01/video/new-scenes
+production/WIZARD_GANG_EP01/video/new-scenes/newscene-1-kneel.mp4
+production/WIZARD_GANG_EP01/video/new-scenes/newscene-2-walkaway.mp4
+production/WIZARD_GANG_EP01/video/new-scenes/newscene-3-maskclose.mp4
+production/WIZARD_GANG_EP01/video/new-scenes/newscene-4-wideshot.mp4
+production/WIZARD_GANG_EP01/video/new-scenes/newscene-5-lookup.mp4
+production/WIZARD_GANG_EP01/video/new-scenes/newscene-6-turn.mp4
+production/WIZARD_GANG_EP01/video/viggle-chunk1-clean.mp4
+production/WIZARD_GANG_EP01/video/viggle-chunk1-muta-facepaint.mp4
+production/WIZARD_GANG_EP01/video/viggle-chunk1-muta-whiterobe2.mp4
+production/WIZARD_GANG_EP01/video/viggle-chunk2-clean.mp4
+production/WIZARD_GANG_EP01/video/viggle-chunk2-muta-whiterobe.mp4
+production/WIZARD_GANG_EP01/video/viggle-chunk3-clean.mp4
+production/WIZARD_GANG_EP01/video/viggle-chunk3-muta-masked.mp4
+production/WIZARD_GANG_EP01/video/viggle-muta-test-1.mp4
+production/wizard-gang-fla
+production/wizard-gang-fla/PROGRAM-LOG.md
+production/wizard-gang-fla/README.md
+production/wizard-gang-fla/WG101ARRIVAL_Sc001_Clean_V001_ASH.fla
+production/wizard-gang-fla/WG101_ORIGINAL_PUPPET_ASHES_VERSION_001.fla
+production/wizard-gang-fla/WG102_ORIGINAL_PUPPET_STATIC_VERSION_001.fla
+production/wizard-gang-fla/WG103_ORIGINAL_PUPPET_CIPHER_VERSION_001.fla
+production/wizard-gang-fla/WG104_ORIGINAL_PUPPET_SOMBRA_VERSION_001.fla
+production/wizard-gang-fla/WG105_ORIGINAL_PUPPET_KIKO_VERSION_001.fla
+production/wizard-gang-fla/WG105_ORIGINAL_PUPPET_KIKO_VERSION_004.fla
+production/wizard-gang-fla/WG106_ORIGINAL_PUPPET_THEORY_VERSION_001.fla
+production/wizard-gang-fla/WG107_ORIGINAL_PUPPET_ONYX_VERSION_001.fla
+production/wizard-gang-fla/WG108_ORIGINAL_PUPPET_ECHO_VERSION_001.fla
+production/wizard-gang-fla/WG109_ORIGINAL_PUPPET_HOLLOW_VERSION_001.fla
+production/wizard-gang-fla/docs
+production/wizard-gang-fla/docs/ashes-inventory.md
+production/wizard-gang-fla/docs/gumball-dissection.md
+production/wizard-gang-fla/docs/phase4-puppets-2026-11-02.md
+production/wizard-gang-fla/docs/renderer-contract.md
+production/wizard-gang-fla/kiko-v4
+production/wizard-gang-fla/kiko-v4/README.md
+production/wizard-gang-fla/kiko-v4/parts.json
+production/wizard-gang-fla/kiko-v4/parts
+production/wizard-gang-fla/kiko-v4/parts/coat_L.png
+production/wizard-gang-fla/kiko-v4/parts/coat_R.png
+production/wizard-gang-fla/kiko-v4/parts/forearm_L.png
+production/wizard-gang-fla/kiko-v4/parts/forearm_R.png
+production/wizard-gang-fla/kiko-v4/parts/hand_L.png
+production/wizard-gang-fla/kiko-v4/parts/hand_R.png
+production/wizard-gang-fla/kiko-v4/parts/head.png
+production/wizard-gang-fla/kiko-v4/parts/shin_L.png
+production/wizard-gang-fla/kiko-v4/parts/shin_R.png
+production/wizard-gang-fla/kiko-v4/parts/shoe_L.png
+production/wizard-gang-fla/kiko-v4/parts/shoe_R.png
+production/wizard-gang-fla/kiko-v4/parts/thigh_L.png
+production/wizard-gang-fla/kiko-v4/parts/thigh_R.png
+production/wizard-gang-fla/kiko-v4/parts/torso.png
+production/wizard-gang-fla/kiko-v4/parts/upper_arm_L.png
+production/wizard-gang-fla/kiko-v4/parts/upper_arm_R.png
+production/wizard-gang-fla/kiko-v4/proof
+production/wizard-gang-fla/kiko-v4/proof/kiko_frame_strip.png
+production/wizard-gang-fla/kiko-v4/proof/kiko_real-motion_proof.mp4
+production/wizard-gang-fla/kiko-v4/proof/parts_sheet_light.png
+production/wizard-gang-fla/kiko-v4/proof/poses
+production/wizard-gang-fla/kiko-v4/proof/poses/pose_0_NEUTRAL.png
+production/wizard-gang-fla/kiko-v4/proof/poses/pose_1_ARMS_RAISED.png
+production/wizard-gang-fla/kiko-v4/proof/poses/pose_2_POINT_R.png
+production/wizard-gang-fla/kiko-v4/proof/poses/pose_3_STEP_FORWARD.png
+production/wizard-gang-fla/kiko-v4/proof/poses/pose_4_HOOD_TILT_BOW.png
+production/wizard-gang-fla/kiko-v4/proof/poses/pose_5_WAVE_L.png
+production/wizard-gang-fla/kiko-v4/proof/poses/pose_6_GUARD.png
+production/wizard-gang-fla/kiko-v4/proof/poses/pose_7_REST_LEAN.png
+production/wizard-gang-fla/kiko-v4/proof/solo
+production/wizard-gang-fla/kiko-v4/proof/solo/coat_L.png
+production/wizard-gang-fla/kiko-v4/proof/solo/coat_R.png
+production/wizard-gang-fla/kiko-v4/proof/solo/forearm_L.png
+production/wizard-gang-fla/kiko-v4/proof/solo/forearm_R.png
+production/wizard-gang-fla/kiko-v4/proof/solo/hand_L.png
+production/wizard-gang-fla/kiko-v4/proof/solo/hand_R.png
+production/wizard-gang-fla/kiko-v4/proof/solo/head.png
+production/wizard-gang-fla/kiko-v4/proof/solo/shin_L.png
+production/wizard-gang-fla/kiko-v4/proof/solo/shin_R.png
+production/wizard-gang-fla/kiko-v4/proof/solo/shoe_L.png
+production/wizard-gang-fla/kiko-v4/proof/solo/shoe_R.png
+production/wizard-gang-fla/kiko-v4/proof/solo/thigh_L.png
+production/wizard-gang-fla/kiko-v4/proof/solo/thigh_R.png
+production/wizard-gang-fla/kiko-v4/proof/solo/torso.png
+production/wizard-gang-fla/kiko-v4/proof/solo/upper_arm_L.png
+production/wizard-gang-fla/kiko-v4/proof/solo/upper_arm_R.png
+production/wizard-gang-fla/kiko-v4/tools
+production/wizard-gang-fla/kiko-v4/tools/build_kiko_v4.py
+production/wizard-gang-fla/kiko-v4/tools/cleanup_kiko_v4.py
+production/wizard-gang-fla/kiko-v4/tools/pass2_kiko_v4.py
+production/wizard-gang-fla/kiko-v4/tools/pass3_kiko_v4.py
+production/wizard-gang-fla/kiko-v4/tools/proof_kiko_v4.py
+production/wizard-gang-fla/proof
+production/wizard-gang-fla/proof/WG101ARRIVAL_Sc001_V001.mp4
+production/wizard-gang-fla/proof/frame_strip.png
+production/wizard-gang-fla/proof/frames
+production/wizard-gang-fla/proof/frames/f000.png
+production/wizard-gang-fla/proof/frames/f001.png
+production/wizard-gang-fla/proof/frames/f002.png
+production/wizard-gang-fla/proof/frames/f003.png
+production/wizard-gang-fla/proof/frames/f004.png
+production/wizard-gang-fla/proof/frames/f005.png
+production/wizard-gang-fla/proof/frames/f006.png
+production/wizard-gang-fla/proof/frames/f007.png
+production/wizard-gang-fla/proof/frames/f008.png
+production/wizard-gang-fla/proof/frames/f009.png
+production/wizard-gang-fla/proof/frames/f010.png
+production/wizard-gang-fla/proof/frames/f011.png
+production/wizard-gang-fla/proof/frames/f012.png
+production/wizard-gang-fla/proof/frames/f013.png
+production/wizard-gang-fla/proof/frames/f014.png
+production/wizard-gang-fla/proof/frames/f015.png
+production/wizard-gang-fla/proof/frames/f016.png
+production/wizard-gang-fla/proof/frames/f017.png
+production/wizard-gang-fla/proof/frames/f018.png
+production/wizard-gang-fla/proof/frames/f019.png
+production/wizard-gang-fla/proof/frames/f020.png
+production/wizard-gang-fla/proof/frames/f021.png
+production/wizard-gang-fla/proof/frames/f022.png
+production/wizard-gang-fla/proof/frames/f023.png
+production/wizard-gang-fla/proof/frames/f024.png
+production/wizard-gang-fla/proof/frames/f025.png
+production/wizard-gang-fla/proof/frames/f026.png
+production/wizard-gang-fla/proof/frames/f027.png
+production/wizard-gang-fla/proof/frames/f028.png
+production/wizard-gang-fla/proof/frames/f029.png
+production/wizard-gang-fla/proof/frames/f030.png
+production/wizard-gang-fla/proof/frames/f031.png
+production/wizard-gang-fla/proof/frames/f032.png
+production/wizard-gang-fla/proof/frames/f033.png
+production/wizard-gang-fla/proof/frames/f034.png
+production/wizard-gang-fla/proof/frames/f035.png
+production/wizard-gang-fla/proof/frames/f036.png
+production/wizard-gang-fla/proof/frames/f037.png
+production/wizard-gang-fla/proof/frames/f038.png
+production/wizard-gang-fla/proof/frames/f039.png
+production/wizard-gang-fla/proof/frames/f040.png
+production/wizard-gang-fla/proof/frames/f041.png
+production/wizard-gang-fla/proof/frames/f042.png
+production/wizard-gang-fla/proof/frames/f043.png
+production/wizard-gang-fla/proof/frames/f044.png
+production/wizard-gang-fla/proof/frames/f045.png
+production/wizard-gang-fla/proof/frames/f046.png
+production/wizard-gang-fla/proof/frames/f047.png
+production/wizard-gang-fla/proof/frames/f048.png
+production/wizard-gang-fla/proof/frames/f049.png
+production/wizard-gang-fla/proof/frames/f050.png
+production/wizard-gang-fla/proof/frames/f051.png
+production/wizard-gang-fla/proof/frames/f052.png
+production/wizard-gang-fla/proof/frames/f053.png
+production/wizard-gang-fla/proof/frames/f054.png
+production/wizard-gang-fla/proof/frames/f055.png
+production/wizard-gang-fla/proof/frames/f056.png
+production/wizard-gang-fla/proof/frames/f057.png
+production/wizard-gang-fla/proof/frames/f058.png
+production/wizard-gang-fla/proof/frames/f059.png
+production/wizard-gang-fla/proof/frames/f060.png
+production/wizard-gang-fla/proof/frames/f061.png
+production/wizard-gang-fla/proof/frames/f062.png
+production/wizard-gang-fla/proof/frames/f063.png
+production/wizard-gang-fla/proof/frames/f064.png
+production/wizard-gang-fla/proof/frames/f065.png
+production/wizard-gang-fla/proof/frames/f066.png
+production/wizard-gang-fla/proof/frames/f067.png
+production/wizard-gang-fla/proof/frames/f068.png
+production/wizard-gang-fla/proof/frames/f069.png
+production/wizard-gang-fla/proof/frames/f070.png
+production/wizard-gang-fla/proof/frames/f071.png
+production/wizard-gang-fla/proof/pose_0.png
+production/wizard-gang-fla/proof/pose_3.png
+production/wizard-gang-fla/proof/pose_7.png
+production/wizard-gang-fla/proof/pose_9.png
+production/wizard-gang-fla/proof/poses_sheet.png
+production/wizard-gang-fla/proof/puppets
+production/wizard-gang-fla/proof/puppets/cipher
+production/wizard-gang-fla/proof/puppets/cipher/cipher_frame-strip_20261102.png
+production/wizard-gang-fla/proof/puppets/cipher/cipher_pose-sheet_20261102.png
+production/wizard-gang-fla/proof/puppets/cipher/cipher_puppet-motion-proof_20261102.mp4
+production/wizard-gang-fla/proof/puppets/cipher/pose_0_NEUTRAL.png
+production/wizard-gang-fla/proof/puppets/cipher/pose_1_BLINK.png
+production/wizard-gang-fla/proof/puppets/cipher/pose_2_LEAN_R.png
+production/wizard-gang-fla/proof/puppets/cipher/pose_3_LEAN_L.png
+production/wizard-gang-fla/proof/puppets/cipher/pose_4_BOW.png
+production/wizard-gang-fla/proof/puppets/cipher/pose_5_TURN_R.png
+production/wizard-gang-fla/proof/puppets/cipher/pose_6_ARMS_WIDE.png
+production/wizard-gang-fla/proof/puppets/cipher/pose_7_SETTLE.png
+production/wizard-gang-fla/proof/puppets/echo
+production/wizard-gang-fla/proof/puppets/echo/echo_frame-strip_20261102.png
+production/wizard-gang-fla/proof/puppets/echo/echo_pose-sheet_20261102.png
+production/wizard-gang-fla/proof/puppets/echo/echo_puppet-motion-proof_20261102.mp4
+production/wizard-gang-fla/proof/puppets/echo/pose_0_NEUTRAL.png
+production/wizard-gang-fla/proof/puppets/echo/pose_1_BLINK.png
+production/wizard-gang-fla/proof/puppets/echo/pose_2_LEAN_R.png
+production/wizard-gang-fla/proof/puppets/echo/pose_3_LEAN_L.png
+production/wizard-gang-fla/proof/puppets/echo/pose_4_BOW.png
+production/wizard-gang-fla/proof/puppets/echo/pose_5_TURN_R.png
+production/wizard-gang-fla/proof/puppets/echo/pose_6_ARMS_WIDE.png
+production/wizard-gang-fla/proof/puppets/echo/pose_7_SETTLE.png
+production/wizard-gang-fla/proof/puppets/hollow
+production/wizard-gang-fla/proof/puppets/hollow/hollow_frame-strip_20261102.png
+production/wizard-gang-fla/proof/puppets/hollow/hollow_pose-sheet_20261102.png
+production/wizard-gang-fla/proof/puppets/hollow/hollow_puppet-motion-proof_20261102.mp4
+production/wizard-gang-fla/proof/puppets/hollow/pose_0_NEUTRAL.png
+production/wizard-gang-fla/proof/puppets/hollow/pose_1_BLINK.png
+production/wizard-gang-fla/proof/puppets/hollow/pose_2_LEAN_R.png
+production/wizard-gang-fla/proof/puppets/hollow/pose_3_LEAN_L.png
+production/wizard-gang-fla/proof/puppets/hollow/pose_4_BOW.png
+production/wizard-gang-fla/proof/puppets/hollow/pose_5_TURN_R.png
+production/wizard-gang-fla/proof/puppets/hollow/pose_6_ARMS_WIDE.png
+production/wizard-gang-fla/proof/puppets/hollow/pose_7_SETTLE.png
+production/wizard-gang-fla/proof/puppets/kiko
+production/wizard-gang-fla/proof/puppets/kiko/kiko_frame-strip_20261102.png
+production/wizard-gang-fla/proof/puppets/kiko/kiko_pose-sheet_20261102.png
+production/wizard-gang-fla/proof/puppets/kiko/kiko_puppet-motion-proof_20261102.mp4
+production/wizard-gang-fla/proof/puppets/kiko/pose_0_NEUTRAL.png
+production/wizard-gang-fla/proof/puppets/kiko/pose_1_BLINK.png
+production/wizard-gang-fla/proof/puppets/kiko/pose_2_LEAN_R.png
+production/wizard-gang-fla/proof/puppets/kiko/pose_3_LEAN_L.png
+production/wizard-gang-fla/proof/puppets/kiko/pose_4_BOW.png
+production/wizard-gang-fla/proof/puppets/kiko/pose_5_TURN_R.png
+production/wizard-gang-fla/proof/puppets/kiko/pose_6_ARMS_WIDE.png
+production/wizard-gang-fla/proof/puppets/kiko/pose_7_SETTLE.png
+production/wizard-gang-fla/proof/puppets/onyx
+production/wizard-gang-fla/proof/puppets/onyx/onyx_frame-strip_20261102.png
+production/wizard-gang-fla/proof/puppets/onyx/onyx_pose-sheet_20261102.png
+production/wizard-gang-fla/proof/puppets/onyx/onyx_puppet-motion-proof_20261102.mp4
+production/wizard-gang-fla/proof/puppets/onyx/pose_0_NEUTRAL.png
+production/wizard-gang-fla/proof/puppets/onyx/pose_1_BLINK.png
+production/wizard-gang-fla/proof/puppets/onyx/pose_2_LEAN_R.png
+production/wizard-gang-fla/proof/puppets/onyx/pose_3_LEAN_L.png
+production/wizard-gang-fla/proof/puppets/onyx/pose_4_BOW.png
+production/wizard-gang-fla/proof/puppets/onyx/pose_5_TURN_R.png
+production/wizard-gang-fla/proof/puppets/onyx/pose_6_ARMS_WIDE.png
+production/wizard-gang-fla/proof/puppets/onyx/pose_7_SETTLE.png
+production/wizard-gang-fla/proof/puppets/sombra
+production/wizard-gang-fla/proof/puppets/sombra/pose_0_NEUTRAL.png
+production/wizard-gang-fla/proof/puppets/sombra/pose_1_BLINK.png
+production/wizard-gang-fla/proof/puppets/sombra/pose_2_LEAN_R.png
+production/wizard-gang-fla/proof/puppets/sombra/pose_3_LEAN_L.png
+production/wizard-gang-fla/proof/puppets/sombra/pose_4_BOW.png
+production/wizard-gang-fla/proof/puppets/sombra/pose_5_TURN_R.png
+production/wizard-gang-fla/proof/puppets/sombra/pose_6_ARMS_WIDE.png
+production/wizard-gang-fla/proof/puppets/sombra/pose_7_SETTLE.png
+production/wizard-gang-fla/proof/puppets/sombra/sombra_frame-strip_20261102.png
+production/wizard-gang-fla/proof/puppets/sombra/sombra_pose-sheet_20261102.png
+production/wizard-gang-fla/proof/puppets/sombra/sombra_puppet-motion-proof_20261102.mp4
+production/wizard-gang-fla/proof/puppets/static
+production/wizard-gang-fla/proof/puppets/static/pose_0_NEUTRAL.png
+production/wizard-gang-fla/proof/puppets/static/pose_1_BLINK.png
+production/wizard-gang-fla/proof/puppets/static/pose_2_LEAN_R.png
+production/wizard-gang-fla/proof/puppets/static/pose_3_LEAN_L.png
+production/wizard-gang-fla/proof/puppets/static/pose_4_BOW.png
+production/wizard-gang-fla/proof/puppets/static/pose_5_TURN_R.png
+production/wizard-gang-fla/proof/puppets/static/pose_6_ARMS_WIDE.png
+production/wizard-gang-fla/proof/puppets/static/pose_7_SETTLE.png
+production/wizard-gang-fla/proof/puppets/static/static_frame-strip_20261102.png
+production/wizard-gang-fla/proof/puppets/static/static_pose-sheet_20261102.png
+production/wizard-gang-fla/proof/puppets/static/static_puppet-motion-proof_20261102.mp4
+production/wizard-gang-fla/proof/puppets/theory
+production/wizard-gang-fla/proof/puppets/theory/pose_0_NEUTRAL.png
+production/wizard-gang-fla/proof/puppets/theory/pose_1_BLINK.png
+production/wizard-gang-fla/proof/puppets/theory/pose_2_LEAN_R.png
+production/wizard-gang-fla/proof/puppets/theory/pose_3_LEAN_L.png
+production/wizard-gang-fla/proof/puppets/theory/pose_4_BOW.png
+production/wizard-gang-fla/proof/puppets/theory/pose_5_TURN_R.png
+production/wizard-gang-fla/proof/puppets/theory/pose_6_ARMS_WIDE.png
+production/wizard-gang-fla/proof/puppets/theory/pose_7_SETTLE.png
+production/wizard-gang-fla/proof/puppets/theory/theory_frame-strip_20261102.png
+production/wizard-gang-fla/proof/puppets/theory/theory_pose-sheet_20261102.png
+production/wizard-gang-fla/proof/puppets/theory/theory_puppet-motion-proof_20261102.mp4
+production/wizard-gang-fla/proof/structure_sheet.png
+production/wizard-gang-fla/proof/validation
+production/wizard-gang-fla/proof/validation/WG101_ORIGINAL_PUPPET_ASHES_VERSION_001.json
+production/wizard-gang-fla/proof/validation/WG102_ORIGINAL_PUPPET_STATIC_VERSION_001.json
+production/wizard-gang-fla/proof/validation/WG103_ORIGINAL_PUPPET_CIPHER_VERSION_001.json
+production/wizard-gang-fla/proof/validation/WG104_ORIGINAL_PUPPET_SOMBRA_VERSION_001.json
+production/wizard-gang-fla/proof/validation/WG105_ORIGINAL_PUPPET_KIKO_VERSION_001.json
+production/wizard-gang-fla/proof/validation/WG106_ORIGINAL_PUPPET_THEORY_VERSION_001.json
+production/wizard-gang-fla/proof/validation/WG107_ORIGINAL_PUPPET_ONYX_VERSION_001.json
+production/wizard-gang-fla/proof/validation/WG108_ORIGINAL_PUPPET_ECHO_VERSION_001.json
+production/wizard-gang-fla/proof/validation/WG109_ORIGINAL_PUPPET_HOLLOW_VERSION_001.json
+production/wizard-gang-fla/tools
+production/wizard-gang-fla/tools/build_ashes.py
+production/wizard-gang-fla/tools/build_puppet.py
+production/wizard-gang-fla/tools/characters
+production/wizard-gang-fla/tools/characters/cipher.json
+production/wizard-gang-fla/tools/characters/echo.json
+production/wizard-gang-fla/tools/characters/hollow.json
+production/wizard-gang-fla/tools/characters/kiko.json
+production/wizard-gang-fla/tools/characters/onyx.json
+production/wizard-gang-fla/tools/characters/sombra.json
+production/wizard-gang-fla/tools/characters/static.json
+production/wizard-gang-fla/tools/characters/theory.json
+production/wizard-gang-fla/tools/finish_proof.py
+production/wizard-gang-fla/tools/fla_render.py
+production/wizard-gang-fla/tools/make_proof.py
+production/wizard-gang-fla/tools/transferred
+production/wizard-gang-fla/tools/transferred/LIPSYNC-TIMING-TEMPLATE.csv
+production/wizard-gang-fla/tools/transferred/build-fla-timeline-wg.jsfl
+production/wizard-gang-fla/tools/transferred/check_template_gate.py
+production/wizard-gang-fla/tools/validate_puppet.py
+production/wizard-gang-fla/tools/wg_render.py
+tools
+tools/characterizer
+tools/characterizer/README.md
+tools/characterizer/characterizer
+tools/characterizer/characterizer/__init__.py
+tools/characterizer/characterizer/core.py
+tools/characterizer/characterizer/operators.py
+tools/characterizer/characterizer/panels.py
+tools/characterizer/characterizer/profiles.py
+tools/characterizer/profiles
+tools/characterizer/profiles/cape_jones_canon.json
+tools/characterizer/profiles/cmu_bvh.json
+tools/characterizer/profiles/mixamo.json
+tools/characterizer/profiles/rigify.json
+tools/characterizer/profiles/rokoko.json
+tools/characterizer/profiles/tripo.json
+tools/characterizer/tests
+tools/characterizer/tests/test_characterizer.py
+tools/characterizer/tests/test_constraint_driven.py
+tools/characterizer/tests/test_log.txt
+tools/characterizer/tests/test_rolled_frames.py
+tools/checkpoint-render-driver
+tools/checkpoint-render-driver/README.md
+tools/checkpoint-render-driver/checkpoint_render_driver.py
+tools/checkpoint-render-driver/config.example.json
+tools/checkpoint-render-driver/render_one.py
+tools/checkpoint-render-driver/run.sh
+tools/checkpoint-render-driver/tests
+tools/checkpoint-render-driver/tests/TEST-LOG.md
+tools/effectorkit
+tools/effectorkit/README.md
+tools/effectorkit/addon
+tools/effectorkit/addon/effectorkit
+tools/effectorkit/addon/effectorkit/__init__.py
+tools/effectorkit/build_effectorkit_library.py
+tools/effectorkit/demo_effectorkit.py
+tools/effectorkit/effectorkit_demo.png
+tools/effectorkit/effectorkit_gn.py
+tools/effectorkit/effectorkit_library.blend
+tools/effectorkit/test_effectorkit.py
+tools/effectorkit/test_log.txt
+tools/gluegraph
+tools/gluegraph/README.md
+tools/gluegraph/gluegraph_addon
+tools/gluegraph/gluegraph_addon/__init__.py
+tools/gluegraph/gluegraph_addon/constraints.py
+tools/gluegraph/gluegraph_addon/fracture_core.py
+tools/gluegraph/tests
+tools/gluegraph/tests/test_gluegraph.py
+tools/gluegraph/tests/test_log.txt
+tools/mouthswap-bridge
+tools/mouthswap-bridge/README.md
+tools/mouthswap-bridge/blender_mouthswap.py
+tools/mouthswap-bridge/mouthswap_bridge.py
+tools/mouthswap-bridge/tests
+tools/mouthswap-bridge/tests/check_blender.py
+tools/mouthswap-bridge/tests/make_test_mouths.py
+tools/mouthswap-bridge/tests/sample_mouths
+tools/mouthswap-bridge/tests/sample_mouths/A.png
+tools/mouthswap-bridge/tests/sample_mouths/B.png
+tools/mouthswap-bridge/tests/sample_mouths/C.png
+tools/mouthswap-bridge/tests/sample_mouths/D.png
+tools/mouthswap-bridge/tests/sample_mouths/E.png
+tools/mouthswap-bridge/tests/sample_mouths/F.png
+tools/mouthswap-bridge/tests/sample_mouths/G.png
+tools/mouthswap-bridge/tests/sample_mouths/H.png
+tools/mouthswap-bridge/tests/sample_mouths/X.png
+tools/mouthswap-bridge/tests/verify_timing.py
+tools/natron-card-look-kit
+tools/natron-card-look-kit/INSTALL.md
+tools/natron-card-look-kit/README.md
+tools/natron-card-look-kit/card-kit
+tools/natron-card-look-kit/card-kit/README.md
+tools/natron-card-look-kit/card-kit/community-donor
+tools/natron-card-look-kit/card-kit/community-donor/PM_Camera
+tools/natron-card-look-kit/card-kit/community-donor/PM_Camera/PM_Camera.png
+tools/natron-card-look-kit/card-kit/community-donor/PM_Camera/PM_Camera.py
+tools/natron-card-look-kit/card-kit/community-donor/PM_Camera/PM_Camera.xml
+tools/natron-card-look-kit/card-kit/community-donor/PM_Camera/PM_CameraExt.py
+tools/natron-card-look-kit/card-kit/community-donor/PM_Card3D
+tools/natron-card-look-kit/card-kit/community-donor/PM_Card3D/PM_Card3D.png
+tools/natron-card-look-kit/card-kit/community-donor/PM_Card3D/PM_Card3D.py
+tools/natron-card-look-kit/card-kit/community-donor/PM_Card3D/PM_Card3D.xml
+tools/natron-card-look-kit/card-kit/community-donor/PM_Card3D/PM_Card3DExt.py
+tools/natron-card-look-kit/docs
+tools/natron-card-look-kit/docs/CARD-PROJECTION-RECIPE.md
+tools/natron-card-look-kit/docs/LOOKS-AND-LED-KNOBS.md
+tools/natron-card-look-kit/docs/SOURCES-AND-PROVENANCE.md
+tools/natron-card-look-kit/gizmos
+tools/natron-card-look-kit/gizmos/CJLedDeepPurpleGlow.py
+tools/natron-card-look-kit/gizmos/CJLedPartyGlow.py
+tools/natron-card-look-kit/gizmos/CJLook1PaleWash.py
+tools/natron-card-look-kit/gizmos/CJLook2DeepSaturation.py
+tools/natron-card-look-kit/gizmos/TrippeddCard25D.py
+tools/natron-card-look-kit/gizmos/install_gizmos.sh
+tools/natron-card-look-kit/test
+tools/natron-card-look-kit/test/TEST-LOG.md
+tools/natron-card-look-kit/test/make_test_image.py
+tools/natron-card-look-kit/test/metrics.py
+tools/natron-card-look-kit/test/run_donor_test.py
+tools/natron-card-look-kit/test/run_natron_test.py
+tools/natron-card-look-kit/test/run_test.sh
+tools/puppet-control-sheets
+tools/puppet-control-sheets/README.md
+tools/puppet-control-sheets/docs
+tools/puppet-control-sheets/docs/CONTROL-SHEET.md
+tools/puppet-control-sheets/docs/TAHOMA2D-SURFACE-NOTES.md
+tools/puppet-control-sheets/examples
+tools/puppet-control-sheets/examples/testpuppet.json
+tools/puppet-control-sheets/puppet_control_sheets
+tools/puppet-control-sheets/puppet_control_sheets/__init__.py
+tools/puppet-control-sheets/puppet_control_sheets/generate_puppet_scene.py
+tools/puppet-control-sheets/puppet_control_sheets/validate_scene.py
+tools/puppet-control-sheets/templates
+tools/puppet-control-sheets/templates/cape-jones-2d.json
+tools/puppet-control-sheets/templates/wizard-gang.json
+tools/puppet-control-sheets/test-output
+tools/puppet-control-sheets/test-output/VALIDATION-LOG.md
+tools/puppet-control-sheets/test-output/testpuppet
+tools/puppet-control-sheets/test-output/testpuppet/poses.json
+tools/puppet-control-sheets/test-output/testpuppet/render
+tools/puppet-control-sheets/test-output/testpuppet/render/rest.0001.png
+tools/puppet-control-sheets/test-output/testpuppet/render/rest.0029.png
+tools/puppet-control-sheets/test-output/testpuppet/render/wave.0028.png
+tools/puppet-control-sheets/test-output/testpuppet/tcomposer-frame0.log
+tools/puppet-control-sheets/test-output/testpuppet/tcomposer-frame28.log
+tools/puppet-control-sheets/test-output/testpuppet/testpuppet.tnz
+tools/puppet-control-sheets/test-output/testpuppet/testpuppet
+tools/puppet-control-sheets/test-output/testpuppet/testpuppet/arm_r.0001.png
+tools/puppet-control-sheets/test-output/testpuppet/testpuppet/body.0001.png
+tools/puppet-control-sheets/test-output/testpuppet/testpuppet/head.0001.png
+tools/puppet-control-sheets/test-output/testpuppet/testpuppet/mouth.0001.png
+tools/puppet-control-sheets/test-output/testpuppet/testpuppet/mouth.0002.png
+tools/puppet-control-sheets/test-output/testpuppet/testpuppet/mouth.0003.png
+tools/puppet-control-sheets/toonzscript
+tools/puppet-control-sheets/toonzscript/apply_pose_exposure.js
+tools/pyro-shaping-pack
+tools/pyro-shaping-pack/.gitignore
+tools/pyro-shaping-pack/FINISHING-RECIPES.md
+tools/pyro-shaping-pack/README.md
+tools/pyro-shaping-pack/TEST-LOG.md
+tools/pyro-shaping-pack/apply_pyro.py
+tools/pyro-shaping-pack/build_presets.py
+tools/pyro-shaping-pack/presets
+tools/pyro-shaping-pack/presets/campfire.json
+tools/pyro-shaping-pack/presets/chimney_smoke.json
+tools/pyro-shaping-pack/presets/explosion_burst.json
+tools/pyro-shaping-pack/presets/fog_bank.json
+tools/pyro-shaping-pack/presets/jet_flame.json
+tools/pyro-shaping-pack/pyro_lib.py
+tools/pyro-shaping-pack/pyro_presets.blend
+tools/pyro-shaping-pack/tests
+tools/pyro-shaping-pack/tests/compare_pngs.py
+tools/pyro-shaping-pack/tests/output
+tools/pyro-shaping-pack/tests/output/render_explosion_burst_f016.png
+tools/pyro-shaping-pack/tests/output/render_fog_bank_f016.png
+tools/pyro-shaping-pack/tests/run_test.sh
+tools/pyro-shaping-pack/tests/test_pyro.py
+tools/sculpt-finisher
+tools/sculpt-finisher/README.md
+tools/sculpt-finisher/TEST_LOG.md
+tools/sculpt-finisher/sculpt_finisher.py
+tools/sculpt-finisher/test_finisher.py
+tools/sculpt-finisher/test_run_raw.log
+tools/smartmask-presets
+tools/smartmask-presets/README.md
+tools/smartmask-presets/install_ucupaint.sh
+tools/smartmask-presets/presets
+tools/smartmask-presets/presets/apply_smartmask_preset.py
+tools/smartmask-presets/presets/smartmask_presets.json
+tools/smartmask-presets/tests
+tools/smartmask-presets/tests/output
+tools/smartmask-presets/tests/output/TEST_LOG.md
+tools/smartmask-presets/tests/output/baked_cavity_dirt_Color.png
+tools/smartmask-presets/tests/output/baked_edge_wear_Color.png
+tools/smartmask-presets/tests/output/baked_paint_chips_Color.png
+tools/smartmask-presets/tests/output/baked_top_dust_Color.png
+tools/smartmask-presets/tests/output/smartmask_preset_library.blend
+tools/smartmask-presets/tests/output/test_report.json
+tools/smartmask-presets/tests/test_smartmask.py
+tools/wedgerunner
+tools/wedgerunner/README.md
+tools/wedgerunner/blender_driver.py
+tools/wedgerunner/examples
+tools/wedgerunner/examples/example_scene.py
+tools/wedgerunner/examples/example_wedge.json
+tools/wedgerunner/examples/test_wedge_with_broken.json
+tools/wedgerunner/tests
+tools/wedgerunner/tests/TEST-LOG.md
+tools/wedgerunner/tests/sample_contact_sheet.png
+tools/wedgerunner/tests/sample_summary.json
+tools/wedgerunner/wedgerunner.py
+toonboom-re
+toonboom-re/README.md
+toonboom-re/data
+toonboom-re/data/parse3
+toonboom-re/data/parse3/files.txt
+toonboom-re/data/parse3/full.jsonl.part-00
+toonboom-re/data/parse3/full.jsonl.part-01
+toonboom-re/data/parse3/full.jsonl.part-02
+toonboom-re/data/parse3/full.jsonl.part-03
+toonboom-re/data/parse3/full.jsonl.part-04
+toonboom-re/data/parse3/full.jsonl.part-05
+toonboom-re/docs
+toonboom-re/docs/RENDERS-MANIFEST.json
+toonboom-re/docs/RIG-MAP-Beth.md
+toonboom-re/docs/RIG-MAP-Jerry_200_REV.md
+toonboom-re/docs/RIG-MAP-Morty.md
+toonboom-re/docs/RIG-MAP-Rick.md
+toonboom-re/docs/RIG-MAP-Summer_0907.md
+toonboom-re/docs/progress-2026-10-30-evening.md
+toonboom-re/docs/toonboom-re-2026-10-30.md
+toonboom-re/oss-tvg
+toonboom-re/oss-tvg/.gitignore
+toonboom-re/oss-tvg/Cargo.toml
+toonboom-re/oss-tvg/README.md
+toonboom-re/oss-tvg/harmony-scene
+toonboom-re/oss-tvg/harmony-scene/Cargo.toml
+toonboom-re/oss-tvg/harmony-scene/examples
+toonboom-re/oss-tvg/harmony-scene/examples/read2.rs
+toonboom-re/oss-tvg/harmony-scene/src
+toonboom-re/oss-tvg/harmony-scene/src/fs.rs
+toonboom-re/oss-tvg/harmony-scene/src/lib.rs
+toonboom-re/oss-tvg/harmony-scene/src/palette.rs
+toonboom-re/oss-tvg/harmony-scene/src/project.rs
+toonboom-re/oss-tvg/harmony-scene/src/xstage.rs
+toonboom-re/oss-tvg/notes
+toonboom-re/oss-tvg/notes/curve-instr.md
+toonboom-re/oss-tvg/tvg
+toonboom-re/oss-tvg/tvg/Cargo.toml
+toonboom-re/oss-tvg/tvg/examples
+toonboom-re/oss-tvg/tvg/examples/read.rs
+toonboom-re/oss-tvg/tvg/src
+toonboom-re/oss-tvg/tvg/src/layer.rs
+toonboom-re/oss-tvg/tvg/src/lib.rs
+toonboom-re/oss-tvg/tvg/src/palette.rs
+toonboom-re/oss-tvg/tvg/src/peek_reader.rs
+toonboom-re/oss-tvg/tvg/src/pencil.rs
+toonboom-re/oss-tvg/tvg/src/read.rs
+toonboom-re/oss-tvg/tvg/src/util.rs
+toonboom-re/oss-tvg/web-viewer
+toonboom-re/oss-tvg/web-viewer/.gitignore
+toonboom-re/oss-tvg/web-viewer/build.sh
+toonboom-re/oss-tvg/web-viewer/index.html
+toonboom-re/oss-tvg/web-viewer/src
+toonboom-re/oss-tvg/web-viewer/src/canvas.js
+toonboom-re/oss-tvg/web-viewer/src/ctx.js
+toonboom-re/oss-tvg/web-viewer/src/index.css
+toonboom-re/oss-tvg/web-viewer/src/index.js
+toonboom-re/oss-tvg/web-viewer/src/layer-data.js
+toonboom-re/oss-tvg/web-viewer/src/metadata.js
+toonboom-re/oss-tvg/web-viewer/tvg-wasm
+toonboom-re/oss-tvg/web-viewer/tvg-wasm/Cargo.toml
+toonboom-re/oss-tvg/web-viewer/tvg-wasm/src
+toonboom-re/oss-tvg/web-viewer/tvg-wasm/src/lib.rs
+toonboom-re/proofs
+toonboom-re/proofs/proof
+toonboom-re/proofs/proof/Morty
+toonboom-re/proofs/proof/Morty/M_brow_L-1.png
+toonboom-re/proofs/proof/Morty/M_brow_L-1.svg
+toonboom-re/proofs/proof/Rick
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-1.png
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-1.svg
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-10.png
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-10.svg
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-12.png
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-12.svg
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-13.png
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-13.svg
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-14.png
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-14.svg
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-15.png
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-15.svg
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-16.png
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-16.svg
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-17.png
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-17.svg
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-18.png
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-18.svg
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-19.png
+toonboom-re/proofs/proof/Rick/R_hand_R_OL-19.svg
+toonboom-re/proofs/proof/brow-render.png
+toonboom-re/proofs/proof/hand-proof-sheet.png
+toonboom-re/proofs/proof2
+toonboom-re/proofs/proof2/Rick
+toonboom-re/proofs/proof2/Rick/R_hand_R_OL-1.png
+toonboom-re/proofs/proof2/Rick/R_hand_R_OL-1.svg
+toonboom-re/proofs/proof2/hand-proof-sheet2.png
+toonboom-re/proofs/proof3
+toonboom-re/proofs/proof3/Beth
+toonboom-re/proofs/proof3/Beth/Mom_hair_R-1.png
+toonboom-re/proofs/proof3/Beth/Mom_hair_R-1.svg
+toonboom-re/proofs/proof3/Jerry_200_REV
+toonboom-re/proofs/proof3/Jerry_200_REV/Dad_torso-1.png
+toonboom-re/proofs/proof3/Jerry_200_REV/Dad_torso-1.svg
+toonboom-re/proofs/proof3/Morty
+toonboom-re/proofs/proof3/Morty/M_brow_L-1.png
+toonboom-re/proofs/proof3/Morty/M_brow_L-1.svg
+toonboom-re/proofs/proof3/Rick
+toonboom-re/proofs/proof3/Rick/Int_Pocket1-1.png
+toonboom-re/proofs/proof3/Rick/Int_Pocket1-1.svg
+toonboom-re/proofs/proof3/Rick/R_hand_R_OL-1.png
+toonboom-re/proofs/proof3/Rick/R_hand_R_OL-1.svg
+toonboom-re/proofs/proof3/brow.png
+toonboom-re/proofs/proof3/proof-sheet.png
+toonboom-re/proofs/proof4
+toonboom-re/proofs/proof4/Beth
+toonboom-re/proofs/proof4/Beth/Mom_hair_R-1.png
+toonboom-re/proofs/proof4/Beth/Mom_hair_R-1.svg
+toonboom-re/proofs/proof4/Jerry_200_REV
+toonboom-re/proofs/proof4/Jerry_200_REV/Dad_torso-1.png
+toonboom-re/proofs/proof4/Jerry_200_REV/Dad_torso-1.svg
+toonboom-re/proofs/proof4/Morty
+toonboom-re/proofs/proof4/Morty/M_brow_L-1.png
+toonboom-re/proofs/proof4/Morty/M_brow_L-1.svg
+toonboom-re/proofs/proof4/Rick
+toonboom-re/proofs/proof4/Rick/Int_Pocket1-1.png
+toonboom-re/proofs/proof4/Rick/Int_Pocket1-1.svg
+toonboom-re/proofs/proof4/Rick/R_hand_R_OL-1.png
+toonboom-re/proofs/proof4/Rick/R_hand_R_OL-1.svg
+toonboom-re/proofs/proof4/hand-sheet.png
+toonboom-re/proofs/proof4/pocket.png
+toonboom-re/proofs/proof5
+toonboom-re/proofs/proof5/Beth
+toonboom-re/proofs/proof5/Beth/Mom_hair_R-1.png
+toonboom-re/proofs/proof5/Beth/Mom_hair_R-1.svg
+toonboom-re/proofs/proof5/Jerry_200_REV
+toonboom-re/proofs/proof5/Jerry_200_REV/Dad_torso-1.png
+toonboom-re/proofs/proof5/Jerry_200_REV/Dad_torso-1.svg
+toonboom-re/proofs/proof5/Morty
+toonboom-re/proofs/proof5/Morty/M_brow_L-1.png
+toonboom-re/proofs/proof5/Morty/M_brow_L-1.svg
+toonboom-re/proofs/proof5/Rick
+toonboom-re/proofs/proof5/Rick/Int_Pocket1-1.png
+toonboom-re/proofs/proof5/Rick/Int_Pocket1-1.svg
+toonboom-re/proofs/proof5/Rick/R_hand_R_OL-1.png
+toonboom-re/proofs/proof5/Rick/R_hand_R_OL-1.svg
+toonboom-re/proofs/proof5/hand-sheet.png
+toonboom-re/proofs/proof5/pocket.png
+toonboom-re/proofs/proof6
+toonboom-re/proofs/proof6/Beth
+toonboom-re/proofs/proof6/Beth/Mom_hair_R-1.png
+toonboom-re/proofs/proof6/Beth/Mom_hair_R-1.svg
+toonboom-re/proofs/proof6/Jerry_200_REV
+toonboom-re/proofs/proof6/Jerry_200_REV/Dad_torso-1.png
+toonboom-re/proofs/proof6/Jerry_200_REV/Dad_torso-1.svg
+toonboom-re/proofs/proof6/Morty
+toonboom-re/proofs/proof6/Morty/M_brow_L-1.png
+toonboom-re/proofs/proof6/Morty/M_brow_L-1.svg
+toonboom-re/proofs/proof6/Rick
+toonboom-re/proofs/proof6/Rick/Int_Pocket1-1.png
+toonboom-re/proofs/proof6/Rick/Int_Pocket1-1.svg
+toonboom-re/proofs/proof6/Rick/R_hand_R_OL-1.png
+toonboom-re/proofs/proof6/Rick/R_hand_R_OL-1.svg
+toonboom-re/proofs/proof6/hand6.png
+toonboom-re/proofs/proof6/pocket6.png
+toonboom-re/proofs/proof7
+toonboom-re/proofs/proof7/Beth
+toonboom-re/proofs/proof7/Beth/Mom_hair_R-1.png
+toonboom-re/proofs/proof7/Beth/Mom_hair_R-1.svg
+toonboom-re/proofs/proof7/Jerry_200_REV
+toonboom-re/proofs/proof7/Jerry_200_REV/Dad_torso-1.png
+toonboom-re/proofs/proof7/Jerry_200_REV/Dad_torso-1.svg
+toonboom-re/proofs/proof7/Morty
+toonboom-re/proofs/proof7/Morty/M_brow_L-1.png
+toonboom-re/proofs/proof7/Morty/M_brow_L-1.svg
+toonboom-re/proofs/proof7/Rick
+toonboom-re/proofs/proof7/Rick/Int_Pocket1-1.png
+toonboom-re/proofs/proof7/Rick/Int_Pocket1-1.svg
+toonboom-re/proofs/proof7/Rick/R_hand_R_OL-1.png
+toonboom-re/proofs/proof7/Rick/R_hand_R_OL-1.svg
+toonboom-re/proofs/proof7/brow7.png
+toonboom-re/proofs/proof7/hand-sheet.png
+toonboom-re/proofs/proof7/pocket7.png
+toonboom-re/proofs/proof7/torso7.png
+toonboom-re/proofs/proof8
+toonboom-re/proofs/proof8/Beth
+toonboom-re/proofs/proof8/Beth/Mom_hair_R-1.png
+toonboom-re/proofs/proof8/Beth/Mom_hair_R-1.svg
+toonboom-re/proofs/proof8/Jerry_200_REV
+toonboom-re/proofs/proof8/Jerry_200_REV/Dad_torso-1.png
+toonboom-re/proofs/proof8/Jerry_200_REV/Dad_torso-1.svg
+toonboom-re/proofs/proof8/Morty
+toonboom-re/proofs/proof8/Morty/M_brow_L-1.png
+toonboom-re/proofs/proof8/Morty/M_brow_L-1.svg
+toonboom-re/proofs/proof8/Rick
+toonboom-re/proofs/proof8/Rick/Int_Pocket1-1.png
+toonboom-re/proofs/proof8/Rick/Int_Pocket1-1.svg
+toonboom-re/proofs/proof8/Rick/R_hand_R_OL-1.png
+toonboom-re/proofs/proof8/Rick/R_hand_R_OL-1.svg
+toonboom-re/proofs/proof8/hair8.png
+toonboom-re/proofs/proof8/hand8.png
+toonboom-re/proofs/proof8/torso8.png
+toonboom-re/tools
+toonboom-re/tools/gainstats.py
+toonboom-re/tools/nickdir.py
+toonboom-re/tools/render.py
+toonboom-re/tools/rigmap.py
+toonboom-re/tools/tvg1008
+toonboom-re/tools/tvg1008/Cargo.toml
+toonboom-re/tools/tvg1008/examples
+toonboom-re/tools/tvg1008/examples/read.rs
+toonboom-re/tools/tvg1008/src
+toonboom-re/tools/tvg1008/src/layer.rs
+toonboom-re/tools/tvg1008/src/lib.rs
+toonboom-re/tools/tvg1008/src/palette.rs
+toonboom-re/tools/tvg1008/src/peek_reader.rs
+toonboom-re/tools/tvg1008/src/pencil.rs
+toonboom-re/tools/tvg1008/src/read.rs
+toonboom-re/tools/tvg1008/src/util.rs
+toonboom-re/tools/tvgdump
+toonboom-re/tools/tvgdump/Cargo.lock
+toonboom-re/tools/tvgdump/Cargo.toml
+toonboom-re/tools/tvgdump/src
+toonboom-re/tools/tvgdump/src/main.rs
+toonboom-re/tools/tvgrender
+toonboom-re/tools/tvgrender/Cargo.lock
+toonboom-re/tools/tvgrender/Cargo.toml
+toonboom-re/tools/tvgrender/src
+toonboom-re/tools/tvgrender/src/main.rs
+toonboom-re/tools/zipdir.py

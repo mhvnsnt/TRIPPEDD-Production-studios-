@@ -51,6 +51,10 @@ Baseline after rigid re-seat: 14.24 mm centre depth, 0.49 mm nearest vertex to l
 - Motion claims require a rendered sequence, not a still.
 - Reopen exact PNG/MP4 bytes after rendering and record SHA-256.
 
+## PRE-MADE PARTS FIRST
+
+PRE-MADE PARTS FIRST (Mars, 2026-11-20): Don't hand-build what already exists and works well. Before decoding, decrypting, reverse-engineering, or building anything from scratch, go get the pre-made part from wherever it already exists and work FROM it. Sources: commercial games, open source, closed-source teardowns (study from public sources, rebuild equivalents), the fan translation / ROM hacking scene, the modding community, fan-made tools and docs, decompilations (decomps) and recompilations (recomps), community knowledge (Xentax/ZenHAX, TCRF, wikis, FAQs, archive.org). Like building a machine: you don't build a battery or a cog from scratch, you order the pre-made part and keep building. Spend the work on the innovative parts, not on re-doing what's already well-built. Only build from scratch what nobody has already built.
+
 ## Open-source-first face pipeline
 Use existing open-source components before hand-built geometry/heuristics. Current approved families include MediaPipe canonical face landmarks, Rigify, ICT-FaceKit, GNM-derived oral anatomy, MPFB2/MakeHuman, trimesh, scipy/pycpd/libigl and the existing Blender tooling. Do not use texture darkness, arbitrary pixel raycasts, or brow geometry as an eyelid detector.
 
